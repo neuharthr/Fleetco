@@ -1,0 +1,457 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-report" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+
+
+{BEGIN container_toplinks}
+<div class="rnr-c rnr-ch rnr-c-toplinks">
+<div class="rnr-hfiller"></div>
+{BEGIN security_block}
+<div  class="style1 rnr-br rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message} 
+	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+		<input type="text" name="username" {$username_attrs}>&nbsp;
+		<input type="password" name="password" {$password_attrs}>
+		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
+			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
+		</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+	{BEGIN adminarea_link}
+	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
+	{END adminarea_link}
+
+</div></div>
+{END security_block}
+
+
+
+</div>
+{END container_toplinks}
+
+
+
+{BEGIN container_hmenu}
+<div class="rnr-c rnr-ch rnr-c-hmenu">
+
+{BEGIN searchform_block}
+<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		{BEGIN searchform_search}
+			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
+		{END searchform_search}
+		{BEGIN searchform_showall}	
+		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
+		{END searchform_showall}
+	</span>
+</div>
+{END searchform_block}
+
+
+{BEGIN searchformbuttons_block}
+<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
+<span>
+	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
+	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
+</span>
+{END searchPanelTopButtons}
+</div>
+{END searchformbuttons_block}
+
+
+{BEGIN searchsaving_block}
+<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
+{END searchsaving_block}
+
+<div class="rnr-hfiller"></div>
+{BEGIN details_block}
+<div  class="style1 rnr-br rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
+			Groups found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+	</span>
+</div>
+{END details_block}
+
+
+{BEGIN pages_block}
+<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
+		Page <b>{$page}</b> of <b>{$maxpages}</b>
+	</span>
+
+</div>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Groups per page:&nbsp;{$grpsPerPage}
+	</span>	
+</div>
+{END recordspp_block}
+
+
+
+<div  class="style1 rnr-br rnr-b-printpanel {$brickclass_printpanel}">{BEGIN print_friendly}
+<div class="rnr-printpanelblock" id="printpanelblock{$id}">
+<div class="rnr-printtab">
+<a data-icon="printdown" class="rnr-printicon" id="print_friendly_togger{$id}" title="Print-friendly page"></a>
+</div>
+<div class="rnr-printpanel" >
+<table class="rnr-printscope" id="print_friendly_scope{$id}">
+	<tr>
+		<td class="rnr-printScopeCell">Scope:</td>
+		{BEGIN print_friendly_all}
+		<td class="rnr-printScopeCell"><input type="radio" id="printAll{$id}" data-href="inventorymaster_Report_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">&nbsp;<label for="printAll{$id}">Print whole report</label></td>
+		{END print_friendly_all}
+
+	</tr>
+	<tr>
+		<td></td>
+		<td class="rnr-printScopeCell"><input type="radio" id="printPage{$id}" data-href="inventorymaster_Report_print.php?{$crosstable_attrs}" name="printScope" checked>&nbsp;<label for="printPage{$id}">Print this page</label></td>
+	</tr>
+	</table>
+
+
+<div class="rnr-printdetails">
+<label for="printPerPage{$id}">
+	Groups per page:
+</label>&nbsp;<input type=number id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">&nbsp;
+</div>
+
+<div class="rnr-printbutton">
+<a href=# class="rnr-button button" id="print_friendly_button{$id}" >Print</a>
+</div>
+</div>
+</div>
+{END print_friendly}
+</div>
+
+
+
+</div>
+{END container_hmenu}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+{BEGIN container_left}
+<div class="rnr-c rnr-cv rnr-c-left">
+
+{BEGIN menu_block}
+{$menu main}
+{END menu_block}
+
+
+{BEGIN searchPanel}
+<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
+<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+	
+	<!-- Search panel content -->
+	<div class="srchCritTop" style="display: none;">
+		Criteria:&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
+		&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
+	</div>
+	
+	<div class="addOption">
+		<span class="rnr-buttons-group">
+			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
+		</span>
+		
+		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+	</div>
+	
+
+	<table class="controlsBlock {$controls_block_class}">
+				{BEGIN searchCtrlBlock}
+		<tr class="srchPanelRow" {$filterRow_attrs}>
+			<td class="srchPanelCell">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+				<div class="rnr-searchtype">{$searchtype}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock}
+	</table>	
+
+
+	
+	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
+		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	</div>
+</div>
+
+</div></div>{END searchPanel}
+
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_recordcontrols}
+<div class="rnr-c rnr-ch rnr-c-recordcontrols">
+
+{BEGIN asearch_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_advsearch {$brickclass_toplinks_advsearch}">	<a href="inventorymaster_Report_search.php" class="rnr-button" {$advsearchlink_attrs}>Advanced search</a>
+</div>
+{END asearch_link}
+
+
+
+
+{BEGIN export_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_export_links {$brickclass_toplinks_export_links}">	<span id="export_links{$id}" class="rnr-exporticons">
+		<a href="inventorymaster_Report_export.php?all=1&amp;format=excel" {$excellink_attrs}><img alt="Export to Excel" src="images/excel.gif" border="0"></a>
+		<a href="inventorymaster_Report_export.php?all=1&amp;format=word" {$wordlink_attrs}><img alt="Export to Word" src="images/word.gif" border="0" ></a>
+		</span>
+</div>
+{END export_link}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_recordcontrols}
+
+
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+
+
+{BEGIN container_grid}
+
+
+
+<style>
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {background-color:#ffffbb;}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color:#ffe0b0;}
+	.rnr-report {width: 100%;}
+	td {padding: 2px; 4px;}
+
+		td.group_1{background-color: #90EE90;}
+		td.nbgroup_1{background-color: #90EE90;}
+		td.header_1 {
+			background-color: #7ACA7A; 
+			font-size:120%;
+			padding: 2px 8px;
+			font-weight: bold;
+		}
+
+		td.group_2{background-color: #ADD8E6;}
+		td.nbgroup_2{background-color: #ADD8E6;}
+		td.header_2 {
+			background-color: #93B7C3; 
+			font-size:120%;
+			padding: 2px 8px;
+			font-weight: bold;
+		}
+	td.blackshade {
+		font-size:140%;
+		padding: 4px 8px;
+	}
+	.summaryrow > * {
+		border:solid #808080 1px; 
+		border-left: none; 
+		border-right: none;
+	}
+	.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+
+</style>
+
+	<div class="rnr-cw-grid rnr-s-2 asbuttons {$pageStyleName}">		
+						<div class="rnr-c rnr-cv rnr-c-grid">
+		<div class="rnr-brickcontents style1 rnr-b-report">		
+			<table class="rnr-report" cellspacing=0 cellpadding=0 border=0>
+			
+			
+			{BEGIN grid_row}
+
+			{BEGIN Id_newgroup}
+								<tr class="group-headers">
+					<td class="blackshade">{$label inventorymaster_Report Id}</td>
+					<td class="blackshade">{$label inventorymaster_Report ItemID}</td>
+										<td class="blackshade">{$label inventorymaster_Report Brand}</td>
+					<td class="blackshade">{$label inventorymaster_Report Description}</td>
+					<td class="blackshade">{$label inventorymaster_Report Supplier}</td>
+				</tr>
+				<tr class="group-spliter-1" >
+																				<td colspan=5 class=header_1><font >{$Id_grval}</font></td>
+										</tr>
+			{END Id_newgroup}
+			{BEGIN ItemID_newgroup}
+								<tr class="group-spliter-2" {$rowattrs}>
+													<td class=" group_1" >&nbsp;</td>
+													
+							<td colspan=4 class=header_2>
+								<font>
+									{$ItemID_grval} 
+
+								</font>
+							</td>
+				</tr>
+			{END ItemID_newgroup}
+						<!-------------------------------------  data ----------------------------------------->
+			{BEGIN row_data}
+				<tr >
+										<td class=" group_1" >&nbsp;</td>
+										<td class=" group_2" >&nbsp;</td>
+									<td class=data>{$Brand_value}</td>
+					<td class=data>{$Description_value}</td>
+					<td class=data>{$Supplier_value}</td>
+				</tr>
+			{END row_data}
+			<!-------------------------------------  group summary ----------------------------------------->
+						{BEGIN ItemID_endgroup}
+				<tr class="summaryrow"  style="display:none; height:0px" >
+					<td class=group_1 style="border-top: none;"></td>
+										<td  class="group_2" colspan=4 >
+				Summary for {$label inventorymaster_Report ItemID} {$ItemID_grval}
+					- <span class="summary-2" data-type="summary" data-value="{$groupItemID_total_cnt}">{$groupItemID_total_cnt}</span> records total</td>
+				</tr>
+												<!--  Min -->
+				<tr class="grouptotalsrow"  style="display:none; height:0px" >
+										<td class=group_1 >&nbsp;</td>
+										<td class=group_2>Min</td>
+										<td class=group_2><span class="summary-2" data-type="min" data-value="{$groupItemID_totalBrand_min}" data-field="Brand">{$groupItemID_totalBrand_min}</span></td>
+										<td class=group_2>&nbsp;</td>
+										<td class=group_2>&nbsp;</td>
+				</tr>	
+						{END ItemID_endgroup}
+						{BEGIN Id_endgroup}
+				<tr class="summaryrow"  style="display:none; height:0px" >
+										<td  class="group_1" colspan=5 >
+				Summary for {$label inventorymaster_Report Id} {$Id_grval}
+					- <span class="summary-1" data-type="summary" data-value="{$groupId_total_cnt}">{$groupId_total_cnt}</span> records total</td>
+				</tr>
+												<!--  Min -->
+				<tr class="grouptotalsrow"  style="display:none; height:0px" >
+										<td class=group_1>Min</td>
+										<td class=group_1>&nbsp;</td>
+										<td class=group_1><span class="summary-1" data-type="min" data-value="{$groupId_totalBrand_min}" data-field="Brand">{$groupId_totalBrand_min}</span></td>
+										<td class=group_1>&nbsp;</td>
+										<td class=group_1>&nbsp;</td>
+				</tr>	
+						{END Id_endgroup}
+			{END grid_row}
+
+							<!--------------------------------------page summary-------------------------------------------->
+				<tr class="summaryrow summary-page">
+					
+										<td class=pagesummary colspan=5>Page summary 
+					 <span class="page-summary" data-type="summary">{$page_total_cnt}</span> - records total</td>
+				</tr>
+																<!--  Min -->
+				<tr class="summary-page">
+											<td class=pagesummary>Min</td>
+											<td class=pagesummary>&nbsp;</td>
+											<td class=pagesummary><span class="page-summary" data-type="min" data-field="Brand">{$page_totalBrand_min}</span></td>
+											<td class=pagesummary>&nbsp;</td>
+											<td class=pagesummary>&nbsp;</td>
+				</tr>	
+												<!--------------------------------------global summary-------------------------------------------->
+				{BEGIN global_summary}
+				<tr class="summaryrow summary-global">
+					
+										<td class=globalsummary colspan=5>Global summary 
+					 {$global_total_cnt} - records total</td>
+				</tr>
+																<!--  Min -->
+				<tr class="summary-global">
+											<td class=globalsummary>Min</td>
+											<td class=globalsummary>&nbsp;</td>
+											<td class=globalsummary>{$global_totalBrand_min}</td>
+											<td class=globalsummary>&nbsp;</td>
+											<td class=globalsummary>&nbsp;</td>
+				</tr>	
+								{END global_summary}
+			</table>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+{END container_grid}
+
+
+
+{BEGIN container_pagination_bottom}
+<div class="rnr-c rnr-ch rnr-c-pagination_bottom">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+
+</div>
+{END container_pagination_bottom}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

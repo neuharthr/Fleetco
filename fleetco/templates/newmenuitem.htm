@@ -1,0 +1,14 @@
+##if @menu.type!="Separator"##
+<div>
+<div>
+##if @menu.iconName && @menu.iconType==1##
+<img class="menu-icon" src="images/menuicons/##@menu.iconName h##" border=0>
+##endif##
+<a {$item##@menu.id##_menulink_attrs}>{$item##@menu.id##_title}</a>
+</div>
+</div>
+##else##
+<hr><!--{$item##@menu.id##_separator}-->
+##endif##
+
+

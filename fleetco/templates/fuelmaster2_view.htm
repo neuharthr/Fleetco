@@ -1,0 +1,211 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-view" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_all}
+<div class="rnr-c rnr-cv rnr-c-all">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_view} rnr-wrapper rnr-cbw-view">
+
+{BEGIN container_view}
+<div class="rnr-c rnr-cv rnr-c-view">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pdf} rnr-wrapper rnr-cbw-pdf">
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-cv rnr-c-pdf">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-viewpdf {$brickclass_viewpdf}">{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+
+</div>
+
+
+</div>
+{END container_pdf}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN viewheader}
+<div  class="rnr-brickcontents style2 rnr-b-viewheader {$brickclass_viewheader}"><span>	<h1>{$pagetitlelabel fuelmaster2 view}</h1>
+</span></div>{END viewheader}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-viewfields2 {$brickclass_viewfields2}"><table class="fieldGrid fieldGrid2">
+
+<tr>
+<td>
+	{BEGIN MAX_LastMileage__fieldblock}
+<div data-fieldname="MAX_LastMileage_" class="rnr-field style1 {$fielddispclass_MAX_LastMileage_}">
+  <span class="rnr-label">{$label fuelmaster2 MAX_LastMileage_}:</span>
+  <span class="rnr-control style3">{$MAX_LastMileage__value}</span>
+</div>
+{END MAX_LastMileage__fieldblock}
+	{BEGIN Id_fieldblock}
+<div data-fieldname="Id" class="rnr-field style1 {$fielddispclass_Id}">
+  <span class="rnr-label">{$label fuelmaster2 Id}:</span>
+  <span class="rnr-control style3">{$Id_value}</span>
+</div>
+{END Id_fieldblock}
+	{BEGIN SystemDate_fieldblock}
+<div data-fieldname="SystemDate" class="rnr-field style1 {$fielddispclass_SystemDate}">
+  <span class="rnr-label">{$label fuelmaster2 SystemDate}:</span>
+  <span class="rnr-control style3">{$SystemDate_value}</span>
+</div>
+{END SystemDate_fieldblock}
+	{BEGIN Fleet_fieldblock}
+<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
+  <span class="rnr-label">{$label fuelmaster2 Fleet}:</span>
+  <span class="rnr-control style3">{$Fleet_value}</span>
+</div>
+{END Fleet_fieldblock}
+	{BEGIN FuelDate_fieldblock}
+<div data-fieldname="FuelDate" class="rnr-field style1 {$fielddispclass_FuelDate}">
+  <span class="rnr-label">{$label fuelmaster2 FuelDate}:</span>
+  <span class="rnr-control style3">{$FuelDate_value}</span>
+</div>
+{END FuelDate_fieldblock}
+	{BEGIN Vehicle_fieldblock}
+<div data-fieldname="Vehicle" class="rnr-field style1 {$fielddispclass_Vehicle}">
+  <span class="rnr-label">{$label fuelmaster2 Vehicle}:</span>
+  <span class="rnr-control style3">{$Vehicle_value}</span>
+</div>
+{END Vehicle_fieldblock}
+</td>
+<td>
+	{BEGIN FuelStation_fieldblock}
+<div data-fieldname="FuelStation" class="rnr-field style1 {$fielddispclass_FuelStation}">
+  <span class="rnr-label">{$label fuelmaster2 FuelStation}:</span>
+  <span class="rnr-control style3">{$FuelStation_value}</span>
+</div>
+{END FuelStation_fieldblock}
+	{BEGIN MeterReading_fieldblock}
+<div data-fieldname="MeterReading" class="rnr-field style1 {$fielddispclass_MeterReading}">
+  <span class="rnr-label">{$label fuelmaster2 MeterReading}:</span>
+  <span class="rnr-control style3">{$MeterReading_value}</span>
+</div>
+{END MeterReading_fieldblock}
+	{BEGIN LitersPumped_fieldblock}
+<div data-fieldname="LitersPumped" class="rnr-field style1 {$fielddispclass_LitersPumped}">
+  <span class="rnr-label">{$label fuelmaster2 LitersPumped}:</span>
+  <span class="rnr-control style3">{$LitersPumped_value}</span>
+</div>
+{END LitersPumped_fieldblock}
+	{BEGIN PricePerLiter_fieldblock}
+<div data-fieldname="PricePerLiter" class="rnr-field style1 {$fielddispclass_PricePerLiter}">
+  <span class="rnr-label">{$label fuelmaster2 PricePerLiter}:</span>
+  <span class="rnr-control style3">{$PricePerLiter_value}</span>
+</div>
+{END PricePerLiter_fieldblock}
+	{BEGIN Cost_fieldblock}
+<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
+  <span class="rnr-label">{$label fuelmaster2 Cost}:</span>
+  <span class="rnr-control style3">{$Cost_value}</span>
+</div>
+{END Cost_fieldblock}
+	{BEGIN Economy_fieldblock}
+<div data-fieldname="Economy" class="rnr-field style1 {$fielddispclass_Economy}">
+  <span class="rnr-label">{$label fuelmaster2 Economy}:</span>
+  <span class="rnr-control style3">{$Economy_value}</span>
+</div>
+{END Economy_fieldblock}
+</td>
+</tr>
+</table></div>
+
+
+{BEGIN viewbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-viewbuttons {$brickclass_viewbuttons}"><div class="rnr-buttons-right">
+{BEGIN prev_button}
+<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
+{END prev_button}
+{BEGIN next_button}
+<a href="#" class="rnr-button {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
+{END next_button}
+</div>
+<div class="rnr-buttons-left">
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
+{END back_button}
+{BEGIN close_button}
+<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
+{END close_button}
+{BEGIN edit_page_button}
+<a href="#" class="rnr-button" {$edit_page_button_attrs}>Edit</a>
+{END edit_page_button}
+</div>
+</div>{END viewbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+</div>
+{END container_view}
+
+</div>
+
+
+
+</div>
+{END container_all}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

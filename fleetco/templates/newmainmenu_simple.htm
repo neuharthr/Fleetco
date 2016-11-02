@@ -1,0 +1,86 @@
+<ul class="rnr-b-vmenu simple {$menustyle}">
+##foreach @MENU.MenuNodes as @m0 filter !@m0.parent##
+##foreach @MENU.MenuNodes as @menu filter @menu.id=@m0.id##
+	{BEGIN item##@m0.id##_menulink}
+	<li class="{$item##@menu.id##_current} menu##@menu.type##">
+		##include templates\newmenuitem.htm##
+	##foreach @MENU.MenuNodes as @m1 filter @m1.parent = @m0.id##
+	##if @first##
+		<ul >
+	##endif##
+	##foreach @MENU.MenuNodes as @menu filter @menu.id=@m1.id##
+			{BEGIN item##@m1.id##_menulink}
+			<li  parent="group##@menu.parent##" class="{$item##@menu.id##_current} menu##@menu.type##">
+			##include templates\newmenuitem.htm##
+			##foreach @MENU.MenuNodes as @m2 filter @m2.parent = @m1.id##
+			##if @first##
+				<ul >
+			##endif##
+			##foreach @MENU.MenuNodes as @menu filter @menu.id=@m2.id##
+					{BEGIN item##@m2.id##_menulink}
+					<li  parent="group##@menu.parent##" class="{$item##@menu.id##_current} menu##@menu.type##">
+					##include templates\newmenuitem.htm##
+					##foreach @MENU.MenuNodes as @m3 filter @m3.parent = @m2.id##
+					##if @first##
+						<ul >
+					##endif##
+					##foreach @MENU.MenuNodes as @menu filter @menu.id=@m3.id##
+							{BEGIN item##@m3.id##_menulink}
+							<li  parent="group##@menu.parent##" class="{$item##@menu.id##_current} menu##@menu.type##">
+							##include templates\newmenuitem.htm##
+							##foreach @MENU.MenuNodes as @m4 filter @m4.parent = @m3.id##
+							##if @first##
+								<ul >
+							##endif##
+							##foreach @MENU.MenuNodes as @menu filter @menu.id=@m4.id##
+									{BEGIN item##@m4.id##_menulink}
+									<li  parent="group##@menu.parent##" class="{$item##@menu.id##_current} menu##@menu.type##">
+									##include templates\newmenuitem.htm##
+									##foreach @MENU.MenuNodes as @m5 filter @m5.parent = @m4.id##
+									##if @first##
+										<ul >
+									##endif##
+									##foreach @MENU.MenuNodes as @menu filter @menu.id=@m5.id##
+											{BEGIN item##@m5.id##_menulink}
+											<li  parent="group##@menu.parent##" class="{$item##@menu.id##_current} menu##@menu.type##">
+											##include templates\newmenuitem.htm##
+											</li>
+											{END item##@m5.id##_menulink}
+									##endfor##			
+									##if @last##
+										</ul>
+									##endif##
+									##endfor##			
+									</li>
+									{END item##@m4.id##_menulink}
+							##endfor##			
+							##if @last##
+								</ul>
+							##endif##
+							##endfor##			
+							</li>
+							{END item##@m3.id##_menulink}
+					##endfor##			
+					##if @last##
+						</ul>
+					##endif##
+					##endfor##			
+					</li>
+					{END item##@m2.id##_menulink}
+			##endfor##			
+			##if @last##
+				</ul>
+			##endif##
+			##endfor##			
+			</li>
+			{END item##@m1.id##_menulink}
+	##endfor##			
+	##if @last##
+		</ul>
+	##endif##
+	##endfor##			
+	</li>
+	{END item##@m0.id##_menulink}
+##endfor##			
+##endfor##
+</ul>

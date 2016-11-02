@@ -1,0 +1,72 @@
+<ul class="rnr-b-vmenu tree {$menustyle}" originalMenuTag="$$originalMenuTag" menuID="$$menuID">
+##set @break = 1##
+##foreach @MENU.MenuNodes as @m0 filter !@m0.parent && @break##
+##foreach @MENU.MenuNodes as @m1 filter @m1.parent = @m0.id && @break##
+##if @break == 1##
+##set @break = 0##
+	<li class="manage">
+		<div>
+			<a href="#"><img alt="*" src="images/minus.gif">
+				##message COLLAPSE_ALL##
+			</a>
+		</div>
+	</li>
+##endif##	
+##endfor##
+##endfor##
+	
+##foreach @MENU.MenuNodes as @m0 filter !@m0.parent##
+##foreach @MENU.MenuNodes as @menu filter @menu.id=@m0.id##
+	{BEGIN item##@m0.id##_menulink}
+	<li id="item##@menu.id##" class="##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+			##include templates\newmenuitem_inline_preview.htm##
+	</li>	
+	##foreach @MENU.MenuNodes as @m1 filter @m1.parent = @m0.id##
+	##foreach @MENU.MenuNodes as @menu filter @menu.id=@m1.id##
+			{BEGIN item##@m1.id##_menulink}
+			<li id="item##@menu.id##" class="subitem level2 ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+					##include templates\newmenuitem_inline_preview.htm##
+			</li>	
+			##foreach @MENU.MenuNodes as @m2 filter @m2.parent = @m1.id##
+			##foreach @MENU.MenuNodes as @menu filter @menu.id=@m2.id##
+					{BEGIN item##@m2.id##_menulink}
+					<li id="item##@menu.id##" class="subitem level3 ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+							##include templates\newmenuitem_inline_preview.htm##
+					</li>	
+					##foreach @MENU.MenuNodes as @m3 filter @m3.parent = @m2.id##
+					##foreach @MENU.MenuNodes as @menu filter @menu.id=@m3.id##
+							{BEGIN item##@m3.id##_menulink}
+							<li id="item##@menu.id##" class="subitem level4 ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+									##include templates\newmenuitem_inline_preview.htm##
+							</li>	
+							##foreach @MENU.MenuNodes as @m4 filter @m4.parent = @m3.id##
+							##foreach @MENU.MenuNodes as @menu filter @menu.id=@m4.id##
+									{BEGIN item##@m4.id##_menulink}
+									<li id="item##@menu.id##" class="subitem level5 ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+											##include templates\newmenuitem_inline_preview.htm##
+									</li>	
+									##foreach @MENU.MenuNodes as @m5 filter @m5.parent = @m4.id##
+									##foreach @MENU.MenuNodes as @menu filter @menu.id=@m5.id##
+											{BEGIN item##@m5.id##_menulink}
+											<li id="item##@menu.id##" class="subitem level6 ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+													##include templates\newmenuitem_inline_preview.htm##
+											</li>	
+											{END item##@m5.id##_menulink}
+									##endfor##			
+									##endfor##			
+									{END item##@m4.id##_menulink}
+							##endfor##			
+							##endfor##			
+							{END item##@m3.id##_menulink}
+					##endfor##			
+					##endfor##			
+					{END item##@m2.id##_menulink}
+			##endfor##			
+			##endfor##			
+			{END item##@m1.id##_menulink}
+	##endfor##			
+	##endfor##			
+	{END item##@m0.id##_menulink}
+##endfor##		
+##endfor##
+</ul>

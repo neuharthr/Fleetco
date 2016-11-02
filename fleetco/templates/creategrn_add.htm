@@ -1,0 +1,212 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-add" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_all}
+<div class="rnr-c rnr-cv rnr-c-all">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN addheader}
+<div  class="rnr-brickcontents style2 rnr-b-addheader {$brickclass_addheader}"><span>	<h1>{$pagetitlelabel creategrn add}</h1>
+</span></div>{END addheader}
+
+
+{BEGIN message_block}
+<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-addfields2 {$brickclass_addfields2}"><table class="fieldGrid fieldGrid2 edit">
+
+<tr>
+<td>
+	{BEGIN Fleet_fieldblock}
+<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
+  <span class="rnr-label">{BEGIN Fleet_label}{$label creategrn Fleet}{END Fleet_label}</span>
+  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+</div>
+{END Fleet_fieldblock}
+	{BEGIN ID_fieldblock}
+<div data-fieldname="ID" class="rnr-field style1 {$fielddispclass_ID}">
+  <span class="rnr-label">{BEGIN ID_label}{$label creategrn ID}{END ID_label}</span>
+  <span class="rnr-control style3">{$ID_editcontrol}</span>
+</div>
+{END ID_fieldblock}
+	{BEGIN SystemDate_fieldblock}
+<div data-fieldname="SystemDate" class="rnr-field style1 {$fielddispclass_SystemDate}">
+  <span class="rnr-label">{BEGIN SystemDate_label}{$label creategrn SystemDate}{END SystemDate_label}</span>
+  <span class="rnr-control style3">{$SystemDate_editcontrol}</span>
+</div>
+{END SystemDate_fieldblock}
+	{BEGIN GRNDate_fieldblock}
+<div data-fieldname="GRNDate" class="rnr-field style1 {$fielddispclass_GRNDate}">
+  <span class="rnr-label">{BEGIN GRNDate_label}{$label creategrn GRNDate}{END GRNDate_label}</span>
+  <span class="rnr-control style3">{$GRNDate_editcontrol}</span>
+</div>
+{END GRNDate_fieldblock}
+	{BEGIN Status_fieldblock}
+<div data-fieldname="Status" class="rnr-field style1 {$fielddispclass_Status}">
+  <span class="rnr-label">{BEGIN Status_label}{$label creategrn Status}{END Status_label}</span>
+  <span class="rnr-control style3">{$Status_editcontrol}</span>
+</div>
+{END Status_fieldblock}
+	{BEGIN RemovedFrom_fieldblock}
+<div data-fieldname="RemovedFrom" class="rnr-field style1 {$fielddispclass_RemovedFrom}">
+  <span class="rnr-label">{BEGIN RemovedFrom_label}{$label creategrn RemovedFrom}{END RemovedFrom_label}</span>
+  <span class="rnr-control style3">{$RemovedFrom_editcontrol}</span>
+</div>
+{END RemovedFrom_fieldblock}
+	{BEGIN RefNumber_fieldblock}
+<div data-fieldname="RefNumber" class="rnr-field style1 {$fielddispclass_RefNumber}">
+  <span class="rnr-label">{BEGIN RefNumber_label}{$label creategrn RefNumber}{END RefNumber_label}</span>
+  <span class="rnr-control style3">{$RefNumber_editcontrol}</span>
+</div>
+{END RefNumber_fieldblock}
+	{BEGIN ItemCode_fieldblock}
+<div data-fieldname="ItemCode" class="rnr-field style1 {$fielddispclass_ItemCode}">
+  <span class="rnr-label">{BEGIN ItemCode_label}{$label creategrn ItemCode}{END ItemCode_label}</span>
+  <span class="rnr-control style3">{$ItemCode_editcontrol}</span>
+</div>
+{END ItemCode_fieldblock}
+	{BEGIN Brand_fieldblock}
+<div data-fieldname="Brand" class="rnr-field style1 {$fielddispclass_Brand}">
+  <span class="rnr-label">{BEGIN Brand_label}{$label creategrn Brand}{END Brand_label}</span>
+  <span class="rnr-control style3">{$Brand_editcontrol}</span>
+</div>
+{END Brand_fieldblock}
+</td>
+<td>
+	{BEGIN Description_fieldblock}
+<div data-fieldname="Description" class="rnr-field style1 {$fielddispclass_Description}">
+  <span class="rnr-label">{BEGIN Description_label}{$label creategrn Description}{END Description_label}</span>
+  <span class="rnr-control style3">{$Description_editcontrol}</span>
+</div>
+{END Description_fieldblock}
+	{BEGIN Supplier_fieldblock}
+<div data-fieldname="Supplier" class="rnr-field style1 {$fielddispclass_Supplier}">
+  <span class="rnr-label">{BEGIN Supplier_label}{$label creategrn Supplier}{END Supplier_label}</span>
+  <span class="rnr-control style3">{$Supplier_editcontrol}</span>
+</div>
+{END Supplier_fieldblock}
+	{BEGIN UnitPrice_fieldblock}
+<div data-fieldname="UnitPrice" class="rnr-field style1 {$fielddispclass_UnitPrice}">
+  <span class="rnr-label">{BEGIN UnitPrice_label}{$label creategrn UnitPrice}{END UnitPrice_label}</span>
+  <span class="rnr-control style3">{$UnitPrice_editcontrol}</span>
+</div>
+{END UnitPrice_fieldblock}
+	{BEGIN Quantity_fieldblock}
+<div data-fieldname="Quantity" class="rnr-field style1 {$fielddispclass_Quantity}">
+  <span class="rnr-label">{BEGIN Quantity_label}{$label creategrn Quantity}{END Quantity_label}</span>
+  <span class="rnr-control style3">{$Quantity_editcontrol}</span>
+</div>
+{END Quantity_fieldblock}
+	{BEGIN Cost_fieldblock}
+<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
+  <span class="rnr-label">{BEGIN Cost_label}{$label creategrn Cost}{END Cost_label}</span>
+  <span class="rnr-control style3">{$Cost_editcontrol}</span>
+</div>
+{END Cost_fieldblock}
+	{BEGIN CurrentStock_fieldblock}
+<div data-fieldname="CurrentStock" class="rnr-field style1 {$fielddispclass_CurrentStock}">
+  <span class="rnr-label">{BEGIN CurrentStock_label}{$label creategrn CurrentStock}{END CurrentStock_label}</span>
+  <span class="rnr-control style3">{$CurrentStock_editcontrol}</span>
+</div>
+{END CurrentStock_fieldblock}
+	{BEGIN EnteredBy_fieldblock}
+<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
+  <span class="rnr-label">{BEGIN EnteredBy_label}{$label creategrn EnteredBy}{END EnteredBy_label}</span>
+  <span class="rnr-control style3">{$EnteredBy_editcontrol}</span>
+</div>
+{END EnteredBy_fieldblock}
+	{BEGIN ApprovedBy_fieldblock}
+<div data-fieldname="ApprovedBy" class="rnr-field style1 {$fielddispclass_ApprovedBy}">
+  <span class="rnr-label">{BEGIN ApprovedBy_label}{$label creategrn ApprovedBy}{END ApprovedBy_label}</span>
+  <span class="rnr-control style3">{$ApprovedBy_editcontrol}</span>
+</div>
+{END ApprovedBy_fieldblock}
+</td>
+</tr>
+</table></div>
+
+
+{BEGIN addbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-addbuttons {$brickclass_addbuttons}"><div class="rnr-buttons-left">
+		{BEGIN save_button}
+	<a href="#" class="rnr-button main" id="saveButton{$id}" {$savebutton_attrs}>Save</a>
+	{END save_button}
+	{BEGIN reset_button}
+	<a href="#" class="rnr-button" id="resetButton{$id}">Reset</a>
+	{END reset_button}
+	{BEGIN cancel_button}
+	<a href="#" class="rnr-button" id="cancelButton{$id}">Cancel</a>
+	{END cancel_button}
+	{BEGIN back_button}
+	<a href="#" class="rnr-button" id="backButton{$id}">Back to list</a>
+	{END back_button}
+	{BEGIN backToMenu_button}
+	<a href="#" class="rnr-button" id="backToMenuButton{$id}">Back to menu</a>
+	{END backToMenu_button}
+</div>
+</div>{END addbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+
+</div>
+{END container_all}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

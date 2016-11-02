@@ -1,0 +1,46 @@
+
+thead:before, thead:after { display: none !important; }
+tbody:before, tbody:after { display: none !important; }
+
+.table { 
+	border-collapse: collapse;
+}
+
+tr.blackshade >td, tr.blackshade >th {
+	white-space: nowrap;
+}
+
+.table > * > tr > td, .table > * > tr > th, td, th {
+	font-size: 14px;
+	padding: 8px;
+	line-height: 1.42857143;
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+.table-bordered > * > tr > td, .table-bordered > * > tr > th {
+	border: 1px solid #ddd;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9
+}
+
+.h2, h2 {
+    font-size: 30px;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+body {
+	font-size: 14px;
+	font-family: Helvetica,Arial,sans-serif;
+}

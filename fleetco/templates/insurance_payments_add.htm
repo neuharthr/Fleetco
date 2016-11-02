@@ -1,0 +1,183 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-add" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_all}
+<div class="rnr-c rnr-cv rnr-c-all">
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN addheader}
+<div  class="rnr-brickcontents style2 rnr-b-addheader {$brickclass_addheader}"><span>	<h1>{$pagetitlelabel insurance_payments add}</h1>
+</span></div>{END addheader}
+
+
+{BEGIN message_block}
+<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-addfields2 {$brickclass_addfields2}"><table class="fieldGrid fieldGrid2 edit">
+
+<tr>
+<td>
+	{BEGIN Fleet_fieldblock}
+<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
+  <span class="rnr-label">{BEGIN Fleet_label}{$label insurance_payments Fleet}{END Fleet_label}</span>
+  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+</div>
+{END Fleet_fieldblock}
+	{BEGIN VehicleNo_fieldblock}
+<div data-fieldname="VehicleNo" class="rnr-field style1 {$fielddispclass_VehicleNo}">
+  <span class="rnr-label">{BEGIN VehicleNo_label}{$label insurance_payments VehicleNo}{END VehicleNo_label}</span>
+  <span class="rnr-control style3">{$VehicleNo_editcontrol}</span>
+</div>
+{END VehicleNo_fieldblock}
+	{BEGIN Type_fieldblock}
+<div data-fieldname="Type" class="rnr-field style1 {$fielddispclass_Type}">
+  <span class="rnr-label">{BEGIN Type_label}{$label insurance_payments Type}{END Type_label}</span>
+  <span class="rnr-control style3">{$Type_editcontrol}</span>
+</div>
+{END Type_fieldblock}
+	{BEGIN RenewalDueDate_fieldblock}
+<div data-fieldname="RenewalDueDate" class="rnr-field style1 {$fielddispclass_RenewalDueDate}">
+  <span class="rnr-label">{BEGIN RenewalDueDate_label}{$label insurance_payments RenewalDueDate}{END RenewalDueDate_label}</span>
+  <span class="rnr-control style3">{$RenewalDueDate_editcontrol}</span>
+</div>
+{END RenewalDueDate_fieldblock}
+	{BEGIN Insurer_fieldblock}
+<div data-fieldname="Insurer" class="rnr-field style1 {$fielddispclass_Insurer}">
+  <span class="rnr-label">{BEGIN Insurer_label}{$label insurance_payments Insurer}{END Insurer_label}</span>
+  <span class="rnr-control style3">{$Insurer_editcontrol}</span>
+</div>
+{END Insurer_fieldblock}
+	{BEGIN Premium_fieldblock}
+<div data-fieldname="Premium" class="rnr-field style1 {$fielddispclass_Premium}">
+  <span class="rnr-label">{BEGIN Premium_label}{$label insurance_payments Premium}{END Premium_label}</span>
+  <span class="rnr-control style3">{$Premium_editcontrol}</span>
+</div>
+{END Premium_fieldblock}
+</td>
+<td>
+	{BEGIN From_fieldblock}
+<div data-fieldname="From" class="rnr-field style1 {$fielddispclass_From}">
+  <span class="rnr-label">{BEGIN From_label}{$label insurance_payments From}{END From_label}</span>
+  <span class="rnr-control style3">{$From_editcontrol}</span>
+</div>
+{END From_fieldblock}
+	{BEGIN To_fieldblock}
+<div data-fieldname="To" class="rnr-field style1 {$fielddispclass_To}">
+  <span class="rnr-label">{BEGIN To_label}{$label insurance_payments To}{END To_label}</span>
+  <span class="rnr-control style3">{$To_editcontrol}</span>
+</div>
+{END To_fieldblock}
+	{BEGIN DateofPayment_fieldblock}
+<div data-fieldname="DateofPayment" class="rnr-field style1 {$fielddispclass_DateofPayment}">
+  <span class="rnr-label">{BEGIN DateofPayment_label}{$label insurance_payments DateofPayment}{END DateofPayment_label}</span>
+  <span class="rnr-control style3">{$DateofPayment_editcontrol}</span>
+</div>
+{END DateofPayment_fieldblock}
+	{BEGIN PaymentVoucher_fieldblock}
+<div data-fieldname="PaymentVoucher" class="rnr-field style1 {$fielddispclass_PaymentVoucher}">
+  <span class="rnr-label">{BEGIN PaymentVoucher_label}{$label insurance_payments PaymentVoucher}{END PaymentVoucher_label}</span>
+  <span class="rnr-control style3">{$PaymentVoucher_editcontrol}</span>
+</div>
+{END PaymentVoucher_fieldblock}
+	{BEGIN SysDate_fieldblock}
+<div data-fieldname="SysDate" class="rnr-field style1 {$fielddispclass_SysDate}">
+  <span class="rnr-label">{BEGIN SysDate_label}{$label insurance_payments SysDate}{END SysDate_label}</span>
+  <span class="rnr-control style3">{$SysDate_editcontrol}</span>
+</div>
+{END SysDate_fieldblock}
+	{BEGIN EnteredBy_fieldblock}
+<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
+  <span class="rnr-label">{BEGIN EnteredBy_label}{$label insurance_payments EnteredBy}{END EnteredBy_label}</span>
+  <span class="rnr-control style3">{$EnteredBy_editcontrol}</span>
+</div>
+{END EnteredBy_fieldblock}
+</td>
+</tr>
+</table></div>
+
+
+{BEGIN addbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-addbuttons {$brickclass_addbuttons}"><div class="rnr-buttons-left">
+		{BEGIN save_button}
+	<a href="#" class="rnr-button main" id="saveButton{$id}" {$savebutton_attrs}>Save</a>
+	{END save_button}
+	{BEGIN reset_button}
+	<a href="#" class="rnr-button" id="resetButton{$id}">Reset</a>
+	{END reset_button}
+	{BEGIN cancel_button}
+	<a href="#" class="rnr-button" id="cancelButton{$id}">Cancel</a>
+	{END cancel_button}
+	{BEGIN back_button}
+	<a href="#" class="rnr-button" id="backButton{$id}">Back to list</a>
+	{END back_button}
+	{BEGIN backToMenu_button}
+	<a href="#" class="rnr-button" id="backToMenuButton{$id}">Back to menu</a>
+	{END backToMenu_button}
+</div>
+</div>{END addbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+
+</div>
+{END container_all}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

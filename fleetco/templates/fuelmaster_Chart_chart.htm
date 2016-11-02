@@ -1,0 +1,290 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-chart" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+
+
+{BEGIN container_toplinks}
+<div class="rnr-c rnr-ch rnr-c-toplinks">
+<div class="rnr-hfiller"></div>
+{BEGIN security_block}
+<div  class="style1 rnr-br rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message} 
+	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+		{BEGIN embeded_log_fields}
+		<span>
+		<input type="text" name="username" {$username_attrs}>&nbsp;
+		<input type="password" name="password" {$password_attrs}>
+		</span>
+		{END embeded_log_fields}
+		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+		{BEGIN embeded_log_ctrls}
+		<span>
+		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
+			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
+			</span>
+		{END embeded_log_ctrls}
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+	{BEGIN adminarea_link}
+	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
+	{END adminarea_link}
+
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
+</div></div>
+{END security_block}
+
+
+
+</div>
+{END container_toplinks}
+
+
+
+{BEGIN container_hmenu}
+<div class="rnr-c rnr-ch rnr-c-hmenu">
+<div class="rnr-hfiller"></div>
+{BEGIN searchform_block}
+<div  class="style1 rnr-br rnr-b-search {$brickclass_search}">	<span>
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		{BEGIN searchform_search}
+			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
+		{END searchform_search}
+		{BEGIN searchform_showall}	
+		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
+		{END searchform_showall}
+	</span>
+</div>
+{END searchform_block}
+
+
+{BEGIN searchformbuttons_block}
+<div  class="style1 rnr-br rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
+<span>
+	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
+	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
+</span>
+{END searchPanelTopButtons}
+</div>
+{END searchformbuttons_block}
+
+
+{BEGIN searchsaving_block}
+<div  class="style1 rnr-br rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
+{END searchsaving_block}
+
+
+
+
+
+</div>
+{END container_hmenu}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+{BEGIN container_left}
+<div class="rnr-c rnr-cv rnr-c-left">
+
+{BEGIN menu_block}
+{$menu main}
+{END menu_block}
+
+
+{BEGIN searchPanel}
+<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
+<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+	
+	<!-- Search panel content -->
+	<div class="srchCritTop" style="display: none;">
+		Criteria:&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
+		&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
+	</div>
+	
+	<div class="addOption">
+		<span class="rnr-buttons-group">
+			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
+		</span>
+		
+		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+	</div>
+	
+
+	<table class="controlsBlock {$controls_block_class}">
+				{BEGIN searchCtrlBlock}
+		<tr class="srchPanelRow" {$filterRow_attrs}>
+			<td class="srchPanelCell">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+				<div class="rnr-searchtype">{$searchtype}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock}
+		 
+		{BEGIN searchCtrlBlock_FuelDate}
+		<tr class="srchPanelRow {$filterRow_class_FuelDate}" {$filterRow_attrs_FuelDate}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label fuelmaster_Chart FuelDate}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_FuelDate}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_FuelDate}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_FuelDate}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_FuelDate}
+		 
+		{BEGIN searchCtrlBlock_Vehicle}
+		<tr class="srchPanelRow {$filterRow_class_Vehicle}" {$filterRow_attrs_Vehicle}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label fuelmaster_Chart Vehicle}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_Vehicle}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_Vehicle}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_Vehicle}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_Vehicle}
+		 
+		{BEGIN searchCtrlBlock_Economy}
+		<tr class="srchPanelRow {$filterRow_class_Economy}" {$filterRow_attrs_Economy}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label fuelmaster_Chart Economy}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_Economy}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_Economy}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_Economy}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_Economy}
+		 
+		{BEGIN searchCtrlBlock_Fleet}
+		<tr class="srchPanelRow {$filterRow_class_Fleet}" {$filterRow_attrs_Fleet}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label fuelmaster_Chart Fleet}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_Fleet}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_Fleet}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_Fleet}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_Fleet}
+	</table>	
+
+
+	
+	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
+		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	</div>
+</div>
+
+</div></div>{END searchPanel}
+
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_recordcontrols}
+<div class="rnr-c rnr-ch rnr-c-recordcontrols">
+
+{BEGIN asearch_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_advsearch {$brickclass_toplinks_advsearch}">	<a href="fuelmaster_Chart_search.php" class="rnr-button" {$advsearchlink_attrs}>Advanced search</a>
+</div>
+{END asearch_link}
+
+
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_recordcontrols}
+
+
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+
+
+{BEGIN container_form}
+<div class="rnr-c rnr-ch rnr-c-form">
+
+
+<div  class="style1 rnr-bl rnr-b-chart {$brickclass_chart}">       {BEGIN chart_block}
+       <div id="chart_block{$id}">
+{$fuelmaster_Chart_chart 700 530}
+        </div>
+        {END chart_block}</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_form}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

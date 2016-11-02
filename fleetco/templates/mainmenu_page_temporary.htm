@@ -1,0 +1,29 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<title>{$pagetitle}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="Content-Type" content="text/html; charset=##@BUILDER.strCharset h##">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		<!--%%pagestyle%%-->
+		<!--[if IE]>
+			<link REL="stylesheet" href="styles/defaultIE.css" type="text/css">
+			<link REL="stylesheet" href="{$stylepathIE}" type="text/css">
+		<![endif]-->
+	</head>
+	
+	<body class="{$stylename}" {$bodyattrs}>
+	{BEGIN body}
+		<table   cellpadding="0" class="runner-toptable">
+			<tr class="runner-header"></tr>
+			<tr class="runner-body">
+				<td class="runner-left" >
+					{$mainmenu}
+				</td>	
+			</tr>
+			<tr class="runner-footer"></tr>
+		</table>
+	{END body}
+	</body>
+</html>

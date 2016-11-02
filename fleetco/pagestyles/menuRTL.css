@@ -1,0 +1,70 @@
+body.page-menu
+{
+padding-top:10px; padding-left:10px;
+}
+.page-menu > .rnr-page
+{
+width: 400px;
+}
+.page-menu .rnr-c-menu,
+  .rnr-pagewrapper .page-menu .rnr-c-menu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-c-menu
+{
+margin-bottom:5px;
+}
+.page-menu .rnr-c-menu,
+  .rnr-pagewrapper .page-menu .rnr-c-menu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-c-menu
+{
+min-width: 400px; display:inline-block
+}
+.page-menu .rnr-cw-menu,
+  .rnr-pagewrapper .page-menu .rnr-cw-menu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-cw-menu
+{
+text-align: center;
+}
+.page-menu .rnr-b-login_menu,
+  .rnr-pagewrapper .page-menu .rnr-b-login_menu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-b-login_menu
+{
+white-space: nowrap;
+}
+.page-menu .rnr-b-login_menu,
+  .rnr-pagewrapper .page-menu .rnr-b-login_menu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-b-login_menu
+{
+text-align: right;
+}
+.page-menu .rnr-b-login_menu > *,
+  .rnr-pagewrapper .page-menu .rnr-b-login_menu > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-b-login_menu > *
+{
+
+}
+.page-menu .rnr-b-vmenu,
+  .rnr-pagewrapper .page-menu .rnr-b-vmenu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-b-vmenu
+{
+white-space: nowrap;
+}
+.page-menu .rnr-b-vmenu,
+  .rnr-pagewrapper .page-menu .rnr-b-vmenu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-b-vmenu
+{
+text-align: right;
+}
+.page-menu .rnr-b-vmenu > *,
+  .rnr-pagewrapper .page-menu .rnr-b-vmenu > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-menu .rnr-b-vmenu > *
+{
+
+}
+body.page-menu .rnr-toptable
+{
+width:100%;
+}
+body.page-menu .rnr-top
+{
+padding-right: 5px;
+}

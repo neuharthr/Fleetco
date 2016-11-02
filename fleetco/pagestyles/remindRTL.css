@@ -1,0 +1,102 @@
+body.page-remind
+{
+padding-top:10px; padding-left:10px;
+}
+.page-remind .rnr-c-fields,
+  .rnr-pagewrapper .page-remind .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-c-fields
+{
+margin-bottom:5px;
+}
+.page-remind .rnr-c-fields,
+  .rnr-pagewrapper .page-remind .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-c-fields
+{
+min-width: 500px; display:inline-block
+}
+.page-remind .rnr-cw-fields,
+  .rnr-pagewrapper .page-remind .rnr-cw-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-cw-fields
+{
+text-align: center;
+}
+.page-remind .rnr-b-remindheader,
+  .rnr-pagewrapper .page-remind .rnr-b-remindheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindheader
+{
+white-space: nowrap;
+}
+.page-remind .rnr-b-remindheader,
+  .rnr-pagewrapper .page-remind .rnr-b-remindheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindheader
+{
+text-align: right;
+}
+.page-remind .rnr-b-remindheader > *,
+  .rnr-pagewrapper .page-remind .rnr-b-remindheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindheader > *
+{
+font-size: 120%;
+}
+.page-remind .rnr-b-message,
+  .rnr-pagewrapper .page-remind .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-message
+{
+white-space: nowrap;
+}
+.page-remind .rnr-b-message,
+  .rnr-pagewrapper .page-remind .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-message
+{
+text-align: right;
+}
+.page-remind .rnr-b-message > *,
+  .rnr-pagewrapper .page-remind .rnr-b-message > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-message > *
+{
+
+}
+.page-remind .rnr-b-remindfields,
+  .rnr-pagewrapper .page-remind .rnr-b-remindfields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindfields
+{
+white-space: nowrap;
+}
+.page-remind .rnr-b-remindfields,
+  .rnr-pagewrapper .page-remind .rnr-b-remindfields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindfields
+{
+text-align: right;
+}
+.page-remind .rnr-b-remindfields > *,
+  .rnr-pagewrapper .page-remind .rnr-b-remindfields > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindfields > *
+{
+
+}
+.page-remind .rnr-b-remindbuttons,
+  .rnr-pagewrapper .page-remind .rnr-b-remindbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindbuttons
+{
+white-space: nowrap;
+}
+.page-remind .rnr-b-remindbuttons,
+  .rnr-pagewrapper .page-remind .rnr-b-remindbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindbuttons
+{
+text-align: right;
+}
+.page-remind .rnr-b-remindbuttons > *,
+  .rnr-pagewrapper .page-remind .rnr-b-remindbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-remind .rnr-b-remindbuttons > *
+{
+
+}
+body.page-remind .rnr-toptable
+{
+width:100%;
+}
+body.page-remind .rnr-top
+{
+padding-right: 5px;
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-add" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_all}
+<div class="rnr-c rnr-cv rnr-c-all">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN addheader}
+<div  class="rnr-brickcontents style2 rnr-b-addheader {$brickclass_addheader}"><span>	<h1>{$pagetitlelabel vehiclemaster_full_cost add}</h1>
+</span></div>{END addheader}
+
+
+{BEGIN message_block}
+<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-addfields2 {$brickclass_addfields2}"><table class="fieldGrid fieldGrid2 edit">
+
+<tr>
+<td>
+	{BEGIN Fleet_fieldblock}
+<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
+  <span class="rnr-label">{BEGIN Fleet_label}{$label vehiclemaster_full_cost Fleet}{END Fleet_label}</span>
+  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+</div>
+{END Fleet_fieldblock}
+	{BEGIN Type_fieldblock}
+<div data-fieldname="Type" class="rnr-field style1 {$fielddispclass_Type}">
+  <span class="rnr-label">{BEGIN Type_label}{$label vehiclemaster_full_cost Type}{END Type_label}</span>
+  <span class="rnr-control style3">{$Type_editcontrol}</span>
+</div>
+{END Type_fieldblock}
+	{BEGIN RegDate_fieldblock}
+<div data-fieldname="RegDate" class="rnr-field style1 {$fielddispclass_RegDate}">
+  <span class="rnr-label">{BEGIN RegDate_label}{$label vehiclemaster_full_cost RegDate}{END RegDate_label}</span>
+  <span class="rnr-control style3">{$RegDate_editcontrol}</span>
+</div>
+{END RegDate_fieldblock}
+	{BEGIN RegNo_fieldblock}
+<div data-fieldname="RegNo" class="rnr-field style1 {$fielddispclass_RegNo}">
+  <span class="rnr-label">{BEGIN RegNo_label}{$label vehiclemaster_full_cost RegNo}{END RegNo_label}</span>
+  <span class="rnr-control style3">{$RegNo_editcontrol}</span>
+</div>
+{END RegNo_fieldblock}
+	{BEGIN Make_fieldblock}
+<div data-fieldname="Make" class="rnr-field style1 {$fielddispclass_Make}">
+  <span class="rnr-label">{BEGIN Make_label}{$label vehiclemaster_full_cost Make}{END Make_label}</span>
+  <span class="rnr-control style3">{$Make_editcontrol}</span>
+</div>
+{END Make_fieldblock}
+</td>
+<td>
+	{BEGIN Model_fieldblock}
+<div data-fieldname="Model" class="rnr-field style1 {$fielddispclass_Model}">
+  <span class="rnr-label">{BEGIN Model_label}{$label vehiclemaster_full_cost Model}{END Model_label}</span>
+  <span class="rnr-control style3">{$Model_editcontrol}</span>
+</div>
+{END Model_fieldblock}
+	{BEGIN Cost_fieldblock}
+<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
+  <span class="rnr-label">{BEGIN Cost_label}{$label vehiclemaster_full_cost Cost}{END Cost_label}</span>
+  <span class="rnr-control style3">{$Cost_editcontrol}</span>
+</div>
+{END Cost_fieldblock}
+	{BEGIN DriverAsigned_fieldblock}
+<div data-fieldname="DriverAsigned" class="rnr-field style1 {$fielddispclass_DriverAsigned}">
+  <span class="rnr-label">{BEGIN DriverAsigned_label}{$label vehiclemaster_full_cost DriverAsigned}{END DriverAsigned_label}</span>
+  <span class="rnr-control style3">{$DriverAsigned_editcontrol}</span>
+</div>
+{END DriverAsigned_fieldblock}
+	{BEGIN InsuranceDue_fieldblock}
+<div data-fieldname="InsuranceDue" class="rnr-field style1 {$fielddispclass_InsuranceDue}">
+  <span class="rnr-label">{BEGIN InsuranceDue_label}{$label vehiclemaster_full_cost InsuranceDue}{END InsuranceDue_label}</span>
+  <span class="rnr-control style3">{$InsuranceDue_editcontrol}</span>
+</div>
+{END InsuranceDue_fieldblock}
+</td>
+</tr>
+</table></div>
+
+
+{BEGIN addbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-addbuttons {$brickclass_addbuttons}"><div class="rnr-buttons-left">
+		{BEGIN save_button}
+	<a href="#" class="rnr-button main" id="saveButton{$id}" {$savebutton_attrs}>Save</a>
+	{END save_button}
+	{BEGIN reset_button}
+	<a href="#" class="rnr-button" id="resetButton{$id}">Reset</a>
+	{END reset_button}
+	{BEGIN cancel_button}
+	<a href="#" class="rnr-button" id="cancelButton{$id}">Cancel</a>
+	{END cancel_button}
+	{BEGIN back_button}
+	<a href="#" class="rnr-button" id="backButton{$id}">Back to list</a>
+	{END back_button}
+	{BEGIN backToMenu_button}
+	<a href="#" class="rnr-button" id="backToMenuButton{$id}">Back to menu</a>
+	{END backToMenu_button}
+</div>
+</div>{END addbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+
+</div>
+{END container_all}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

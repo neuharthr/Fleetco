@@ -1,0 +1,89 @@
+/**
+ * PDF pages' CSS rules
+ */
+ 
+ .fieldGrid.fieldGrid.fieldGrid
+ {
+	display: table;
+ }
+ 
+ .rnr-page.rnr-page.rnr-page.rnr-page
+ {
+	display: block;
+ }
+ 
+ /* rounded borders */
+.rnr-c 
+{
+	overflow: hidden;
+} 
+
+ /* for details on view page */
+.rnr-left, .rnr-center, .rnr-right {
+    display: block;
+    vertical-align: top;
+}
+
+.rnr-tab {
+	display: block;
+	vertical-align: bottom;
+}
+ 
+ /* report print styles begin */
+.rnr-report-gridblock 
+{
+	display: block;
+}
+
+.rnr-cv > * > table
+{
+	display: table;
+}
+
+.rnr-report.rnr-report.rnr-report
+{
+	width: auto;
+	padding:0px;
+}
+
+.rnr-page .rnr-top .rnr-report-gridblock .rnr-b-report.rnr-b-report{
+	width: auto;
+	padding:0px;
+}
+
+body.function-rprint
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body.page-print
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.rp-repeat{
+	margin-bottom: 10px;
+}
+
+body
+{
+	background: none !important;
+}
+
+.rnr-ch.rnr-ch.rnr-ch > *, .rnr-hfiller.rnr-hfiller.rnr-hfiller
+{
+	display:block;
+}
+
+a, .rnr-orderlink
+{
+	text-decoration: none !important;
+}
+
+[data-icon]
+{
+	display: none !important;
+}
+ /* report print styles end */

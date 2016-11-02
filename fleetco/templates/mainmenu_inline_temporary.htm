@@ -1,0 +1,79 @@
+##foreach @TMENU as @m0 filter !@m0.parent##
+##foreach @TMENU as @menu filter @menu.id=@m0.id##
+##if @TMARKED.mainParent.id==@m0.id##
+	<tr id="item##@m0.id##" view="topitem" class="runner-b-vmenu runner-vmenu tree temporary ##@m0.type####if exists(@TABLE)####if @m0.table==@TABLE.strDataSourceTable## current##endif####endif##">
+		<td class="runner-cl"></td>	
+		<td class="runner-cc">
+			##include templates\menuitem_preview.htm##
+		</td>
+		<td class="runner-cr"></td>
+	</tr>
+	##if @TMARKED.id!=@m0.id##
+	##foreach @TMENU as @m1 filter @m1.parent = @m0.id##
+	##foreach @TMENU as @menu filter @menu.id=@m1.id##
+		<tr id="item##@m1.id##" topparent="item##@m1.parent##" parent="item##@m1.parent##" class="runner-b-vmenu runner-vmenu tree subitem level1 ##@m1.type####if exists(@TABLE)####if @m1.table==@TABLE.strDataSourceTable## current##endif####endif##">
+			<td class="runner-cl"></td>	
+			<td class="runner-cc">
+				##include templates\menuitem_preview.htm##
+			</td>
+			<td class="runner-cr"></td>
+		</tr>
+		##if @TMARKED.id!=@m1.id && @TMARKED.parent>=@m1.id##
+		##foreach @TMENU as @m2 filter @m2.parent = @m1.id##
+		##foreach @TMENU as @menu filter @menu.id=@m2.id##
+				{BEGIN item##@m2.id##_menulink}
+				<tr id="item##@m2.id##" topparent="item##@m1.parent##" parent="item##@m2.parent##" class="runner-b-vmenu runner-vmenu tree subitem level2 ##@m2.type####if exists(@TABLE)####if @m2.table==@TABLE.strDataSourceTable## current##endif####endif##">
+					<td class="runner-cl"></td>	
+					<td class="runner-cc">
+						##include templates\menuitem_preview.htm##
+					</td>
+					<td class="runner-cr"></td>
+				</tr>
+				##if @TMARKED.id!=@m2.id && @TMARKED.parent>=@m2.id##	
+				##foreach @TMENU as @m3 filter @m3.parent = @m2.id##
+				##foreach @TMENU as @menu filter @menu.id=@m3.id##
+						<tr id="item##@m3.id##" topparent="item##@m1.parent##" parent="item##@m3.parent##" class="runner-b-vmenu runner-vmenu tree subitem level3 ##@m3.type####if exists(@TABLE)####if @m3.table==@TABLE.strDataSourceTable## current##endif####endif##">
+							<td class="runner-cl"></td>	
+							<td class="runner-cc">
+								##include templates\menuitem_preview.htm##
+							</td>
+							<td class="runner-cr"></td>
+						</tr>
+						##if @TMARKED.id!=@m3.id && @TMARKED.parent>=@m3.id##
+						##foreach @TMENU as @m4 filter @m4.parent = @m3.id##
+						##foreach @TMENU as @menu filter @menu.id=@m4.id##
+								<tr id="item##@m4.id##" topparent="item##@m1.parent##" parent="item##@m4.parent##" class="runner-b-vmenu runner-vmenu tree subitem level4 ##@m4.type####if exists(@TABLE)####if @m4.table==@TABLE.strDataSourceTable## current##endif####endif##">
+									<td class="runner-cl"></td>	
+									<td class="runner-cc">
+										##include templates\menuitem_preview.htm##
+									</td>
+									<td class="runner-cr"></td>
+								</tr>
+								##if @TMARKED.id!=@m4.id && @TMARKED.parent>=@m4.id##
+								##foreach @TMENU as @m5 filter @m5.parent = @m4.id##
+								##foreach @TMENU as @menu filter @menu.id=@m5.id##
+										<tr id="item##@m5.id##" topparent="item##@m1.parent##" parent="item##@m5.parent##" class="runner-b-vmenu runner-vmenu tree subitem level5 ##@m5.type####if exists(@TABLE)####if @m5.table==@TABLE.strDataSourceTable## current##endif####endif##">
+											<td class="runner-cl"></td>	
+											<td class="runner-cc">
+												##include templates\menuitem_preview.htm##
+											</td>
+											<td class="runner-cr"></td>
+										</tr>
+								##endfor##
+								##endfor##
+								##endif##
+						##endfor##
+						##endfor##
+						##endif##
+				##endfor##
+				##endfor##
+				##endif##
+		##endfor##
+		##endfor##
+		##endif##
+	##endfor##
+	##endfor##
+	##endif##
+##endif##	
+##endfor##
+##endfor##

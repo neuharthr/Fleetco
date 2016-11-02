@@ -1,0 +1,43 @@
+.runner-c-hmenu ul
+{
+	left:0px;
+}
+
+.runner-btnright
+{
+  clip: rect(auto auto auto 492px);
+}
+
+.ymp-skin {
+	top: -0.22em !important;
+}
+
+.yui-skin-sam .yui-panel .bd {
+	position: relative;
+}
+
+.runner-left *, 
+.runner-right *, 
+.runner-hmenu *
+{
+	white-space: nowrap;
+}
+
+.srchPanelCell
+{
+	white-space: normal;
+}
+
+.runner-tab {
+	display: inline;
+}
+
+.runner-b-masterprintheader *{
+	white-space: nowrap;
+}
+
+.rnr-buttons-left .rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink {
+	color: inherit;
+	right: auto;
+	position: absolute;
+}

@@ -1,0 +1,346 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+{BEGIN printheader}
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel fuelmaster_reporting print}</h1>
+</div>{END printheader}
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN Id_fieldheadercolumn}
+<th class="runner-cc {$Id_class}" {$Id_style}>
+	{BEGIN Id_fieldheader}
+	<b>{$label fuelmaster_reporting Id}</b>
+	{END Id_fieldheader}
+</th>
+{END Id_fieldheadercolumn}
+	{BEGIN SystemDate_fieldheadercolumn}
+<th class="runner-cc {$SystemDate_class}" {$SystemDate_style}>
+	{BEGIN SystemDate_fieldheader}
+	<b>{$label fuelmaster_reporting SystemDate}</b>
+	{END SystemDate_fieldheader}
+</th>
+{END SystemDate_fieldheadercolumn}
+	{BEGIN Fleet_fieldheadercolumn}
+<th class="runner-cc {$Fleet_class}" {$Fleet_style}>
+	{BEGIN Fleet_fieldheader}
+	<b>{$label fuelmaster_reporting Fleet}</b>
+	{END Fleet_fieldheader}
+</th>
+{END Fleet_fieldheadercolumn}
+	{BEGIN FuelDate_fieldheadercolumn}
+<th class="runner-cc {$FuelDate_class}" {$FuelDate_style}>
+	{BEGIN FuelDate_fieldheader}
+	<b>{$label fuelmaster_reporting FuelDate}</b>
+	{END FuelDate_fieldheader}
+</th>
+{END FuelDate_fieldheadercolumn}
+	{BEGIN Vehicle_fieldheadercolumn}
+<th class="runner-cc {$Vehicle_class}" {$Vehicle_style}>
+	{BEGIN Vehicle_fieldheader}
+	<b>{$label fuelmaster_reporting Vehicle}</b>
+	{END Vehicle_fieldheader}
+</th>
+{END Vehicle_fieldheadercolumn}
+	{BEGIN FuelStation_fieldheadercolumn}
+<th class="runner-cc {$FuelStation_class}" {$FuelStation_style}>
+	{BEGIN FuelStation_fieldheader}
+	<b>{$label fuelmaster_reporting FuelStation}</b>
+	{END FuelStation_fieldheader}
+</th>
+{END FuelStation_fieldheadercolumn}
+	{BEGIN MeterReading_fieldheadercolumn}
+<th class="runner-cc {$MeterReading_class}" {$MeterReading_style}>
+	{BEGIN MeterReading_fieldheader}
+	<b>{$label fuelmaster_reporting MeterReading}</b>
+	{END MeterReading_fieldheader}
+</th>
+{END MeterReading_fieldheadercolumn}
+	{BEGIN LitersPumped_fieldheadercolumn}
+<th class="runner-cc {$LitersPumped_class}" {$LitersPumped_style}>
+	{BEGIN LitersPumped_fieldheader}
+	<b>{$label fuelmaster_reporting LitersPumped}</b>
+	{END LitersPumped_fieldheader}
+</th>
+{END LitersPumped_fieldheadercolumn}
+	{BEGIN PricePerLiter_fieldheadercolumn}
+<th class="runner-cc {$PricePerLiter_class}" {$PricePerLiter_style}>
+	{BEGIN PricePerLiter_fieldheader}
+	<b>{$label fuelmaster_reporting PricePerLiter}</b>
+	{END PricePerLiter_fieldheader}
+</th>
+{END PricePerLiter_fieldheadercolumn}
+	{BEGIN Cost_fieldheadercolumn}
+<th class="runner-cc {$Cost_class}" {$Cost_style}>
+	{BEGIN Cost_fieldheader}
+	<b>{$label fuelmaster_reporting Cost}</b>
+	{END Cost_fieldheader}
+</th>
+{END Cost_fieldheadercolumn}
+	{BEGIN LastMileage_fieldheadercolumn}
+<th class="runner-cc {$LastMileage_class}" {$LastMileage_style}>
+	{BEGIN LastMileage_fieldheader}
+	<b>{$label fuelmaster_reporting LastMileage}</b>
+	{END LastMileage_fieldheader}
+</th>
+{END LastMileage_fieldheadercolumn}
+	{BEGIN Economy_fieldheadercolumn}
+<th class="runner-cc {$Economy_class}" {$Economy_style}>
+	{BEGIN Economy_fieldheader}
+	<b>{$label fuelmaster_reporting Economy}</b>
+	{END Economy_fieldheader}
+</th>
+{END Economy_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN Id_fieldcolumn}
+<td  class="runner-cc {$Id_class}" {$Id_style} {$recordattrs}>
+	{$Id_value}
+</td>
+{END Id_fieldcolumn}
+	{BEGIN SystemDate_fieldcolumn}
+<td  class="runner-cc {$SystemDate_class}" {$SystemDate_style} {$recordattrs}>
+	{$SystemDate_value}
+</td>
+{END SystemDate_fieldcolumn}
+	{BEGIN Fleet_fieldcolumn}
+<td  class="runner-cc {$Fleet_class}" {$Fleet_style} {$recordattrs}>
+	{$Fleet_value}
+</td>
+{END Fleet_fieldcolumn}
+	{BEGIN FuelDate_fieldcolumn}
+<td  class="runner-cc {$FuelDate_class}" {$FuelDate_style} {$recordattrs}>
+	{$FuelDate_value}
+</td>
+{END FuelDate_fieldcolumn}
+	{BEGIN Vehicle_fieldcolumn}
+<td  class="runner-cc {$Vehicle_class}" {$Vehicle_style} {$recordattrs}>
+	{$Vehicle_value}
+</td>
+{END Vehicle_fieldcolumn}
+	{BEGIN FuelStation_fieldcolumn}
+<td  class="runner-cc {$FuelStation_class}" {$FuelStation_style} {$recordattrs}>
+	{$FuelStation_value}
+</td>
+{END FuelStation_fieldcolumn}
+	{BEGIN MeterReading_fieldcolumn}
+<td  class="runner-cc {$MeterReading_class}" {$MeterReading_style} {$recordattrs}>
+	{$MeterReading_value}
+</td>
+{END MeterReading_fieldcolumn}
+	{BEGIN LitersPumped_fieldcolumn}
+<td  class="runner-cc {$LitersPumped_class}" {$LitersPumped_style} {$recordattrs}>
+	{$LitersPumped_value}
+</td>
+{END LitersPumped_fieldcolumn}
+	{BEGIN PricePerLiter_fieldcolumn}
+<td  class="runner-cc {$PricePerLiter_class}" {$PricePerLiter_style} {$recordattrs}>
+	{$PricePerLiter_value}
+</td>
+{END PricePerLiter_fieldcolumn}
+	{BEGIN Cost_fieldcolumn}
+<td  class="runner-cc {$Cost_class}" {$Cost_style} {$recordattrs}>
+	{$Cost_value}
+</td>
+{END Cost_fieldcolumn}
+	{BEGIN LastMileage_fieldcolumn}
+<td  class="runner-cc {$LastMileage_class}" {$LastMileage_style} {$recordattrs}>
+	{$LastMileage_value}
+</td>
+{END LastMileage_fieldcolumn}
+	{BEGIN Economy_fieldcolumn}
+<td  class="runner-cc {$Economy_class}" {$Economy_style} {$recordattrs}>
+	{$Economy_value}
+</td>
+{END Economy_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+	{END grid_row}
+
+
+	{BEGIN totals_row}
+<tr class="rnr-bottomrow style1">
+	{BEGIN totals_record}
+		{BEGIN Id_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Id_fieldfootercolumn}
+	{BEGIN SystemDate_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END SystemDate_fieldfootercolumn}
+	{BEGIN Fleet_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Fleet_fieldfootercolumn}
+	{BEGIN FuelDate_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END FuelDate_fieldfootercolumn}
+	{BEGIN Vehicle_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Vehicle_fieldfootercolumn}
+	{BEGIN FuelStation_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END FuelStation_fieldfootercolumn}
+	{BEGIN MeterReading_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END MeterReading_fieldfootercolumn}
+	{BEGIN LitersPumped_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+	{BEGIN LitersPumped_showtotal}
+			Total:
+	{$LitersPumped_total}
+	{END LitersPumped_showtotal}
+</td>
+{END LitersPumped_fieldfootercolumn}
+	{BEGIN PricePerLiter_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END PricePerLiter_fieldfootercolumn}
+	{BEGIN Cost_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+	{BEGIN Cost_showtotal}
+			Total:
+	{$Cost_total}
+	{END Cost_showtotal}
+</td>
+{END Cost_fieldfootercolumn}
+	{BEGIN LastMileage_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END LastMileage_fieldfootercolumn}
+	{BEGIN Economy_fieldfootercolumn}
+<td class="rnr-cc rnr-bc rnr-clast">
+	{BEGIN Economy_showtotal}
+			Average:
+	{$Economy_total}
+	{END Economy_showtotal}
+</td>
+{END Economy_fieldfootercolumn}
+
+	<td class="rnr-edge">&nbsp;</td>
+	{BEGIN endrecordtotals_block}
+	<td class="rnr-cs"></td>
+	{END endrecordtotals_block}
+	{END totals_record}
+</tr>
+{END totals_row}
+
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

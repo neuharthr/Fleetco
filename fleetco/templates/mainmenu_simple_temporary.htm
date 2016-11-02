@@ -1,0 +1,29 @@
+##fndef SubMenu##
+	##foreach @TMENU as @submenu filter @submenu.parent = @V.id##
+		##if @first##
+			<ul id="group##@submenu.id##">
+		##endif##
+				<li parent="group##@submenu.parent##" class="##@submenu.type####if exists(@TABLE)####if @submenu.table==@TABLE.strDataSourceTable## current##endif####endif##">
+					<div id="item##@submenu.id##">##include templates\menuitem_preview.htm @menu=@submenu##</div>
+					##SubMenu @submenu##
+				</li>
+		##if @last##
+			</ul>
+		##endif##
+	##endfor##
+##endfndef##
+
+##foreach @TMENU as @menu filter !@menu.parent##
+<tr ##if @TMARKED.mainParent.id!=@menu.id##id="item##@menu.id##"##endif## view="topitem" class="runner-b-vmenu runner-vmenu simple temporary ##@menu.type####if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif##">
+	<td class="runner-cl"></td>	
+	<td class="runner-cc">
+		##if @TMARKED.mainParent.id==@menu.id##
+			<div id="item##@menu.id##">##include templates\menuitem_preview.htm##</div>
+			##SubMenu @menu##
+		##else##
+			##include templates\menuitem_preview.htm##
+		##endif##
+	</td>
+	<td class="runner-cr"></td>
+</tr>
+##endfor##

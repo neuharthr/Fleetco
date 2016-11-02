@@ -1,0 +1,102 @@
+body.page-search
+{
+padding-top:10px; padding-left:10px;
+}
+.page-search .rnr-c-fields,
+  .rnr-pagewrapper .page-search .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-c-fields
+{
+margin-bottom:5px;
+}
+.page-search .rnr-c-fields,
+  .rnr-pagewrapper .page-search .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-c-fields
+{
+min-width: 500px; display:inline-block
+}
+.page-search .rnr-cw-fields,
+  .rnr-pagewrapper .page-search .rnr-cw-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-cw-fields
+{
+text-align: center;
+}
+.page-search .rnr-b-srchheader,
+  .rnr-pagewrapper .page-search .rnr-b-srchheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchheader
+{
+white-space: nowrap;
+}
+.page-search .rnr-b-srchheader,
+  .rnr-pagewrapper .page-search .rnr-b-srchheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchheader
+{
+text-align: right;
+}
+.page-search .rnr-b-srchheader > *,
+  .rnr-pagewrapper .page-search .rnr-b-srchheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchheader > *
+{
+font-size: 120%;
+}
+.page-search .rnr-b-srchconditions,
+  .rnr-pagewrapper .page-search .rnr-b-srchconditions,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchconditions
+{
+white-space: nowrap;
+}
+.page-search .rnr-b-srchconditions,
+  .rnr-pagewrapper .page-search .rnr-b-srchconditions,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchconditions
+{
+text-align: right;
+}
+.page-search .rnr-b-srchconditions > *,
+  .rnr-pagewrapper .page-search .rnr-b-srchconditions > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchconditions > *
+{
+
+}
+.page-search .rnr-b-srchfields,
+  .rnr-pagewrapper .page-search .rnr-b-srchfields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchfields
+{
+white-space: nowrap;
+}
+.page-search .rnr-b-srchfields,
+  .rnr-pagewrapper .page-search .rnr-b-srchfields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchfields
+{
+text-align: right;
+}
+.page-search .rnr-b-srchfields > *,
+  .rnr-pagewrapper .page-search .rnr-b-srchfields > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchfields > *
+{
+
+}
+.page-search .rnr-b-srchbuttons,
+  .rnr-pagewrapper .page-search .rnr-b-srchbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchbuttons
+{
+white-space: nowrap;
+}
+.page-search .rnr-b-srchbuttons,
+  .rnr-pagewrapper .page-search .rnr-b-srchbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchbuttons
+{
+text-align: right;
+}
+.page-search .rnr-b-srchbuttons > *,
+  .rnr-pagewrapper .page-search .rnr-b-srchbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-search .rnr-b-srchbuttons > *
+{
+
+}
+body.page-search .rnr-toptable
+{
+width:100%;
+}
+body.page-search .rnr-top
+{
+padding-right: 5px;
+}

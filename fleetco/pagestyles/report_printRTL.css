@@ -1,0 +1,144 @@
+body.page-report_print
+{
+padding-top:10px; padding-left:10px;
+}
+.page-report_print .rnr-c-grid,
+  .rnr-pagewrapper .page-report_print .rnr-c-grid,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-c-grid
+{
+margin-bottom:5px;
+}
+.page-report_print .rnr-b-report_print,
+  .rnr-pagewrapper .page-report_print .rnr-b-report_print,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-report_print
+{
+white-space: nowrap;
+}
+.page-report_print .rnr-b-report_print,
+  .rnr-pagewrapper .page-report_print .rnr-b-report_print,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-report_print
+{
+text-align: right;
+}
+.page-report_print .rnr-b-report_print > *,
+  .rnr-pagewrapper .page-report_print .rnr-b-report_print > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-report_print > *
+{
+
+}
+body.page-report_print .rnr-center
+{
+padding-right: 5px;
+}
+.page-report_print .rnr-c-pdf,
+  .rnr-pagewrapper .page-report_print .rnr-c-pdf,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-c-pdf
+{
+margin-bottom:5px;
+}
+.page-report_print .rnr-b-printbuttons,
+  .rnr-pagewrapper .page-report_print .rnr-b-printbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-printbuttons
+{
+white-space: nowrap;
+}
+.page-report_print .rnr-b-printbuttons,
+  .rnr-pagewrapper .page-report_print .rnr-b-printbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-printbuttons
+{
+text-align: right;
+}
+.page-report_print .rnr-b-printbuttons > *,
+  .rnr-pagewrapper .page-report_print .rnr-b-printbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-printbuttons > *
+{
+
+}
+.page-report_print .rnr-c-master,
+  .rnr-pagewrapper .page-report_print .rnr-c-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-c-master
+{
+margin-bottom:5px;
+}
+.page-report_print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .page-report_print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-masterinfoprint
+{
+white-space: nowrap;
+}
+.page-report_print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .page-report_print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-masterinfoprint
+{
+text-align: right;
+}
+.page-report_print .rnr-b-masterinfoprint > *,
+  .rnr-pagewrapper .page-report_print .rnr-b-masterinfoprint > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-masterinfoprint > *
+{
+
+}
+.page-report_print .rnr-c-pageheader,
+  .rnr-pagewrapper .page-report_print .rnr-c-pageheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-c-pageheader
+{
+margin-bottom:5px;
+}
+.page-report_print .rnr-b-report_style,
+  .rnr-pagewrapper .page-report_print .rnr-b-report_style,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-report_style
+{
+white-space: nowrap;
+}
+.page-report_print .rnr-b-report_style,
+  .rnr-pagewrapper .page-report_print .rnr-b-report_style,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-report_style
+{
+text-align: right;
+}
+.page-report_print .rnr-b-report_style > *,
+  .rnr-pagewrapper .page-report_print .rnr-b-report_style > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-report_style > *
+{
+
+}
+.page-report_print .rnr-b-printheader,
+  .rnr-pagewrapper .page-report_print .rnr-b-printheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-printheader
+{
+white-space: nowrap;
+}
+.page-report_print .rnr-b-printheader,
+  .rnr-pagewrapper .page-report_print .rnr-b-printheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-printheader
+{
+text-align: right;
+}
+.page-report_print .rnr-b-printheader > *,
+  .rnr-pagewrapper .page-report_print .rnr-b-printheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-printheader > *
+{
+font-size: 140%;
+}
+.page-report_print .rnr-b-page_of_print,
+  .rnr-pagewrapper .page-report_print .rnr-b-page_of_print,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-page_of_print
+{
+white-space: nowrap;
+}
+.page-report_print .rnr-b-page_of_print,
+  .rnr-pagewrapper .page-report_print .rnr-b-page_of_print,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-page_of_print
+{
+text-align: right;
+}
+.page-report_print .rnr-b-page_of_print > *,
+  .rnr-pagewrapper .page-report_print .rnr-b-page_of_print > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-report_print .rnr-b-page_of_print > *
+{
+
+}
+body.page-report_print .rnr-top
+{
+padding-right: 5px;
+}

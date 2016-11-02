@@ -1,0 +1,21 @@
+##foreach @BUILDER.Tables as @t filter IsAdminTable(@t)##
+<td id="item##@t.strShortTableName##" view="topitem" class="Leaf" originalMenuTag="$$originalMenuTag">
+	<table class="runner-c" cellpadding="0">
+		<tr class="runner-menutab##if exists(@TABLE)####if @t.strDataSourceTable==@TABLE.strDataSourceTable## current##endif####endif##">
+			<td class="runner-cl"><img src="images/spacer.gif"></td>
+			<td class="runner-cc">	
+				<a id="itemlink##@t.strShortTableName##">
+				##if @t.strDataSourceTable=="admin_users"##
+					##message AA_ADDEDIT_USERS##
+				##elseif @t.strDataSourceTable=="admin_members"##
+					##message AA_ASSIGN_USERS##
+				##elseif @t.strDataSourceTable=="admin_rights"##
+					##message AA_PERMISSIONS##
+				##endif##
+				</a>
+			</td>
+			<td class="runner-cr"><img src="images/spacer.gif"></td>
+		</tr>
+	</table>	
+</td>
+##endfor##	

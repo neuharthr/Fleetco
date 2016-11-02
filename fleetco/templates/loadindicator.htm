@@ -1,0 +1,68 @@
+
+<!-- Loading begin -->
+	<div class="load_hide" id="loading">
+	<style>
+	/* ------------------ Load ------------------ */
+	div.load_go {display:block;}
+	div.load_hide {display:none;}
+	div.load_fon 
+	{
+		position:fixed !important;
+		position:absolute;
+		z-index:3;
+		width:100%;
+		height:100%;
+		background-color:#000;
+		opacity: 0.20;
+		filter: alpha(opacity=20);
+		background-image:url(images/disable_fon.gif); 
+	}
+	div.load_main 
+	{
+		position:fixed !important; 
+		position:absolute; 
+		width:100%; 
+		height:100%; 
+		z-index:1000; 
+	}
+	div.load_main div.l1 
+	{
+		width:150px;
+		height:50px;
+		cursor:auto; 
+	}
+	div.load_main div.l2 {padding:12px 0;}
+	div.load_main span.text
+	{
+		margin-left:10px;
+		font-size:12px;
+		vertical-align:middle;
+		font-weight:bold;		
+	}
+	</style>	
+	<div class="load_main">
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td>
+					<div class="l1" align="center">
+						<div class="l2"><img src="include/img/loading.gif" alt=" " align="absmiddle"><span class="text">Loading .....</span>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!--[if IE]>
+	<iframe src="javascript:false;" id="frame_menu" frameborder="1" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" style="width:100%;height:100%;background:white;position:absolute;display:block;opacity:0;filter:alpha(opacity=0);z-index:1000;" > </iframe>
+	<![endif]-->
+	<div class="load_fon"></div>
+	</div>
+	<!-- Loading end -->
+	<SCRIPT LANGUAGE="JavaScript">
+		size_window = getWindowDimensions();
+		$("div.load_main").css("padding-left",""+(size_window[0]/2 - 75)+"px");
+		$("div.load_main").css("padding-top",""+(size_window[1]/2 - 25)+"px");
+		document.getElementById("loading").className="load_go";
+		window.stopload=false;
+		setTimeout("if(!window.stopload){document.getElementById('loading').className='load_hide';window.stopload=true;}", 1500);
+	</script>

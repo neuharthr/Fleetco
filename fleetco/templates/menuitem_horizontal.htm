@@ -1,0 +1,8 @@
+##if @menu.type!="Separator"##
+&nbsp;<a {$item##@menu.id##_menulink_attrs} {BEGIN item##@menu.id##_current}class="curlink"{END item##@menu.id##_current}>{$item##@menu.id##_title}</a>&nbsp;
+##elseif @menu.parent##
+&nbsp;
+{$item##@menu.id##_separator}
+&nbsp;
+##endif##
+

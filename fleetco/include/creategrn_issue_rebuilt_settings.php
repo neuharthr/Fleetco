@@ -1,0 +1,3496 @@
+<?php
+require_once(getabspath("classes/cipherer.php"));
+
+
+
+
+$tdatacreategrn_issue_rebuilt = array();
+	$tdatacreategrn_issue_rebuilt[".truncateText"] = true;
+	$tdatacreategrn_issue_rebuilt[".NumberOfChars"] = 80;
+	$tdatacreategrn_issue_rebuilt[".ShortName"] = "creategrn_issue_rebuilt";
+	$tdatacreategrn_issue_rebuilt[".OwnerID"] = "";
+	$tdatacreategrn_issue_rebuilt[".OriginalTable"] = "creategrn";
+
+//	field labels
+$fieldLabelscreategrn_issue_rebuilt = array();
+$fieldToolTipscreategrn_issue_rebuilt = array();
+$pageTitlescreategrn_issue_rebuilt = array();
+
+if(mlang_getcurrentlang()=="English")
+{
+	$fieldLabelscreategrn_issue_rebuilt["English"] = array();
+	$fieldToolTipscreategrn_issue_rebuilt["English"] = array();
+	$pageTitlescreategrn_issue_rebuilt["English"] = array();
+	$fieldLabelscreategrn_issue_rebuilt["English"]["ItemCode"] = "Item Code";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["ItemCode"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Brand"] = "Brand";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Brand"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Description"] = "Descr.";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Description"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Supplier"] = "Supplier";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Supplier"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Quantity"] = "Qty";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Quantity"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["RemovedFrom"] = "Vehicle";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["SystemDate"] = "System Date";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["SystemDate"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["EnteredBy"] = "Entered";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["ApprovedBy"] = "Edited By";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Status"] = "Type";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Status"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["ID"] = "ID";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["ID"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["RefNumber"] = "Ref No.";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["RefNumber"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Fleet"] = "Fleet";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Fleet"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["GRNDate"] = "Date";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["GRNDate"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["UnitPrice"] = "Rate";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["CurrentStock"] = "In-Stock";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["PriceLink"] = "Cost Code";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["PriceLink"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Cost"] = "Cost";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Cost"] = "";
+	$fieldLabelscreategrn_issue_rebuilt["English"]["Remarks"] = "Remarks";
+	$fieldToolTipscreategrn_issue_rebuilt["English"]["Remarks"] = "";
+	if (count($fieldToolTipscreategrn_issue_rebuilt["English"]))
+		$tdatacreategrn_issue_rebuilt[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="")
+{
+	$fieldLabelscreategrn_issue_rebuilt[""] = array();
+	$fieldToolTipscreategrn_issue_rebuilt[""] = array();
+	$pageTitlescreategrn_issue_rebuilt[""] = array();
+	if (count($fieldToolTipscreategrn_issue_rebuilt[""]))
+		$tdatacreategrn_issue_rebuilt[".isUseToolTips"] = true;
+}
+
+
+	$tdatacreategrn_issue_rebuilt[".NCSearch"] = true;
+
+
+
+$tdatacreategrn_issue_rebuilt[".shortTableName"] = "creategrn_issue_rebuilt";
+$tdatacreategrn_issue_rebuilt[".nSecOptions"] = 0;
+$tdatacreategrn_issue_rebuilt[".recsPerRowPrint"] = 1;
+$tdatacreategrn_issue_rebuilt[".mainTableOwnerID"] = "";
+$tdatacreategrn_issue_rebuilt[".moveNext"] = 1;
+$tdatacreategrn_issue_rebuilt[".entityType"] = 1;
+
+$tdatacreategrn_issue_rebuilt[".strOriginalTableName"] = "creategrn";
+
+		 
+
+
+
+$tdatacreategrn_issue_rebuilt[".showAddInPopup"] = false;
+
+$tdatacreategrn_issue_rebuilt[".showEditInPopup"] = false;
+
+$tdatacreategrn_issue_rebuilt[".showViewInPopup"] = false;
+
+//page's base css files names
+$popupPagesLayoutNames = array();
+$tdatacreategrn_issue_rebuilt[".popupPagesLayoutNames"] = $popupPagesLayoutNames;
+
+
+$tdatacreategrn_issue_rebuilt[".fieldsForRegister"] = array();
+
+	$tdatacreategrn_issue_rebuilt[".listAjax"] = true;
+
+	$tdatacreategrn_issue_rebuilt[".audit"] = false;
+
+	$tdatacreategrn_issue_rebuilt[".locking"] = false;
+
+$tdatacreategrn_issue_rebuilt[".edit"] = true;
+$tdatacreategrn_issue_rebuilt[".afterEditAction"] = 1;
+$tdatacreategrn_issue_rebuilt[".closePopupAfterEdit"] = 1;
+$tdatacreategrn_issue_rebuilt[".afterEditActionDetTable"] = "";
+
+$tdatacreategrn_issue_rebuilt[".add"] = true;
+$tdatacreategrn_issue_rebuilt[".afterAddAction"] = 1;
+$tdatacreategrn_issue_rebuilt[".closePopupAfterAdd"] = 1;
+$tdatacreategrn_issue_rebuilt[".afterAddActionDetTable"] = "Detail tables not found!";
+
+$tdatacreategrn_issue_rebuilt[".list"] = true;
+
+$tdatacreategrn_issue_rebuilt[".view"] = true;
+
+$tdatacreategrn_issue_rebuilt[".import"] = true;
+
+$tdatacreategrn_issue_rebuilt[".exportTo"] = true;
+
+$tdatacreategrn_issue_rebuilt[".printFriendly"] = true;
+
+$tdatacreategrn_issue_rebuilt[".delete"] = true;
+
+$tdatacreategrn_issue_rebuilt[".showSimpleSearchOptions"] = false;
+
+// search Saving settings
+$tdatacreategrn_issue_rebuilt[".searchSaving"] = false;
+//
+
+$tdatacreategrn_issue_rebuilt[".showSearchPanel"] = true;
+		$tdatacreategrn_issue_rebuilt[".flexibleSearch"] = true;
+
+$tdatacreategrn_issue_rebuilt[".isUseAjaxSuggest"] = true;
+
+$tdatacreategrn_issue_rebuilt[".rowHighlite"] = true;
+
+
+
+$tdatacreategrn_issue_rebuilt[".addPageEvents"] = false;
+
+// use timepicker for search panel
+$tdatacreategrn_issue_rebuilt[".isUseTimeForSearch"] = false;
+
+
+
+
+
+$tdatacreategrn_issue_rebuilt[".allSearchFields"] = array();
+$tdatacreategrn_issue_rebuilt[".filterFields"] = array();
+$tdatacreategrn_issue_rebuilt[".requiredSearchFields"] = array();
+
+$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Status";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Fleet";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "RemovedFrom";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "GRNDate";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "ItemCode";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Remarks";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Quantity";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "PriceLink";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Brand";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Description";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Supplier";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "UnitPrice";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "Cost";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "EnteredBy";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "CurrentStock";
+	$tdatacreategrn_issue_rebuilt[".allSearchFields"][] = "SystemDate";
+	
+
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"] = array();
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "ID";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "SystemDate";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "ApprovedBy";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "RefNumber";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".googleLikeFields"][] = "Remarks";
+
+
+$tdatacreategrn_issue_rebuilt[".advSearchFields"] = array();
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".advSearchFields"][] = "SystemDate";
+
+$tdatacreategrn_issue_rebuilt[".tableType"] = "list";
+
+$tdatacreategrn_issue_rebuilt[".printerPageOrientation"] = 0;
+$tdatacreategrn_issue_rebuilt[".nPrinterPageScale"] = 100;
+
+$tdatacreategrn_issue_rebuilt[".nPrinterSplitRecords"] = 40;
+
+$tdatacreategrn_issue_rebuilt[".nPrinterPDFSplitRecords"] = 40;
+
+
+
+$tdatacreategrn_issue_rebuilt[".geocodingEnabled"] = false;
+
+
+
+
+
+$tdatacreategrn_issue_rebuilt[".listGridLayout"] = 3;
+
+
+
+
+
+// view page pdf
+$tdatacreategrn_issue_rebuilt[".isViewPagePDF"] = true;
+$tdatacreategrn_issue_rebuilt[".nViewPagePDFScale"] = 100;
+
+// print page pdf
+$tdatacreategrn_issue_rebuilt[".isPrinterPagePDF"] = true;
+$tdatacreategrn_issue_rebuilt[".nPrinterPagePDFScale"] = 100;
+
+
+$tdatacreategrn_issue_rebuilt[".pageSize"] = 20;
+
+$tdatacreategrn_issue_rebuilt[".warnLeavingPages"] = true;
+
+
+
+$tstrOrderBy = "ORDER BY CurrentStock DESC";
+if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
+	$tstrOrderBy = "order by ".$tstrOrderBy;
+$tdatacreategrn_issue_rebuilt[".strOrderBy"] = $tstrOrderBy;
+
+$tdatacreategrn_issue_rebuilt[".orderindexes"] = array();
+$tdatacreategrn_issue_rebuilt[".orderindexes"][] = array(15, (0 ? "ASC" : "DESC"), "CurrentStock");
+
+$tdatacreategrn_issue_rebuilt[".sqlHead"] = "SELECT ID,  ItemCode,  Brand,  Description,  Supplier,  Quantity,  RemovedFrom,  SystemDate,  GRNDate,  EnteredBy,  ApprovedBy,  UnitPrice,  Status,  RefNumber,  SUM(CurrentStock) AS CurrentStock,  Fleet,  PriceLink,  Quantity*UnitPrice*-1 AS Cost,  Remarks";
+$tdatacreategrn_issue_rebuilt[".sqlFrom"] = "FROM creategrn";
+$tdatacreategrn_issue_rebuilt[".sqlWhereExpr"] = "(Status =\"Rebuilt issue\")";
+$tdatacreategrn_issue_rebuilt[".sqlTail"] = "";
+
+
+
+
+
+
+
+
+
+
+
+//fill array of records per page for list and report without group fields
+$arrRPP = array();
+$arrRPP[] = 10;
+$arrRPP[] = 20;
+$arrRPP[] = 30;
+$arrRPP[] = 50;
+$arrRPP[] = 100;
+$arrRPP[] = -1;
+$tdatacreategrn_issue_rebuilt[".arrRecsPerPage"] = $arrRPP;
+
+//fill array of groups per page for report with group fields
+$arrGPP = array();
+$arrGPP[] = 1;
+$arrGPP[] = 3;
+$arrGPP[] = 5;
+$arrGPP[] = 10;
+$arrGPP[] = 50;
+$arrGPP[] = 100;
+$arrGPP[] = -1;
+$tdatacreategrn_issue_rebuilt[".arrGroupsPerPage"] = $arrGPP;
+
+$tdatacreategrn_issue_rebuilt[".highlightSearchResults"] = true;
+
+$tableKeyscreategrn_issue_rebuilt = array();
+$tableKeyscreategrn_issue_rebuilt[] = "ID";
+$tdatacreategrn_issue_rebuilt[".Keys"] = $tableKeyscreategrn_issue_rebuilt;
+
+$tdatacreategrn_issue_rebuilt[".listFields"] = array();
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "ID";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".listFields"][] = "EnteredBy";
+
+$tdatacreategrn_issue_rebuilt[".hideMobileList"] = array();
+
+
+$tdatacreategrn_issue_rebuilt[".viewFields"] = array();
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "ID";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "SystemDate";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".viewFields"][] = "ApprovedBy";
+
+$tdatacreategrn_issue_rebuilt[".addFields"] = array();
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".addFields"][] = "SystemDate";
+
+$tdatacreategrn_issue_rebuilt[".masterListFields"] = array();
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "ID";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "RefNumber";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "ApprovedBy";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".masterListFields"][] = "SystemDate";
+
+$tdatacreategrn_issue_rebuilt[".inlineAddFields"] = array();
+
+$tdatacreategrn_issue_rebuilt[".editFields"] = array();
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "SystemDate";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".editFields"][] = "ApprovedBy";
+
+$tdatacreategrn_issue_rebuilt[".inlineEditFields"] = array();
+
+$tdatacreategrn_issue_rebuilt[".exportFields"] = array();
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "ID";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "ApprovedBy";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".exportFields"][] = "SystemDate";
+
+$tdatacreategrn_issue_rebuilt[".importFields"] = array();
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "ID";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "SystemDate";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "ApprovedBy";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".importFields"][] = "Remarks";
+
+$tdatacreategrn_issue_rebuilt[".printFields"] = array();
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "ID";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Status";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Fleet";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "RemovedFrom";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "GRNDate";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "ItemCode";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Remarks";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Quantity";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "PriceLink";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Brand";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Description";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Supplier";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "UnitPrice";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "ApprovedBy";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "Cost";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "EnteredBy";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "CurrentStock";
+$tdatacreategrn_issue_rebuilt[".printFields"][] = "SystemDate";
+
+//	ID
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 1;
+	$fdata["strName"] = "ID";
+	$fdata["GoodName"] = "ID";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","ID");
+	$fdata["FieldType"] = 3;
+
+	
+		$fdata["AutoInc"] = true;
+
+	
+										
+		$fdata["bListPage"] = true;
+
+	
+	
+	
+	
+		$fdata["bViewPage"] = true;
+
+	
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "ID";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "ID";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "number";
+
+		$edata["EditParams"] = "";
+		
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["ID"] = $fdata;
+//	ItemCode
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 2;
+	$fdata["strName"] = "ItemCode";
+	$fdata["GoodName"] = "ItemCode";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","ItemCode");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "ItemCode";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "ItemCode";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Lookup wizard");
+
+	
+	
+
+// Begin Lookup settings
+				$edata["LookupType"] = 2;
+	$edata["LookupTable"] = "inventorymaster-qty";
+		$edata["autoCompleteFieldsOnEdit"] = 1;
+	$edata["autoCompleteFields"] = array();
+		$edata["autoCompleteFields"][] = array('masterF'=>"Brand", 'lookupF'=>"Brand");
+	$edata["autoCompleteFields"][] = array('masterF'=>"Description", 'lookupF'=>"Description");
+	$edata["autoCompleteFields"][] = array('masterF'=>"Supplier", 'lookupF'=>"Supplier");
+	$edata["autoCompleteFields"][] = array('masterF'=>"CurrentStock", 'lookupF'=>"SUM(Quantity)");
+	$edata["LCType"] = 0;
+
+	
+			$edata["LookupUnique"] = true;
+
+	$edata["LinkField"] = "ItemID";
+	$edata["LinkFieldType"] = 0;
+	$edata["DisplayField"] = "ItemID";
+
+	
+	$edata["LookupOrderBy"] = "ItemID";
+
+	
+	
+	
+	
+
+	
+	
+		$edata["SelectSize"] = 1;
+
+// End Lookup Settings
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["ItemCode"] = $fdata;
+//	Brand
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 3;
+	$fdata["strName"] = "Brand";
+	$fdata["GoodName"] = "Brand";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Brand");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Brand";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Brand";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Brand"] = $fdata;
+//	Description
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 4;
+	$fdata["strName"] = "Description";
+	$fdata["GoodName"] = "Description";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Description");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Description";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Description";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Description"] = $fdata;
+//	Supplier
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 5;
+	$fdata["strName"] = "Supplier";
+	$fdata["GoodName"] = "Supplier";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Supplier");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Supplier";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Supplier";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Supplier"] = $fdata;
+//	Quantity
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 6;
+	$fdata["strName"] = "Quantity";
+	$fdata["GoodName"] = "Quantity";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Quantity");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Quantity";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Quantity";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Number");
+
+	
+	
+	
+	
+	
+	
+		$vdata["DecimalDigits"] = 0;
+
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Quantity"] = $fdata;
+//	RemovedFrom
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 7;
+	$fdata["strName"] = "RemovedFrom";
+	$fdata["GoodName"] = "RemovedFrom";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","RemovedFrom");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "RemovedFrom";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "RemovedFrom";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Lookup wizard");
+
+	
+	
+
+// Begin Lookup settings
+				$edata["LookupType"] = 2;
+	$edata["LookupTable"] = "vehiclemaster";
+		$edata["autoCompleteFieldsOnEdit"] = 0;
+	$edata["autoCompleteFields"] = array();
+		$edata["LCType"] = 0;
+
+	
+			$edata["LookupUnique"] = true;
+
+	$edata["LinkField"] = "RegNo";
+	$edata["LinkFieldType"] = 0;
+	$edata["DisplayField"] = "RegNo";
+
+	
+	$edata["LookupOrderBy"] = "RegNo";
+
+	
+		$edata["UseCategory"] = true;
+	$edata["categoryFields"] = array();
+	$edata["categoryFields"][] = array( "main" => "Fleet", "lookup" => "Fleet" );
+
+	
+	
+
+	
+	
+		$edata["SelectSize"] = 1;
+
+// End Lookup Settings
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["RemovedFrom"] = $fdata;
+//	SystemDate
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 8;
+	$fdata["strName"] = "SystemDate";
+	$fdata["GoodName"] = "SystemDate";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","SystemDate");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+	
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "SystemDate";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "SystemDate";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Short Date");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["SystemDate"] = $fdata;
+//	GRNDate
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 9;
+	$fdata["strName"] = "GRNDate";
+	$fdata["GoodName"] = "GRNDate";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","GRNDate");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "GRNDate";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "GRNDate";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Short Date");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Date");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+		$edata["DateEditType"] = 2;
+	$edata["InitialYearFactor"] = 100;
+	$edata["LastYearFactor"] = 10;
+
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["GRNDate"] = $fdata;
+//	EnteredBy
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 10;
+	$fdata["strName"] = "EnteredBy";
+	$fdata["GoodName"] = "EnteredBy";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","EnteredBy");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "EnteredBy";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "EnteredBy";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["EnteredBy"] = $fdata;
+//	ApprovedBy
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 11;
+	$fdata["strName"] = "ApprovedBy";
+	$fdata["GoodName"] = "ApprovedBy";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","ApprovedBy");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+	
+	
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+	
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "ApprovedBy";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "ApprovedBy";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+		$edata["autoUpdatable"] = true;
+
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["ApprovedBy"] = $fdata;
+//	UnitPrice
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 12;
+	$fdata["strName"] = "UnitPrice";
+	$fdata["GoodName"] = "UnitPrice";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","UnitPrice");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "UnitPrice";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "UnitPrice";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Number");
+
+	
+	
+	
+	
+	
+	
+		$vdata["DecimalDigits"] = 0;
+
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["UnitPrice"] = $fdata;
+//	Status
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 13;
+	$fdata["strName"] = "Status";
+	$fdata["GoodName"] = "Status";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Status");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Status";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Status";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Status"] = $fdata;
+//	RefNumber
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 14;
+	$fdata["strName"] = "RefNumber";
+	$fdata["GoodName"] = "RefNumber";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","RefNumber");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$fdata["strField"] = "RefNumber";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "RefNumber";
+
+	
+	
+			
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "text";
+
+		$edata["EditParams"] = "";
+			$edata["EditParams"].= " maxlength=50";
+
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["RefNumber"] = $fdata;
+//	CurrentStock
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 15;
+	$fdata["strName"] = "CurrentStock";
+	$fdata["GoodName"] = "CurrentStock";
+	$fdata["ownerTable"] = "";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","CurrentStock");
+	$fdata["FieldType"] = 5;
+
+	
+	
+	
+										
+	
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "CurrentStock";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "SUM(CurrentStock)";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Number");
+
+	
+	
+	
+	
+	
+	
+		$vdata["DecimalDigits"] = 0;
+
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["CurrentStock"] = $fdata;
+//	Fleet
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 16;
+	$fdata["strName"] = "Fleet";
+	$fdata["GoodName"] = "Fleet";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Fleet");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Fleet";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Fleet";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Lookup wizard");
+
+	
+	
+
+// Begin Lookup settings
+				$edata["LookupType"] = 2;
+	$edata["LookupTable"] = "fleettype";
+		$edata["autoCompleteFieldsOnEdit"] = 0;
+	$edata["autoCompleteFields"] = array();
+		$edata["LCType"] = 0;
+
+	
+			$edata["LookupUnique"] = true;
+
+	$edata["LinkField"] = "FleetType";
+	$edata["LinkFieldType"] = 0;
+	$edata["DisplayField"] = "FleetType";
+
+	
+	$edata["LookupOrderBy"] = "FleetType";
+
+	
+	
+	
+	
+				//dependent dropdowns
+	$edata["DependentLookups"] = array();
+	$edata["DependentLookups"][] = "RemovedFrom";
+
+	
+	
+		$edata["SelectSize"] = 1;
+
+// End Lookup Settings
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Fleet"] = $fdata;
+//	PriceLink
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 17;
+	$fdata["strName"] = "PriceLink";
+	$fdata["GoodName"] = "PriceLink";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","PriceLink");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+	
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+	
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "PriceLink";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "PriceLink";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Lookup wizard");
+
+	
+	
+
+// Begin Lookup settings
+				$edata["LookupType"] = 2;
+	$edata["LookupTable"] = "inventorymaster-pricing5";
+		$edata["autoCompleteFieldsOnEdit"] = 1;
+	$edata["autoCompleteFields"] = array();
+		$edata["autoCompleteFields"][] = array('masterF'=>"UnitPrice", 'lookupF'=>"UnitPrice");
+	$edata["LCType"] = 0;
+
+	
+			$edata["LookupUnique"] = true;
+
+	$edata["LinkField"] = "ItemID";
+	$edata["LinkFieldType"] = 0;
+	$edata["DisplayField"] = "ItemID";
+
+	
+	$edata["LookupOrderBy"] = "ItemID";
+
+		$edata["LookupDesc"] = true;
+
+	
+	
+	
+
+	
+	
+		$edata["SelectSize"] = 1;
+
+// End Lookup Settings
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["PriceLink"] = $fdata;
+//	Cost
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 18;
+	$fdata["strName"] = "Cost";
+	$fdata["GoodName"] = "Cost";
+	$fdata["ownerTable"] = "";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Cost");
+	$fdata["FieldType"] = 5;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Cost";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Quantity*UnitPrice*-1";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Number");
+
+	
+	
+	
+	
+	
+	
+		$vdata["DecimalDigits"] = 0;
+
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Readonly");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+							
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Cost"] = $fdata;
+//	Remarks
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 19;
+	$fdata["strName"] = "Remarks";
+	$fdata["GoodName"] = "Remarks";
+	$fdata["ownerTable"] = "creategrn";
+	$fdata["Label"] = GetFieldLabel("creategrn_issue_rebuilt","Remarks");
+	$fdata["FieldType"] = 200;
+
+	
+	
+	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+	
+		$fdata["bEditPage"] = true;
+
+	
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Remarks";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "Remarks";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "text";
+
+		$edata["EditParams"] = "";
+			$edata["EditParams"].= " maxlength=50";
+
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+
+
+	$tdatacreategrn_issue_rebuilt["Remarks"] = $fdata;
+
+
+$tables_data["creategrn-issue-rebuilt"]=&$tdatacreategrn_issue_rebuilt;
+$field_labels["creategrn_issue_rebuilt"] = &$fieldLabelscreategrn_issue_rebuilt;
+$fieldToolTips["creategrn_issue_rebuilt"] = &$fieldToolTipscreategrn_issue_rebuilt;
+$page_titles["creategrn_issue_rebuilt"] = &$pageTitlescreategrn_issue_rebuilt;
+
+// -----------------start  prepare master-details data arrays ------------------------------//
+// tables which are detail tables for current table (master)
+$detailsTablesData["creategrn-issue-rebuilt"] = array();
+
+// tables which are master tables for current table (detail)
+$masterTablesData["creategrn-issue-rebuilt"] = array();
+
+
+// -----------------end  prepare master-details data arrays ------------------------------//
+
+require_once(getabspath("classes/sql.php"));
+
+
+
+
+
+
+
+
+
+
+function createSqlQuery_creategrn_issue_rebuilt()
+{
+$proto0=array();
+$proto0["m_strHead"] = "SELECT";
+$proto0["m_strFieldList"] = "ID,  ItemCode,  Brand,  Description,  Supplier,  Quantity,  RemovedFrom,  SystemDate,  GRNDate,  EnteredBy,  ApprovedBy,  UnitPrice,  Status,  RefNumber,  SUM(CurrentStock) AS CurrentStock,  Fleet,  PriceLink,  Quantity*UnitPrice*-1 AS Cost,  Remarks";
+$proto0["m_strFrom"] = "FROM creategrn";
+$proto0["m_strWhere"] = "(Status =\"Rebuilt issue\")";
+$proto0["m_strOrderBy"] = "ORDER BY CurrentStock DESC";
+$proto0["m_strTail"] = "";
+	
+					
+;
+						$proto0["cipherer"] = null;
+$proto2=array();
+$proto2["m_sql"] = "Status =\"Rebuilt issue\"";
+$proto2["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "Status",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto2["m_column"]=$obj;
+$proto2["m_contained"] = array();
+$proto2["m_strCase"] = "=\"Rebuilt issue\"";
+$proto2["m_havingmode"] = false;
+$proto2["m_inBrackets"] = false;
+$proto2["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto2);
+
+$proto0["m_where"] = $obj;
+$proto4=array();
+$proto4["m_sql"] = "";
+$proto4["m_uniontype"] = "SQLL_UNKNOWN";
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
+));
+
+$proto4["m_column"]=$obj;
+$proto4["m_contained"] = array();
+$proto4["m_strCase"] = "";
+$proto4["m_havingmode"] = false;
+$proto4["m_inBrackets"] = false;
+$proto4["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto4);
+
+$proto0["m_having"] = $obj;
+$proto0["m_fieldlist"] = array();
+						$proto6=array();
+			$obj = new SQLField(array(
+	"m_strName" => "ID",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto6["m_sql"] = "ID";
+$proto6["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto6["m_expr"]=$obj;
+$proto6["m_alias"] = "";
+$obj = new SQLFieldListItem($proto6);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto8=array();
+			$obj = new SQLField(array(
+	"m_strName" => "ItemCode",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto8["m_sql"] = "ItemCode";
+$proto8["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto8["m_expr"]=$obj;
+$proto8["m_alias"] = "";
+$obj = new SQLFieldListItem($proto8);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto10=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Brand",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto10["m_sql"] = "Brand";
+$proto10["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto10["m_expr"]=$obj;
+$proto10["m_alias"] = "";
+$obj = new SQLFieldListItem($proto10);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto12=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Description",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto12["m_sql"] = "Description";
+$proto12["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto12["m_expr"]=$obj;
+$proto12["m_alias"] = "";
+$obj = new SQLFieldListItem($proto12);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto14=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Supplier",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto14["m_sql"] = "Supplier";
+$proto14["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto14["m_expr"]=$obj;
+$proto14["m_alias"] = "";
+$obj = new SQLFieldListItem($proto14);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto16=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Quantity",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto16["m_sql"] = "Quantity";
+$proto16["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto16["m_expr"]=$obj;
+$proto16["m_alias"] = "";
+$obj = new SQLFieldListItem($proto16);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto18=array();
+			$obj = new SQLField(array(
+	"m_strName" => "RemovedFrom",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto18["m_sql"] = "RemovedFrom";
+$proto18["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto18["m_expr"]=$obj;
+$proto18["m_alias"] = "";
+$obj = new SQLFieldListItem($proto18);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto20=array();
+			$obj = new SQLField(array(
+	"m_strName" => "SystemDate",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto20["m_sql"] = "SystemDate";
+$proto20["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto20["m_expr"]=$obj;
+$proto20["m_alias"] = "";
+$obj = new SQLFieldListItem($proto20);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto22=array();
+			$obj = new SQLField(array(
+	"m_strName" => "GRNDate",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto22["m_sql"] = "GRNDate";
+$proto22["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto22["m_expr"]=$obj;
+$proto22["m_alias"] = "";
+$obj = new SQLFieldListItem($proto22);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto24=array();
+			$obj = new SQLField(array(
+	"m_strName" => "EnteredBy",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto24["m_sql"] = "EnteredBy";
+$proto24["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto24["m_expr"]=$obj;
+$proto24["m_alias"] = "";
+$obj = new SQLFieldListItem($proto24);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto26=array();
+			$obj = new SQLField(array(
+	"m_strName" => "ApprovedBy",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto26["m_sql"] = "ApprovedBy";
+$proto26["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto26["m_expr"]=$obj;
+$proto26["m_alias"] = "";
+$obj = new SQLFieldListItem($proto26);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto28=array();
+			$obj = new SQLField(array(
+	"m_strName" => "UnitPrice",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto28["m_sql"] = "UnitPrice";
+$proto28["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto28["m_expr"]=$obj;
+$proto28["m_alias"] = "";
+$obj = new SQLFieldListItem($proto28);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto30=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Status",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto30["m_sql"] = "Status";
+$proto30["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto30["m_expr"]=$obj;
+$proto30["m_alias"] = "";
+$obj = new SQLFieldListItem($proto30);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto32=array();
+			$obj = new SQLField(array(
+	"m_strName" => "RefNumber",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto32["m_sql"] = "RefNumber";
+$proto32["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto32["m_expr"]=$obj;
+$proto32["m_alias"] = "";
+$obj = new SQLFieldListItem($proto32);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto34=array();
+			$proto35=array();
+$proto35["m_functiontype"] = "SQLF_SUM";
+$proto35["m_arguments"] = array();
+						$obj = new SQLField(array(
+	"m_strName" => "CurrentStock",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto35["m_arguments"][]=$obj;
+$proto35["m_strFunctionName"] = "SUM";
+$obj = new SQLFunctionCall($proto35);
+
+$proto34["m_sql"] = "SUM(CurrentStock)";
+$proto34["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto34["m_expr"]=$obj;
+$proto34["m_alias"] = "CurrentStock";
+$obj = new SQLFieldListItem($proto34);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto37=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Fleet",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto37["m_sql"] = "Fleet";
+$proto37["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto37["m_expr"]=$obj;
+$proto37["m_alias"] = "";
+$obj = new SQLFieldListItem($proto37);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto39=array();
+			$obj = new SQLField(array(
+	"m_strName" => "PriceLink",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto39["m_sql"] = "PriceLink";
+$proto39["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto39["m_expr"]=$obj;
+$proto39["m_alias"] = "";
+$obj = new SQLFieldListItem($proto39);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto41=array();
+			$obj = new SQLNonParsed(array(
+	"m_sql" => "Quantity*UnitPrice*-1"
+));
+
+$proto41["m_sql"] = "Quantity*UnitPrice*-1";
+$proto41["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto41["m_expr"]=$obj;
+$proto41["m_alias"] = "Cost";
+$obj = new SQLFieldListItem($proto41);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto43=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Remarks",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto43["m_sql"] = "Remarks";
+$proto43["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto43["m_expr"]=$obj;
+$proto43["m_alias"] = "";
+$obj = new SQLFieldListItem($proto43);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto45=array();
+$proto45["m_link"] = "SQLL_MAIN";
+			$proto46=array();
+$proto46["m_strName"] = "creategrn";
+$proto46["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto46["m_columns"] = array();
+$proto46["m_columns"][] = "ID";
+$proto46["m_columns"][] = "ItemCode";
+$proto46["m_columns"][] = "Brand";
+$proto46["m_columns"][] = "Description";
+$proto46["m_columns"][] = "Supplier";
+$proto46["m_columns"][] = "Quantity";
+$proto46["m_columns"][] = "RemovedFrom";
+$proto46["m_columns"][] = "SystemDate";
+$proto46["m_columns"][] = "GRNDate";
+$proto46["m_columns"][] = "EnteredBy";
+$proto46["m_columns"][] = "ApprovedBy";
+$proto46["m_columns"][] = "UnitPrice";
+$proto46["m_columns"][] = "Status";
+$proto46["m_columns"][] = "RefNumber";
+$proto46["m_columns"][] = "CurrentStock";
+$proto46["m_columns"][] = "Fleet";
+$proto46["m_columns"][] = "PriceLink";
+$proto46["m_columns"][] = "Cost";
+$proto46["m_columns"][] = "Remarks";
+$obj = new SQLTable($proto46);
+
+$proto45["m_table"] = $obj;
+$proto45["m_sql"] = "creategrn";
+$proto45["m_alias"] = "";
+$proto45["m_srcTableName"] = "creategrn-issue-rebuilt";
+$proto47=array();
+$proto47["m_sql"] = "";
+$proto47["m_uniontype"] = "SQLL_UNKNOWN";
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
+));
+
+$proto47["m_column"]=$obj;
+$proto47["m_contained"] = array();
+$proto47["m_strCase"] = "";
+$proto47["m_havingmode"] = false;
+$proto47["m_inBrackets"] = false;
+$proto47["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto47);
+
+$proto45["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto45);
+
+$proto0["m_fromlist"][]=$obj;
+$proto0["m_groupby"] = array();
+												$proto49=array();
+						$obj = new SQLField(array(
+	"m_strName" => "ID",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto49["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto49);
+
+$proto0["m_groupby"][]=$obj;
+												$proto51=array();
+						$obj = new SQLField(array(
+	"m_strName" => "ItemCode",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto51["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto51);
+
+$proto0["m_groupby"][]=$obj;
+												$proto53=array();
+						$obj = new SQLField(array(
+	"m_strName" => "Brand",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto53["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto53);
+
+$proto0["m_groupby"][]=$obj;
+												$proto55=array();
+						$obj = new SQLField(array(
+	"m_strName" => "Description",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto55["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto55);
+
+$proto0["m_groupby"][]=$obj;
+												$proto57=array();
+						$obj = new SQLField(array(
+	"m_strName" => "Supplier",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto57["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto57);
+
+$proto0["m_groupby"][]=$obj;
+												$proto59=array();
+						$obj = new SQLField(array(
+	"m_strName" => "Quantity",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto59["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto59);
+
+$proto0["m_groupby"][]=$obj;
+												$proto61=array();
+						$obj = new SQLField(array(
+	"m_strName" => "RemovedFrom",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto61["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto61);
+
+$proto0["m_groupby"][]=$obj;
+												$proto63=array();
+						$obj = new SQLField(array(
+	"m_strName" => "SystemDate",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto63["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto63);
+
+$proto0["m_groupby"][]=$obj;
+												$proto65=array();
+						$obj = new SQLField(array(
+	"m_strName" => "GRNDate",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto65["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto65);
+
+$proto0["m_groupby"][]=$obj;
+												$proto67=array();
+						$obj = new SQLField(array(
+	"m_strName" => "EnteredBy",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto67["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto67);
+
+$proto0["m_groupby"][]=$obj;
+												$proto69=array();
+						$obj = new SQLField(array(
+	"m_strName" => "ApprovedBy",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto69["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto69);
+
+$proto0["m_groupby"][]=$obj;
+												$proto71=array();
+						$obj = new SQLField(array(
+	"m_strName" => "UnitPrice",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto71["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto71);
+
+$proto0["m_groupby"][]=$obj;
+												$proto73=array();
+						$obj = new SQLField(array(
+	"m_strName" => "Status",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto73["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto73);
+
+$proto0["m_groupby"][]=$obj;
+												$proto75=array();
+						$obj = new SQLField(array(
+	"m_strName" => "RefNumber",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto75["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto75);
+
+$proto0["m_groupby"][]=$obj;
+												$proto77=array();
+						$obj = new SQLField(array(
+	"m_strName" => "Fleet",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto77["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto77);
+
+$proto0["m_groupby"][]=$obj;
+												$proto79=array();
+						$obj = new SQLField(array(
+	"m_strName" => "PriceLink",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto79["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto79);
+
+$proto0["m_groupby"][]=$obj;
+												$proto81=array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "Quantity*UnitPrice*-1"
+));
+
+$proto81["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto81);
+
+$proto0["m_groupby"][]=$obj;
+$proto0["m_orderby"] = array();
+												$proto83=array();
+						$obj = new SQLField(array(
+	"m_strName" => "CurrentStock",
+	"m_strTable" => "creategrn",
+	"m_srcTableName" => "creategrn-issue-rebuilt"
+));
+
+$proto83["m_column"]=$obj;
+$proto83["m_bAsc"] = 0;
+$proto83["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto83);
+
+$proto0["m_orderby"][]=$obj;					
+$proto0["m_srcTableName"]="creategrn-issue-rebuilt";		
+$obj = new SQLQuery($proto0);
+
+	return $obj;
+}
+$queryData_creategrn_issue_rebuilt = createSqlQuery_creategrn_issue_rebuilt();
+
+
+	
+					
+;
+
+																			
+
+$tdatacreategrn_issue_rebuilt[".sqlquery"] = $queryData_creategrn_issue_rebuilt;
+
+include_once(getabspath("include/creategrn_issue_rebuilt_events.php"));
+$tableEvents["creategrn-issue-rebuilt"] = new eventclass_creategrn_issue_rebuilt;
+$tdatacreategrn_issue_rebuilt[".hasEvents"] = true;
+
+?>

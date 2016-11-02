@@ -1,0 +1,102 @@
+body.page-export
+{
+padding-top:10px; padding-left:10px;
+}
+.page-export .rnr-c-export,
+  .rnr-pagewrapper .page-export .rnr-c-export,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-c-export
+{
+margin-bottom:5px;
+}
+.page-export .rnr-c-export,
+  .rnr-pagewrapper .page-export .rnr-c-export,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-c-export
+{
+min-width: 500px; display:inline-block
+}
+.page-export .rnr-cw-export,
+  .rnr-pagewrapper .page-export .rnr-cw-export,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-cw-export
+{
+text-align: center;
+}
+.page-export .rnr-b-exportheader,
+  .rnr-pagewrapper .page-export .rnr-b-exportheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-exportheader
+{
+white-space: nowrap;
+}
+.page-export .rnr-b-exportheader,
+  .rnr-pagewrapper .page-export .rnr-b-exportheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-exportheader
+{
+text-align: right;
+}
+.page-export .rnr-b-exportheader > *,
+  .rnr-pagewrapper .page-export .rnr-b-exportheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-exportheader > *
+{
+font-size: 120%;
+}
+.page-export .rnr-b-exprange,
+  .rnr-pagewrapper .page-export .rnr-b-exprange,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-exprange
+{
+white-space: nowrap;
+}
+.page-export .rnr-b-exprange,
+  .rnr-pagewrapper .page-export .rnr-b-exprange,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-exprange
+{
+text-align: right;
+}
+.page-export .rnr-b-exprange > *,
+  .rnr-pagewrapper .page-export .rnr-b-exprange > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-exprange > *
+{
+
+}
+.page-export .rnr-b-expoutput,
+  .rnr-pagewrapper .page-export .rnr-b-expoutput,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-expoutput
+{
+white-space: nowrap;
+}
+.page-export .rnr-b-expoutput,
+  .rnr-pagewrapper .page-export .rnr-b-expoutput,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-expoutput
+{
+text-align: right;
+}
+.page-export .rnr-b-expoutput > *,
+  .rnr-pagewrapper .page-export .rnr-b-expoutput > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-expoutput > *
+{
+
+}
+.page-export .rnr-b-expbuttons,
+  .rnr-pagewrapper .page-export .rnr-b-expbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-expbuttons
+{
+white-space: nowrap;
+}
+.page-export .rnr-b-expbuttons,
+  .rnr-pagewrapper .page-export .rnr-b-expbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-expbuttons
+{
+text-align: right;
+}
+.page-export .rnr-b-expbuttons > *,
+  .rnr-pagewrapper .page-export .rnr-b-expbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-export .rnr-b-expbuttons > *
+{
+
+}
+body.page-export .rnr-toptable
+{
+width:100%;
+}
+body.page-export .rnr-top
+{
+padding-right: 5px;
+}

@@ -1,0 +1,208 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-edit" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_all}
+<div class="rnr-c rnr-cv rnr-c-all">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN editheader}
+<div  class="rnr-brickcontents style2 rnr-b-editheader {$brickclass_editheader}"><span>	<h1>{$pagetitlelabel maintenenace_accidentrepair edit}</h1>
+</span></div>{END editheader}
+
+
+{BEGIN message_block}
+<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-editfields2 {$brickclass_editfields2}"><table class="fieldGrid fieldGrid2 edit">
+
+<tr>
+<td>
+	{BEGIN Date_fieldblock}
+<div data-fieldname="Date" class="rnr-field style1 {$fielddispclass_Date}">
+  <span class="rnr-label">{BEGIN Date_label}{$label maintenenace_accidentrepair Date}{END Date_label}</span>
+  <span class="rnr-control style3">{$Date_editcontrol}</span>
+</div>
+{END Date_fieldblock}
+	{BEGIN MaintType_fieldblock}
+<div data-fieldname="MaintType" class="rnr-field style1 {$fielddispclass_MaintType}">
+  <span class="rnr-label">{BEGIN MaintType_label}{$label maintenenace_accidentrepair MaintType}{END MaintType_label}</span>
+  <span class="rnr-control style3">{$MaintType_editcontrol}</span>
+</div>
+{END MaintType_fieldblock}
+	{BEGIN Vehicle_fieldblock}
+<div data-fieldname="Vehicle" class="rnr-field style1 {$fielddispclass_Vehicle}">
+  <span class="rnr-label">{BEGIN Vehicle_label}{$label maintenenace_accidentrepair Vehicle}{END Vehicle_label}</span>
+  <span class="rnr-control style3">{$Vehicle_editcontrol}</span>
+</div>
+{END Vehicle_fieldblock}
+	{BEGIN Fleet_fieldblock}
+<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
+  <span class="rnr-label">{BEGIN Fleet_label}{$label maintenenace_accidentrepair Fleet}{END Fleet_label}</span>
+  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+</div>
+{END Fleet_fieldblock}
+	{BEGIN Type_fieldblock}
+<div data-fieldname="Type" class="rnr-field style1 {$fielddispclass_Type}">
+  <span class="rnr-label">{BEGIN Type_label}{$label maintenenace_accidentrepair Type}{END Type_label}</span>
+  <span class="rnr-control style3">{$Type_editcontrol}</span>
+</div>
+{END Type_fieldblock}
+	{BEGIN MeterReading_fieldblock}
+<div data-fieldname="MeterReading" class="rnr-field style1 {$fielddispclass_MeterReading}">
+  <span class="rnr-label">{BEGIN MeterReading_label}{$label maintenenace_accidentrepair MeterReading}{END MeterReading_label}</span>
+  <span class="rnr-control style3">{$MeterReading_editcontrol}</span>
+</div>
+{END MeterReading_fieldblock}
+	{BEGIN RefNo_fieldblock}
+<div data-fieldname="RefNo" class="rnr-field style1 {$fielddispclass_RefNo}">
+  <span class="rnr-label">{BEGIN RefNo_label}{$label maintenenace_accidentrepair RefNo}{END RefNo_label}</span>
+  <span class="rnr-control style3">{$RefNo_editcontrol}</span>
+</div>
+{END RefNo_fieldblock}
+	{BEGIN Supplier_fieldblock}
+<div data-fieldname="Supplier" class="rnr-field style1 {$fielddispclass_Supplier}">
+  <span class="rnr-label">{BEGIN Supplier_label}{$label maintenenace_accidentrepair Supplier}{END Supplier_label}</span>
+  <span class="rnr-control style3">{$Supplier_editcontrol}</span>
+</div>
+{END Supplier_fieldblock}
+</td>
+<td>
+	{BEGIN AccidentRef_fieldblock}
+<div data-fieldname="AccidentRef" class="rnr-field style1 {$fielddispclass_AccidentRef}">
+  <span class="rnr-label">{BEGIN AccidentRef_label}{$label maintenenace_accidentrepair AccidentRef}{END AccidentRef_label}</span>
+  <span class="rnr-control style3">{$AccidentRef_editcontrol}</span>
+</div>
+{END AccidentRef_fieldblock}
+	{BEGIN Cost_fieldblock}
+<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
+  <span class="rnr-label">{BEGIN Cost_label}{$label maintenenace_accidentrepair Cost}{END Cost_label}</span>
+  <span class="rnr-control style3">{$Cost_editcontrol}</span>
+</div>
+{END Cost_fieldblock}
+	{BEGIN PaymentVoucher_fieldblock}
+<div data-fieldname="PaymentVoucher" class="rnr-field style1 {$fielddispclass_PaymentVoucher}">
+  <span class="rnr-label">{BEGIN PaymentVoucher_label}{$label maintenenace_accidentrepair PaymentVoucher}{END PaymentVoucher_label}</span>
+  <span class="rnr-control style3">{$PaymentVoucher_editcontrol}</span>
+</div>
+{END PaymentVoucher_fieldblock}
+	{BEGIN Remarks_fieldblock}
+<div data-fieldname="Remarks" class="rnr-field style1 {$fielddispclass_Remarks}">
+  <span class="rnr-label">{BEGIN Remarks_label}{$label maintenenace_accidentrepair Remarks}{END Remarks_label}</span>
+  <span class="rnr-control style3">{$Remarks_editcontrol}</span>
+</div>
+{END Remarks_fieldblock}
+	{BEGIN Approval_fieldblock}
+<div data-fieldname="Approval" class="rnr-field style1 {$fielddispclass_Approval}">
+  <span class="rnr-label">{BEGIN Approval_label}{$label maintenenace_accidentrepair Approval}{END Approval_label}</span>
+  <span class="rnr-control style3">{$Approval_editcontrol}</span>
+</div>
+{END Approval_fieldblock}
+	{BEGIN EnteredBy_fieldblock}
+<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
+  <span class="rnr-label">{BEGIN EnteredBy_label}{$label maintenenace_accidentrepair EnteredBy}{END EnteredBy_label}</span>
+  <span class="rnr-control style3">{$EnteredBy_editcontrol}</span>
+</div>
+{END EnteredBy_fieldblock}
+	{BEGIN SysDate_fieldblock}
+<div data-fieldname="SysDate" class="rnr-field style1 {$fielddispclass_SysDate}">
+  <span class="rnr-label">{BEGIN SysDate_label}{$label maintenenace_accidentrepair SysDate}{END SysDate_label}</span>
+  <span class="rnr-control style3">{$SysDate_editcontrol}</span>
+</div>
+{END SysDate_fieldblock}
+</td>
+</tr>
+</table></div>
+
+
+{BEGIN editbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-editbuttons {$brickclass_editbuttons}"><div class="rnr-buttons-right">
+	{BEGIN prev_button}
+	<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
+	{END prev_button}
+	{BEGIN next_button}
+	<a href="#" class="rnr-button  {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
+	{END next_button}
+</div>
+<div class="rnr-buttons-left">
+		{BEGIN save_button}
+	<a href="#" class="rnr-button main" {$savebutton_attrs}>Save</a>
+	{END save_button}
+	{BEGIN reset_button}
+	<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
+	{END reset_button}
+	{BEGIN back_button}
+		<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
+	{END back_button}
+	{BEGIN close_button}
+	<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
+	{END close_button}
+		{BEGIN view_page_button}
+	<a href="#" class="rnr-button" {$view_page_button_attrs}>View</a>
+	{END view_page_button}
+</div>
+</div>{END editbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+
+</div>
+{END container_all}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

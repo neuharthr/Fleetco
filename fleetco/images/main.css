@@ -1,0 +1,207 @@
+body {
+	font-family:verdana,tahoma,helvetica;
+	padding: 10px;
+	font-size: 12px;
+	background-color:#fff !important;
+	background-image: url(desktop2.jpg);
+}
+p {
+	margin-bottom:15px;
+}
+h1 {
+	font-size:large;
+	margin-bottom:20px;
+}
+h2 {
+	font-size:14px;
+	color:#333;
+	font-weight:bold;
+	margin:10px 0;
+}
+
+.icon {
+	margin: 15px;
+}
+
+.main {
+	position: absolute;
+	top: 190px;
+	left: 280px;
+}
+
+.bh {
+	width: 637px;
+	height: 22px;
+	background:transparent url(bhead.png) no-repeat left top;
+	color:#15428B;
+	font-family:tahoma,arial,verdana,sans-serif;
+	font-size:11px;
+	font-size-adjust:none;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	padding-left:5px;
+	line-height:22px;
+	-moz-user-select:none;
+}
+
+.bb {
+	width: 637px;
+	height: 458px;
+	background:transparent url(bbody.png) no-repeat scroll left top;
+	padding: 20px 15px;
+}
+
+table {
+ 	font-family: Verdana, Arial, Tahoma, sans-serif, helvetica;
+	font-size: 12px;	
+}
+
+table th  {
+	font-weight: normal;
+	text-align: center;
+}
+
+.active {
+	text-align: center;
+}
+
+.inactive {
+	text-align: center;
+	background-color: #E0DFE3;
+}
+
+.rt table {
+	border: double 4px #CCCCCC;
+	background-color:#FFFFFF;
+}
+
+.rt td, th {
+	padding: 2px 2px 2px 5px;
+}
+
+.label {
+	background-color: #EBEADB;
+}
+
+.rl {
+	border: solid 1px #868484;
+	background-color: #FFFFFF;
+	overflow: scroll;
+	width: 600px;
+	height: 300px;
+}
+
+.rl img {
+	border: solid 1px #CCCCCC;
+	margin: 10px 10px 25px 10px;
+}
+
+.rl img.selected {
+	border: solid 3px #CCCCCC;
+}
+
+.inputselect {
+	width: 180px;
+}
+
+.ss {
+	border: solid 1px #cccccc;
+	margin-top: 20px;
+	padding: 15px;
+	width: 600px;
+}
+
+.pfp {
+	font-size: 11px;
+	border: solid 1px #cccccc;
+	margin-top: 20px;
+	padding-top:5px;
+	padding-bottom:5px;
+	width: 600px;
+}
+
+.btns {
+	position: absolute;
+	top: 420px;
+	padding-left: 10px;
+	width: 600px;
+}
+
+.sbtns {
+	position: absolute;
+	top: 180px;
+	width: 210px;
+}
+
+
+.button {
+	background:transparent url(back.png) no-repeat scroll left top;
+	height:32px;
+	width:100px;
+	border:medium none;
+	display:block;
+	left:-2px;
+	overflow:hidden;
+	position:relative;
+	text-indent:-1000px;
+}
+
+#backbtn {
+	background:transparent url(bb.png) no-repeat scroll left top;
+}
+
+#nextbtn {
+	background:transparent url(nn.png) no-repeat scroll left top;
+	cursor: pointer;
+}
+
+#savebtn {
+	background:transparent url(save.png) no-repeat scroll left top;
+	cursor: pointer;
+	margin-left: 50px;
+}
+
+#openbtn {
+	background:transparent url(open.png) no-repeat scroll left top;
+	cursor: pointer;
+}
+
+#createbtn {
+	background:transparent url(create.png) no-repeat scroll left top;
+	cursor: pointer;
+}
+
+.il {
+ 	font-family: Verdana, Arial, Tahoma, sans-serif, helvetica;
+	font-size: 12px;
+	border: none;
+}
+
+h2, h3 {
+	color:#15428B;
+	font-family:tahoma,arial,verdana,sans-serif;
+	font-size:11px;
+	font-size-adjust:none;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	padding-left:5px;
+	line-height:24px;
+}
+
+h3 {
+	font-size:10px;
+}
+
+#tables {
+	width: 350px;
+}
+
+#reports {
+	width: 300px;
+}
+
+.rtitle {
+	width: 300px;
+}

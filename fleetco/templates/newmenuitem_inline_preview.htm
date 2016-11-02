@@ -1,0 +1,13 @@
+##if @menu.type!="Separator"##
+<div>
+##if @MENU.MenuNodes[parent==@menu.id].len##
+<span class=groupbox><img alt="*" src="images/minus.gif" class="groupImg"></span>
+##endif##
+##if @menu.iconName && @menu.iconType==1##
+<img class="menu-icon" src="files/images/menuicons/##@menu.iconName h##" border=0>
+##endif##
+<a href=# ##if @menu.style## style="##@menu.style##" ##endif##>##if @menu.name.text && @menu.name.nameType=="CustomID"####custom @menu.name.text####elseif @menu.name.text####@menu.name.text 8h####elseif @menu.PageType=="WebReports"####message WEBREPORTS_SHORT####else####caption @menu.table####endif##</a>
+</div>
+##else##
+<hr>
+##endif##

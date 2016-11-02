@@ -1,0 +1,86 @@
+<table class="runner-hmenu temporary" cellpadding="0">
+	<tr>
+##foreach @TMENU as @m0 filter !@m0.parent##
+##foreach @TMENU as @menu filter @menu.id=@m0.id##
+	<td id="item##@m0.id##" view="topitem" class="##@m0.type##">
+	##include templates\topmenuitem_preview.htm##
+	##if @TMARKED.id!=@m0.id##
+	##foreach @TMENU as @m1 filter @m1.parent = @m0.id##
+	##if @first##
+		<ul id="group##@m0.id##">
+	##endif##
+	##foreach @TMENU as @menu filter @menu.id=@m1.id##
+			<li id="item##@m1.id##" parent="group##@m1.parent##" class="##@m1.type####if exists(@TABLE)####if @m1.table==@TABLE.strDataSourceTable## current##endif####endif##">
+			##include templates\menuitem_horizontal_preview.htm##
+			##if @TMARKED.id!=@m1.id && @TMARKED.parent>=@m1.id##
+			##foreach @TMENU as @m2 filter @m2.parent = @m1.id##
+			##if @first##
+				<ul id="group##@m1.id##">
+			##endif##
+			##foreach @TMENU as @menu filter @menu.id=@m2.id##
+					<li id="item##@m2.id##" parent="group##@m2.parent##" class="##@m2.type####if exists(@TABLE)####if @m2.table==@TABLE.strDataSourceTable## current##endif####endif##">
+					##include templates\menuitem_horizontal_preview.htm##
+					##if @TMARKED.id!=@m2.id && @TMARKED.parent>=@m2.id##
+					##foreach @TMENU as @m3 filter @m3.parent = @m2.id##
+					##if @first##
+						<ul id="group##@m2.id##">
+					##endif##
+					##foreach @TMENU as @menu filter @menu.id=@m3.id##
+							<li id="item##@m3.id##" parent="group##@m3.parent##" class="##@m3.type####if exists(@TABLE)####if @m3.table==@TABLE.strDataSourceTable## current##endif####endif##">
+							##include templates\menuitem_horizontal_preview.htm##
+							##if @TMARKED.id!=@m3.id && @TMARKED.parent>=@m3.id##
+							##foreach @TMENU as @m4 filter @m4.parent = @m3.id##
+							##if @first##
+								<ul id="group##@m3.id##">
+							##endif##
+							##foreach @TMENU as @menu filter @menu.id=@m4.id##
+									<li id="item##@m4.id##" parent="group##@m4.parent##" class="##@m4.type####if exists(@TABLE)####if @m4.table==@TABLE.strDataSourceTable## current##endif####endif##">
+									##include templates\menuitem_horizontal_preview.htm##
+									##if @TMARKED.id!=@m4.id && @TMARKED.parent==@m4.id##
+									##foreach @TMENU as @m5 filter @m5.parent = @m4.id##
+									##if @first##
+										<ul id="group##@m4.id##">
+									##endif##
+									##foreach @TMENU as @menu filter @menu.id=@m5.id##
+											<li id="item##@m5.id##" parent="group##@m5.parent##" class="##@m5.type####if exists(@TABLE)####if @m5.table==@TABLE.strDataSourceTable## current##endif####endif##">
+											##include templates\menuitem_horizontal_preview.htm##
+											</li>
+									##endfor##
+									##if @last##
+										</ul>
+									##endif##
+									##endfor##
+									##endif##
+									</li>
+							##endfor##
+							##if @last##
+								</ul>
+							##endif##
+							##endfor##	
+							##endif##
+							</li>
+					##endfor##
+					##if @last##
+						</ul>
+					##endif##
+					##endfor##
+					##endif##
+					</li>
+			##endfor##
+			##if @last##
+				</ul>
+			##endif##
+			##endfor##
+			##endif##
+			</li>
+	##endfor##
+	##if @last##
+		</ul>
+	##endif##
+	##endfor##
+	##endif##
+	</td>
+##endfor##
+##endfor##
+	</tr>
+</table>

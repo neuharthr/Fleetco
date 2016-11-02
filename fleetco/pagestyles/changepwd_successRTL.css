@@ -1,0 +1,84 @@
+body.page-changepwd_success
+{
+padding-top:10px; padding-left:10px;
+}
+.page-changepwd_success .rnr-c-fields,
+  .rnr-pagewrapper .page-changepwd_success .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-c-fields
+{
+margin-bottom:5px;
+}
+.page-changepwd_success .rnr-c-fields,
+  .rnr-pagewrapper .page-changepwd_success .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-c-fields
+{
+min-width: 500px; display:inline-block
+}
+.page-changepwd_success .rnr-cw-fields,
+  .rnr-pagewrapper .page-changepwd_success .rnr-cw-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-cw-fields
+{
+text-align: center;
+}
+.page-changepwd_success .rnr-b-changeheader,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changeheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changeheader
+{
+white-space: nowrap;
+}
+.page-changepwd_success .rnr-b-changeheader,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changeheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changeheader
+{
+text-align: right;
+}
+.page-changepwd_success .rnr-b-changeheader > *,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changeheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changeheader > *
+{
+font-size: 120%;
+}
+.page-changepwd_success .rnr-b-changepwd_message,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changepwd_message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changepwd_message
+{
+white-space: nowrap;
+}
+.page-changepwd_success .rnr-b-changepwd_message,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changepwd_message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changepwd_message
+{
+text-align: right;
+}
+.page-changepwd_success .rnr-b-changepwd_message > *,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changepwd_message > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changepwd_message > *
+{
+
+}
+.page-changepwd_success .rnr-b-changesuccessbutton,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changesuccessbutton,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changesuccessbutton
+{
+white-space: nowrap;
+}
+.page-changepwd_success .rnr-b-changesuccessbutton,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changesuccessbutton,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changesuccessbutton
+{
+text-align: right;
+}
+.page-changepwd_success .rnr-b-changesuccessbutton > *,
+  .rnr-pagewrapper .page-changepwd_success .rnr-b-changesuccessbutton > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-changepwd_success .rnr-b-changesuccessbutton > *
+{
+
+}
+body.page-changepwd_success .rnr-toptable
+{
+width:100%;
+}
+body.page-changepwd_success .rnr-top
+{
+padding-right: 5px;
+}

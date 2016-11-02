@@ -1,0 +1,263 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+{BEGIN printheader}
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel vehiclemaster_fuel print}</h1>
+</div>{END printheader}
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN LastMileage_fieldheadercolumn}
+<th class="runner-cc {$LastMileage_class}" {$LastMileage_style}>
+	{BEGIN LastMileage_fieldheader}
+	<b>{$label vehiclemaster_fuel LastMileage}</b>
+	{END LastMileage_fieldheader}
+</th>
+{END LastMileage_fieldheadercolumn}
+	{BEGIN ID_fieldheadercolumn}
+<th class="runner-cc {$ID_class}" {$ID_style}>
+	{BEGIN ID_fieldheader}
+	<b>{$label vehiclemaster_fuel ID}</b>
+	{END ID_fieldheader}
+</th>
+{END ID_fieldheadercolumn}
+	{BEGIN Fleet_fieldheadercolumn}
+<th class="runner-cc {$Fleet_class}" {$Fleet_style}>
+	{BEGIN Fleet_fieldheader}
+	<b>{$label vehiclemaster_fuel Fleet}</b>
+	{END Fleet_fieldheader}
+</th>
+{END Fleet_fieldheadercolumn}
+	{BEGIN Type_fieldheadercolumn}
+<th class="runner-cc {$Type_class}" {$Type_style}>
+	{BEGIN Type_fieldheader}
+	<b>{$label vehiclemaster_fuel Type}</b>
+	{END Type_fieldheader}
+</th>
+{END Type_fieldheadercolumn}
+	{BEGIN RegDate_fieldheadercolumn}
+<th class="runner-cc {$RegDate_class}" {$RegDate_style}>
+	{BEGIN RegDate_fieldheader}
+	<b>{$label vehiclemaster_fuel RegDate}</b>
+	{END RegDate_fieldheader}
+</th>
+{END RegDate_fieldheadercolumn}
+	{BEGIN RegNo_fieldheadercolumn}
+<th class="runner-cc {$RegNo_class}" {$RegNo_style}>
+	{BEGIN RegNo_fieldheader}
+	<b>{$label vehiclemaster_fuel RegNo}</b>
+	{END RegNo_fieldheader}
+</th>
+{END RegNo_fieldheadercolumn}
+	{BEGIN Make_fieldheadercolumn}
+<th class="runner-cc {$Make_class}" {$Make_style}>
+	{BEGIN Make_fieldheader}
+	<b>{$label vehiclemaster_fuel Make}</b>
+	{END Make_fieldheader}
+</th>
+{END Make_fieldheadercolumn}
+	{BEGIN Model_fieldheadercolumn}
+<th class="runner-cc {$Model_class}" {$Model_style}>
+	{BEGIN Model_fieldheader}
+	<b>{$label vehiclemaster_fuel Model}</b>
+	{END Model_fieldheader}
+</th>
+{END Model_fieldheadercolumn}
+	{BEGIN Cost_fieldheadercolumn}
+<th class="runner-cc {$Cost_class}" {$Cost_style}>
+	{BEGIN Cost_fieldheader}
+	<b>{$label vehiclemaster_fuel Cost}</b>
+	{END Cost_fieldheader}
+</th>
+{END Cost_fieldheadercolumn}
+	{BEGIN DriverAsigned_fieldheadercolumn}
+<th class="runner-cc {$DriverAsigned_class}" {$DriverAsigned_style}>
+	{BEGIN DriverAsigned_fieldheader}
+	<b>{$label vehiclemaster_fuel DriverAsigned}</b>
+	{END DriverAsigned_fieldheader}
+</th>
+{END DriverAsigned_fieldheadercolumn}
+	{BEGIN InsuranceDue_fieldheadercolumn}
+<th class="runner-cc {$InsuranceDue_class}" {$InsuranceDue_style}>
+	{BEGIN InsuranceDue_fieldheader}
+	<b>{$label vehiclemaster_fuel InsuranceDue}</b>
+	{END InsuranceDue_fieldheader}
+</th>
+{END InsuranceDue_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN LastMileage_fieldcolumn}
+<td  class="runner-cc {$LastMileage_class}" {$LastMileage_style} {$recordattrs}>
+	{$LastMileage_value}
+</td>
+{END LastMileage_fieldcolumn}
+	{BEGIN ID_fieldcolumn}
+<td  class="runner-cc {$ID_class}" {$ID_style} {$recordattrs}>
+	{$ID_value}
+</td>
+{END ID_fieldcolumn}
+	{BEGIN Fleet_fieldcolumn}
+<td  class="runner-cc {$Fleet_class}" {$Fleet_style} {$recordattrs}>
+	{$Fleet_value}
+</td>
+{END Fleet_fieldcolumn}
+	{BEGIN Type_fieldcolumn}
+<td  class="runner-cc {$Type_class}" {$Type_style} {$recordattrs}>
+	{$Type_value}
+</td>
+{END Type_fieldcolumn}
+	{BEGIN RegDate_fieldcolumn}
+<td  class="runner-cc {$RegDate_class}" {$RegDate_style} {$recordattrs}>
+	{$RegDate_value}
+</td>
+{END RegDate_fieldcolumn}
+	{BEGIN RegNo_fieldcolumn}
+<td  class="runner-cc {$RegNo_class}" {$RegNo_style} {$recordattrs}>
+	{$RegNo_value}
+</td>
+{END RegNo_fieldcolumn}
+	{BEGIN Make_fieldcolumn}
+<td  class="runner-cc {$Make_class}" {$Make_style} {$recordattrs}>
+	{$Make_value}
+</td>
+{END Make_fieldcolumn}
+	{BEGIN Model_fieldcolumn}
+<td  class="runner-cc {$Model_class}" {$Model_style} {$recordattrs}>
+	{$Model_value}
+</td>
+{END Model_fieldcolumn}
+	{BEGIN Cost_fieldcolumn}
+<td  class="runner-cc {$Cost_class}" {$Cost_style} {$recordattrs}>
+	{$Cost_value}
+</td>
+{END Cost_fieldcolumn}
+	{BEGIN DriverAsigned_fieldcolumn}
+<td  class="runner-cc {$DriverAsigned_class}" {$DriverAsigned_style} {$recordattrs}>
+	{$DriverAsigned_value}
+</td>
+{END DriverAsigned_fieldcolumn}
+	{BEGIN InsuranceDue_fieldcolumn}
+<td  class="runner-cc {$InsuranceDue_class}" {$InsuranceDue_style} {$recordattrs}>
+	{$InsuranceDue_value}
+</td>
+{END InsuranceDue_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+	{END grid_row}
+
+
+	
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<a {$item##@menu.id##_menulink_attrs}>
+##if @menu.iconType==1##
+	<img class="menu-icon" src="files/images/menuicons/##@menu.iconName h##" border=0/>
+##elseif @menu.iconType==2##
+	<span class="glyphicon ##@menu.iconName##" aria-hidden="true"></span>
+##endif##
+##if @menu.name.text && @menu.name.nameType=="CustomID"##
+	##custom @menu.name.text##
+##elseif @menu.name.text##
+	##@menu.name.text 8h##
+##elseif @menu.PageType=="WebReports"##
+	##message WEBREPORTS_SHORT##
+##else##
+	##caption @menu.table##
+##endif##
+</a>

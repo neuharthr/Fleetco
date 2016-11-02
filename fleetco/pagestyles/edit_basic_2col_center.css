@@ -1,0 +1,200 @@
+body.page-edit_basic_2col_center
+{
+padding-top:10px; padding-left:10px;
+}
+.page-edit_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-all
+{
+margin-bottom:5px;
+}
+.page-edit_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-all
+{
+min-width: 500px; display:inline-block
+}
+.page-edit_basic_2col_center .rnr-cw-all,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-cw-all,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-cw-all
+{
+text-align: center;
+}
+.page-edit_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-master
+{
+margin-bottom:5px;
+}
+.page-edit_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-master
+{
+min-width: 500px; display:inline-block
+}
+.page-edit_basic_2col_center .rnr-cw-master,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-cw-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-cw-master
+{
+text-align: center;
+}
+.page-edit_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-masterinfo
+{
+white-space: nowrap;
+}
+.page-edit_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-masterinfo
+{
+text-align: left;
+}
+.page-edit_basic_2col_center .rnr-b-masterinfo > *,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-masterinfo > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-masterinfo > *
+{
+
+}
+.page-edit_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-fields
+{
+margin-bottom:5px;
+}
+.page-edit_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-fields
+{
+min-width: 500px; display:inline-block
+}
+.page-edit_basic_2col_center .rnr-cw-fields,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-cw-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-cw-fields
+{
+text-align: center;
+}
+.page-edit_basic_2col_center .rnr-b-editheader,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editheader
+{
+white-space: nowrap;
+}
+.page-edit_basic_2col_center .rnr-b-editheader,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editheader
+{
+text-align: left;
+}
+.page-edit_basic_2col_center .rnr-b-editheader > *,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editheader > *
+{
+font-size: 120%;
+}
+.page-edit_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-message
+{
+white-space: nowrap;
+}
+.page-edit_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-message
+{
+text-align: left;
+}
+.page-edit_basic_2col_center .rnr-b-message > *,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-message > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-message > *
+{
+
+}
+.page-edit_basic_2col_center .rnr-b-multistep_nav_edit,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-multistep_nav_edit,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-multistep_nav_edit
+{
+white-space: nowrap;
+}
+.page-edit_basic_2col_center .rnr-b-multistep_nav_edit,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-multistep_nav_edit,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-multistep_nav_edit
+{
+text-align: left;
+}
+.page-edit_basic_2col_center .rnr-b-multistep_nav_edit > *,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-multistep_nav_edit > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-multistep_nav_edit > *
+{
+
+}
+.page-edit_basic_2col_center .rnr-b-editfields2,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editfields2,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editfields2
+{
+white-space: normal;
+}
+.page-edit_basic_2col_center .rnr-b-editfields2,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editfields2,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editfields2
+{
+text-align: left;
+}
+.page-edit_basic_2col_center .rnr-b-editfields2 > *,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editfields2 > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editfields2 > *
+{
+
+}
+.page-edit_basic_2col_center .rnr-b-editbuttons,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editbuttons
+{
+white-space: nowrap;
+}
+.page-edit_basic_2col_center .rnr-b-editbuttons,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editbuttons
+{
+text-align: left;
+}
+.page-edit_basic_2col_center .rnr-b-editbuttons > *,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editbuttons > *
+{
+
+}
+.page-edit_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-details
+{
+margin-bottom:5px;
+}
+.page-edit_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-c-details
+{
+min-width: 100px;
+}
+.page-edit_basic_2col_center .rnr-b-editdetails,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editdetails,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editdetails
+{
+white-space: nowrap;
+}
+.page-edit_basic_2col_center .rnr-b-editdetails,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editdetails,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editdetails
+{
+text-align: left;
+}
+.page-edit_basic_2col_center .rnr-b-editdetails > *,
+  .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editdetails > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-edit_basic_2col_center .rnr-b-editdetails > *
+{
+
+}
+body.page-edit_basic_2col_center .rnr-top
+{
+padding-right: 5px;
+}

@@ -1,0 +1,17 @@
+##if @menu.type!="Separator"##
+<div>
+##if @MENU.MenuNodes[parent==@menu.id].len##
+{BEGIN item##@menu.id##_groupimage}
+<span class="groupbox">
+<img alt="*" src="images/plus.gif" class="groupImg">
+</span>
+{END item##@menu.id##_groupimage}
+##endif##
+##if @menu.iconName && @menu.iconType==1##
+<img class="menu-icon" src="images/menuicons/##@menu.iconName h##" border=0>
+##endif##
+<a {$item##@menu.id##_menulink_attrs} class="{$item##@menu.id##_current}">{$item##@menu.id##_title}</a>
+</div>
+##else##
+<hr><!--{$item##@menu.id##_separator}-->
+##endif##

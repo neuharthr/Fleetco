@@ -1,0 +1,167 @@
+
+	</script>
+	</style>
+	</span></span></span></span>
+	</div></div></div></div></div>
+	</table></table></table>
+	<style>
+		table.errTable{
+			border: 0px;
+			width: 900px;
+			background-color: #000000;
+			text-align: left;
+		}
+		
+		table.errTable tr{
+			background-color: #ccccff;
+		}
+		
+		.tableHeader{
+			background-color: #ccccff;
+		}
+		
+		.grayCell{
+			background-color: #cccccc;
+			width: 85%;
+		}
+		
+		.debugInfoTable{
+			background-color: #cccccc;	
+			border-collapse: collapse;
+		}
+		.debugInfoTable td{
+			border: 1px solid black;
+		}
+		
+		table.debugInfoTable tr{
+			background-color: #cccccc;
+		}
+		
+		.errDesc{
+			color: #cc3300;
+		}
+		
+		.secondHeader{
+			text-align: center;
+		}
+		
+	</style>
+
+{$script}
+<p align=center><font size=+2>php error happened</font></p>
+
+<table cellpadding="3" cellspacing="1" align="center" class="errTable">
+	<th>
+		<td colspan=2 align=middle><font size=+1><b>Technical information</b></font></td>
+	</th>
+	<tr>
+		<td><b>Error type</b></td><td class="grayCell">{$errno}</td>
+	</tr>
+	<tr>
+		<td><b>Error description</b></td><td class="grayCell"><span class="errDesc">{$errstr}</span></td>
+	</tr>
+	<tr>
+		<td><b>URL</b></td><td class="grayCell">{$url}</td>
+	</tr>
+	<tr>
+		<td><b>Error file</b></td><td class="grayCell">{$errfile}</td>
+	</tr>
+	<tr>
+		<td><b>Error line</b></td><td class="grayCell">{$errline}</td>
+	</tr>
+	<tr>
+		<td ><b>SQL query</b></td><td class="grayCell">{$sqlStr}</td>
+	</tr>
+</table>
+
+<p align=center id="clickInfo">
+	<a href="" onclick="openDebug(event);">More info</a>
+</p>
+
+</br></br></br>
+
+<table id="debugInfoTable" cellpadding="3" cellspacing="1" align="center" class="errTable debugInfoTable" style="display: none;">	
+	<tr>
+		<td colspan=4 align=middle class="tableHeader"><font size=+1><b>Call stack</b></font></td>
+	</tr>
+	<tr class="secondHeader">
+		<td>&nbsp;</td>
+		<td>File: line</td>
+		<td>Function</td>
+		<td>Arguments</td>
+	</tr>
+	{BEGIN debugRow}					
+		<tr>
+			<td nowrap="nowrap">{$num}</td>
+			<td nowrap="nowrap">{$path}</td>
+			<td nowrap="nowrap">{$func}</td>
+			<td>{$args}</td>
+		</tr>
+	{END debugRow}			
+</table>
+
+<script type="text/javascript">
+	function openDebug(event){
+		// stop event
+		e = event || window.event;
+		if (e.stopPropagation){
+            e.stopPropagation();
+        }else{
+            e.cancelBubble = true;
+        }
+		if(e.preventDefault){
+            e.preventDefault();
+        }else{
+            e.returnValue = false;
+        }        
+        // show info table
+        var debugTable = document.getElementById('debugInfoTable');
+        debugTable.style.display = '';
+	}
+	
+	/**
+	 * Fixed problem in IE for getElementsByName
+	 * It didn't work correct in IE, because IE takes elements by id but not by name
+	 * @param {string} tag - tag name
+	 * @param {string} name - attribute name 
+	 */
+	function getElementsByName_iefix(tag, name){
+		var elem = document.getElementsByTagName(tag);
+		var arr = new Array();
+		for(i = 0,iarr = 0; i < elem.length; i++){
+			att = elem[i].getAttribute("name");
+			if(att == name){
+				arr[iarr] = elem[i];
+				iarr++;
+			}
+		}
+		return arr;
+	}
+	
+	/**
+	 * Stop showing loading if happend error on page 
+	 */
+	function stopLoadingForError(){
+		var lDivs, lConts;
+		if(navigator.appName == "Microsoft Internet Explorer"){
+			lDivs = getElementsByName_iefix('div','loadingDiv');
+			lConts = getElementsByName_iefix('div','loadedContent');
+		}else{	
+			lDivs = document.getElementsByName('loadingDiv');
+			lConts = document.getElementsByName('loadedContent');
+		}
+		
+		for(i=0;i<lDivs.length;i++){
+			lDivs[i].parentNode.removeChild(lDivs[i]);
+		}
+		for(j=0;j<lConts.length;j++){
+			if($(lConts[j]).find('table.errTable') && $(lConts[j]).css("position")!="static"){	
+				$(lConts[j]).css('position','static');
+				$(lConts[j]).css('left','0px');
+			}	
+		}
+	}
+	stopLoadingForError();
+</script>
+
+

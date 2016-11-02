@@ -1,0 +1,263 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+{BEGIN printheader}
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel insurance_payments_report print}</h1>
+</div>{END printheader}
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN SysDate_fieldheadercolumn}
+<th class="runner-cc {$SysDate_class}" {$SysDate_style}>
+	{BEGIN SysDate_fieldheader}
+	<b>{$label insurance_payments_report SysDate}</b>
+	{END SysDate_fieldheader}
+</th>
+{END SysDate_fieldheadercolumn}
+	{BEGIN Id_fieldheadercolumn}
+<th class="runner-cc {$Id_class}" {$Id_style}>
+	{BEGIN Id_fieldheader}
+	<b>{$label insurance_payments_report Id}</b>
+	{END Id_fieldheader}
+</th>
+{END Id_fieldheadercolumn}
+	{BEGIN VehicleNo_fieldheadercolumn}
+<th class="runner-cc {$VehicleNo_class}" {$VehicleNo_style}>
+	{BEGIN VehicleNo_fieldheader}
+	<b>{$label insurance_payments_report VehicleNo}</b>
+	{END VehicleNo_fieldheader}
+</th>
+{END VehicleNo_fieldheadercolumn}
+	{BEGIN Fleet_fieldheadercolumn}
+<th class="runner-cc {$Fleet_class}" {$Fleet_style}>
+	{BEGIN Fleet_fieldheader}
+	<b>{$label insurance_payments_report Fleet}</b>
+	{END Fleet_fieldheader}
+</th>
+{END Fleet_fieldheadercolumn}
+	{BEGIN Type_fieldheadercolumn}
+<th class="runner-cc {$Type_class}" {$Type_style}>
+	{BEGIN Type_fieldheader}
+	<b>{$label insurance_payments_report Type}</b>
+	{END Type_fieldheader}
+</th>
+{END Type_fieldheadercolumn}
+	{BEGIN Insurer_fieldheadercolumn}
+<th class="runner-cc {$Insurer_class}" {$Insurer_style}>
+	{BEGIN Insurer_fieldheader}
+	<b>{$label insurance_payments_report Insurer}</b>
+	{END Insurer_fieldheader}
+</th>
+{END Insurer_fieldheadercolumn}
+	{BEGIN RenewalDueDate_fieldheadercolumn}
+<th class="runner-cc {$RenewalDueDate_class}" {$RenewalDueDate_style}>
+	{BEGIN RenewalDueDate_fieldheader}
+	<b>{$label insurance_payments_report RenewalDueDate}</b>
+	{END RenewalDueDate_fieldheader}
+</th>
+{END RenewalDueDate_fieldheadercolumn}
+	{BEGIN Premium_fieldheadercolumn}
+<th class="runner-cc {$Premium_class}" {$Premium_style}>
+	{BEGIN Premium_fieldheader}
+	<b>{$label insurance_payments_report Premium}</b>
+	{END Premium_fieldheader}
+</th>
+{END Premium_fieldheadercolumn}
+	{BEGIN DateofPayment_fieldheadercolumn}
+<th class="runner-cc {$DateofPayment_class}" {$DateofPayment_style}>
+	{BEGIN DateofPayment_fieldheader}
+	<b>{$label insurance_payments_report DateofPayment}</b>
+	{END DateofPayment_fieldheader}
+</th>
+{END DateofPayment_fieldheadercolumn}
+	{BEGIN PaymentVoucher_fieldheadercolumn}
+<th class="runner-cc {$PaymentVoucher_class}" {$PaymentVoucher_style}>
+	{BEGIN PaymentVoucher_fieldheader}
+	<b>{$label insurance_payments_report PaymentVoucher}</b>
+	{END PaymentVoucher_fieldheader}
+</th>
+{END PaymentVoucher_fieldheadercolumn}
+	{BEGIN EnteredBy_fieldheadercolumn}
+<th class="runner-cc {$EnteredBy_class}" {$EnteredBy_style}>
+	{BEGIN EnteredBy_fieldheader}
+	<b>{$label insurance_payments_report EnteredBy}</b>
+	{END EnteredBy_fieldheader}
+</th>
+{END EnteredBy_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN SysDate_fieldcolumn}
+<td  class="runner-cc {$SysDate_class}" {$SysDate_style} {$recordattrs}>
+	{$SysDate_value}
+</td>
+{END SysDate_fieldcolumn}
+	{BEGIN Id_fieldcolumn}
+<td  class="runner-cc {$Id_class}" {$Id_style} {$recordattrs}>
+	{$Id_value}
+</td>
+{END Id_fieldcolumn}
+	{BEGIN VehicleNo_fieldcolumn}
+<td  class="runner-cc {$VehicleNo_class}" {$VehicleNo_style} {$recordattrs}>
+	{$VehicleNo_value}
+</td>
+{END VehicleNo_fieldcolumn}
+	{BEGIN Fleet_fieldcolumn}
+<td  class="runner-cc {$Fleet_class}" {$Fleet_style} {$recordattrs}>
+	{$Fleet_value}
+</td>
+{END Fleet_fieldcolumn}
+	{BEGIN Type_fieldcolumn}
+<td  class="runner-cc {$Type_class}" {$Type_style} {$recordattrs}>
+	{$Type_value}
+</td>
+{END Type_fieldcolumn}
+	{BEGIN Insurer_fieldcolumn}
+<td  class="runner-cc {$Insurer_class}" {$Insurer_style} {$recordattrs}>
+	{$Insurer_value}
+</td>
+{END Insurer_fieldcolumn}
+	{BEGIN RenewalDueDate_fieldcolumn}
+<td  class="runner-cc {$RenewalDueDate_class}" {$RenewalDueDate_style} {$recordattrs}>
+	{$RenewalDueDate_value}
+</td>
+{END RenewalDueDate_fieldcolumn}
+	{BEGIN Premium_fieldcolumn}
+<td  class="runner-cc {$Premium_class}" {$Premium_style} {$recordattrs}>
+	{$Premium_value}
+</td>
+{END Premium_fieldcolumn}
+	{BEGIN DateofPayment_fieldcolumn}
+<td  class="runner-cc {$DateofPayment_class}" {$DateofPayment_style} {$recordattrs}>
+	{$DateofPayment_value}
+</td>
+{END DateofPayment_fieldcolumn}
+	{BEGIN PaymentVoucher_fieldcolumn}
+<td  class="runner-cc {$PaymentVoucher_class}" {$PaymentVoucher_style} {$recordattrs}>
+	{$PaymentVoucher_value}
+</td>
+{END PaymentVoucher_fieldcolumn}
+	{BEGIN EnteredBy_fieldcolumn}
+<td  class="runner-cc {$EnteredBy_class}" {$EnteredBy_style} {$recordattrs}>
+	{$EnteredBy_value}
+</td>
+{END EnteredBy_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+	{END grid_row}
+
+
+	
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

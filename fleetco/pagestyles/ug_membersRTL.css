@@ -1,0 +1,210 @@
+body.page-ug_members
+{
+padding-top:10px; padding-left:10px;
+}
+.page-ug_members .rnr-c-ugcontrols,
+  .rnr-pagewrapper .page-ug_members .rnr-c-ugcontrols,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-ugcontrols
+{
+margin-bottom:5px;
+}
+.page-ug_members .rnr-c-ugcontrols,
+  .rnr-pagewrapper .page-ug_members .rnr-c-ugcontrols,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-ugcontrols
+{
+min-width: 100px;
+}
+.page-ug_members .rnr-b-ugbuttons,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugbuttons
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-ugbuttons,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugbuttons
+{
+text-align: right;
+}
+.page-ug_members .rnr-b-ugbuttons > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugbuttons > *
+{
+
+}
+.page-ug_members .rnr-b-ugmembersbuttons,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugmembersbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugmembersbuttons
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-ugmembersbuttons,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugmembersbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugmembersbuttons
+{
+text-align: left;
+}
+.page-ug_members .rnr-b-ugmembersbuttons > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugmembersbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugmembersbuttons > *
+{
+
+}
+.page-ug_members .rnr-c-message,
+  .rnr-pagewrapper .page-ug_members .rnr-c-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-message
+{
+margin-bottom:5px;
+}
+.page-ug_members .rnr-c-message,
+  .rnr-pagewrapper .page-ug_members .rnr-c-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-message
+{
+min-width: 100px;
+}
+.page-ug_members .rnr-b-message,
+  .rnr-pagewrapper .page-ug_members .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-message
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-message,
+  .rnr-pagewrapper .page-ug_members .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-message
+{
+text-align: center;
+}
+.page-ug_members .rnr-b-message > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-message > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-message > *
+{
+
+}
+.page-ug_members .rnr-c-grid,
+  .rnr-pagewrapper .page-ug_members .rnr-c-grid,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-grid
+{
+margin-bottom:5px;
+}
+.page-ug_members .rnr-b-ugmemgrid,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugmemgrid,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugmemgrid
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-ugmemgrid,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugmemgrid,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugmemgrid
+{
+text-align: right;
+}
+.page-ug_members .rnr-b-ugmemgrid > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-ugmemgrid > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-ugmemgrid > *
+{
+
+}
+.page-ug_members .rnr-c-pagination,
+  .rnr-pagewrapper .page-ug_members .rnr-c-pagination,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-pagination
+{
+margin-bottom:5px;
+}
+.page-ug_members .rnr-c-pagination,
+  .rnr-pagewrapper .page-ug_members .rnr-c-pagination,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-pagination
+{
+min-width: 100px;
+}
+.page-ug_members .rnr-b-pagination,
+  .rnr-pagewrapper .page-ug_members .rnr-b-pagination,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-pagination
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-pagination,
+  .rnr-pagewrapper .page-ug_members .rnr-b-pagination,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-pagination
+{
+text-align: center;
+}
+.page-ug_members .rnr-b-pagination > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-pagination > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-pagination > *
+{
+
+}
+body.page-ug_members .rnr-center
+{
+padding-right: 5px;
+}
+.page-ug_members .rnr-c-left,
+  .rnr-pagewrapper .page-ug_members .rnr-c-left,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-left
+{
+margin-bottom:5px;
+}
+.page-ug_members .rnr-c-left,
+  .rnr-pagewrapper .page-ug_members .rnr-c-left,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-c-left
+{
+min-width: 300px;
+}
+.page-ug_members .rnr-b-languages,
+  .rnr-pagewrapper .page-ug_members .rnr-b-languages,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-languages
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-languages,
+  .rnr-pagewrapper .page-ug_members .rnr-b-languages,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-languages
+{
+text-align: right;
+}
+.page-ug_members .rnr-b-languages > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-languages > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-languages > *
+{
+
+}
+.page-ug_members .rnr-b-loggedas,
+  .rnr-pagewrapper .page-ug_members .rnr-b-loggedas,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-loggedas
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-loggedas,
+  .rnr-pagewrapper .page-ug_members .rnr-b-loggedas,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-loggedas
+{
+text-align: right;
+}
+.page-ug_members .rnr-b-loggedas > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-loggedas > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-loggedas > *
+{
+
+}
+.page-ug_members .rnr-b-vmenu,
+  .rnr-pagewrapper .page-ug_members .rnr-b-vmenu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-vmenu
+{
+white-space: nowrap;
+}
+.page-ug_members .rnr-b-vmenu,
+  .rnr-pagewrapper .page-ug_members .rnr-b-vmenu,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-vmenu
+{
+text-align: right;
+}
+.page-ug_members .rnr-b-vmenu > *,
+  .rnr-pagewrapper .page-ug_members .rnr-b-vmenu > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-ug_members .rnr-b-vmenu > *
+{
+
+}
+body.page-ug_members .rnr-left
+{
+padding-right: 5px;
+}

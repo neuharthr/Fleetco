@@ -1,0 +1,166 @@
+.rnr-bl {
+	text-align: left;
+}
+.rnr-br {
+	text-align: right;
+}
+
+.rnr-b-vmenu.simple > li > div > *,
+.rnr-b-vmenu.tree > li > div  {
+	text-align: right;
+}
+
+/* invisible substrate for keeping hover when mouse slightly goes out*/
+.rnr-b-hmenu ul:after, .rnr-b-vmenu ul:after {
+	border-left-width: 3em;
+	border-right-width: 0;
+}
+/* first-level horizontal submenu */
+.rnr-b-hmenu > ul:after {
+	border-right-width: 3em;
+}
+
+/* >> sign for submenus */
+.raquo  {
+	float: left;
+}
+/**/
+
+/* submenu positioning logic */	
+	
+	/* vertical menu */
+	/* element before submenu */
+	.rnr-b-vmenu.simple li > div {
+		float: right;
+	}
+
+	/* submenu itself */
+	.rnr-b-vmenu.simple ul {
+		float: right;
+	}
+
+	/* subitem element before submenu */
+	.rnr-b-hmenu ul > * > div {
+		float:right;
+	}
+
+	/* second-level submenu */
+	.rnr-b-hmenu ul ul {
+		right: 100%;
+	}
+
+	/* indent */
+	.rnr-b-vmenu.tree > .groupbox {
+		margin-left:12px;
+	}
+	
+	.rnr-b-vmenu.tree > li.level2.level2.level2.level2  > * {
+		padding-left: 0;
+		padding-right: 1em;
+	}
+	.rnr-b-vmenu.tree > li.level3.level3.level3.level3  > * {
+		padding-left: 0;
+		padding-right: 2em;
+	}
+	.rnr-b-vmenu.tree > li.level4.level4.level4.level4  > * {
+		padding-left: 0;
+		padding-right: 3em;
+	}
+	.rnr-b-vmenu.tree > li.level5.level5.level5.level5  > * {
+		padding-left: 0;
+		padding-right: 4em;
+	}
+	.rnr-b-vmenu.tree > li.level6.level6.level6.level6  > * {
+		padding-left: 0;
+		padding-right: 5em;
+	}
+
+/* end styles for submenu positioning logic */	
+	
+.controlChooseMenu {
+	text-align: right
+}
+
+.search_suggest {
+	text-align: right;
+}
+
+/* buttons on Edit/View pages */
+.rnr-buttons-left {
+	float: right;
+}
+.rnr-buttons-right {
+	float: left;
+}
+/**/
+
+.runner-locking{
+	right: 0;
+	left: auto;
+}
+
+/* Filters expander */
+.filter-indicator {
+    float: left;
+}
+/**/
+.filter-values .delete-button {
+	margin-left: 5px;
+}
+
+.rnr-control.rnr-control.rnr-control.rnr-control.rnr-control.rnr-control
+{
+	text-align: right;
+}
+
+.rnr-saved-searches {
+	text-align: right;
+}
+.deleteSearch, .savedSearch {
+	display: inline-block;
+}
+.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink{
+	left:0;
+	right:auto;
+}
+
+.rnr-buttons-left .rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink.rnr-sidelink {
+	color: inherit;
+	left: initial;
+	position: absolute;
+}
+
+.rnr-expandCollapse[data-state="closed"]:before
+{
+	content: '\25C0';
+}
+
+table.indenttables > * > .rightsindent1 > td.rightscell.rightscell.rightscell.rightscell.rightscell.rightscell:first-child {
+	padding-right: 3em;
+}
+table.indenttables > * > .rightsindent2 > td.rightscell.rightscell.rightscell.rightscell.rightscell.rightscell:first-child {
+	padding-right: 5em;
+}
+table.indenttables > * > .rightsindent3 > td.rightscell.rightscell.rightscell.rightscell.rightscell.rightscell:first-child {
+	padding-right: 7em;
+}
+table.indenttables > * > .rightsindent4 > td.rightscell.rightscell.rightscell.rightscell.rightscell.rightscell:first-child {
+	padding-right: 9em;
+}
+table.indenttables > * > .rightsindent5 > td.rightscell.rightscell.rightscell.rightscell.rightscell.rightscell:first-child {
+	padding-right: 11em;
+}
+
+.clearable{
+  background: #fff url(data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=) no-repeat left -10px center;
+  border: 1px solid #999;
+  padding: 3px 18px 3px 4px; /* Use the same right padding (18) in jQ! */
+  border-radius: 3px;
+  transition: background 0.4s;
+}
+.clearable.x  { background-position: left 5px center; }
+
+/* For fix bootstrap calend widget */
+.bootstrap-datetimepicker-widget ul.list-unstyled {
+	padding-right: 0 !important;
+}

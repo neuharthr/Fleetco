@@ -1,0 +1,376 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN searchheader}
+<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel Dashboard search}</h1>
+</span></div>{END searchheader}
+
+
+{BEGIN conditions_block}
+<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
+	<span class=fieldname>Criteria:&nbsp;</span>	
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
+	</center></div>{END conditions_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
+	<tr>
+		<td>&nbsp;</td>
+		<td>NOT</td>
+		<td colspan=3>&nbsp; </td>
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_Id}">
+	{BEGIN fuelmaster_Id_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_Id}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_Id_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_Id}
+	</td>
+	<td>
+		{$fuelmaster_Id_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_Id_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_Id_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_SystemDate}">
+	{BEGIN fuelmaster_SystemDate_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_SystemDate}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_SystemDate_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_SystemDate}
+	</td>
+	<td>
+		{$fuelmaster_SystemDate_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_SystemDate_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_SystemDate_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_FuelDate}">
+	{BEGIN fuelmaster_FuelDate_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_FuelDate}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_FuelDate_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_FuelDate}
+	</td>
+	<td>
+		{$fuelmaster_FuelDate_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_FuelDate_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_FuelDate_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_Vehicle}">
+	{BEGIN fuelmaster_Vehicle_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_Vehicle}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_Vehicle_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_Vehicle}
+	</td>
+	<td>
+		{$fuelmaster_Vehicle_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_Vehicle_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_Vehicle_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_MeterReading}">
+	{BEGIN fuelmaster_MeterReading_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_MeterReading}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_MeterReading_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_MeterReading}
+	</td>
+	<td>
+		{$fuelmaster_MeterReading_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_MeterReading_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_MeterReading_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_LitersPumped}">
+	{BEGIN fuelmaster_LitersPumped_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_LitersPumped}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_LitersPumped_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_LitersPumped}
+	</td>
+	<td>
+		{$fuelmaster_LitersPumped_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_LitersPumped_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_LitersPumped_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_PricePerLiter}">
+	{BEGIN fuelmaster_PricePerLiter_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_PricePerLiter}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_PricePerLiter_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_PricePerLiter}
+	</td>
+	<td>
+		{$fuelmaster_PricePerLiter_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_PricePerLiter_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_PricePerLiter_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_FuelStation}">
+	{BEGIN fuelmaster_FuelStation_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_FuelStation}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_FuelStation_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_FuelStation}
+	</td>
+	<td>
+		{$fuelmaster_FuelStation_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_FuelStation_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_FuelStation_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_Fleet}">
+	{BEGIN fuelmaster_Fleet_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_Fleet}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_Fleet_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_Fleet}
+	</td>
+	<td>
+		{$fuelmaster_Fleet_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_Fleet_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_Fleet_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_Cost}">
+	{BEGIN fuelmaster_Cost_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_Cost}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_Cost_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_Cost}
+	</td>
+	<td>
+		{$fuelmaster_Cost_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_Cost_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_Cost_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_LastMileage}">
+	{BEGIN fuelmaster_LastMileage_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_LastMileage}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_LastMileage_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_LastMileage}
+	</td>
+	<td>
+		{$fuelmaster_LastMileage_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_LastMileage_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_LastMileage_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_Economy}">
+	{BEGIN fuelmaster_Economy_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_Economy}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_Economy_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_Economy}
+	</td>
+	<td>
+		{$fuelmaster_Economy_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_Economy_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_Economy_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_FillType}">
+	{BEGIN fuelmaster_FillType_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_FillType}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_FillType_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_FillType}
+	</td>
+	<td>
+		{$fuelmaster_FillType_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_FillType_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_FillType_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_CouponNo}">
+	{BEGIN fuelmaster_CouponNo_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_CouponNo}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_CouponNo_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_CouponNo}
+	</td>
+	<td>
+		{$fuelmaster_CouponNo_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_CouponNo_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_CouponNo_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_fuelmaster_Driver}">
+	{BEGIN fuelmaster_Driver_fieldblock}		
+	<td>
+		{$label Dashboard fuelmaster_Driver}
+	</td>
+	<td>
+		<input type="checkbox" {$fuelmaster_Driver_notbox}>
+	</td>
+	<td>
+		{$searchtype_fuelmaster_Driver}
+	</td>
+	<td>
+		{$fuelmaster_Driver_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fuelmaster_Driver_editcontrol1}&nbsp;
+	</td>
+{END fuelmaster_Driver_fieldblock}
+	</tr>
+
+</table></div>
+
+
+{BEGIN searchbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
+<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
+{END search_button} 
+{BEGIN reset_button}
+<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
+{END reset_button}
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Back to Dashboard</a>
+{END back_button}</div>{END searchbuttons}
+
+
+</div>
+{END container_fields}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

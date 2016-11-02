@@ -1,0 +1,20 @@
+{BEGIN mainmenu_block}
+<ul class="nav navbar-nav rnr-b-hmenu" originalMenuTag="$$originalMenuTag" menuID="$$menuID">
+##foreach @MENU.MenuNodes as @m0 filter !@m0.parent##
+##foreach @MENU.MenuNodes as @menu filter @menu.id=@m0.id##
+	{BEGIN item##@m0.id##_menulink}
+	##if @m0.type=="Separator"##
+	<li><a></a></li>
+	##else##
+	<li class="##if @MENU.MenuNodes[parent = @menu.id].len## dropdown ##endif## {$item##@menu.id##_current}">
+	##include templates\bsmenuitem_preview.htm##
+	</li>
+	##endif##
+	{END item##@m0.id##_menulink}
+##endfor##
+##endfor##
+</ul>
+{END mainmenu_block}
+
+
+

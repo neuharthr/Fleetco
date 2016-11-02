@@ -1,0 +1,22 @@
+##if @menu.type!="Separator"##
+<div>
+<div>
+##if @menu.iconName && @menu.iconType==1##
+<img class="menu-icon" src="files/images/menuicons/##@menu.iconName h##" border=0>
+##endif##
+##set @children=@MENU.MenuNodes[parent=@menu.id].len##
+##if @children##
+<b class="raquo">&raquo;</b>
+##endif##
+<a href=# ##if @menu.style## style="##@menu.style##" ##endif##
+##if @children##
+style="margin-right: 1em;##if @menu.style## ##@menu.style## ##endif##"
+##endif##
+>##if @menu.name.text && @menu.name.nameType=="CustomID"####custom @menu.name.text####elseif @menu.name.text####@menu.name.text 8h####elseif @menu.PageType=="WebReports"####message WEBREPORTS_SHORT####else####caption @menu.table####endif##</a>
+</div>
+</div>
+##else##
+<hr>
+##endif##
+
+

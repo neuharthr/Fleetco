@@ -1,0 +1,211 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-view" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_all}
+<div class="rnr-c rnr-cv rnr-c-all">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_view} rnr-wrapper rnr-cbw-view">
+
+{BEGIN container_view}
+<div class="rnr-c rnr-cv rnr-c-view">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pdf} rnr-wrapper rnr-cbw-pdf">
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-cv rnr-c-pdf">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-viewpdf {$brickclass_viewpdf}">{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+
+</div>
+
+
+</div>
+{END container_pdf}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN viewheader}
+<div  class="rnr-brickcontents style2 rnr-b-viewheader {$brickclass_viewheader}"><span>	<h1>{$pagetitlelabel OtherRenewals view}</h1>
+</span></div>{END viewheader}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-viewfields2 {$brickclass_viewfields2}"><table class="fieldGrid fieldGrid2">
+
+<tr>
+<td>
+	{BEGIN Fleet_fieldblock}
+<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
+  <span class="rnr-label">{$label OtherRenewals Fleet}:</span>
+  <span class="rnr-control style3">{$Fleet_value}</span>
+</div>
+{END Fleet_fieldblock}
+	{BEGIN ID_fieldblock}
+<div data-fieldname="ID" class="rnr-field style1 {$fielddispclass_ID}">
+  <span class="rnr-label">{$label OtherRenewals ID}:</span>
+  <span class="rnr-control style3">{$ID_value}</span>
+</div>
+{END ID_fieldblock}
+	{BEGIN VehicleNo_fieldblock}
+<div data-fieldname="VehicleNo" class="rnr-field style1 {$fielddispclass_VehicleNo}">
+  <span class="rnr-label">{$label OtherRenewals VehicleNo}:</span>
+  <span class="rnr-control style3">{$VehicleNo_value}</span>
+</div>
+{END VehicleNo_fieldblock}
+	{BEGIN VehicleType_fieldblock}
+<div data-fieldname="VehicleType" class="rnr-field style1 {$fielddispclass_VehicleType}">
+  <span class="rnr-label">{$label OtherRenewals VehicleType}:</span>
+  <span class="rnr-control style3">{$VehicleType_value}</span>
+</div>
+{END VehicleType_fieldblock}
+	{BEGIN PaymentType_fieldblock}
+<div data-fieldname="PaymentType" class="rnr-field style1 {$fielddispclass_PaymentType}">
+  <span class="rnr-label">{$label OtherRenewals PaymentType}:</span>
+  <span class="rnr-control style3">{$PaymentType_value}</span>
+</div>
+{END PaymentType_fieldblock}
+	{BEGIN RenewalDate_fieldblock}
+<div data-fieldname="RenewalDate" class="rnr-field style1 {$fielddispclass_RenewalDate}">
+  <span class="rnr-label">{$label OtherRenewals RenewalDate}:</span>
+  <span class="rnr-control style3">{$RenewalDate_value}</span>
+</div>
+{END RenewalDate_fieldblock}
+</td>
+<td>
+	{BEGIN Cost_fieldblock}
+<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
+  <span class="rnr-label">{$label OtherRenewals Cost}:</span>
+  <span class="rnr-control style3">{$Cost_value}</span>
+</div>
+{END Cost_fieldblock}
+	{BEGIN PaymentRef_fieldblock}
+<div data-fieldname="PaymentRef" class="rnr-field style1 {$fielddispclass_PaymentRef}">
+  <span class="rnr-label">{$label OtherRenewals PaymentRef}:</span>
+  <span class="rnr-control style3">{$PaymentRef_value}</span>
+</div>
+{END PaymentRef_fieldblock}
+	{BEGIN PeriodFrom_fieldblock}
+<div data-fieldname="PeriodFrom" class="rnr-field style1 {$fielddispclass_PeriodFrom}">
+  <span class="rnr-label">{$label OtherRenewals PeriodFrom}:</span>
+  <span class="rnr-control style3">{$PeriodFrom_value}</span>
+</div>
+{END PeriodFrom_fieldblock}
+	{BEGIN PeriodTo_fieldblock}
+<div data-fieldname="PeriodTo" class="rnr-field style1 {$fielddispclass_PeriodTo}">
+  <span class="rnr-label">{$label OtherRenewals PeriodTo}:</span>
+  <span class="rnr-control style3">{$PeriodTo_value}</span>
+</div>
+{END PeriodTo_fieldblock}
+	{BEGIN SystemDate_fieldblock}
+<div data-fieldname="SystemDate" class="rnr-field style1 {$fielddispclass_SystemDate}">
+  <span class="rnr-label">{$label OtherRenewals SystemDate}:</span>
+  <span class="rnr-control style3">{$SystemDate_value}</span>
+</div>
+{END SystemDate_fieldblock}
+	{BEGIN EnteredBy_fieldblock}
+<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
+  <span class="rnr-label">{$label OtherRenewals EnteredBy}:</span>
+  <span class="rnr-control style3">{$EnteredBy_value}</span>
+</div>
+{END EnteredBy_fieldblock}
+</td>
+</tr>
+</table></div>
+
+
+{BEGIN viewbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-viewbuttons {$brickclass_viewbuttons}"><div class="rnr-buttons-right">
+{BEGIN prev_button}
+<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
+{END prev_button}
+{BEGIN next_button}
+<a href="#" class="rnr-button {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
+{END next_button}
+</div>
+<div class="rnr-buttons-left">
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
+{END back_button}
+{BEGIN close_button}
+<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
+{END close_button}
+{BEGIN edit_page_button}
+<a href="#" class="rnr-button" {$edit_page_button_attrs}>Edit</a>
+{END edit_page_button}
+</div>
+</div>{END viewbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+</div>
+{END container_view}
+
+</div>
+
+
+
+</div>
+{END container_all}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

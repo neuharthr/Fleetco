@@ -1,0 +1,225 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-admin_members_list" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+{BEGIN container_left}
+<div class="rnr-c rnr-cv rnr-c-left">
+
+
+{BEGIN security_block}
+<div  class="rnr-brickcontents style1 rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message}
+	<span>Logged on as&nbsp;<b>{$username}</b><br><br>
+	</span>
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+	{BEGIN embeded_log_fields}
+	<span>
+	<input type="text" name="username" {$username_attrs}><br><br>
+	<input type="password" name="password" {$password_attrs}><br><br>
+	</span>
+	{END embeded_log_fields}
+	<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+	{BEGIN embeded_log_ctrls}
+	<span>
+	<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember<br><br>
+		<a href="remind.php" class="rnr-button button" {$forgotlink_attrs}>?</a>
+		</span>
+	{END embeded_log_ctrls}
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a class="rnr-button" href="login.php?a=logout" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+<!-- Permissions -->
+   {BEGIN exitadminarea_link}
+<div>
+	<a href="#" class="rnr-button" {$exitaalink_attrs}>Exit Admin Area</a>
+</div>
+  {END exitadminarea_link}
+{BEGIN changepwd_link}
+<div>
+	<a class="rnr-button" href="changepwd.php" {$changepwdlink_attrs}>Change password</a>
+</div>
+{END changepwd_link}
+</div>
+</div>{END security_block}
+
+
+{BEGIN menu_block}
+{$menu main}
+{END menu_block}
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_ugcontrols}
+<div class="rnr-c rnr-ch rnr-c-ugcontrols">
+
+{BEGIN savebuttons_block}
+<div  class="style1 rnr-bl rnr-b-ugbuttons {$brickclass_ugbuttons}"><a href="#" class="rnr-button main" {$savebutton_attrs}>Save</a>
+<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
+</div>
+{END savebuttons_block}
+
+<div class="rnr-hfiller"></div>
+{BEGIN savebuttons_block}
+<div  class="style1 rnr-br rnr-b-ugmembersbuttons {$brickclass_ugmembersbuttons}"><a href="#" class="rnr-button" {$choosecolumnsbutton_attrs}>Choose columns...</a>
+<b style="text-align: left; font-size:110%; padding: 3px 10px;">
+Displaying
+<span id=linkselectFilter class="rnr-linkselect"><span class="rnr-linkselect-display">all users</span><ul class="rnr-linkselect-list"><li data-value="all" class="rnr-linkselect-item">all users</li><li data-value="modified" class="rnr-linkselect-item">modified users</li></ul></span>
+</b></div>
+{END savebuttons_block}
+
+
+</div>
+{END container_ugcontrols}
+
+
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c adminMembersTable menuordered" cellpadding="0">
+	
+		<tr class="rnr-toprow style1">
+			<th class="rnr-cc" style="width:70px; padding: 10px;">
+				<a {$usernameheadersort_attrs}>Username</a>
+			</th>
+			
+			
+						<th class="rnr-cc" style="width:70px" {$displayuserheadertdsort_attrs}>
+				<a {$displayuserheadersort_attrs}>Display name</a>
+			</th>
+						<th class="rnr-cc" style="width:70px" {$emailuserheadertdsort_attrs}>
+				<a {$emailuserheadersort_attrs}>E-mail</a>
+			</th>
+			{BEGIN usergroup_header}
+			<th class="rnr-cc rnr-edge" style="width:70px" {$groupheadertdsort_attrs}>
+				<a {$groupheadersort_attrs}>{$groupname}</a>
+			</th>
+			{END usergroup_header}
+		</tr>
+		<tr class="rnr-toprow style1">
+			<td class="rnr-cc" style="text-align: left; font-size:110%; padding: 3px 10px;">
+				<div style="padding: 4px 0;" >
+					<input type=search id="adminMembersSearch" style="width: 200px;" placeholder="search">			
+				</div>
+			</td>
+						<td class="rnr-cc" {$displayuserheadertdbox_attrs}></td>
+						<td class="rnr-cc" {$emailuserheadertdbox_attrs}></td>
+			{BEGIN usergroup_header}
+			<td class="rnr-cc rnr-bc rnr-edge" {$groupheadertdbox_attrs}>
+				<span class="rnr-checkbox columnheader" {$groupheaderbox_attrs}></span>
+			</td>
+			{END usergroup_header}
+		</tr>
+		
+		{BEGIN grid_row}
+		<tr class="rnr-row style1 {$tblrowclass}" {$usernamerow_attrs}>
+			<td class="rightscell rnr-cc" {$usernamecell_attrs}>
+				<span class="rnr-checkbox rowheader" align="absmiddle" {$usernamebox_attrs}></span>&nbsp;{$username}
+			</td>
+						<td class="rightscell rnr-cc" {$displayusername_attrs}>
+				{$displayusername}
+			</td>
+						<td class="rightscell rnr-cc" {$emailuser_attrs}>
+				{$emailuser}
+			</td>
+			
+			{BEGIN usergroup_boxes}
+				<td class="rightscell rnr-cc rnr-bc rnr-edge" {$groupcellbox_attrs}>
+				{BEGIN usergroup_box}
+					<span class="rnr-checkbox" {$groupbox_attrs}></span>
+				{END usergroup_box}
+				</td>
+			{END usergroup_boxes}
+		</tr>
+		{END grid_row}
+		
+		<tr  class="rnr-row style1">
+			<td colspan="100%" class="rnr-cc rnr-bc rnr-edge">
+			</td>
+		</tr>
+	</table>
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+
+{BEGIN container_pagination}
+<div class="rnr-c rnr-ch rnr-c-pagination">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+
+</div>
+{END container_pagination}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

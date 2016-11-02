@@ -1,0 +1,47 @@
+<div contenteditable="false"> 
+<br>
+<table class="nonresizable crossTabFieldsPreview" style="border-collapse: collapse;">
+	<thead>
+		<tr class="rnr-toprow style1 runner-toprow {$gridHeader_class}" contenteditable="false">
+			<th class="runner-cc">
+				<span contenteditable="false">X Axis</span>
+			</th>
+			<th class="runner-cc">
+				<span contenteditable="false">Y Axis</span>
+			</th>
+			<th class="runner-cc">
+				<span contenteditable="false">Data</span>
+			</th>
+		</tr>
+	</thead>
+
+	<tbody>
+	<tr>
+		<td>
+			<div contenteditable="false"> 
+##foreach @TABLE.arrReportGroupFields as @g filter @g.nCrossTabAxis==0 || @g.nCrossTabAxis==2##
+				<span class="fieldPreviewBox">
+					{$##@g.strGroupField g##_grval}
+				</span>
+##endfor##
+			</div>
+		</td>
+		<td>
+##foreach @TABLE.arrReportGroupFields as @g filter @g.nCrossTabAxis==1 || @g.nCrossTabAxis==2##
+			<span class="fieldPreviewBox">
+				{$##@g.strGroupField g##_grval}
+			</span>
+##endfor##
+		</td>
+		<td>
+##foreach Fields as @f filter @f.bMin||@f.bMax||@f.bAvg||@f.bSum##
+			<span class="fieldPreviewBox">
+				{$##@f.strName g##_total}
+			</span>
+##endfor##
+		</td>
+	</tr>
+	</tbody>
+</table>
+<br>
+</div>

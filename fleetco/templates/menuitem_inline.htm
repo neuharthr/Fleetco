@@ -1,0 +1,10 @@
+##if @menu.type!="Separator"##
+{BEGIN item##@menu.id##_groupimage}
+<span><img alt="*" src="images/plus.gif" class="groupImg"></span>
+{END item##@menu.id##_groupimage}
+<a {$item##@menu.id##_menulink_attrs} {BEGIN item##@menu.id##_current}class="curlink"{END item##@menu.id##_current}>{$item##@menu.id##_title}</a>
+##else##
+{$item##@menu.id##_separator}
+##endif##
+
+

@@ -1,0 +1,97 @@
+	<tr class="runner-b-vmenu runner-vmenu tree">
+		<td class="runner-cl"></td>
+		<td class="runner-cc">
+			<div class="manage">
+				<a href="#"><img alt="*" src="images/plus.gif">
+					##message EXPAND_ALL##
+				</a>
+			</div>
+		</td>
+		<td class="runner-cr"></td>
+	</tr>
+
+##foreach @MENU.MenuNodes as @m0 filter !@m0.parent##
+##foreach @MENU.MenuNodes as @menu filter @menu.id=@m0.id##
+	{BEGIN item##@m0.id##_menulink}
+	<tr id="item##@m0.id##" view="topitem" class="runner-b-vmenu runner-vmenu tree ##@m0.type##{BEGIN item##@menu.id##_current} current{END item##@menu.id##_current}">
+		<td class="runner-cl"></td>	
+		<td class="runner-cc">
+			##include templates\menuitem_inline.htm##
+		</td>
+		<td class="runner-cr"></td>
+	</tr>	
+	##foreach @MENU.MenuNodes as @m1 filter @m1.parent = @m0.id##
+	##foreach @MENU.MenuNodes as @menu filter @menu.id=@m1.id##
+			{BEGIN item##@m1.id##_menulink}
+			<tr id="item##@m1.id##" topparent="item##@m1.parent##" parent="item##@m1.parent##" class="runner-b-vmenu runner-vmenu tree subitem level1 ##@m1.type##{BEGIN item##@menu.id##_current} current{END item##@menu.id##_current}">
+				<td class="runner-cl"></td>	
+				<td class="runner-cc">
+					##include templates\menuitem_inline.htm##
+				</td>
+				<td class="runner-cr"></td>
+			</tr>	
+			##foreach @MENU.MenuNodes as @m2 filter @m2.parent = @m1.id##
+			##foreach @MENU.MenuNodes as @menu filter @menu.id=@m2.id##
+					{BEGIN item##@m2.id##_menulink}
+					<tr id="item##@m2.id##" topparent="item##@m1.parent##" parent="item##@m2.parent##" class="runner-b-vmenu runner-vmenu tree subitem level2 ##@m2.type##{BEGIN item##@menu.id##_current} current{END item##@menu.id##_current}">
+						<td class="runner-cl"></td>	
+						<td class="runner-cc">
+							##include templates\menuitem_inline.htm##
+						</td>
+						<td class="runner-cr"></td>
+					</tr>	
+					##foreach @MENU.MenuNodes as @m3 filter @m3.parent = @m2.id##
+					##foreach @MENU.MenuNodes as @menu filter @menu.id=@m3.id##
+							{BEGIN item##@m3.id##_menulink}
+							<tr id="item##@m3.id##" topparent="item##@m1.parent##" parent="item##@m3.parent##" class="runner-b-vmenu runner-vmenu tree subitem level3 ##@m3.type##{BEGIN item##@menu.id##_current} current{END item##@menu.id##_current}">
+								<td class="runner-cl"></td>	
+								<td class="runner-cc">
+									##include templates\menuitem_inline.htm##
+								</td>
+								<td class="runner-cr"></td>
+							</tr>	
+							##foreach @MENU.MenuNodes as @m4 filter @m4.parent = @m3.id##
+							##foreach @MENU.MenuNodes as @menu filter @menu.id=@m4.id##
+									{BEGIN item##@m4.id##_menulink}
+									<tr id="item##@m4.id##" topparent="item##@m1.parent##" parent="item##@m4.parent##" class="runner-b-vmenu runner-vmenu tree subitem level4 ##@m4.type##{BEGIN item##@menu.id##_current} current{END item##@menu.id##_current}">
+										<td class="runner-cl"></td>	
+										<td class="runner-cc">
+											##include templates\menuitem_inline.htm##
+										</td>
+										<td class="runner-cr"></td>
+									</tr>	
+									##foreach @MENU.MenuNodes as @m5 filter @m5.parent = @m4.id##
+									##foreach @MENU.MenuNodes as @menu filter @menu.id=@m5.id##
+											{BEGIN item##@m5.id##_menulink}
+											<tr id="item##@m5.id##" topparent="item##@m1.parent##" parent="item##@m5.parent##" class="runner-b-vmenu runner-vmenu tree subitem level5 ##@m5.type##{BEGIN item##@menu.id##_current} current{END item##@menu.id##_current}">
+												<td class="runner-cl"></td>	
+												<td class="runner-cc">
+													##include templates\menuitem_inline.htm##
+												</td>
+												<td class="runner-cr"></td>
+											</tr>	
+											{END item##@m5.id##_menulink}
+									##endfor##			
+									##endfor##			
+									{END item##@m4.id##_menulink}
+							##endfor##			
+							##endfor##			
+							{END item##@m3.id##_menulink}
+					##endfor##			
+					##endfor##			
+					{END item##@m2.id##_menulink}
+			##endfor##			
+			##endfor##			
+			{END item##@m1.id##_menulink}
+	##endfor##			
+	##endfor##			
+	{END item##@m0.id##_menulink}
+##endfor##
+##if @last##
+##if @BUILDER.bDynamicPermissions##		
+	{BEGIN adminarea_link}
+	##include templates\menuitem_adminarea.htm##
+	{END adminarea_link}
+##endif##
+##endif##			
+##endfor##

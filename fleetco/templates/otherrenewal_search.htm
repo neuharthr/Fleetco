@@ -1,0 +1,319 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN searchheader}
+<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel otherrenewal search}</h1>
+</span></div>{END searchheader}
+
+
+{BEGIN conditions_block}
+<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
+	<span class=fieldname>Criteria:&nbsp;</span>	
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
+	</center></div>{END conditions_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
+	<tr>
+		<td>&nbsp;</td>
+		<td>NOT</td>
+		<td colspan=3>&nbsp; </td>
+	</tr>
+	<tr class="{$fielddispclass_ID}">
+	{BEGIN ID_fieldblock}		
+	<td>
+		{$label otherrenewal ID}
+	</td>
+	<td>
+		<input type="checkbox" {$ID_notbox}>
+	</td>
+	<td>
+		{$searchtype_ID}
+	</td>
+	<td>
+		{$ID_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$ID_editcontrol1}&nbsp;
+	</td>
+{END ID_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_Fleet}">
+	{BEGIN Fleet_fieldblock}		
+	<td>
+		{$label otherrenewal Fleet}
+	</td>
+	<td>
+		<input type="checkbox" {$Fleet_notbox}>
+	</td>
+	<td>
+		{$searchtype_Fleet}
+	</td>
+	<td>
+		{$Fleet_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$Fleet_editcontrol1}&nbsp;
+	</td>
+{END Fleet_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_VehicleNo}">
+	{BEGIN VehicleNo_fieldblock}		
+	<td>
+		{$label otherrenewal VehicleNo}
+	</td>
+	<td>
+		<input type="checkbox" {$VehicleNo_notbox}>
+	</td>
+	<td>
+		{$searchtype_VehicleNo}
+	</td>
+	<td>
+		{$VehicleNo_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$VehicleNo_editcontrol1}&nbsp;
+	</td>
+{END VehicleNo_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_VehicleType}">
+	{BEGIN VehicleType_fieldblock}		
+	<td>
+		{$label otherrenewal VehicleType}
+	</td>
+	<td>
+		<input type="checkbox" {$VehicleType_notbox}>
+	</td>
+	<td>
+		{$searchtype_VehicleType}
+	</td>
+	<td>
+		{$VehicleType_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$VehicleType_editcontrol1}&nbsp;
+	</td>
+{END VehicleType_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_PaymentType}">
+	{BEGIN PaymentType_fieldblock}		
+	<td>
+		{$label otherrenewal PaymentType}
+	</td>
+	<td>
+		<input type="checkbox" {$PaymentType_notbox}>
+	</td>
+	<td>
+		{$searchtype_PaymentType}
+	</td>
+	<td>
+		{$PaymentType_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$PaymentType_editcontrol1}&nbsp;
+	</td>
+{END PaymentType_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_PaymentDate}">
+	{BEGIN PaymentDate_fieldblock}		
+	<td>
+		{$label otherrenewal PaymentDate}
+	</td>
+	<td>
+		<input type="checkbox" {$PaymentDate_notbox}>
+	</td>
+	<td>
+		{$searchtype_PaymentDate}
+	</td>
+	<td>
+		{$PaymentDate_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$PaymentDate_editcontrol1}&nbsp;
+	</td>
+{END PaymentDate_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_Cost}">
+	{BEGIN Cost_fieldblock}		
+	<td>
+		{$label otherrenewal Cost}
+	</td>
+	<td>
+		<input type="checkbox" {$Cost_notbox}>
+	</td>
+	<td>
+		{$searchtype_Cost}
+	</td>
+	<td>
+		{$Cost_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$Cost_editcontrol1}&nbsp;
+	</td>
+{END Cost_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_PeriodFrom}">
+	{BEGIN PeriodFrom_fieldblock}		
+	<td>
+		{$label otherrenewal PeriodFrom}
+	</td>
+	<td>
+		<input type="checkbox" {$PeriodFrom_notbox}>
+	</td>
+	<td>
+		{$searchtype_PeriodFrom}
+	</td>
+	<td>
+		{$PeriodFrom_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$PeriodFrom_editcontrol1}&nbsp;
+	</td>
+{END PeriodFrom_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_PeriodTo}">
+	{BEGIN PeriodTo_fieldblock}		
+	<td>
+		{$label otherrenewal PeriodTo}
+	</td>
+	<td>
+		<input type="checkbox" {$PeriodTo_notbox}>
+	</td>
+	<td>
+		{$searchtype_PeriodTo}
+	</td>
+	<td>
+		{$PeriodTo_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$PeriodTo_editcontrol1}&nbsp;
+	</td>
+{END PeriodTo_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_PaymentRef}">
+	{BEGIN PaymentRef_fieldblock}		
+	<td>
+		{$label otherrenewal PaymentRef}
+	</td>
+	<td>
+		<input type="checkbox" {$PaymentRef_notbox}>
+	</td>
+	<td>
+		{$searchtype_PaymentRef}
+	</td>
+	<td>
+		{$PaymentRef_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$PaymentRef_editcontrol1}&nbsp;
+	</td>
+{END PaymentRef_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_SystemDate}">
+	{BEGIN SystemDate_fieldblock}		
+	<td>
+		{$label otherrenewal SystemDate}
+	</td>
+	<td>
+		<input type="checkbox" {$SystemDate_notbox}>
+	</td>
+	<td>
+		{$searchtype_SystemDate}
+	</td>
+	<td>
+		{$SystemDate_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$SystemDate_editcontrol1}&nbsp;
+	</td>
+{END SystemDate_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EnteredBy}">
+	{BEGIN EnteredBy_fieldblock}		
+	<td>
+		{$label otherrenewal EnteredBy}
+	</td>
+	<td>
+		<input type="checkbox" {$EnteredBy_notbox}>
+	</td>
+	<td>
+		{$searchtype_EnteredBy}
+	</td>
+	<td>
+		{$EnteredBy_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EnteredBy_editcontrol1}&nbsp;
+	</td>
+{END EnteredBy_fieldblock}
+	</tr>
+
+</table></div>
+
+
+{BEGIN searchbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
+<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
+{END search_button} 
+{BEGIN reset_button}
+<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
+{END reset_button}
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
+{END back_button}</div>{END searchbuttons}
+
+
+</div>
+{END container_fields}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

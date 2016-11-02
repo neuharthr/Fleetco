@@ -1,0 +1,94 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-remind" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN remindheader}
+<div  class="rnr-brickcontents style2 rnr-b-remindheader {$brickclass_remindheader}"><span>	<h1>{$pagetitlelabel  remind}</h1>
+</span></div>{END remindheader}
+
+
+{BEGIN message_block}
+<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-remindfields {$brickclass_remindfields}"><table class="fieldGrid">
+	<tr>
+		<td>
+			{BEGIN username_email_label}<span class="rnr-radio-label">Enter username or email:</span>{END username_email_label}
+		</td>
+		<td class="rnr-control">
+			<input type="text" name="username_email" {$username_email_attrs}>
+		</td>
+	</tr>
+		{BEGIN captcha_block}
+	<tr>
+		<td> 
+			&nbsp;
+		</td>
+		<td class="rnr-control">
+			{$captcha}
+		</td>
+	</tr>
+	{END captcha_block}
+</table>
+</div>
+
+
+{BEGIN remindbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-remindbuttons {$brickclass_remindbuttons}"><div class="rnr-withsidelink">
+	<a href="#" class="rnr-button main" {$submit_attrs}>Submit</a>
+	<a href="login.php" class="rnr-button link rnr-sidelink" {$backlink_attrs}>Back to login page</a>
+</div></div>{END remindbuttons}
+
+
+</div>
+{END container_fields}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

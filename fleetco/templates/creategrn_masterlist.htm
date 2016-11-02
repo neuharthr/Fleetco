@@ -1,0 +1,75 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterlistheader {$brickclass_masterlistheader}">	<h1>{$pagetitlelabel creategrn masterlist}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-mastergridfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$PriceLink_class}">{$label creategrn PriceLink}</th>
+			<th class="{$Fleet_class}">{$label creategrn Fleet}</th>
+			<th class="{$ID_class}">{$label creategrn ID}</th>
+			<th class="{$SystemDate_class}">{$label creategrn SystemDate}</th>
+			<th class="{$GRNDate_class}">{$label creategrn GRNDate}</th>
+			<th class="{$Status_class}">{$label creategrn Status}</th>
+			<th class="{$RemovedFrom_class}">{$label creategrn RemovedFrom}</th>
+			<th class="{$RefNumber_class}">{$label creategrn RefNumber}</th>
+			<th class="{$ItemCode_class}">{$label creategrn ItemCode}</th>
+			<th class="{$Brand_class}">{$label creategrn Brand}</th>
+			<th class="{$Description_class}">{$label creategrn Description}</th>
+			<th class="{$Supplier_class}">{$label creategrn Supplier}</th>
+			<th class="{$UnitPrice_class}">{$label creategrn UnitPrice}</th>
+			<th class="{$Quantity_class}">{$label creategrn Quantity}</th>
+			<th class="{$Cost_class}">{$label creategrn Cost}</th>
+			<th class="{$CurrentStock_class}">{$label creategrn CurrentStock}</th>
+			<th class="{$EnteredBy_class}">{$label creategrn EnteredBy}</th>
+			<th class="{$ApprovedBy_class}">{$label creategrn ApprovedBy}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$PriceLink_class}">{$PriceLink_mastervalue}</td>
+			<td class="{$Fleet_class}">{$Fleet_mastervalue}</td>
+			<td class="{$ID_class}">{$ID_mastervalue}</td>
+			<td class="{$SystemDate_class}">{$SystemDate_mastervalue}</td>
+			<td class="{$GRNDate_class}">{$GRNDate_mastervalue}</td>
+			<td class="{$Status_class}">{$Status_mastervalue}</td>
+			<td class="{$RemovedFrom_class}">{$RemovedFrom_mastervalue}</td>
+			<td class="{$RefNumber_class}">{$RefNumber_mastervalue}</td>
+			<td class="{$ItemCode_class}">{$ItemCode_mastervalue}</td>
+			<td class="{$Brand_class}">{$Brand_mastervalue}</td>
+			<td class="{$Description_class}">{$Description_mastervalue}</td>
+			<td class="{$Supplier_class}">{$Supplier_mastervalue}</td>
+			<td class="{$UnitPrice_class}">{$UnitPrice_mastervalue}</td>
+			<td class="{$Quantity_class}">{$Quantity_mastervalue}</td>
+			<td class="{$Cost_class}">{$Cost_mastervalue}</td>
+			<td class="{$CurrentStock_class}">{$CurrentStock_mastervalue}</td>
+			<td class="{$EnteredBy_class}">{$EnteredBy_mastervalue}</td>
+			<td class="{$ApprovedBy_class}">{$ApprovedBy_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+{END container_mastergrid}
+
+</div>

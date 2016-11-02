@@ -1,0 +1,200 @@
+body.page-add_basic_2col_center
+{
+padding-top:10px; padding-left:10px;
+}
+.page-add_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-all
+{
+margin-bottom:5px;
+}
+.page-add_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-all,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-all
+{
+min-width: 500px; display:inline-block
+}
+.page-add_basic_2col_center .rnr-cw-all,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-cw-all,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-cw-all
+{
+text-align: center;
+}
+.page-add_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-master
+{
+margin-bottom:5px;
+}
+.page-add_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-master
+{
+min-width: 500px; display:inline-block
+}
+.page-add_basic_2col_center .rnr-cw-master,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-cw-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-cw-master
+{
+text-align: center;
+}
+.page-add_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-masterinfo
+{
+white-space: nowrap;
+}
+.page-add_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-masterinfo,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-masterinfo
+{
+text-align: left;
+}
+.page-add_basic_2col_center .rnr-b-masterinfo > *,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-masterinfo > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-masterinfo > *
+{
+
+}
+.page-add_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-fields
+{
+margin-bottom:5px;
+}
+.page-add_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-fields
+{
+min-width: 500px; display:inline-block
+}
+.page-add_basic_2col_center .rnr-cw-fields,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-cw-fields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-cw-fields
+{
+text-align: center;
+}
+.page-add_basic_2col_center .rnr-b-addheader,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addheader
+{
+white-space: nowrap;
+}
+.page-add_basic_2col_center .rnr-b-addheader,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addheader
+{
+text-align: left;
+}
+.page-add_basic_2col_center .rnr-b-addheader > *,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addheader > *
+{
+font-size: 120%;
+}
+.page-add_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-message
+{
+white-space: nowrap;
+}
+.page-add_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-message,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-message
+{
+text-align: left;
+}
+.page-add_basic_2col_center .rnr-b-message > *,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-message > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-message > *
+{
+
+}
+.page-add_basic_2col_center .rnr-b-multistep_nav_add,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-multistep_nav_add,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-multistep_nav_add
+{
+white-space: nowrap;
+}
+.page-add_basic_2col_center .rnr-b-multistep_nav_add,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-multistep_nav_add,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-multistep_nav_add
+{
+text-align: left;
+}
+.page-add_basic_2col_center .rnr-b-multistep_nav_add > *,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-multistep_nav_add > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-multistep_nav_add > *
+{
+
+}
+.page-add_basic_2col_center .rnr-b-addfields2,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addfields2,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addfields2
+{
+white-space: normal;
+}
+.page-add_basic_2col_center .rnr-b-addfields2,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addfields2,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addfields2
+{
+text-align: left;
+}
+.page-add_basic_2col_center .rnr-b-addfields2 > *,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addfields2 > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addfields2 > *
+{
+
+}
+.page-add_basic_2col_center .rnr-b-addbuttons,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addbuttons
+{
+white-space: nowrap;
+}
+.page-add_basic_2col_center .rnr-b-addbuttons,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addbuttons
+{
+text-align: left;
+}
+.page-add_basic_2col_center .rnr-b-addbuttons > *,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-addbuttons > *
+{
+
+}
+.page-add_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-details
+{
+margin-bottom:5px;
+}
+.page-add_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-details,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-c-details
+{
+min-width: 100px;
+}
+.page-add_basic_2col_center .rnr-b-adddetails,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-adddetails,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-adddetails
+{
+white-space: nowrap;
+}
+.page-add_basic_2col_center .rnr-b-adddetails,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-adddetails,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-adddetails
+{
+text-align: left;
+}
+.page-add_basic_2col_center .rnr-b-adddetails > *,
+  .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-adddetails > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-add_basic_2col_center .rnr-b-adddetails > *
+{
+
+}
+body.page-add_basic_2col_center .rnr-top
+{
+padding-right: 5px;
+}

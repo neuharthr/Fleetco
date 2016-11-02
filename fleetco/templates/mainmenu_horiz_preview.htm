@@ -1,0 +1,22 @@
+{BEGIN mainmenu_block}
+<table class="runner-hmenu" cellpadding="0">
+	<tr originalMenuTag="$$originalMenuTag">
+
+##if exists(@TABLE)##
+##set @isAdminTable=eval(IsAdminTable(@TABLE))##
+##else##
+##set @isAdminTable="0"##
+##endif##
+	
+	##if !@isAdminTable##
+	##foreach @MENU.MenuNodes as @menu filter !@menu.parent##
+		<td id="item##@menu.id##_$$menuID" view="topitem" class="##@menu.type##">
+		##include templates\topmenuitem_preview.htm##
+		</td>
+	##endfor##
+	##else##
+	##include templates\mainmenu_adminarea_horiz_preview.htm##
+	##endif##
+  </tr>
+</table>
+{END mainmenu_block}

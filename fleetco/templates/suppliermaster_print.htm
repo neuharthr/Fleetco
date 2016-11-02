@@ -1,0 +1,203 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+{BEGIN printheader}
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel suppliermaster print}</h1>
+</div>{END printheader}
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN Id_fieldheadercolumn}
+<th class="runner-cc {$Id_class}" {$Id_style}>
+	{BEGIN Id_fieldheader}
+	<b>{$label suppliermaster Id}</b>
+	{END Id_fieldheader}
+</th>
+{END Id_fieldheadercolumn}
+	{BEGIN SupplierName_fieldheadercolumn}
+<th class="runner-cc {$SupplierName_class}" {$SupplierName_style}>
+	{BEGIN SupplierName_fieldheader}
+	<b>{$label suppliermaster SupplierName}</b>
+	{END SupplierName_fieldheader}
+</th>
+{END SupplierName_fieldheadercolumn}
+	{BEGIN Address_fieldheadercolumn}
+<th class="runner-cc {$Address_class}" {$Address_style}>
+	{BEGIN Address_fieldheader}
+	<b>{$label suppliermaster Address}</b>
+	{END Address_fieldheader}
+</th>
+{END Address_fieldheadercolumn}
+	{BEGIN ContactPerson_fieldheadercolumn}
+<th class="runner-cc {$ContactPerson_class}" {$ContactPerson_style}>
+	{BEGIN ContactPerson_fieldheader}
+	<b>{$label suppliermaster ContactPerson}</b>
+	{END ContactPerson_fieldheader}
+</th>
+{END ContactPerson_fieldheadercolumn}
+	{BEGIN Telephone_fieldheadercolumn}
+<th class="runner-cc {$Telephone_class}" {$Telephone_style}>
+	{BEGIN Telephone_fieldheader}
+	<b>{$label suppliermaster Telephone}</b>
+	{END Telephone_fieldheader}
+</th>
+{END Telephone_fieldheadercolumn}
+	{BEGIN Remarks_fieldheadercolumn}
+<th class="runner-cc {$Remarks_class}" {$Remarks_style}>
+	{BEGIN Remarks_fieldheader}
+	<b>{$label suppliermaster Remarks}</b>
+	{END Remarks_fieldheader}
+</th>
+{END Remarks_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN Id_fieldcolumn}
+<td  class="runner-cc {$Id_class}" {$Id_style} {$recordattrs}>
+	{$Id_value}
+</td>
+{END Id_fieldcolumn}
+	{BEGIN SupplierName_fieldcolumn}
+<td  class="runner-cc {$SupplierName_class}" {$SupplierName_style} {$recordattrs}>
+	{$SupplierName_value}
+</td>
+{END SupplierName_fieldcolumn}
+	{BEGIN Address_fieldcolumn}
+<td  class="runner-cc {$Address_class}" {$Address_style} {$recordattrs}>
+	{$Address_value}
+</td>
+{END Address_fieldcolumn}
+	{BEGIN ContactPerson_fieldcolumn}
+<td  class="runner-cc {$ContactPerson_class}" {$ContactPerson_style} {$recordattrs}>
+	{$ContactPerson_value}
+</td>
+{END ContactPerson_fieldcolumn}
+	{BEGIN Telephone_fieldcolumn}
+<td  class="runner-cc {$Telephone_class}" {$Telephone_style} {$recordattrs}>
+	{$Telephone_value}
+</td>
+{END Telephone_fieldcolumn}
+	{BEGIN Remarks_fieldcolumn}
+<td  class="runner-cc {$Remarks_class}" {$Remarks_style} {$recordattrs}>
+	{$Remarks_value}
+</td>
+{END Remarks_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+	{END grid_row}
+
+
+	
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

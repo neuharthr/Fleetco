@@ -1,0 +1,163 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-import" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_import}
+<div class="rnr-c rnr-cv rnr-c-import">
+
+
+<div  class="rnr-brickcontents style2 rnr-b-importheader {$brickclass_importheader}"><span>	<h1>{$pagetitlelabel full_report import}</h1>
+</span></div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-errormessage {$brickclass_errormessage}">{$error_message}</div>
+
+
+
+<div  class="rnr-brickcontents style3 rnr-b-importheader_text {$brickclass_importheader_text}">Drag and drop a comma-separated (.csv) or Excel (.xlsx) file or choose an option below.</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-importfields {$brickclass_importfields}"><div id="importUploadFallback{$id}" style="display: none;">
+<table class="fieldGrid">
+	<tr>
+		<td>
+			Select file with data.
+		</td>
+		<td>
+			<input type="File" id="importFile{$id}" name="importFile{$id}">
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="rnr-import-settings">
+<a href="#" class="rnr-button" id="uploadImportFile{$id}"> Browse... </a>
+</div>
+
+<div id="importDropzone{$id}" class="import-dragndrop-area" style="display: none;">
+	<div class="import-dragtext"> Drag files here </div>
+</div>
+
+<div class="rnr-import-settings">
+<a id="switchToTextInsertion{$id}" href="#" class="rnr-button"> Copy and paste text </a>
+</div>
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-import_rawtext_control {$brickclass_import_rawtext_control}"><div id="copyAndPasteText{$id}">
+<div> Copy and Paste your text data here: </div>
+<textarea class="rnr-import-textarea" id="importText{$id}">
+</textarea>
+</div></div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-import_preview {$brickclass_import_preview}"><div>
+<div id="importSettings{$id}" class="rnr-import-settings">
+	<div class="rnr-is-control">
+		<input class="rnr-checkbox" type="checkbox" checked="checked" id="columnsInFirstLine{$id}" name="columnsInFirstLine"/><label> Column headers in the first line </label>
+	</div>
+
+	<div id="delimiterSettings{$id}" class="rnr-is-control" style="display:none;">
+		<input name="importDelimiter" class="importDelimiters" type="radio" value=","><label> Comma </label>
+		<input name="importDelimiter" class="importDelimiters" type="radio" value="&#9;"><label> Tab </label>
+		<input name="importDelimiter" class="importDelimiters" type="radio" value="other"><label> Other </label>
+		<input id="customDelimiter{$id}" value=";" type="text">
+	</div>
+
+	<div id="dateFormatSettings{$id}" class="rnr-is-control" style="display:none;">
+		<label>Date format:</label>
+		<input id="importDateFormat{$id}" type="text">
+	</div>
+
+</div>
+
+<div id="importGridHead{$id}" class="rnr-import-head-preview">
+</div>
+<div id="importGridBody{$id}" class="rnr-import-body-preview">
+	<table id="importPreviewBodyTable{$id}">
+	</table>
+</div>
+<div id="importErrorMessage{$id}" class="rnr-error" style="display:none;"></div>
+</div></div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-import_process {$brickclass_import_process}"><div id="importProgress{$id}" class="rnr-import-progress">
+</div>
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-import_results {$brickclass_import_results}"><div id="reportText{$id}" class="rnr-import-report">
+</div>
+</div>
+
+
+
+<div  class="rnr-brickcontents style2 rnr-b-importbuttons {$brickclass_importbuttons}"><div class="rnr-buttons-right">
+	<a href="#" class="rnr-button" id="backToList{$id}">Back to list</a>
+	<a href="#" class="rnr-button" id="newImport{$id}" style="display: none;">New import</a>
+</div>
+<div class="rnr-buttons-left">
+	<a id="continueTextImport{$id}" href="#" class="rnr-button disabled main" style="display: none;"> Continue </a>	
+	<a id="importButton{$id}" href="#" class="rnr-button" style="display: none;">Import Data</a>	
+	<a href="#" class="rnr-button" id="backTo{$id}" style="display: none;">Back</a>
+	
+	<a id="saveReport{$id}" href="#" class="rnr-button" style="display: none;">Save Report</a>
+	<a id="saveUnprocessedData{$id}" href="#" class="rnr-button errorReportButtons{$id}" style="display: none;">Download unprocessed data</a>
+	<a id="saveErrorReport{$id}" href="#" class="rnr-button errorReportButtons{$id}" style="display: none;">Download error log</a>
+</div>
+</div>
+
+
+</div>
+{END container_import}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

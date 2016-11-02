@@ -1,0 +1,126 @@
+body.page-print
+{
+padding-top:10px; padding-left:10px;
+}
+.page-print .rnr-c-pageheader,
+  .rnr-pagewrapper .page-print .rnr-c-pageheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-c-pageheader
+{
+margin-bottom:5px;
+}
+.page-print .rnr-b-printheader,
+  .rnr-pagewrapper .page-print .rnr-b-printheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printheader
+{
+white-space: nowrap;
+}
+.page-print .rnr-b-printheader,
+  .rnr-pagewrapper .page-print .rnr-b-printheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printheader
+{
+text-align: left;
+}
+.page-print .rnr-b-printheader > *,
+  .rnr-pagewrapper .page-print .rnr-b-printheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printheader > *
+{
+
+}
+.page-print .rnr-b-page_of_print,
+  .rnr-pagewrapper .page-print .rnr-b-page_of_print,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-page_of_print
+{
+white-space: nowrap;
+}
+.page-print .rnr-b-page_of_print,
+  .rnr-pagewrapper .page-print .rnr-b-page_of_print,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-page_of_print
+{
+text-align: left;
+}
+.page-print .rnr-b-page_of_print > *,
+  .rnr-pagewrapper .page-print .rnr-b-page_of_print > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-page_of_print > *
+{
+
+}
+.page-print .rnr-c-grid,
+  .rnr-pagewrapper .page-print .rnr-c-grid,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-c-grid
+{
+margin-bottom:5px;
+}
+.page-print .rnr-b-printgridnext,
+  .rnr-pagewrapper .page-print .rnr-b-printgridnext,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printgridnext
+{
+white-space: nowrap;
+}
+.page-print .rnr-b-printgridnext,
+  .rnr-pagewrapper .page-print .rnr-b-printgridnext,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printgridnext
+{
+text-align: left;
+}
+.page-print .rnr-b-printgridnext > *,
+  .rnr-pagewrapper .page-print .rnr-b-printgridnext > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printgridnext > *
+{
+
+}
+body.page-print .rnr-center
+{
+padding-right: 5px;
+}
+.page-print .rnr-c-pdf,
+  .rnr-pagewrapper .page-print .rnr-c-pdf,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-c-pdf
+{
+margin-bottom:5px;
+}
+.page-print .rnr-b-printbuttons,
+  .rnr-pagewrapper .page-print .rnr-b-printbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printbuttons
+{
+white-space: nowrap;
+}
+.page-print .rnr-b-printbuttons,
+  .rnr-pagewrapper .page-print .rnr-b-printbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printbuttons
+{
+text-align: left;
+}
+.page-print .rnr-b-printbuttons > *,
+  .rnr-pagewrapper .page-print .rnr-b-printbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-printbuttons > *
+{
+
+}
+.page-print .rnr-c-master,
+  .rnr-pagewrapper .page-print .rnr-c-master,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-c-master
+{
+margin-bottom:5px;
+}
+.page-print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .page-print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-masterinfoprint
+{
+white-space: nowrap;
+}
+.page-print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .page-print .rnr-b-masterinfoprint,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-masterinfoprint
+{
+text-align: left;
+}
+.page-print .rnr-b-masterinfoprint > *,
+  .rnr-pagewrapper .page-print .rnr-b-masterinfoprint > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-print .rnr-b-masterinfoprint > *
+{
+
+}
+body.page-print .rnr-top
+{
+padding-right: 5px;
+}

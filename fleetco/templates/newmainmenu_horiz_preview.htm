@@ -1,0 +1,86 @@
+{BEGIN mainmenu_block}
+
+##if exists(@TABLE)##
+##set @isAdminTable=eval(IsAdminTable(@TABLE))##
+##else##
+##set @isAdminTable="0"##
+##endif##
+
+##if !@isAdminTable##
+	##foreach @MENU.MenuNodes as @m0 filter !@m0.parent##
+	##foreach @MENU.MenuNodes as @menu filter @menu.id=@m0.id##
+		<div id="item##@m0.id##" class="rnr-b-hmenu {$menustyle} ##@m0.type## ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif##" originalMenuTag="$$originalMenuTag" menuID="$$menuID">
+		##include templates\newmenuitem_horiz_preview.htm##
+	##foreach @MENU.MenuNodes as @m1 filter @m1.parent = @m0.id##
+		##if @first##
+			<ul >
+		##endif##
+		##foreach @MENU.MenuNodes as @menu filter @menu.id=@m1.id##
+				<li  parent="group##@menu.parent##" class="##@menu.type## ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+				##include templates\newmenuitem_preview.htm##
+				##foreach @MENU.MenuNodes as @m2 filter @m2.parent = @m1.id##
+				##if @first##
+					<ul >
+				##endif##
+				##foreach @MENU.MenuNodes as @menu filter @menu.id=@m2.id##
+						<li  parent="group##@menu.parent##" class="##@menu.type## ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+						##include templates\newmenuitem_preview.htm##
+						##foreach @MENU.MenuNodes as @m3 filter @m3.parent = @m2.id##
+						##if @first##
+							<ul >
+						##endif##
+						##foreach @MENU.MenuNodes as @menu filter @menu.id=@m3.id##
+								<li  parent="group##@menu.parent##" class="##@menu.type## ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+								##include templates\newmenuitem_preview.htm##
+								##foreach @MENU.MenuNodes as @m4 filter @m4.parent = @m3.id##
+								##if @first##
+									<ul >
+								##endif##
+								##foreach @MENU.MenuNodes as @menu filter @menu.id=@m4.id##
+										<li  parent="group##@menu.parent##" class="##@menu.type## ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+										##include templates\newmenuitem_preview.htm##
+										##foreach @MENU.MenuNodes as @m5 filter @m5.parent = @m4.id##
+										##if @first##
+											<ul >
+										##endif##
+										##foreach @MENU.MenuNodes as @menu filter @menu.id=@m5.id##
+												<li  parent="group##@menu.parent##" class="##@menu.type## ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable## current##endif####endif## menu##@menu.type##">
+												##include templates\newmenuitem_preview.htm##
+												</li>
+										##endfor##			
+										##if @last##
+											</ul>
+										##endif##
+										##endfor##			
+										</li>
+								##endfor##			
+								##if @last##
+									</ul>
+								##endif##
+								##endfor##			
+								</li>
+						##endfor##			
+						##if @last##
+							</ul>
+						##endif##
+						##endfor##			
+						</li>
+				##endfor##			
+				##if @last##
+					</ul>
+				##endif##
+				##endfor##			
+				</li>
+		##endfor##			
+		##if @last##
+			</ul>
+		##endif##
+		##endfor##			
+		</div>
+	##endfor##
+	##endfor##	
+##else##
+	##include templates\newmainmenu_adminarea_horiz_preview.htm##
+##endif##
+{END mainmenu_block}
+

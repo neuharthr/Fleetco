@@ -1,0 +1,8 @@
+##if @menu.type!="Separator"##
+&nbsp;<a id="itemlink##@menu.id##" ##if @menu.style## style="##@menu.style##"##endif## title="##if @menu.name.text && @menu.name.nameType=="CustomID"####@menu.name.text 8h####elseif @menu.name.text####@menu.name.text 8h####elseif @menu.PageType=="WebReports"####message WEBREPORTS_SHORT####else####caption @menu.table####endif##" ##if exists(@TABLE)####if @menu.table==@TABLE.strDataSourceTable##class="curlink"##endif####endif##>##if @menu.name.text && @menu.name.nameType=="CustomID"####custom @menu.name.text####elseif @menu.name.text####@menu.name.text 8h####elseif @menu.PageType=="WebReports"####message WEBREPORTS_SHORT####else####caption @menu.table####endif##</a>&nbsp;
+##elseif @menu.parent##
+&nbsp;
+{$item##@menu.id##_separator}
+&nbsp;
+##endif##
+

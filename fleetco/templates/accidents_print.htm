@@ -1,0 +1,422 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+{BEGIN printheader}
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel accidents print}</h1>
+</div>{END printheader}
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN Id_fieldheadercolumn}
+<th class="runner-cc {$Id_class}" {$Id_style}>
+	{BEGIN Id_fieldheader}
+	<b>{$label accidents Id}</b>
+	{END Id_fieldheader}
+</th>
+{END Id_fieldheadercolumn}
+	{BEGIN Date_fieldheadercolumn}
+<th class="runner-cc {$Date_class}" {$Date_style}>
+	{BEGIN Date_fieldheader}
+	<b>{$label accidents Date}</b>
+	{END Date_fieldheader}
+</th>
+{END Date_fieldheadercolumn}
+	{BEGIN Vehicle_fieldheadercolumn}
+<th class="runner-cc {$Vehicle_class}" {$Vehicle_style}>
+	{BEGIN Vehicle_fieldheader}
+	<b>{$label accidents Vehicle}</b>
+	{END Vehicle_fieldheader}
+</th>
+{END Vehicle_fieldheadercolumn}
+	{BEGIN Fleet_fieldheadercolumn}
+<th class="runner-cc {$Fleet_class}" {$Fleet_style}>
+	{BEGIN Fleet_fieldheader}
+	<b>{$label accidents Fleet}</b>
+	{END Fleet_fieldheader}
+</th>
+{END Fleet_fieldheadercolumn}
+	{BEGIN Type_fieldheadercolumn}
+<th class="runner-cc {$Type_class}" {$Type_style}>
+	{BEGIN Type_fieldheader}
+	<b>{$label accidents Type}</b>
+	{END Type_fieldheader}
+</th>
+{END Type_fieldheadercolumn}
+	{BEGIN Time_fieldheadercolumn}
+<th class="runner-cc {$Time_class}" {$Time_style}>
+	{BEGIN Time_fieldheader}
+	<b>{$label accidents Time}</b>
+	{END Time_fieldheader}
+</th>
+{END Time_fieldheadercolumn}
+	{BEGIN Location_fieldheadercolumn}
+<th class="runner-cc {$Location_class}" {$Location_style}>
+	{BEGIN Location_fieldheader}
+	<b>{$label accidents Location}</b>
+	{END Location_fieldheader}
+</th>
+{END Location_fieldheadercolumn}
+	{BEGIN Driver_fieldheadercolumn}
+<th class="runner-cc {$Driver_class}" {$Driver_style}>
+	{BEGIN Driver_fieldheader}
+	<b>{$label accidents Driver}</b>
+	{END Driver_fieldheader}
+</th>
+{END Driver_fieldheadercolumn}
+	{BEGIN Deaths_fieldheadercolumn}
+<th class="runner-cc {$Deaths_class}" {$Deaths_style}>
+	{BEGIN Deaths_fieldheader}
+	<b>{$label accidents Deaths}</b>
+	{END Deaths_fieldheader}
+</th>
+{END Deaths_fieldheadercolumn}
+	{BEGIN Injured_fieldheadercolumn}
+<th class="runner-cc {$Injured_class}" {$Injured_style}>
+	{BEGIN Injured_fieldheader}
+	<b>{$label accidents Injured}</b>
+	{END Injured_fieldheader}
+</th>
+{END Injured_fieldheadercolumn}
+	{BEGIN StatusInjured_fieldheadercolumn}
+<th class="runner-cc {$StatusInjured_class}" {$StatusInjured_style}>
+	{BEGIN StatusInjured_fieldheader}
+	<b>{$label accidents StatusInjured}</b>
+	{END StatusInjured_fieldheader}
+</th>
+{END StatusInjured_fieldheadercolumn}
+	{BEGIN Details_fieldheadercolumn}
+<th class="runner-cc {$Details_class}" {$Details_style}>
+	{BEGIN Details_fieldheader}
+	<b>{$label accidents Details}</b>
+	{END Details_fieldheader}
+</th>
+{END Details_fieldheadercolumn}
+	{BEGIN DamageToVehicle_fieldheadercolumn}
+<th class="runner-cc {$DamageToVehicle_class}" {$DamageToVehicle_style}>
+	{BEGIN DamageToVehicle_fieldheader}
+	<b>{$label accidents DamageToVehicle}</b>
+	{END DamageToVehicle_fieldheader}
+</th>
+{END DamageToVehicle_fieldheadercolumn}
+	{BEGIN 3rdPartyDamages_fieldheadercolumn}
+<th class="runner-cc {$3rdPartyDamages_class}" {$3rdPartyDamages_style}>
+	{BEGIN 3rdPartyDamages_fieldheader}
+	<b>{$label accidents 3rdPartyDamages}</b>
+	{END 3rdPartyDamages_fieldheader}
+</th>
+{END 3rdPartyDamages_fieldheadercolumn}
+	{BEGIN EnteredBy_fieldheadercolumn}
+<th class="runner-cc {$EnteredBy_class}" {$EnteredBy_style}>
+	{BEGIN EnteredBy_fieldheader}
+	<b>{$label accidents EnteredBy}</b>
+	{END EnteredBy_fieldheader}
+</th>
+{END EnteredBy_fieldheadercolumn}
+	{BEGIN Images_fieldheadercolumn}
+<th class="runner-cc {$Images_class}" {$Images_style}>
+	{BEGIN Images_fieldheader}
+	<b>{$label accidents Images}</b>
+	{END Images_fieldheader}
+</th>
+{END Images_fieldheadercolumn}
+	{BEGIN SysDate_fieldheadercolumn}
+<th class="runner-cc {$SysDate_class}" {$SysDate_style}>
+	{BEGIN SysDate_fieldheader}
+	<b>{$label accidents SysDate}</b>
+	{END SysDate_fieldheader}
+</th>
+{END SysDate_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN Id_fieldcolumn}
+<td  class="runner-cc {$Id_class}" {$Id_style} {$recordattrs}>
+	{$Id_value}
+</td>
+{END Id_fieldcolumn}
+	{BEGIN Date_fieldcolumn}
+<td  class="runner-cc {$Date_class}" {$Date_style} {$recordattrs}>
+	{$Date_value}
+</td>
+{END Date_fieldcolumn}
+	{BEGIN Vehicle_fieldcolumn}
+<td  class="runner-cc {$Vehicle_class}" {$Vehicle_style} {$recordattrs}>
+	{$Vehicle_value}
+</td>
+{END Vehicle_fieldcolumn}
+	{BEGIN Fleet_fieldcolumn}
+<td  class="runner-cc {$Fleet_class}" {$Fleet_style} {$recordattrs}>
+	{$Fleet_value}
+</td>
+{END Fleet_fieldcolumn}
+	{BEGIN Type_fieldcolumn}
+<td  class="runner-cc {$Type_class}" {$Type_style} {$recordattrs}>
+	{$Type_value}
+</td>
+{END Type_fieldcolumn}
+	{BEGIN Time_fieldcolumn}
+<td  class="runner-cc {$Time_class}" {$Time_style} {$recordattrs}>
+	{$Time_value}
+</td>
+{END Time_fieldcolumn}
+	{BEGIN Location_fieldcolumn}
+<td  class="runner-cc {$Location_class}" {$Location_style} {$recordattrs}>
+	{$Location_value}
+</td>
+{END Location_fieldcolumn}
+	{BEGIN Driver_fieldcolumn}
+<td  class="runner-cc {$Driver_class}" {$Driver_style} {$recordattrs}>
+	{$Driver_value}
+</td>
+{END Driver_fieldcolumn}
+	{BEGIN Deaths_fieldcolumn}
+<td  class="runner-cc {$Deaths_class}" {$Deaths_style} {$recordattrs}>
+	{$Deaths_value}
+</td>
+{END Deaths_fieldcolumn}
+	{BEGIN Injured_fieldcolumn}
+<td  class="runner-cc {$Injured_class}" {$Injured_style} {$recordattrs}>
+	{$Injured_value}
+</td>
+{END Injured_fieldcolumn}
+	{BEGIN StatusInjured_fieldcolumn}
+<td  class="runner-cc {$StatusInjured_class}" {$StatusInjured_style} {$recordattrs}>
+	{$StatusInjured_value}
+</td>
+{END StatusInjured_fieldcolumn}
+	{BEGIN Details_fieldcolumn}
+<td  class="runner-cc {$Details_class}" {$Details_style} {$recordattrs}>
+	{$Details_value}
+</td>
+{END Details_fieldcolumn}
+	{BEGIN DamageToVehicle_fieldcolumn}
+<td  class="runner-cc {$DamageToVehicle_class}" {$DamageToVehicle_style} {$recordattrs}>
+	{$DamageToVehicle_value}
+</td>
+{END DamageToVehicle_fieldcolumn}
+	{BEGIN 3rdPartyDamages_fieldcolumn}
+<td  class="runner-cc {$3rdPartyDamages_class}" {$3rdPartyDamages_style} {$recordattrs}>
+	{$3rdPartyDamages_value}
+</td>
+{END 3rdPartyDamages_fieldcolumn}
+	{BEGIN EnteredBy_fieldcolumn}
+<td  class="runner-cc {$EnteredBy_class}" {$EnteredBy_style} {$recordattrs}>
+	{$EnteredBy_value}
+</td>
+{END EnteredBy_fieldcolumn}
+	{BEGIN Images_fieldcolumn}
+<td  class="runner-cc {$Images_class}" {$Images_style} {$recordattrs}>
+	{$Images_value}
+</td>
+{END Images_fieldcolumn}
+	{BEGIN SysDate_fieldcolumn}
+<td  class="runner-cc {$SysDate_class}" {$SysDate_style} {$recordattrs}>
+	{$SysDate_value}
+</td>
+{END SysDate_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+	{END grid_row}
+
+
+	{BEGIN totals_row}
+<tr class="rnr-bottomrow style1">
+	{BEGIN totals_record}
+		{BEGIN Id_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Id_fieldfootercolumn}
+	{BEGIN Date_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Date_fieldfootercolumn}
+	{BEGIN Vehicle_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Vehicle_fieldfootercolumn}
+	{BEGIN Fleet_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Fleet_fieldfootercolumn}
+	{BEGIN Type_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Type_fieldfootercolumn}
+	{BEGIN Time_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Time_fieldfootercolumn}
+	{BEGIN Location_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Location_fieldfootercolumn}
+	{BEGIN Driver_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Driver_fieldfootercolumn}
+	{BEGIN Deaths_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+	{BEGIN Deaths_showtotal}
+			Total:
+	{$Deaths_total}
+	{END Deaths_showtotal}
+</td>
+{END Deaths_fieldfootercolumn}
+	{BEGIN Injured_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+	{BEGIN Injured_showtotal}
+			Total:
+	{$Injured_total}
+	{END Injured_showtotal}
+</td>
+{END Injured_fieldfootercolumn}
+	{BEGIN StatusInjured_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END StatusInjured_fieldfootercolumn}
+	{BEGIN Details_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Details_fieldfootercolumn}
+	{BEGIN DamageToVehicle_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END DamageToVehicle_fieldfootercolumn}
+	{BEGIN 3rdPartyDamages_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END 3rdPartyDamages_fieldfootercolumn}
+	{BEGIN EnteredBy_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END EnteredBy_fieldfootercolumn}
+	{BEGIN Images_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Images_fieldfootercolumn}
+	{BEGIN SysDate_fieldfootercolumn}
+<td class="rnr-cc rnr-bc rnr-clast">
+</td>
+{END SysDate_fieldfootercolumn}
+
+	<td class="rnr-edge">&nbsp;</td>
+	{BEGIN endrecordtotals_block}
+	<td class="rnr-cs"></td>
+	{END endrecordtotals_block}
+	{END totals_record}
+</tr>
+{END totals_row}
+
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -1,0 +1,1063 @@
+.PdfAvenue.rnr-s-empty > .rnr-c
+{
+background:none;
+
+}
+.PdfAvenue.rnr-s-empty > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-empty > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-empty > * > :not(.rnr-b-wrapper) .style1
+{
+color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-empty > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-empty > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-empty > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-empty > * > :not(.rnr-b-wrapper) .style2
+{
+color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-empty > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-empty > * > :not(.rnr-b-wrapper) .style3
+{
+color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-empty > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-empty > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-menu > .rnr-c
+{
+border: solid #DCDCDC 1px;
+}
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-menu > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #77A4D0;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-menu > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #77A4D0;
+}
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-menu > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #4583C0;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-menu > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #D2D8DC;color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-menu > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-menu > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-menu > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-menu > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-menu > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-menu > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-menu > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-menu > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-hmenu > .rnr-c
+{
+background:none;
+
+}
+.PdfAvenue.rnr-s-hmenu > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-hmenu > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style1
+{
+color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-hmenu > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-hmenu > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style2
+{
+color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style3
+{
+color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-hmenu > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-undermenu > .rnr-c
+{
+border: solid #DCDCDC 1px;
+}
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #FFFFFF;color: #404040;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-undermenu > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #FFFFFF;
+}
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #FFFF00;color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #FFFF00;color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-undermenu > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-undermenu > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 7px 4px;
+}
+.PdfAvenue.rnr-s-undermenu > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-undermenu > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-undermenu > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-fields > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #FFFFFF;color: #333381;
+font-family: Arial, sans-serif; font-size: 15px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-fields > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #FFFFFF;
+}
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-fields > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #34699E;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-fields > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #FFFFFF;color: #696969;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-fields > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-fields > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-fields > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 6px 2px;
+}
+.PdfAvenue.rnr-s-fields > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-fields > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-fields > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 9px 6px;
+}
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-fields > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-fields > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-form > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #00CCCC;color: #000080;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-form > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #00CCCC;
+}
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-form > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #004080;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-form > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #6699CC;color: #003366;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-form > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-form > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-form > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-form > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-form > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-form > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-form > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-form > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-1 > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #34699E;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-1 > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #34699E;
+}
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-1 > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #34699E;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-1 > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #34699E;color: #D1EEEE;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-1 > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-1 > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-1 > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 7px 4px;
+}
+.PdfAvenue.rnr-s-1 > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-1 > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-1 > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-1 > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-1 > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-2 > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #EDF1F3;color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-2 > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #EDF1F3;
+}
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-2 > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #3366FF;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-2 > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #6699CC;color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-2 > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-2 > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-2 > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 6px 4px;
+}
+.PdfAvenue.rnr-s-2 > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-2 > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-2 > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-2 > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-2 > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style1,
+.PdfAvenue.rnr-s-3 > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #4B9EC9;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-3 > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #4B9EC9;
+}
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style2,
+.PdfAvenue.rnr-s-3 > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #000080;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style3,
+.PdfAvenue.rnr-s-3 > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #004080;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.rnr-s-3 > .rnr-c .rnr-leftbricks
+{
+margin-left: 0px;
+}
+.PdfAvenue.rnr-s-3 > .rnr-c .rnr-rightbricks
+{
+margin-right: 0px;
+}
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-3 > * > :not(.rnr-b-wrapper) .style1,
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-3 > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-3 > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 0px; background:transparent;
+}
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-3 > * > :not(.rnr-b-wrapper) .style2,
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.PdfAvenue.rnr-s-3 > * > :not(.rnr-b-wrapper) .style3,
+.PdfAvenue.rnr-s-3 > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow > th:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow > th:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow > td:not(.rnr-cs)
+{
+background-color: #3D78B4; background-image: none;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;padding: 8px 7px;
+}
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-bottomrow > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-bottomrow > td:not(.rnr-cs)
+{
+background-color: #DCE2E6; background-image: none;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;color: #333333;padding: 6px 7px;
+}
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row > td:not(.rnr-cs)
+{
+background-color: #EDF1F3; background-image: none;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;color: #333333;color: #333333;padding: 6px 7px;
+}
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row:nth-last-child(2n+1) > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row:nth-last-child(2n+1) > td:not(.rnr-cs)
+{
+background-color: #FFFFFF; background-image: none;color: #333333;
+}
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical).hoverable > * > .rnr-row:hover > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord.hoverable > * > .rnr-row:hover > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row > td.rnr-selected,
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row > td.rnr-selected
+{
+background-color: #DCDCDC; background-image: none;color: #333333;
+}
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical).hoverable > * > .rnr-row:hover:nth-last-child(2n+1) > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord.hoverable > * > .rnr-row:hover:nth-last-child(2n+1) > td:not(.rnr-cs),
+.PdfAvenue.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row:nth-last-child(2n+1) > td.rnr-selected,
+.PdfAvenue.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row:nth-last-child(2n+1) > td.rnr-selected
+{
+background-color: #C0C0C0; background-image: none;color: #333333;
+}
+.PdfAvenue .rnr-search-highlight
+{
+color: #FF0000; background-color: transparent;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > *,
+.PdfAvenue .rnr-b-vmenu.tree.main > *:not(.subitem)
+{
+background-image:none; background-color: #FFFFFF;color:#696969;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > hr,
+.PdfAvenue .rnr-b-vmenu.tree.main > *:not(.subitem) > hr
+{
+border-color:#696969;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > *:hover:not(.expanded):not(.menuSeparator),
+.PdfAvenue .rnr-b-vmenu.tree.main > *:not(.subitem):not(.manage):hover:not(.menuSeparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > *.current.current.current,
+.PdfAvenue .rnr-b-vmenu.tree.main > *:not(.subitem).current.current.current
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > *:hover:hover:hover.expanded
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > ul li,
+.PdfAvenue .rnr-b-vmenu.tree.main > *.subitem
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > ul li > hr,
+.PdfAvenue .rnr-b-vmenu.tree.main > *.subitem > hr
+{
+border-color:#FFFFFF;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > ul li:hover:not(.expanded):not(.menuSeparator),
+.PdfAvenue .rnr-b-vmenu.tree.main > *.subitem:hover:not(.menuSeparator)
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > ul li.current.current.current,
+.PdfAvenue .rnr-b-vmenu.tree.main > *.subitem.current.current.current
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > ul li:hover:hover:hover.expanded
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.tree.main > *:not(.subitem) > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > :not(ul) > *
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.tree.main > *.subitem > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main > * > ul li > :not(ul) > *
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.simple.main >  * ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > *,
+.PdfAvenue .rnr-b-vmenu.tree.second > *:not(.subitem)
+{
+background-image:none; background-color: #FFFFFF;color:#696969;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > hr,
+.PdfAvenue .rnr-b-vmenu.tree.second > *:not(.subitem) > hr
+{
+border-color:#696969;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > *:hover:not(.expanded):not(.menuSeparator),
+.PdfAvenue .rnr-b-vmenu.tree.second > *:not(.subitem):not(.manage):hover:not(.menuSeparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > *.current.current.current,
+.PdfAvenue .rnr-b-vmenu.tree.second > *:not(.subitem).current.current.current
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > *:hover:hover:hover.expanded
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > ul li,
+.PdfAvenue .rnr-b-vmenu.tree.second > *.subitem
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > ul li > hr,
+.PdfAvenue .rnr-b-vmenu.tree.second > *.subitem > hr
+{
+border-color:#FFFFFF;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > ul li:hover:not(.expanded):not(.menuSeparator),
+.PdfAvenue .rnr-b-vmenu.tree.second > *.subitem:hover:not(.menuSeparator)
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > ul li.current.current.current,
+.PdfAvenue .rnr-b-vmenu.tree.second > *.subitem.current.current.current
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > ul li:hover:hover:hover.expanded
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-vmenu.tree.second > *:not(.subitem) > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > :not(ul) > *
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.tree.second > *.subitem > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second > * > ul li > :not(ul) > *
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-vmenu.simple.second >  * ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.PdfAvenue .rnr-b-hmenu.main > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #FFFFFF;color:#696969;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;padding: 5px 6px;border: solid #FFFFFF 1px;
+}
+.PdfAvenue .rnr-b-hmenu.main > div:not(.rnr-hseparator) > hr
+{
+border-color:#696969;
+}
+.PdfAvenue .rnr-b-hmenu.main:hover:not(.expanded) > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.main.current.current > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.main:hover.expanded > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.main > ul li
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.main > ul li > hr
+{
+border-color:#FFFFFF;
+}
+.PdfAvenue .rnr-b-hmenu.main > ul li:hover:not(.expanded):not(.menuSeparator)
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.main > ul li.current.current
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.main > ul li:hover.expanded
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.main > ul li > div > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-hmenu.main ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.PdfAvenue .rnr-b-hmenu.main.rnr-b-hmenu.rnr-b-hmenu
+{
+padding-bottom: 0; padding-left:0; padding-right:0; vertical-align: bottom;
+}
+.PdfAvenue .rnr-b-hmenu.second > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #FFFFFF;color:#696969;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;padding: 5px 6px;border: solid #FFFFFF 1px;
+}
+.PdfAvenue .rnr-b-hmenu.second > div:not(.rnr-hseparator) > hr
+{
+border-color:#696969;
+}
+.PdfAvenue .rnr-b-hmenu.second:hover:not(.expanded) > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.second.current.current > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.second:hover.expanded > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.second > ul li
+{
+background-image:none; background-color: #4B9EC9;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.second > ul li > hr
+{
+border-color:#FFFFFF;
+}
+.PdfAvenue .rnr-b-hmenu.second > ul li:hover:not(.expanded):not(.menuSeparator)
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.second > ul li.current.current
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.second > ul li:hover.expanded
+{
+background-image:none; background-color: #438EB5;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: italic; text-decoration: none;
+}
+.PdfAvenue .rnr-b-hmenu.second > ul li > div > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.PdfAvenue .rnr-b-hmenu.second ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.PdfAvenue .rnr-b-hmenu.second.rnr-b-hmenu.rnr-b-hmenu
+{
+padding-bottom: 0; padding-left:0; padding-right:0; vertical-align: bottom;
+}
+body.PdfAvenue
+{
+
+background-color:#D7DBDF;
+}
+.PdfAvenue .rnr-list
+{
+color: #000000;background-color: #FFFFFF;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.PdfAvenue .rnr-tab.selected
+{
+background-color:#4B9EC9;
+border-top-left-radius:4px;
+border-top-right-radius:4px;
+
+}
+.PdfAvenue .rnr-tab
+{
+background-color:#C0C0C0;
+border-top-left-radius:4px;
+border-top-right-radius:4px;
+border: solid #4B9EC9 1px; border-bottom-width:0;
+}
+.PdfAvenue .rnr-tab.selected > a
+{
+color: #FFFFFF;
+
+}
+.PdfAvenue .rnr-tab > a
+{
+color: #000000;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .yui-navset .yui-content
+{
+border: solid #4B9EC9 1px;border-top-width: 5px;
+}
+.PdfAvenue .rnr-stepnav > a.active,
+.PdfAvenue .rnr-stepnav > a:hover:not(.active),
+.PdfAvenue .rnr-stepnav > a.active:after,
+.PdfAvenue .rnr-stepnav > a:hover:not(.active):after
+{
+background-image: none; background-color: #DFE2E4;
+
+}
+.PdfAvenue .rnr-stepnav > a:not(.active),
+.PdfAvenue .rnr-stepnav > a:not(.active):after
+{
+background-image: none; background-color: #C0C0C0;
+
+}
+.PdfAvenue .rnr-stepnav > a:before
+{
+background-image: none; background: #FFFFFF;
+
+}
+.PdfAvenue .rnr-stepnav > a.active,
+.PdfAvenue .rnr-stepnav > a:hover:not(.active)
+{
+color: #333333;
+
+}
+.PdfAvenue .rnr-stepnav > a:not(.active)
+{
+color: #A9A9A9;
+
+}
+.PdfAvenue .rnr-stepnav > a:before 
+{
+color: #000000;
+
+}
+.PdfAvenue .rnr-stepnav > a,
+ .rnr-pagewrapper .PdfAvenue .rnr-stepnav > a,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .rnr-stepnav > a
+{
+font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.PdfAvenue  .rnr-message
+{
+background-color: #FFFFFF;border:none;color: #16589C;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue  .rnr-error.rnr-error
+{
+color: #A80000;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue  .yui3-panel .yui3-widget-hd.yui3-widget-hd.yui3-widget-hd
+{
+background-color: #34699E; background-image: none;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;
+}
+.PdfAvenue  .yui3-widget-ft
+{
+background-color: #34699E; background-image: none;font-family: Arial, sans-serif; font-size: 15px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;
+}
+.PdfAvenue  .rnr-dbelemheader
+{
+background-color: #34699E; background-image: none;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;
+}
+.PdfAvenue  .rnr-dbelemfooter
+{
+background-color: #D8D8D8; background-image: none;font-family: Arial, sans-serif; font-size: 15px; font-weight: normal; font-style: normal; text-decoration: none;color: #000000;
+}
+.PdfAvenue  .rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow
+{
+background-color: #FFFACD; background-image: none;color: #4C4951;
+}
+.PdfAvenue .rnr-dashboard
+{
+background-color: #FFFFFF;
+}
+.PdfAvenue .rnr-button.rnr-button,
+.PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+.PdfAvenue .button.button.button.rnr-button.rnr-button,
+ .rnr-pagewrapper .PdfAvenue .rnr-button.rnr-button,
+ .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button.rnr-button
+{
+border: solid 1px;border-radius: 4px;padding: 3px 9px 4px;background-image: none; background-color: #DFE2E4;
+border-color: #000000;color: #333333;
+font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .rnr-button.rnr-button.img,
+.PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+.PdfAvenue .button.button.button.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .PdfAvenue .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button.rnr-button.img
+{
+padding: 3px;
+
+}
+.PdfAvenue .rnr-button:hover,
+.PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:hover,
+.PdfAvenue .button.button.button.rnr-button:hover,
+ .rnr-pagewrapper .PdfAvenue .rnr-button:hover,
+ .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button:hover
+{
+background-image: none; background-color: #FFFFFF;
+border-color: #000000;color: #000000;
+
+}
+.PdfAvenue .rnr-button:active,
+.PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:active,
+.PdfAvenue .button.button.button.rnr-button:active,
+ .rnr-pagewrapper .PdfAvenue .rnr-button:active,
+ .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button:active
+{
+background-image: none; background-color: #DFE2E4;
+border-color: #000000;color: #000000;
+
+}
+.PdfAvenue .rnr-button.disabled,
+.PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+.PdfAvenue .button.button.button.rnr-button.disabled,
+ .rnr-pagewrapper .PdfAvenue .rnr-button.disabled,
+ .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .button.button.button.rnr-button.disabled
+{
+background-image: none; background-color: #C0C0C0;
+border-color: #000000;color: #A9A9A9;
+
+}
+.PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+.PdfAvenue .link.link.link.rnr-button.rnr-button,
+ .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button.rnr-button
+{
+background: none; border: none; ;
+border: none;border-radius: 0px;padding: 4px 8px 4px;color: #004080;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+.PdfAvenue .link.link.link.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button.rnr-button.img
+{
+padding: 4px;
+
+}
+.PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button:hover,
+.PdfAvenue .link.link.link.rnr-button:hover,
+ .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button:hover
+{
+color: #FE4F29;
+
+}
+.PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button:active,
+.PdfAvenue .link.link.link.rnr-button:active,
+ .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button:active
+{
+color: #004080;
+
+}
+.PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+.PdfAvenue .link.link.link.rnr-button.disabled,
+ .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue.aslinks > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .link.link.link.rnr-button.disabled
+{
+color: #004080;
+
+}
+.PdfAvenue .main.main.main.rnr-button.rnr-button,
+ .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button.rnr-button
+{
+border: solid 1px;border-radius: 4px;padding: 3px 9px 4px;background-image: none; background-color: #DFE2E4;
+border-color: #000000;color: #333333;
+font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.PdfAvenue .main.main.main.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button.rnr-button.img
+{
+padding: 3px;
+
+}
+.PdfAvenue .main.main.main.rnr-button:hover,
+ .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button:hover
+{
+background-image: none; background-color: #FFFFFF;
+border-color: #000000;color: #000000;
+
+}
+.PdfAvenue .main.main.main.rnr-button:active,
+ .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button:active
+{
+background-image: none; background-color: #DFE2E4;
+border-color: #000000;color: #000000;
+
+}
+.PdfAvenue .main.main.main.rnr-button.disabled,
+ .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .PdfAvenue .main.main.main.rnr-button.disabled
+{
+background-image: none; background-color: #C0C0C0;
+border-color: #000000;color: #A9A9A9;
+
+}

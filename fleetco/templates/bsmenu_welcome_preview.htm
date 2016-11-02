@@ -1,0 +1,50 @@
+{BEGIN mainmenu_block}
+<div class="bs-welcome" originalMenuTag="$$originalMenuTag" menuID="$$menuID">
+##set @parent=0##
+##foreach @MENU.MenuNodes as @menu order @menu.id##
+	##if @parent != @menu.parent##
+	<div class="clearfix">
+	</div>
+	##if @menu.type != "Group" && @previd != @menu.parent##
+	<h2></h2>
+	##endif##
+	##endif##
+	##if @menu.type=="Group"##
+	<div class=" clearfix col-lg-12" id="item##@menu.id##_$$menuID">
+	<h2>##include templates\bsmenuitem_preview.htm##</h2>
+		<div class="bs-welcome-group-comments">
+			##if @menu.comments.text && @menu.comments.nameType=="CustomID"##
+					##custom @menu.comments.text##
+				##elseif @menu.comments.text##
+					##@menu.comments.text 8h##
+				##endif##
+		</div>
+	</div>
+	##elseif @menu.type=="Separator"##
+		<div class=" clearfix col-lg-12"><hr/></div>
+	##else##
+	<div class="col-lg-3 col-md-4 col-sm-6"  id="item##@menu.id##_$$menuID">
+		<div class="bs-welcome-item">
+			<div class="bs-welcome-header"
+			##if exists(@menu.color)##
+					style="background:&#35;##@menu.color##;"
+			##endif##
+			{$item##@menu.id##_menulink_style}>
+				##include templates\bsmenuitem_preview.htm##
+			</div>
+			<div class="bs-welcome-content">
+				##if @menu.comments.text && @menu.comments.nameType=="CustomID"##
+					##custom @menu.comments.text##
+				##elseif @menu.comments.text##
+					##@menu.comments.text 8h##
+				##endif##
+			</div>
+		</div>
+	</div>
+	##endif##
+	##set @parent=@menu.parent##
+	##set @previd=@menu.id##
+##endfor##
+</div>
+{END mainmenu_block}
+

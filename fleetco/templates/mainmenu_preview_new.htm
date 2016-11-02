@@ -1,0 +1,19 @@
+{BEGIN mainmenu_block}
+
+##if exists(@TABLE)##
+##set @isAdminTable=eval(IsAdminTable(@TABLE))##
+##else##
+##set @isAdminTable="0"##
+##endif##
+
+##if !@isAdminTable##
+	##if @MENU.InlineMenu##
+		##include templates\newmainmenu_inline_preview.htm##
+	##else##
+		##include templates\newmainmenu_simple_preview.htm##
+	##endif##
+##else##
+	##include templates\newmainmenu_adminarea_preview.htm##
+##endif##
+
+{END mainmenu_block}

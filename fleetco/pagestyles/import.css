@@ -1,0 +1,192 @@
+body.page-import
+{
+padding-top:10px; padding-left:10px;
+}
+.page-import .rnr-c-import,
+  .rnr-pagewrapper .page-import .rnr-c-import,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-c-import
+{
+margin-bottom:5px;
+}
+.page-import .rnr-c-import,
+  .rnr-pagewrapper .page-import .rnr-c-import,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-c-import
+{
+min-width: 500px; display:inline-block
+}
+.page-import .rnr-cw-import,
+  .rnr-pagewrapper .page-import .rnr-cw-import,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-cw-import
+{
+text-align: center;
+}
+.page-import .rnr-b-importheader,
+  .rnr-pagewrapper .page-import .rnr-b-importheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importheader
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-importheader,
+  .rnr-pagewrapper .page-import .rnr-b-importheader,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importheader
+{
+text-align: left;
+}
+.page-import .rnr-b-importheader > *,
+  .rnr-pagewrapper .page-import .rnr-b-importheader > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importheader > *
+{
+font-size: 120%;
+}
+.page-import .rnr-b-errormessage,
+  .rnr-pagewrapper .page-import .rnr-b-errormessage,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-errormessage
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-errormessage,
+  .rnr-pagewrapper .page-import .rnr-b-errormessage,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-errormessage
+{
+text-align: left;
+}
+.page-import .rnr-b-errormessage > *,
+  .rnr-pagewrapper .page-import .rnr-b-errormessage > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-errormessage > *
+{
+
+}
+.page-import .rnr-b-importheader_text,
+  .rnr-pagewrapper .page-import .rnr-b-importheader_text,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importheader_text
+{
+white-space: normal;
+}
+.page-import .rnr-b-importheader_text,
+  .rnr-pagewrapper .page-import .rnr-b-importheader_text,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importheader_text
+{
+text-align: left;
+}
+.page-import .rnr-b-importheader_text > *,
+  .rnr-pagewrapper .page-import .rnr-b-importheader_text > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importheader_text > *
+{
+
+}
+.page-import .rnr-b-importfields,
+  .rnr-pagewrapper .page-import .rnr-b-importfields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importfields
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-importfields,
+  .rnr-pagewrapper .page-import .rnr-b-importfields,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importfields
+{
+text-align: left;
+}
+.page-import .rnr-b-importfields > *,
+  .rnr-pagewrapper .page-import .rnr-b-importfields > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importfields > *
+{
+
+}
+.page-import .rnr-b-import_rawtext_control,
+  .rnr-pagewrapper .page-import .rnr-b-import_rawtext_control,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_rawtext_control
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-import_rawtext_control,
+  .rnr-pagewrapper .page-import .rnr-b-import_rawtext_control,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_rawtext_control
+{
+text-align: left;
+}
+.page-import .rnr-b-import_rawtext_control > *,
+  .rnr-pagewrapper .page-import .rnr-b-import_rawtext_control > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_rawtext_control > *
+{
+
+}
+.page-import .rnr-b-import_preview,
+  .rnr-pagewrapper .page-import .rnr-b-import_preview,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_preview
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-import_preview,
+  .rnr-pagewrapper .page-import .rnr-b-import_preview,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_preview
+{
+text-align: left;
+}
+.page-import .rnr-b-import_preview > *,
+  .rnr-pagewrapper .page-import .rnr-b-import_preview > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_preview > *
+{
+
+}
+.page-import .rnr-b-import_process,
+  .rnr-pagewrapper .page-import .rnr-b-import_process,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_process
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-import_process,
+  .rnr-pagewrapper .page-import .rnr-b-import_process,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_process
+{
+text-align: left;
+}
+.page-import .rnr-b-import_process > *,
+  .rnr-pagewrapper .page-import .rnr-b-import_process > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_process > *
+{
+
+}
+.page-import .rnr-b-import_results,
+  .rnr-pagewrapper .page-import .rnr-b-import_results,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_results
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-import_results,
+  .rnr-pagewrapper .page-import .rnr-b-import_results,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_results
+{
+text-align: left;
+}
+.page-import .rnr-b-import_results > *,
+  .rnr-pagewrapper .page-import .rnr-b-import_results > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-import_results > *
+{
+
+}
+.page-import .rnr-b-importbuttons,
+  .rnr-pagewrapper .page-import .rnr-b-importbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importbuttons
+{
+white-space: nowrap;
+}
+.page-import .rnr-b-importbuttons,
+  .rnr-pagewrapper .page-import .rnr-b-importbuttons,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importbuttons
+{
+text-align: left;
+}
+.page-import .rnr-b-importbuttons > *,
+  .rnr-pagewrapper .page-import .rnr-b-importbuttons > *,
+  .rnr-pagewrapper .rnr-pagewrapper .page-import .rnr-b-importbuttons > *
+{
+
+}
+body.page-import .rnr-toptable
+{
+width:100%;
+}
+body.page-import .rnr-top
+{
+padding-right: 5px;
+}

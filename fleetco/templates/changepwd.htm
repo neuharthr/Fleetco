@@ -1,0 +1,108 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-changepwd" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+{BEGIN changeheader}
+<div  class="rnr-brickcontents style2 rnr-b-changeheader {$brickclass_changeheader}"><span>	<h1>{$pagetitlelabel  changepwd}</h1>
+</span></div>{END changeheader}
+
+
+{BEGIN message_block}
+<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-changefields {$brickclass_changefields}"><table class="fieldGrid">
+	{BEGIN oldpass_block}
+	<tr>
+		<td>
+			{BEGIN oldpass_label}Old password:{END oldpass_label}
+		</td>
+		<td class="rnr-control">
+			{$oldpass_editcontrol}
+		</td>
+	</tr>
+	{END oldpass_block}
+	{BEGIN newpass_block}
+	<tr>
+		<td>
+			{BEGIN newpass_label}New password:{END newpass_label}
+		</td>
+		<td class="rnr-control">
+			{$newpass_editcontrol}
+		</td>
+	</tr>
+	{END newpass_block}
+	{BEGIN confirm_block}
+	<tr>
+		<td>
+			{BEGIN confirm_label}Confirm password:{END confirm_label}
+		</td>
+		<td class="rnr-control">
+			{$confirm_editcontrol}
+		</td>
+	</tr>
+	{END confirm_block}
+</table>
+</div>
+
+
+{BEGIN changebuttons}
+<div  class="rnr-brickcontents style2 rnr-b-changebuttons {$brickclass_changebuttons}"><div class="rnr-withsidelink">
+	<a href="#" class="rnr-button main" {$submit_attrs}>Submit</a>
+	<a  class="rnr-button link rnr-sidelink" {$backlink_attrs}>Back</a>
+</div>
+
+</div>{END changebuttons}
+
+
+</div>
+{END container_fields}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -1,0 +1,442 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+{BEGIN printheader}
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel creategrn print}</h1>
+</div>{END printheader}
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN Fleet_fieldheadercolumn}
+<th class="runner-cc {$Fleet_class}" {$Fleet_style}>
+	{BEGIN Fleet_fieldheader}
+	<b>{$label creategrn Fleet}</b>
+	{END Fleet_fieldheader}
+</th>
+{END Fleet_fieldheadercolumn}
+	{BEGIN ID_fieldheadercolumn}
+<th class="runner-cc {$ID_class}" {$ID_style}>
+	{BEGIN ID_fieldheader}
+	<b>{$label creategrn ID}</b>
+	{END ID_fieldheader}
+</th>
+{END ID_fieldheadercolumn}
+	{BEGIN SystemDate_fieldheadercolumn}
+<th class="runner-cc {$SystemDate_class}" {$SystemDate_style}>
+	{BEGIN SystemDate_fieldheader}
+	<b>{$label creategrn SystemDate}</b>
+	{END SystemDate_fieldheader}
+</th>
+{END SystemDate_fieldheadercolumn}
+	{BEGIN GRNDate_fieldheadercolumn}
+<th class="runner-cc {$GRNDate_class}" {$GRNDate_style}>
+	{BEGIN GRNDate_fieldheader}
+	<b>{$label creategrn GRNDate}</b>
+	{END GRNDate_fieldheader}
+</th>
+{END GRNDate_fieldheadercolumn}
+	{BEGIN Status_fieldheadercolumn}
+<th class="runner-cc {$Status_class}" {$Status_style}>
+	{BEGIN Status_fieldheader}
+	<b>{$label creategrn Status}</b>
+	{END Status_fieldheader}
+</th>
+{END Status_fieldheadercolumn}
+	{BEGIN RemovedFrom_fieldheadercolumn}
+<th class="runner-cc {$RemovedFrom_class}" {$RemovedFrom_style}>
+	{BEGIN RemovedFrom_fieldheader}
+	<b>{$label creategrn RemovedFrom}</b>
+	{END RemovedFrom_fieldheader}
+</th>
+{END RemovedFrom_fieldheadercolumn}
+	{BEGIN RefNumber_fieldheadercolumn}
+<th class="runner-cc {$RefNumber_class}" {$RefNumber_style}>
+	{BEGIN RefNumber_fieldheader}
+	<b>{$label creategrn RefNumber}</b>
+	{END RefNumber_fieldheader}
+</th>
+{END RefNumber_fieldheadercolumn}
+	{BEGIN ItemCode_fieldheadercolumn}
+<th class="runner-cc {$ItemCode_class}" {$ItemCode_style}>
+	{BEGIN ItemCode_fieldheader}
+	<b>{$label creategrn ItemCode}</b>
+	{END ItemCode_fieldheader}
+</th>
+{END ItemCode_fieldheadercolumn}
+	{BEGIN Brand_fieldheadercolumn}
+<th class="runner-cc {$Brand_class}" {$Brand_style}>
+	{BEGIN Brand_fieldheader}
+	<b>{$label creategrn Brand}</b>
+	{END Brand_fieldheader}
+</th>
+{END Brand_fieldheadercolumn}
+	{BEGIN Description_fieldheadercolumn}
+<th class="runner-cc {$Description_class}" {$Description_style}>
+	{BEGIN Description_fieldheader}
+	<b>{$label creategrn Description}</b>
+	{END Description_fieldheader}
+</th>
+{END Description_fieldheadercolumn}
+	{BEGIN Supplier_fieldheadercolumn}
+<th class="runner-cc {$Supplier_class}" {$Supplier_style}>
+	{BEGIN Supplier_fieldheader}
+	<b>{$label creategrn Supplier}</b>
+	{END Supplier_fieldheader}
+</th>
+{END Supplier_fieldheadercolumn}
+	{BEGIN UnitPrice_fieldheadercolumn}
+<th class="runner-cc {$UnitPrice_class}" {$UnitPrice_style}>
+	{BEGIN UnitPrice_fieldheader}
+	<b>{$label creategrn UnitPrice}</b>
+	{END UnitPrice_fieldheader}
+</th>
+{END UnitPrice_fieldheadercolumn}
+	{BEGIN Quantity_fieldheadercolumn}
+<th class="runner-cc {$Quantity_class}" {$Quantity_style}>
+	{BEGIN Quantity_fieldheader}
+	<b>{$label creategrn Quantity}</b>
+	{END Quantity_fieldheader}
+</th>
+{END Quantity_fieldheadercolumn}
+	{BEGIN Cost_fieldheadercolumn}
+<th class="runner-cc {$Cost_class}" {$Cost_style}>
+	{BEGIN Cost_fieldheader}
+	<b>{$label creategrn Cost}</b>
+	{END Cost_fieldheader}
+</th>
+{END Cost_fieldheadercolumn}
+	{BEGIN CurrentStock_fieldheadercolumn}
+<th class="runner-cc {$CurrentStock_class}" {$CurrentStock_style}>
+	{BEGIN CurrentStock_fieldheader}
+	<b>{$label creategrn CurrentStock}</b>
+	{END CurrentStock_fieldheader}
+</th>
+{END CurrentStock_fieldheadercolumn}
+	{BEGIN Remarks_fieldheadercolumn}
+<th class="runner-cc {$Remarks_class}" {$Remarks_style}>
+	{BEGIN Remarks_fieldheader}
+	<b>{$label creategrn Remarks}</b>
+	{END Remarks_fieldheader}
+</th>
+{END Remarks_fieldheadercolumn}
+	{BEGIN EnteredBy_fieldheadercolumn}
+<th class="runner-cc {$EnteredBy_class}" {$EnteredBy_style}>
+	{BEGIN EnteredBy_fieldheader}
+	<b>{$label creategrn EnteredBy}</b>
+	{END EnteredBy_fieldheader}
+</th>
+{END EnteredBy_fieldheadercolumn}
+	{BEGIN ApprovedBy_fieldheadercolumn}
+<th class="runner-cc {$ApprovedBy_class}" {$ApprovedBy_style}>
+	{BEGIN ApprovedBy_fieldheader}
+	<b>{$label creategrn ApprovedBy}</b>
+	{END ApprovedBy_fieldheader}
+</th>
+{END ApprovedBy_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN Fleet_fieldcolumn}
+<td  class="runner-cc {$Fleet_class}" {$Fleet_style} {$recordattrs}>
+	{$Fleet_value}
+</td>
+{END Fleet_fieldcolumn}
+	{BEGIN ID_fieldcolumn}
+<td  class="runner-cc {$ID_class}" {$ID_style} {$recordattrs}>
+	{$ID_value}
+</td>
+{END ID_fieldcolumn}
+	{BEGIN SystemDate_fieldcolumn}
+<td  class="runner-cc {$SystemDate_class}" {$SystemDate_style} {$recordattrs}>
+	{$SystemDate_value}
+</td>
+{END SystemDate_fieldcolumn}
+	{BEGIN GRNDate_fieldcolumn}
+<td  class="runner-cc {$GRNDate_class}" {$GRNDate_style} {$recordattrs}>
+	{$GRNDate_value}
+</td>
+{END GRNDate_fieldcolumn}
+	{BEGIN Status_fieldcolumn}
+<td  class="runner-cc {$Status_class}" {$Status_style} {$recordattrs}>
+	{$Status_value}
+</td>
+{END Status_fieldcolumn}
+	{BEGIN RemovedFrom_fieldcolumn}
+<td  class="runner-cc {$RemovedFrom_class}" {$RemovedFrom_style} {$recordattrs}>
+	{$RemovedFrom_value}
+</td>
+{END RemovedFrom_fieldcolumn}
+	{BEGIN RefNumber_fieldcolumn}
+<td  class="runner-cc {$RefNumber_class}" {$RefNumber_style} {$recordattrs}>
+	{$RefNumber_value}
+</td>
+{END RefNumber_fieldcolumn}
+	{BEGIN ItemCode_fieldcolumn}
+<td  class="runner-cc {$ItemCode_class}" {$ItemCode_style} {$recordattrs}>
+	{$ItemCode_value}
+</td>
+{END ItemCode_fieldcolumn}
+	{BEGIN Brand_fieldcolumn}
+<td  class="runner-cc {$Brand_class}" {$Brand_style} {$recordattrs}>
+	{$Brand_value}
+</td>
+{END Brand_fieldcolumn}
+	{BEGIN Description_fieldcolumn}
+<td  class="runner-cc {$Description_class}" {$Description_style} {$recordattrs}>
+	{$Description_value}
+</td>
+{END Description_fieldcolumn}
+	{BEGIN Supplier_fieldcolumn}
+<td  class="runner-cc {$Supplier_class}" {$Supplier_style} {$recordattrs}>
+	{$Supplier_value}
+</td>
+{END Supplier_fieldcolumn}
+	{BEGIN UnitPrice_fieldcolumn}
+<td  class="runner-cc {$UnitPrice_class}" {$UnitPrice_style} {$recordattrs}>
+	{$UnitPrice_value}
+</td>
+{END UnitPrice_fieldcolumn}
+	{BEGIN Quantity_fieldcolumn}
+<td  class="runner-cc {$Quantity_class}" {$Quantity_style} {$recordattrs}>
+	{$Quantity_value}
+</td>
+{END Quantity_fieldcolumn}
+	{BEGIN Cost_fieldcolumn}
+<td  class="runner-cc {$Cost_class}" {$Cost_style} {$recordattrs}>
+	{$Cost_value}
+</td>
+{END Cost_fieldcolumn}
+	{BEGIN CurrentStock_fieldcolumn}
+<td  class="runner-cc {$CurrentStock_class}" {$CurrentStock_style} {$recordattrs}>
+	{$CurrentStock_value}
+</td>
+{END CurrentStock_fieldcolumn}
+	{BEGIN Remarks_fieldcolumn}
+<td  class="runner-cc {$Remarks_class}" {$Remarks_style} {$recordattrs}>
+	{$Remarks_value}
+</td>
+{END Remarks_fieldcolumn}
+	{BEGIN EnteredBy_fieldcolumn}
+<td  class="runner-cc {$EnteredBy_class}" {$EnteredBy_style} {$recordattrs}>
+	{$EnteredBy_value}
+</td>
+{END EnteredBy_fieldcolumn}
+	{BEGIN ApprovedBy_fieldcolumn}
+<td  class="runner-cc {$ApprovedBy_class}" {$ApprovedBy_style} {$recordattrs}>
+	{$ApprovedBy_value}
+</td>
+{END ApprovedBy_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+	{END grid_row}
+
+
+	{BEGIN totals_row}
+<tr class="rnr-bottomrow style1">
+	{BEGIN totals_record}
+		{BEGIN Fleet_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Fleet_fieldfootercolumn}
+	{BEGIN ID_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END ID_fieldfootercolumn}
+	{BEGIN SystemDate_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END SystemDate_fieldfootercolumn}
+	{BEGIN GRNDate_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END GRNDate_fieldfootercolumn}
+	{BEGIN Status_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Status_fieldfootercolumn}
+	{BEGIN RemovedFrom_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END RemovedFrom_fieldfootercolumn}
+	{BEGIN RefNumber_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END RefNumber_fieldfootercolumn}
+	{BEGIN ItemCode_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END ItemCode_fieldfootercolumn}
+	{BEGIN Brand_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Brand_fieldfootercolumn}
+	{BEGIN Description_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Description_fieldfootercolumn}
+	{BEGIN Supplier_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Supplier_fieldfootercolumn}
+	{BEGIN UnitPrice_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+	{BEGIN UnitPrice_showtotal}
+			Average:
+	{$UnitPrice_total}
+	{END UnitPrice_showtotal}
+</td>
+{END UnitPrice_fieldfootercolumn}
+	{BEGIN Quantity_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+	{BEGIN Quantity_showtotal}
+			Total:
+	{$Quantity_total}
+	{END Quantity_showtotal}
+</td>
+{END Quantity_fieldfootercolumn}
+	{BEGIN Cost_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+	{BEGIN Cost_showtotal}
+			Total:
+	{$Cost_total}
+	{END Cost_showtotal}
+</td>
+{END Cost_fieldfootercolumn}
+	{BEGIN CurrentStock_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END CurrentStock_fieldfootercolumn}
+	{BEGIN Remarks_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END Remarks_fieldfootercolumn}
+	{BEGIN EnteredBy_fieldfootercolumn}
+<td class="rnr-cc rnr-bc ">
+</td>
+{END EnteredBy_fieldfootercolumn}
+	{BEGIN ApprovedBy_fieldfootercolumn}
+<td class="rnr-cc rnr-bc rnr-clast">
+</td>
+{END ApprovedBy_fieldfootercolumn}
+
+	<td class="rnr-edge">&nbsp;</td>
+	{BEGIN endrecordtotals_block}
+	<td class="rnr-cs"></td>
+	{END endrecordtotals_block}
+	{END totals_record}
+</tr>
+{END totals_row}
+
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

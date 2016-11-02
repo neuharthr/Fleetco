@@ -1,0 +1,66 @@
+<ul class="rnr-b-vmenu tree {$menustyle}" data-menuname="{$menuName}">
+{BEGIN menu_collapse_expand_all}
+	<li class="manage">
+		<div>
+			<a href="#"><img alt="*" src="images/plus.gif">
+				<span class=expand>##message EXPAND_ALL##</span>
+				<span class="hide" style="display:none;">##message COLLAPSE_ALL##</span>
+			</a>
+		</div>
+	</li>
+{END menu_collapse_expand_all}
+##foreach @MENU.MenuNodes as @m0 filter !@m0.parent##
+##foreach @MENU.MenuNodes as @menu filter @menu.id=@m0.id##
+	{BEGIN item##@m0.id##_menulink}
+	<li id="item##@menu.id##" class="{$item##@menu.id##_groupclass} {$item##@menu.id##_current} menu##@menu.type##" level=1>
+			##include templates\newmenuitem_inline.htm##
+	</li>	
+	##foreach @MENU.MenuNodes as @m1 filter @m1.parent = @m0.id##
+	##foreach @MENU.MenuNodes as @menu filter @menu.id=@m1.id##
+			{BEGIN item##@m1.id##_menulink}
+			<li id="item##@menu.id##" style="display:none" class="subitem level2 {$item##@menu.id##_groupclass} {$item##@menu.id##_current} menu##@menu.type##" level=2>
+					##include templates\newmenuitem_inline.htm##
+			</li>	
+			##foreach @MENU.MenuNodes as @m2 filter @m2.parent = @m1.id##
+			##foreach @MENU.MenuNodes as @menu filter @menu.id=@m2.id##
+					{BEGIN item##@m2.id##_menulink}
+					<li id="item##@menu.id##" style="display:none" class="subitem level3 {$item##@menu.id##_groupclass} {$item##@menu.id##_current} menu##@menu.type##" level=3>
+							##include templates\newmenuitem_inline.htm##
+					</li>	
+					##foreach @MENU.MenuNodes as @m3 filter @m3.parent = @m2.id##
+					##foreach @MENU.MenuNodes as @menu filter @menu.id=@m3.id##
+							{BEGIN item##@m3.id##_menulink}
+							<li id="item##@menu.id##" style="display:none" class="subitem level4 {$item##@menu.id##_groupclass} {$item##@menu.id##_current} menu##@menu.type##" level=4>
+									##include templates\newmenuitem_inline.htm##
+							</li>	
+							##foreach @MENU.MenuNodes as @m4 filter @m4.parent = @m3.id##
+							##foreach @MENU.MenuNodes as @menu filter @menu.id=@m4.id##
+									{BEGIN item##@m4.id##_menulink}
+									<li id="item##@menu.id##" style="display:none" class="subitem level5 {$item##@menu.id##_groupclass} {$item##@menu.id##_current} menu##@menu.type##" level=5>
+											##include templates\newmenuitem_inline.htm##
+									</li>	
+									##foreach @MENU.MenuNodes as @m5 filter @m5.parent = @m4.id##
+									##foreach @MENU.MenuNodes as @menu filter @menu.id=@m5.id##
+											{BEGIN item##@m5.id##_menulink}
+											<li id="item##@menu.id##" style="display:none" class="subitem level6 {$item##@menu.id##_groupclass} {$item##@menu.id##_current} menu##@menu.type##" level=6>
+													##include templates\newmenuitem_inline.htm##
+											</li>	
+											{END item##@m5.id##_menulink}
+									##endfor##			
+									##endfor##			
+									{END item##@m4.id##_menulink}
+							##endfor##			
+							##endfor##			
+							{END item##@m3.id##_menulink}
+					##endfor##			
+					##endfor##			
+					{END item##@m2.id##_menulink}
+			##endfor##			
+			##endfor##			
+			{END item##@m1.id##_menulink}
+	##endfor##			
+	##endfor##			
+	{END item##@m0.id##_menulink}
+##endfor##		
+##endfor##
+</ul>
