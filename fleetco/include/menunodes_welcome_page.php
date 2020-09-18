@@ -7,15 +7,39 @@ function getMenuNodes_welcome_page($menuNodesObject)
 
 	$menuNode = array();
 	$menuNode["id"] = "1";
-	$menuNode["name"] = "carrier";
-	$menuNode["href"] = "";
-	$menuNode["type"] = "Group";
-	$menuNode["table"] = "";
+	$menuNode["name"] = "FLEET";
+	$menuNode["href"] = "mypage.htm";
+	$menuNode["type"] = "Leaf";
+	$menuNode["table"] = "vehiclemaster";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
 	$menuNode["parent"] = "0";
-	$menuNode["nameType"] = "Text";
-	$menuNode["linkType"] = "None";
+	$menuNode["nameType"] = "CustomID";
+	$menuNode["linkType"] = "Internal";
+	$menuNode["pageType"] = "List";//
+	$menuNode["openType"] = "None";
+	
+	$menuNode["icon"] = "";
+	$menuNode["iconType"] = "0";
+
+			$menuNode["color"] = "#"."3CB371";
+	
+	$menuNode["title"] = GetCustomLabel("FLEET");
+
+
+
+	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
+	$menuNode = array();
+	$menuNode["id"] = "2";
+	$menuNode["name"] = "SUPPLIERS";
+	$menuNode["href"] = "mypage.htm";
+	$menuNode["type"] = "Leaf";
+	$menuNode["table"] = "suppliermaster";
+	$menuNode["style"] = "";
+	$menuNode["params"] = "";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
+	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
 	
@@ -24,170 +48,141 @@ function getMenuNodes_welcome_page($menuNodesObject)
 
 			$menuNode["color"] = "";
 	
-	$menuNode["title"] = "carrier";
+	$menuNode["title"] = GetCustomLabel("SUPPLIERS");
 
-	$menuNode["comments"] = "Project description";
-
-
-	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
-	$menuNode = array();
-	$menuNode["id"] = "2";
-	$menuNode["name"] = "M - Stock Codes";
-	$menuNode["href"] = "mypage.htm";
-	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "inventorymaster";
-	$menuNode["style"] = "";
-	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
-	$menuNode["linkType"] = "Internal";
-	$menuNode["pageType"] = "List";//
-	$menuNode["openType"] = "None";
-	
-	$menuNode["icon"] = "glyphicon-calendar";
-	$menuNode["iconType"] = "2";
-
-			$menuNode["color"] = "#"."7B68EE";
-	
-	$menuNode["title"] = "M - Stock Codes";
-
-	$menuNode["comments"] = "Change this text on the Welcome page in the Visual Editor.";
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "3";
-	$menuNode["name"] = "Stock Movement";
+	$menuNode["name"] = "STOCK_CODES";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "creategrn";
+	$menuNode["table"] = "inventorymaster";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
 	
-	$menuNode["icon"] = "glyphicon-shopping-cart";
-	$menuNode["iconType"] = "2";
+	$menuNode["icon"] = "";
+	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "#"."D2AF80";
+			$menuNode["color"] = "#"."7B7BC0";
 	
-	$menuNode["title"] = "Stock Movement";
+	$menuNode["title"] = GetCustomLabel("STOCK_CODES");
 
-	$menuNode["comments"] = "Stock Movement description";
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "4";
-	$menuNode["name"] = "M - Fleet";
+	$menuNode["name"] = "FLEET_TYPES";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "vehiclemaster";
+	$menuNode["table"] = "fleettype";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
 	
-	$menuNode["icon"] = "glyphicon-earphone";
-	$menuNode["iconType"] = "2";
+	$menuNode["icon"] = "";
+	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "#"."6DA5C8";
+			$menuNode["color"] = "#"."FFD700";
 	
-	$menuNode["title"] = "M - Fleet";
+	$menuNode["title"] = GetCustomLabel("FLEET_TYPES");
 
-	$menuNode["comments"] = "M - Fleet description";
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "5";
-	$menuNode["name"] = "Stock Issues";
+	$menuNode["name"] = "VEHICLE_TYPES";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "creategrn-issue";
+	$menuNode["table"] = "vehicletype";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
 	
-	$menuNode["icon"] = "glyphicon-barcode";
-	$menuNode["iconType"] = "2";
+	$menuNode["icon"] = "";
+	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "#"."5F9EA0";
+			$menuNode["color"] = "#"."40E0D0";
 	
-	$menuNode["title"] = "Stock Issues";
+	$menuNode["title"] = GetCustomLabel("VEHICLE_TYPES");
 
-	$menuNode["comments"] = "Stock Issues description";
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "6";
-	$menuNode["name"] = "M - Inventory Master Sub";
+	$menuNode["name"] = "SERVICE_TYPES";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "inventorymaster-qty";
+	$menuNode["table"] = "servicetypemaster";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
 	
-	$menuNode["icon"] = "glyphicon-briefcase";
-	$menuNode["iconType"] = "2";
+	$menuNode["icon"] = "";
+	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "";
+			$menuNode["color"] = "#"."FFAD5B";
 	
-	$menuNode["title"] = "M - Inventory Master Sub";
+	$menuNode["title"] = GetCustomLabel("SERVICE_TYPES");
 
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "7";
-	$menuNode["name"] = "Stock Purchases";
+	$menuNode["name"] = "FUEL_STATIONS";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "creategrn-receive";
+	$menuNode["table"] = "fuelstationmaster";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
 	
-	$menuNode["icon"] = "glyphicon-camera";
-	$menuNode["iconType"] = "2";
+	$menuNode["icon"] = "";
+	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "";
+			$menuNode["color"] = "#"."AFEEEE";
 	
-	$menuNode["title"] = "Stock Purchases";
+	$menuNode["title"] = GetCustomLabel("FUEL_STATIONS");
 
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "8";
-	$menuNode["name"] = "Fuel Records";
+	$menuNode["name"] = "FUEL_PRICES";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "fuelmaster";
+	$menuNode["table"] = "fuelprices";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
@@ -195,23 +190,23 @@ function getMenuNodes_welcome_page($menuNodesObject)
 	$menuNode["icon"] = "";
 	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "";
+			$menuNode["color"] = "#"."279ED8";
 	
-	$menuNode["title"] = "Fuel Records";
+	$menuNode["title"] = GetCustomLabel("FUEL_PRICES");
 
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "9";
-	$menuNode["name"] = "M - Suppliers";
+	$menuNode["name"] = "RENEWALS";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "suppliermaster";
+	$menuNode["table"] = "rnewalmastertable";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
@@ -219,23 +214,23 @@ function getMenuNodes_welcome_page($menuNodesObject)
 	$menuNode["icon"] = "";
 	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "";
+			$menuNode["color"] = "#"."C0C0C0";
 	
-	$menuNode["title"] = "M - Suppliers";
+	$menuNode["title"] = GetCustomLabel("RENEWALS");
 
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 	$menuNode = array();
 	$menuNode["id"] = "10";
-	$menuNode["name"] = "Accident Records";
+	$menuNode["name"] = "M___INSURANCE";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "accidents";
+	$menuNode["table"] = "insurancecompany";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
+	$menuNode["parent"] = "0";
+	$menuNode["nameType"] = "CustomID";
 	$menuNode["linkType"] = "Internal";
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
@@ -243,57 +238,9 @@ function getMenuNodes_welcome_page($menuNodesObject)
 	$menuNode["icon"] = "";
 	$menuNode["iconType"] = "0";
 
-			$menuNode["color"] = "";
+			$menuNode["color"] = "#"."40E0D0";
 	
-	$menuNode["title"] = "Accident Records";
-
-
-
-	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
-	$menuNode = array();
-	$menuNode["id"] = "11";
-	$menuNode["name"] = "Maintenance Records";
-	$menuNode["href"] = "mypage.htm";
-	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "maintenenace";
-	$menuNode["style"] = "";
-	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
-	$menuNode["linkType"] = "Internal";
-	$menuNode["pageType"] = "List";//
-	$menuNode["openType"] = "None";
-	
-	$menuNode["icon"] = "";
-	$menuNode["iconType"] = "0";
-
-			$menuNode["color"] = "";
-	
-	$menuNode["title"] = "Maintenance Records";
-
-
-
-	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
-	$menuNode = array();
-	$menuNode["id"] = "12";
-	$menuNode["name"] = "M - Fleet Types";
-	$menuNode["href"] = "mypage.htm";
-	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "fleettype";
-	$menuNode["style"] = "";
-	$menuNode["params"] = "";
-	$menuNode["parent"] = "1";
-	$menuNode["nameType"] = "Text";
-	$menuNode["linkType"] = "Internal";
-	$menuNode["pageType"] = "List";//
-	$menuNode["openType"] = "None";
-	
-	$menuNode["icon"] = "";
-	$menuNode["iconType"] = "0";
-
-			$menuNode["color"] = "";
-	
-	$menuNode["title"] = "M - Fleet Types";
+	$menuNode["title"] = GetCustomLabel("M___INSURANCE");
 
 
 

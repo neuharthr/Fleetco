@@ -81,12 +81,12 @@ class MySQLiConnection extends Connection
 		if (!$this->conn) 
 		{
 			unset( $_SESSION["myqsladdress"] );
-			trigger_error( mysqli_connect_error(), E_USER_ERROR );
+			$this->triggerError( mysqli_connect_error() );
 			return null;
 		}
 		
 		if( !mysqli_select_db($this->conn, $this->sys_dbname) ) 
-			trigger_error(mysqli_error($this->conn), E_USER_ERROR);
+			$this->triggerError( mysqli_error($this->conn) );
 		
 		if( $cMySQLNames != "" )
 			@mysqli_query($this->conn, "set names ".$cMySQLNames);
@@ -139,13 +139,13 @@ class MySQLiConnection extends Connection
 		$ret = mysqli_query($this->conn, $sql);
 		if( !$ret )
 		{
-			trigger_error(mysqli_error($this->conn), E_USER_ERROR);
+			$this->triggerError( mysqli_error($this->conn) );
 			return FALSE;
 		}
 		
 		return new QueryResult( $this, $ret );
 	}
-	
+
 	/**	
 	 * Execute an SQL query
 	 * @param String sql
@@ -195,9 +195,9 @@ class MySQLiConnection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return @mysqli_fetch_array($qHanle, MYSQLI_ASSOC);
+		return @mysqli_fetch_array($qHandle, MYSQLI_ASSOC);
 	}
 	
 	/**	
@@ -205,18 +205,18 @@ class MySQLiConnection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
-		return @mysqli_fetch_array($qHanle, MYSQLI_NUM);
+		return @mysqli_fetch_array($qHandle, MYSQLI_NUM);
 	}
 	
 	/**	
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
-		@mysqli_free_result($qHanle);
+		@mysqli_free_result($qHandle);
 	}
 
 	/**
@@ -235,10 +235,10 @@ class MySQLiConnection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
-		@mysqli_field_seek($qHanle, $offset);
-		$field = @mysqli_fetch_field($qHanle);
+		@mysqli_field_seek($qHandle, $offset);
+		$field = @mysqli_fetch_field($qHandle);
 		return $field ? $field->name : "";
 	}
 

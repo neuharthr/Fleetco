@@ -58,6 +58,342 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipscreategrn_receiveafterrebuild["English"]))
 		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["Afrikaans"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["ID"] = "ID";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["ItemCode"] = "Tirus Kode";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["Brand"] = "Brand";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["Description"] = "beskrywing";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["Supplier"] = "verskaffer";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["Quantity"] = "hoeveelheid";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["RemovedFrom"] = "verwyder uit";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["SystemDate"] = "stelsel Datum";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["GRNDate"] = "datum";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["EnteredBy"] = "ingevoer";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["ApprovedBy"] = "geredigeer deur";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["UnitPrice"] = "Eenheidskoste";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["Status"] = "tipe";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["RefNumber"] = "Bestelling Verwysing";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["CurrentStock"] = "Huidige Stock";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Afrikaans"]["Cost"] = "koste";
+	$fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["Afrikaans"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["Arabic"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["ID"] = "???? ?????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["ItemCode"] = "????? ???";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["Brand"] = "????? ??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["Description"] = "???";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["Supplier"] = "??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["Quantity"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["RemovedFrom"] = "????? ??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["SystemDate"] = "????? ??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["GRNDate"] = "?????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["EnteredBy"] = "???";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["ApprovedBy"] = "???? ??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["UnitPrice"] = "????? ??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["Status"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["RefNumber"] = "??? ?????? ???????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["CurrentStock"] = "??????? ??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Arabic"]["Cost"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Arabic"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["Arabic"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["Chinese"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["ID"] = "ID";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["ItemCode"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["Brand"] = "?";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["Description"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["Supplier"] = "???";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["Quantity"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["RemovedFrom"] = "?????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["SystemDate"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["GRNDate"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["EnteredBy"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["ApprovedBy"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["UnitPrice"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["Status"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["RefNumber"] = "??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["CurrentStock"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["Fleet"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Chinese"]["Cost"] = "??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Chinese"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["Chinese"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["French"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["French"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["French"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["ID"] = "ID";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["ItemCode"] = "Code du pneu";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["Brand"] = "Marque";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["Description"] = "La description";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["Supplier"] = "Fournisseur";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["Quantity"] = "Quantité";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["RemovedFrom"] = "Supprimé de";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["SystemDate"] = "Date du système";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["GRNDate"] = "date";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["EnteredBy"] = "Entré";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["ApprovedBy"] = "Édité par";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["UnitPrice"] = "Coût unitaire";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["Status"] = "Type";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["RefNumber"] = "Référence du bon de commande";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["CurrentStock"] = "Stock actuel";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["Fleet"] = "Flotte";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["French"]["Cost"] = "Coût";
+	$fieldToolTipscreategrn_receiveafterrebuild["French"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["French"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["German"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["German"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["German"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["ID"] = "ICH WÜRDE";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["ItemCode"] = "Bereifung";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["Brand"] = "Marke";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["Description"] = "Beschreibung";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["Supplier"] = "Lieferant";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["Quantity"] = "Menge";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["RemovedFrom"] = "Entfernt von";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["SystemDate"] = "Systemdatum";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["GRNDate"] = "Datum";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["EnteredBy"] = "Eingegeben";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["ApprovedBy"] = "Bearbeitet von";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["UnitPrice"] = "Kosten pro Einheit";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["Status"] = "Art";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["RefNumber"] = "Bestellbezug";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["CurrentStock"] = "Aktueller Lagerbestand";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["Fleet"] = "Flotte";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["German"]["Cost"] = "Kosten";
+	$fieldToolTipscreategrn_receiveafterrebuild["German"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["German"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["Italian"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["ID"] = "ID";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["ItemCode"] = "Codice Tyre";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["Brand"] = "Marca";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["Description"] = "Descrizione";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["Supplier"] = "Fornitore";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["Quantity"] = "Quantità";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["RemovedFrom"] = "Rimosso da";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["SystemDate"] = "Data di sistema";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["GRNDate"] = "Data";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["EnteredBy"] = "inserito";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["ApprovedBy"] = "A cura di";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["UnitPrice"] = "Costo unitario";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["Status"] = "Digitare";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["RefNumber"] = "Ordine di acquisto di riferimento";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["CurrentStock"] = "Scorta attuale";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Italian"]["Cost"] = "Costo";
+	$fieldToolTipscreategrn_receiveafterrebuild["Italian"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["Italian"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["Russian"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["ID"] = "? ??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["ItemCode"] = "??? ???";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["Brand"] = "?????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["Description"] = "????????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["Supplier"] = "?????????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["Quantity"] = "??????????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["RemovedFrom"] = "??????? ??";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["SystemDate"] = "System Date";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["GRNDate"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["EnteredBy"] = "?????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["ApprovedBy"] = "???????????????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["UnitPrice"] = "????????????? ??????? ?????????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["Status"] = "???";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["RefNumber"] = "??????? ??? ??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["CurrentStock"] = "??????? ?? ??????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["Fleet"] = "????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Russian"]["Cost"] = "?????????";
+	$fieldToolTipscreategrn_receiveafterrebuild["Russian"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["Russian"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"] = array();
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"] = array();
+	$pageTitlescreategrn_receiveafterrebuild["Spanish"] = array();
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["ID"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["ID"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["ItemCode"] = "Código del neumático";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["ItemCode"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["Brand"] = "Marca";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["Brand"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["Description"] = "Descripción";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["Description"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["Supplier"] = "Proveedor";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["Supplier"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["Quantity"] = "Cantidad";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["Quantity"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["RemovedFrom"] = "Retirado de";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["RemovedFrom"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["SystemDate"] = "Fecha del sistema";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["SystemDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["GRNDate"] = "Fecha";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["GRNDate"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["EnteredBy"] = "Ingresó";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["EnteredBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["ApprovedBy"] = "Editado por";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["ApprovedBy"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["UnitPrice"] = "Costo Unitario";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["UnitPrice"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["Status"] = "Tipo";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["Status"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["RefNumber"] = "Referencia de órdenes de compra";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["RefNumber"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["CurrentStock"] = "Acciones actuales";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["CurrentStock"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["Fleet"] = "";
+	$fieldLabelscreategrn_receiveafterrebuild["Spanish"]["Cost"] = "Costo";
+	$fieldToolTipscreategrn_receiveafterrebuild["Spanish"]["Cost"] = "";
+	if (count($fieldToolTipscreategrn_receiveafterrebuild["Spanish"]))
+		$tdatacreategrn_receiveafterrebuild[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelscreategrn_receiveafterrebuild[""] = array();
@@ -116,6 +452,9 @@ $tdatacreategrn_receiveafterrebuild[".afterAddActionDetTable"] = "Detail tables 
 
 $tdatacreategrn_receiveafterrebuild[".list"] = true;
 
+
+
+
 $tdatacreategrn_receiveafterrebuild[".view"] = true;
 
 $tdatacreategrn_receiveafterrebuild[".import"] = true;
@@ -127,6 +466,14 @@ $tdatacreategrn_receiveafterrebuild[".printFriendly"] = true;
 $tdatacreategrn_receiveafterrebuild[".delete"] = true;
 
 $tdatacreategrn_receiveafterrebuild[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatacreategrn_receiveafterrebuild[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatacreategrn_receiveafterrebuild[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatacreategrn_receiveafterrebuild[".searchSaving"] = false;
@@ -224,6 +571,7 @@ $tdatacreategrn_receiveafterrebuild[".geocodingEnabled"] = false;
 $tdatacreategrn_receiveafterrebuild[".listGridLayout"] = 3;
 
 
+$tdatacreategrn_receiveafterrebuild[".isResizeColumns"] = true;
 
 
 
@@ -386,6 +734,23 @@ $tdatacreategrn_receiveafterrebuild[".editFields"][] = "ApprovedBy";
 
 $tdatacreategrn_receiveafterrebuild[".inlineEditFields"] = array();
 
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"] = array();
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "Status";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "Fleet";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "GRNDate";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "ItemCode";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "Brand";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "Description";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "Supplier";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "UnitPrice";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "Quantity";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "RefNumber";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "SystemDate";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "Cost";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "EnteredBy";
+$tdatacreategrn_receiveafterrebuild[".updateSelectedFields"][] = "ApprovedBy";
+
+
 $tdatacreategrn_receiveafterrebuild[".exportFields"] = array();
 $tdatacreategrn_receiveafterrebuild[".exportFields"][] = "Status";
 $tdatacreategrn_receiveafterrebuild[".exportFields"][] = "ID";
@@ -458,6 +823,8 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 	
@@ -577,6 +944,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -730,6 +1100,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -851,6 +1224,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -972,6 +1348,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1094,6 +1473,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1213,6 +1595,8 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 	
 	
 	
+	
+
 	
 	
 	
@@ -1352,6 +1736,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1472,6 +1859,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1596,6 +1986,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1714,6 +2107,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 	
@@ -1829,6 +2225,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1956,6 +2355,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2078,6 +2480,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2199,6 +2604,8 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 	
 	
 	
+
+	
 	
 	
 	
@@ -2309,6 +2716,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2462,6 +2872,9 @@ $tdatacreategrn_receiveafterrebuild[".printFields"][] = "ApprovedBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

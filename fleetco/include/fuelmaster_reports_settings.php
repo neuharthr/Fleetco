@@ -54,6 +54,310 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsfuelmaster_reports["English"]))
 		$tdatafuelmaster_reports[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsfuelmaster_reports["Afrikaans"] = array();
+	$fieldToolTipsfuelmaster_reports["Afrikaans"] = array();
+	$pageTitlesfuelmaster_reports["Afrikaans"] = array();
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["SystemDate"] = "stelsel Datum";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["FuelDate"] = "brandstof Datum";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["Vehicle"] = "voertuig";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["MeterReading"] = "meterlesing";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["LitersPumped"] = "Liter Pomp";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["PricePerLiter"] = "Prys per liter";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["FuelStation"] = "vulstasie";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["Cost"] = "koste";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["LastMileage"] = "laaste kilometers";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["Economy"] = "ekonomie";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["FillType"] = "vul Tipe";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["CouponNo"] = "coupon Geen";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["Afrikaans"]["Driver"] = "bestuurder";
+	$fieldToolTipsfuelmaster_reports["Afrikaans"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["Afrikaans"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsfuelmaster_reports["Arabic"] = array();
+	$fieldToolTipsfuelmaster_reports["Arabic"] = array();
+	$pageTitlesfuelmaster_reports["Arabic"] = array();
+	$fieldLabelsfuelmaster_reports["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["SystemDate"] = "????? ??????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["FuelDate"] = "??????? ??????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["Vehicle"] = "?????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["MeterReading"] = "????? ??????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["LitersPumped"] = "??? ??";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["PricePerLiter"] = "??? ???";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["FuelStation"] = "???? ????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["Cost"] = "????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["LastMileage"] = "??? ??????????? ??????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["Economy"] = "??????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["FillType"] = "??? ???";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["CouponNo"] = "????? ??";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["Arabic"]["Driver"] = "????";
+	$fieldToolTipsfuelmaster_reports["Arabic"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["Arabic"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsfuelmaster_reports["Chinese"] = array();
+	$fieldToolTipsfuelmaster_reports["Chinese"] = array();
+	$pageTitlesfuelmaster_reports["Chinese"] = array();
+	$fieldLabelsfuelmaster_reports["Chinese"]["Id"] = "ID";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["SystemDate"] = "????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["FuelDate"] = "????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["Vehicle"] = "??";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["MeterReading"] = "????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["LitersPumped"] = "???";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["PricePerLiter"] = "????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["FuelStation"] = "???";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["Cost"] = "??";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["LastMileage"] = "????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["Economy"] = "??";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["FillType"] = "????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["CouponNo"] = "?????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["Chinese"]["Driver"] = "????";
+	$fieldToolTipsfuelmaster_reports["Chinese"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["Chinese"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsfuelmaster_reports["French"] = array();
+	$fieldToolTipsfuelmaster_reports["French"] = array();
+	$pageTitlesfuelmaster_reports["French"] = array();
+	$fieldLabelsfuelmaster_reports["French"]["Id"] = "ID";
+	$fieldToolTipsfuelmaster_reports["French"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["SystemDate"] = "Date du système";
+	$fieldToolTipsfuelmaster_reports["French"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["FuelDate"] = "Date de carburant";
+	$fieldToolTipsfuelmaster_reports["French"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["Vehicle"] = "Véhicule";
+	$fieldToolTipsfuelmaster_reports["French"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["MeterReading"] = "Lecture de compteur";
+	$fieldToolTipsfuelmaster_reports["French"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["LitersPumped"] = "Litres pompés";
+	$fieldToolTipsfuelmaster_reports["French"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["PricePerLiter"] = "Prix ??par Litre";
+	$fieldToolTipsfuelmaster_reports["French"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["FuelStation"] = "Station essence";
+	$fieldToolTipsfuelmaster_reports["French"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsfuelmaster_reports["French"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["Cost"] = "Coût";
+	$fieldToolTipsfuelmaster_reports["French"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["LastMileage"] = "Dernier kilométrage";
+	$fieldToolTipsfuelmaster_reports["French"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["Economy"] = "Économie";
+	$fieldToolTipsfuelmaster_reports["French"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["FillType"] = "Type de remplissage";
+	$fieldToolTipsfuelmaster_reports["French"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["CouponNo"] = "Coupon Non";
+	$fieldToolTipsfuelmaster_reports["French"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["French"]["Driver"] = "Chauffeur";
+	$fieldToolTipsfuelmaster_reports["French"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["French"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsfuelmaster_reports["German"] = array();
+	$fieldToolTipsfuelmaster_reports["German"] = array();
+	$pageTitlesfuelmaster_reports["German"] = array();
+	$fieldLabelsfuelmaster_reports["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsfuelmaster_reports["German"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["SystemDate"] = "Systemdatum";
+	$fieldToolTipsfuelmaster_reports["German"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["FuelDate"] = "Kraftstoffdatum";
+	$fieldToolTipsfuelmaster_reports["German"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["Vehicle"] = "Fahrzeug";
+	$fieldToolTipsfuelmaster_reports["German"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["MeterReading"] = "Zählerstand";
+	$fieldToolTipsfuelmaster_reports["German"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["LitersPumped"] = "Liter gepumpt";
+	$fieldToolTipsfuelmaster_reports["German"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["PricePerLiter"] = "Preis pro Liter";
+	$fieldToolTipsfuelmaster_reports["German"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["FuelStation"] = "Tankstelle";
+	$fieldToolTipsfuelmaster_reports["German"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsfuelmaster_reports["German"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["Cost"] = "Kosten";
+	$fieldToolTipsfuelmaster_reports["German"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["LastMileage"] = "Letzte Meilenzahl";
+	$fieldToolTipsfuelmaster_reports["German"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["Economy"] = "Wirtschaft";
+	$fieldToolTipsfuelmaster_reports["German"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["FillType"] = "Füllen";
+	$fieldToolTipsfuelmaster_reports["German"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["CouponNo"] = "Gutschein-Nr";
+	$fieldToolTipsfuelmaster_reports["German"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["German"]["Driver"] = "Treiber";
+	$fieldToolTipsfuelmaster_reports["German"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["German"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsfuelmaster_reports["Italian"] = array();
+	$fieldToolTipsfuelmaster_reports["Italian"] = array();
+	$pageTitlesfuelmaster_reports["Italian"] = array();
+	$fieldLabelsfuelmaster_reports["Italian"]["Id"] = "ID";
+	$fieldToolTipsfuelmaster_reports["Italian"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["SystemDate"] = "Data di sistema";
+	$fieldToolTipsfuelmaster_reports["Italian"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["FuelDate"] = "Data Fuel";
+	$fieldToolTipsfuelmaster_reports["Italian"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["Vehicle"] = "Veicolo";
+	$fieldToolTipsfuelmaster_reports["Italian"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["MeterReading"] = "Lettura contatori";
+	$fieldToolTipsfuelmaster_reports["Italian"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["LitersPumped"] = "litri pompato";
+	$fieldToolTipsfuelmaster_reports["Italian"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["PricePerLiter"] = "Prezzo per litro";
+	$fieldToolTipsfuelmaster_reports["Italian"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["FuelStation"] = "Stazione di servizio";
+	$fieldToolTipsfuelmaster_reports["Italian"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsfuelmaster_reports["Italian"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["Cost"] = "Costo";
+	$fieldToolTipsfuelmaster_reports["Italian"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["LastMileage"] = "Ultima Chilometraggio";
+	$fieldToolTipsfuelmaster_reports["Italian"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["Economy"] = "Economia";
+	$fieldToolTipsfuelmaster_reports["Italian"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["FillType"] = "Tipo di riempimento";
+	$fieldToolTipsfuelmaster_reports["Italian"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["CouponNo"] = "Coupon No";
+	$fieldToolTipsfuelmaster_reports["Italian"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["Italian"]["Driver"] = "autista";
+	$fieldToolTipsfuelmaster_reports["Italian"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["Italian"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsfuelmaster_reports["Russian"] = array();
+	$fieldToolTipsfuelmaster_reports["Russian"] = array();
+	$pageTitlesfuelmaster_reports["Russian"] = array();
+	$fieldLabelsfuelmaster_reports["Russian"]["Id"] = "? ??";
+	$fieldToolTipsfuelmaster_reports["Russian"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["SystemDate"] = "System Date";
+	$fieldToolTipsfuelmaster_reports["Russian"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["FuelDate"] = "??????? ????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["Vehicle"] = "???????? ????????????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["MeterReading"] = "????????? ????????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["LitersPumped"] = "????? ????????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["PricePerLiter"] = "???? ?? ????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["FuelStation"] = "????????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["Fleet"] = "????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["Cost"] = "?????????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["LastMileage"] = "????????? ??????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["Economy"] = "?????????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["FillType"] = "??? ???????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["CouponNo"] = "????? ???";
+	$fieldToolTipsfuelmaster_reports["Russian"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["Russian"]["Driver"] = "????????";
+	$fieldToolTipsfuelmaster_reports["Russian"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["Russian"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsfuelmaster_reports["Spanish"] = array();
+	$fieldToolTipsfuelmaster_reports["Spanish"] = array();
+	$pageTitlesfuelmaster_reports["Spanish"] = array();
+	$fieldLabelsfuelmaster_reports["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["Id"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["SystemDate"] = "Fecha del sistema";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["SystemDate"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["FuelDate"] = "Fecha del combustible";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["Vehicle"] = "Vehículo";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["MeterReading"] = "Lectura del medidor";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["MeterReading"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["LitersPumped"] = "Litros bombeados";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["LitersPumped"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["PricePerLiter"] = "Precio por litro";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["PricePerLiter"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["FuelStation"] = "Gasolinera";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["FuelStation"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["Fleet"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["Cost"] = "Costo";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["Cost"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["LastMileage"] = "Kilometraje pasado";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["LastMileage"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["Economy"] = "Economía";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["Economy"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["FillType"] = "Tipo de relleno";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["FillType"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["CouponNo"] = "Cupón No";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["CouponNo"] = "";
+	$fieldLabelsfuelmaster_reports["Spanish"]["Driver"] = "Conductor";
+	$fieldToolTipsfuelmaster_reports["Spanish"]["Driver"] = "";
+	if (count($fieldToolTipsfuelmaster_reports["Spanish"]))
+		$tdatafuelmaster_reports[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsfuelmaster_reports[""] = array();
@@ -104,6 +408,9 @@ $tdatafuelmaster_reports[".fieldsForRegister"] = array();
 
 $tdatafuelmaster_reports[".list"] = true;
 
+
+
+
 $tdatafuelmaster_reports[".view"] = true;
 
 
@@ -113,6 +420,14 @@ $tdatafuelmaster_reports[".printFriendly"] = true;
 
 
 $tdatafuelmaster_reports[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatafuelmaster_reports[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatafuelmaster_reports[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatafuelmaster_reports[".searchSaving"] = false;
@@ -216,6 +531,7 @@ $tdatafuelmaster_reports[".geocodingEnabled"] = false;
 $tdatafuelmaster_reports[".listGridLayout"] = 3;
 
 
+$tdatafuelmaster_reports[".isResizeColumns"] = true;
 
 
 
@@ -359,6 +675,9 @@ $tdatafuelmaster_reports[".editFields"] = array();
 
 $tdatafuelmaster_reports[".inlineEditFields"] = array();
 
+$tdatafuelmaster_reports[".updateSelectedFields"] = array();
+
+
 $tdatafuelmaster_reports[".exportFields"] = array();
 $tdatafuelmaster_reports[".exportFields"][] = "Id";
 $tdatafuelmaster_reports[".exportFields"][] = "SystemDate";
@@ -416,6 +735,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -538,6 +859,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -656,6 +979,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -780,6 +1105,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -932,6 +1259,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1057,6 +1386,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1182,6 +1513,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1331,6 +1664,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1479,6 +1814,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1630,6 +1967,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1749,6 +2088,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1868,6 +2209,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1988,6 +2331,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2109,6 +2454,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2230,6 +2577,8 @@ $tdatafuelmaster_reports[".printFields"][] = "Economy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

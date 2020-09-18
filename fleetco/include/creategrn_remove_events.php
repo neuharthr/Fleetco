@@ -1,6 +1,6 @@
-<?php 
+<?php
 class eventclass_creategrn_remove  extends eventsBase
-{ 
+{
 	function __construct()
 	{
 	// fill list of events
@@ -13,6 +13,7 @@ class eventclass_creategrn_remove  extends eventsBase
 
 //	handlers
 
+		
 		
 		
 		
@@ -67,15 +68,19 @@ return true;
 		
 		
 		
-								
 		
 		
-			
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		
 //	onscreen events
 
-} 
+}
 ?>

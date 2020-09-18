@@ -34,18 +34,274 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsotherrenewal["English"]["PaymentDate"] = "Pay. Date";
 	$fieldToolTipsotherrenewal["English"]["PaymentDate"] = "";
 	$fieldLabelsotherrenewal["English"]["Cost"] = "Cost";
-	$fieldToolTipsotherrenewal["English"]["Cost"] = "Cost without Tax";
+	$fieldToolTipsotherrenewal["English"]["Cost"] = "";
 	$fieldLabelsotherrenewal["English"]["SystemDate"] = "Sys. Date";
 	$fieldToolTipsotherrenewal["English"]["SystemDate"] = "";
 	$fieldLabelsotherrenewal["English"]["EnteredBy"] = "Entered By";
 	$fieldToolTipsotherrenewal["English"]["EnteredBy"] = "";
 	$fieldLabelsotherrenewal["English"]["PeriodFrom"] = "From";
-	$fieldToolTipsotherrenewal["English"]["PeriodFrom"] = "Starting date of period covered";
+	$fieldToolTipsotherrenewal["English"]["PeriodFrom"] = "";
 	$fieldLabelsotherrenewal["English"]["PeriodTo"] = "To";
-	$fieldToolTipsotherrenewal["English"]["PeriodTo"] = "Ending date of period covered";
+	$fieldToolTipsotherrenewal["English"]["PeriodTo"] = "";
 	$fieldLabelsotherrenewal["English"]["PaymentRef"] = "Pay. Ref";
-	$fieldToolTipsotherrenewal["English"]["PaymentRef"] = "Payment Voucher No";
+	$fieldToolTipsotherrenewal["English"]["PaymentRef"] = "";
 	if (count($fieldToolTipsotherrenewal["English"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsotherrenewal["Afrikaans"] = array();
+	$fieldToolTipsotherrenewal["Afrikaans"] = array();
+	$pageTitlesotherrenewal["Afrikaans"] = array();
+	$fieldLabelsotherrenewal["Afrikaans"]["ID"] = "ID";
+	$fieldToolTipsotherrenewal["Afrikaans"]["ID"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsotherrenewal["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["VehicleNo"] = "voertuig Geen";
+	$fieldToolTipsotherrenewal["Afrikaans"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["VehicleType"] = "voertuig Tipe";
+	$fieldToolTipsotherrenewal["Afrikaans"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["PaymentType"] = "hernuwing Tipe";
+	$fieldToolTipsotherrenewal["Afrikaans"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["PaymentDate"] = "Betaaldatum";
+	$fieldToolTipsotherrenewal["Afrikaans"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["Cost"] = "koste";
+	$fieldToolTipsotherrenewal["Afrikaans"]["Cost"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["SystemDate"] = "stelsel Datum";
+	$fieldToolTipsotherrenewal["Afrikaans"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["EnteredBy"] = "aangegaan deur";
+	$fieldToolTipsotherrenewal["Afrikaans"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["PeriodFrom"] = "Van";
+	$fieldToolTipsotherrenewal["Afrikaans"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["PeriodTo"] = "om";
+	$fieldToolTipsotherrenewal["Afrikaans"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["Afrikaans"]["PaymentRef"] = "Inbetalingsverwyssingsnommer";
+	$fieldToolTipsotherrenewal["Afrikaans"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["Afrikaans"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsotherrenewal["Arabic"] = array();
+	$fieldToolTipsotherrenewal["Arabic"] = array();
+	$pageTitlesotherrenewal["Arabic"] = array();
+	$fieldLabelsotherrenewal["Arabic"]["ID"] = "???? ?????";
+	$fieldToolTipsotherrenewal["Arabic"]["ID"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsotherrenewal["Arabic"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["VehicleNo"] = "??????? ??";
+	$fieldToolTipsotherrenewal["Arabic"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["VehicleType"] = "??? ???????";
+	$fieldToolTipsotherrenewal["Arabic"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["PaymentType"] = "??? ???????";
+	$fieldToolTipsotherrenewal["Arabic"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["PaymentDate"] = "????? ?????";
+	$fieldToolTipsotherrenewal["Arabic"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["Cost"] = "????";
+	$fieldToolTipsotherrenewal["Arabic"]["Cost"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["SystemDate"] = "????? ??????";
+	$fieldToolTipsotherrenewal["Arabic"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["EnteredBy"] = "?? ?????? ??????";
+	$fieldToolTipsotherrenewal["Arabic"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["PeriodFrom"] = "?? ???";
+	$fieldToolTipsotherrenewal["Arabic"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["PeriodTo"] = "???";
+	$fieldToolTipsotherrenewal["Arabic"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["Arabic"]["PaymentRef"] = "????? ???";
+	$fieldToolTipsotherrenewal["Arabic"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["Arabic"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsotherrenewal["Chinese"] = array();
+	$fieldToolTipsotherrenewal["Chinese"] = array();
+	$pageTitlesotherrenewal["Chinese"] = array();
+	$fieldLabelsotherrenewal["Chinese"]["ID"] = "ID";
+	$fieldToolTipsotherrenewal["Chinese"]["ID"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsotherrenewal["Chinese"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["VehicleNo"] = "????";
+	$fieldToolTipsotherrenewal["Chinese"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["VehicleType"] = "????";
+	$fieldToolTipsotherrenewal["Chinese"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["PaymentType"] = "????";
+	$fieldToolTipsotherrenewal["Chinese"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["PaymentDate"] = "????";
+	$fieldToolTipsotherrenewal["Chinese"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["Cost"] = "??";
+	$fieldToolTipsotherrenewal["Chinese"]["Cost"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["SystemDate"] = "????";
+	$fieldToolTipsotherrenewal["Chinese"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["EnteredBy"] = "???";
+	$fieldToolTipsotherrenewal["Chinese"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["PeriodFrom"] = "?";
+	$fieldToolTipsotherrenewal["Chinese"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["PeriodTo"] = "?";
+	$fieldToolTipsotherrenewal["Chinese"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["Chinese"]["PaymentRef"] = "????";
+	$fieldToolTipsotherrenewal["Chinese"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["Chinese"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsotherrenewal["French"] = array();
+	$fieldToolTipsotherrenewal["French"] = array();
+	$pageTitlesotherrenewal["French"] = array();
+	$fieldLabelsotherrenewal["French"]["ID"] = "ID";
+	$fieldToolTipsotherrenewal["French"]["ID"] = "";
+	$fieldLabelsotherrenewal["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsotherrenewal["French"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["French"]["VehicleNo"] = "Numéro de véhicule";
+	$fieldToolTipsotherrenewal["French"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["French"]["VehicleType"] = "Type de véhicule";
+	$fieldToolTipsotherrenewal["French"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["French"]["PaymentType"] = "Type de renouvellement";
+	$fieldToolTipsotherrenewal["French"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["French"]["PaymentDate"] = "Date de paiement";
+	$fieldToolTipsotherrenewal["French"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["French"]["Cost"] = "Coût";
+	$fieldToolTipsotherrenewal["French"]["Cost"] = "";
+	$fieldLabelsotherrenewal["French"]["SystemDate"] = "Date du système";
+	$fieldToolTipsotherrenewal["French"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["French"]["EnteredBy"] = "Entré par";
+	$fieldToolTipsotherrenewal["French"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["French"]["PeriodFrom"] = "De";
+	$fieldToolTipsotherrenewal["French"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["French"]["PeriodTo"] = "À";
+	$fieldToolTipsotherrenewal["French"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["French"]["PaymentRef"] = "Référence de paiement";
+	$fieldToolTipsotherrenewal["French"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["French"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsotherrenewal["German"] = array();
+	$fieldToolTipsotherrenewal["German"] = array();
+	$pageTitlesotherrenewal["German"] = array();
+	$fieldLabelsotherrenewal["German"]["ID"] = "ICH WÜRDE";
+	$fieldToolTipsotherrenewal["German"]["ID"] = "";
+	$fieldLabelsotherrenewal["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsotherrenewal["German"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["German"]["VehicleNo"] = "Fahrzeug Nr";
+	$fieldToolTipsotherrenewal["German"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["German"]["VehicleType"] = "Fahrzeugtyp";
+	$fieldToolTipsotherrenewal["German"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["German"]["PaymentType"] = "Erneuerungstyp";
+	$fieldToolTipsotherrenewal["German"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["German"]["PaymentDate"] = "Zahlungsdatum";
+	$fieldToolTipsotherrenewal["German"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["German"]["Cost"] = "Kosten";
+	$fieldToolTipsotherrenewal["German"]["Cost"] = "";
+	$fieldLabelsotherrenewal["German"]["SystemDate"] = "Systemdatum";
+	$fieldToolTipsotherrenewal["German"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["German"]["EnteredBy"] = "Betreten von";
+	$fieldToolTipsotherrenewal["German"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["German"]["PeriodFrom"] = "Von";
+	$fieldToolTipsotherrenewal["German"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["German"]["PeriodTo"] = "Nach";
+	$fieldToolTipsotherrenewal["German"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["German"]["PaymentRef"] = "Zahlungsreferenz";
+	$fieldToolTipsotherrenewal["German"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["German"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsotherrenewal["Italian"] = array();
+	$fieldToolTipsotherrenewal["Italian"] = array();
+	$pageTitlesotherrenewal["Italian"] = array();
+	$fieldLabelsotherrenewal["Italian"]["ID"] = "ID";
+	$fieldToolTipsotherrenewal["Italian"]["ID"] = "";
+	$fieldLabelsotherrenewal["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsotherrenewal["Italian"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["Italian"]["VehicleNo"] = "Vehicle No";
+	$fieldToolTipsotherrenewal["Italian"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["Italian"]["VehicleType"] = "tipo di veicolo";
+	$fieldToolTipsotherrenewal["Italian"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["Italian"]["PaymentType"] = "Tipo di rinnovo";
+	$fieldToolTipsotherrenewal["Italian"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["Italian"]["PaymentDate"] = "Data di pagamento";
+	$fieldToolTipsotherrenewal["Italian"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["Italian"]["Cost"] = "Costo";
+	$fieldToolTipsotherrenewal["Italian"]["Cost"] = "";
+	$fieldLabelsotherrenewal["Italian"]["SystemDate"] = "Data di sistema";
+	$fieldToolTipsotherrenewal["Italian"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["Italian"]["EnteredBy"] = "Inserito da";
+	$fieldToolTipsotherrenewal["Italian"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["Italian"]["PeriodFrom"] = "Da parte di";
+	$fieldToolTipsotherrenewal["Italian"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["Italian"]["PeriodTo"] = "A";
+	$fieldToolTipsotherrenewal["Italian"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["Italian"]["PaymentRef"] = "Referenza di pagamento";
+	$fieldToolTipsotherrenewal["Italian"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["Italian"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsotherrenewal["Russian"] = array();
+	$fieldToolTipsotherrenewal["Russian"] = array();
+	$pageTitlesotherrenewal["Russian"] = array();
+	$fieldLabelsotherrenewal["Russian"]["ID"] = "? ??";
+	$fieldToolTipsotherrenewal["Russian"]["ID"] = "";
+	$fieldLabelsotherrenewal["Russian"]["Fleet"] = "????";
+	$fieldToolTipsotherrenewal["Russian"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["Russian"]["VehicleNo"] = "?????????? ???";
+	$fieldToolTipsotherrenewal["Russian"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["Russian"]["VehicleType"] = "??? ??????";
+	$fieldToolTipsotherrenewal["Russian"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["Russian"]["PaymentType"] = "??? ??????????";
+	$fieldToolTipsotherrenewal["Russian"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["Russian"]["PaymentDate"] = "???? ???????";
+	$fieldToolTipsotherrenewal["Russian"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["Russian"]["Cost"] = "?????????";
+	$fieldToolTipsotherrenewal["Russian"]["Cost"] = "";
+	$fieldLabelsotherrenewal["Russian"]["SystemDate"] = "System Date";
+	$fieldToolTipsotherrenewal["Russian"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["Russian"]["EnteredBy"] = "??????";
+	$fieldToolTipsotherrenewal["Russian"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["Russian"]["PeriodFrom"] = "??";
+	$fieldToolTipsotherrenewal["Russian"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["Russian"]["PeriodTo"] = "?";
+	$fieldToolTipsotherrenewal["Russian"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["Russian"]["PaymentRef"] = "?????? ??????";
+	$fieldToolTipsotherrenewal["Russian"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["Russian"]))
+		$tdataotherrenewal[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsotherrenewal["Spanish"] = array();
+	$fieldToolTipsotherrenewal["Spanish"] = array();
+	$pageTitlesotherrenewal["Spanish"] = array();
+	$fieldLabelsotherrenewal["Spanish"]["ID"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsotherrenewal["Spanish"]["ID"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsotherrenewal["Spanish"]["Fleet"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["VehicleNo"] = "Vehículo No";
+	$fieldToolTipsotherrenewal["Spanish"]["VehicleNo"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["VehicleType"] = "tipo de vehiculo";
+	$fieldToolTipsotherrenewal["Spanish"]["VehicleType"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["PaymentType"] = "Tipo de Renovación";
+	$fieldToolTipsotherrenewal["Spanish"]["PaymentType"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["PaymentDate"] = "Fecha de pago";
+	$fieldToolTipsotherrenewal["Spanish"]["PaymentDate"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["Cost"] = "Costo";
+	$fieldToolTipsotherrenewal["Spanish"]["Cost"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["SystemDate"] = "Fecha del sistema";
+	$fieldToolTipsotherrenewal["Spanish"]["SystemDate"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["EnteredBy"] = "Introducido por";
+	$fieldToolTipsotherrenewal["Spanish"]["EnteredBy"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["PeriodFrom"] = "De";
+	$fieldToolTipsotherrenewal["Spanish"]["PeriodFrom"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["PeriodTo"] = "A";
+	$fieldToolTipsotherrenewal["Spanish"]["PeriodTo"] = "";
+	$fieldLabelsotherrenewal["Spanish"]["PaymentRef"] = "Referencia de pago";
+	$fieldToolTipsotherrenewal["Spanish"]["PaymentRef"] = "";
+	if (count($fieldToolTipsotherrenewal["Spanish"]))
 		$tdataotherrenewal[".isUseToolTips"] = true;
 }
 if(mlang_getcurrentlang()=="")
@@ -88,7 +344,7 @@ $tdataotherrenewal[".popupPagesLayoutNames"] = $popupPagesLayoutNames;
 
 $tdataotherrenewal[".fieldsForRegister"] = array();
 
-$tdataotherrenewal[".listAjax"] = false;
+	$tdataotherrenewal[".listAjax"] = true;
 
 	$tdataotherrenewal[".audit"] = false;
 
@@ -106,6 +362,9 @@ $tdataotherrenewal[".afterAddActionDetTable"] = "";
 
 $tdataotherrenewal[".list"] = true;
 
+
+
+
 $tdataotherrenewal[".view"] = true;
 
 
@@ -116,6 +375,14 @@ $tdataotherrenewal[".printFriendly"] = true;
 $tdataotherrenewal[".delete"] = true;
 
 $tdataotherrenewal[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdataotherrenewal[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdataotherrenewal[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdataotherrenewal[".searchSaving"] = false;
@@ -206,6 +473,7 @@ $tdataotherrenewal[".geocodingEnabled"] = false;
 $tdataotherrenewal[".listGridLayout"] = 3;
 
 
+$tdataotherrenewal[".isResizeColumns"] = true;
 
 
 
@@ -348,6 +616,20 @@ $tdataotherrenewal[".editFields"][] = "EnteredBy";
 
 $tdataotherrenewal[".inlineEditFields"] = array();
 
+$tdataotherrenewal[".updateSelectedFields"] = array();
+$tdataotherrenewal[".updateSelectedFields"][] = "Fleet";
+$tdataotherrenewal[".updateSelectedFields"][] = "VehicleNo";
+$tdataotherrenewal[".updateSelectedFields"][] = "VehicleType";
+$tdataotherrenewal[".updateSelectedFields"][] = "PaymentType";
+$tdataotherrenewal[".updateSelectedFields"][] = "PaymentDate";
+$tdataotherrenewal[".updateSelectedFields"][] = "Cost";
+$tdataotherrenewal[".updateSelectedFields"][] = "PeriodFrom";
+$tdataotherrenewal[".updateSelectedFields"][] = "PeriodTo";
+$tdataotherrenewal[".updateSelectedFields"][] = "PaymentRef";
+$tdataotherrenewal[".updateSelectedFields"][] = "SystemDate";
+$tdataotherrenewal[".updateSelectedFields"][] = "EnteredBy";
+
+
 $tdataotherrenewal[".exportFields"] = array();
 $tdataotherrenewal[".exportFields"][] = "ID";
 $tdataotherrenewal[".exportFields"][] = "Fleet";
@@ -399,6 +681,8 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -524,6 +808,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -676,6 +963,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -830,6 +1120,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -950,6 +1243,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1100,6 +1396,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1224,6 +1523,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1350,6 +1652,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1470,6 +1775,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1590,6 +1898,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1715,6 +2026,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1840,6 +2154,9 @@ $tdataotherrenewal[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

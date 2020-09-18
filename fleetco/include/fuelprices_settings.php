@@ -30,6 +30,118 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsfuelprices["English"]))
 		$tdatafuelprices[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsfuelprices["Afrikaans"] = array();
+	$fieldToolTipsfuelprices["Afrikaans"] = array();
+	$pageTitlesfuelprices["Afrikaans"] = array();
+	$fieldLabelsfuelprices["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsfuelprices["Afrikaans"]["Id"] = "";
+	$fieldLabelsfuelprices["Afrikaans"]["FuelType"] = "brandstof Tipe";
+	$fieldToolTipsfuelprices["Afrikaans"]["FuelType"] = "";
+	$fieldLabelsfuelprices["Afrikaans"]["PricePerLiter"] = "Prys per liter";
+	$fieldToolTipsfuelprices["Afrikaans"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["Afrikaans"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsfuelprices["Arabic"] = array();
+	$fieldToolTipsfuelprices["Arabic"] = array();
+	$pageTitlesfuelprices["Arabic"] = array();
+	$fieldLabelsfuelprices["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsfuelprices["Arabic"]["Id"] = "";
+	$fieldLabelsfuelprices["Arabic"]["FuelType"] = "??? ??????";
+	$fieldToolTipsfuelprices["Arabic"]["FuelType"] = "";
+	$fieldLabelsfuelprices["Arabic"]["PricePerLiter"] = "????? ??? ???";
+	$fieldToolTipsfuelprices["Arabic"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["Arabic"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsfuelprices["Chinese"] = array();
+	$fieldToolTipsfuelprices["Chinese"] = array();
+	$pageTitlesfuelprices["Chinese"] = array();
+	$fieldLabelsfuelprices["Chinese"]["Id"] = "ID";
+	$fieldToolTipsfuelprices["Chinese"]["Id"] = "";
+	$fieldLabelsfuelprices["Chinese"]["FuelType"] = "????";
+	$fieldToolTipsfuelprices["Chinese"]["FuelType"] = "";
+	$fieldLabelsfuelprices["Chinese"]["PricePerLiter"] = "????";
+	$fieldToolTipsfuelprices["Chinese"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["Chinese"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsfuelprices["French"] = array();
+	$fieldToolTipsfuelprices["French"] = array();
+	$pageTitlesfuelprices["French"] = array();
+	$fieldLabelsfuelprices["French"]["Id"] = "ID";
+	$fieldToolTipsfuelprices["French"]["Id"] = "";
+	$fieldLabelsfuelprices["French"]["FuelType"] = "Type de carburant";
+	$fieldToolTipsfuelprices["French"]["FuelType"] = "";
+	$fieldLabelsfuelprices["French"]["PricePerLiter"] = "Prix ??par litre";
+	$fieldToolTipsfuelprices["French"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["French"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsfuelprices["German"] = array();
+	$fieldToolTipsfuelprices["German"] = array();
+	$pageTitlesfuelprices["German"] = array();
+	$fieldLabelsfuelprices["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsfuelprices["German"]["Id"] = "";
+	$fieldLabelsfuelprices["German"]["FuelType"] = "Treibstoffart";
+	$fieldToolTipsfuelprices["German"]["FuelType"] = "";
+	$fieldLabelsfuelprices["German"]["PricePerLiter"] = "Preis pro Liter";
+	$fieldToolTipsfuelprices["German"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["German"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsfuelprices["Italian"] = array();
+	$fieldToolTipsfuelprices["Italian"] = array();
+	$pageTitlesfuelprices["Italian"] = array();
+	$fieldLabelsfuelprices["Italian"]["Id"] = "ID";
+	$fieldToolTipsfuelprices["Italian"]["Id"] = "";
+	$fieldLabelsfuelprices["Italian"]["FuelType"] = "Tipo di carburante";
+	$fieldToolTipsfuelprices["Italian"]["FuelType"] = "";
+	$fieldLabelsfuelprices["Italian"]["PricePerLiter"] = "Prezzo al litro";
+	$fieldToolTipsfuelprices["Italian"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["Italian"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsfuelprices["Russian"] = array();
+	$fieldToolTipsfuelprices["Russian"] = array();
+	$pageTitlesfuelprices["Russian"] = array();
+	$fieldLabelsfuelprices["Russian"]["Id"] = "? ??";
+	$fieldToolTipsfuelprices["Russian"]["Id"] = "";
+	$fieldLabelsfuelprices["Russian"]["FuelType"] = "??? ???????";
+	$fieldToolTipsfuelprices["Russian"]["FuelType"] = "";
+	$fieldLabelsfuelprices["Russian"]["PricePerLiter"] = "???? ?? ????";
+	$fieldToolTipsfuelprices["Russian"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["Russian"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsfuelprices["Spanish"] = array();
+	$fieldToolTipsfuelprices["Spanish"] = array();
+	$pageTitlesfuelprices["Spanish"] = array();
+	$fieldLabelsfuelprices["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsfuelprices["Spanish"]["Id"] = "";
+	$fieldLabelsfuelprices["Spanish"]["FuelType"] = "Tipo de combustible";
+	$fieldToolTipsfuelprices["Spanish"]["FuelType"] = "";
+	$fieldLabelsfuelprices["Spanish"]["PricePerLiter"] = "Precio por litro";
+	$fieldToolTipsfuelprices["Spanish"]["PricePerLiter"] = "";
+	if (count($fieldToolTipsfuelprices["Spanish"]))
+		$tdatafuelprices[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsfuelprices[""] = array();
@@ -88,6 +200,9 @@ $tdatafuelprices[".afterAddActionDetTable"] = "";
 
 $tdatafuelprices[".list"] = true;
 
+
+
+
 $tdatafuelprices[".view"] = true;
 
 $tdatafuelprices[".import"] = true;
@@ -99,6 +214,14 @@ $tdatafuelprices[".printFriendly"] = true;
 $tdatafuelprices[".delete"] = true;
 
 $tdatafuelprices[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatafuelprices[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatafuelprices[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatafuelprices[".searchSaving"] = false;
@@ -120,6 +243,7 @@ $tdatafuelprices[".isUseTimeForSearch"] = false;
 
 
 
+$tdatafuelprices[".badgeColor"] = "279ED8";
 
 
 $tdatafuelprices[".allSearchFields"] = array();
@@ -162,6 +286,7 @@ $tdatafuelprices[".geocodingEnabled"] = false;
 $tdatafuelprices[".listGridLayout"] = 3;
 
 
+$tdatafuelprices[".isResizeColumns"] = true;
 
 
 
@@ -259,6 +384,11 @@ $tdatafuelprices[".editFields"][] = "PricePerLiter";
 
 $tdatafuelprices[".inlineEditFields"] = array();
 
+$tdatafuelprices[".updateSelectedFields"] = array();
+$tdatafuelprices[".updateSelectedFields"][] = "FuelType";
+$tdatafuelprices[".updateSelectedFields"][] = "PricePerLiter";
+
+
 $tdatafuelprices[".exportFields"] = array();
 $tdatafuelprices[".exportFields"][] = "Id";
 $tdatafuelprices[".exportFields"][] = "FuelType";
@@ -295,6 +425,8 @@ $tdatafuelprices[".printFields"][] = "PricePerLiter";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -420,6 +552,9 @@ $tdatafuelprices[".printFields"][] = "PricePerLiter";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -545,6 +680,9 @@ $tdatafuelprices[".printFields"][] = "PricePerLiter";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

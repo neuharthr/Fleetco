@@ -46,7 +46,7 @@ class PanelSearchControl extends SearchControl
 	{
 		$options = "";
 		if (sizeof($this->pSet->getGoogleLikeFields()) != 0)
-			$options = '<option value="" >'."Any field".'</option>';
+			$options = '<option value="" >'.mlang_message("ANY_FIELD").'</option>';
 		
 		foreach($fNamesArr as $fName)
 		{
@@ -59,7 +59,7 @@ class PanelSearchControl extends SearchControl
 	/**
 	 * @return String
 	 */
-	function getCtrlSearchTypeOptions($fName, $selOpt, $not, $flexible, $both = false) 
+	function getCtrlSearchTypeOptions($fName, $selOpt, $not, $flexible = false, $both = false) 
 	{	
 		if( !$flexible && ($selOpt == EMPTY_SEARCH || $selOpt == NOT_EMPTY) ) 
 			return $this->getControl($fName)->buildSearchOptions(array(EMPTY_SEARCH, NOT_EMPTY), $selOpt, $not, true);

@@ -1,0 +1,53 @@
+.navbar-form .form-control {
+    height: 35px;
+}
+
+.sidebar {
+	background-color: #333;
+}
+
+.sidebar-menu.sidebar-menu a {
+	color: hsla(208,68%,75%,1);
+}
+
+.navbar .breadcrumb {
+	border: none;
+	font-size: 13px;
+	text-transform: none;
+}
+
+.navbar .breadcrumb  > li > a {
+	color: white;
+}
+
+.bs-sidebarlogo {
+	color: white;
+}
+
+
+/* vertical menu */
+@media (min-width:768px) {
+
+	.bs-sidebarlogo {
+		height: 47px;
+	}
+}
+
+.sidebar-menu.sidebar-menu a:hover {
+	background: #272727;
+}
+
+.menu-treelike.menu-treelike li > a[aria-expanded="true"] {
+	color: white;
+	background-color: #444444;
+}
+
+.menu-treelike.menu-treelike ul[data-menulevel]:not([data-menulevel="1"]) > li > a {
+	color: white;
+	background-color: #666666;
+}
+
+
+.panel-info > .panel-heading .btn.btn-info:not(:hover) {
+	background-color: hsla(194,66%,41%,1);
+}

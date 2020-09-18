@@ -5,7 +5,7 @@ class AddPage extends RunnerPage
 	 * The page's message type
 	 * @type Number
 	 */	
-	protected $messageType = MESSAGE_ERROR;
+	public $messageType = MESSAGE_ERROR;
 
 	protected $auditObj = null;	
 	
@@ -130,6 +130,14 @@ class AddPage extends RunnerPage
 	 */
 	protected function addPageSettings()
 	{
+		if( $_SESSION[ $this->sessionPrefix . "_recordAdded" ] )
+		{
+			$this->setProxyValue( $this->shortTableName."_recordAdded", true );
+			unset( $_SESSION[ $this->sessionPrefix . "_recordAdded" ] );			
+		}
+		else
+			$this->setProxyValue( $this->shortTableName."_recordAdded", false );
+		
 		if( $this->mode != ADD_SIMPLE && $this->mode != ADD_POPUP )
 			return;
 			
@@ -154,7 +162,7 @@ class AddPage extends RunnerPage
 		
 		if( $this->mode == ADD_POPUP && $this->pSet->checkClosePopupAfterAdd() 
 			|| $action == AA_TO_VIEW && !$this->viewAvailable() 
-			|| $action ==  AA_TO_EDIT && !$this->editAvailable() )
+			|| $action == AA_TO_EDIT && !$this->editAvailable() )
 		{	
 			$action = AA_TO_LIST;
 		}
@@ -230,7 +238,7 @@ class AddPage extends RunnerPage
 		{
 			$returnJSON = array();
 			$returnJSON['success'] = false;
-			$returnJSON['message'] = "Error occurred";
+			$returnJSON['message'] = mlang_message("INLINE_ERROR");
 			$returnJSON['fatalError'] = true;
 			echo printJSON($returnJSON);
 			exit();
@@ -250,15 +258,15 @@ class AddPage extends RunnerPage
 	 */
 	public function redirectAfterAdd()
 	{
-		if( isset($_SESSION['after_add_data'][ $this->afterAdd_id ]) && $_SESSION['after_add_data'][ $this->afterAdd_id ]!="" )
+		if( isset($_SESSION['after_add_data'][ $this->afterAdd_id ]) && $_SESSION['after_add_data'][ $this->afterAdd_id ] )
 		{
 			$data = $_SESSION['after_add_data'][ $this->afterAdd_id ];
 			$this->keys = $data['keys'];
-			$this->newRecordData =  $data['avalues'];
+			$this->newRecordData = $data['avalues'];
 		}
 		//HeaderRedirect($this->pSet->getShortTableName(), PAGE_ADD);
 		$this->afterAddActionRedirect();
-		if( $this->eventsObject->exists("AfterAdd") && isset($_SESSION['after_add_data'][ $this->afterAdd_id ]) && $_SESSION['after_add_data'][ $this->afterAdd_id ]!="" )
+		if( $this->eventsObject->exists("AfterAdd") && isset($_SESSION['after_add_data'][ $this->afterAdd_id ]) && $_SESSION['after_add_data'][ $this->afterAdd_id ] )
 		{
 			$this->eventsObject->AfterAdd( $data['avalues'], $data['keys'], $data['inlineadd'], $this );
 		
@@ -395,11 +403,12 @@ class AddPage extends RunnerPage
 		if( $this->callCustomAddEvent() )	
 			$this->insertedSuccessfully = DoInsertRecordOnAdd( $this );
 		
-		if( !$this->insertedSuccessfully )
-		{			
+		if( !$this->insertedSuccessfully )			
 			return false;
-		}	
 
+		if( $this->getAfterAddAction() == AA_TO_ADD )	
+			$_SESSION[ $this->sessionPrefix . "_recordAdded" ] = true;
+		
 		$this->ProcessFiles();
 		
 		$this->prepareTableKeysAfterInsert();
@@ -526,9 +535,9 @@ class AddPage extends RunnerPage
 		
 		if( isLoggedAsGuest() || !isLogged() ) 
 		{
-			$this->setMessage( "Your session has expired." 
-				. "<a href='#' id='loginButtonContinue" . $this->id . "'>" . "Login" . "</a>" 
-				. " to save data." );
+			$this->setMessage( mlang_message("SESSION_EXPIRED1") 
+				. "<a href='#' id='loginButtonContinue" . $this->id . "'>" . mlang_message("SESSION_EXPIRED3") . "</a>" 
+				. mlang_message("SESSION_EXPIRED4") );
 		}
 		else
 		{
@@ -681,9 +690,9 @@ class AddPage extends RunnerPage
 			return;
 		
 		if( $this->mode == ADD_INLINE ) 
-			$infoMessage = ""."Record was added"."";
+			$infoMessage = "".mlang_message("RECORD_ADDED")."";
 		else
-			$infoMessage = "<strong><<< "."Record was added"." >>></strong>";
+			$infoMessage = "<strong><<< ".mlang_message("RECORD_ADDED")." >>></strong>";
 
 		if( $this->mode != ADD_SIMPLE && $this->mode != ADD_MASTER || !count($this->keys) )
 		{
@@ -705,7 +714,8 @@ class AddPage extends RunnerPage
 		{
 			$_SESSION["successKeys"] = $keysArray;			
 		}
-		else {
+		else 
+		{
 			$infoMessage.= "<br>";
 			
 			if( $this->editAvailable() )
@@ -834,7 +844,7 @@ class AddPage extends RunnerPage
 			if( IsBinaryType( $this->pSet->getFieldType( $f ) ) )
 				$showRawValues[ $f ] = "";
 			else
-				$showRawValues[ $f ] = substr($data[ $f ], 0, 100);
+				$showRawValues[ $f ] = runner_substr($data[ $f ], 0, 100);
 		}	
 
 		$returnJSON['keys'] = $jsKeys;
@@ -1066,10 +1076,13 @@ class AddPage extends RunnerPage
 	 */	 
 	protected function prgRedirect()
 	{
+		if( $this->stopPRG )
+			return false;
 		if( !$this->insertedSuccessfully || $this->mode != ADD_SIMPLE || !no_output_done() )
 			return false;
 		// saving message		
 		$_SESSION["message_add"] = $this->message ? $this->message : "";
+		$_SESSION["message_add_type"] = $this->messageType;
 		// redirect
 		HeaderRedirect( $this->pSet->getShortTableName(), $this->pageType );
 		// turned on output buffering, so we need to stop script
@@ -1086,7 +1099,7 @@ class AddPage extends RunnerPage
 		if( $this->mode == ADD_SIMPLE && isset( $_SESSION["message_add"] ) )
 		{
 			$this->message = $_SESSION["message_add"];
-			$this->messageType = MESSAGE_INFO;
+			$this->messageType = $_SESSION["message_add_type"];
 			unset( $_SESSION["message_add"] );
 		}	
 	}
@@ -1262,7 +1275,7 @@ class AddPage extends RunnerPage
 		$controlFields = $this->addFields;
 		
 		if( $this->mode == ADD_INLINE ) //#9069
-			$this->removeHiddenColumnsFromInlineFields( $controlFields, $this->screenWidth, $this->screenHeight, $this->orientation );			
+			$controlFields = $this->removeHiddenColumnsFromInlineFields( $controlFields, $this->screenWidth, $this->screenHeight, $this->orientation );			
 		
 		$control = array();
 		
@@ -1624,11 +1637,11 @@ class AddPage extends RunnerPage
 	{
 		if( $this->mode != ADD_INLINE )
 		{
-			$this->message = "<strong>&lt;&lt;&lt; "."Record was NOT added"."</strong> &gt;&gt;&gt;<br><br>".$message;
+			$this->message = "<strong>&lt;&lt;&lt; ".mlang_message("RECORD_NOT_ADDED")."</strong> &gt;&gt;&gt;<br><br>".$message;
 		}
 		else
 		{
-			$this->message = "Record was NOT added".". ".$message;
+			$this->message = mlang_message("RECORD_NOT_ADDED").". ".$message;
 		}
 		
 		$this->messageType = MESSAGE_ERROR;
@@ -1657,7 +1670,7 @@ class AddPage extends RunnerPage
 	protected function checkFieldOnPage( $fName )
 	{
 		if( $this->mode == ADD_INLINE )
-			return $this->pSet->appearOnInlineAdd( $fName  );
+			return $this->pSet->appearOnInlineAdd( $fName );
 			
 		return $this->pSet->appearOnAddPage( $fName );			
 	}
@@ -1717,8 +1730,8 @@ class AddPage extends RunnerPage
 			return ADD_SIMPLE;
 	}
 	/**
-	 *	Returns true is the page has multistepped layout
-	 *  @return boolean
+	 * Returns true is the page has multistepped layout
+	 * @return boolean
 	 */
 	function isMultistepped()
 	{
@@ -1743,5 +1756,13 @@ class AddPage extends RunnerPage
 		return 2;
 	}
 	
+	/**
+	 *	API
+	 */
+	
+	public function setMessageType( $type ) 
+	{
+		$this->messageType = $type;
+	}
 }
 ?>

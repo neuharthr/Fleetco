@@ -96,20 +96,20 @@ class EditControl
 		if( $this->connection->dbType == nDATABASE_PostgreSQL )
 			$this->like = "ilike";
 
-		$this->searchOptions[CONTAINS] = "Contains";
-		$this->searchOptions[EQUALS] = "Equals";
-		$this->searchOptions[STARTS_WITH] = "Starts with";
-		$this->searchOptions[MORE_THAN] = "More than";
-		$this->searchOptions[LESS_THAN] = "Less than";
-		$this->searchOptions[BETWEEN] = "Between";
-		$this->searchOptions[EMPTY_SEARCH] = "Empty";
-		$this->searchOptions[NOT_CONTAINS] = "Doesn't contain";
-		$this->searchOptions[NOT_EQUALS] = "Doesn't equal";
-		$this->searchOptions[NOT_STARTS_WITH] = "Doesn't start with";
-		$this->searchOptions[NOT_MORE_THAN] = "Is not more than";
-		$this->searchOptions[NOT_LESS_THAN] = "Is not less than";
-		$this->searchOptions[NOT_BETWEEN] = "Is not between";
-		$this->searchOptions[NOT_EMPTY] = "Is not empty";
+		$this->searchOptions[CONTAINS] = mlang_message("CONTAINS");
+		$this->searchOptions[EQUALS] = mlang_message("EQUALS");
+		$this->searchOptions[STARTS_WITH] = mlang_message("STARTS_WITH");
+		$this->searchOptions[MORE_THAN] = mlang_message("MORE_THAN");
+		$this->searchOptions[LESS_THAN] = mlang_message("LESS_THAN");
+		$this->searchOptions[BETWEEN] = mlang_message("BETWEEN");
+		$this->searchOptions[EMPTY_SEARCH] = mlang_message("EMPTY");
+		$this->searchOptions[NOT_CONTAINS] = mlang_message("SEARCH_NOT_CONTAINS");
+		$this->searchOptions[NOT_EQUALS] = mlang_message("SEARCH_NOT_EQUALS");
+		$this->searchOptions[NOT_STARTS_WITH] = mlang_message("SEARCH_NOT_STARTS_WITH");
+		$this->searchOptions[NOT_MORE_THAN] = mlang_message("SEARCH_NOT_MORE_THAN");
+		$this->searchOptions[NOT_LESS_THAN] = mlang_message("SEARCH_NOT_LESS_THAN");
+		$this->searchOptions[NOT_BETWEEN] = mlang_message("SEARCH_NOT_BETWEEN");
+		$this->searchOptions[NOT_EMPTY] = mlang_message("SEARCH_NOT_EMPTY");
 		
 		$this->init();
 	}
@@ -762,8 +762,12 @@ class EditControl
 	 */
 	function getInputStyle( $mode )
 	{
-		if( $this->pageObject->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+		if( $this->pageObject->getLayoutVersion() == BOOTSTRAP_LAYOUT 
+			&& ($this->pageObject->pageType != PAGE_ADD || $this->pageObject->mode != ADD_INLINE) 
+			&& ($this->pageObject->pageType != PAGE_EDIT || $this->pageObject->mode != EDIT_INLINE) )
+		{
 			return "";
+		}
 		
 		$width = $this->searchPanelControl ? 150 : $this->pageObject->pSetEdit->getControlWidth( $this->field );
 		$style = $this->makeWidthStyle( $width );

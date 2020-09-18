@@ -2,186 +2,124 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link REL="stylesheet" href="styles/default.css" type="text/css">
-		{BEGIN rtlCSS}<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
 		{END rtlCSS}
-		{BEGIN styleCSSFiles}<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-list" {$bodyattrs}>
-	{BEGIN body}{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+	{BEGIN body}
+<style>
+{$containerCss}
+</style>
+<div class="sidebar bs-fixed clearfix mCustomScrollbar" data-mcs-theme="minimal-dark" {$blockattr_left}>
+	<div class="sidebar-contents mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside">
+		
 
+{BEGIN container_logo}
+<div {$logo_chiddenattr} data-pageid="{$pageid}" data-container="logo" class=" bs-sidebarlogo   "> 
 
-
-{BEGIN container_toplinks}<div class="rnr-c rnr-ch rnr-c-toplinks">
-<div class="rnr-hfiller"></div>
-{BEGIN security_block}<div  class="style1 rnr-br rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
-	{BEGIN loggedas_message}<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
-	{END loggedas_message}
-	{BEGIN guestloginbutton}<span>
-		{BEGIN embeded_log_fields}<span>
-		<input type="text" name="username" {$username_attrs}>&nbsp;
-		<input type="password" name="password" {$password_attrs}>
-		</span>
-		{END embeded_log_fields}
-		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
-		{BEGIN embeded_log_ctrls}<span>
-		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
-			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
-			</span>
-		{END embeded_log_ctrls}
-	</span>
-	{BEGIN embeded_log_fields}
-		{END embeded_logfields}
-		{BEGIN embeded_log_ctrls}
-		{BEGIN embeded_log_ctrls}
-	{END guestloginbutton}
-	{BEGIN logoutbutton}<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
-	{END logoutbutton}
-	{BEGIN adminarea_link}<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
-	{END adminarea_link}
-
-	{BEGIN changepwd_link}<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
-	{END changepwd_link}
-</div></div>
-{END security_block}
+{BEGIN logo_block}
+<a href="{$home_link}" {$logo_hiddenattr} data-pageid="{$pageid}" data-brick="logo" class="navbar-brand" >{$logo}</a>
+{END logo_block}
 
 
 
 </div>
-{END container_toplinks}
+{END container_logo}
 
 
 
-{BEGIN container_hmenu}<div class="rnr-c rnr-ch rnr-c-hmenu">
+{BEGIN container_hdr}
+<div {$hdr_chiddenattr} data-pageid="{$pageid}" data-container="hdr" class=" navbar-default clearfix   "> 
 
-{BEGIN searchform_block}<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
-		{BEGIN searchform_text}<INPUT style="width: 159px; height: 21px;" type="text" size="25" {$searchfor_attrs}>{END searchform_text}
-		{BEGIN searchform_search}<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
-		{END searchform_search}
-		{BEGIN searchform_showall}<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
-		{END searchform_showall}
-	</span>
-</div>
-{END searchform_block}
+{BEGIN collapse_block}
+<button {$bsnavbarcollapse_hiddenattr} data-pageid="{$pageid}" data-brick="bsnavbarcollapse" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target=".bs-navcontrolled">	
+	<span class="sr-only">Toggle navigation</span>	
+	<span class="icon-bar"></span>					
+</button>												
 
+{END collapse_block}
 
-{BEGIN searchformbuttons_block}<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}<span>
-	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
-	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
-</span>
-{END searchPanelTopButtons}
-</div>
-{END searchformbuttons_block}
-
-
-{BEGIN searchsaving_block}<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
-{END searchsaving_block}
-
-<div class="rnr-hfiller"></div>
-{BEGIN print_friendly}<div  class="style1 rnr-br rnr-b-printpanel {$brickclass_printpanel}"><div class="rnr-printpanelblock" id="printpanelblock{$id}">
-<div class="rnr-printtab">
-<a data-icon="printdown" class="rnr-printicon" id="print_friendly_togger{$id}" title="Print-friendly page"></a>
-</div>
-<div class="rnr-printpanel" >
-<table class="rnr-printscope" id="print_friendly_scope{$id}">
-	<tr>
-		<td class="rnr-printScopeCell">Scope:</td>
-		{BEGIN print_friendly_all}<td class="rnr-printScopeCell"><input type="radio" id="printAll{$id}" data-href="creategrn_receive_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">&nbsp;<label for="printAll{$id}">Print all pages</label></td>
-		{END print_friendly_all}
-
-	</tr>
-	<tr>
-		<td></td>
-		<td class="rnr-printScopeCell"><input type="radio" id="printPage{$id}" data-href="creategrn_receive_print.php?{$crosstable_attrs}" name="printScope" checked>&nbsp;<label for="printPage{$id}">Print this page</label></td>
-	</tr>
-		<tr>
-		<td></td>
-		<td class="rnr-printScopeCell"><input type="radio" id="printSelection{$id}" name="printScope" disabled="disabled">&nbsp;<label for="printSelection{$id}" style="color: gray;">Print selected</label></td>
-	</tr>
-</table>
-
-
-<div class="rnr-printdetails">
-<label for="printPerPage{$id}">
-	Records Per Page:
-</label>&nbsp;<input type=number id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">&nbsp;
-</div>
-
-<div class="rnr-printbutton">
-<a href=# class="rnr-button button" id="print_friendly_button{$id}" >Print</a>
-</div>
-</div>
-</div>
-</div>
-{END print_friendly}
 
 
 </div>
-{END container_hmenu}
+{END container_hdr}
 
+{BEGIN container_sidemenu}<div {$sidemenu_chiddenattr} data-pageid="{$pageid}" data-container="sidemenu" class="bs-navform navbar-collapse sidebar-menu bs-hidden-xs bs-navcontrolled" aria-expanded="false" >												   
+{BEGIN menu_block}
+{$menu main}
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-
-{BEGIN container_left}<div class="rnr-c rnr-cv rnr-c-left">
-
-{BEGIN menu_block}{$menu main}
 {END menu_block}
 
+												</div>						{END container_sidemenu}
 
-{BEGIN searchPanel}<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
-<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+{BEGIN container_left}
+<div {$left_chiddenattr} data-pageid="{$pageid}" data-container="left" class=" sidebar-container   "> 
+
+{BEGIN searchPanel}
+<div {$searchpanel_hiddenattr} data-pageid="{$pageid}" data-brick="searchpanel" class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} >
+	<!-- Search panel content -->
 	
-	<div class="srchCritTop" style="display: none;">
-		Criteria:&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
-		&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
-	</div>
-	
-	<div class="addOption">
-		<span class="rnr-buttons-group">
-			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
-		</span>
+	<div class="panel-heading">
+		<div class="btn-group" id="addSearchFieldButton{$id}">
+			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			{mlang_message SEARCH_IN}
+			<span class="caret"></span>
+			</button>
+		</div>
+
 		
-		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+		<div class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-left">
+				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>{mlang_message SEARCH_SHOW_OPTIONS_BUTTON}</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ALL_CONDITIONS}</label></a></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ANY_CONDITIONS}</label></a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>{mlang_message HIDE}</a></li>
+			</ul>
+		</div>
+	
+		
+		</div>
+	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
+
+
+		
+		{BEGIN searchCtrlBlock}
+		<div class="srchPanelRow form-group" {$filterRow_attrs}>
+			<label>{$fLabel}</label>	{$delCtrlButt}
+				<span class="rnr-searchtype">{$searchtype}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
+		</div>
+		{END searchCtrlBlock}
+
+
 	</div>
 	
-
-	<table class="controlsBlock {$controls_block_class}">
-				{BEGIN searchCtrlBlock}<TBODY>
-  <tr class="srchPanelRow" {$filterRow_attrs}>
-			<td class="srchPanelCell">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-				<div class="rnr-searchtype">{$searchtype}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
-			</td>	
-		</tr>
-		</TBODY>{END searchCtrlBlock}
-	</table>	
-
-
-	
-	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
-		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	<div class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+		<button class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>{mlang_message SHOW_ALL}</button>
 	</div>
 </div>
 
-</div></div>{END searchPanel}
+
+{END searchPanel}
+
 
 
 
@@ -189,78 +127,252 @@
 {END container_left}
 
 
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
+	</div>
+</div>	
+<div class="bs-wrapper">
+	<div class="bs-fixedheader" id="fixedheader{$id}">
+		{BEGIN container_menu}<nav {$menu_chiddenattr} data-pageid="{$pageid}" data-container="menu" class="navbar navbar-default bs-fullwidth-navbar">					
 
-{BEGIN container_recordcontrols}<div class="rnr-c rnr-ch rnr-c-recordcontrols">
 
-{BEGIN newrecord_controls_block}<div  class="style1 rnr-bl rnr-b-recordcontrols_new {$brickclass_recordcontrols_new}">		{BEGIN add_link}<a href="creategrn_receive_add.php{$addlink_getparams}" class="rnr-button" {$addlink_attrs}>Add new</a>
-	{END add_link}
 
-	
+{BEGIN container_bc}
+<div {$bc_chiddenattr} data-pageid="{$pageid}" data-container="bc" class=" navbar-form navbar-left   "> 
+
+{BEGIN breadcrumbs}
+<ol class="breadcrumb">
+<li ><a href="{$home_link}"><span class="glyphicon glyphicon-home"></span></a>{$crumb_dropdown}</li>
+{BEGIN crumb}
+  <li class="{$crumb_item_class}">
+{BEGIN crumb_title_link}
+	<a {$crumb_attrs}>{$crumb_title}</a>
+{END crumb_title_link}
+{BEGIN crumb_title_span}
+	<span {$crumb_attrs}>{$crumb_title}</span>
+{END crumb_title_span}	
+	{$crumb_dropdown}
+  </li>
+{END crumb}
+</ol>
+{END breadcrumbs}
+
+
 
 </div>
-{END newrecord_controls_block}
+{END container_bc}
 
 
-{BEGIN record_controls_block}<div  class="style1 rnr-bl rnr-b-recordcontrol {$brickclass_recordcontrol}">{BEGIN selectall_link}<a href="#" class="rnr-button" {$selectalllink_span} {$selectalllink_attrs}>Select all</a>
-{END selectall_link}
-{BEGIN widhtSelected}<span class="rnr-buttons-group">
-<a class="rnr-button {$withSelectedClass}" href="#" id="selectButtonsToggler{$id}">With selected...</a>
-<ul class="rnr-list" id="selectButtonsGroup{$id}">
-
-	
-		{BEGIN deleteselected_link}<li>
-		<a href="#" class="rnr-button link" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>Delete</a>
-</li>
-	{END deleteselected_link}
-
-		{BEGIN exportselected_link}<li>
-		<a href="#" class="rnr-button link" {$exportselectedlink_attrs} {$exportselectedlink_span}>Export</a>
-</li>
-	{END exportselected_link}
-
-</ul>
-</span>
-{END widhtSelected}
-	</div>
-{END record_controls_block}
 
 
-{BEGIN more_list}<div  class="style1 rnr-bl rnr-b-toplinks {$brickclass_toplinks}"><span class="rnr-buttons-group">
-{BEGIN moreButtons}<a class="rnr-button" id="extraButtonsToggler{$id}" href="#">More...</a>
-<ul class="rnr-list rnr-buttons-group" id="extraButtonsGroup{$id}">
 
-{BEGIN asearch_link}<li>
-	<a href="creategrn_receive_search.php" class="rnr-button link" {$advsearchlink_attrs}>Advanced search</a>
-</li>
-{END asearch_link}
 
-{BEGIN export_link}<li>
-	<a target="_blank" href="creategrn_receive_export.php" class="rnr-button link" {$exportlink_attrs}>Export results</a>
-</li>
-{END export_link}
+{BEGIN container_menu_1}<div {$menu_1_chiddenattr} data-pageid="{$pageid}" data-container="menu_1" class="bs-navform navbar-collapse bs-hidden-xs bs-navcontrolled" aria-expanded="false" >												   
 
-{BEGIN import_link}<li>
-	<a href="creategrn_receive_import.php?{$crosstable_attrs}" class="rnr-button link" {$importlink_attrs}>Import</a>
-</li>
-{END import_link}
-</ul>
-{END moreButtons}
-</span></div>
+
+
+{BEGIN container_more}
+<div {$more_chiddenattr} data-pageid="{$pageid}" data-container="more" class=" navbar-right navbar-form   "> 
+
+{BEGIN more_list}
+<div {$morebutton_hiddenattr} data-pageid="{$pageid}" data-brick="morebutton" class="btn-group bs-navsection">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="glyphicon glyphicon-cog"></span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+		
+				{BEGIN exportselected_link}
+		<li class="massButton{$id} disabled"><a href="#" {$exportselectedlink_attrs} {$exportselectedlink_span} >{mlang_message EXPORT_SELECTED}</a></li>
+		{END exportselected_link}
+		
+				{BEGIN deleteselected_link}
+		<li class="massButton{$id} disabled"><a href="#" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>{mlang_message DELETE_SELECTED}</a></li>
+		{END deleteselected_link}
+		
+				<li role="separator" class="divider"></li>	
+
+				{BEGIN asearch_link}
+		<li><a href="creategrn_receive_search.php" {$advsearchlink_attrs}>{mlang_message ADVANCED_SEARCH}</a></li>
+		{END asearch_link}
+
+				{BEGIN searchPanelTopButtons}
+		<li><a href=# id="showOptPanel{$id}">{mlang_message SHOW_SEARCH_PANEL}</a></li>
+		{END searchPanelTopButtons}	
+		
+				
+				<li role="separator" class="divider"></li>	
+		
+				
+				{BEGIN export_link}
+		<li><a target="_blank" href="creategrn_receive_export.php"  {$exportlink_attrs}>{mlang_message EXPORT_RESULTS}</a></li>
+		{END export_link}
+
+				{BEGIN import_link}
+		<li><a href="creategrn_receive_import.php?{$crosstable_attrs}"  {$importlink_attrs}>{mlang_message IMPORT}</a></li>
+		{END import_link}
+
+					<li role="separator" class="divider"></li>
+				{BEGIN AfrikaansLANGLINK}
+				<li><a href="#" data-lang="Afrikaans" class="rnr-langlink">
+					{BEGIN AfrikaansLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END AfrikaansLANGLINK_ACTIVE}
+					Afrikaans</a></li>
+				{END AfrikaansLANGLINK}
+				{BEGIN ArabicLANGLINK}
+				<li><a href="#" data-lang="Arabic" class="rnr-langlink">
+					{BEGIN ArabicLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ArabicLANGLINK_ACTIVE}
+					العربية</a></li>
+				{END ArabicLANGLINK}
+				{BEGIN ChineseLANGLINK}
+				<li><a href="#" data-lang="Chinese" class="rnr-langlink">
+					{BEGIN ChineseLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ChineseLANGLINK_ACTIVE}
+					中文(简体)</a></li>
+				{END ChineseLANGLINK}
+				{BEGIN EnglishLANGLINK}
+				<li><a href="#" data-lang="English" class="rnr-langlink">
+					{BEGIN EnglishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END EnglishLANGLINK_ACTIVE}
+					English</a></li>
+				{END EnglishLANGLINK}
+				{BEGIN FrenchLANGLINK}
+				<li><a href="#" data-lang="French" class="rnr-langlink">
+					{BEGIN FrenchLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END FrenchLANGLINK_ACTIVE}
+					Français</a></li>
+				{END FrenchLANGLINK}
+				{BEGIN GermanLANGLINK}
+				<li><a href="#" data-lang="German" class="rnr-langlink">
+					{BEGIN GermanLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END GermanLANGLINK_ACTIVE}
+					Deutsch</a></li>
+				{END GermanLANGLINK}
+				{BEGIN ItalianLANGLINK}
+				<li><a href="#" data-lang="Italian" class="rnr-langlink">
+					{BEGIN ItalianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ItalianLANGLINK_ACTIVE}
+					Italiano</a></li>
+				{END ItalianLANGLINK}
+				{BEGIN RussianLANGLINK}
+				<li><a href="#" data-lang="Russian" class="rnr-langlink">
+					{BEGIN RussianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END RussianLANGLINK_ACTIVE}
+					Русский</a></li>
+				{END RussianLANGLINK}
+				{BEGIN SpanishLANGLINK}
+				<li><a href="#" data-lang="Spanish" class="rnr-langlink">
+					{BEGIN SpanishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END SpanishLANGLINK_ACTIVE}
+					Español</a></li>
+				{END SpanishLANGLINK}
+		
+	</ul>  
+</div>
+
 {END more_list}
 
-<div class="rnr-hfiller"></div>
+
+{BEGIN security_block}
+<span {$loggedas_hiddenattr} data-pageid="{$pageid}" data-brick="loggedas" id="login_block{$id}" class="bs-navsection">
+	{BEGIN guestloginbutton}
+		<span class="form-inline">
+		{BEGIN embeded_log_fields}
+			<span>
+				<input type="text" name="username" class="form-control" {$username_attrs}>&nbsp;
+				<input type="password" name="password" class="form-control" {$password_attrs}>
+			</span>
+		{END embeded_log_fields}
+			<button class="btn btn-info" {$guestloginlink_attrs}>{mlang_message LOGIN}</button>
+		{BEGIN embeded_log_ctrls}
+			{END embeded_log_ctrls}
+		</span>
+	{END guestloginbutton}
+	{BEGIN loggedas_message} 
+		<span class="dropdown">
+			<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-user"></span>	{$username}</button>
+			<ul class="dropdown-menu">
+		{BEGIN logoutbutton}
+				<li><a href="#" {$logoutlink_attrs}>{mlang_message LOG_OUT}</a></li>
+		{END logoutbutton}
+		
+		{BEGIN adminarea_link}
+				<li><a href="admin_rights_list.php" {$adminarealink_attrs}>{mlang_message AA_ADMINAREA}</a></li>
+		{END adminarea_link}
+
+
+	{BEGIN changepwd_link}
+				<li><a href="#" {$changepwdlink_attrs}>{mlang_message CHANGE_PASSWORD}</a></li>
+	{END changepwd_link}
+			</ul>
+		</span>
+	{END loggedas_message}
+</span>
+{END security_block}
+
+
+
 </div>
-{END container_recordcontrols}
+{END container_more}
 
 
 
-{BEGIN container_message}<div class="rnr-c rnr-ch rnr-c-message">
 
-{BEGIN message_block}<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+
+
+
+
+{BEGIN container_more_1}
+<div {$more_1_chiddenattr} data-pageid="{$pageid}" data-container="more_1" class=" navbar-right navbar-form   "> 
+
+{BEGIN searchform_block}
+<span {$search_hiddenattr} data-pageid="{$pageid}" data-brick="search" class="form-group">
+
+ <div  class="input-group">
+{BEGIN searchform_text}
+	<input type="search" class="form-control" {$searchfor_attrs} size="25">
+{END searchform_text}
+	<span class="input-group-btn">
+	{BEGIN searchform_showall}
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="{mlang_message SHOW_ALL}">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	{END searchform_showall}
+	{BEGIN searchform_search}
+	<button {$searchbutton_attrs} class="btn btn-primary" >
+		<span class="glyphicon glyphicon-search"></span>
+	</button>
+	{END searchform_search}
+	</span>
+</div>
+		
+</span>
+{END searchform_block}
+
+
+
+</div>
+{END container_more_1}
+
+
+
+
+												</div>						{END container_menu_1}
+
+
+									</nav>{END container_menu}
+	</div>	
+	<div class="container-fluid bs-underheader bs-fixedsidebarmain" id="underheader{$id}">
+		{$header}
+		<div class="bs-sidebar-screenbound">
+			
+
+
+
+{BEGIN container_messagerow}
+<div {$messagerow_chiddenattr} data-pageid="{$pageid}" data-container="messagerow" class="    "> 
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-12 "> 
+
+{BEGIN message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
 {END message_block}
+
 
 
 </div>
@@ -268,158 +380,537 @@
 
 
 
-{BEGIN container_pagination}<div class="rnr-c rnr-ch rnr-multialign rnr-c-pagination">
 
-{BEGIN pagination_block}<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
-{END pagination_block}
 
-<div class="rnr-leftbricks">
-{BEGIN details_block}<div  class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
-			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+
+</div>
+{END container_messagerow}
+
+
+
+{BEGIN container_gridcontrols}
+<div {$gridcontrols_chiddenattr} data-pageid="{$pageid}" data-container="gridcontrols" class=" bs-navcontrolled bs-hidden-xs   "> 
+
+
+
+
+{BEGIN container_add_delete}
+<div {$add_delete_chiddenattr} data-pageid="{$pageid}" data-container="add_delete" class=" bottom-margin  col-md-6 "> 
+
+{BEGIN newrecord_controls_block}
+		{BEGIN add_link}
+		<a {$add_hiddenattr} data-pageid="{$pageid}" data-brick="add" type="button" class="btn btn-primary" {$addlink_attrs}>{mlang_message ADD_NEW}</a>
+	{END add_link}
+
+	
+{END newrecord_controls_block}
+
+
+{BEGIN record_controls_block}
+<span {$recordcontrol_hiddenattr} data-pageid="{$pageid}" data-brick="recordcontrol">
+		{BEGIN deleteselected_link}
+	<button type="button" class="btn btn-default" {$deleteselectedlink_attrs} {$deleteselectedlink_span} disabled>{mlang_message DELETE}</button>
+	{END deleteselected_link}
+		</span>
+
+{END record_controls_block}
+
+
+
+</div>
+{END container_add_delete}
+
+
+
+
+
+
+
+
+{BEGIN container_gridinfo}
+<div {$gridinfo_chiddenattr} data-pageid="{$pageid}" data-container="gridinfo" class=" bottom-margin text-right col-md-6 "> 
+
+{BEGIN details_found}
+<span {$details_found_hiddenattr} data-pageid="{$pageid}" data-brick="details_found" class="form-inline form-inline-always">
+	{$records_indicator}
+	<span>
+	{BEGIN recordspp_block}
+			{$recsPerPage}
+	{END recordspp_block}
 	</span>
+</span>
+{END details_found}
+
+
+{BEGIN print_friendly}
+<span {$printpanel_hiddenattr} data-pageid="{$pageid}" data-brick="printpanel" class="bs-printpanel" id="printpanelblock{$id}">
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="{mlang_message WR_PRINT_FRIENDLY}">
+		<span class="glyphicon glyphicon-print" ></span>
+		<span class="caret"></span>
+    </button>
+	<ul class="dropdown-menu pull-right" >
+		<li>
+			<div class="container-fluid" id="print_friendly_scope{$id}">
+				<div class="row">
+					<div class="col-md-4">{mlang_message PPANEL_SCOPE}</div>
+										{BEGIN print_friendly_all}
+					<div class="col-md-8">
+						<label for="printAll{$id}">
+							<input type="radio" id="printAll{$id}" data-href="creategrn_receive_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">
+							{mlang_message PPANEL_ALL_PAGES}
+						</label>
+					</div>
+					{END print_friendly_all}
+				</div>
+				<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printPage{$id}">
+							<input type="radio" id="printPage{$id}" data-href="creategrn_receive_print.php?{$crosstable_attrs}" name="printScope" checked>
+							{mlang_message PPANEL_THIS_PAGE}
+						</label>
+					</div>
+				</div>
+								<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printSelection{$id}" style="color: gray;">
+							<input type="radio" id="printSelection{$id}" name="printScope" disabled="disabled">
+							{mlang_message PPANEL_SELECTED}
+						</label>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+
+		
+				<li>	
+			<div class="rnr-printdetails">
+				<label for="printPerPage{$id}">
+											{mlang_message RECORDS_PP}:
+				</label>
+				<input type="number" id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">		
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+		<li class="rnr-printbutton">				
+			<button type="button" class="btn btn-primary" id="print_friendly_button{$id}" >{mlang_message PPANEL_PRINT}</button>			
+		</li>
+	</ul>	
+</span>
+
+{END print_friendly}
+
+
+{BEGIN field_hide_panel}
+<div {$bsfieldhidepanel_hiddenattr} data-pageid="{$pageid}" data-brick="bsfieldhidepanel" id="fildhidepanel{$id}" class="keep-open btn-group" title="{mlang_message SHOW_HIDE_COLUMNS}">
+	<button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"><i class="glyphicon glyphicon-th-list"></i> <span class="caret"></span></button>
+	<ul role="menu" class="dropdown-menu dropdown-left">
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_ID" checked="checked" value="1" data-field="ID">
+			  <span>{$label creategrn_receive ID}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_Status" checked="checked" value="1" data-field="Status">
+			  <span>{$label creategrn_receive Status}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_Fleet" checked="checked" value="1" data-field="Fleet">
+			  <span>{$label creategrn_receive Fleet}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_GRNDate" checked="checked" value="1" data-field="GRNDate">
+			  <span>{$label creategrn_receive GRNDate}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_ItemCode" checked="checked" value="1" data-field="ItemCode">
+			  <span>{$label creategrn_receive ItemCode}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_Brand" checked="checked" value="1" data-field="Brand">
+			  <span>{$label creategrn_receive Brand}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_Description" checked="checked" value="1" data-field="Description">
+			  <span>{$label creategrn_receive Description}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_Supplier" checked="checked" value="1" data-field="Supplier">
+			  <span>{$label creategrn_receive Supplier}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_UnitPrice" checked="checked" value="1" data-field="UnitPrice">
+			  <span>{$label creategrn_receive UnitPrice}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_Quantity" checked="checked" value="1" data-field="Quantity">
+			  <span>{$label creategrn_receive Quantity}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_RefNumber" checked="checked" value="1" data-field="RefNumber">
+			  <span>{$label creategrn_receive RefNumber}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_Cost" checked="checked" value="1" data-field="Cost">
+			  <span>{$label creategrn_receive Cost}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_EnteredBy" checked="checked" value="1" data-field="EnteredBy">
+			  <span>{$label creategrn_receive EnteredBy}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+	</ul>
 </div>
-{END details_block}
 
-</div><div class="rnr-rightbricks">
-{BEGIN pages_block}<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
-		Page <b>{$page}</b> of <b>{$maxpages}</b>
-	</span>
+{END field_hide_panel}
+
+
 
 </div>
-{END pages_block}
+{END container_gridinfo}
 
 
-{BEGIN recordspp_block}<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
-			Records Per Page:&nbsp;{$recsPerPage}
-	</span>	
-</div>
-{END recordspp_block}
+
+
+
 
 </div>
-</div>
-{END container_pagination}
+{END container_gridcontrols}
+
+
+		</div>
+		<div></div>
+		<div class="bs-sidebar-screenbound bs-minwidth">
+			
+
+{BEGIN container_center}
+<div {$center_chiddenattr} data-pageid="{$pageid}" data-container="center" class="    "> 
 
 
 
-{BEGIN container_grid}{BEGIN grid_block}<table class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0" >
-						<thead>
-															{BEGIN grid_header}<tr class="rnr-toprow style1 {$gridHeader_class}" >
-									{BEGIN record_header}{BEGIN listIcons_column}<th iEditCont="all">&nbsp;</th>
+
+{BEGIN container_grid}
+<div {$grid_chiddenattr} data-pageid="{$pageid}" data-container="grid" class="bs-grid    "> 
+
+{BEGIN grid_block}
+	<style>
+	.bs-gridcell[data-field=ID]:before {
+		content: "{$label creategrn_receive ID}";
+	}
+	.bs-gridcell[data-field=ItemCode]:before {
+		content: "{$label creategrn_receive ItemCode}";
+	}
+	.bs-gridcell[data-field=Brand]:before {
+		content: "{$label creategrn_receive Brand}";
+	}
+	.bs-gridcell[data-field=Description]:before {
+		content: "{$label creategrn_receive Description}";
+	}
+	.bs-gridcell[data-field=Supplier]:before {
+		content: "{$label creategrn_receive Supplier}";
+	}
+	.bs-gridcell[data-field=Quantity]:before {
+		content: "{$label creategrn_receive Quantity}";
+	}
+	.bs-gridcell[data-field=RemovedFrom]:before {
+		content: "{$label creategrn_receive RemovedFrom}";
+	}
+	.bs-gridcell[data-field=SystemDate]:before {
+		content: "{$label creategrn_receive SystemDate}";
+	}
+	.bs-gridcell[data-field=GRNDate]:before {
+		content: "{$label creategrn_receive GRNDate}";
+	}
+	.bs-gridcell[data-field=EnteredBy]:before {
+		content: "{$label creategrn_receive EnteredBy}";
+	}
+	.bs-gridcell[data-field=ApprovedBy]:before {
+		content: "{$label creategrn_receive ApprovedBy}";
+	}
+	.bs-gridcell[data-field=UnitPrice]:before {
+		content: "{$label creategrn_receive UnitPrice}";
+	}
+	.bs-gridcell[data-field=Status]:before {
+		content: "{$label creategrn_receive Status}";
+	}
+	.bs-gridcell[data-field=RefNumber]:before {
+		content: "{$label creategrn_receive RefNumber}";
+	}
+	.bs-gridcell[data-field=CurrentStock]:before {
+		content: "{$label creategrn_receive CurrentStock}";
+	}
+	.bs-gridcell[data-field=Fleet]:before {
+		content: "{$label creategrn_receive Fleet}";
+	}
+	.bs-gridcell[data-field=Cost]:before {
+		content: "{$label creategrn_receive Cost}";
+	}
+</style>
+<table {$grid_hiddenattr} data-pageid="{$pageid}" data-brick="grid" class="table {$grid_classes} bs-flexgrid rnr-b-grid rnr-gridtable" cellpadding="0" >
+	<thead>
+										{BEGIN grid_header}
+								<tr class="rnr-toprow {$gridHeader_class}" >
+									{BEGIN record_header}
+									{BEGIN listIcons_column}
+									<th iEditCont="all">&nbsp;</th>
 									{END listIcons_column}	
 
-																		{BEGIN checkbox_column}<th class="rnr-bc">
+																		{BEGIN checkbox_column}
+									<th class="">
 										<input type="checkbox" {$checkboxheader_attrs}>
 									</th>
 									{END checkbox_column}
 
-																																			{BEGIN ID_fieldheadercolumn}<th class="rnr-gridfieldlabel {$ID_class}">
-									{BEGIN ID_fieldheader}<span {$ID_orderlinkattrs}>
+																		
+									{BEGIN ID_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$ID_class}" data-field=ID>
+									{BEGIN ID_fieldheader}
+																				<span {$ID_orderlinkattrs}>
 											{$label creategrn_receive ID}
 										</span>
 									{END ID_fieldheader}
 									</th>
 									{END ID_fieldheadercolumn}
-
-																	{BEGIN Status_fieldheadercolumn}<th class="rnr-gridfieldlabel {$Status_class}">
-									{BEGIN Status_fieldheader}<span {$Status_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN Status_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Status_class}" data-field=Status>
+									{BEGIN Status_fieldheader}
+																				<span {$Status_orderlinkattrs}>
 											{$label creategrn_receive Status}
 										</span>
 									{END Status_fieldheader}
 									</th>
 									{END Status_fieldheadercolumn}
-
-																	{BEGIN Fleet_fieldheadercolumn}<th class="rnr-gridfieldlabel {$Fleet_class}">
-									{BEGIN Fleet_fieldheader}<span {$Fleet_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN Fleet_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Fleet_class}" data-field=Fleet>
+									{BEGIN Fleet_fieldheader}
+																				<span {$Fleet_orderlinkattrs}>
 											{$label creategrn_receive Fleet}
 										</span>
 									{END Fleet_fieldheader}
 									</th>
 									{END Fleet_fieldheadercolumn}
-
-																	{BEGIN GRNDate_fieldheadercolumn}<th class="rnr-gridfieldlabel {$GRNDate_class}">
-									{BEGIN GRNDate_fieldheader}<span {$GRNDate_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN GRNDate_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$GRNDate_class}" data-field=GRNDate>
+									{BEGIN GRNDate_fieldheader}
+																				<span {$GRNDate_orderlinkattrs}>
 											{$label creategrn_receive GRNDate}
 										</span>
 									{END GRNDate_fieldheader}
 									</th>
 									{END GRNDate_fieldheadercolumn}
-
-																	{BEGIN ItemCode_fieldheadercolumn}<th class="rnr-gridfieldlabel {$ItemCode_class}">
-									{BEGIN ItemCode_fieldheader}<span {$ItemCode_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN ItemCode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$ItemCode_class}" data-field=ItemCode>
+									{BEGIN ItemCode_fieldheader}
+																				<span {$ItemCode_orderlinkattrs}>
 											{$label creategrn_receive ItemCode}
 										</span>
 									{END ItemCode_fieldheader}
 									</th>
 									{END ItemCode_fieldheadercolumn}
-
-																	{BEGIN Brand_fieldheadercolumn}<th class="rnr-gridfieldlabel {$Brand_class}">
-									{BEGIN Brand_fieldheader}<span {$Brand_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN Brand_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Brand_class}" data-field=Brand>
+									{BEGIN Brand_fieldheader}
+																				<span {$Brand_orderlinkattrs}>
 											{$label creategrn_receive Brand}
 										</span>
 									{END Brand_fieldheader}
 									</th>
 									{END Brand_fieldheadercolumn}
-
-																	{BEGIN Description_fieldheadercolumn}<th class="rnr-gridfieldlabel {$Description_class}">
-									{BEGIN Description_fieldheader}<span {$Description_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN Description_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Description_class}" data-field=Description>
+									{BEGIN Description_fieldheader}
+																				<span {$Description_orderlinkattrs}>
 											{$label creategrn_receive Description}
 										</span>
 									{END Description_fieldheader}
 									</th>
 									{END Description_fieldheadercolumn}
-
-																	{BEGIN Supplier_fieldheadercolumn}<th class="rnr-gridfieldlabel {$Supplier_class}">
-									{BEGIN Supplier_fieldheader}<span {$Supplier_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN Supplier_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Supplier_class}" data-field=Supplier>
+									{BEGIN Supplier_fieldheader}
+																				<span {$Supplier_orderlinkattrs}>
 											{$label creategrn_receive Supplier}
 										</span>
 									{END Supplier_fieldheader}
 									</th>
 									{END Supplier_fieldheadercolumn}
-
-																	{BEGIN UnitPrice_fieldheadercolumn}<th class="rnr-gridfieldlabel {$UnitPrice_class}">
-									{BEGIN UnitPrice_fieldheader}<span {$UnitPrice_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN UnitPrice_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$UnitPrice_class}" data-field=UnitPrice>
+									{BEGIN UnitPrice_fieldheader}
+																				<span {$UnitPrice_orderlinkattrs}>
 											{$label creategrn_receive UnitPrice}
 										</span>
 									{END UnitPrice_fieldheader}
 									</th>
 									{END UnitPrice_fieldheadercolumn}
-
-																	{BEGIN Quantity_fieldheadercolumn}<th class="rnr-gridfieldlabel {$Quantity_class}">
-									{BEGIN Quantity_fieldheader}<span {$Quantity_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN Quantity_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Quantity_class}" data-field=Quantity>
+									{BEGIN Quantity_fieldheader}
+																				<span {$Quantity_orderlinkattrs}>
 											{$label creategrn_receive Quantity}
 										</span>
 									{END Quantity_fieldheader}
 									</th>
 									{END Quantity_fieldheadercolumn}
-
-																	{BEGIN RefNumber_fieldheadercolumn}<th class="rnr-gridfieldlabel {$RefNumber_class}">
-									{BEGIN RefNumber_fieldheader}<span {$RefNumber_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN RefNumber_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$RefNumber_class}" data-field=RefNumber>
+									{BEGIN RefNumber_fieldheader}
+																				<span {$RefNumber_orderlinkattrs}>
 											{$label creategrn_receive RefNumber}
 										</span>
 									{END RefNumber_fieldheader}
 									</th>
 									{END RefNumber_fieldheadercolumn}
-
-																	{BEGIN Cost_fieldheadercolumn}<th class="rnr-gridfieldlabel {$Cost_class}">
-									{BEGIN Cost_fieldheader}<span {$Cost_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN Cost_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Cost_class}" data-field=Cost>
+									{BEGIN Cost_fieldheader}
+																				<span {$Cost_orderlinkattrs}>
 											{$label creategrn_receive Cost}
 										</span>
 									{END Cost_fieldheader}
 									</th>
 									{END Cost_fieldheadercolumn}
-
-																	{BEGIN EnteredBy_fieldheadercolumn}<th class="rnr-gridfieldlabel {$EnteredBy_class}">
-									{BEGIN EnteredBy_fieldheader}<span {$EnteredBy_orderlinkattrs}>
+									
+									
+									
+									
+									{BEGIN EnteredBy_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$EnteredBy_class}" data-field=EnteredBy>
+									{BEGIN EnteredBy_fieldheader}
+																				<span {$EnteredBy_orderlinkattrs}>
 											{$label creategrn_receive EnteredBy}
 										</span>
 									{END EnteredBy_fieldheader}
 									</th>
 									{END EnteredBy_fieldheadercolumn}
-
-
 									
-									<th class="rnr-edge">&nbsp;</th>
-									{BEGIN endrecordheader_block}<th class="rnr-cs">&nbsp;</th>
+									
+									
+									
+									{BEGIN endrecordheader_block}
+									<th class="rnr-cs">&nbsp;</th>
 									
 									{END endrecordheader_block}
 									
@@ -428,216 +919,256 @@
 								</tr>
 								{END grid_header}
 
-						</thead>
-						<tbody>	
-															{BEGIN grid_row}<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
-									{BEGIN grid_record}{BEGIN listIcons_column}<td class="rnr-cc rnr-bc rnr-icons" iEditCont="all" {$rowstyle} {$recordattrs}>
-																		{BEGIN edit_column}{BEGIN edit_link}<a class="rnr-button-img" {$editlink_attrs} data-icon="edit" title="Edit"></a>
-									{END edit_link}
-									{END edit_column}
+	</thead>
+	<tbody>	
+		{BEGIN grid_row}
+<tr class="{$rowclass} bs-gridrow" {$rowattrs} {$rowstyle}>
+	{BEGIN grid_record}
+	{BEGIN listIcons_column}
+	<td class="bs-gridicons" iEditCont="all" {$rowstyle} {$recordattrs}>
+		{BEGIN edit_column}
+	{BEGIN edit_link}
+			<a class="glyphicon glyphicon-pencil" {$editlink_attrs} title="{mlang_message EDIT}"></a>
+	{END edit_link}
+	{END edit_column}
 
-									
-									
-																		{BEGIN view_column}{BEGIN view_link}<a class="rnr-button-img" {$viewlink_attrs} data-icon="view" title="View"></a>
-									{END view_link}
-									{END view_column}
-									</td>	
-									{END listIcons_column}	
+	
+	
+		{BEGIN view_column}
+	{BEGIN view_link}
+			<a class="glyphicon glyphicon-search" {$viewlink_attrs} title="{mlang_message VIEW}"></a>
+	{END view_link}
+	{END view_column}
+	</td>	
+	{END listIcons_column}	
 
-																		{BEGIN checkbox_column}<td class="rnr-bc" iEditCont="checkBox" {$rowstyle} {$recordattrs}>
-									{BEGIN checkbox}<input type="checkbox" {$checkbox_attrs}>
-									{END checkbox}
-									</td>
-									{END checkbox_column}
+		{BEGIN checkbox_column}
+	<td  iEditCont="checkBox" class="bs-gridcheckbox" {$rowstyle} {$recordattrs}>
+	{BEGIN checkbox}
+	<input type="checkbox" {$checkbox_attrs}>
+	{END checkbox}
+	</td>
+	{END checkbox_column}
 
-									
-										{BEGIN ID_fieldcolumn}<td class="{$ID_class}" {$ID_style} {$recordattrs}>
+	
+
+	{BEGIN ID_fieldcolumn}
+	<td class="bs-gridcell {$ID_class}"  data-field=ID {$rowstyle} {$recordattrs}>
 		{$ID_value}
 	</td>
 {END ID_fieldcolumn}
 
-	{BEGIN Status_fieldcolumn}<td class="{$Status_class}" {$Status_style} {$recordattrs}>
+
+	{BEGIN Status_fieldcolumn}
+	<td class="bs-gridcell {$Status_class}"  data-field=Status {$rowstyle} {$recordattrs}>
 		{$Status_value}
 	</td>
 {END Status_fieldcolumn}
 
-	{BEGIN Fleet_fieldcolumn}<td class="{$Fleet_class}" {$Fleet_style} {$recordattrs}>
+
+	{BEGIN Fleet_fieldcolumn}
+	<td class="bs-gridcell {$Fleet_class}"  data-field=Fleet {$rowstyle} {$recordattrs}>
 		{$Fleet_value}
 	</td>
 {END Fleet_fieldcolumn}
 
-	{BEGIN GRNDate_fieldcolumn}<td class="{$GRNDate_class}" {$GRNDate_style} {$recordattrs}>
+
+	{BEGIN GRNDate_fieldcolumn}
+	<td class="bs-gridcell {$GRNDate_class}"  data-field=GRNDate {$rowstyle} {$recordattrs}>
 		{$GRNDate_value}
 	</td>
 {END GRNDate_fieldcolumn}
 
-	{BEGIN ItemCode_fieldcolumn}<td class="{$ItemCode_class}" {$ItemCode_style} {$recordattrs}>
+
+	{BEGIN ItemCode_fieldcolumn}
+	<td class="bs-gridcell {$ItemCode_class}"  data-field=ItemCode {$rowstyle} {$recordattrs}>
 		{$ItemCode_value}
 	</td>
 {END ItemCode_fieldcolumn}
 
-	{BEGIN Brand_fieldcolumn}<td class="{$Brand_class}" {$Brand_style} {$recordattrs}>
+
+	{BEGIN Brand_fieldcolumn}
+	<td class="bs-gridcell {$Brand_class}"  data-field=Brand {$rowstyle} {$recordattrs}>
 		{$Brand_value}
 	</td>
 {END Brand_fieldcolumn}
 
-	{BEGIN Description_fieldcolumn}<td class="{$Description_class}" {$Description_style} {$recordattrs}>
+
+	{BEGIN Description_fieldcolumn}
+	<td class="bs-gridcell {$Description_class}"  data-field=Description {$rowstyle} {$recordattrs}>
 		{$Description_value}
 	</td>
 {END Description_fieldcolumn}
 
-	{BEGIN Supplier_fieldcolumn}<td class="{$Supplier_class}" {$Supplier_style} {$recordattrs}>
+
+	{BEGIN Supplier_fieldcolumn}
+	<td class="bs-gridcell {$Supplier_class}"  data-field=Supplier {$rowstyle} {$recordattrs}>
 		{$Supplier_value}
 	</td>
 {END Supplier_fieldcolumn}
 
-	{BEGIN UnitPrice_fieldcolumn}<td class="{$UnitPrice_class}" {$UnitPrice_style} {$recordattrs}>
+
+	{BEGIN UnitPrice_fieldcolumn}
+	<td class="bs-gridcell {$UnitPrice_class}"  data-field=UnitPrice {$rowstyle} {$recordattrs}>
 		{$UnitPrice_value}
 	</td>
 {END UnitPrice_fieldcolumn}
 
-	{BEGIN Quantity_fieldcolumn}<td class="{$Quantity_class}" {$Quantity_style} {$recordattrs}>
+
+	{BEGIN Quantity_fieldcolumn}
+	<td class="bs-gridcell {$Quantity_class}"  data-field=Quantity {$rowstyle} {$recordattrs}>
 		{$Quantity_value}
 	</td>
 {END Quantity_fieldcolumn}
 
-	{BEGIN RefNumber_fieldcolumn}<td class="{$RefNumber_class}" {$RefNumber_style} {$recordattrs}>
+
+	{BEGIN RefNumber_fieldcolumn}
+	<td class="bs-gridcell {$RefNumber_class}"  data-field=RefNumber {$rowstyle} {$recordattrs}>
 		{$RefNumber_value}
 	</td>
 {END RefNumber_fieldcolumn}
 
-	{BEGIN Cost_fieldcolumn}<td class="{$Cost_class}" {$Cost_style} {$recordattrs}>
+
+	{BEGIN Cost_fieldcolumn}
+	<td class="bs-gridcell {$Cost_class}"  data-field=Cost {$rowstyle} {$recordattrs}>
 		{$Cost_value}
 	</td>
 {END Cost_fieldcolumn}
 
-	{BEGIN EnteredBy_fieldcolumn}<td class="{$EnteredBy_class}" {$EnteredBy_style} {$recordattrs}>
+
+	{BEGIN EnteredBy_fieldcolumn}
+	<td class="bs-gridcell {$EnteredBy_class}"  data-field=EnteredBy {$rowstyle} {$recordattrs}>
 		{$EnteredBy_value}
 	</td>
 {END EnteredBy_fieldcolumn}
 
+	{BEGIN endrecord_block}
+	<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+	{END endrecord_block}
+									
+	{END grid_record}
 
-									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
-									{BEGIN endrecord_block}<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
-									{END endrecord_block}
-																	
-									{END grid_record}
-
-								</tr>
-								{END grid_row}
-																							{BEGIN totals_row}<tr class="rnr-bottomrow style1 {$gridFooter_class}">
-									{BEGIN totals_record}{BEGIN listIcons_column}<td class="rnr-cc"></td>
+</tr>
+{END grid_row}
+	</tbody>
+	<tfoot>
+																		{BEGIN totals_row}
+								<tr class="rnr-bottomrow style1 {$gridFooter_class}">
+									{BEGIN totals_record}
+									{BEGIN listIcons_column}
+									<td class="bs-gridcell"></td>
 									{END listIcons_column}	
 
-																		{BEGIN checkbox_column}<td class="rnr-cc"></td>
+																		{BEGIN checkbox_column}
+									<td class="bs-gridcell"></td>
 									{END checkbox_column}
 
 									
-										{BEGIN ID_fieldfootercolumn}<td class="{$ID_class}">
-</td>
-{END ID_fieldfootercolumn}
-	{BEGIN Status_fieldfootercolumn}<td class="{$Status_class}">
-</td>
-{END Status_fieldfootercolumn}
-	{BEGIN Fleet_fieldfootercolumn}<td class="{$Fleet_class}">
-</td>
-{END Fleet_fieldfootercolumn}
-	{BEGIN GRNDate_fieldfootercolumn}<td class="{$GRNDate_class}">
-</td>
-{END GRNDate_fieldfootercolumn}
-	{BEGIN ItemCode_fieldfootercolumn}<td class="{$ItemCode_class}">
-</td>
-{END ItemCode_fieldfootercolumn}
-	{BEGIN Brand_fieldfootercolumn}<td class="{$Brand_class}">
-</td>
-{END Brand_fieldfootercolumn}
-	{BEGIN Description_fieldfootercolumn}<td class="{$Description_class}">
-</td>
-{END Description_fieldfootercolumn}
-	{BEGIN Supplier_fieldfootercolumn}<td class="{$Supplier_class}">
-</td>
-{END Supplier_fieldfootercolumn}
-	{BEGIN UnitPrice_fieldfootercolumn}<td class="{$UnitPrice_class}">
-</td>
-{END UnitPrice_fieldfootercolumn}
-	{BEGIN Quantity_fieldfootercolumn}<td class="{$Quantity_class}">
-</td>
-{END Quantity_fieldfootercolumn}
-	{BEGIN RefNumber_fieldfootercolumn}<td class="{$RefNumber_class}">
-</td>
-{END RefNumber_fieldfootercolumn}
-	{BEGIN Cost_fieldfootercolumn}<td class="{$Cost_class}">
-	{BEGIN Cost_showtotal}
-			Total:
-	{$Cost_total}
-	{END Cost_showtotal}
-</td>
-{END Cost_fieldfootercolumn}
-	{BEGIN EnteredBy_fieldfootercolumn}<td class="{$EnteredBy_class}">
-</td>
-{END EnteredBy_fieldfootercolumn}
-
-									<td class="rnr-edge">&nbsp;</td>
-									{BEGIN endrecordtotals_block}<td class="rnr-cs"></td>
+										{BEGIN ID_fieldfootercolumn}
+										<td class="bs-gridcell {$ID_class}" data-field="ID">
+																				</td>
+										{END ID_fieldfootercolumn}
+										{BEGIN Status_fieldfootercolumn}
+										<td class="bs-gridcell {$Status_class}" data-field="Status">
+																				</td>
+										{END Status_fieldfootercolumn}
+										{BEGIN Fleet_fieldfootercolumn}
+										<td class="bs-gridcell {$Fleet_class}" data-field="Fleet">
+																				</td>
+										{END Fleet_fieldfootercolumn}
+										{BEGIN GRNDate_fieldfootercolumn}
+										<td class="bs-gridcell {$GRNDate_class}" data-field="GRNDate">
+																				</td>
+										{END GRNDate_fieldfootercolumn}
+										{BEGIN ItemCode_fieldfootercolumn}
+										<td class="bs-gridcell {$ItemCode_class}" data-field="ItemCode">
+																				</td>
+										{END ItemCode_fieldfootercolumn}
+										{BEGIN Brand_fieldfootercolumn}
+										<td class="bs-gridcell {$Brand_class}" data-field="Brand">
+																				</td>
+										{END Brand_fieldfootercolumn}
+										{BEGIN Description_fieldfootercolumn}
+										<td class="bs-gridcell {$Description_class}" data-field="Description">
+																				</td>
+										{END Description_fieldfootercolumn}
+										{BEGIN Supplier_fieldfootercolumn}
+										<td class="bs-gridcell {$Supplier_class}" data-field="Supplier">
+																				</td>
+										{END Supplier_fieldfootercolumn}
+										{BEGIN UnitPrice_fieldfootercolumn}
+										<td class="bs-gridcell {$UnitPrice_class}" data-field="UnitPrice">
+																				</td>
+										{END UnitPrice_fieldfootercolumn}
+										{BEGIN Quantity_fieldfootercolumn}
+										<td class="bs-gridcell {$Quantity_class}" data-field="Quantity">
+																				</td>
+										{END Quantity_fieldfootercolumn}
+										{BEGIN RefNumber_fieldfootercolumn}
+										<td class="bs-gridcell {$RefNumber_class}" data-field="RefNumber">
+																				</td>
+										{END RefNumber_fieldfootercolumn}
+										{BEGIN Cost_fieldfootercolumn}
+										<td class="bs-gridcell {$Cost_class}" data-field="Cost">
+																					{BEGIN Cost_showtotal}
+																							{mlang_message TOTAL}:
+											{$Cost_total}
+											{END Cost_showtotal}
+										</td>
+										{END Cost_fieldfootercolumn}
+										{BEGIN EnteredBy_fieldfootercolumn}
+										<td class="bs-gridcell {$EnteredBy_class}" data-field="EnteredBy">
+																				</td>
+										{END EnteredBy_fieldfootercolumn}
+									{BEGIN endrecordtotals_block}
+									<td class="rnr-cs bs-gridcell"></td>
 									{END endrecordtotals_block}
 									{END totals_record}
 								</tr>
 								{END totals_row}
+								
+	</tfoot>
+</table>
 
-						</tbody>
-					</table>
-					
+
 
 {END grid_block}
 
 
 
+</div>
 {END container_grid}
 
 
 
-{BEGIN container_pagination_bottom}<div class="rnr-c rnr-ch rnr-multialign rnr-c-pagination_bottom">
 
-{BEGIN pagination_block}<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+
+
+</div>
+{END container_center}
+
+
+
+{BEGIN container_pagination}
+<div {$pagination_chiddenattr} data-pageid="{$pageid}" data-container="pagination" class="  text-center col-md-12 "> 
+
+{BEGIN pagination_block}
+<div {$pagination_hiddenattr} data-pageid="{$pageid}" data-brick="pagination">
+{$pagination}
+</div>
 {END pagination_block}
 
-<div class="rnr-leftbricks">
-{BEGIN details_block}<div  class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
-			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
-	</span>
-</div>
-{END details_block}
 
-</div><div class="rnr-rightbricks">
-{BEGIN pages_block}<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
-		Page <b>{$page}</b> of <b>{$maxpages}</b>
-	</span>
 
 </div>
-{END pages_block}
+{END container_pagination}
 
 
-{BEGIN recordspp_block}<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
-			Records Per Page:&nbsp;{$recsPerPage}
-	</span>	
-</div>
-{END recordspp_block}
-
-</div>
-</div>
-{END container_pagination_bottom}
-
-
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
 		</div>
 	</div>
-		
+</div>
+	
+
 		{$footer}
 	{END body}
 	</body>

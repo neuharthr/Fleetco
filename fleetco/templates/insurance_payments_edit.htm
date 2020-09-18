@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,179 +13,418 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-edit" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_all}
-<div class="rnr-c rnr-cv rnr-c-all">
+{BEGIN container_editpage}
+<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
 
 {BEGIN editheader}
-<div  class="rnr-brickcontents style2 rnr-b-editheader {$brickclass_editheader}"><span>	<h1>{$pagetitlelabel insurance_payments edit}</h1>
-</span></div>{END editheader}
+	<h2 {$editheader_hiddenattr} data-pageid="{$pageid}" data-brick="editheader" >{$pagetitlelabel insurance_payments edit}</h2>
 
+{END editheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN message_block}
-<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		<button class="btn btn-sm btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>{mlang_message VIEW}</button>
+{END view_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-editfields2 {$brickclass_editfields2}"><table class="fieldGrid fieldGrid2 edit">
 
-<tr>
-<td>
-	{BEGIN Fleet_fieldblock}
-<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
-  <span class="rnr-label">{BEGIN Fleet_label}{$label insurance_payments Fleet}{END Fleet_label}</span>
-  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$editfields_hiddenattr} data-pageid="{$pageid}" data-brick="editfields" class="form-horizontal" role="form">
+
+
+
+			{BEGIN Fleet_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Fleet}" data-fieldname="Fleet" data-signal-error-for="Fleet{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Fleet}">
+		{BEGIN Fleet_label}{$label insurance_payments Fleet}{END Fleet_label}
+	</label>
+	<div class="col-md-6" >
+		{$Fleet_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Fleet">
+		<div class="text-muted" >
+		{$tooltip insurance_payments Fleet}
+		</div>
+	</div>
+</div>
 </div>
 {END Fleet_fieldblock}
-	{BEGIN VehicleNo_fieldblock}
-<div data-fieldname="VehicleNo" class="rnr-field style1 {$fielddispclass_VehicleNo}">
-  <span class="rnr-label">{BEGIN VehicleNo_label}{$label insurance_payments VehicleNo}{END VehicleNo_label}</span>
-  <span class="rnr-control style3">{$VehicleNo_editcontrol}</span>
+
+			{BEGIN VehicleNo_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_VehicleNo}" data-fieldname="VehicleNo" data-signal-error-for="VehicleNo{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_VehicleNo}">
+		{BEGIN VehicleNo_label}{$label insurance_payments VehicleNo}{END VehicleNo_label}
+	</label>
+	<div class="col-md-6" >
+		{$VehicleNo_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="VehicleNo">
+		<div class="text-muted" >
+		{$tooltip insurance_payments VehicleNo}
+		</div>
+	</div>
+</div>
 </div>
 {END VehicleNo_fieldblock}
-	{BEGIN Type_fieldblock}
-<div data-fieldname="Type" class="rnr-field style1 {$fielddispclass_Type}">
-  <span class="rnr-label">{BEGIN Type_label}{$label insurance_payments Type}{END Type_label}</span>
-  <span class="rnr-control style3">{$Type_editcontrol}</span>
+
+			{BEGIN Type_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Type}" data-fieldname="Type" data-signal-error-for="Type{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Type}">
+		{BEGIN Type_label}{$label insurance_payments Type}{END Type_label}
+	</label>
+	<div class="col-md-6" >
+		{$Type_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Type">
+		<div class="text-muted" >
+		{$tooltip insurance_payments Type}
+		</div>
+	</div>
+</div>
 </div>
 {END Type_fieldblock}
-	{BEGIN RenewalDueDate_fieldblock}
-<div data-fieldname="RenewalDueDate" class="rnr-field style1 {$fielddispclass_RenewalDueDate}">
-  <span class="rnr-label">{BEGIN RenewalDueDate_label}{$label insurance_payments RenewalDueDate}{END RenewalDueDate_label}</span>
-  <span class="rnr-control style3">{$RenewalDueDate_editcontrol}</span>
+
+			{BEGIN RenewalDueDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_RenewalDueDate}" data-fieldname="RenewalDueDate" data-signal-error-for="RenewalDueDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_RenewalDueDate}">
+		{BEGIN RenewalDueDate_label}{$label insurance_payments RenewalDueDate}{END RenewalDueDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$RenewalDueDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="RenewalDueDate">
+		<div class="text-muted" >
+		{$tooltip insurance_payments RenewalDueDate}
+		</div>
+	</div>
+</div>
 </div>
 {END RenewalDueDate_fieldblock}
-	{BEGIN Insurer_fieldblock}
-<div data-fieldname="Insurer" class="rnr-field style1 {$fielddispclass_Insurer}">
-  <span class="rnr-label">{BEGIN Insurer_label}{$label insurance_payments Insurer}{END Insurer_label}</span>
-  <span class="rnr-control style3">{$Insurer_editcontrol}</span>
+
+			{BEGIN Insurer_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Insurer}" data-fieldname="Insurer" data-signal-error-for="Insurer{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Insurer}">
+		{BEGIN Insurer_label}{$label insurance_payments Insurer}{END Insurer_label}
+	</label>
+	<div class="col-md-6" >
+		{$Insurer_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Insurer">
+		<div class="text-muted" >
+		{$tooltip insurance_payments Insurer}
+		</div>
+	</div>
+</div>
 </div>
 {END Insurer_fieldblock}
-	{BEGIN Premium_fieldblock}
-<div data-fieldname="Premium" class="rnr-field style1 {$fielddispclass_Premium}">
-  <span class="rnr-label">{BEGIN Premium_label}{$label insurance_payments Premium}{END Premium_label}</span>
-  <span class="rnr-control style3">{$Premium_editcontrol}</span>
+
+			{BEGIN Premium_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Premium}" data-fieldname="Premium" data-signal-error-for="Premium{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Premium}">
+		{BEGIN Premium_label}{$label insurance_payments Premium}{END Premium_label}
+	</label>
+	<div class="col-md-6" >
+		{$Premium_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Premium">
+		<div class="text-muted" >
+		{$tooltip insurance_payments Premium}
+		</div>
+	</div>
+</div>
 </div>
 {END Premium_fieldblock}
-</td>
-<td>
-	{BEGIN From_fieldblock}
-<div data-fieldname="From" class="rnr-field style1 {$fielddispclass_From}">
-  <span class="rnr-label">{BEGIN From_label}{$label insurance_payments From}{END From_label}</span>
-  <span class="rnr-control style3">{$From_editcontrol}</span>
+
+			{BEGIN From_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_From}" data-fieldname="From" data-signal-error-for="From{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_From}">
+		{BEGIN From_label}{$label insurance_payments From}{END From_label}
+	</label>
+	<div class="col-md-6" >
+		{$From_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="From">
+		<div class="text-muted" >
+		{$tooltip insurance_payments From}
+		</div>
+	</div>
+</div>
 </div>
 {END From_fieldblock}
-	{BEGIN To_fieldblock}
-<div data-fieldname="To" class="rnr-field style1 {$fielddispclass_To}">
-  <span class="rnr-label">{BEGIN To_label}{$label insurance_payments To}{END To_label}</span>
-  <span class="rnr-control style3">{$To_editcontrol}</span>
+
+			{BEGIN To_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_To}" data-fieldname="To" data-signal-error-for="To{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_To}">
+		{BEGIN To_label}{$label insurance_payments To}{END To_label}
+	</label>
+	<div class="col-md-6" >
+		{$To_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="To">
+		<div class="text-muted" >
+		{$tooltip insurance_payments To}
+		</div>
+	</div>
+</div>
 </div>
 {END To_fieldblock}
-	{BEGIN DateofPayment_fieldblock}
-<div data-fieldname="DateofPayment" class="rnr-field style1 {$fielddispclass_DateofPayment}">
-  <span class="rnr-label">{BEGIN DateofPayment_label}{$label insurance_payments DateofPayment}{END DateofPayment_label}</span>
-  <span class="rnr-control style3">{$DateofPayment_editcontrol}</span>
+
+			{BEGIN DateofPayment_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_DateofPayment}" data-fieldname="DateofPayment" data-signal-error-for="DateofPayment{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_DateofPayment}">
+		{BEGIN DateofPayment_label}{$label insurance_payments DateofPayment}{END DateofPayment_label}
+	</label>
+	<div class="col-md-6" >
+		{$DateofPayment_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="DateofPayment">
+		<div class="text-muted" >
+		{$tooltip insurance_payments DateofPayment}
+		</div>
+	</div>
+</div>
 </div>
 {END DateofPayment_fieldblock}
-	{BEGIN PaymentVoucher_fieldblock}
-<div data-fieldname="PaymentVoucher" class="rnr-field style1 {$fielddispclass_PaymentVoucher}">
-  <span class="rnr-label">{BEGIN PaymentVoucher_label}{$label insurance_payments PaymentVoucher}{END PaymentVoucher_label}</span>
-  <span class="rnr-control style3">{$PaymentVoucher_editcontrol}</span>
+
+			{BEGIN PaymentVoucher_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_PaymentVoucher}" data-fieldname="PaymentVoucher" data-signal-error-for="PaymentVoucher{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_PaymentVoucher}">
+		{BEGIN PaymentVoucher_label}{$label insurance_payments PaymentVoucher}{END PaymentVoucher_label}
+	</label>
+	<div class="col-md-6" >
+		{$PaymentVoucher_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="PaymentVoucher">
+		<div class="text-muted" >
+		{$tooltip insurance_payments PaymentVoucher}
+		</div>
+	</div>
+</div>
 </div>
 {END PaymentVoucher_fieldblock}
-	{BEGIN SysDate_fieldblock}
-<div data-fieldname="SysDate" class="rnr-field style1 {$fielddispclass_SysDate}">
-  <span class="rnr-label">{BEGIN SysDate_label}{$label insurance_payments SysDate}{END SysDate_label}</span>
-  <span class="rnr-control style3">{$SysDate_editcontrol}</span>
+
+			{BEGIN SysDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_SysDate}" data-fieldname="SysDate" data-signal-error-for="SysDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_SysDate}">
+		{BEGIN SysDate_label}{$label insurance_payments SysDate}{END SysDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$SysDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="SysDate">
+		<div class="text-muted" >
+		{$tooltip insurance_payments SysDate}
+		</div>
+	</div>
+</div>
 </div>
 {END SysDate_fieldblock}
-	{BEGIN EnteredBy_fieldblock}
-<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
-  <span class="rnr-label">{BEGIN EnteredBy_label}{$label insurance_payments EnteredBy}{END EnteredBy_label}</span>
-  <span class="rnr-control style3">{$EnteredBy_editcontrol}</span>
+
+			{BEGIN EnteredBy_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_EnteredBy}" data-fieldname="EnteredBy" data-signal-error-for="EnteredBy{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_EnteredBy}">
+		{BEGIN EnteredBy_label}{$label insurance_payments EnteredBy}{END EnteredBy_label}
+	</label>
+	<div class="col-md-6" >
+		{$EnteredBy_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="EnteredBy">
+		<div class="text-muted" >
+		{$tooltip insurance_payments EnteredBy}
+		</div>
+	</div>
+</div>
 </div>
 {END EnteredBy_fieldblock}
-</td>
-</tr>
-</table></div>
 
 
-{BEGIN editbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-editbuttons {$brickclass_editbuttons}"><div class="rnr-buttons-right">
-	{BEGIN prev_button}
-	<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
-	{END prev_button}
-	{BEGIN next_button}
-	<a href="#" class="rnr-button  {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
-	{END next_button}
 </div>
-<div class="rnr-buttons-left">
-		{BEGIN save_button}
-	<a href="#" class="rnr-button main" {$savebutton_attrs}>Save</a>
-	{END save_button}
-	{BEGIN reset_button}
-	<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-	{END reset_button}
-	{BEGIN back_button}
-		<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-	{END back_button}
-	{BEGIN close_button}
-	<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
-	{END close_button}
-		{BEGIN view_page_button}
-	<a href="#" class="rnr-button" {$view_page_button_attrs}>View</a>
-	{END view_page_button}
-</div>
-</div>{END editbuttons}
+
+
 
 
 </div>
 {END container_fields}
 
-</div>
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN editbuttons}
+	{BEGIN save_button}
+	<button class="btn btn-primary" {$savebutton_attrs}>{mlang_message SAVE}</button>
+	{END save_button}
+	{BEGIN back_button}
+		<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+	{END back_button}
+	{BEGIN close_button}
+	<a href="#" class="btn btn-default" {$closebutton_attrs}>{mlang_message CANCEL}</a>
+	{END close_button}
+
+{END editbuttons}
 
 
 
 </div>
-{END container_all}
+{END container_leftbuttons}
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
-		</div>
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="  text-right col-md-3 "> 
+
+{BEGIN righteditbuttons}
+<div class="btn-group" role="group">
+
+	{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default  {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+			{BEGIN reset_button}
+				<li><a href="#" {$resetbutton_attrs}>{mlang_message RESET}</a></li>
+			{END reset_button}
+			{BEGIN view_page_button}
+				<li><a href="#" {$view_page_button_attrs}>{mlang_message VIEW}</a></li>
+			{END view_page_button}
+		</ul>
 	</div>
-		
+</div>
+{END righteditbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
 		{$footer}
 	{END body}
 	</body>

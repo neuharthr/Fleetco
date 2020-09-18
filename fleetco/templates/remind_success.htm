@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,55 +13,148 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-remind_success" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_page}
+<div {$page_chiddenattr} data-pageid="{$pageid}" data-container="page" class="container    "> 
+
+
+
+
+{BEGIN container_page_1}
+<div {$page_1_chiddenattr} data-pageid="{$pageid}" data-container="page_1" class=" bs-standalone-page  col-md-6 col-md-offset-3"> 
+
+
+
+
+{BEGIN container_panel}
+<div {$panel_chiddenattr} data-pageid="{$pageid}" data-container="panel" class=" bs-pagepanel panel panel-primary   "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class=" panel-heading   "> 
 
 {BEGIN remindheader}
-<div  class="rnr-brickcontents style2 rnr-b-remindheader {$brickclass_remindheader}"><span>	<h1>{$pagetitlelabel  remind_success}</h1>
-</span></div>{END remindheader}
+<h3 class="panel-title" {$remindheader_hiddenattr} data-pageid="{$pageid}" data-brick="remindheader" >
+{$pagetitlelabel  remind_success}
+</h3>
+{END remindheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-weresent_message {$brickclass_weresent_message}">Login and password were sent to your email address.</div>
+</div>
+{END container_header}
 
 
 
-<div  class="rnr-brickcontents style2 rnr-b-remindsucbuttons {$brickclass_remindsucbuttons}"><a href="#" class="rnr-button main" {$closewindow_attrs}>Close window</a></div>
+
+
+
+
+
+{BEGIN container_body}
+<div {$body_chiddenattr} data-pageid="{$pageid}" data-container="body" class=" panel-body   "> 
+
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div class="alert alert-success" {$weresent_message_hiddenattr} data-pageid="{$pageid}" data-brick="weresent_message">
+{mlang_message WERE_SENT}
+</div>
+
+
 
 
 </div>
 {END container_fields}
 
 
+
+
+
+
+
+
+{BEGIN container_header_1}
+<div {$header_1_chiddenattr} data-pageid="{$pageid}" data-container="header_1" class="   col-md-8 col-md-offset-4"> 
+
+
+<span {$remindsucbuttons_hiddenattr} data-pageid="{$pageid}" data-brick="remindsucbuttons">
+	<a href="#" class="btn btn-primary" {$closewindow_attrs}>{mlang_message CLOSE_WINDOW}</a>
+</span>
+
+
+
+
+</div>
+{END container_header_1}
+
+
+
+
+
+
+</div>
+{END container_body}
+
+
+
+
+
+
+</div>
+{END container_panel}
+
+
+
+
+
+
+</div>
+{END container_page_1}
+
+
+
+
+
+
+</div>
+{END container_page}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

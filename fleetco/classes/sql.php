@@ -266,8 +266,7 @@ class SQLFromListItem extends SQLEntity
 		}
 		else
 		{
-			$ret = $this->m_sql;
-			$skipAlias = true;
+			return $this->m_sql;
 		}
 		
 		if($this->m_alias != '' && !$skipAlias)

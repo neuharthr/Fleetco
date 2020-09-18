@@ -28,6 +28,102 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsrnewalmastertable["English"]))
 		$tdatarnewalmastertable[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsrnewalmastertable["Afrikaans"] = array();
+	$fieldToolTipsrnewalmastertable["Afrikaans"] = array();
+	$pageTitlesrnewalmastertable["Afrikaans"] = array();
+	$fieldLabelsrnewalmastertable["Afrikaans"]["ID"] = "ID";
+	$fieldToolTipsrnewalmastertable["Afrikaans"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["Afrikaans"]["Renewal"] = "hernuwing";
+	$fieldToolTipsrnewalmastertable["Afrikaans"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["Afrikaans"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsrnewalmastertable["Arabic"] = array();
+	$fieldToolTipsrnewalmastertable["Arabic"] = array();
+	$pageTitlesrnewalmastertable["Arabic"] = array();
+	$fieldLabelsrnewalmastertable["Arabic"]["ID"] = "???? ?????";
+	$fieldToolTipsrnewalmastertable["Arabic"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["Arabic"]["Renewal"] = "?????";
+	$fieldToolTipsrnewalmastertable["Arabic"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["Arabic"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsrnewalmastertable["Chinese"] = array();
+	$fieldToolTipsrnewalmastertable["Chinese"] = array();
+	$pageTitlesrnewalmastertable["Chinese"] = array();
+	$fieldLabelsrnewalmastertable["Chinese"]["ID"] = "ID";
+	$fieldToolTipsrnewalmastertable["Chinese"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["Chinese"]["Renewal"] = "??";
+	$fieldToolTipsrnewalmastertable["Chinese"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["Chinese"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsrnewalmastertable["French"] = array();
+	$fieldToolTipsrnewalmastertable["French"] = array();
+	$pageTitlesrnewalmastertable["French"] = array();
+	$fieldLabelsrnewalmastertable["French"]["ID"] = "ID";
+	$fieldToolTipsrnewalmastertable["French"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["French"]["Renewal"] = "Renouvellement";
+	$fieldToolTipsrnewalmastertable["French"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["French"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsrnewalmastertable["German"] = array();
+	$fieldToolTipsrnewalmastertable["German"] = array();
+	$pageTitlesrnewalmastertable["German"] = array();
+	$fieldLabelsrnewalmastertable["German"]["ID"] = "ICH WÜRDE";
+	$fieldToolTipsrnewalmastertable["German"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["German"]["Renewal"] = "Erneuerung";
+	$fieldToolTipsrnewalmastertable["German"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["German"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsrnewalmastertable["Italian"] = array();
+	$fieldToolTipsrnewalmastertable["Italian"] = array();
+	$pageTitlesrnewalmastertable["Italian"] = array();
+	$fieldLabelsrnewalmastertable["Italian"]["ID"] = "ID";
+	$fieldToolTipsrnewalmastertable["Italian"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["Italian"]["Renewal"] = "Rinnovo";
+	$fieldToolTipsrnewalmastertable["Italian"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["Italian"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsrnewalmastertable["Russian"] = array();
+	$fieldToolTipsrnewalmastertable["Russian"] = array();
+	$pageTitlesrnewalmastertable["Russian"] = array();
+	$fieldLabelsrnewalmastertable["Russian"]["ID"] = "? ??";
+	$fieldToolTipsrnewalmastertable["Russian"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["Russian"]["Renewal"] = "??????????";
+	$fieldToolTipsrnewalmastertable["Russian"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["Russian"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsrnewalmastertable["Spanish"] = array();
+	$fieldToolTipsrnewalmastertable["Spanish"] = array();
+	$pageTitlesrnewalmastertable["Spanish"] = array();
+	$fieldLabelsrnewalmastertable["Spanish"]["ID"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsrnewalmastertable["Spanish"]["ID"] = "";
+	$fieldLabelsrnewalmastertable["Spanish"]["Renewal"] = "Renovación";
+	$fieldToolTipsrnewalmastertable["Spanish"]["Renewal"] = "";
+	if (count($fieldToolTipsrnewalmastertable["Spanish"]))
+		$tdatarnewalmastertable[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsrnewalmastertable[""] = array();
@@ -68,7 +164,7 @@ $tdatarnewalmastertable[".popupPagesLayoutNames"] = $popupPagesLayoutNames;
 
 $tdatarnewalmastertable[".fieldsForRegister"] = array();
 
-$tdatarnewalmastertable[".listAjax"] = false;
+	$tdatarnewalmastertable[".listAjax"] = true;
 
 	$tdatarnewalmastertable[".audit"] = false;
 
@@ -86,6 +182,9 @@ $tdatarnewalmastertable[".afterAddActionDetTable"] = "";
 
 $tdatarnewalmastertable[".list"] = true;
 
+
+
+
 $tdatarnewalmastertable[".view"] = true;
 
 
@@ -96,6 +195,14 @@ $tdatarnewalmastertable[".printFriendly"] = true;
 $tdatarnewalmastertable[".delete"] = true;
 
 $tdatarnewalmastertable[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatarnewalmastertable[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatarnewalmastertable[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatarnewalmastertable[".searchSaving"] = false;
@@ -117,6 +224,7 @@ $tdatarnewalmastertable[".isUseTimeForSearch"] = false;
 
 
 
+$tdatarnewalmastertable[".badgeColor"] = "C0C0C0";
 
 
 $tdatarnewalmastertable[".allSearchFields"] = array();
@@ -156,6 +264,7 @@ $tdatarnewalmastertable[".geocodingEnabled"] = false;
 $tdatarnewalmastertable[".listGridLayout"] = 3;
 
 
+$tdatarnewalmastertable[".isResizeColumns"] = true;
 
 
 
@@ -249,6 +358,10 @@ $tdatarnewalmastertable[".editFields"][] = "Renewal";
 
 $tdatarnewalmastertable[".inlineEditFields"] = array();
 
+$tdatarnewalmastertable[".updateSelectedFields"] = array();
+$tdatarnewalmastertable[".updateSelectedFields"][] = "Renewal";
+
+
 $tdatarnewalmastertable[".exportFields"] = array();
 $tdatarnewalmastertable[".exportFields"][] = "ID";
 $tdatarnewalmastertable[".exportFields"][] = "Renewal";
@@ -280,6 +393,8 @@ $tdatarnewalmastertable[".printFields"][] = "Renewal";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -405,6 +520,9 @@ $tdatarnewalmastertable[".printFields"][] = "Renewal";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

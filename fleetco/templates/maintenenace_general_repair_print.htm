@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,56 +13,49 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-print" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
 {BEGIN container_pdf}
-<div class="rnr-c rnr-ch rnr-c-pdf">
+<div {$pdf_chiddenattr} data-pageid="{$pageid}" data-container="pdf" class="   col-md-12 "> 
 
 {BEGIN printbuttons}
-<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
-<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
-{END divideintopages_block}
 {BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+<a href="#" class="pdflink btn btn-default" {$pdflink_attrs}>{mlang_message PDF_VIEW}</a>
 {END pdflink_block}
-</div>
+
 {END printbuttons}
 
-<div class="rnr-hfiller"></div>
+
+
 </div>
 {END container_pdf}
 
 
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
 
 {BEGIN container_pageheader}
-<div class="rnr-c rnr-cv rnr-c-pageheader">
+<div {$pageheader_chiddenattr} data-pageid="{$pageid}" data-container="pageheader" class="    "> 
 
 {BEGIN printheader}
-<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel maintenenace_general_repair print}</h1>
-</div>{END printheader}
+	<h2 {$printheader_hiddenattr} data-pageid="{$pageid}" data-brick="printheader" >{$pagetitlelabel maintenenace_general_repair print}</h2>
+
+{END printheader}
 
 
 {BEGIN page_number}
-<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+<span>{mlang_message PAGE1} <span class="rp-pageno">{$pageno}</span> {mlang_message PAGE2} <span class="rp-pagecount">{$pagecount}</span></span>
+{END page_number}
+
 
 
 </div>
@@ -73,294 +67,256 @@
 
 
 {BEGIN grid_block}
-	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<table class="table table-bordered rp-maintable" {$printgrid_hiddenattr} data-pageid="{$pageid}" data-brick="printgrid" >
 	<thead>
 	{BEGIN grid_header}
-<tr class="rnr-toprow style1 {$gridHeader_class}" >
-{BEGIN record_header}
-		{BEGIN Date_fieldheadercolumn}
-<th class="runner-cc {$Date_class}" {$Date_style}>
-	{BEGIN Date_fieldheader}
-	<b>{$label maintenenace_general_repair Date}</b>
-	{END Date_fieldheader}
-</th>
-{END Date_fieldheadercolumn}
-	{BEGIN Id_fieldheadercolumn}
-<th class="runner-cc {$Id_class}" {$Id_style}>
-	{BEGIN Id_fieldheader}
-	<b>{$label maintenenace_general_repair Id}</b>
-	{END Id_fieldheader}
-</th>
-{END Id_fieldheadercolumn}
-	{BEGIN MaintType_fieldheadercolumn}
-<th class="runner-cc {$MaintType_class}" {$MaintType_style}>
-	{BEGIN MaintType_fieldheader}
-	<b>{$label maintenenace_general_repair MaintType}</b>
-	{END MaintType_fieldheader}
-</th>
-{END MaintType_fieldheadercolumn}
-	{BEGIN Vehicle_fieldheadercolumn}
-<th class="runner-cc {$Vehicle_class}" {$Vehicle_style}>
-	{BEGIN Vehicle_fieldheader}
-	<b>{$label maintenenace_general_repair Vehicle}</b>
-	{END Vehicle_fieldheader}
-</th>
-{END Vehicle_fieldheadercolumn}
-	{BEGIN Fleet_fieldheadercolumn}
-<th class="runner-cc {$Fleet_class}" {$Fleet_style}>
-	{BEGIN Fleet_fieldheader}
-	<b>{$label maintenenace_general_repair Fleet}</b>
-	{END Fleet_fieldheader}
-</th>
-{END Fleet_fieldheadercolumn}
-	{BEGIN Type_fieldheadercolumn}
-<th class="runner-cc {$Type_class}" {$Type_style}>
-	{BEGIN Type_fieldheader}
-	<b>{$label maintenenace_general_repair Type}</b>
-	{END Type_fieldheader}
-</th>
-{END Type_fieldheadercolumn}
-	{BEGIN MeterReading_fieldheadercolumn}
-<th class="runner-cc {$MeterReading_class}" {$MeterReading_style}>
-	{BEGIN MeterReading_fieldheader}
-	<b>{$label maintenenace_general_repair MeterReading}</b>
-	{END MeterReading_fieldheader}
-</th>
-{END MeterReading_fieldheadercolumn}
-	{BEGIN RefNo_fieldheadercolumn}
-<th class="runner-cc {$RefNo_class}" {$RefNo_style}>
-	{BEGIN RefNo_fieldheader}
-	<b>{$label maintenenace_general_repair RefNo}</b>
-	{END RefNo_fieldheader}
-</th>
-{END RefNo_fieldheadercolumn}
-	{BEGIN Supplier_fieldheadercolumn}
-<th class="runner-cc {$Supplier_class}" {$Supplier_style}>
-	{BEGIN Supplier_fieldheader}
-	<b>{$label maintenenace_general_repair Supplier}</b>
-	{END Supplier_fieldheader}
-</th>
-{END Supplier_fieldheadercolumn}
-	{BEGIN Cost_fieldheadercolumn}
-<th class="runner-cc {$Cost_class}" {$Cost_style}>
-	{BEGIN Cost_fieldheader}
-	<b>{$label maintenenace_general_repair Cost}</b>
-	{END Cost_fieldheader}
-</th>
-{END Cost_fieldheadercolumn}
-	{BEGIN PaymentVoucher_fieldheadercolumn}
-<th class="runner-cc {$PaymentVoucher_class}" {$PaymentVoucher_style}>
-	{BEGIN PaymentVoucher_fieldheader}
-	<b>{$label maintenenace_general_repair PaymentVoucher}</b>
-	{END PaymentVoucher_fieldheader}
-</th>
-{END PaymentVoucher_fieldheadercolumn}
-	{BEGIN Remarks_fieldheadercolumn}
-<th class="runner-cc {$Remarks_class}" {$Remarks_style}>
-	{BEGIN Remarks_fieldheader}
-	<b>{$label maintenenace_general_repair Remarks}</b>
-	{END Remarks_fieldheader}
-</th>
-{END Remarks_fieldheadercolumn}
-	{BEGIN EnteredBy_fieldheadercolumn}
-<th class="runner-cc {$EnteredBy_class}" {$EnteredBy_style}>
-	{BEGIN EnteredBy_fieldheader}
-	<b>{$label maintenenace_general_repair EnteredBy}</b>
-	{END EnteredBy_fieldheader}
-</th>
-{END EnteredBy_fieldheadercolumn}
-	{BEGIN SysDate_fieldheadercolumn}
-<th class="runner-cc {$SysDate_class}" {$SysDate_style}>
-	{BEGIN SysDate_fieldheader}
-	<b>{$label maintenenace_general_repair SysDate}</b>
-	{END SysDate_fieldheader}
-</th>
-{END SysDate_fieldheadercolumn}
-	{BEGIN Approval_fieldheadercolumn}
-<th class="runner-cc {$Approval_class}" {$Approval_style}>
-	{BEGIN Approval_fieldheader}
-	<b>{$label maintenenace_general_repair Approval}</b>
-	{END Approval_fieldheader}
-</th>
-{END Approval_fieldheadercolumn}
-		
-	<th class="rnr-edge">&nbsp;</th>
-	{BEGIN endrecordheader_block}
-	<th class="rnr-cs">&nbsp;</th>
-	{END endrecordheader_block}
-	{END record_header}
-</tr>
-{END grid_header}
-
+		<tr class="{$gridHeader_class}" >
+		{BEGIN record_header}
+			{BEGIN Date_fieldheadercolumn}
+			<th class="{$Date_class}" {$Date_style}  data-field="Date">
+				{$label maintenenace_general_repair Date}
+			</th>
+			{END Date_fieldheadercolumn}
+			{BEGIN Id_fieldheadercolumn}
+			<th class="{$Id_class}" {$Id_style}  data-field="Id">
+				{$label maintenenace_general_repair Id}
+			</th>
+			{END Id_fieldheadercolumn}
+			{BEGIN MaintType_fieldheadercolumn}
+			<th class="{$MaintType_class}" {$MaintType_style}  data-field="MaintType">
+				{$label maintenenace_general_repair MaintType}
+			</th>
+			{END MaintType_fieldheadercolumn}
+			{BEGIN Vehicle_fieldheadercolumn}
+			<th class="{$Vehicle_class}" {$Vehicle_style}  data-field="Vehicle">
+				{$label maintenenace_general_repair Vehicle}
+			</th>
+			{END Vehicle_fieldheadercolumn}
+			{BEGIN Fleet_fieldheadercolumn}
+			<th class="{$Fleet_class}" {$Fleet_style}  data-field="Fleet">
+				{$label maintenenace_general_repair Fleet}
+			</th>
+			{END Fleet_fieldheadercolumn}
+			{BEGIN Type_fieldheadercolumn}
+			<th class="{$Type_class}" {$Type_style}  data-field="Type">
+				{$label maintenenace_general_repair Type}
+			</th>
+			{END Type_fieldheadercolumn}
+			{BEGIN MeterReading_fieldheadercolumn}
+			<th class="{$MeterReading_class}" {$MeterReading_style}  data-field="MeterReading">
+				{$label maintenenace_general_repair MeterReading}
+			</th>
+			{END MeterReading_fieldheadercolumn}
+			{BEGIN RefNo_fieldheadercolumn}
+			<th class="{$RefNo_class}" {$RefNo_style}  data-field="RefNo">
+				{$label maintenenace_general_repair RefNo}
+			</th>
+			{END RefNo_fieldheadercolumn}
+			{BEGIN Supplier_fieldheadercolumn}
+			<th class="{$Supplier_class}" {$Supplier_style}  data-field="Supplier">
+				{$label maintenenace_general_repair Supplier}
+			</th>
+			{END Supplier_fieldheadercolumn}
+			{BEGIN Cost_fieldheadercolumn}
+			<th class="{$Cost_class}" {$Cost_style}  data-field="Cost">
+				{$label maintenenace_general_repair Cost}
+			</th>
+			{END Cost_fieldheadercolumn}
+			{BEGIN PaymentVoucher_fieldheadercolumn}
+			<th class="{$PaymentVoucher_class}" {$PaymentVoucher_style}  data-field="PaymentVoucher">
+				{$label maintenenace_general_repair PaymentVoucher}
+			</th>
+			{END PaymentVoucher_fieldheadercolumn}
+			{BEGIN Remarks_fieldheadercolumn}
+			<th class="{$Remarks_class}" {$Remarks_style}  data-field="Remarks">
+				{$label maintenenace_general_repair Remarks}
+			</th>
+			{END Remarks_fieldheadercolumn}
+			{BEGIN EnteredBy_fieldheadercolumn}
+			<th class="{$EnteredBy_class}" {$EnteredBy_style}  data-field="EnteredBy">
+				{$label maintenenace_general_repair EnteredBy}
+			</th>
+			{END EnteredBy_fieldheadercolumn}
+			{BEGIN SysDate_fieldheadercolumn}
+			<th class="{$SysDate_class}" {$SysDate_style}  data-field="SysDate">
+				{$label maintenenace_general_repair SysDate}
+			</th>
+			{END SysDate_fieldheadercolumn}
+			{BEGIN Approval_fieldheadercolumn}
+			<th class="{$Approval_class}" {$Approval_style}  data-field="Approval">
+				{$label maintenenace_general_repair Approval}
+			</th>
+			{END Approval_fieldheadercolumn}
+			{BEGIN endrecordheader_block}
+			<th class="rnr-cs">&nbsp;</th>
+			{END endrecordheader_block}
+		{END record_header}
+		</tr>
+	{END grid_header}
 	</thead>
+	
 	<tbody>	
 	{BEGIN grid_row}
-	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
 		{BEGIN grid_record}
-				{BEGIN Date_fieldcolumn}
-<td  class="runner-cc {$Date_class}" {$Date_style} {$recordattrs}>
-	{$Date_value}
-</td>
-{END Date_fieldcolumn}
-	{BEGIN Id_fieldcolumn}
-<td  class="runner-cc {$Id_class}" {$Id_style} {$recordattrs}>
-	{$Id_value}
-</td>
-{END Id_fieldcolumn}
-	{BEGIN MaintType_fieldcolumn}
-<td  class="runner-cc {$MaintType_class}" {$MaintType_style} {$recordattrs}>
-	{$MaintType_value}
-</td>
-{END MaintType_fieldcolumn}
-	{BEGIN Vehicle_fieldcolumn}
-<td  class="runner-cc {$Vehicle_class}" {$Vehicle_style} {$recordattrs}>
-	{$Vehicle_value}
-</td>
-{END Vehicle_fieldcolumn}
-	{BEGIN Fleet_fieldcolumn}
-<td  class="runner-cc {$Fleet_class}" {$Fleet_style} {$recordattrs}>
-	{$Fleet_value}
-</td>
-{END Fleet_fieldcolumn}
-	{BEGIN Type_fieldcolumn}
-<td  class="runner-cc {$Type_class}" {$Type_style} {$recordattrs}>
-	{$Type_value}
-</td>
-{END Type_fieldcolumn}
-	{BEGIN MeterReading_fieldcolumn}
-<td  class="runner-cc {$MeterReading_class}" {$MeterReading_style} {$recordattrs}>
-	{$MeterReading_value}
-</td>
-{END MeterReading_fieldcolumn}
-	{BEGIN RefNo_fieldcolumn}
-<td  class="runner-cc {$RefNo_class}" {$RefNo_style} {$recordattrs}>
-	{$RefNo_value}
-</td>
-{END RefNo_fieldcolumn}
-	{BEGIN Supplier_fieldcolumn}
-<td  class="runner-cc {$Supplier_class}" {$Supplier_style} {$recordattrs}>
-	{$Supplier_value}
-</td>
-{END Supplier_fieldcolumn}
-	{BEGIN Cost_fieldcolumn}
-<td  class="runner-cc {$Cost_class}" {$Cost_style} {$recordattrs}>
-	{$Cost_value}
-</td>
-{END Cost_fieldcolumn}
-	{BEGIN PaymentVoucher_fieldcolumn}
-<td  class="runner-cc {$PaymentVoucher_class}" {$PaymentVoucher_style} {$recordattrs}>
-	{$PaymentVoucher_value}
-</td>
-{END PaymentVoucher_fieldcolumn}
-	{BEGIN Remarks_fieldcolumn}
-<td  class="runner-cc {$Remarks_class}" {$Remarks_style} {$recordattrs}>
-	{$Remarks_value}
-</td>
-{END Remarks_fieldcolumn}
-	{BEGIN EnteredBy_fieldcolumn}
-<td  class="runner-cc {$EnteredBy_class}" {$EnteredBy_style} {$recordattrs}>
-	{$EnteredBy_value}
-</td>
-{END EnteredBy_fieldcolumn}
-	{BEGIN SysDate_fieldcolumn}
-<td  class="runner-cc {$SysDate_class}" {$SysDate_style} {$recordattrs}>
-	{$SysDate_value}
-</td>
-{END SysDate_fieldcolumn}
-	{BEGIN Approval_fieldcolumn}
-<td  class="runner-cc {$Approval_class}" {$Approval_style} {$recordattrs}>
-	{$Approval_value}
-</td>
-{END Approval_fieldcolumn}
-
-		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
-		{BEGIN endrecord_block}
-		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
-		{END endrecord_block}
-										
+			{BEGIN Date_fieldcolumn}
+			<td  class="{$Date_class}" {$Date_style} {$recordattrs}>
+				{$Date_value}
+			</td>
+			{END Date_fieldcolumn}
+			{BEGIN Id_fieldcolumn}
+			<td  class="{$Id_class}" {$Id_style} {$recordattrs}>
+				{$Id_value}
+			</td>
+			{END Id_fieldcolumn}
+			{BEGIN MaintType_fieldcolumn}
+			<td  class="{$MaintType_class}" {$MaintType_style} {$recordattrs}>
+				{$MaintType_value}
+			</td>
+			{END MaintType_fieldcolumn}
+			{BEGIN Vehicle_fieldcolumn}
+			<td  class="{$Vehicle_class}" {$Vehicle_style} {$recordattrs}>
+				{$Vehicle_value}
+			</td>
+			{END Vehicle_fieldcolumn}
+			{BEGIN Fleet_fieldcolumn}
+			<td  class="{$Fleet_class}" {$Fleet_style} {$recordattrs}>
+				{$Fleet_value}
+			</td>
+			{END Fleet_fieldcolumn}
+			{BEGIN Type_fieldcolumn}
+			<td  class="{$Type_class}" {$Type_style} {$recordattrs}>
+				{$Type_value}
+			</td>
+			{END Type_fieldcolumn}
+			{BEGIN MeterReading_fieldcolumn}
+			<td  class="{$MeterReading_class}" {$MeterReading_style} {$recordattrs}>
+				{$MeterReading_value}
+			</td>
+			{END MeterReading_fieldcolumn}
+			{BEGIN RefNo_fieldcolumn}
+			<td  class="{$RefNo_class}" {$RefNo_style} {$recordattrs}>
+				{$RefNo_value}
+			</td>
+			{END RefNo_fieldcolumn}
+			{BEGIN Supplier_fieldcolumn}
+			<td  class="{$Supplier_class}" {$Supplier_style} {$recordattrs}>
+				{$Supplier_value}
+			</td>
+			{END Supplier_fieldcolumn}
+			{BEGIN Cost_fieldcolumn}
+			<td  class="{$Cost_class}" {$Cost_style} {$recordattrs}>
+				{$Cost_value}
+			</td>
+			{END Cost_fieldcolumn}
+			{BEGIN PaymentVoucher_fieldcolumn}
+			<td  class="{$PaymentVoucher_class}" {$PaymentVoucher_style} {$recordattrs}>
+				{$PaymentVoucher_value}
+			</td>
+			{END PaymentVoucher_fieldcolumn}
+			{BEGIN Remarks_fieldcolumn}
+			<td  class="{$Remarks_class}" {$Remarks_style} {$recordattrs}>
+				{$Remarks_value}
+			</td>
+			{END Remarks_fieldcolumn}
+			{BEGIN EnteredBy_fieldcolumn}
+			<td  class="{$EnteredBy_class}" {$EnteredBy_style} {$recordattrs}>
+				{$EnteredBy_value}
+			</td>
+			{END EnteredBy_fieldcolumn}
+			{BEGIN SysDate_fieldcolumn}
+			<td  class="{$SysDate_class}" {$SysDate_style} {$recordattrs}>
+				{$SysDate_value}
+			</td>
+			{END SysDate_fieldcolumn}
+			{BEGIN Approval_fieldcolumn}
+			<td  class="{$Approval_class}" {$Approval_style} {$recordattrs}>
+				{$Approval_value}
+			</td>
+			{END Approval_fieldcolumn}
+			{BEGIN endrecord_block}
+			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+			{END endrecord_block}
 		{END grid_record}
-
-	</tr>
-	{END grid_row}
-
-
-	{BEGIN totals_row}
-<tr class="rnr-bottomrow style1">
-	{BEGIN totals_record}
-		{BEGIN Date_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END Date_fieldfootercolumn}
-	{BEGIN Id_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END Id_fieldfootercolumn}
-	{BEGIN MaintType_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END MaintType_fieldfootercolumn}
-	{BEGIN Vehicle_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END Vehicle_fieldfootercolumn}
-	{BEGIN Fleet_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END Fleet_fieldfootercolumn}
-	{BEGIN Type_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END Type_fieldfootercolumn}
-	{BEGIN MeterReading_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END MeterReading_fieldfootercolumn}
-	{BEGIN RefNo_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END RefNo_fieldfootercolumn}
-	{BEGIN Supplier_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END Supplier_fieldfootercolumn}
-	{BEGIN Cost_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-	{BEGIN Cost_showtotal}
-			Total:
-	{$Cost_total}
-	{END Cost_showtotal}
-</td>
-{END Cost_fieldfootercolumn}
-	{BEGIN PaymentVoucher_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END PaymentVoucher_fieldfootercolumn}
-	{BEGIN Remarks_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END Remarks_fieldfootercolumn}
-	{BEGIN EnteredBy_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END EnteredBy_fieldfootercolumn}
-	{BEGIN SysDate_fieldfootercolumn}
-<td class="rnr-cc rnr-bc ">
-</td>
-{END SysDate_fieldfootercolumn}
-	{BEGIN Approval_fieldfootercolumn}
-<td class="rnr-cc rnr-bc rnr-clast">
-</td>
-{END Approval_fieldfootercolumn}
-
-	<td class="rnr-edge">&nbsp;</td>
-	{BEGIN endrecordtotals_block}
-	<td class="rnr-cs"></td>
-	{END endrecordtotals_block}
-	{END totals_record}
-</tr>
-{END totals_row}
-
+		</tr>
+{END grid_row}
 	</tbody>
+
+{BEGIN totals_row}
+	<tfoot>
+		<tr class=" style1">
+		{BEGIN totals_record}
+			{BEGIN Date_fieldfootercolumn}
+			<td>
+						</td>
+			{END Date_fieldfootercolumn}
+			{BEGIN Id_fieldfootercolumn}
+			<td>
+						</td>
+			{END Id_fieldfootercolumn}
+			{BEGIN MaintType_fieldfootercolumn}
+			<td>
+						</td>
+			{END MaintType_fieldfootercolumn}
+			{BEGIN Vehicle_fieldfootercolumn}
+			<td>
+						</td>
+			{END Vehicle_fieldfootercolumn}
+			{BEGIN Fleet_fieldfootercolumn}
+			<td>
+						</td>
+			{END Fleet_fieldfootercolumn}
+			{BEGIN Type_fieldfootercolumn}
+			<td>
+						</td>
+			{END Type_fieldfootercolumn}
+			{BEGIN MeterReading_fieldfootercolumn}
+			<td>
+						</td>
+			{END MeterReading_fieldfootercolumn}
+			{BEGIN RefNo_fieldfootercolumn}
+			<td>
+						</td>
+			{END RefNo_fieldfootercolumn}
+			{BEGIN Supplier_fieldfootercolumn}
+			<td>
+						</td>
+			{END Supplier_fieldfootercolumn}
+			{BEGIN Cost_fieldfootercolumn}
+			<td>
+							{BEGIN Cost_showtotal}
+									{mlang_message TOTAL}:
+				{$Cost_total}
+				{END Cost_showtotal}
+			</td>
+			{END Cost_fieldfootercolumn}
+			{BEGIN PaymentVoucher_fieldfootercolumn}
+			<td>
+						</td>
+			{END PaymentVoucher_fieldfootercolumn}
+			{BEGIN Remarks_fieldfootercolumn}
+			<td>
+						</td>
+			{END Remarks_fieldfootercolumn}
+			{BEGIN EnteredBy_fieldfootercolumn}
+			<td>
+						</td>
+			{END EnteredBy_fieldfootercolumn}
+			{BEGIN SysDate_fieldfootercolumn}
+			<td>
+						</td>
+			{END SysDate_fieldfootercolumn}
+			{BEGIN Approval_fieldfootercolumn}
+			<td>
+						</td>
+			{END Approval_fieldfootercolumn}
+			{BEGIN endrecordtotals_block}
+			<td class="rnr-cs"></td>
+			{END endrecordtotals_block}
+		{END totals_record}
+		</tr>
+	</tfoot>
+{END totals_row}
 </table>
 
 {END grid_block}
@@ -370,16 +326,24 @@
 {END container_grid}
 
 
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

@@ -31,7 +31,10 @@ class FileFieldSingle extends EditControl
 		
 		if( $this->pageObject->pageType == PAGE_SEARCH || $this->pageObject->pageType == PAGE_LIST )
 		{
-			echo '<input id="'.$this->cfield.'" '.$this->inputStyle.' type="text" '
+			$classString = "";
+			if( $this->pageObject->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+				$classString = " class=\"form-control\"";
+			echo '<input id="'.$this->cfield.'" '.$classString.$this->inputStyle.' type="text" '
 				.($mode == MODE_SEARCH ? 'autocomplete="off" ' : '')
 				.(($mode==MODE_INLINE_EDIT || $mode==MODE_INLINE_ADD) && $this->is508==true ? 'alt="'.$this->strLabel.'" ' : '')
 				.'name="'.$this->cfield.'" '.$this->pageObject->pSetEdit->getEditParams($this->field).' value="'
@@ -66,27 +69,27 @@ class FileFieldSingle extends EditControl
 			
 			//	filename edit			
 			$strfilename = '<input type=hidden name="filenameHidden_'.$this->cfieldname.'" value="'.runner_htmlspecialchars( $fileName ).'"><br>'
-				."Filename"
+				.mlang_message("FILENAME")
 				.'&nbsp;&nbsp;<input type="text" style="background-color:gainsboro" disabled id="filename_'.$this->cfieldname
 				.'" name="filename_'.$this->cfieldname.'" size="'.$filename_size.'" maxlength="100" value="'.runner_htmlspecialchars( $fileName ).'">';
 			
 			$strtype = '<br><input id="'.$this->ctype.'_keep" type="Radio" name="'.$this->ctype
-					.'" value="upload0" checked class="rnr-uploadtype">'."Keep";
+					.'" value="upload0" checked class="rnr-uploadtype">'.mlang_message("KEEP");
 			
 			if( (strlen($value) || $mode == MODE_INLINE_EDIT) && !$this->pageObject->pSetEdit->isRequired($this->field) )
 			{
 				$strtype .= '<input id="'.$this->ctype.'_delete" type="Radio" name="'.$this->ctype
-					.'" value="upload1" class="rnr-uploadtype">'."Delete";
+					.'" value="upload1" class="rnr-uploadtype">'.mlang_message("DELETE");
 			}
 			$strtype .= '<input id="'.$this->ctype.'_update" type="Radio" name="'.$this->ctype
-				.'" value="upload2" class="rnr-uploadtype">'."Update";
+				.'" value="upload2" class="rnr-uploadtype">'.mlang_message("UPDATE");
 		}
 		else
 		{
 			//	if Adding record		
 			$strtype = '<input id="'.$this->ctype.'" type="hidden" name="'.$this->ctype.'" value="upload2">';
 			
-			$strfilename = '<br>'."Filename"
+			$strfilename = '<br>'.mlang_message("FILENAME")
 				.'&nbsp;&nbsp;<input type="text" id="filename_'.$this->cfieldname.'" name="filename_'.$this->cfieldname.'" size="'
 				.$filename_size.'" maxlength="100">';			
 		}

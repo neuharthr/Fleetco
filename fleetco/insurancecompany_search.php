@@ -31,38 +31,51 @@ if(!$accessGranted)
 
 
 
-$layout = new TLayout("search", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
+$layout = new TLayout("search_bootstrap", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "insurancecompany_search";
 $layout->blocks["top"] = array();
+$layout->containers["searchpage"] = array();
+$layout->container_properties["searchpage"] = array(  );
+$layout->containers["searchpage"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header" );
+$layout->containers["header"] = array();
+$layout->container_properties["header"] = array(  );
+$layout->containers["header"][] = array("name"=>"bssearchheader",
+	"block"=>"searchheader", "substyle"=>1  );
+
+$layout->skins["header"] = "";
+
+
+$layout->skins["searchpage"] = "";
+
+$layout->blocks["top"][] = "searchpage";
 $layout->containers["fields"] = array();
 $layout->container_properties["fields"] = array(  );
-$layout->containers["fields"][] = array("name"=>"srchheader",
-	"block"=>"searchheader", "substyle"=>2  );
-
-$layout->containers["fields"][] = array("name"=>"srchconditions",
-	"block"=>"conditions_block", "substyle"=>1  );
-
-$layout->containers["fields"][] = array("name"=>"srchfields",
+$layout->containers["fields"][] = array("name"=>"bssearchfields",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"srchbuttons",
-	"block"=>"searchbuttons", "substyle"=>2  );
-
-$layout->skins["fields"] = "fields";
+$layout->skins["fields"] = "";
 
 $layout->blocks["top"][] = "fields";
+$layout->containers["bottombuttons"] = array();
+$layout->container_properties["bottombuttons"] = array(  );
+$layout->containers["bottombuttons"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"leftbuttons" );
+$layout->containers["leftbuttons"] = array();
+$layout->container_properties["leftbuttons"] = array(  );
+$layout->containers["leftbuttons"][] = array("name"=>"srchbuttons",
+	"block"=>"searchbuttons", "substyle"=>1  );
+
+$layout->skins["leftbuttons"] = "";
+
+
+$layout->skins["bottombuttons"] = "";
+
+$layout->blocks["top"][] = "bottombuttons";
 $page_layouts["insurancecompany_search"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 

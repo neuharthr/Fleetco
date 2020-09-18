@@ -34,7 +34,7 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsaccidents["English"]["Type"] = "Type";
 	$fieldToolTipsaccidents["English"]["Type"] = "";
 	$fieldLabelsaccidents["English"]["Details"] = "Decrip.";
-	$fieldToolTipsaccidents["English"]["Details"] = "Brief description of the accident";
+	$fieldToolTipsaccidents["English"]["Details"] = "";
 	$fieldLabelsaccidents["English"]["Driver"] = "Driver";
 	$fieldToolTipsaccidents["English"]["Driver"] = "";
 	$fieldLabelsaccidents["English"]["Images"] = "Image";
@@ -42,20 +42,356 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsaccidents["English"]["EnteredBy"] = "Entered";
 	$fieldToolTipsaccidents["English"]["EnteredBy"] = "";
 	$fieldLabelsaccidents["English"]["DamageToVehicle"] = "Veh. Dam.";
-	$fieldToolTipsaccidents["English"]["DamageToVehicle"] = "Damage to our vehicle & goods";
+	$fieldToolTipsaccidents["English"]["DamageToVehicle"] = "";
 	$fieldLabelsaccidents["English"]["3rdPartyDamages"] = "3rd Pty Da.";
-	$fieldToolTipsaccidents["English"]["3rdPartyDamages"] = "Damages to 3rd parties";
+	$fieldToolTipsaccidents["English"]["3rdPartyDamages"] = "";
 	$fieldLabelsaccidents["English"]["Time"] = "Time";
 	$fieldToolTipsaccidents["English"]["Time"] = "";
 	$fieldLabelsaccidents["English"]["Deaths"] = "Deaths";
-	$fieldToolTipsaccidents["English"]["Deaths"] = "No of deaths if any";
+	$fieldToolTipsaccidents["English"]["Deaths"] = "";
 	$fieldLabelsaccidents["English"]["Location"] = "Location";
 	$fieldToolTipsaccidents["English"]["Location"] = "";
 	$fieldLabelsaccidents["English"]["Injured"] = "Injured";
-	$fieldToolTipsaccidents["English"]["Injured"] = "No of persons injured if any";
+	$fieldToolTipsaccidents["English"]["Injured"] = "";
 	$fieldLabelsaccidents["English"]["StatusInjured"] = "Injured-St.";
-	$fieldToolTipsaccidents["English"]["StatusInjured"] = "Status of the injured persons";
+	$fieldToolTipsaccidents["English"]["StatusInjured"] = "";
 	if (count($fieldToolTipsaccidents["English"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsaccidents["Afrikaans"] = array();
+	$fieldToolTipsaccidents["Afrikaans"] = array();
+	$pageTitlesaccidents["Afrikaans"] = array();
+	$fieldLabelsaccidents["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsaccidents["Afrikaans"]["Id"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["SysDate"] = "stelsel Datum";
+	$fieldToolTipsaccidents["Afrikaans"]["SysDate"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Date"] = "datum";
+	$fieldToolTipsaccidents["Afrikaans"]["Date"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsaccidents["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Vehicle"] = "voertuig";
+	$fieldToolTipsaccidents["Afrikaans"]["Vehicle"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Type"] = "tipe";
+	$fieldToolTipsaccidents["Afrikaans"]["Type"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Details"] = "beskrywing";
+	$fieldToolTipsaccidents["Afrikaans"]["Details"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Driver"] = "bestuurder";
+	$fieldToolTipsaccidents["Afrikaans"]["Driver"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Injured"] = "beseerde";
+	$fieldToolTipsaccidents["Afrikaans"]["Injured"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Images"] = "Image";
+	$fieldToolTipsaccidents["Afrikaans"]["Images"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["EnteredBy"] = "aangegaan deur";
+	$fieldToolTipsaccidents["Afrikaans"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["DamageToVehicle"] = "voertuig Skade";
+	$fieldToolTipsaccidents["Afrikaans"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["3rdPartyDamages"] = "Derde Party Skade";
+	$fieldToolTipsaccidents["Afrikaans"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Time"] = "tyd";
+	$fieldToolTipsaccidents["Afrikaans"]["Time"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Deaths"] = "sterftes";
+	$fieldToolTipsaccidents["Afrikaans"]["Deaths"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["Location"] = "plek";
+	$fieldToolTipsaccidents["Afrikaans"]["Location"] = "";
+	$fieldLabelsaccidents["Afrikaans"]["StatusInjured"] = "Situasie van die beseerde";
+	$fieldToolTipsaccidents["Afrikaans"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["Afrikaans"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsaccidents["Arabic"] = array();
+	$fieldToolTipsaccidents["Arabic"] = array();
+	$pageTitlesaccidents["Arabic"] = array();
+	$fieldLabelsaccidents["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsaccidents["Arabic"]["Id"] = "";
+	$fieldLabelsaccidents["Arabic"]["SysDate"] = "????? ??????";
+	$fieldToolTipsaccidents["Arabic"]["SysDate"] = "";
+	$fieldLabelsaccidents["Arabic"]["Date"] = "?????";
+	$fieldToolTipsaccidents["Arabic"]["Date"] = "";
+	$fieldLabelsaccidents["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsaccidents["Arabic"]["Fleet"] = "";
+	$fieldLabelsaccidents["Arabic"]["Vehicle"] = "?????";
+	$fieldToolTipsaccidents["Arabic"]["Vehicle"] = "";
+	$fieldLabelsaccidents["Arabic"]["Type"] = "????";
+	$fieldToolTipsaccidents["Arabic"]["Type"] = "";
+	$fieldLabelsaccidents["Arabic"]["Details"] = "???";
+	$fieldToolTipsaccidents["Arabic"]["Details"] = "";
+	$fieldLabelsaccidents["Arabic"]["Driver"] = "????";
+	$fieldToolTipsaccidents["Arabic"]["Driver"] = "";
+	$fieldLabelsaccidents["Arabic"]["Injured"] = "?????";
+	$fieldToolTipsaccidents["Arabic"]["Injured"] = "";
+	$fieldLabelsaccidents["Arabic"]["Images"] = "????";
+	$fieldToolTipsaccidents["Arabic"]["Images"] = "";
+	$fieldLabelsaccidents["Arabic"]["EnteredBy"] = "?? ?????? ??????";
+	$fieldToolTipsaccidents["Arabic"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["Arabic"]["DamageToVehicle"] = "??????? ?????";
+	$fieldToolTipsaccidents["Arabic"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["Arabic"]["3rdPartyDamages"] = "????? ????? ??????";
+	$fieldToolTipsaccidents["Arabic"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["Arabic"]["Time"] = "???";
+	$fieldToolTipsaccidents["Arabic"]["Time"] = "";
+	$fieldLabelsaccidents["Arabic"]["Deaths"] = "????";
+	$fieldToolTipsaccidents["Arabic"]["Deaths"] = "";
+	$fieldLabelsaccidents["Arabic"]["Location"] = "????";
+	$fieldToolTipsaccidents["Arabic"]["Location"] = "";
+	$fieldLabelsaccidents["Arabic"]["StatusInjured"] = "???? ????????";
+	$fieldToolTipsaccidents["Arabic"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["Arabic"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsaccidents["Chinese"] = array();
+	$fieldToolTipsaccidents["Chinese"] = array();
+	$pageTitlesaccidents["Chinese"] = array();
+	$fieldLabelsaccidents["Chinese"]["Id"] = "ID";
+	$fieldToolTipsaccidents["Chinese"]["Id"] = "";
+	$fieldLabelsaccidents["Chinese"]["SysDate"] = "????";
+	$fieldToolTipsaccidents["Chinese"]["SysDate"] = "";
+	$fieldLabelsaccidents["Chinese"]["Date"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Date"] = "";
+	$fieldLabelsaccidents["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Fleet"] = "";
+	$fieldLabelsaccidents["Chinese"]["Vehicle"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Vehicle"] = "";
+	$fieldLabelsaccidents["Chinese"]["Type"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Type"] = "";
+	$fieldLabelsaccidents["Chinese"]["Details"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Details"] = "";
+	$fieldLabelsaccidents["Chinese"]["Driver"] = "????";
+	$fieldToolTipsaccidents["Chinese"]["Driver"] = "";
+	$fieldLabelsaccidents["Chinese"]["Injured"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Injured"] = "";
+	$fieldLabelsaccidents["Chinese"]["Images"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Images"] = "";
+	$fieldLabelsaccidents["Chinese"]["EnteredBy"] = "???";
+	$fieldToolTipsaccidents["Chinese"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["Chinese"]["DamageToVehicle"] = "????";
+	$fieldToolTipsaccidents["Chinese"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["Chinese"]["3rdPartyDamages"] = "?????";
+	$fieldToolTipsaccidents["Chinese"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["Chinese"]["Time"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Time"] = "";
+	$fieldLabelsaccidents["Chinese"]["Deaths"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Deaths"] = "";
+	$fieldLabelsaccidents["Chinese"]["Location"] = "??";
+	$fieldToolTipsaccidents["Chinese"]["Location"] = "";
+	$fieldLabelsaccidents["Chinese"]["StatusInjured"] = "??????";
+	$fieldToolTipsaccidents["Chinese"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["Chinese"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsaccidents["French"] = array();
+	$fieldToolTipsaccidents["French"] = array();
+	$pageTitlesaccidents["French"] = array();
+	$fieldLabelsaccidents["French"]["Id"] = "ID";
+	$fieldToolTipsaccidents["French"]["Id"] = "";
+	$fieldLabelsaccidents["French"]["SysDate"] = "Date du système";
+	$fieldToolTipsaccidents["French"]["SysDate"] = "";
+	$fieldLabelsaccidents["French"]["Date"] = "date";
+	$fieldToolTipsaccidents["French"]["Date"] = "";
+	$fieldLabelsaccidents["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsaccidents["French"]["Fleet"] = "";
+	$fieldLabelsaccidents["French"]["Vehicle"] = "Véhicule";
+	$fieldToolTipsaccidents["French"]["Vehicle"] = "";
+	$fieldLabelsaccidents["French"]["Type"] = "Type";
+	$fieldToolTipsaccidents["French"]["Type"] = "";
+	$fieldLabelsaccidents["French"]["Details"] = "La description";
+	$fieldToolTipsaccidents["French"]["Details"] = "";
+	$fieldLabelsaccidents["French"]["Driver"] = "Chauffeur";
+	$fieldToolTipsaccidents["French"]["Driver"] = "";
+	$fieldLabelsaccidents["French"]["Injured"] = "Blessé";
+	$fieldToolTipsaccidents["French"]["Injured"] = "";
+	$fieldLabelsaccidents["French"]["Images"] = "image";
+	$fieldToolTipsaccidents["French"]["Images"] = "";
+	$fieldLabelsaccidents["French"]["EnteredBy"] = "Entré par";
+	$fieldToolTipsaccidents["French"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["French"]["DamageToVehicle"] = "Dommages aux véhicules";
+	$fieldToolTipsaccidents["French"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["French"]["3rdPartyDamages"] = "Dommages causés par des tiers";
+	$fieldToolTipsaccidents["French"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["French"]["Time"] = "Temps";
+	$fieldToolTipsaccidents["French"]["Time"] = "";
+	$fieldLabelsaccidents["French"]["Deaths"] = "Des morts";
+	$fieldToolTipsaccidents["French"]["Deaths"] = "";
+	$fieldLabelsaccidents["French"]["Location"] = "Emplacement";
+	$fieldToolTipsaccidents["French"]["Location"] = "";
+	$fieldLabelsaccidents["French"]["StatusInjured"] = "Situation des blessés";
+	$fieldToolTipsaccidents["French"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["French"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsaccidents["German"] = array();
+	$fieldToolTipsaccidents["German"] = array();
+	$pageTitlesaccidents["German"] = array();
+	$fieldLabelsaccidents["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsaccidents["German"]["Id"] = "";
+	$fieldLabelsaccidents["German"]["SysDate"] = "Systemdatum";
+	$fieldToolTipsaccidents["German"]["SysDate"] = "";
+	$fieldLabelsaccidents["German"]["Date"] = "Datum";
+	$fieldToolTipsaccidents["German"]["Date"] = "";
+	$fieldLabelsaccidents["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsaccidents["German"]["Fleet"] = "";
+	$fieldLabelsaccidents["German"]["Vehicle"] = "Fahrzeug";
+	$fieldToolTipsaccidents["German"]["Vehicle"] = "";
+	$fieldLabelsaccidents["German"]["Type"] = "Art";
+	$fieldToolTipsaccidents["German"]["Type"] = "";
+	$fieldLabelsaccidents["German"]["Details"] = "Beschreibung";
+	$fieldToolTipsaccidents["German"]["Details"] = "";
+	$fieldLabelsaccidents["German"]["Driver"] = "Treiber";
+	$fieldToolTipsaccidents["German"]["Driver"] = "";
+	$fieldLabelsaccidents["German"]["Injured"] = "Verletzt";
+	$fieldToolTipsaccidents["German"]["Injured"] = "";
+	$fieldLabelsaccidents["German"]["Images"] = "Image";
+	$fieldToolTipsaccidents["German"]["Images"] = "";
+	$fieldLabelsaccidents["German"]["EnteredBy"] = "Betreten von";
+	$fieldToolTipsaccidents["German"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["German"]["DamageToVehicle"] = "Fahrzeugschaden";
+	$fieldToolTipsaccidents["German"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["German"]["3rdPartyDamages"] = "Schadensersatzansprüche Dritter";
+	$fieldToolTipsaccidents["German"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["German"]["Time"] = "Zeit";
+	$fieldToolTipsaccidents["German"]["Time"] = "";
+	$fieldLabelsaccidents["German"]["Deaths"] = "Todesfälle";
+	$fieldToolTipsaccidents["German"]["Deaths"] = "";
+	$fieldLabelsaccidents["German"]["Location"] = "Ort";
+	$fieldToolTipsaccidents["German"]["Location"] = "";
+	$fieldLabelsaccidents["German"]["StatusInjured"] = "Situation der Verletzten";
+	$fieldToolTipsaccidents["German"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["German"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsaccidents["Italian"] = array();
+	$fieldToolTipsaccidents["Italian"] = array();
+	$pageTitlesaccidents["Italian"] = array();
+	$fieldLabelsaccidents["Italian"]["Id"] = "ID";
+	$fieldToolTipsaccidents["Italian"]["Id"] = "";
+	$fieldLabelsaccidents["Italian"]["SysDate"] = "Data di sistema";
+	$fieldToolTipsaccidents["Italian"]["SysDate"] = "";
+	$fieldLabelsaccidents["Italian"]["Date"] = "Data";
+	$fieldToolTipsaccidents["Italian"]["Date"] = "";
+	$fieldLabelsaccidents["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsaccidents["Italian"]["Fleet"] = "";
+	$fieldLabelsaccidents["Italian"]["Vehicle"] = "Veicolo";
+	$fieldToolTipsaccidents["Italian"]["Vehicle"] = "";
+	$fieldLabelsaccidents["Italian"]["Type"] = "Digitare";
+	$fieldToolTipsaccidents["Italian"]["Type"] = "";
+	$fieldLabelsaccidents["Italian"]["Details"] = "Descrizione";
+	$fieldToolTipsaccidents["Italian"]["Details"] = "";
+	$fieldLabelsaccidents["Italian"]["Driver"] = "autista";
+	$fieldToolTipsaccidents["Italian"]["Driver"] = "";
+	$fieldLabelsaccidents["Italian"]["Injured"] = "ferito";
+	$fieldToolTipsaccidents["Italian"]["Injured"] = "";
+	$fieldLabelsaccidents["Italian"]["Images"] = "Immagine";
+	$fieldToolTipsaccidents["Italian"]["Images"] = "";
+	$fieldLabelsaccidents["Italian"]["EnteredBy"] = "Inserito da";
+	$fieldToolTipsaccidents["Italian"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["Italian"]["DamageToVehicle"] = "Danni veicolo";
+	$fieldToolTipsaccidents["Italian"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["Italian"]["3rdPartyDamages"] = "Danni a terzi";
+	$fieldToolTipsaccidents["Italian"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["Italian"]["Time"] = "Tempo";
+	$fieldToolTipsaccidents["Italian"]["Time"] = "";
+	$fieldLabelsaccidents["Italian"]["Deaths"] = "morti";
+	$fieldToolTipsaccidents["Italian"]["Deaths"] = "";
+	$fieldLabelsaccidents["Italian"]["Location"] = "luogo";
+	$fieldToolTipsaccidents["Italian"]["Location"] = "";
+	$fieldLabelsaccidents["Italian"]["StatusInjured"] = "Situazione dei feriti";
+	$fieldToolTipsaccidents["Italian"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["Italian"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsaccidents["Russian"] = array();
+	$fieldToolTipsaccidents["Russian"] = array();
+	$pageTitlesaccidents["Russian"] = array();
+	$fieldLabelsaccidents["Russian"]["Id"] = "? ??";
+	$fieldToolTipsaccidents["Russian"]["Id"] = "";
+	$fieldLabelsaccidents["Russian"]["SysDate"] = "System Date";
+	$fieldToolTipsaccidents["Russian"]["SysDate"] = "";
+	$fieldLabelsaccidents["Russian"]["Date"] = "????";
+	$fieldToolTipsaccidents["Russian"]["Date"] = "";
+	$fieldLabelsaccidents["Russian"]["Fleet"] = "????";
+	$fieldToolTipsaccidents["Russian"]["Fleet"] = "";
+	$fieldLabelsaccidents["Russian"]["Vehicle"] = "???????? ????????????";
+	$fieldToolTipsaccidents["Russian"]["Vehicle"] = "";
+	$fieldLabelsaccidents["Russian"]["Type"] = "???";
+	$fieldToolTipsaccidents["Russian"]["Type"] = "";
+	$fieldLabelsaccidents["Russian"]["Details"] = "????????";
+	$fieldToolTipsaccidents["Russian"]["Details"] = "";
+	$fieldLabelsaccidents["Russian"]["Driver"] = "????????";
+	$fieldToolTipsaccidents["Russian"]["Driver"] = "";
+	$fieldLabelsaccidents["Russian"]["Injured"] = "????????????";
+	$fieldToolTipsaccidents["Russian"]["Injured"] = "";
+	$fieldLabelsaccidents["Russian"]["Images"] = "?????";
+	$fieldToolTipsaccidents["Russian"]["Images"] = "";
+	$fieldLabelsaccidents["Russian"]["EnteredBy"] = "??????";
+	$fieldToolTipsaccidents["Russian"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["Russian"]["DamageToVehicle"] = "??????????? ??????????";
+	$fieldToolTipsaccidents["Russian"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["Russian"]["3rdPartyDamages"] = "????????? ?????";
+	$fieldToolTipsaccidents["Russian"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["Russian"]["Time"] = "?????";
+	$fieldToolTipsaccidents["Russian"]["Time"] = "";
+	$fieldLabelsaccidents["Russian"]["Deaths"] = "???????";
+	$fieldToolTipsaccidents["Russian"]["Deaths"] = "";
+	$fieldLabelsaccidents["Russian"]["Location"] = "????? ??????????";
+	$fieldToolTipsaccidents["Russian"]["Location"] = "";
+	$fieldLabelsaccidents["Russian"]["StatusInjured"] = "????????? ???????";
+	$fieldToolTipsaccidents["Russian"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["Russian"]))
+		$tdataaccidents[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsaccidents["Spanish"] = array();
+	$fieldToolTipsaccidents["Spanish"] = array();
+	$pageTitlesaccidents["Spanish"] = array();
+	$fieldLabelsaccidents["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsaccidents["Spanish"]["Id"] = "";
+	$fieldLabelsaccidents["Spanish"]["SysDate"] = "Fecha del sistema";
+	$fieldToolTipsaccidents["Spanish"]["SysDate"] = "";
+	$fieldLabelsaccidents["Spanish"]["Date"] = "Fecha";
+	$fieldToolTipsaccidents["Spanish"]["Date"] = "";
+	$fieldLabelsaccidents["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsaccidents["Spanish"]["Fleet"] = "";
+	$fieldLabelsaccidents["Spanish"]["Vehicle"] = "Vehículo";
+	$fieldToolTipsaccidents["Spanish"]["Vehicle"] = "";
+	$fieldLabelsaccidents["Spanish"]["Type"] = "Tipo";
+	$fieldToolTipsaccidents["Spanish"]["Type"] = "";
+	$fieldLabelsaccidents["Spanish"]["Details"] = "Descripción";
+	$fieldToolTipsaccidents["Spanish"]["Details"] = "";
+	$fieldLabelsaccidents["Spanish"]["Driver"] = "Conductor";
+	$fieldToolTipsaccidents["Spanish"]["Driver"] = "";
+	$fieldLabelsaccidents["Spanish"]["Injured"] = "Lesionado";
+	$fieldToolTipsaccidents["Spanish"]["Injured"] = "";
+	$fieldLabelsaccidents["Spanish"]["Images"] = "Imagen";
+	$fieldToolTipsaccidents["Spanish"]["Images"] = "";
+	$fieldLabelsaccidents["Spanish"]["EnteredBy"] = "Introducido por";
+	$fieldToolTipsaccidents["Spanish"]["EnteredBy"] = "";
+	$fieldLabelsaccidents["Spanish"]["DamageToVehicle"] = "Daño del Vehículo";
+	$fieldToolTipsaccidents["Spanish"]["DamageToVehicle"] = "";
+	$fieldLabelsaccidents["Spanish"]["3rdPartyDamages"] = "Daños a terceros";
+	$fieldToolTipsaccidents["Spanish"]["3rdPartyDamages"] = "";
+	$fieldLabelsaccidents["Spanish"]["Time"] = "Hora";
+	$fieldToolTipsaccidents["Spanish"]["Time"] = "";
+	$fieldLabelsaccidents["Spanish"]["Deaths"] = "Muertes";
+	$fieldToolTipsaccidents["Spanish"]["Deaths"] = "";
+	$fieldLabelsaccidents["Spanish"]["Location"] = "Ubicación";
+	$fieldToolTipsaccidents["Spanish"]["Location"] = "";
+	$fieldLabelsaccidents["Spanish"]["StatusInjured"] = "Situación de los heridos";
+	$fieldToolTipsaccidents["Spanish"]["StatusInjured"] = "";
+	if (count($fieldToolTipsaccidents["Spanish"]))
 		$tdataaccidents[".isUseToolTips"] = true;
 }
 if(mlang_getcurrentlang()=="")
@@ -116,6 +452,9 @@ $tdataaccidents[".afterAddActionDetTable"] = "";
 
 $tdataaccidents[".list"] = true;
 
+
+
+
 $tdataaccidents[".view"] = true;
 
 $tdataaccidents[".import"] = true;
@@ -127,6 +466,14 @@ $tdataaccidents[".printFriendly"] = true;
 $tdataaccidents[".delete"] = true;
 
 $tdataaccidents[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdataaccidents[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdataaccidents[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdataaccidents[".searchSaving"] = false;
@@ -231,6 +578,7 @@ $tdataaccidents[".geocodingEnabled"] = false;
 $tdataaccidents[".listGridLayout"] = 3;
 
 
+$tdataaccidents[".isResizeColumns"] = true;
 
 
 
@@ -404,6 +752,25 @@ $tdataaccidents[".editFields"][] = "SysDate";
 
 $tdataaccidents[".inlineEditFields"] = array();
 
+$tdataaccidents[".updateSelectedFields"] = array();
+$tdataaccidents[".updateSelectedFields"][] = "Date";
+$tdataaccidents[".updateSelectedFields"][] = "Vehicle";
+$tdataaccidents[".updateSelectedFields"][] = "Fleet";
+$tdataaccidents[".updateSelectedFields"][] = "Type";
+$tdataaccidents[".updateSelectedFields"][] = "Time";
+$tdataaccidents[".updateSelectedFields"][] = "Location";
+$tdataaccidents[".updateSelectedFields"][] = "Driver";
+$tdataaccidents[".updateSelectedFields"][] = "Deaths";
+$tdataaccidents[".updateSelectedFields"][] = "Injured";
+$tdataaccidents[".updateSelectedFields"][] = "StatusInjured";
+$tdataaccidents[".updateSelectedFields"][] = "Details";
+$tdataaccidents[".updateSelectedFields"][] = "DamageToVehicle";
+$tdataaccidents[".updateSelectedFields"][] = "EnteredBy";
+$tdataaccidents[".updateSelectedFields"][] = "3rdPartyDamages";
+$tdataaccidents[".updateSelectedFields"][] = "Images";
+$tdataaccidents[".updateSelectedFields"][] = "SysDate";
+
+
 $tdataaccidents[".exportFields"] = array();
 $tdataaccidents[".exportFields"][] = "Id";
 $tdataaccidents[".exportFields"][] = "Date";
@@ -482,6 +849,8 @@ $tdataaccidents[".printFields"][] = "SysDate";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -605,6 +974,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -724,6 +1096,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -848,6 +1223,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -995,6 +1373,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1118,7 +1499,8 @@ $tdataaccidents[".printFields"][] = "SysDate";
 
 
 // the field's search options settings
-	
+		$fdata["defaultSearchOption"] = "Contains";
+
 	// the end of search options settings
 
 
@@ -1147,6 +1529,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1267,6 +1652,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1389,6 +1777,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1511,6 +1902,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1634,6 +2028,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1770,6 +2167,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1888,6 +2288,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2008,6 +2411,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2129,6 +2535,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2256,6 +2665,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2380,6 +2792,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2501,6 +2916,9 @@ $tdataaccidents[".printFields"][] = "SysDate";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

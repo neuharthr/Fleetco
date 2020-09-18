@@ -22,7 +22,7 @@ $layout->version = 2;
 $layout->blocks["center"] = array();
 $layout->containers["search"] = array();
 $layout->container_properties["search"] = array(  );
-$layout->containers["search"][] = array("name"=>"search_dashboard", 
+$layout->containers["search"][] = array("name"=>"search_dashboard",
 	"block"=>"", "substyle"=>1  );
 
 $layout->skins["search"] = "1";
@@ -30,7 +30,7 @@ $layout->skins["search"] = "1";
 $layout->blocks["center"][] = "search";
 $layout->containers["dash"] = array();
 $layout->container_properties["dash"] = array(  );
-$layout->containers["dash"][] = array("name"=>"dashboard", 
+$layout->containers["dash"][] = array("name"=>"dashboard",
 	"block"=>"", "substyle"=>1  );
 
 $layout->skins["dash"] = "";
@@ -39,10 +39,10 @@ $layout->blocks["center"][] = "dash";
 $layout->blocks["top"] = array();
 $layout->containers["toplinks"] = array();
 $layout->container_properties["toplinks"] = array(  );
-$layout->containers["toplinks"][] = array("name"=>"loggedas", 
+$layout->containers["toplinks"][] = array("name"=>"loggedas",
 	"block"=>"security_block", "substyle"=>1  );
 
-$layout->containers["toplinks"][] = array("name"=>"toplinks_dashboard_advsearch", 
+$layout->containers["toplinks"][] = array("name"=>"toplinks_dashboard_advsearch",
 	"block"=>"asearch_link", "substyle"=>1  );
 
 $layout->skins["toplinks"] = "empty";
@@ -50,7 +50,7 @@ $layout->skins["toplinks"] = "empty";
 $layout->blocks["top"][] = "toplinks";
 $layout->containers["hmenu"] = array();
 $layout->container_properties["hmenu"] = array(  );
-$layout->containers["hmenu"][] = array("name"=>"hmenu", 
+$layout->containers["hmenu"][] = array("name"=>"hmenu",
 	"block"=>"menu_block", "substyle"=>1  );
 
 $layout->skins["hmenu"] = "hmenu";

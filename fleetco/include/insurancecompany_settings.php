@@ -32,6 +32,134 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsinsurancecompany["English"]))
 		$tdatainsurancecompany[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsinsurancecompany["Afrikaans"] = array();
+	$fieldToolTipsinsurancecompany["Afrikaans"] = array();
+	$pageTitlesinsurancecompany["Afrikaans"] = array();
+	$fieldLabelsinsurancecompany["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsinsurancecompany["Afrikaans"]["Id"] = "";
+	$fieldLabelsinsurancecompany["Afrikaans"]["Name"] = "naam";
+	$fieldToolTipsinsurancecompany["Afrikaans"]["Name"] = "";
+	$fieldLabelsinsurancecompany["Afrikaans"]["ContactName"] = "Kontak naam";
+	$fieldToolTipsinsurancecompany["Afrikaans"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["Afrikaans"]["ContactNo"] = "Kontak Geen";
+	$fieldToolTipsinsurancecompany["Afrikaans"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["Afrikaans"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsinsurancecompany["Arabic"] = array();
+	$fieldToolTipsinsurancecompany["Arabic"] = array();
+	$pageTitlesinsurancecompany["Arabic"] = array();
+	$fieldLabelsinsurancecompany["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsinsurancecompany["Arabic"]["Id"] = "";
+	$fieldLabelsinsurancecompany["Arabic"]["Name"] = "???";
+	$fieldToolTipsinsurancecompany["Arabic"]["Name"] = "";
+	$fieldLabelsinsurancecompany["Arabic"]["ContactName"] = "??? ??? ???????";
+	$fieldToolTipsinsurancecompany["Arabic"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["Arabic"]["ContactNo"] = "??? ???????";
+	$fieldToolTipsinsurancecompany["Arabic"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["Arabic"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsinsurancecompany["Chinese"] = array();
+	$fieldToolTipsinsurancecompany["Chinese"] = array();
+	$pageTitlesinsurancecompany["Chinese"] = array();
+	$fieldLabelsinsurancecompany["Chinese"]["Id"] = "ID";
+	$fieldToolTipsinsurancecompany["Chinese"]["Id"] = "";
+	$fieldLabelsinsurancecompany["Chinese"]["Name"] = "??";
+	$fieldToolTipsinsurancecompany["Chinese"]["Name"] = "";
+	$fieldLabelsinsurancecompany["Chinese"]["ContactName"] = "?????";
+	$fieldToolTipsinsurancecompany["Chinese"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["Chinese"]["ContactNo"] = "????";
+	$fieldToolTipsinsurancecompany["Chinese"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["Chinese"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsinsurancecompany["French"] = array();
+	$fieldToolTipsinsurancecompany["French"] = array();
+	$pageTitlesinsurancecompany["French"] = array();
+	$fieldLabelsinsurancecompany["French"]["Id"] = "ID";
+	$fieldToolTipsinsurancecompany["French"]["Id"] = "";
+	$fieldLabelsinsurancecompany["French"]["Name"] = "prénom";
+	$fieldToolTipsinsurancecompany["French"]["Name"] = "";
+	$fieldLabelsinsurancecompany["French"]["ContactName"] = "Nom du contact";
+	$fieldToolTipsinsurancecompany["French"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["French"]["ContactNo"] = "Contact Non";
+	$fieldToolTipsinsurancecompany["French"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["French"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsinsurancecompany["German"] = array();
+	$fieldToolTipsinsurancecompany["German"] = array();
+	$pageTitlesinsurancecompany["German"] = array();
+	$fieldLabelsinsurancecompany["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsinsurancecompany["German"]["Id"] = "";
+	$fieldLabelsinsurancecompany["German"]["Name"] = "Name";
+	$fieldToolTipsinsurancecompany["German"]["Name"] = "";
+	$fieldLabelsinsurancecompany["German"]["ContactName"] = "Kontaktname";
+	$fieldToolTipsinsurancecompany["German"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["German"]["ContactNo"] = "Kontakt-Nr";
+	$fieldToolTipsinsurancecompany["German"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["German"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsinsurancecompany["Italian"] = array();
+	$fieldToolTipsinsurancecompany["Italian"] = array();
+	$pageTitlesinsurancecompany["Italian"] = array();
+	$fieldLabelsinsurancecompany["Italian"]["Id"] = "ID";
+	$fieldToolTipsinsurancecompany["Italian"]["Id"] = "";
+	$fieldLabelsinsurancecompany["Italian"]["Name"] = "Nome";
+	$fieldToolTipsinsurancecompany["Italian"]["Name"] = "";
+	$fieldLabelsinsurancecompany["Italian"]["ContactName"] = "Nome del contatto";
+	$fieldToolTipsinsurancecompany["Italian"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["Italian"]["ContactNo"] = "Contatto No";
+	$fieldToolTipsinsurancecompany["Italian"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["Italian"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsinsurancecompany["Russian"] = array();
+	$fieldToolTipsinsurancecompany["Russian"] = array();
+	$pageTitlesinsurancecompany["Russian"] = array();
+	$fieldLabelsinsurancecompany["Russian"]["Id"] = "? ??";
+	$fieldToolTipsinsurancecompany["Russian"]["Id"] = "";
+	$fieldLabelsinsurancecompany["Russian"]["Name"] = "???";
+	$fieldToolTipsinsurancecompany["Russian"]["Name"] = "";
+	$fieldLabelsinsurancecompany["Russian"]["ContactName"] = "?????????? ????";
+	$fieldToolTipsinsurancecompany["Russian"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["Russian"]["ContactNo"] = "??? ????????? ? ???";
+	$fieldToolTipsinsurancecompany["Russian"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["Russian"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsinsurancecompany["Spanish"] = array();
+	$fieldToolTipsinsurancecompany["Spanish"] = array();
+	$pageTitlesinsurancecompany["Spanish"] = array();
+	$fieldLabelsinsurancecompany["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsinsurancecompany["Spanish"]["Id"] = "";
+	$fieldLabelsinsurancecompany["Spanish"]["Name"] = "Nombre";
+	$fieldToolTipsinsurancecompany["Spanish"]["Name"] = "";
+	$fieldLabelsinsurancecompany["Spanish"]["ContactName"] = "Nombre de contacto";
+	$fieldToolTipsinsurancecompany["Spanish"]["ContactName"] = "";
+	$fieldLabelsinsurancecompany["Spanish"]["ContactNo"] = "Contacto No";
+	$fieldToolTipsinsurancecompany["Spanish"]["ContactNo"] = "";
+	if (count($fieldToolTipsinsurancecompany["Spanish"]))
+		$tdatainsurancecompany[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsinsurancecompany[""] = array();
@@ -90,6 +218,9 @@ $tdatainsurancecompany[".afterAddActionDetTable"] = "";
 
 $tdatainsurancecompany[".list"] = true;
 
+
+
+
 $tdatainsurancecompany[".view"] = true;
 
 $tdatainsurancecompany[".import"] = true;
@@ -101,6 +232,14 @@ $tdatainsurancecompany[".printFriendly"] = true;
 $tdatainsurancecompany[".delete"] = true;
 
 $tdatainsurancecompany[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatainsurancecompany[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatainsurancecompany[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatainsurancecompany[".searchSaving"] = false;
@@ -122,6 +261,7 @@ $tdatainsurancecompany[".isUseTimeForSearch"] = false;
 
 
 
+$tdatainsurancecompany[".badgeColor"] = "40E0D0";
 
 
 $tdatainsurancecompany[".allSearchFields"] = array();
@@ -167,6 +307,7 @@ $tdatainsurancecompany[".geocodingEnabled"] = false;
 $tdatainsurancecompany[".listGridLayout"] = 3;
 
 
+$tdatainsurancecompany[".isResizeColumns"] = true;
 
 
 
@@ -269,6 +410,12 @@ $tdatainsurancecompany[".editFields"][] = "ContactNo";
 
 $tdatainsurancecompany[".inlineEditFields"] = array();
 
+$tdatainsurancecompany[".updateSelectedFields"] = array();
+$tdatainsurancecompany[".updateSelectedFields"][] = "Name";
+$tdatainsurancecompany[".updateSelectedFields"][] = "ContactName";
+$tdatainsurancecompany[".updateSelectedFields"][] = "ContactNo";
+
+
 $tdatainsurancecompany[".exportFields"] = array();
 $tdatainsurancecompany[".exportFields"][] = "Id";
 $tdatainsurancecompany[".exportFields"][] = "Name";
@@ -308,6 +455,8 @@ $tdatainsurancecompany[".printFields"][] = "ContactNo";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -433,6 +582,9 @@ $tdatainsurancecompany[".printFields"][] = "ContactNo";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -558,6 +710,9 @@ $tdatainsurancecompany[".printFields"][] = "ContactNo";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -681,6 +836,9 @@ $tdatainsurancecompany[".printFields"][] = "ContactNo";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

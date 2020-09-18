@@ -34,11 +34,11 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsinsuranceclaims["English"]["AccidentDate"] = "Acci. Ref";
 	$fieldToolTipsinsuranceclaims["English"]["AccidentDate"] = "";
 	$fieldLabelsinsuranceclaims["English"]["Claim"] = "Claim";
-	$fieldToolTipsinsuranceclaims["English"]["Claim"] = "Amount claimed";
+	$fieldToolTipsinsuranceclaims["English"]["Claim"] = "";
 	$fieldLabelsinsuranceclaims["English"]["EnteredBy"] = "Entered By";
 	$fieldToolTipsinsuranceclaims["English"]["EnteredBy"] = "";
 	$fieldLabelsinsuranceclaims["English"]["ReceiptNo"] = "Recp. Ref";
-	$fieldToolTipsinsuranceclaims["English"]["ReceiptNo"] = "Receipt reference no. if any";
+	$fieldToolTipsinsuranceclaims["English"]["ReceiptNo"] = "";
 	$fieldLabelsinsuranceclaims["English"]["Remarks"] = "Remarks";
 	$fieldToolTipsinsuranceclaims["English"]["Remarks"] = "";
 	$fieldLabelsinsuranceclaims["English"]["insurer"] = "Insurer";
@@ -46,6 +46,262 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsinsuranceclaims["English"]["Date"] = "Date";
 	$fieldToolTipsinsuranceclaims["English"]["Date"] = "";
 	if (count($fieldToolTipsinsuranceclaims["English"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsinsuranceclaims["Afrikaans"] = array();
+	$fieldToolTipsinsuranceclaims["Afrikaans"] = array();
+	$pageTitlesinsuranceclaims["Afrikaans"] = array();
+	$fieldLabelsinsuranceclaims["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["SysDate"] = "stelsel Datum";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["Type"] = "tipe";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["VehicleNo"] = "voertuig Geen";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["AccidentDate"] = "ongeluk Verwysing";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["Claim"] = "Eis";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["EnteredBy"] = "aangegaan deur";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["ReceiptNo"] = "Ontvangs No.";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["Remarks"] = "opmerkings";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["insurer"] = "versekeraar";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["Afrikaans"]["Date"] = "datum";
+	$fieldToolTipsinsuranceclaims["Afrikaans"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["Afrikaans"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsinsuranceclaims["Arabic"] = array();
+	$fieldToolTipsinsuranceclaims["Arabic"] = array();
+	$pageTitlesinsuranceclaims["Arabic"] = array();
+	$fieldLabelsinsuranceclaims["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["SysDate"] = "????? ??????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["Type"] = "????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["VehicleNo"] = "??????? ??";
+	$fieldToolTipsinsuranceclaims["Arabic"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["AccidentDate"] = "???? ???????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["Claim"] = "?????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["EnteredBy"] = "?? ?????? ??????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["ReceiptNo"] = "??? ???????.";
+	$fieldToolTipsinsuranceclaims["Arabic"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["Remarks"] = "???????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["insurer"] = "???? ???????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["Arabic"]["Date"] = "?????";
+	$fieldToolTipsinsuranceclaims["Arabic"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["Arabic"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsinsuranceclaims["Chinese"] = array();
+	$fieldToolTipsinsuranceclaims["Chinese"] = array();
+	$pageTitlesinsuranceclaims["Chinese"] = array();
+	$fieldLabelsinsuranceclaims["Chinese"]["Id"] = "ID";
+	$fieldToolTipsinsuranceclaims["Chinese"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["SysDate"] = "????";
+	$fieldToolTipsinsuranceclaims["Chinese"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsinsuranceclaims["Chinese"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["Type"] = "??";
+	$fieldToolTipsinsuranceclaims["Chinese"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["VehicleNo"] = "????";
+	$fieldToolTipsinsuranceclaims["Chinese"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["AccidentDate"] = "????";
+	$fieldToolTipsinsuranceclaims["Chinese"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["Claim"] = "??";
+	$fieldToolTipsinsuranceclaims["Chinese"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["EnteredBy"] = "???";
+	$fieldToolTipsinsuranceclaims["Chinese"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["ReceiptNo"] = "????";
+	$fieldToolTipsinsuranceclaims["Chinese"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["Remarks"] = "??";
+	$fieldToolTipsinsuranceclaims["Chinese"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["insurer"] = "????";
+	$fieldToolTipsinsuranceclaims["Chinese"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["Chinese"]["Date"] = "??";
+	$fieldToolTipsinsuranceclaims["Chinese"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["Chinese"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsinsuranceclaims["French"] = array();
+	$fieldToolTipsinsuranceclaims["French"] = array();
+	$pageTitlesinsuranceclaims["French"] = array();
+	$fieldLabelsinsuranceclaims["French"]["Id"] = "ID";
+	$fieldToolTipsinsuranceclaims["French"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["French"]["SysDate"] = "Date du système";
+	$fieldToolTipsinsuranceclaims["French"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsinsuranceclaims["French"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["French"]["Type"] = "Type";
+	$fieldToolTipsinsuranceclaims["French"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["French"]["VehicleNo"] = "Numéro de véhicule";
+	$fieldToolTipsinsuranceclaims["French"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["French"]["AccidentDate"] = "Références d'accidents";
+	$fieldToolTipsinsuranceclaims["French"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["French"]["Claim"] = "revendication";
+	$fieldToolTipsinsuranceclaims["French"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["French"]["EnteredBy"] = "Entré par";
+	$fieldToolTipsinsuranceclaims["French"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["French"]["ReceiptNo"] = "No de réception";
+	$fieldToolTipsinsuranceclaims["French"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["French"]["Remarks"] = "Remarques";
+	$fieldToolTipsinsuranceclaims["French"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["French"]["insurer"] = "Assureur";
+	$fieldToolTipsinsuranceclaims["French"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["French"]["Date"] = "date";
+	$fieldToolTipsinsuranceclaims["French"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["French"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsinsuranceclaims["German"] = array();
+	$fieldToolTipsinsuranceclaims["German"] = array();
+	$pageTitlesinsuranceclaims["German"] = array();
+	$fieldLabelsinsuranceclaims["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsinsuranceclaims["German"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["German"]["SysDate"] = "Systemdatum";
+	$fieldToolTipsinsuranceclaims["German"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsinsuranceclaims["German"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["German"]["Type"] = "Art";
+	$fieldToolTipsinsuranceclaims["German"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["German"]["VehicleNo"] = "Fahrzeug Nr";
+	$fieldToolTipsinsuranceclaims["German"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["German"]["AccidentDate"] = "Unfallverweis";
+	$fieldToolTipsinsuranceclaims["German"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["German"]["Claim"] = "Anspruch";
+	$fieldToolTipsinsuranceclaims["German"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["German"]["EnteredBy"] = "Betreten von";
+	$fieldToolTipsinsuranceclaims["German"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["German"]["ReceiptNo"] = "Beleg-Nr.";
+	$fieldToolTipsinsuranceclaims["German"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["German"]["Remarks"] = "Bemerkungen";
+	$fieldToolTipsinsuranceclaims["German"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["German"]["insurer"] = "Versicherer";
+	$fieldToolTipsinsuranceclaims["German"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["German"]["Date"] = "Datum";
+	$fieldToolTipsinsuranceclaims["German"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["German"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsinsuranceclaims["Italian"] = array();
+	$fieldToolTipsinsuranceclaims["Italian"] = array();
+	$pageTitlesinsuranceclaims["Italian"] = array();
+	$fieldLabelsinsuranceclaims["Italian"]["Id"] = "ID";
+	$fieldToolTipsinsuranceclaims["Italian"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["SysDate"] = "Data di sistema";
+	$fieldToolTipsinsuranceclaims["Italian"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsinsuranceclaims["Italian"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["Type"] = "Digitare";
+	$fieldToolTipsinsuranceclaims["Italian"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["VehicleNo"] = "Vehicle No";
+	$fieldToolTipsinsuranceclaims["Italian"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["AccidentDate"] = "incidenti di riferimento";
+	$fieldToolTipsinsuranceclaims["Italian"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["Claim"] = "Richiesta";
+	$fieldToolTipsinsuranceclaims["Italian"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["EnteredBy"] = "Inserito da";
+	$fieldToolTipsinsuranceclaims["Italian"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["ReceiptNo"] = "Numero di ricevuta.";
+	$fieldToolTipsinsuranceclaims["Italian"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["Remarks"] = "Osservazioni";
+	$fieldToolTipsinsuranceclaims["Italian"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["insurer"] = "Assicuratore";
+	$fieldToolTipsinsuranceclaims["Italian"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["Italian"]["Date"] = "Data";
+	$fieldToolTipsinsuranceclaims["Italian"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["Italian"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsinsuranceclaims["Russian"] = array();
+	$fieldToolTipsinsuranceclaims["Russian"] = array();
+	$pageTitlesinsuranceclaims["Russian"] = array();
+	$fieldLabelsinsuranceclaims["Russian"]["Id"] = "? ??";
+	$fieldToolTipsinsuranceclaims["Russian"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["SysDate"] = "System Date";
+	$fieldToolTipsinsuranceclaims["Russian"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["Fleet"] = "????";
+	$fieldToolTipsinsuranceclaims["Russian"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["Type"] = "???";
+	$fieldToolTipsinsuranceclaims["Russian"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["VehicleNo"] = "?????????? ???";
+	$fieldToolTipsinsuranceclaims["Russian"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["AccidentDate"] = "?? ?????????? ??????? ??????";
+	$fieldToolTipsinsuranceclaims["Russian"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["Claim"] = "??????";
+	$fieldToolTipsinsuranceclaims["Russian"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["EnteredBy"] = "??????";
+	$fieldToolTipsinsuranceclaims["Russian"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["ReceiptNo"] = "????????? No.";
+	$fieldToolTipsinsuranceclaims["Russian"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["Remarks"] = "?????????";
+	$fieldToolTipsinsuranceclaims["Russian"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["insurer"] = "????????????";
+	$fieldToolTipsinsuranceclaims["Russian"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["Russian"]["Date"] = "????";
+	$fieldToolTipsinsuranceclaims["Russian"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["Russian"]))
+		$tdatainsuranceclaims[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsinsuranceclaims["Spanish"] = array();
+	$fieldToolTipsinsuranceclaims["Spanish"] = array();
+	$pageTitlesinsuranceclaims["Spanish"] = array();
+	$fieldLabelsinsuranceclaims["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsinsuranceclaims["Spanish"]["Id"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["SysDate"] = "Fecha del sistema";
+	$fieldToolTipsinsuranceclaims["Spanish"]["SysDate"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsinsuranceclaims["Spanish"]["Fleet"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["Type"] = "Tipo";
+	$fieldToolTipsinsuranceclaims["Spanish"]["Type"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["VehicleNo"] = "Vehículo No";
+	$fieldToolTipsinsuranceclaims["Spanish"]["VehicleNo"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["AccidentDate"] = "Referencia de Accidente";
+	$fieldToolTipsinsuranceclaims["Spanish"]["AccidentDate"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["Claim"] = "Reclamación";
+	$fieldToolTipsinsuranceclaims["Spanish"]["Claim"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["EnteredBy"] = "Introducido por";
+	$fieldToolTipsinsuranceclaims["Spanish"]["EnteredBy"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["ReceiptNo"] = "Nº de recibo";
+	$fieldToolTipsinsuranceclaims["Spanish"]["ReceiptNo"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["Remarks"] = "Observaciones";
+	$fieldToolTipsinsuranceclaims["Spanish"]["Remarks"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["insurer"] = "Asegurador";
+	$fieldToolTipsinsuranceclaims["Spanish"]["insurer"] = "";
+	$fieldLabelsinsuranceclaims["Spanish"]["Date"] = "Fecha";
+	$fieldToolTipsinsuranceclaims["Spanish"]["Date"] = "";
+	if (count($fieldToolTipsinsuranceclaims["Spanish"]))
 		$tdatainsuranceclaims[".isUseToolTips"] = true;
 }
 if(mlang_getcurrentlang()=="")
@@ -106,6 +362,9 @@ $tdatainsuranceclaims[".afterAddActionDetTable"] = "";
 
 $tdatainsuranceclaims[".list"] = true;
 
+
+
+
 $tdatainsuranceclaims[".view"] = true;
 
 $tdatainsuranceclaims[".import"] = true;
@@ -117,6 +376,14 @@ $tdatainsuranceclaims[".printFriendly"] = true;
 $tdatainsuranceclaims[".delete"] = true;
 
 $tdatainsuranceclaims[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatainsuranceclaims[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatainsuranceclaims[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatainsuranceclaims[".searchSaving"] = false;
@@ -207,6 +474,7 @@ $tdatainsuranceclaims[".geocodingEnabled"] = false;
 $tdatainsuranceclaims[".listGridLayout"] = 3;
 
 
+$tdatainsuranceclaims[".isResizeColumns"] = true;
 
 
 
@@ -348,6 +616,20 @@ $tdatainsuranceclaims[".editFields"][] = "SysDate";
 
 $tdatainsuranceclaims[".inlineEditFields"] = array();
 
+$tdatainsuranceclaims[".updateSelectedFields"] = array();
+$tdatainsuranceclaims[".updateSelectedFields"][] = "Fleet";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "VehicleNo";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "Type";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "Date";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "AccidentDate";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "insurer";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "Claim";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "ReceiptNo";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "Remarks";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "EnteredBy";
+$tdatainsuranceclaims[".updateSelectedFields"][] = "SysDate";
+
+
 $tdatainsuranceclaims[".exportFields"] = array();
 $tdatainsuranceclaims[".exportFields"][] = "Date";
 $tdatainsuranceclaims[".exportFields"][] = "Id";
@@ -411,6 +693,8 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -535,6 +819,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -655,6 +942,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -806,6 +1096,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -926,6 +1219,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1079,6 +1375,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1228,6 +1527,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1353,6 +1655,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1473,6 +1778,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1596,6 +1904,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1718,6 +2029,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1868,6 +2182,9 @@ $tdatainsuranceclaims[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

@@ -34,24 +34,328 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsinsurance_payments["English"]["Premium"] = "Premium";
 	$fieldToolTipsinsurance_payments["English"]["Premium"] = "";
 	$fieldLabelsinsurance_payments["English"]["Cost"] = "Cost";
-	$fieldToolTipsinsurance_payments["English"]["Cost"] = "Cost without Tax";
+	$fieldToolTipsinsurance_payments["English"]["Cost"] = "";
 	$fieldLabelsinsurance_payments["English"]["PaymentVoucher"] = "Pay. Ref";
-	$fieldToolTipsinsurance_payments["English"]["PaymentVoucher"] = "Payment Voucher No";
+	$fieldToolTipsinsurance_payments["English"]["PaymentVoucher"] = "";
 	$fieldLabelsinsurance_payments["English"]["EnteredBy"] = "Entered By";
 	$fieldToolTipsinsurance_payments["English"]["EnteredBy"] = "";
 	$fieldLabelsinsurance_payments["English"]["RenewalDueDate"] = "Renewal";
 	$fieldToolTipsinsurance_payments["English"]["RenewalDueDate"] = "";
 	$fieldLabelsinsurance_payments["English"]["DateofPayment"] = "Pay. Date";
-	$fieldToolTipsinsurance_payments["English"]["DateofPayment"] = "Payment Date";
+	$fieldToolTipsinsurance_payments["English"]["DateofPayment"] = "";
 	$fieldLabelsinsurance_payments["English"]["Insurer"] = "Insurer";
 	$fieldToolTipsinsurance_payments["English"]["Insurer"] = "";
 	$fieldLabelsinsurance_payments["English"]["Date"] = "Date";
 	$fieldToolTipsinsurance_payments["English"]["Date"] = "";
 	$fieldLabelsinsurance_payments["English"]["From"] = "From";
-	$fieldToolTipsinsurance_payments["English"]["From"] = "Starting date of period covered";
+	$fieldToolTipsinsurance_payments["English"]["From"] = "";
 	$fieldLabelsinsurance_payments["English"]["To"] = "To";
-	$fieldToolTipsinsurance_payments["English"]["To"] = "Last date of period covered";
+	$fieldToolTipsinsurance_payments["English"]["To"] = "";
 	if (count($fieldToolTipsinsurance_payments["English"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsinsurance_payments["Afrikaans"] = array();
+	$fieldToolTipsinsurance_payments["Afrikaans"] = array();
+	$pageTitlesinsurance_payments["Afrikaans"] = array();
+	$fieldLabelsinsurance_payments["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["Id"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["SysDate"] = "stelsel Datum";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["Type"] = "tipe";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["Type"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["VehicleNo"] = "Voertuig No.";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["RenewalDueDate"] = "hernuwing";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["Premium"] = "Premium";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["Cost"] = "koste";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["PaymentVoucher"] = "Inbetalingsverwyssingsnommer";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["EnteredBy"] = "aangegaan deur";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["DateofPayment"] = "Betaaldatum";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["Insurer"] = "versekeraar";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["Date"] = "datum";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["Date"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["From"] = "Van";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["From"] = "";
+	$fieldLabelsinsurance_payments["Afrikaans"]["To"] = "om";
+	$fieldToolTipsinsurance_payments["Afrikaans"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["Afrikaans"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsinsurance_payments["Arabic"] = array();
+	$fieldToolTipsinsurance_payments["Arabic"] = array();
+	$pageTitlesinsurance_payments["Arabic"] = array();
+	$fieldLabelsinsurance_payments["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsinsurance_payments["Arabic"]["Id"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["SysDate"] = "????? ??????";
+	$fieldToolTipsinsurance_payments["Arabic"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsinsurance_payments["Arabic"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["Type"] = "????";
+	$fieldToolTipsinsurance_payments["Arabic"]["Type"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["VehicleNo"] = "??????? ???";
+	$fieldToolTipsinsurance_payments["Arabic"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["RenewalDueDate"] = "?????";
+	$fieldToolTipsinsurance_payments["Arabic"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["Premium"] = "????????";
+	$fieldToolTipsinsurance_payments["Arabic"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["Cost"] = "????";
+	$fieldToolTipsinsurance_payments["Arabic"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["PaymentVoucher"] = "????? ???";
+	$fieldToolTipsinsurance_payments["Arabic"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["EnteredBy"] = "?? ?????? ??????";
+	$fieldToolTipsinsurance_payments["Arabic"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["DateofPayment"] = "????? ?????";
+	$fieldToolTipsinsurance_payments["Arabic"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["Insurer"] = "???? ???????";
+	$fieldToolTipsinsurance_payments["Arabic"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["Date"] = "?????";
+	$fieldToolTipsinsurance_payments["Arabic"]["Date"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["From"] = "?? ???";
+	$fieldToolTipsinsurance_payments["Arabic"]["From"] = "";
+	$fieldLabelsinsurance_payments["Arabic"]["To"] = "???";
+	$fieldToolTipsinsurance_payments["Arabic"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["Arabic"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsinsurance_payments["Chinese"] = array();
+	$fieldToolTipsinsurance_payments["Chinese"] = array();
+	$pageTitlesinsurance_payments["Chinese"] = array();
+	$fieldLabelsinsurance_payments["Chinese"]["Id"] = "ID";
+	$fieldToolTipsinsurance_payments["Chinese"]["Id"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["SysDate"] = "????";
+	$fieldToolTipsinsurance_payments["Chinese"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsinsurance_payments["Chinese"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["Type"] = "??";
+	$fieldToolTipsinsurance_payments["Chinese"]["Type"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["VehicleNo"] = "????";
+	$fieldToolTipsinsurance_payments["Chinese"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["RenewalDueDate"] = "??";
+	$fieldToolTipsinsurance_payments["Chinese"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["Premium"] = "??";
+	$fieldToolTipsinsurance_payments["Chinese"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["Cost"] = "??";
+	$fieldToolTipsinsurance_payments["Chinese"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["PaymentVoucher"] = "????";
+	$fieldToolTipsinsurance_payments["Chinese"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["EnteredBy"] = "???";
+	$fieldToolTipsinsurance_payments["Chinese"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["DateofPayment"] = "????";
+	$fieldToolTipsinsurance_payments["Chinese"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["Insurer"] = "????";
+	$fieldToolTipsinsurance_payments["Chinese"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["Date"] = "??";
+	$fieldToolTipsinsurance_payments["Chinese"]["Date"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["From"] = "?";
+	$fieldToolTipsinsurance_payments["Chinese"]["From"] = "";
+	$fieldLabelsinsurance_payments["Chinese"]["To"] = "?";
+	$fieldToolTipsinsurance_payments["Chinese"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["Chinese"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsinsurance_payments["French"] = array();
+	$fieldToolTipsinsurance_payments["French"] = array();
+	$pageTitlesinsurance_payments["French"] = array();
+	$fieldLabelsinsurance_payments["French"]["Id"] = "ID";
+	$fieldToolTipsinsurance_payments["French"]["Id"] = "";
+	$fieldLabelsinsurance_payments["French"]["SysDate"] = "Date du système";
+	$fieldToolTipsinsurance_payments["French"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsinsurance_payments["French"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["French"]["Type"] = "Type";
+	$fieldToolTipsinsurance_payments["French"]["Type"] = "";
+	$fieldLabelsinsurance_payments["French"]["VehicleNo"] = "Numéro de véhicule";
+	$fieldToolTipsinsurance_payments["French"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["French"]["RenewalDueDate"] = "Renouvellement";
+	$fieldToolTipsinsurance_payments["French"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["French"]["Premium"] = "Prime";
+	$fieldToolTipsinsurance_payments["French"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["French"]["Cost"] = "Coût";
+	$fieldToolTipsinsurance_payments["French"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["French"]["PaymentVoucher"] = "Référence de paiement";
+	$fieldToolTipsinsurance_payments["French"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["French"]["EnteredBy"] = "Entré par";
+	$fieldToolTipsinsurance_payments["French"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["French"]["DateofPayment"] = "Date de paiement";
+	$fieldToolTipsinsurance_payments["French"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["French"]["Insurer"] = "Assureur";
+	$fieldToolTipsinsurance_payments["French"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["French"]["Date"] = "date";
+	$fieldToolTipsinsurance_payments["French"]["Date"] = "";
+	$fieldLabelsinsurance_payments["French"]["From"] = "De";
+	$fieldToolTipsinsurance_payments["French"]["From"] = "";
+	$fieldLabelsinsurance_payments["French"]["To"] = "À";
+	$fieldToolTipsinsurance_payments["French"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["French"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsinsurance_payments["German"] = array();
+	$fieldToolTipsinsurance_payments["German"] = array();
+	$pageTitlesinsurance_payments["German"] = array();
+	$fieldLabelsinsurance_payments["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsinsurance_payments["German"]["Id"] = "";
+	$fieldLabelsinsurance_payments["German"]["SysDate"] = "Systemdatum";
+	$fieldToolTipsinsurance_payments["German"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsinsurance_payments["German"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["German"]["Type"] = "Art";
+	$fieldToolTipsinsurance_payments["German"]["Type"] = "";
+	$fieldLabelsinsurance_payments["German"]["VehicleNo"] = "Fahrzeug-Nr.";
+	$fieldToolTipsinsurance_payments["German"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["German"]["RenewalDueDate"] = "Erneuerung";
+	$fieldToolTipsinsurance_payments["German"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["German"]["Premium"] = "Prämie";
+	$fieldToolTipsinsurance_payments["German"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["German"]["Cost"] = "Kosten";
+	$fieldToolTipsinsurance_payments["German"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["German"]["PaymentVoucher"] = "Zahlungsreferenz";
+	$fieldToolTipsinsurance_payments["German"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["German"]["EnteredBy"] = "Betreten von";
+	$fieldToolTipsinsurance_payments["German"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["German"]["DateofPayment"] = "Zahlungsdatum";
+	$fieldToolTipsinsurance_payments["German"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["German"]["Insurer"] = "Versicherer";
+	$fieldToolTipsinsurance_payments["German"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["German"]["Date"] = "Datum";
+	$fieldToolTipsinsurance_payments["German"]["Date"] = "";
+	$fieldLabelsinsurance_payments["German"]["From"] = "Von";
+	$fieldToolTipsinsurance_payments["German"]["From"] = "";
+	$fieldLabelsinsurance_payments["German"]["To"] = "Nach";
+	$fieldToolTipsinsurance_payments["German"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["German"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsinsurance_payments["Italian"] = array();
+	$fieldToolTipsinsurance_payments["Italian"] = array();
+	$pageTitlesinsurance_payments["Italian"] = array();
+	$fieldLabelsinsurance_payments["Italian"]["Id"] = "ID";
+	$fieldToolTipsinsurance_payments["Italian"]["Id"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["SysDate"] = "Data di sistema";
+	$fieldToolTipsinsurance_payments["Italian"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsinsurance_payments["Italian"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["Type"] = "Digitare";
+	$fieldToolTipsinsurance_payments["Italian"]["Type"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["VehicleNo"] = "N. veicolo";
+	$fieldToolTipsinsurance_payments["Italian"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["RenewalDueDate"] = "Rinnovo";
+	$fieldToolTipsinsurance_payments["Italian"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["Premium"] = "premio";
+	$fieldToolTipsinsurance_payments["Italian"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["Cost"] = "Costo";
+	$fieldToolTipsinsurance_payments["Italian"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["PaymentVoucher"] = "Referenza di pagamento";
+	$fieldToolTipsinsurance_payments["Italian"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["EnteredBy"] = "Inserito da";
+	$fieldToolTipsinsurance_payments["Italian"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["DateofPayment"] = "Data di pagamento";
+	$fieldToolTipsinsurance_payments["Italian"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["Insurer"] = "Assicuratore";
+	$fieldToolTipsinsurance_payments["Italian"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["Date"] = "Data";
+	$fieldToolTipsinsurance_payments["Italian"]["Date"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["From"] = "Da parte di";
+	$fieldToolTipsinsurance_payments["Italian"]["From"] = "";
+	$fieldLabelsinsurance_payments["Italian"]["To"] = "A";
+	$fieldToolTipsinsurance_payments["Italian"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["Italian"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsinsurance_payments["Russian"] = array();
+	$fieldToolTipsinsurance_payments["Russian"] = array();
+	$pageTitlesinsurance_payments["Russian"] = array();
+	$fieldLabelsinsurance_payments["Russian"]["Id"] = "? ??";
+	$fieldToolTipsinsurance_payments["Russian"]["Id"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["SysDate"] = "System Date";
+	$fieldToolTipsinsurance_payments["Russian"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["Fleet"] = "????";
+	$fieldToolTipsinsurance_payments["Russian"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["Type"] = "???";
+	$fieldToolTipsinsurance_payments["Russian"]["Type"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["VehicleNo"] = "?????????? No.";
+	$fieldToolTipsinsurance_payments["Russian"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["RenewalDueDate"] = "??????????";
+	$fieldToolTipsinsurance_payments["Russian"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["Premium"] = "??????";
+	$fieldToolTipsinsurance_payments["Russian"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["Cost"] = "?????????";
+	$fieldToolTipsinsurance_payments["Russian"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["PaymentVoucher"] = "?????? ??????";
+	$fieldToolTipsinsurance_payments["Russian"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["EnteredBy"] = "??????";
+	$fieldToolTipsinsurance_payments["Russian"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["DateofPayment"] = "???? ???????";
+	$fieldToolTipsinsurance_payments["Russian"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["Insurer"] = "????????????";
+	$fieldToolTipsinsurance_payments["Russian"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["Date"] = "????";
+	$fieldToolTipsinsurance_payments["Russian"]["Date"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["From"] = "??";
+	$fieldToolTipsinsurance_payments["Russian"]["From"] = "";
+	$fieldLabelsinsurance_payments["Russian"]["To"] = "?";
+	$fieldToolTipsinsurance_payments["Russian"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["Russian"]))
+		$tdatainsurance_payments[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsinsurance_payments["Spanish"] = array();
+	$fieldToolTipsinsurance_payments["Spanish"] = array();
+	$pageTitlesinsurance_payments["Spanish"] = array();
+	$fieldLabelsinsurance_payments["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsinsurance_payments["Spanish"]["Id"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["SysDate"] = "Fecha del sistema";
+	$fieldToolTipsinsurance_payments["Spanish"]["SysDate"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsinsurance_payments["Spanish"]["Fleet"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["Type"] = "Tipo";
+	$fieldToolTipsinsurance_payments["Spanish"]["Type"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["VehicleNo"] = "Vehículo No.";
+	$fieldToolTipsinsurance_payments["Spanish"]["VehicleNo"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["RenewalDueDate"] = "Renovación";
+	$fieldToolTipsinsurance_payments["Spanish"]["RenewalDueDate"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["Premium"] = "Prima";
+	$fieldToolTipsinsurance_payments["Spanish"]["Premium"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["Cost"] = "Costo";
+	$fieldToolTipsinsurance_payments["Spanish"]["Cost"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["PaymentVoucher"] = "Referencia de pago";
+	$fieldToolTipsinsurance_payments["Spanish"]["PaymentVoucher"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["EnteredBy"] = "Introducido por";
+	$fieldToolTipsinsurance_payments["Spanish"]["EnteredBy"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["DateofPayment"] = "Fecha de pago";
+	$fieldToolTipsinsurance_payments["Spanish"]["DateofPayment"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["Insurer"] = "Asegurador";
+	$fieldToolTipsinsurance_payments["Spanish"]["Insurer"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["Date"] = "Fecha";
+	$fieldToolTipsinsurance_payments["Spanish"]["Date"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["From"] = "De";
+	$fieldToolTipsinsurance_payments["Spanish"]["From"] = "";
+	$fieldLabelsinsurance_payments["Spanish"]["To"] = "A";
+	$fieldToolTipsinsurance_payments["Spanish"]["To"] = "";
+	if (count($fieldToolTipsinsurance_payments["Spanish"]))
 		$tdatainsurance_payments[".isUseToolTips"] = true;
 }
 if(mlang_getcurrentlang()=="")
@@ -112,6 +416,9 @@ $tdatainsurance_payments[".afterAddActionDetTable"] = "";
 
 $tdatainsurance_payments[".list"] = true;
 
+
+
+
 $tdatainsurance_payments[".view"] = true;
 
 $tdatainsurance_payments[".import"] = true;
@@ -123,6 +430,14 @@ $tdatainsurance_payments[".printFriendly"] = true;
 $tdatainsurance_payments[".delete"] = true;
 
 $tdatainsurance_payments[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatainsurance_payments[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatainsurance_payments[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatainsurance_payments[".searchSaving"] = false;
@@ -216,6 +531,7 @@ $tdatainsurance_payments[".geocodingEnabled"] = false;
 $tdatainsurance_payments[".listGridLayout"] = 3;
 
 
+$tdatainsurance_payments[".isResizeColumns"] = true;
 
 
 
@@ -364,6 +680,21 @@ $tdatainsurance_payments[".editFields"][] = "EnteredBy";
 
 $tdatainsurance_payments[".inlineEditFields"] = array();
 
+$tdatainsurance_payments[".updateSelectedFields"] = array();
+$tdatainsurance_payments[".updateSelectedFields"][] = "Fleet";
+$tdatainsurance_payments[".updateSelectedFields"][] = "VehicleNo";
+$tdatainsurance_payments[".updateSelectedFields"][] = "Type";
+$tdatainsurance_payments[".updateSelectedFields"][] = "RenewalDueDate";
+$tdatainsurance_payments[".updateSelectedFields"][] = "Insurer";
+$tdatainsurance_payments[".updateSelectedFields"][] = "Premium";
+$tdatainsurance_payments[".updateSelectedFields"][] = "From";
+$tdatainsurance_payments[".updateSelectedFields"][] = "To";
+$tdatainsurance_payments[".updateSelectedFields"][] = "DateofPayment";
+$tdatainsurance_payments[".updateSelectedFields"][] = "PaymentVoucher";
+$tdatainsurance_payments[".updateSelectedFields"][] = "SysDate";
+$tdatainsurance_payments[".updateSelectedFields"][] = "EnteredBy";
+
+
 $tdatainsurance_payments[".exportFields"] = array();
 $tdatainsurance_payments[".exportFields"][] = "Fleet";
 $tdatainsurance_payments[".exportFields"][] = "Id";
@@ -430,6 +761,8 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 	
@@ -548,6 +881,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -668,6 +1004,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -821,6 +1160,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -942,6 +1284,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1097,6 +1442,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1218,6 +1566,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1343,6 +1694,8 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 	
 	
 	
+
+	
 	
 	
 	
@@ -1454,6 +1807,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1577,6 +1933,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1697,6 +2056,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1821,6 +2183,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1969,6 +2334,8 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 	
 	
 	
+
+	
 	
 	
 	
@@ -2083,6 +2450,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2208,6 +2578,9 @@ $tdatainsurance_payments[".printFields"][] = "EnteredBy";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,82 +13,182 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-remind" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_page}
+<div {$page_chiddenattr} data-pageid="{$pageid}" data-container="page" class="container    "> 
+
+
+
+
+{BEGIN container_page_1}
+<div {$page_1_chiddenattr} data-pageid="{$pageid}" data-container="page_1" class=" bs-standalone-page  col-md-6 col-md-offset-3"> 
+
+
+
+
+{BEGIN container_panel}
+<div {$panel_chiddenattr} data-pageid="{$pageid}" data-container="panel" class=" bs-pagepanel panel panel-primary   "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class=" panel-heading   "> 
 
 {BEGIN remindheader}
-<div  class="rnr-brickcontents style2 rnr-b-remindheader {$brickclass_remindheader}"><span>	<h1>{$pagetitlelabel  remind}</h1>
-</span></div>{END remindheader}
+<h3 class="panel-title" {$remindheader_hiddenattr} data-pageid="{$pageid}" data-brick="remindheader" >
+{$pagetitlelabel  remind}
+</h3>
+{END remindheader}
 
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_body}
+<div {$body_chiddenattr} data-pageid="{$pageid}" data-container="body" class=" panel-body   "> 
+
+
+
+
+{BEGIN container_header_1}
+<div {$header_1_chiddenattr} data-pageid="{$pageid}" data-container="header_1" class="   col-md-12 "> 
 
 {BEGIN message_block}
-<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
+{END message_block}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-remindfields {$brickclass_remindfields}"><table class="fieldGrid">
-	<tr>
-		<td>
-			{BEGIN username_email_label}<span class="rnr-radio-label">Enter username or email:</span>{END username_email_label}
-		</td>
-		<td class="rnr-control">
-			<input type="text" name="username_email" {$username_email_attrs}>
-		</td>
-	</tr>
+</div>
+{END container_header_1}
+
+
+
+
+
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$remindfields_hiddenattr} data-pageid="{$pageid}" data-brick="remindfields" class="form-horizontal" role="form">
+	<div class="form-group" >
+		<label class="col-md-4 control-label" for="username">
+			{BEGIN username_email_label}{mlang_message USERNAME_EMAIL}{END username_email_label}
+		</label>
+		<div class="col-md-6" >
+			<input type="text" class="form-control" name="username_email" {$username_email_attrs} id="username_email">
+		</div>
+	</div>
 		{BEGIN captcha_block}
-	<tr>
-		<td> 
-			&nbsp;
-		</td>
-		<td class="rnr-control">
+	<div class="form-group" >
+		<div class="col-md-6 col-md-offset-4" >
 			{$captcha}
-		</td>
-	</tr>
+		</div>
+	</div>
 	{END captcha_block}
-</table>
 </div>
 
 
-{BEGIN remindbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-remindbuttons {$brickclass_remindbuttons}"><div class="rnr-withsidelink">
-	<a href="#" class="rnr-button main" {$submit_attrs}>Submit</a>
-	<a href="login.php" class="rnr-button link rnr-sidelink" {$backlink_attrs}>Back to login page</a>
-</div></div>{END remindbuttons}
+
 
 
 </div>
 {END container_fields}
 
 
+
+
+
+
+
+
+{BEGIN container_header_2}
+<div {$header_2_chiddenattr} data-pageid="{$pageid}" data-container="header_2" class="   col-md-8 col-md-offset-4"> 
+
+{BEGIN remindbuttons}
+<a href="#" class="btn btn-primary" {$submit_attrs}>{mlang_message SUBMIT}</a>
+<a href="login.php" class="btn btn-link" {$backlink_attrs}>{mlang_message BACK_TO_LOGIN}</a>
+
+{END remindbuttons}
+
+
+
+</div>
+{END container_header_2}
+
+
+
+
+
+
+</div>
+{END container_body}
+
+
+
+
+
+
+</div>
+{END container_panel}
+
+
+
+
+
+
+</div>
+{END container_page_1}
+
+
+
+
+
+
+</div>
+{END container_page}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

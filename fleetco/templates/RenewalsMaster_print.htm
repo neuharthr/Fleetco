@@ -31,9 +31,6 @@
 <div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
 <a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
 {END divideintopages_block}
-{BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
-{END pdflink_block}
 </div>
 {END printbuttons}
 
@@ -56,7 +53,7 @@
 <div class="rnr-c rnr-cv rnr-c-pageheader">
 
 {BEGIN printheader}
-<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel RenewalsMaster print}</h1>
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel renewalsmaster print}</h1>
 </div>{END printheader}
 
 
@@ -81,17 +78,17 @@
 		{BEGIN ID_fieldheadercolumn}
 <th class="runner-cc {$ID_class}" {$ID_style}>
 	{BEGIN ID_fieldheader}
-	<b>{$label RenewalsMaster ID}</b>
+	<b>{$label renewalsmaster ID}</b>
 	{END ID_fieldheader}
 </th>
 {END ID_fieldheadercolumn}
-	{BEGIN RenewalType_fieldheadercolumn}
-<th class="runner-cc {$RenewalType_class}" {$RenewalType_style}>
-	{BEGIN RenewalType_fieldheader}
-	<b>{$label RenewalsMaster RenewalType}</b>
-	{END RenewalType_fieldheader}
+	{BEGIN Renewal_fieldheadercolumn}
+<th class="runner-cc {$Renewal_class}" {$Renewal_style}>
+	{BEGIN Renewal_fieldheader}
+	<b>{$label renewalsmaster Renewal}</b>
+	{END Renewal_fieldheader}
 </th>
-{END RenewalType_fieldheadercolumn}
+{END Renewal_fieldheadercolumn}
 		
 	<th class="rnr-edge">&nbsp;</th>
 	{BEGIN endrecordheader_block}
@@ -111,11 +108,11 @@
 	{$ID_value}
 </td>
 {END ID_fieldcolumn}
-	{BEGIN RenewalType_fieldcolumn}
-<td  class="runner-cc {$RenewalType_class}" {$RenewalType_style} {$recordattrs}>
-	{$RenewalType_value}
+	{BEGIN Renewal_fieldcolumn}
+<td  class="runner-cc {$Renewal_class}" {$Renewal_style} {$recordattrs}>
+	{$Renewal_value}
 </td>
-{END RenewalType_fieldcolumn}
+{END Renewal_fieldcolumn}
 
 		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
 		{BEGIN endrecord_block}
@@ -145,7 +142,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

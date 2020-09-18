@@ -44,7 +44,10 @@ class FileField extends EditControl
 		
 		if($this->pageObject->pageType == PAGE_SEARCH || $this->pageObject->pageType == PAGE_LIST)
 		{
-			echo '<input id="'.$this->cfield.'" '.$this->inputStyle.' type="text" '
+			$classString = "";
+			if( $this->pageObject->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+				$classString = " class=\"form-control\"";
+			echo '<input id="'.$this->cfield.'" '.$classString.$this->inputStyle.' type="text" '
 				.($mode == MODE_SEARCH ? 'autocomplete="off" ' : '')
 				.(($mode==MODE_INLINE_EDIT || $mode==MODE_INLINE_ADD) && $this->is508==true ? 'alt="'.$this->strLabel.'" ' : '')
 				.'name="'.$this->cfield.'" '.$this->pageObject->pSetEdit->getEditParams($this->field).' value="'
@@ -126,21 +129,21 @@ class FileField extends EditControl
                 <!-- The fileinput-button span is used to style the file input field as button -->
  				<SPAN class="btn btn-success fileinput-button">
 					<A class="rnr-button filesUpload button" href="#" ><input class="fileinput-button-input" type="file" name="files[]" value="'
-				."Add files"
+				.mlang_message("ADD_FILES")
 				.'" '. $multiple .' />'
-				."Add files"
+				.mlang_message("ADD_FILES")
 				.'</A>
 				</SPAN>'
 		
 		.($this->pageObject->pSetEdit->isAutoUpload($this->field) ? '' : '
                 <SPAN class="btn btn-primary start">
 				<A class="rnr-button" href="#" >'
-				."Upload"
+				.mlang_message("START_UPLOAD")
 				.'</A> 
 				</SPAN>
 				<SPAN class="btn btn-warning cancel">
 				<A class="rnr-button" href="#" >'
-				."Cancel"
+				.mlang_message("CANCEL")
 				.'</A> 
 				</SPAN>')
 		
@@ -175,7 +178,7 @@ class FileField extends EditControl
             <td class="name"><span>{%=file.name%}</span></td>
             <td class="size"><span dir="LTR">{%=o.formatFileSize(file.size)%}</span></td>
             <td class="error" colspan="2"><span class="label rnr-error">'
-			.""
+			.mlang_message("ERROR")
 			.' {%=locale.fileupload.errors[file.error] || file.error%}</span></td>
         {% } else { %}
             <td class="preview">{% if (file.thumbnail_url) { %}
@@ -197,7 +200,7 @@ class FileField extends EditControl
         	{% if (!file.error) { %}
         	<SPAN class="btn btn-danger delete" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}" data-name="{%=file.name%}">
 				<A href="#" >'
-			."Delete"
+			.mlang_message("DELETE")
 			.'</A>
 				</SPAN>
 			{% } %}
@@ -212,7 +215,7 @@ class FileField extends EditControl
         <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
         {% if (file.error) { %}
             <td class="error" colspan="2"><span class="label rnr-error">'
-			.""
+			.mlang_message("ERROR")
 			.' {%=locale.fileupload.errors[file.error] || file.error%}</span></td>
         {% } else if (o.files.valid && !i) { %}
             <td>
@@ -222,7 +225,7 @@ class FileField extends EditControl
             <td class="start">{% if (!o.options.autoUpload) { %}
         	<SPAN class="btn btn-primary">
 				<A href="#" >'
-			."Upload"
+			.mlang_message("START_UPLOAD")
 			.'</A>   
 				</SPAN>       
             {% } %}</td>
@@ -233,7 +236,7 @@ class FileField extends EditControl
         	{% if (!file.error) { %}
         	<SPAN class="btn btn-warning">
 				<A href="#" >'
-			."Cancel"
+			.mlang_message("CANCEL")
 			.'</A>
 				</SPAN>
 			{% } %}
@@ -354,13 +357,13 @@ class FileField extends EditControl
 			$userFile = $this->upload_handler->buildUserFile($imageFile);
 			if($this->pageObject->pSetEdit->getViewFormat($this->field) == FORMAT_FILE)
 			{
-				$imageValue .= ($imageValue != "" ? "</br>" : "");
+				$imageValue .= ($imageValue != "" ? "<br>" : "");
 				$imageValue .= '<a href="'.runner_htmlspecialchars($userFile["url"]).'">'
 					.runner_htmlspecialchars($imageFile["usrName"] != "" ? $imageFile["usrName"] : $imageFile["name"]).'</a>';
 			}
 			else if(CheckImageExtension($imageFile["name"])) 
 			{
-				$imageValue .= ($imageValue != "" ? "</br>" : "");
+				$imageValue .= ($imageValue != "" ? "<br>" : "");
 				if($this->pageObject->pSetEdit->showThumbnail($this->field)) 
 				{
 					$thumbname = $userFile["thumbnail_url"];

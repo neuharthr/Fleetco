@@ -6,7 +6,7 @@ header("Expires: Thu, 01 Jan 1970 00:00:01 GMT");
 
 set_time_limit(600);
 
-require_once("include/RenewalsMaster_variables.php");
+require_once("include/renewalsmaster_variables.php");
 require_once("include/import_functions.php");
 require_once('classes/importpage.php');
 
@@ -21,37 +21,37 @@ $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["import"] = array();
 $layout->container_properties["import"] = array(  );
-$layout->containers["import"][] = array("name"=>"importheader", 
+$layout->containers["import"][] = array("name"=>"importheader",
 	"block"=>"", "substyle"=>2  );
 
-$layout->containers["import"][] = array("name"=>"errormessage", 
+$layout->containers["import"][] = array("name"=>"errormessage",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["import"][] = array("name"=>"importheader_text", 
+$layout->containers["import"][] = array("name"=>"importheader_text",
 	"block"=>"", "substyle"=>3  );
 
-$layout->containers["import"][] = array("name"=>"importfields", 
+$layout->containers["import"][] = array("name"=>"importfields",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["import"][] = array("name"=>"import_rawtext_control", 
+$layout->containers["import"][] = array("name"=>"import_rawtext_control",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["import"][] = array("name"=>"import_preview", 
+$layout->containers["import"][] = array("name"=>"import_preview",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["import"][] = array("name"=>"import_process", 
+$layout->containers["import"][] = array("name"=>"import_process",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["import"][] = array("name"=>"import_results", 
+$layout->containers["import"][] = array("name"=>"import_results",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["import"][] = array("name"=>"importbuttons", 
+$layout->containers["import"][] = array("name"=>"importbuttons",
 	"block"=>"", "substyle"=>2  );
 
 $layout->skins["import"] = "fields";
 
 $layout->blocks["top"][] = "import";
-$page_layouts["RenewalsMaster_import"] = $layout;
+$page_layouts["renewalsmaster_import"] = $layout;
 
 $layout->skinsparams = array();
 $layout->skinsparams["empty"] = array("button"=>"button2");

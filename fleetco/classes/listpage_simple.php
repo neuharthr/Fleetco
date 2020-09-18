@@ -1,7 +1,6 @@
 <?php
 /**
  * Class for list page with mode simple
- *
  */
 class ListPage_Simple extends ListPage 
 {
@@ -16,6 +15,7 @@ class ListPage_Simple extends ListPage
 		parent::__construct($params);	
 		$this->pSetEdit = new ProjectSettings($this->tName, PAGE_SEARCH);
 	}
+	
 	/**
 	 * Add common assign for simple mode on list page
 	 */	
@@ -31,8 +31,7 @@ class ListPage_Simple extends ListPage
 		
 		$this->addAssignPageDetails();	
 		
-		$this->xt->assign("moreButtons", $this->exportAvailable() || $this->printAvailable() || $this->importAvailable() ||  $this->advSearchAvailable() );
-		
+		$this->xt->assign("moreButtons", $this->exportAvailable() || $this->printAvailable() || $this->importAvailable() || $this->advSearchAvailable() );		
 		$this->xt->assign("widhtSelected", $this->exportAvailable() || $this->printAvailable() || $this->inlineEditAvailable() || $this->deleteAvailable() );
 		
 		if( $this->exportAvailable() )
@@ -41,29 +40,31 @@ class ListPage_Simple extends ListPage
 			$this->xt->assign("exportselectedlink_span", $this->buttonShowHideStyle());
 			$this->xt->assign("exportselectedlink_attrs", $this->getPrintExportLinkAttrs('export'));
 		}
+
+		if( $this->pSet->isAllowShowHideFields() )
+		{
+			$this->xt->assign("field_hide_panel", true);
+		}
 		
 		if( $this->printAvailable() )
 		{
 			// new print panel
 			if ( !$this->rowsFound )
 				$this->xt->displayBrickHidden("printpanel");
-			$this->xt->assign("print_friendly",  true);
+			$this->xt->assign("print_friendly", true);
 			$this->xt->assign("print_friendly_all", true);
 			$this->xt->assign("print_recspp", $this->pSet->getPrinterSplitRecords() );
 
 			for($i = 0; $i < count($this->allDetailsTablesArr); $i ++) 
 			{
-				if( $this->permis[$this->allDetailsTablesArr[$i]['dDataSourceTable']]['add'] || $this->permis[$this->allDetailsTablesArr[$i]['dDataSourceTable']]['search'] )
+				if( $this->permis[ $this->allDetailsTablesArr[$i]['dDataSourceTable'] ]['add'] || $this->permis[ $this->allDetailsTablesArr[$i]['dDataSourceTable'] ]['search'] )
 				{
 					$this->xt->assign("print_details", true);
 					$this->xt->assign("print_details_" . GoodFieldName( $this->allDetailsTablesArr[$i]['dDataSourceTable'] ), true);
 				}
 			}
-			
-			
-			
+					
 			// end new print panel
-
 			$this->xt->assign("printselected_link", true);
 			$this->xt->assign("printselectedlink_attrs", $this->getPrintExportLinkAttrs('print'));
 			$this->xt->assign("printselectedlink_span", $this->buttonShowHideStyle());
@@ -71,8 +72,7 @@ class ListPage_Simple extends ListPage
 		
 		//advanced search and attr
 		$this->xt->assign("advsearchlink_attrs", "id=\"advButton".$this->id."\"");
-		
-		
+				
 		$this->xt->assign('menu_block', $this->isShowMenu() || $this->isAdminTable());
 		
 		if( $this->mobileTemplateMode() )
@@ -83,7 +83,52 @@ class ListPage_Simple extends ListPage
 		}
 		
 		$this->setupBreadcrumbs();
+		
 		$this->xt->assign( "grid_classes", "table-bordered table-striped" );
+	}
+
+	
+	/**
+	 * set Grid User Params
+	 */
+	protected function setGridUserParams()
+	{
+		include_once getabspath("classes/paramsLogger.php");
+		
+		if( $this->pSet->isAllowShowHideFields() ) 
+		{
+			$this->jsSettings['tableSettings'][ $this->tName ]['isAllowShowHideFields'] = true;
+			if( !$this->rowsFound )
+				$this->xt->displayBrickHidden("bsfieldhidepanel");
+
+			
+			$hideColumns = $this->getColumnsToHide();
+			$this->jsSettings['tableSettings'][ $this->tName ]['hideColumns'] = $hideColumns;
+			
+			$fieldsClasses = array();
+
+			foreach( $hideColumns as $d => $fields)
+			{
+				foreach( $fields as $f )
+				{
+					$fieldsClasses[$f] .= " bs-hidden-column".$d;
+				}
+				foreach( $fieldsClasses as $f => $c )
+				{
+					$this->hiddenColumnClasses[$f] = $c;
+				}
+			}
+		}
+
+		if( $this->pSet->isAllowFieldsReordering() ) 
+		{
+			$this->jsSettings['tableSettings'][ $this->tName ]['isAllowFieldsReordering'] = true;
+			
+			$logger = new paramsLogger( $this->tName, FORDER_PARAMS_TYPE );
+			$columnOrder = $logger->getData();
+			if( $columnOrder )
+				$this->jsSettings['tableSettings'][ $this->tName ]['columnOrder'] = $columnOrder;
+		}
 	}
 	
 	/**
@@ -125,10 +170,11 @@ class ListPage_Simple extends ListPage
 			//export link and attr
 			$this->xt->assign("export_link", true );
 			$this->xt->assign("exportlink_attrs", 
-							  "id = 'export_".$this->id."'
-							   name = 'export_".$this->id."'
-							   onclick=\"window.open(this.href,'wExport');return false;\""
-							   .(!$this->rowsFound ? " style='display:none;'" : ""));
+							"id = 'export_".$this->id."'
+							 name = 'export_".$this->id."'
+							 onclick=\"window.open(this.href,'wExport');return false;\""
+							 .(!$this->rowsFound ? " style='display:none;'" : ""));
+							 
 			if( !$this->rowsFound )
 				$this->xt->displayBrickHidden("toplinks_export");
 		}
@@ -137,14 +183,12 @@ class ListPage_Simple extends ListPage
 	/**
 	 * Add assign for details_ found, page_of and recsperpage blocks
 	 * If found 0 recs display this blocks hidden
-	 *
 	 */
 	function addAssignPageDetails() 
 	{
-		$searchPermis = $this->permis[$this->tName]['search'];
-		if (!$this->rowsFound && !$this->inlineAddAvailable() && !$this->showAddInPopup) {
+		$searchPermis = $this->permis[ $this->tName ]['search'];
+		if( !$this->rowsFound && !$this->inlineAddAvailable() && !$this->showAddInPopup )
 			return;
-		}
 		
 		$this->xt->assign("details_block", $searchPermis );
 		if( !$this->rowsFound )
@@ -161,7 +205,7 @@ class ListPage_Simple extends ListPage
 		}
 		$this->xt->assign("pages_attrs","id=\"pageOf".$this->id."\" name=\"pageOf".$this->id."\"");
 		
-		if( $searchPermis && count($this->arrRecsPerPage))
+		if( $searchPermis && count($this->arrRecsPerPage) )
 		{
 			$this->xt->assign("recordspp_block", true);
 			$this->createPerPage();
@@ -189,7 +233,7 @@ class ListPage_Simple extends ListPage
 	
 	function buildSearchPanel() 
 	{
-		if(!$this->permis[$this->tName]["search"])
+		if( !$this->permis[ $this->tName ]["search"] )
 		{
 			return;
 		}
@@ -210,7 +254,30 @@ class ListPage_Simple extends ListPage
 		
 		$this->searchPanel = new SearchPanelSimple($params);
 		$this->searchPanel->buildSearchPanel();
-	}	
-}
+	}
 
+	/**
+	 * If use resizable columns
+	 * Prepare for resize main table
+	 */
+	function prepareForResizeColumns()
+	{
+		parent::prepareForResizeColumns();
+
+		if(  $this->getLayoutVersion() != BOOTSTRAP_LAYOUT )
+			return;
+
+		include_once getabspath("classes/paramsLogger.php");	
+		
+		$logger = new paramsLogger( $this->tName, CRESIZE_PARAMS_TYPE );
+		$resizableColumnsData = $logger->getData();
+		if( $resizableColumnsData )
+			$this->setProxyValue( "resizableColumnsData", $resizableColumnsData );
+	}	
+	protected function getColumnsToHide()  
+	{
+		return $this->getCombinedHiddenColumns();
+	}
+	
+}
 ?>

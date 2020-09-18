@@ -478,7 +478,7 @@ class ProjectSettings
 		$tableName = $table ? $table : $this->_table;
 		$editPage = $this->_editPage;
 		if(!$this->isSeparate($field))
-			$editPage = $this->getDefaultEditPageType($this->getTableType());;
+			return;
 		return GetDefaultValue($field, $editPage, $tableName);
 	}
 
@@ -687,6 +687,16 @@ class ProjectSettings
 		return $this->getFieldData($field, "bInlineEdit");
 	}
 
+	/**
+	 * Check is appear current field on edit page
+	 * return boolean - true or false
+	 */
+	function appearOnUpdateSelected($field)
+	{
+		return $this->getFieldData($field, "bUpdateSelected");
+	}
+	
+	
 	/**
 	 * Check is appear current field on view page
 	 * return boolean - true or false
@@ -977,6 +987,11 @@ class ProjectSettings
 	function getInlineEditFields()
 	{
 		return $this->getTableData(".inlineEditFields");
+	}
+
+	function getUpdateSelectedFields()
+	{
+		return $this->getTableData(".updateSelectedFields");
 	}
 
 	function getExportFields()
@@ -1427,6 +1442,10 @@ class ProjectSettings
 	{
 		return $this->getTableData(".inlineEdit");
 	}
+	function hasUpdateSelected()
+	{
+		return $this->getTableData(".updateSelected");
+	}
 	function hasCopyPage()
 	{
 		return $this->getTableData(".copy");
@@ -1453,6 +1472,8 @@ class ProjectSettings
 	}
 	function getAdvancedSecurityType()
 	{
+		if( !GetGlobalData("createLoginPage",null) || (GetGlobalData("nLoginMethod", null) != SECURITY_TABLE && GetGlobalData("nLoginMethod", null) != SECURITY_AD ) )
+			return ADVSECURITY_ALL;
 		return $this->getTableData(".nSecOptions");
 	}
 	function displayLoading()
@@ -1976,6 +1997,22 @@ class ProjectSettings
 		return $this->getTableData(".searchSaving");
 	}
 
+	function isAllowShowHideFields()
+	{
+		if ( $this->getScrollGridBody() )
+			return false;
+
+		return $this->getTableData(".allowShowHideFields");
+	}
+
+	function isAllowFieldsReordering()
+	{
+		if ( $this->getScrollGridBody() || $this->getRecordsPerRowList() > 1)
+			return false;
+
+		return $this->getTableData(".allowFieldsReordering");
+	}
+
 	function lockingEnabled()
 	{
 		return $this->getTableData(".locking");
@@ -2343,6 +2380,38 @@ class ProjectSettings
 	}
 
 	/**
+	 * Get the list of the fields that must be hidden on the List page on a particular device
+	 * @param {Number} Device code : 1-4
+	 * @return {Array} array in the form of: $arr[$goodfieldName]=true, where the $field must be hidden.
+	 */
+	function getHiddenGoodNameFields($device)
+	{
+		$hGoodFields = array();
+		$hFields = $this->getHiddenFields($device);
+		foreach ( $hFields as $field => $isShow ) {
+			$hGoodFields[GoodFieldName($field)] = $isShow;
+		}
+
+		return $hGoodFields;
+	}
+
+	/**
+	 * Checks if the 'columns By Device' is enabled
+	 * @return {Boolean} 
+	 */
+	function columnsByDeviceEnabled()
+	{
+		$list = $this->getTableData( ".hideMobileList" );
+		foreach( $list as $d => $v )
+		{
+			if( $v )
+				return true;
+		}
+		return false;
+	}
+	
+	
+	/**
 	 * Build CSS media clause for given device code.
 	 * Thanks to mobile device vendors, there are plenty of weird heuristics here, take it easy.
 	 */
@@ -2350,11 +2419,17 @@ class ProjectSettings
 	{
 		if( $device == DESKTOP )
 		{
+			// width >= 1281
+			
 			//	Desktop. We don't care about prehistoric VGA displays
-			return "@media (min-device-width: 1280px) and (min-device-height: 1024px), (min-device-width: 1360px)";
+			return "@media (min-device-width: 1281px)";
 		}
 		else if( $device == TABLET_10_IN )	//	10" tablets
 		{
+			// width >= 768 and height == 1024 ( iPad )
+			// or width between 1025 and 1280 and height is less than 1023
+			// or the same with width and height interchanged
+			
 			// All iPads including mini go here, because there is no way to tell full-sized iPad from mini.
 			return "@media (device-width: 768px) and (device-height: 1024px)".
 
@@ -2363,16 +2438,21 @@ class ProjectSettings
 		}
 		else if( $device == TABLET_7_IN )
 		{
-			return "@media (max-device-width: 1024px) and (max-device-height: 800px) , (max-device-height: 1024px) and (max-device-width: 800px)";
+			// width between 401 and 1024 and height between 401 and 800
+			// or the same with width and height interchanged
+
+			return "@media (min-device-height: 401px) and (max-device-height: 800px) and (min-device-width: 401px) and (max-device-width: 1024px) , (min-device-height: 401px) and (min-device-width: 401px) and (max-device-height: 1024px) and (max-device-width: 800px)";
 		}
 
 		else if( $device == SMARTPHONE_LANDSCAPE )
 		{
+			// landscape mode and width or height no more than 400 
 			return "@media (orientation: landscape) and (max-device-height: 400px), (orientation: landscape) and (max-device-width: 400px)";
 		}
 
 		else if( $device == SMARTPHONE_PORTRAIT )
 		{
+			// potrait mode and width or height no more than 400 
 			return "@media (orientation: portrait) and (max-device-height: 400px), (orientation: portrait) and (max-device-width: 400px)";
 		}
 	}
@@ -2672,6 +2752,8 @@ function GetTableByShort( $shortTName )
 	$g_defaultOptionValues["afterEditAction"] = 1;
 	$g_defaultOptionValues["afterEditActionDetTable"] = "";
 	$g_defaultOptionValues["AllowToAdd"] = false;
+	$g_defaultOptionValues["allowFieldsReordering"] = false;
+	$g_defaultOptionValues["allowShowHideFields"] = false;
 	$g_defaultOptionValues["allSearchFields"] = array();
 	$g_defaultOptionValues["arrGroupsPerPage"] = array();
 	$g_defaultOptionValues["arrKeyFields"] = array();
@@ -2697,6 +2779,7 @@ function GetTableByShort( $shortTName )
 	$g_defaultOptionValues["bExportPage"] = false;
 	$g_defaultOptionValues["bInlineAdd"] = false;
 	$g_defaultOptionValues["bInlineEdit"] = false;
+	$g_defaultOptionValues["bUpdateSelected"] = false;
 	$g_defaultOptionValues["bIsEncrypted"] = false;
 	$g_defaultOptionValues["bListPage"] = false;
 	$g_defaultOptionValues["bPrinterPage"] = false;
@@ -2788,6 +2871,7 @@ function GetTableByShort( $shortTName )
 	$g_defaultOptionValues["inlineAdd"] = false;
 	$g_defaultOptionValues["inlineAddFields"] = array();
 	$g_defaultOptionValues["inlineEdit"] = false;
+	$g_defaultOptionValues["updateSelected"] = false;
 	$g_defaultOptionValues["inlineEditFields"] = array();
 	$g_defaultOptionValues["isDisplayLoading"] = false;
 	$g_defaultOptionValues["tableType"] = "";
@@ -2983,6 +3067,7 @@ function GetTableByShort( $shortTName )
 	$g_settingsType["bExportPage"] = SETTING_TYPE_GLOBAL;
 	$g_settingsType["bInlineAdd"] = SETTING_TYPE_GLOBAL;
 	$g_settingsType["bInlineEdit"] = SETTING_TYPE_GLOBAL;
+	$g_settingsType["bUpdateSelected"] = SETTING_TYPE_GLOBAL;
 	$g_settingsType["bIsEncrypted"] = SETTING_TYPE_GLOBAL;
 	$g_settingsType["bListPage"] = SETTING_TYPE_GLOBAL;
 	$g_settingsType["bPrinterPage"] = SETTING_TYPE_GLOBAL;

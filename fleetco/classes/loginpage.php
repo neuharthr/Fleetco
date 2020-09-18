@@ -157,9 +157,9 @@ class LoginPage extends RunnerPage
 	protected function refineMessage()
 	{
 		if( $this->message == "expired" )
-			$this->message = "Your session has expired." . "Please login again.";
+			$this->message = mlang_message("SESSION_EXPIRED1") . mlang_message("SESSION_EXPIRED2");
 		elseif( $this->message == "invalidlogin" )
-			$this->message = "Invalid Login";	
+			$this->message = mlang_message("INVALID_LOGIN");	
 		if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
 		{
 			$this->xt->assign("message_class", "alert-danger" );
@@ -213,7 +213,7 @@ class LoginPage extends RunnerPage
 			$globalEvents->AfterUnsuccessfulLogin( $this->var_pUsername, $this->var_pPassword, $message, $this );
 		
 		if( $message == "" && !$this->message )
-			$this->message = "Invalid Login";
+			$this->message = mlang_message("INVALID_LOGIN");
 		else if( $message ) 
 			$this->message = $message;
 
@@ -264,7 +264,7 @@ class LoginPage extends RunnerPage
 		if( !$this->auditObj->LoginAccess() )
 			return true;
 			
-		$this->message = mysprintf( "Access denied for %s minutes", array($this->auditObj->LoginAccess()) );
+		$this->message = mysprintf( mlang_message("LOGIN_BLOCKED"), array($this->auditObj->LoginAccess()) );
 		return true;
 	}
 	
@@ -461,6 +461,8 @@ class LoginPage extends RunnerPage
 	 */
 	public function setLangParams()
 	{
+		if( $this->mode == LOGIN_SIMPLE )
+			SetLangVars($this->xt, "login");
 	}
 	
 	/**
@@ -503,19 +505,7 @@ class LoginPage extends RunnerPage
 		$this->xt->assign("rememberbox_attrs", ($this->is508 ? "id=\"remember_password\" " : "")
 			."name=\"remember_password\" value=\"1\"".$rememberbox_checked);		
 		
-		$hasAnyPermission = false;
-		$fullTableList = GetTablesListWithoutSecurity();
-		foreach ($fullTableList as $tName)
-		{
-			$permiss = GetUserPermissions($tName);
-			if ( $permiss != "" )
-			{
-				$hasAnyPermission = true;
-				break;
-			} 
-		}
-
-		$this->xt->assign( "guestlink_block", $this->mode == LOGIN_SIMPLE && $hasAnyPermission && isGuestLoginAvailable() );
+		$this->xt->assign( "guestlink_block", $this->mode == LOGIN_SIMPLE && guestHasPermissions() && isGuestLoginAvailable() );
 		
 		$this->xt->assign("username_label", true);
 		$this->xt->assign("password_label", true);

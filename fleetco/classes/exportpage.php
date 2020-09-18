@@ -351,7 +351,7 @@ class ExportPage extends RunnerPage
 			{
 				$fType = $this->pSet->getFieldType($field);
 				if( IsBinaryType( $fType ) )
-					$values[ $field ] = "LONG BINARY DATA - CANNOT BE DISPLAYED";
+					$values[ $field ] = mlang_message("LONG_BINARY");
 				else
 					$values[ $field ] = $this->getExportValue($field, $row);
 			}
@@ -421,7 +421,7 @@ class ExportPage extends RunnerPage
 			{
 				$fType = $this->pSet->getFieldType($field);
 				if( IsBinaryType( $fType ) )
-					$values[ $field ] = "LONG BINARY DATA - CANNOT BE DISPLAYED";
+					$values[ $field ] = mlang_message("LONG_BINARY");
 				else
 					$values[ $field ] = $row[ $field ];
 			}
@@ -510,7 +510,7 @@ class ExportPage extends RunnerPage
 			{
 				$fType = $this->pSet->getFieldType($field);
 				if( IsBinaryType( $fType ) )
-					$values[ $field ] = "LONG BINARY DATA - CANNOT BE DISPLAYED";
+					$values[ $field ] = mlang_message("LONG_BINARY");
 				else 
 					$values[ $field ] = $this->getViewControl( $field )->getExportValue($row, "");
 			}
@@ -590,11 +590,11 @@ class ExportPage extends RunnerPage
 				if( strlen($data["totalsType"]) )
 				{
 					if( $data["totalsType"] == "COUNT" )
-						echo "Count".": ";
+						echo mlang_message("COUNT").": ";
 					elseif( $data["totalsType"] == "TOTAL" )	
-						echo "Total".": ";
+						echo mlang_message("TOTAL").": ";
 					elseif( $data["totalsType"] == "AVERAGE" )
-						echo "Average".": ";
+						echo mlang_message("AVERAGE").": ";
 
 					echo runner_htmlspecialchars( GetTotals($data["fName"], 
 						$totals[ $data["fName"] ]["value"], 

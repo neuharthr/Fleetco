@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,177 +13,401 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-add" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_all}
-<div class="rnr-c rnr-cv rnr-c-all">
+{BEGIN container_editpage}
+<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
 
 {BEGIN addheader}
-<div  class="rnr-brickcontents style2 rnr-b-addheader {$brickclass_addheader}"><span>	<h1>{$pagetitlelabel fuelmaster add}</h1>
-</span></div>{END addheader}
+	<h2 {$addheader_hiddenattr} data-pageid="{$pageid}" data-brick="addheader" >{$pagetitlelabel fuelmaster add}</h2>
 
+{END addheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN message_block}
-<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		<button class="btn btn-sm btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>{mlang_message VIEW}</button>
+{END view_page_button}
+{BEGIN edit_page_button}
+	<button class="btn btn-sm btn-default" {$edit_page_button_attrs}>{mlang_message EDIT}</button>
+{END edit_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-addfields2 {$brickclass_addfields2}"><table class="fieldGrid fieldGrid2 edit">
 
-<tr>
-<td>
-	{BEGIN Fleet_fieldblock}
-<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
-  <span class="rnr-label">{BEGIN Fleet_label}{$label fuelmaster Fleet}{END Fleet_label}</span>
-  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$addfields_hiddenattr} data-pageid="{$pageid}" data-brick="addfields" class="form-horizontal" role="form">
+			{BEGIN Fleet_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Fleet}" data-fieldname="Fleet" data-signal-error-for="Fleet{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Fleet}">
+		{BEGIN Fleet_label}{$label fuelmaster Fleet}{END Fleet_label}
+	</label>
+	<div class="col-md-6" >
+		{$Fleet_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Fleet">
+		<div class="text-muted" >
+		{$tooltip fuelmaster Fleet}
+		</div>
+	</div>
+</div>
 </div>
 {END Fleet_fieldblock}
-	{BEGIN Vehicle_fieldblock}
-<div data-fieldname="Vehicle" class="rnr-field style1 {$fielddispclass_Vehicle}">
-  <span class="rnr-label">{BEGIN Vehicle_label}{$label fuelmaster Vehicle}{END Vehicle_label}</span>
-  <span class="rnr-control style3">{$Vehicle_editcontrol}</span>
+
+			{BEGIN Vehicle_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Vehicle}" data-fieldname="Vehicle" data-signal-error-for="Vehicle{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Vehicle}">
+		{BEGIN Vehicle_label}{$label fuelmaster Vehicle}{END Vehicle_label}
+	</label>
+	<div class="col-md-6" >
+		{$Vehicle_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Vehicle">
+		<div class="text-muted" >
+		{$tooltip fuelmaster Vehicle}
+		</div>
+	</div>
+</div>
 </div>
 {END Vehicle_fieldblock}
-	{BEGIN CouponNo_fieldblock}
-<div data-fieldname="CouponNo" class="rnr-field style1 {$fielddispclass_CouponNo}">
-  <span class="rnr-label">{BEGIN CouponNo_label}{$label fuelmaster CouponNo}{END CouponNo_label}</span>
-  <span class="rnr-control style3">{$CouponNo_editcontrol}</span>
+
+			{BEGIN CouponNo_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_CouponNo}" data-fieldname="CouponNo" data-signal-error-for="CouponNo{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_CouponNo}">
+		{BEGIN CouponNo_label}{$label fuelmaster CouponNo}{END CouponNo_label}
+	</label>
+	<div class="col-md-6" >
+		{$CouponNo_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="CouponNo">
+		<div class="text-muted" >
+		{$tooltip fuelmaster CouponNo}
+		</div>
+	</div>
+</div>
 </div>
 {END CouponNo_fieldblock}
-	{BEGIN FuelDate_fieldblock}
-<div data-fieldname="FuelDate" class="rnr-field style1 {$fielddispclass_FuelDate}">
-  <span class="rnr-label">{BEGIN FuelDate_label}{$label fuelmaster FuelDate}{END FuelDate_label}</span>
-  <span class="rnr-control style3">{$FuelDate_editcontrol}</span>
+
+			{BEGIN FuelDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_FuelDate}" data-fieldname="FuelDate" data-signal-error-for="FuelDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_FuelDate}">
+		{BEGIN FuelDate_label}{$label fuelmaster FuelDate}{END FuelDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$FuelDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="FuelDate">
+		<div class="text-muted" >
+		{$tooltip fuelmaster FuelDate}
+		</div>
+	</div>
+</div>
 </div>
 {END FuelDate_fieldblock}
-	{BEGIN FuelStation_fieldblock}
-<div data-fieldname="FuelStation" class="rnr-field style1 {$fielddispclass_FuelStation}">
-  <span class="rnr-label">{BEGIN FuelStation_label}{$label fuelmaster FuelStation}{END FuelStation_label}</span>
-  <span class="rnr-control style3">{$FuelStation_editcontrol}</span>
+
+			{BEGIN FuelStation_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_FuelStation}" data-fieldname="FuelStation" data-signal-error-for="FuelStation{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_FuelStation}">
+		{BEGIN FuelStation_label}{$label fuelmaster FuelStation}{END FuelStation_label}
+	</label>
+	<div class="col-md-6" >
+		{$FuelStation_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="FuelStation">
+		<div class="text-muted" >
+		{$tooltip fuelmaster FuelStation}
+		</div>
+	</div>
+</div>
 </div>
 {END FuelStation_fieldblock}
-	{BEGIN MeterReading_fieldblock}
-<div data-fieldname="MeterReading" class="rnr-field style1 {$fielddispclass_MeterReading}">
-  <span class="rnr-label">{BEGIN MeterReading_label}{$label fuelmaster MeterReading}{END MeterReading_label}</span>
-  <span class="rnr-control style3">{$MeterReading_editcontrol}</span>
+
+			{BEGIN MeterReading_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_MeterReading}" data-fieldname="MeterReading" data-signal-error-for="MeterReading{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_MeterReading}">
+		{BEGIN MeterReading_label}{$label fuelmaster MeterReading}{END MeterReading_label}
+	</label>
+	<div class="col-md-6" >
+		{$MeterReading_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="MeterReading">
+		<div class="text-muted" >
+		{$tooltip fuelmaster MeterReading}
+		</div>
+	</div>
+</div>
 </div>
 {END MeterReading_fieldblock}
-	{BEGIN LitersPumped_fieldblock}
-<div data-fieldname="LitersPumped" class="rnr-field style1 {$fielddispclass_LitersPumped}">
-  <span class="rnr-label">{BEGIN LitersPumped_label}{$label fuelmaster LitersPumped}{END LitersPumped_label}</span>
-  <span class="rnr-control style3">{$LitersPumped_editcontrol}</span>
+
+			{BEGIN LitersPumped_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_LitersPumped}" data-fieldname="LitersPumped" data-signal-error-for="LitersPumped{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_LitersPumped}">
+		{BEGIN LitersPumped_label}{$label fuelmaster LitersPumped}{END LitersPumped_label}
+	</label>
+	<div class="col-md-6" >
+		{$LitersPumped_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="LitersPumped">
+		<div class="text-muted" >
+		{$tooltip fuelmaster LitersPumped}
+		</div>
+	</div>
+</div>
 </div>
 {END LitersPumped_fieldblock}
-</td>
-<td>
-	{BEGIN PricePerLiter_fieldblock}
-<div data-fieldname="PricePerLiter" class="rnr-field style1 {$fielddispclass_PricePerLiter}">
-  <span class="rnr-label">{BEGIN PricePerLiter_label}{$label fuelmaster PricePerLiter}{END PricePerLiter_label}</span>
-  <span class="rnr-control style3">{$PricePerLiter_editcontrol}</span>
+
+			{BEGIN PricePerLiter_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_PricePerLiter}" data-fieldname="PricePerLiter" data-signal-error-for="PricePerLiter{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_PricePerLiter}">
+		{BEGIN PricePerLiter_label}{$label fuelmaster PricePerLiter}{END PricePerLiter_label}
+	</label>
+	<div class="col-md-6" >
+		{$PricePerLiter_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="PricePerLiter">
+		<div class="text-muted" >
+		{$tooltip fuelmaster PricePerLiter}
+		</div>
+	</div>
+</div>
 </div>
 {END PricePerLiter_fieldblock}
-	{BEGIN FillType_fieldblock}
-<div data-fieldname="FillType" class="rnr-field style1 {$fielddispclass_FillType}">
-  <span class="rnr-label">{BEGIN FillType_label}{$label fuelmaster FillType}{END FillType_label}</span>
-  <span class="rnr-control style3">{$FillType_editcontrol}</span>
+
+			{BEGIN FillType_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_FillType}" data-fieldname="FillType" data-signal-error-for="FillType{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_FillType}">
+		{BEGIN FillType_label}{$label fuelmaster FillType}{END FillType_label}
+	</label>
+	<div class="col-md-6" >
+		{$FillType_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="FillType">
+		<div class="text-muted" >
+		{$tooltip fuelmaster FillType}
+		</div>
+	</div>
+</div>
 </div>
 {END FillType_fieldblock}
-	{BEGIN LastMileage_fieldblock}
-<div data-fieldname="LastMileage" class="rnr-field style1 {$fielddispclass_LastMileage}">
-  <span class="rnr-label">{BEGIN LastMileage_label}{$label fuelmaster LastMileage}{END LastMileage_label}</span>
-  <span class="rnr-control style3">{$LastMileage_editcontrol}</span>
+
+			{BEGIN LastMileage_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_LastMileage}" data-fieldname="LastMileage" data-signal-error-for="LastMileage{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_LastMileage}">
+		{BEGIN LastMileage_label}{$label fuelmaster LastMileage}{END LastMileage_label}
+	</label>
+	<div class="col-md-6" >
+		{$LastMileage_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="LastMileage">
+		<div class="text-muted" >
+		{$tooltip fuelmaster LastMileage}
+		</div>
+	</div>
+</div>
 </div>
 {END LastMileage_fieldblock}
-	{BEGIN Driver_fieldblock}
-<div data-fieldname="Driver" class="rnr-field style1 {$fielddispclass_Driver}">
-  <span class="rnr-label">{BEGIN Driver_label}{$label fuelmaster Driver}{END Driver_label}</span>
-  <span class="rnr-control style3">{$Driver_editcontrol}</span>
+
+			{BEGIN Driver_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Driver}" data-fieldname="Driver" data-signal-error-for="Driver{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Driver}">
+		{BEGIN Driver_label}{$label fuelmaster Driver}{END Driver_label}
+	</label>
+	<div class="col-md-6" >
+		{$Driver_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Driver">
+		<div class="text-muted" >
+		{$tooltip fuelmaster Driver}
+		</div>
+	</div>
+</div>
 </div>
 {END Driver_fieldblock}
-	{BEGIN SystemDate_fieldblock}
-<div data-fieldname="SystemDate" class="rnr-field style1 {$fielddispclass_SystemDate}">
-  <span class="rnr-label">{BEGIN SystemDate_label}{$label fuelmaster SystemDate}{END SystemDate_label}</span>
-  <span class="rnr-control style3">{$SystemDate_editcontrol}</span>
+
+			{BEGIN SystemDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_SystemDate}" data-fieldname="SystemDate" data-signal-error-for="SystemDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_SystemDate}">
+		{BEGIN SystemDate_label}{$label fuelmaster SystemDate}{END SystemDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$SystemDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="SystemDate">
+		<div class="text-muted" >
+		{$tooltip fuelmaster SystemDate}
+		</div>
+	</div>
+</div>
 </div>
 {END SystemDate_fieldblock}
-	{BEGIN Economy_fieldblock}
-<div data-fieldname="Economy" class="rnr-field style1 {$fielddispclass_Economy}">
-  <span class="rnr-label">{BEGIN Economy_label}{$label fuelmaster Economy}{END Economy_label}</span>
-  <span class="rnr-control style3">{$Economy_editcontrol}</span>
+
+			{BEGIN Economy_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Economy}" data-fieldname="Economy" data-signal-error-for="Economy{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Economy}">
+		{BEGIN Economy_label}{$label fuelmaster Economy}{END Economy_label}
+	</label>
+	<div class="col-md-6" >
+		{$Economy_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Economy">
+		<div class="text-muted" >
+		{$tooltip fuelmaster Economy}
+		</div>
+	</div>
+</div>
 </div>
 {END Economy_fieldblock}
-</td>
-</tr>
-</table></div>
 
 
-{BEGIN addbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-addbuttons {$brickclass_addbuttons}"><div class="rnr-buttons-left">
-		{BEGIN save_button}
-	<a href="#" class="rnr-button main" id="saveButton{$id}" {$savebutton_attrs}>Save</a>
-	{END save_button}
-	{BEGIN reset_button}
-	<a href="#" class="rnr-button" id="resetButton{$id}">Reset</a>
-	{END reset_button}
-	{BEGIN cancel_button}
-	<a href="#" class="rnr-button" id="cancelButton{$id}">Cancel</a>
-	{END cancel_button}
-	{BEGIN back_button}
-	<a href="#" class="rnr-button" id="backButton{$id}">Back to list</a>
-	{END back_button}
-	{BEGIN backToMenu_button}
-	<a href="#" class="rnr-button" id="backToMenuButton{$id}">Back to menu</a>
-	{END backToMenu_button}
 </div>
-</div>{END addbuttons}
+
+
 
 
 </div>
 {END container_fields}
 
-</div>
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN addbuttons}
+	{BEGIN save_button}
+	<button class="btn btn-primary" {$savebutton_attrs}>{mlang_message SAVE}</button>
+	{END save_button}
+	{BEGIN reset_button}
+	<button class="btn btn-default" id="resetButton{$id}">{mlang_message RESET}</button>
+	{END reset_button}
+	{BEGIN back_button}
+		<button class="btn btn-default" id="backButton{$id}">{mlang_message BACK_TO_LIST}</button>
+	{END back_button}
+	{BEGIN cancel_button}
+	<a href="#" class="btn btn-default" id="cancelButton{$id}">{mlang_message CANCEL}</a>
+	{END cancel_button}
+
+{END addbuttons}
 
 
 
 </div>
-{END container_all}
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
 
 
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

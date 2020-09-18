@@ -262,8 +262,8 @@ class ListPage_DPInline extends ListPage_Embed
 		}
 		
 		// if we use details inline. We don't need show the header/footer.
-		$this->xt->unassign('header');
-		$this->xt->unassign('footer');	
+		$this->xt->assign("header", false);
+		$this->xt->assign("footer", false);
 		
 		$this->xt->hideAllBricksExcept($bricksExcept);
 		$this->xt->prepare_template($this->templatefile);	
@@ -321,6 +321,7 @@ class ListPage_DPInline extends ListPage_Embed
 		{
 			return $this->showGridOnly();
 		}
+		
 		global $page_layouts;
 		
 		$this->BeforeShowList();
@@ -352,7 +353,7 @@ class ListPage_DPInline extends ListPage_Embed
 
 	public function showGridOnly() 
 	{			
-		$this->BeforeShowList();
+		//$this->BeforeShowList();
 		$this->prepareTemplate();
 		
 		$contents = $this->xt->fetch_loaded("grid_block");	
@@ -402,6 +403,12 @@ class ListPage_DPInline extends ListPage_Embed
 		{
 			$masterXt->assign( "details_delete_" . $this->shortTableName . "_link", true );
 			$masterXt->assign( "details_delete_" . $this->shortTableName . "_attrs", $this->getDeleteLinksAttrs() );
+		}
+		
+		if( $this->inlineEditAvailable() )
+		{
+			$masterXt->assign( "details_edit_" . $this->shortTableName . "_link", true );
+			$masterXt->assign( "details_edit_" . $this->shortTableName . "_attrs", $this->getEditLinksAttrs() );
 		}
 
 		if ( $this->inlineAddAvailable() || $this->inlineEditAvailable() )

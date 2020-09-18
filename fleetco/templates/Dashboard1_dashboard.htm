@@ -1,0 +1,162 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-dashboard" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_toplinks}
+<div class="rnr-c rnr-ch rnr-c-toplinks">
+
+{BEGIN security_block}
+<div  class="style1 rnr-bl rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message} 
+	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+		{BEGIN embeded_log_fields}
+		<span>
+		<input type="text" name="username" {$username_attrs}>&nbsp;
+		<input type="password" name="password" {$password_attrs}>
+		</span>
+		{END embeded_log_fields}
+		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+		{BEGIN embeded_log_ctrls}
+		<span>
+		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
+			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
+			</span>
+		{END embeded_log_ctrls}
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+	{BEGIN adminarea_link}
+	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
+	{END adminarea_link}
+
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
+</div></div>
+{END security_block}
+
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_toplinks}
+
+
+
+{BEGIN container_hmenu}
+<div class="rnr-c rnr-ch rnr-c-hmenu">
+
+{BEGIN menu_block}
+{$menu main horizontal}{END menu_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_hmenu}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+
+
+{BEGIN container_dash}
+
+
+
+<table cellpadding=0 cellspacing=0 class="rnr-dashboard" >
+
+
+
+
+
+
+
+<tr>
+
+
+<td class="rnr-dbelement" colspan="1" rowspan="1">
+
+
+</td>
+
+<td class="rnr-dbelement" colspan="1" rowspan="1">
+
+
+</td>
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td class="rnr-dbelement" colspan="1" rowspan="1">
+
+
+</td>
+
+<td class="rnr-dbelement" colspan="1" rowspan="1">
+
+
+</td>
+</tr>
+
+
+
+
+</table>
+
+
+
+
+{END container_dash}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

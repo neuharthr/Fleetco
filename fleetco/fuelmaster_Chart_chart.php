@@ -17,23 +17,17 @@ if( !Security::processPageSecurity( $strtablename, 'S' ) )
 
 
 
-$layout = new TLayout("chart_centered_vert", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
+$layout = new TLayout("chart_bootstrap3", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "fuelmaster_Chart_chart";
 $layout->blocks["center"] = array();
-$layout->containers["recordcontrols"] = array();
-$layout->container_properties["recordcontrols"] = array(  );
-$layout->containers["recordcontrols"][] = array("name"=>"toplinks_advsearch",
-	"block"=>"asearch_link", "substyle"=>1  );
-
-$layout->skins["recordcontrols"] = "2";
-
-$layout->blocks["center"][] = "recordcontrols";
 $layout->containers["message"] = array();
 $layout->container_properties["message"] = array(  );
 $layout->containers["message"][] = array("name"=>"message",
 	"block"=>"message_block", "substyle"=>1  );
 
-$layout->skins["message"] = "2";
+$layout->skins["message"] = "";
 
 $layout->blocks["center"][] = "message";
 $layout->containers["form"] = array();
@@ -41,59 +35,90 @@ $layout->container_properties["form"] = array(  );
 $layout->containers["form"][] = array("name"=>"chart",
 	"block"=>"", "substyle"=>1  );
 
-$layout->skins["form"] = "2";
+$layout->skins["form"] = "";
 
 $layout->blocks["center"][] = "form";
 $layout->blocks["left"] = array();
-$layout->containers["left"] = array();
-$layout->container_properties["left"] = array(  );
-$layout->containers["left"][] = array("name"=>"vmenu",
+$layout->containers["logo"] = array();
+$layout->container_properties["logo"] = array(  );
+$layout->containers["logo"][] = array("name"=>"logo",
+	"block"=>"logo_block", "substyle"=>1  );
+
+$layout->skins["logo"] = "";
+
+$layout->blocks["left"][] = "logo";
+$layout->containers["hdr"] = array();
+$layout->container_properties["hdr"] = array(  );
+$layout->containers["hdr"][] = array("name"=>"bsnavbarcollapse",
+	"block"=>"collapse_block", "substyle"=>1  );
+
+$layout->skins["hdr"] = "";
+
+$layout->blocks["left"][] = "hdr";
+$layout->containers["sidemenu"] = array();
+$layout->container_properties["sidemenu"] = array(  );
+$layout->containers["sidemenu"][] = array("name"=>"vmenu",
 	"block"=>"menu_block", "substyle"=>1  );
 
+$layout->skins["sidemenu"] = "";
+
+$layout->blocks["left"][] = "sidemenu";
+$layout->containers["left"] = array();
+$layout->container_properties["left"] = array(  );
 $layout->containers["left"][] = array("name"=>"searchpanel",
 	"block"=>"searchPanel", "substyle"=>1  );
 
-$layout->skins["left"] = "menu";
+$layout->skins["left"] = "";
 
 $layout->blocks["left"][] = "left";
 $layout->blocks["top"] = array();
-$layout->skins["master"] = "empty";
+$layout->containers["menu"] = array();
+$layout->container_properties["menu"] = array(  );
+$layout->containers["menu"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"bc" );
+$layout->containers["bc"] = array();
+$layout->container_properties["bc"] = array(  );
+$layout->containers["bc"][] = array("name"=>"breadcrumbs",
+	"block"=>"breadcrumbs", "substyle"=>1  );
 
-$layout->blocks["top"][] = "master";
-$layout->containers["toplinks"] = array();
-$layout->container_properties["toplinks"] = array(  );
-$layout->containers["toplinks"][] = array("name"=>"loggedas",
+$layout->skins["bc"] = "";
+
+
+$layout->containers["menu"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"menu_1" );
+$layout->containers["menu_1"] = array();
+$layout->container_properties["menu_1"] = array(  );
+$layout->containers["menu_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"more" );
+$layout->containers["more"] = array();
+$layout->container_properties["more"] = array(  );
+$layout->containers["more"][] = array("name"=>"morebutton",
+	"block"=>"more_list", "substyle"=>1  );
+
+$layout->containers["more"][] = array("name"=>"loggedas",
 	"block"=>"security_block", "substyle"=>1  );
 
-$layout->skins["toplinks"] = "empty";
+$layout->skins["more"] = "";
 
-$layout->blocks["top"][] = "toplinks";
-$layout->containers["hmenu"] = array();
-$layout->container_properties["hmenu"] = array(  );
-$layout->containers["hmenu"][] = array("name"=>"search",
+
+$layout->containers["menu_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"more_1" );
+$layout->containers["more_1"] = array();
+$layout->container_properties["more_1"] = array(  );
+$layout->containers["more_1"][] = array("name"=>"search",
 	"block"=>"searchform_block", "substyle"=>1  );
 
-$layout->containers["hmenu"][] = array("name"=>"search_buttons",
-	"block"=>"searchformbuttons_block", "substyle"=>1  );
+$layout->skins["more_1"] = "";
 
-$layout->containers["hmenu"][] = array("name"=>"search_saving_buttons",
-	"block"=>"searchsaving_block", "substyle"=>1  );
 
-$layout->skins["hmenu"] = "undermenu";
+$layout->skins["menu_1"] = "";
 
-$layout->blocks["top"][] = "hmenu";
+
+$layout->skins["menu"] = "";
+
+$layout->blocks["top"][] = "menu";
 $page_layouts["fuelmaster_Chart_chart"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 // add master layouts 

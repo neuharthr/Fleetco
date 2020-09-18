@@ -21,31 +21,31 @@ $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["all"] = array();
 $layout->container_properties["all"] = array(  );
-$layout->containers["all"][] = array("name"=>"wrapper", 
+$layout->containers["all"][] = array("name"=>"wrapper",
 	"block"=>"", "substyle"=>1 , "container"=>"view" );
 $layout->containers["view"] = array();
 $layout->container_properties["view"] = array(  );
-$layout->containers["view"][] = array("name"=>"wrapper", 
+$layout->containers["view"][] = array("name"=>"wrapper",
 	"block"=>"", "substyle"=>1 , "container"=>"pdf" );
 $layout->containers["pdf"] = array();
 $layout->container_properties["pdf"] = array(  );
-$layout->containers["pdf"][] = array("name"=>"viewpdf", 
+$layout->containers["pdf"][] = array("name"=>"viewpdf",
 	"block"=>"", "substyle"=>1  );
 
 $layout->skins["pdf"] = "empty";
 
 
-$layout->containers["view"][] = array("name"=>"wrapper", 
+$layout->containers["view"][] = array("name"=>"wrapper",
 	"block"=>"", "substyle"=>1 , "container"=>"fields" );
 $layout->containers["fields"] = array();
 $layout->container_properties["fields"] = array(  );
-$layout->containers["fields"][] = array("name"=>"viewheader", 
+$layout->containers["fields"][] = array("name"=>"viewheader",
 	"block"=>"viewheader", "substyle"=>2  );
 
-$layout->containers["fields"][] = array("name"=>"viewfields2", 
+$layout->containers["fields"][] = array("name"=>"viewfields2",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"viewbuttons", 
+$layout->containers["fields"][] = array("name"=>"viewbuttons",
 	"block"=>"viewbuttons", "substyle"=>2  );
 
 $layout->skins["fields"] = "fields";
@@ -70,6 +70,9 @@ $layout->skinsparams["1"] = array("button"=>"button1");
 $layout->skinsparams["2"] = array("button"=>"button1");
 $layout->skinsparams["3"] = array("button"=>"button1");
 
+
+
+// add master layouts 
 
 
 

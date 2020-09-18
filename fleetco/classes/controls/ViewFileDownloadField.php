@@ -13,7 +13,8 @@ class ViewFileDownloadField extends ViewFileField
 		parent::__construct($field, $container, $pageobject);
 		$this->sizeUnits = array("KB", "MB", "GB", "TB");
 	}
-	function addJSFiles()
+	
+	public function addJSFiles()
 	{
 		if($this->container->pSet->showThumbnail($this->field)){
 						$this->AddJSFile("include/zoombox/zoombox.js");
@@ -46,7 +47,7 @@ class ViewFileDownloadField extends ViewFileField
 			$userFile = $this->upload_handler->buildUserFile($file);
 			if(!$isExport)
 			{
-				$value .= ($value != "" ? "</br>" : "");
+				$value .= ($value != "" ? "<br>" : "");
 				if($showThumbnails && $userFile["thumbnail_url"] != "" && CheckImageExtension($file["name"])) 
 				{
 					$value .= "<a target=_blank href=\"".runner_htmlspecialchars($userFile["url"])

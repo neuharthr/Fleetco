@@ -76,7 +76,7 @@ class ViewControl
 	 * addJSFiles
 	 * Add control JS files to page object
 	 */
-	function addJSFiles()
+	public function addJSFiles()
 	{
 		//example
 		// $this->AddJSFile("include/mupload.js");
@@ -86,7 +86,7 @@ class ViewControl
 	 * addCSSFiles
 	 * Add control CSS files to page object
 	 */ 
-	function addCSSFiles()
+	public function addCSSFiles()
 	{
 		//example
 		// $this->AddCSSFile("include/mupload.css");
@@ -96,7 +96,7 @@ class ViewControl
 	 * The container's AddCSSFile method wrapper
 	 * @param {String}
 	 */
-	function AddCSSFile($fileName) 
+	public function AddCSSFile($fileName) 
 	{
 		$this->getContainer()->AddCSSFile($fileName);
 	}
@@ -105,12 +105,12 @@ class ViewControl
 	 * The container's AddJSFile method wrapper
 	 * @param {String}
 	 */	
-	function AddJSFile($fileName, $req1="", $req2="", $req3="") 
+	public function AddJSFile($fileName, $req1="", $req2="", $req3="") 
 	{
 		$this->getContainer()->AddJSFile($fileName,  $req1, $req2, $req3);
 	}
 	
-	function getContainer()
+	public function getContainer()
 	{
 		if(!is_null($this->pageObject))
 			return $this->pageObject;
@@ -155,15 +155,16 @@ class ViewControl
 	 * @param String keylink
 	 * @return String	 
 	 */
-	public function showDBValue(&$data, $keylink = "")
+	public function showDBValue(&$data, $keylink)
 	{
 		$value = $data[$this->field];
 				
 		if(IsBinaryType($this->fieldType))
 		{
-			$value = "LONG BINARY DATA - CANNOT BE DISPLAYED";
+			$value = mlang_message("LONG_BINARY");
 			$this->searchHighlight = false; 
 		} 
+		
 		if($value === false)
 			$value = "";
 		
@@ -171,9 +172,9 @@ class ViewControl
 		if($this->editFormat == EDIT_FORMAT_CHECKBOX && $this->viewFormat == FORMAT_NONE)
 		{
 			if($value && $value!=0)
-				$value = "Yes";
+				$value = mlang_message("YES");
 			else
-				$value = "No";
+				$value = mlang_message("NO");
 				
 			$this->searchHighlight = false; 	
 		}		
@@ -284,7 +285,7 @@ class ViewControl
 		if ( $mode == LIST_LOOKUP )
 			$params.= '&maintable='.$this->pageObject->mainTable.'&mainfield='.$this->pageObject->mainField;
 					
-		return $truncatedValue.' <a href="javascript:void(0);" data-query="'.GetTableLink('fulltext', '', $params).'">'."More".'&nbsp;...</a>';
+		return $truncatedValue.' <a href="javascript:void(0);" data-query="'.GetTableLink('fulltext', '', $params).'">'.mlang_message("MORE").'&nbsp;...</a>';
 	}
 
 	/**

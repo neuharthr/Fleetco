@@ -56,7 +56,7 @@ class ADOConnection extends Connection
 		} 
 		catch(Exception $e)
 		{
-			trigger_error($e->getMessage());
+			$this->triggerError( $e->getMessage() );
 		}
 		
 		return $this->conn;
@@ -90,7 +90,7 @@ class ADOConnection extends Connection
 		} 
 		catch(com_exception $e)
 		{
-			trigger_error($e->getMessage(),E_USER_ERROR);
+			$this->triggerError($e->getMessage());
 		}
 		
 		return FALSE;
@@ -138,23 +138,23 @@ class ADOConnection extends Connection
 	 * @param Number assoc (optional)
 	 * @return Array
 	 */
-	protected function _fetch_array( $qHanle, $assoc = 1 )
+	protected function _fetch_array( $qHandle, $assoc = 1 )
 	{
 		$ret = array();
 		
-		if( $qHanle->EOF() )
+		if( $qHandle->EOF() )
 			  return false;
 		
 		try {			
-			for( $i = 0; $i < $this->num_fields( $qHanle ); $i++ )
+			for( $i = 0; $i < $this->num_fields( $qHandle ); $i++ )
 			{
-				if( IsBinaryType( $qHanle->Fields[$i]->Type ) && $qHanle->Fields[$i]->Type != 128 || $qHanle->Fields[$i]->Type == 203 )
+				if( IsBinaryType( $qHandle->Fields[$i]->Type ) && $qHandle->Fields[$i]->Type != 128 || $qHandle->Fields[$i]->Type == 203 )
 				{
 					$str = "";
-					if( $qHanle->Fields[$i]->ActualSize > 0 )
+					if( $qHandle->Fields[$i]->ActualSize > 0 )
 					{
-						$size = $qHanle->Fields[$i]->ActualSize;
-						$val = $qHanle->Fields[$i]->GetChunk( $size );
+						$size = $qHandle->Fields[$i]->ActualSize;
+						$val = $qHandle->Fields[$i]->GetChunk( $size );
 						
 						if( is_array($val) || is_object($val) )
 						{
@@ -170,38 +170,38 @@ class ADOConnection extends Connection
 					}
 					
 					if( $assoc )
-						$ret[ $qHanle->Fields[$i]->Name ] = $str;
+						$ret[ $qHandle->Fields[$i]->Name ] = $str;
 					else
 						$ret[ $i ] = $str;
 				}
 				else
 				{
-					$value = $qHanle->Fields[$i]->Value;
+					$value = $qHandle->Fields[$i]->Value;
 					
 					if( is_null($value) )
 						$val = NULL;
 					else
 					{
-						if( isdatefieldtype( $qHanle->Fields[$i]->Type ) )
-							$value = localdatetime2db( (string)$qHanle->Fields[$i]->Value, $this->access_dmy );
-						if( IsNumberType( $qHanle->Fields[$i]->Type ) )
+						if( isdatefieldtype( $qHandle->Fields[$i]->Type ) )
+							$value = localdatetime2db( (string)$qHandle->Fields[$i]->Value, $this->access_dmy );
+						if( IsNumberType( $qHandle->Fields[$i]->Type ) )
 							$val = floatval($value);
 						else
 							$val = strval($value);
 					}
 					
 					if( $assoc )
-						$ret[ $qHanle->Fields[$i]->Name ] = $val;
+						$ret[ $qHandle->Fields[$i]->Name ] = $val;
 					else
 						$ret[ $i ] = $val;
 				}
 			}
 			
-			$qHanle->MoveNext();	
+			$qHandle->MoveNext();	
 		} 
 		catch(com_exception $e)
 		{
-			trigger_error($e->getMessage(), E_USER_ERROR);
+			$this->triggerError($e->getMessage() );
 		}
 
 		return $ret;
@@ -212,9 +212,9 @@ class ADOConnection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array | Boolean
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return $this->_fetch_array($qHanle, 1);
+		return $this->_fetch_array($qHandle, 1);
 	}
 	
 	/**	
@@ -222,18 +222,18 @@ class ADOConnection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array | Boolean
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
-		return $this->_fetch_array($qHanle, 0);
+		return $this->_fetch_array($qHandle, 0);
 	}
 
 	/**
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
-		$qHanle->Close();
+		$qHandle->Close();
 	}
 	
 	/**	
@@ -252,9 +252,9 @@ class ADOConnection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
-		return $qHanle->Fields( $offset )->Name;
+		return $qHandle->Fields( $offset )->Name;
 	}
 
 	/**

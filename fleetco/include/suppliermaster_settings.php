@@ -36,6 +36,166 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipssuppliermaster["English"]))
 		$tdatasuppliermaster[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelssuppliermaster["Afrikaans"] = array();
+	$fieldToolTipssuppliermaster["Afrikaans"] = array();
+	$pageTitlessuppliermaster["Afrikaans"] = array();
+	$fieldLabelssuppliermaster["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipssuppliermaster["Afrikaans"]["Id"] = "";
+	$fieldLabelssuppliermaster["Afrikaans"]["SupplierName"] = "Verskaffernaam";
+	$fieldToolTipssuppliermaster["Afrikaans"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["Afrikaans"]["Address"] = "adres";
+	$fieldToolTipssuppliermaster["Afrikaans"]["Address"] = "";
+	$fieldLabelssuppliermaster["Afrikaans"]["ContactPerson"] = "Kontak persoon";
+	$fieldToolTipssuppliermaster["Afrikaans"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["Afrikaans"]["Telephone"] = "Telefoon";
+	$fieldToolTipssuppliermaster["Afrikaans"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["Afrikaans"]["Remarks"] = "opmerkings";
+	$fieldToolTipssuppliermaster["Afrikaans"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["Afrikaans"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelssuppliermaster["Arabic"] = array();
+	$fieldToolTipssuppliermaster["Arabic"] = array();
+	$pageTitlessuppliermaster["Arabic"] = array();
+	$fieldLabelssuppliermaster["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipssuppliermaster["Arabic"]["Id"] = "";
+	$fieldLabelssuppliermaster["Arabic"]["SupplierName"] = "??? ??????";
+	$fieldToolTipssuppliermaster["Arabic"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["Arabic"]["Address"] = "?????";
+	$fieldToolTipssuppliermaster["Arabic"]["Address"] = "";
+	$fieldLabelssuppliermaster["Arabic"]["ContactPerson"] = "????? ???? ???? ??????? ??";
+	$fieldToolTipssuppliermaster["Arabic"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["Arabic"]["Telephone"] = "????";
+	$fieldToolTipssuppliermaster["Arabic"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["Arabic"]["Remarks"] = "???????";
+	$fieldToolTipssuppliermaster["Arabic"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["Arabic"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelssuppliermaster["Chinese"] = array();
+	$fieldToolTipssuppliermaster["Chinese"] = array();
+	$pageTitlessuppliermaster["Chinese"] = array();
+	$fieldLabelssuppliermaster["Chinese"]["Id"] = "ID";
+	$fieldToolTipssuppliermaster["Chinese"]["Id"] = "";
+	$fieldLabelssuppliermaster["Chinese"]["SupplierName"] = "?????";
+	$fieldToolTipssuppliermaster["Chinese"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["Chinese"]["Address"] = "??";
+	$fieldToolTipssuppliermaster["Chinese"]["Address"] = "";
+	$fieldLabelssuppliermaster["Chinese"]["ContactPerson"] = "???";
+	$fieldToolTipssuppliermaster["Chinese"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["Chinese"]["Telephone"] = "??";
+	$fieldToolTipssuppliermaster["Chinese"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["Chinese"]["Remarks"] = "??";
+	$fieldToolTipssuppliermaster["Chinese"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["Chinese"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelssuppliermaster["French"] = array();
+	$fieldToolTipssuppliermaster["French"] = array();
+	$pageTitlessuppliermaster["French"] = array();
+	$fieldLabelssuppliermaster["French"]["Id"] = "ID";
+	$fieldToolTipssuppliermaster["French"]["Id"] = "";
+	$fieldLabelssuppliermaster["French"]["SupplierName"] = "Nom du fournisseur";
+	$fieldToolTipssuppliermaster["French"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["French"]["Address"] = "Adresse";
+	$fieldToolTipssuppliermaster["French"]["Address"] = "";
+	$fieldLabelssuppliermaster["French"]["ContactPerson"] = "Contact";
+	$fieldToolTipssuppliermaster["French"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["French"]["Telephone"] = "Téléphone";
+	$fieldToolTipssuppliermaster["French"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["French"]["Remarks"] = "Remarques";
+	$fieldToolTipssuppliermaster["French"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["French"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelssuppliermaster["German"] = array();
+	$fieldToolTipssuppliermaster["German"] = array();
+	$pageTitlessuppliermaster["German"] = array();
+	$fieldLabelssuppliermaster["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipssuppliermaster["German"]["Id"] = "";
+	$fieldLabelssuppliermaster["German"]["SupplierName"] = "Name des Anbieters";
+	$fieldToolTipssuppliermaster["German"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["German"]["Address"] = "Adresse";
+	$fieldToolTipssuppliermaster["German"]["Address"] = "";
+	$fieldLabelssuppliermaster["German"]["ContactPerson"] = "Gesprächspartner";
+	$fieldToolTipssuppliermaster["German"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["German"]["Telephone"] = "Telefon";
+	$fieldToolTipssuppliermaster["German"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["German"]["Remarks"] = "Bemerkungen";
+	$fieldToolTipssuppliermaster["German"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["German"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelssuppliermaster["Italian"] = array();
+	$fieldToolTipssuppliermaster["Italian"] = array();
+	$pageTitlessuppliermaster["Italian"] = array();
+	$fieldLabelssuppliermaster["Italian"]["Id"] = "ID";
+	$fieldToolTipssuppliermaster["Italian"]["Id"] = "";
+	$fieldLabelssuppliermaster["Italian"]["SupplierName"] = "Nome del fornitore";
+	$fieldToolTipssuppliermaster["Italian"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["Italian"]["Address"] = "Indirizzo";
+	$fieldToolTipssuppliermaster["Italian"]["Address"] = "";
+	$fieldLabelssuppliermaster["Italian"]["ContactPerson"] = "Referente";
+	$fieldToolTipssuppliermaster["Italian"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["Italian"]["Telephone"] = "Telefono";
+	$fieldToolTipssuppliermaster["Italian"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["Italian"]["Remarks"] = "Osservazioni";
+	$fieldToolTipssuppliermaster["Italian"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["Italian"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelssuppliermaster["Russian"] = array();
+	$fieldToolTipssuppliermaster["Russian"] = array();
+	$pageTitlessuppliermaster["Russian"] = array();
+	$fieldLabelssuppliermaster["Russian"]["Id"] = "? ??";
+	$fieldToolTipssuppliermaster["Russian"]["Id"] = "";
+	$fieldLabelssuppliermaster["Russian"]["SupplierName"] = "???????????? ??????????";
+	$fieldToolTipssuppliermaster["Russian"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["Russian"]["Address"] = "?????";
+	$fieldToolTipssuppliermaster["Russian"]["Address"] = "";
+	$fieldLabelssuppliermaster["Russian"]["ContactPerson"] = "?????????? ????";
+	$fieldToolTipssuppliermaster["Russian"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["Russian"]["Telephone"] = "???????";
+	$fieldToolTipssuppliermaster["Russian"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["Russian"]["Remarks"] = "?????????";
+	$fieldToolTipssuppliermaster["Russian"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["Russian"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelssuppliermaster["Spanish"] = array();
+	$fieldToolTipssuppliermaster["Spanish"] = array();
+	$pageTitlessuppliermaster["Spanish"] = array();
+	$fieldLabelssuppliermaster["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipssuppliermaster["Spanish"]["Id"] = "";
+	$fieldLabelssuppliermaster["Spanish"]["SupplierName"] = "Nombre del proveedor";
+	$fieldToolTipssuppliermaster["Spanish"]["SupplierName"] = "";
+	$fieldLabelssuppliermaster["Spanish"]["Address"] = "Dirección";
+	$fieldToolTipssuppliermaster["Spanish"]["Address"] = "";
+	$fieldLabelssuppliermaster["Spanish"]["ContactPerson"] = "Persona de contacto";
+	$fieldToolTipssuppliermaster["Spanish"]["ContactPerson"] = "";
+	$fieldLabelssuppliermaster["Spanish"]["Telephone"] = "Teléfono";
+	$fieldToolTipssuppliermaster["Spanish"]["Telephone"] = "";
+	$fieldLabelssuppliermaster["Spanish"]["Remarks"] = "Observaciones";
+	$fieldToolTipssuppliermaster["Spanish"]["Remarks"] = "";
+	if (count($fieldToolTipssuppliermaster["Spanish"]))
+		$tdatasuppliermaster[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelssuppliermaster[""] = array();
@@ -94,6 +254,9 @@ $tdatasuppliermaster[".afterAddActionDetTable"] = "";
 
 $tdatasuppliermaster[".list"] = true;
 
+
+
+
 $tdatasuppliermaster[".view"] = true;
 
 $tdatasuppliermaster[".import"] = true;
@@ -105,6 +268,14 @@ $tdatasuppliermaster[".printFriendly"] = true;
 $tdatasuppliermaster[".delete"] = true;
 
 $tdatasuppliermaster[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatasuppliermaster[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatasuppliermaster[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatasuppliermaster[".searchSaving"] = false;
@@ -177,6 +348,7 @@ $tdatasuppliermaster[".geocodingEnabled"] = false;
 $tdatasuppliermaster[".listGridLayout"] = 3;
 
 
+$tdatasuppliermaster[".isResizeColumns"] = true;
 
 
 
@@ -289,6 +461,14 @@ $tdatasuppliermaster[".editFields"][] = "Remarks";
 
 $tdatasuppliermaster[".inlineEditFields"] = array();
 
+$tdatasuppliermaster[".updateSelectedFields"] = array();
+$tdatasuppliermaster[".updateSelectedFields"][] = "SupplierName";
+$tdatasuppliermaster[".updateSelectedFields"][] = "Address";
+$tdatasuppliermaster[".updateSelectedFields"][] = "ContactPerson";
+$tdatasuppliermaster[".updateSelectedFields"][] = "Telephone";
+$tdatasuppliermaster[".updateSelectedFields"][] = "Remarks";
+
+
 $tdatasuppliermaster[".exportFields"] = array();
 $tdatasuppliermaster[".exportFields"][] = "Id";
 $tdatasuppliermaster[".exportFields"][] = "SupplierName";
@@ -334,6 +514,8 @@ $tdatasuppliermaster[".printFields"][] = "Remarks";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -459,6 +641,9 @@ $tdatasuppliermaster[".printFields"][] = "Remarks";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -582,6 +767,9 @@ $tdatasuppliermaster[".printFields"][] = "Remarks";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -705,6 +893,9 @@ $tdatasuppliermaster[".printFields"][] = "Remarks";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -828,6 +1019,9 @@ $tdatasuppliermaster[".printFields"][] = "Remarks";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -951,6 +1145,9 @@ $tdatasuppliermaster[".printFields"][] = "Remarks";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

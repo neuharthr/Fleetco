@@ -10,6 +10,7 @@ class CrossTableReport
 	var $total_summary;
 	var $xml_array;
 	var $is_value_empty;
+	var $pageType;
 	
 	/*
 	 *	@type Array
@@ -108,6 +109,8 @@ class CrossTableReport
 			
 		$this->wrdb = $rpt_array["wrdb"];
 		$this->arrDBFieldsList = $rpt_array["arrDBFieldsList"];
+		
+		$this->pageType	= $rpt_array["pageType"];
 		
 		$this->tableName = $this->xml_array["tables"][0];
 		$this->setDbConnection();
@@ -581,13 +584,28 @@ class CrossTableReport
 		}
 		
 		$whereClause = "";
-		if( tableEventExists("BeforeQueryReport", $strTableName) ) 
-		{
-			$eventObj = getEventObject($strTableName);
-			$eventObj->BeforeQueryReport($whereClause);
-			if( $whereClause )
-				$whereClause = " where ".$whereClause;
+
+		if( $this->pageType == PAGE_REPORT ) {
+			if( tableEventExists("BeforeQueryReport", $strTableName) ) 
+			{
+				$eventObj = getEventObject($strTableName);
+				$eventObj->BeforeQueryReport($whereClause);
+				if( $whereClause )
+					$whereClause = " where ".$whereClause;
+			}
 		}
+		else {
+			if( tableEventExists("BeforeQueryReportPrint", $strTableName) ) 
+			{
+				$eventObj = getEventObject($strTableName);
+				$eventObj->BeforeQueryReportPrint($whereClause);
+				if( $whereClause )
+					$whereClause = " where ".$whereClause;
+			}
+			
+		}
+		
+		
 		if( $this->fromWizard ) {
 			$gx0 = $group_x[0];
 			$gx1 = $group_x[1];
@@ -832,29 +850,29 @@ class CrossTableReport
 		$res = "";
 		if($this->dataFieldSettings["sum"] == true)
 		{
-			$arrDisplay[] = "Sum";
+			$arrDisplay[] = mlang_message("SUM");
 			$arr[] = "sum";
 		}
 		if($this->dataFieldSettings["max"] == true)
 		{
-			$arrDisplay[] = "Max";
+			$arrDisplay[] = mlang_message("MAX");
 			$arr[] = "max";
 		}
 		if($this->dataFieldSettings["min"] == true)
 		{
-			$arrDisplay[] = "Min";
+			$arrDisplay[] = mlang_message("MIN");
 			$arr[] = "min";
 		}
 		if($this->dataFieldSettings["avg"] == true)
 		{
-			$arrDisplay[] = "Average";
+			$arrDisplay[] = mlang_message("AVERAGE");
 			$arr[] = "avg";
 		}
 
 		if(!count($arr))
 		{
 				$arr[] = "sum";
-				$arrDisplay[] = "Sum";
+				$arrDisplay[] = mlang_message("SUM");
 		}
 		
 		$res = "";	
@@ -1165,10 +1183,10 @@ class CrossTableReport
 			$fieldName = $prefix.GoodFieldName($fieldName);
 		}
 		
-		return "Group X"
-			.":<b>".$this->xml_array["totals"][ $fieldNameX ]["label"]."</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Group Y"
-			.":<b>".$this->xml_array["totals"][ $fieldNameY ]["label"]."</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Field"
-			.":<b>".$this->xml_array["totals"][ $fieldName ]["label"]."</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Group function"
+		return mlang_message("GROUP_X")
+			.":<b>".$this->xml_array["totals"][ $fieldNameX ]["label"]."</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".mlang_message("GROUP_Y")
+			.":<b>".$this->xml_array["totals"][ $fieldNameY ]["label"]."</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".mlang_message("FIELD")
+			.":<b>".$this->xml_array["totals"][ $fieldName ]["label"]."</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".mlang_message("GROUP_FUNCTION")
 			.":<b>".$this->dataGroupFunction."</b>";
 	}
 	
@@ -1177,16 +1195,16 @@ class CrossTableReport
 		switch($grfunc)
 		{
 			case "sum":
-				return "Sum";
+				return mlang_message("SUM");
 				break;
 			case "min":
-				return "Min";
+				return mlang_message("MIN");
 				break;
 			case "max":
-				return "Max";
+				return mlang_message("MAX");
 				break;
 			case "avg":
-				return "Average";
+				return mlang_message("AVERAGE");
 				break;
 		}
 	}

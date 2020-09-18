@@ -47,7 +47,7 @@ class ODBCConnection extends Connection
 
 		$this->conn = odbc_connect( $this->ODBCString, $uid, $pwd );
 		if( !$this->conn ) 
-			trigger_error( $this->lastError(), E_USER_ERROR );
+			$this->triggerError( $this->lastError() );
 		
 		return $this->conn;
 	}
@@ -72,7 +72,7 @@ class ODBCConnection extends Connection
 		$rs = odbc_exec( $this->conn, $sql );
 		if( !$rs )
 		{
-			trigger_error(odbc_error(), E_USER_ERROR);
+			$this->triggerError(odbc_error());
 			return FALSE;
 		}
 		
@@ -105,9 +105,9 @@ class ODBCConnection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return odbc_fetch_array($qHanle);
+		return odbc_fetch_array($qHandle);
 	}
 	
 	/**	
@@ -115,10 +115,10 @@ class ODBCConnection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
 		$row = array();
-		odbc_fetch_into($qHanle, $row);
+		odbc_fetch_into($qHandle, $row);
 		
 		return $row;
 	}
@@ -127,9 +127,9 @@ class ODBCConnection extends Connection
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
-		@odbc_free_result($qHanle);
+		@odbc_free_result($qHandle);
 	}
 
 	/**	
@@ -148,9 +148,9 @@ class ODBCConnection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
-		return @odbc_field_name($qHanle, $offset + 1);
+		return @odbc_field_name($qHandle, $offset + 1);
 	}
 	
 	/**

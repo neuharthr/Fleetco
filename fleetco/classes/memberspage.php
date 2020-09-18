@@ -213,7 +213,7 @@ class MembersPage extends ListPage_Simple
 		global $cman;
 		$grConnection = $cman->getForUserGroups();			
 		
-		$this->groups[] = array(-1, "<"."Admin".">");
+		$this->groups[] = array(-1, "<".mlang_message("AA_GROUP_ADMIN").">");
 		$this->groupFullChecked[] = true;
 		
 		$sql = "select ". $grConnection->addFieldWrappers( "GroupID" ) .", ". $grConnection->addFieldWrappers( "Label" )

@@ -36,7 +36,7 @@ class InformixConnection extends Connection
 	{
 		$this->conn = ifx_connect($this->dbname."@".$this->host, $this->user, $this->pwd);
 		if( !$this->conn ) 
-			trigger_error(ifx_errormsg(), E_USER_ERROR);
+			$this->triggerError(ifx_errormsg());
 		
 		ifx_blobinfile_mode(0);
 		ifx_textasvarchar(1);
@@ -64,7 +64,7 @@ class InformixConnection extends Connection
 		$ret = ifx_query($sql, $this->conn);
 		if( !$ret )
 		{
-			trigger_error(ifx_errormsg(), E_USER_ERROR);
+			$this->triggerError(ifx_errormsg());
 			return FALSE;
 		}
 		
@@ -104,9 +104,9 @@ class InformixConnection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return ifx_fetch_row( $qHanle );
+		return ifx_fetch_row( $qHandle );
 	}
 	
 	/**	
@@ -114,11 +114,11 @@ class InformixConnection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
 		$res = array();
 		$col = 0;
-		foreach( ifx_fetch_row($qHanle) as $val )
+		foreach( ifx_fetch_row($qHandle) as $val )
 		{
 			$res[ $col ] = $val;
 			$col += $col;
@@ -130,9 +130,9 @@ class InformixConnection extends Connection
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
-		@ifx_free_result($qHanle);
+		@ifx_free_result($qHandle);
 	}
 
 	/**	
@@ -151,10 +151,10 @@ class InformixConnection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
 		$count = 1;
-		foreach( ifx_fetch_row($qHanle) as $fname => $val )
+		foreach( ifx_fetch_row($qHandle) as $fname => $val )
 		{
 			if($count == $offset)
 				return $fname;

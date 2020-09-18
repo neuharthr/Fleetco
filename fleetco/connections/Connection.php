@@ -5,7 +5,7 @@ class Connection
 	 * The db connection link identifier
 	 * @type Mixed
 	 */
-	public $conn = null; // TODO: make it protected
+	public $conn = null;
 	
 	/**
 	 * The database type identifier
@@ -39,6 +39,11 @@ class Connection
 	 */
 	public $SQLUpdateMode;
 	
+	/**
+	 * @type boolean 
+	 */
+	protected $silentMode;
+	
 	
 	function __construct( $params )
 	{
@@ -55,11 +60,19 @@ class Connection
 		$this->_encryptInfo = $params["EncryptInfo"];
 	}
 
-	function isEncryptionByPHPEnabled() {
+	/**
+	 * @return Boolean
+	 */
+	function isEncryptionByPHPEnabled() 
+	{
 		return isset( $this->_encryptInfo["mode"] ) && $this->_encryptInfo["mode"] == ENCRYPTION_PHP;
 	}
 
-	function setInitializingSQL( $sql ) {
+	/**
+	 * @param String sql
+	 */
+	function setInitializingSQL( $sql ) 
+	{
 		//	in PHP just exec the initialization SQL right away.
 		$this->exec( $sql );
 	}
@@ -286,7 +299,7 @@ class Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array | Boolean
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
 		//db_fetch_array
 	}
@@ -297,7 +310,7 @@ class Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array | Boolean
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
 		//db_fetch_numarray
 	}
@@ -307,7 +320,7 @@ class Connection
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
 		//db_closequery
 	}
@@ -330,7 +343,7 @@ class Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
 		//db_fieldname
 	}
@@ -475,6 +488,7 @@ class Connection
 		return $this->_info->db_getfieldslist( $sql );
 	}
 	
+	
 	/**
 	 * Check if the db supports subqueries
 	 * @return Boolean
@@ -617,6 +631,53 @@ class Connection
 		
 		if( $dDebug === true )
 			echo $sql."<br>";	
+	}
+	
+	/**
+	 * @param String message
+	 */
+	function triggerError( $message ) 
+	{
+		if( !$this->silentMode )
+			trigger_error( $message, E_USER_ERROR );
+	}
+
+	/**
+	 *	Enables or disables Silent Mode, when no SQL errors are displayed.
+	 *	@param 	Boolean silent
+	 *  @return Boolean - previous Silent mode
+	 */
+	public function setSilentMode( $silent ) 
+	{
+		$oldMode = $this->silentMode;
+		$this->silentMode = $silent;
+		return $oldMode;
+	}
+	
+	/**
+	 *	query, silent mode
+	 *	@param 	String sql
+	 *  @return QueryResult
+	 */
+	public function querySilent( $sql ) 
+	{
+		$silent = $this->setSilentMode( true );
+		$ret = $this->query( $sql );
+		$this->setSilentMode( $silent );
+		return $ret;
+	}
+	
+	/**
+	 *	exec, silent mode
+	 *	@param 	String sql
+	 *  @return Mixed
+	 */
+	public function execSilent( $sql ) 
+	{
+		$silent = $this->setSilentMode( true );
+		$ret = $this->exec( $sql );
+		$this->setSilentMode( $silent );
+		return $ret;
 	}
 }
 ?>

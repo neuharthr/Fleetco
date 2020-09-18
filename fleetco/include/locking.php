@@ -22,10 +22,10 @@ class oLocking
 	{
 		global $cman;
 		
-		$this->ConfirmAdmin = "Administrator %s aborted your edit session";
-		$this->ConfirmUser = "Your edit session timed out";
-		$this->LockAdmin = "Record is edited by %s during %s minutes";
-		$this->LockUser = "Record is edited by another user";
+		$this->ConfirmAdmin = mlang_message("LOCK_ADMIN_ABORTED");
+		$this->ConfirmUser = mlang_message("LOCK_TIMED_OUT");
+		$this->LockAdmin = mlang_message("LOCK_RECORD_EDITED_BY");
+		$this->LockUser = mlang_message("LOCK_RECORD_EDITED");
 		
 		$this->connection = $cman->getForLocking();	
 		
@@ -237,9 +237,9 @@ class oLocking
 			$str = mysprintf($this->LockAdmin,array($data["userid"],round(secondsPassedFrom($data["startdatetime"])/60,2)));
 			if($links){
 				$str.='<a class="unlock" href="#" onclick="Runner.pages.PageManager.getAt(\''.runner_htmlspecialchars(jsreplace($strtable)).'\', '.$pageid.').locking.UnlockAdmin(\''
-					.runner_htmlspecialchars(jsreplace($skeys)).'\',\''.$data["sessionid"].'\',\'no\');return false;">'."Unlock record".'</a>';
+					.runner_htmlspecialchars(jsreplace($skeys)).'\',\''.$data["sessionid"].'\',\'no\');return false;">'.mlang_message("LOCK_UNLOCK").'</a>';
 				$str.='<a class="edit" href="#" onclick="Runner.pages.PageManager.getAt(\''.runner_htmlspecialchars(jsreplace($strtable)).'\', '.$pageid.').locking.UnlockAdmin(\''
-					.runner_htmlspecialchars(jsreplace($skeys)).'\',\''.$data["sessionid"].'\',\'yes\');return false;">'."Edit record".'</a>';
+					.runner_htmlspecialchars(jsreplace($skeys)).'\',\''.$data["sessionid"].'\',\'yes\');$(\'#saveButton'.$pageid.'\').removeClass(\'disabled\');return false;">'.mlang_message("LOCK_EDIT").'</a>';
 			}
 			return $str;
 		}

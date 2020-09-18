@@ -78,7 +78,14 @@
 	{BEGIN grid_header}
 <tr class="rnr-toprow style1 {$gridHeader_class}" >
 {BEGIN record_header}
-		{BEGIN ItemID_fieldheadercolumn}
+		{BEGIN Id_fieldheadercolumn}
+<th class="runner-cc {$Id_class}" {$Id_style}>
+	{BEGIN Id_fieldheader}
+	<b>{$label inventorymaster1 Id}</b>
+	{END Id_fieldheader}
+</th>
+{END Id_fieldheadercolumn}
+	{BEGIN ItemID_fieldheadercolumn}
 <th class="runner-cc {$ItemID_class}" {$ItemID_style}>
 	{BEGIN ItemID_fieldheader}
 	<b>{$label inventorymaster1 ItemID}</b>
@@ -106,20 +113,6 @@
 	{END Supplier_fieldheader}
 </th>
 {END Supplier_fieldheadercolumn}
-	{BEGIN SUM_CurrentStock__fieldheadercolumn}
-<th class="runner-cc {$SUM_CurrentStock__class}" {$SUM_CurrentStock__style}>
-	{BEGIN SUM_CurrentStock__fieldheader}
-	<b>{$label inventorymaster1 SUM_CurrentStock_}</b>
-	{END SUM_CurrentStock__fieldheader}
-</th>
-{END SUM_CurrentStock__fieldheadercolumn}
-	{BEGIN UnitPrice_fieldheadercolumn}
-<th class="runner-cc {$UnitPrice_class}" {$UnitPrice_style}>
-	{BEGIN UnitPrice_fieldheader}
-	<b>{$label inventorymaster1 UnitPrice}</b>
-	{END UnitPrice_fieldheader}
-</th>
-{END UnitPrice_fieldheadercolumn}
 		
 	<th class="rnr-edge">&nbsp;</th>
 	{BEGIN endrecordheader_block}
@@ -134,7 +127,12 @@
 	{BEGIN grid_row}
 	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
 		{BEGIN grid_record}
-				{BEGIN ItemID_fieldcolumn}
+				{BEGIN Id_fieldcolumn}
+<td  class="runner-cc {$Id_class}" {$Id_style} {$recordattrs}>
+	{$Id_value}
+</td>
+{END Id_fieldcolumn}
+	{BEGIN ItemID_fieldcolumn}
 <td  class="runner-cc {$ItemID_class}" {$ItemID_style} {$recordattrs}>
 	{$ItemID_value}
 </td>
@@ -154,16 +152,6 @@
 	{$Supplier_value}
 </td>
 {END Supplier_fieldcolumn}
-	{BEGIN SUM_CurrentStock__fieldcolumn}
-<td  class="runner-cc {$SUM_CurrentStock__class}" {$SUM_CurrentStock__style} {$recordattrs}>
-	{$SUM_CurrentStock__value}
-</td>
-{END SUM_CurrentStock__fieldcolumn}
-	{BEGIN UnitPrice_fieldcolumn}
-<td  class="runner-cc {$UnitPrice_class}" {$UnitPrice_style} {$recordattrs}>
-	{$UnitPrice_value}
-</td>
-{END UnitPrice_fieldcolumn}
 
 		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
 		{BEGIN endrecord_block}
@@ -193,7 +181,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

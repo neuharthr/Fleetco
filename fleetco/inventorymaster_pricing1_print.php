@@ -20,9 +20,22 @@ if( !Security::processPageSecurity( $strtablename, 'P' ) )
 
 
 
-$layout = new TLayout("print", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
-$layout->blocks["center"] = array();
+$layout = new TLayout("print_bootstrap", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "inventorymaster_pricing1_print";
+$layout->blocks["top"] = array();
+$layout->containers["pdf"] = array();
+$layout->container_properties["pdf"] = array(  "print" => "none"  );
+$layout->containers["pdf"][] = array("name"=>"printbuttons",
+	"block"=>"printbuttons", "substyle"=>1  );
+
+$layout->skins["pdf"] = "";
+
+$layout->blocks["top"][] = "pdf";
+$layout->skins["master"] = "";
+
+$layout->blocks["top"][] = "master";
 $layout->containers["pageheader"] = array();
 $layout->container_properties["pageheader"] = array(  "print" => "repeat"  );
 $layout->containers["pageheader"][] = array("name"=>"printheader",
@@ -31,41 +44,18 @@ $layout->containers["pageheader"][] = array("name"=>"printheader",
 $layout->containers["pageheader"][] = array("name"=>"page_of_print",
 	"block"=>"page_number", "substyle"=>1  );
 
-$layout->skins["pageheader"] = "empty";
+$layout->skins["pageheader"] = "";
 
-$layout->blocks["center"][] = "pageheader";
+$layout->blocks["top"][] = "pageheader";
 $layout->containers["grid"] = array();
 $layout->container_properties["grid"] = array(  );
-$layout->containers["grid"][] = array("name"=>"printgridnext",
+$layout->containers["grid"][] = array("name"=>"printgrid",
 	"block"=>"grid_block", "substyle"=>1  );
 
-$layout->skins["grid"] = "grid";
+$layout->skins["grid"] = "";
 
-$layout->blocks["center"][] = "grid";
-$layout->blocks["top"] = array();
-$layout->containers["pdf"] = array();
-$layout->container_properties["pdf"] = array(  "print" => "none"  );
-$layout->containers["pdf"][] = array("name"=>"printbuttons",
-	"block"=>"printbuttons", "substyle"=>1  );
-
-$layout->skins["pdf"] = "empty";
-
-$layout->blocks["top"][] = "pdf";
-$layout->skins["master"] = "empty";
-
-$layout->blocks["top"][] = "master";
+$layout->blocks["top"][] = "grid";
 $page_layouts["inventorymaster_pricing1_print"] = $layout;
-
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
@@ -75,7 +65,6 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 $xt = new Xtempl();
 $id = postvalue("id"); 
 $id = $id != "" ? $id : 1;
-$all = postvalue("all");
 
 //array of params for classes
 $params = array();
@@ -91,9 +80,8 @@ $params["pdfWidth"] = postvalue("width");
 $params["detailTables"] = postvalue("details");
 $params["splitByRecords"] = postvalue("records");
 
-			
+
 $pageObject = new PrintPage($params);
 $pageObject->init();
 $pageObject->process();
-
 ?>

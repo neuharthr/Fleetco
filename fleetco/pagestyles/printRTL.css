@@ -1,6 +1,6 @@
 body.page-print
 {
-padding-top:10px; padding-left:10px;
+padding-top:0px; padding-left:0px;
 }
 .page-print .rnr-c-pageheader,
   .rnr-pagewrapper .page-print .rnr-c-pageheader,

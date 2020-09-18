@@ -28,7 +28,7 @@ class SQLite3Connection extends Connection
 		$this->conn = new SQLite3( $this->dbname );
 		
 		if (!$this->conn) 
-		  trigger_error($this->conn->lastErrorMsg(), E_USER_ERROR);
+		  $this->triggerError($this->conn->lastErrorMsg());
 		
 		return $this->conn;		
 	}
@@ -53,7 +53,7 @@ class SQLite3Connection extends Connection
 		$ret = $this->conn->query($sql);
 		if( !$ret )
 		{
-			trigger_error($this->conn->lastErrorMsg(), E_USER_ERROR);
+			$this->triggerError($this->conn->lastErrorMsg());
 			return FALSE;
 		}
 
@@ -93,9 +93,9 @@ class SQLite3Connection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return $qHanle->fetchArray($mode = SQLITE3_ASSOC);
+		return $qHandle->fetchArray($mode = SQLITE3_ASSOC);
 	}
 	
 	/**
@@ -103,18 +103,18 @@ class SQLite3Connection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
-		return $qHanle->fetchArray($mode = SQLITE3_NUM);
+		return $qHandle->fetchArray($mode = SQLITE3_NUM);
 	}
 	
 	/**
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
-		$qHanle->finalize();
+		$qHandle->finalize();
 	}
 
 	/**	
@@ -133,9 +133,9 @@ class SQLite3Connection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
-		return $qHanle->columnName($offset);
+		return $qHandle->columnName($offset);
 	}
 	
 	/**

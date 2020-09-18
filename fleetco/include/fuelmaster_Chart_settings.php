@@ -34,6 +34,166 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsfuelmaster_Chart["English"]))
 		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsfuelmaster_Chart["Afrikaans"] = array();
+	$fieldToolTipsfuelmaster_Chart["Afrikaans"] = array();
+	$pageTitlesfuelmaster_Chart["Afrikaans"] = array();
+	$fieldLabelsfuelmaster_Chart["Afrikaans"]["FuelDate"] = "brandstof Datum";
+	$fieldToolTipsfuelmaster_Chart["Afrikaans"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["Afrikaans"]["Vehicle"] = "voertuig";
+	$fieldToolTipsfuelmaster_Chart["Afrikaans"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["Afrikaans"]["Economy"] = "ekonomie";
+	$fieldToolTipsfuelmaster_Chart["Afrikaans"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsfuelmaster_Chart["Afrikaans"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["Afrikaans"]["Economy_1"] = "ekonomie";
+	$fieldToolTipsfuelmaster_Chart["Afrikaans"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsfuelmaster_Chart["Afrikaans"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["Afrikaans"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsfuelmaster_Chart["Arabic"] = array();
+	$fieldToolTipsfuelmaster_Chart["Arabic"] = array();
+	$pageTitlesfuelmaster_Chart["Arabic"] = array();
+	$fieldLabelsfuelmaster_Chart["Arabic"]["FuelDate"] = "??????? ??????";
+	$fieldToolTipsfuelmaster_Chart["Arabic"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["Arabic"]["Vehicle"] = "?????";
+	$fieldToolTipsfuelmaster_Chart["Arabic"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["Arabic"]["Economy"] = "??????";
+	$fieldToolTipsfuelmaster_Chart["Arabic"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsfuelmaster_Chart["Arabic"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["Arabic"]["Economy_1"] = "??????";
+	$fieldToolTipsfuelmaster_Chart["Arabic"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsfuelmaster_Chart["Arabic"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["Arabic"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsfuelmaster_Chart["Chinese"] = array();
+	$fieldToolTipsfuelmaster_Chart["Chinese"] = array();
+	$pageTitlesfuelmaster_Chart["Chinese"] = array();
+	$fieldLabelsfuelmaster_Chart["Chinese"]["FuelDate"] = "????";
+	$fieldToolTipsfuelmaster_Chart["Chinese"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["Chinese"]["Vehicle"] = "??";
+	$fieldToolTipsfuelmaster_Chart["Chinese"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["Chinese"]["Economy"] = "??";
+	$fieldToolTipsfuelmaster_Chart["Chinese"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["Chinese"]["Id"] = "ID";
+	$fieldToolTipsfuelmaster_Chart["Chinese"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["Chinese"]["Economy_1"] = "??";
+	$fieldToolTipsfuelmaster_Chart["Chinese"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsfuelmaster_Chart["Chinese"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["Chinese"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsfuelmaster_Chart["French"] = array();
+	$fieldToolTipsfuelmaster_Chart["French"] = array();
+	$pageTitlesfuelmaster_Chart["French"] = array();
+	$fieldLabelsfuelmaster_Chart["French"]["FuelDate"] = "Date de carburant";
+	$fieldToolTipsfuelmaster_Chart["French"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["French"]["Vehicle"] = "Véhicule";
+	$fieldToolTipsfuelmaster_Chart["French"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["French"]["Economy"] = "Économie";
+	$fieldToolTipsfuelmaster_Chart["French"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["French"]["Id"] = "Id";
+	$fieldToolTipsfuelmaster_Chart["French"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["French"]["Economy_1"] = "Économie";
+	$fieldToolTipsfuelmaster_Chart["French"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsfuelmaster_Chart["French"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["French"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsfuelmaster_Chart["German"] = array();
+	$fieldToolTipsfuelmaster_Chart["German"] = array();
+	$pageTitlesfuelmaster_Chart["German"] = array();
+	$fieldLabelsfuelmaster_Chart["German"]["FuelDate"] = "Kraftstoffdatum";
+	$fieldToolTipsfuelmaster_Chart["German"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["German"]["Vehicle"] = "Fahrzeug";
+	$fieldToolTipsfuelmaster_Chart["German"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["German"]["Economy"] = "Wirtschaft";
+	$fieldToolTipsfuelmaster_Chart["German"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["German"]["Id"] = "Ich würde";
+	$fieldToolTipsfuelmaster_Chart["German"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["German"]["Economy_1"] = "Wirtschaft";
+	$fieldToolTipsfuelmaster_Chart["German"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsfuelmaster_Chart["German"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["German"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsfuelmaster_Chart["Italian"] = array();
+	$fieldToolTipsfuelmaster_Chart["Italian"] = array();
+	$pageTitlesfuelmaster_Chart["Italian"] = array();
+	$fieldLabelsfuelmaster_Chart["Italian"]["FuelDate"] = "Data Fuel";
+	$fieldToolTipsfuelmaster_Chart["Italian"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["Italian"]["Vehicle"] = "Veicolo";
+	$fieldToolTipsfuelmaster_Chart["Italian"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["Italian"]["Economy"] = "Economia";
+	$fieldToolTipsfuelmaster_Chart["Italian"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["Italian"]["Id"] = "Id";
+	$fieldToolTipsfuelmaster_Chart["Italian"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["Italian"]["Economy_1"] = "Economia";
+	$fieldToolTipsfuelmaster_Chart["Italian"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsfuelmaster_Chart["Italian"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["Italian"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsfuelmaster_Chart["Russian"] = array();
+	$fieldToolTipsfuelmaster_Chart["Russian"] = array();
+	$pageTitlesfuelmaster_Chart["Russian"] = array();
+	$fieldLabelsfuelmaster_Chart["Russian"]["FuelDate"] = "??????? ????";
+	$fieldToolTipsfuelmaster_Chart["Russian"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["Russian"]["Vehicle"] = "???????? ????????????";
+	$fieldToolTipsfuelmaster_Chart["Russian"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["Russian"]["Economy"] = "?????????";
+	$fieldToolTipsfuelmaster_Chart["Russian"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["Russian"]["Id"] = "? ??";
+	$fieldToolTipsfuelmaster_Chart["Russian"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["Russian"]["Economy_1"] = "?????????";
+	$fieldToolTipsfuelmaster_Chart["Russian"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["Russian"]["Fleet"] = "????";
+	$fieldToolTipsfuelmaster_Chart["Russian"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["Russian"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsfuelmaster_Chart["Spanish"] = array();
+	$fieldToolTipsfuelmaster_Chart["Spanish"] = array();
+	$pageTitlesfuelmaster_Chart["Spanish"] = array();
+	$fieldLabelsfuelmaster_Chart["Spanish"]["FuelDate"] = "Fecha del combustible";
+	$fieldToolTipsfuelmaster_Chart["Spanish"]["FuelDate"] = "";
+	$fieldLabelsfuelmaster_Chart["Spanish"]["Vehicle"] = "Vehículo";
+	$fieldToolTipsfuelmaster_Chart["Spanish"]["Vehicle"] = "";
+	$fieldLabelsfuelmaster_Chart["Spanish"]["Economy"] = "Economía";
+	$fieldToolTipsfuelmaster_Chart["Spanish"]["Economy"] = "";
+	$fieldLabelsfuelmaster_Chart["Spanish"]["Id"] = "Carné de identidad";
+	$fieldToolTipsfuelmaster_Chart["Spanish"]["Id"] = "";
+	$fieldLabelsfuelmaster_Chart["Spanish"]["Economy_1"] = "Economía";
+	$fieldToolTipsfuelmaster_Chart["Spanish"]["Economy_1"] = "";
+	$fieldLabelsfuelmaster_Chart["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsfuelmaster_Chart["Spanish"]["Fleet"] = "";
+	if (count($fieldToolTipsfuelmaster_Chart["Spanish"]))
+		$tdatafuelmaster_Chart[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsfuelmaster_Chart[""] = array();
@@ -89,6 +249,9 @@ $tdatafuelmaster_Chart[".afterAddActionDetTable"] = "";
 
 $tdatafuelmaster_Chart[".list"] = true;
 
+
+
+
 $tdatafuelmaster_Chart[".inlineAdd"] = true;
 
 
@@ -96,6 +259,14 @@ $tdatafuelmaster_Chart[".inlineAdd"] = true;
 
 
 $tdatafuelmaster_Chart[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatafuelmaster_Chart[".allowShowHideFields"] = false;
+//
+
+// Allow Fields Reordering in GRID
+$tdatafuelmaster_Chart[".allowFieldsReordering"] = false;
+//
 
 // search Saving settings
 $tdatafuelmaster_Chart[".searchSaving"] = false;
@@ -282,6 +453,13 @@ $tdatafuelmaster_Chart[".inlineEditFields"][] = "Vehicle";
 $tdatafuelmaster_Chart[".inlineEditFields"][] = "Economy";
 $tdatafuelmaster_Chart[".inlineEditFields"][] = "Fleet";
 
+$tdatafuelmaster_Chart[".updateSelectedFields"] = array();
+$tdatafuelmaster_Chart[".updateSelectedFields"][] = "FuelDate";
+$tdatafuelmaster_Chart[".updateSelectedFields"][] = "Vehicle";
+$tdatafuelmaster_Chart[".updateSelectedFields"][] = "Economy";
+$tdatafuelmaster_Chart[".updateSelectedFields"][] = "Fleet";
+
+
 $tdatafuelmaster_Chart[".exportFields"] = array();
 $tdatafuelmaster_Chart[".exportFields"][] = "FuelDate";
 $tdatafuelmaster_Chart[".exportFields"][] = "Vehicle";
@@ -329,6 +507,9 @@ $tdatafuelmaster_Chart[".printFields"][] = "Fleet";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -457,6 +638,9 @@ $tdatafuelmaster_Chart[".printFields"][] = "Fleet";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -616,6 +800,9 @@ $tdatafuelmaster_Chart[".printFields"][] = "Fleet";
 
 		$fdata["bInlineEdit"] = true;
 
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 	
@@ -730,6 +917,8 @@ $tdatafuelmaster_Chart[".printFields"][] = "Fleet";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -854,6 +1043,8 @@ $tdatafuelmaster_Chart[".printFields"][] = "Fleet";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -982,6 +1173,9 @@ $tdatafuelmaster_Chart[".printFields"][] = "Fleet";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 

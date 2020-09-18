@@ -34,6 +34,166 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsmaintenenace_Chart["English"]))
 		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsmaintenenace_Chart["Afrikaans"] = array();
+	$fieldToolTipsmaintenenace_Chart["Afrikaans"] = array();
+	$pageTitlesmaintenenace_Chart["Afrikaans"] = array();
+	$fieldLabelsmaintenenace_Chart["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsmaintenenace_Chart["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["Afrikaans"]["Vehicle"] = "voertuig";
+	$fieldToolTipsmaintenenace_Chart["Afrikaans"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["Afrikaans"]["Cost"] = "koste";
+	$fieldToolTipsmaintenenace_Chart["Afrikaans"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["Afrikaans"]["Date"] = "datum";
+	$fieldToolTipsmaintenenace_Chart["Afrikaans"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["Afrikaans"]["MaintType"] = "maint Tipe";
+	$fieldToolTipsmaintenenace_Chart["Afrikaans"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["Afrikaans"]["Cost_1"] = "koste";
+	$fieldToolTipsmaintenenace_Chart["Afrikaans"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["Afrikaans"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsmaintenenace_Chart["Arabic"] = array();
+	$fieldToolTipsmaintenenace_Chart["Arabic"] = array();
+	$pageTitlesmaintenenace_Chart["Arabic"] = array();
+	$fieldLabelsmaintenenace_Chart["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsmaintenenace_Chart["Arabic"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["Arabic"]["Vehicle"] = "?????";
+	$fieldToolTipsmaintenenace_Chart["Arabic"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["Arabic"]["Cost"] = "????";
+	$fieldToolTipsmaintenenace_Chart["Arabic"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["Arabic"]["Date"] = "?????";
+	$fieldToolTipsmaintenenace_Chart["Arabic"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["Arabic"]["MaintType"] = "??? ???????";
+	$fieldToolTipsmaintenenace_Chart["Arabic"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["Arabic"]["Cost_1"] = "????";
+	$fieldToolTipsmaintenenace_Chart["Arabic"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["Arabic"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsmaintenenace_Chart["Chinese"] = array();
+	$fieldToolTipsmaintenenace_Chart["Chinese"] = array();
+	$pageTitlesmaintenenace_Chart["Chinese"] = array();
+	$fieldLabelsmaintenenace_Chart["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsmaintenenace_Chart["Chinese"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["Chinese"]["Vehicle"] = "??";
+	$fieldToolTipsmaintenenace_Chart["Chinese"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["Chinese"]["Cost"] = "??";
+	$fieldToolTipsmaintenenace_Chart["Chinese"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["Chinese"]["Date"] = "??";
+	$fieldToolTipsmaintenenace_Chart["Chinese"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["Chinese"]["MaintType"] = "????";
+	$fieldToolTipsmaintenenace_Chart["Chinese"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["Chinese"]["Cost_1"] = "??";
+	$fieldToolTipsmaintenenace_Chart["Chinese"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["Chinese"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsmaintenenace_Chart["French"] = array();
+	$fieldToolTipsmaintenenace_Chart["French"] = array();
+	$pageTitlesmaintenenace_Chart["French"] = array();
+	$fieldLabelsmaintenenace_Chart["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsmaintenenace_Chart["French"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["French"]["Vehicle"] = "Véhicule";
+	$fieldToolTipsmaintenenace_Chart["French"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["French"]["Cost"] = "Coût";
+	$fieldToolTipsmaintenenace_Chart["French"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["French"]["Date"] = "date";
+	$fieldToolTipsmaintenenace_Chart["French"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["French"]["MaintType"] = "Type d'entretien";
+	$fieldToolTipsmaintenenace_Chart["French"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["French"]["Cost_1"] = "Coût";
+	$fieldToolTipsmaintenenace_Chart["French"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["French"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsmaintenenace_Chart["German"] = array();
+	$fieldToolTipsmaintenenace_Chart["German"] = array();
+	$pageTitlesmaintenenace_Chart["German"] = array();
+	$fieldLabelsmaintenenace_Chart["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsmaintenenace_Chart["German"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["German"]["Vehicle"] = "Fahrzeug";
+	$fieldToolTipsmaintenenace_Chart["German"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["German"]["Cost"] = "Kosten";
+	$fieldToolTipsmaintenenace_Chart["German"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["German"]["Date"] = "Datum";
+	$fieldToolTipsmaintenenace_Chart["German"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["German"]["MaintType"] = "Maint Type";
+	$fieldToolTipsmaintenenace_Chart["German"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["German"]["Cost_1"] = "Kosten";
+	$fieldToolTipsmaintenenace_Chart["German"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["German"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsmaintenenace_Chart["Italian"] = array();
+	$fieldToolTipsmaintenenace_Chart["Italian"] = array();
+	$pageTitlesmaintenenace_Chart["Italian"] = array();
+	$fieldLabelsmaintenenace_Chart["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsmaintenenace_Chart["Italian"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["Italian"]["Vehicle"] = "Veicolo";
+	$fieldToolTipsmaintenenace_Chart["Italian"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["Italian"]["Cost"] = "Costo";
+	$fieldToolTipsmaintenenace_Chart["Italian"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["Italian"]["Date"] = "Data";
+	$fieldToolTipsmaintenenace_Chart["Italian"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["Italian"]["MaintType"] = "Tipo maint";
+	$fieldToolTipsmaintenenace_Chart["Italian"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["Italian"]["Cost_1"] = "Costo";
+	$fieldToolTipsmaintenenace_Chart["Italian"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["Italian"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsmaintenenace_Chart["Russian"] = array();
+	$fieldToolTipsmaintenenace_Chart["Russian"] = array();
+	$pageTitlesmaintenenace_Chart["Russian"] = array();
+	$fieldLabelsmaintenenace_Chart["Russian"]["Fleet"] = "????";
+	$fieldToolTipsmaintenenace_Chart["Russian"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["Russian"]["Vehicle"] = "???????? ????????????";
+	$fieldToolTipsmaintenenace_Chart["Russian"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["Russian"]["Cost"] = "?????????";
+	$fieldToolTipsmaintenenace_Chart["Russian"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["Russian"]["Date"] = "????";
+	$fieldToolTipsmaintenenace_Chart["Russian"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["Russian"]["MaintType"] = "????? ???";
+	$fieldToolTipsmaintenenace_Chart["Russian"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["Russian"]["Cost_1"] = "?????????";
+	$fieldToolTipsmaintenenace_Chart["Russian"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["Russian"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsmaintenenace_Chart["Spanish"] = array();
+	$fieldToolTipsmaintenenace_Chart["Spanish"] = array();
+	$pageTitlesmaintenenace_Chart["Spanish"] = array();
+	$fieldLabelsmaintenenace_Chart["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsmaintenenace_Chart["Spanish"]["Fleet"] = "";
+	$fieldLabelsmaintenenace_Chart["Spanish"]["Vehicle"] = "Vehículo";
+	$fieldToolTipsmaintenenace_Chart["Spanish"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace_Chart["Spanish"]["Cost"] = "Costo";
+	$fieldToolTipsmaintenenace_Chart["Spanish"]["Cost"] = "";
+	$fieldLabelsmaintenenace_Chart["Spanish"]["Date"] = "Fecha";
+	$fieldToolTipsmaintenenace_Chart["Spanish"]["Date"] = "";
+	$fieldLabelsmaintenenace_Chart["Spanish"]["MaintType"] = "Tipo de mantenimiento";
+	$fieldToolTipsmaintenenace_Chart["Spanish"]["MaintType"] = "";
+	$fieldLabelsmaintenenace_Chart["Spanish"]["Cost_1"] = "Costo";
+	$fieldToolTipsmaintenenace_Chart["Spanish"]["Cost_1"] = "";
+	if (count($fieldToolTipsmaintenenace_Chart["Spanish"]))
+		$tdatamaintenenace_Chart[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsmaintenenace_Chart[""] = array();
@@ -89,6 +249,9 @@ $tdatamaintenenace_Chart[".afterAddActionDetTable"] = "";
 
 $tdatamaintenenace_Chart[".list"] = true;
 
+
+
+
 $tdatamaintenenace_Chart[".inlineAdd"] = true;
 
 
@@ -96,6 +259,14 @@ $tdatamaintenenace_Chart[".inlineAdd"] = true;
 
 
 $tdatamaintenenace_Chart[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatamaintenenace_Chart[".allowShowHideFields"] = false;
+//
+
+// Allow Fields Reordering in GRID
+$tdatamaintenenace_Chart[".allowFieldsReordering"] = false;
+//
 
 // search Saving settings
 $tdatamaintenenace_Chart[".searchSaving"] = false;
@@ -286,6 +457,14 @@ $tdatamaintenenace_Chart[".inlineEditFields"][] = "Cost";
 $tdatamaintenenace_Chart[".inlineEditFields"][] = "Date";
 $tdatamaintenenace_Chart[".inlineEditFields"][] = "MaintType";
 
+$tdatamaintenenace_Chart[".updateSelectedFields"] = array();
+$tdatamaintenenace_Chart[".updateSelectedFields"][] = "Fleet";
+$tdatamaintenenace_Chart[".updateSelectedFields"][] = "Vehicle";
+$tdatamaintenenace_Chart[".updateSelectedFields"][] = "Cost";
+$tdatamaintenenace_Chart[".updateSelectedFields"][] = "Date";
+$tdatamaintenenace_Chart[".updateSelectedFields"][] = "MaintType";
+
+
 $tdatamaintenenace_Chart[".exportFields"] = array();
 $tdatamaintenenace_Chart[".exportFields"][] = "Fleet";
 $tdatamaintenenace_Chart[".exportFields"][] = "Vehicle";
@@ -333,6 +512,9 @@ $tdatamaintenenace_Chart[".printFields"][] = "Cost*1";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -485,6 +667,9 @@ $tdatamaintenenace_Chart[".printFields"][] = "Cost*1";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -640,6 +825,9 @@ $tdatamaintenenace_Chart[".printFields"][] = "Cost*1";
 
 		$fdata["bInlineEdit"] = true;
 
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 	
@@ -761,6 +949,9 @@ $tdatamaintenenace_Chart[".printFields"][] = "Cost*1";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -889,6 +1080,9 @@ $tdatamaintenenace_Chart[".printFields"][] = "Cost*1";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -1036,6 +1230,8 @@ $tdatamaintenenace_Chart[".printFields"][] = "Cost*1";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

@@ -659,6 +659,7 @@ class MenuItem
 		if( $this->openType == "NewWindow" )
 		{
 			$attrs["rel"] = "external";
+			$attrs["target"] = "_blank";
 			$attrs["link"] = "External";
 		}
 		

@@ -1081,7 +1081,7 @@ function getLastMonthDayNumber($year, $vMonth)
 		return 29;
 		
 	$mdays = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-	return $mdays[$month - 1];
+	return $mdays[$vMonth - 1];
 }
 
 function date2db( $time )

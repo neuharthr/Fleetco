@@ -43,7 +43,7 @@ function ExportExcelRecord($arrdata, $datatype, $numberRow, $objPHPExcel,$pageOb
 				continue;
 			if(!function_exists("imagecreatefromstring"))
 			{
-				$objASIndex->setCellValueByColumnAndRow($col,$numberRow+1,"LONG BINARY DATA - CANNOT BE DISPLAYED");
+				$objASIndex->setCellValueByColumnAndRow($col,$numberRow+1,mlang_message("LONG_BINARY"));
 				continue;
 			}
 			$error_handler = set_error_handler("empty_error_handler");

@@ -102,7 +102,7 @@ class RemindPasswordPage extends RunnerPage
 		
 		if( !$this->checkCaptcha() )
 		{
-			$this->message = "Invalid security code.";
+			$this->message = mlang_message("SEC_INVALID_CAPTCHA_CODE");
 			return false;
 		}
 						
@@ -122,7 +122,7 @@ class RemindPasswordPage extends RunnerPage
 		
 		if( !$tosearch || !$data )
 		{
-			$this->message = "User"." ".$this->userEmail." "."is not registered.";
+			$this->message = mlang_message("USER_NOREG1")." ".$this->userEmail." ".mlang_message("USER_NOREG2");
 			return false;
 		}
 		
@@ -152,18 +152,18 @@ class RemindPasswordPage extends RunnerPage
 		
 		$message = "";
 
-		$message.= "Password reminder"."\r\n";
-		$message.= "You asked to remind your username and password at"." ".$url."\r\n";
-		$message.= "Username".": ".$username."\r\n";
-		$message.= "Password".": ".$password."\r\n";
+		$message.= mlang_message("REMIND_MAIL1")."\r\n";
+		$message.= mlang_message("REMIND_MAIL2")." ".$url."\r\n";
+		$message.= mlang_message("USERNAME").": ".$username."\r\n";
+		$message.= mlang_message("PASSWORD").": ".$password."\r\n";
 		
-		$sentMailResults = runner_mail(array('to' => $email, 'subject' => "Password reminder", 'body' => $message));
+		$sentMailResults = runner_mail(array('to' => $email, 'subject' => mlang_message("REMIND_MAIL1"), 'body' => $message));
 
 		if( !$sentMailResults['mailed'] )
 		{
 			$this->message = $sentMailResults['message'];
 			if( !$this->message )
-				$this->message = "User"." ".$this->userEmail." "."is not registered.";
+				$this->message = mlang_message("USER_NOREG1")." ".$this->userEmail." ".mlang_message("USER_NOREG2");
 		}
 	
 		return $sentMailResults['mailed'];	

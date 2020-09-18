@@ -16,7 +16,105 @@ include(getabspath('classes/layout.php'));
 
 //	custom labels
 $custom_labels = array();
-$custom_labels["English"] = array();
+$custom_labels["Afrikaans"] = array();
+	$custom_labels["Afrikaans"]['M___INSURANCE'] = "M - Versekering Maatskappye";
+									$custom_labels["Afrikaans"]['FLEET'] = "Vloot";
+									$custom_labels["Afrikaans"]['SUPPLIERS'] = "M - Verskaffers";
+									$custom_labels["Afrikaans"]['STOCK_CODES'] = "M - Stock kodes";
+									$custom_labels["Afrikaans"]['FLEET_TYPES'] = "M - Vloot Tipes";
+									$custom_labels["Afrikaans"]['VEHICLE_TYPES'] = "Voertuig tipes - M";
+									$custom_labels["Afrikaans"]['SERVICE_TYPES'] = "M - Service Tipes";
+									$custom_labels["Afrikaans"]['FUEL_STATIONS'] = "M - vulstasies";
+									$custom_labels["Afrikaans"]['FUEL_PRICES'] = "M - Brandstof pryse";
+									$custom_labels["Afrikaans"]['RENEWALS'] = "M - Hernuwings";
+								$custom_labels["Arabic"] = array();
+		$custom_labels["Arabic"]['M___INSURANCE'] = "????? ??????? - M";
+									$custom_labels["Arabic"]['FLEET'] = "???????";
+									$custom_labels["Arabic"]['SUPPLIERS'] = "M - ????????";
+									$custom_labels["Arabic"]['STOCK_CODES'] = "???? ???????";
+									$custom_labels["Arabic"]['FLEET_TYPES'] = "????? ???????";
+									$custom_labels["Arabic"]['VEHICLE_TYPES'] = "????? ???????? - M";
+									$custom_labels["Arabic"]['SERVICE_TYPES'] = "????? ??????";
+									$custom_labels["Arabic"]['FUEL_STATIONS'] = "M - ????? ??????";
+									$custom_labels["Arabic"]['FUEL_PRICES'] = "????? ?????? - M";
+									$custom_labels["Arabic"]['RENEWALS'] = "M - ???????";
+							$custom_labels["Chinese"] = array();
+			$custom_labels["Chinese"]['M___INSURANCE'] = "????";
+									$custom_labels["Chinese"]['FLEET'] = "??";
+									$custom_labels["Chinese"]['SUPPLIERS'] = "???";
+									$custom_labels["Chinese"]['STOCK_CODES'] = "????";
+									$custom_labels["Chinese"]['FLEET_TYPES'] = "????";
+									$custom_labels["Chinese"]['VEHICLE_TYPES'] = "????";
+									$custom_labels["Chinese"]['SERVICE_TYPES'] = "????";
+									$custom_labels["Chinese"]['FUEL_STATIONS'] = "???";
+									$custom_labels["Chinese"]['FUEL_PRICES'] = "????";
+									$custom_labels["Chinese"]['RENEWALS'] = "??";
+						$custom_labels["English"] = array();
+				$custom_labels["English"]['M___INSURANCE'] = "Insurance";
+									$custom_labels["English"]['FLEET'] = "Fleet";
+									$custom_labels["English"]['SUPPLIERS'] = "Suppliers";
+									$custom_labels["English"]['STOCK_CODES'] = "Stock Codes";
+									$custom_labels["English"]['FLEET_TYPES'] = "Fleet Types";
+									$custom_labels["English"]['VEHICLE_TYPES'] = "Vehicle Types";
+									$custom_labels["English"]['SERVICE_TYPES'] = "Service Types";
+									$custom_labels["English"]['FUEL_STATIONS'] = "Fuel Stations";
+									$custom_labels["English"]['FUEL_PRICES'] = "Fuel Prices";
+									$custom_labels["English"]['RENEWALS'] = "Renewals";
+					$custom_labels["French"] = array();
+					$custom_labels["French"]['M___INSURANCE'] = "Sociétés d'assurances";
+									$custom_labels["French"]['FLEET'] = "Flotte";
+									$custom_labels["French"]['SUPPLIERS'] = "Fournisseurs";
+									$custom_labels["French"]['STOCK_CODES'] = "Codes d'actions";
+									$custom_labels["French"]['FLEET_TYPES'] = "Types de flotte";
+									$custom_labels["French"]['VEHICLE_TYPES'] = "Types de véhicules";
+									$custom_labels["French"]['SERVICE_TYPES'] = "Types de service";
+									$custom_labels["French"]['FUEL_STATIONS'] = "Stations d'essence";
+									$custom_labels["French"]['FUEL_PRICES'] = "Prix du carburant";
+									$custom_labels["French"]['RENEWALS'] = "Renouvellements";
+				$custom_labels["German"] = array();
+						$custom_labels["German"]['M___INSURANCE'] = "Versicherungsgesellschaften";
+									$custom_labels["German"]['FLEET'] = "Flotte";
+									$custom_labels["German"]['SUPPLIERS'] = "Lieferanten";
+									$custom_labels["German"]['STOCK_CODES'] = "Lagerbestände";
+									$custom_labels["German"]['FLEET_TYPES'] = "Flottenarten";
+									$custom_labels["German"]['VEHICLE_TYPES'] = "Fahrzeugtypen";
+									$custom_labels["German"]['SERVICE_TYPES'] = "Dienstleistungsarten";
+									$custom_labels["German"]['FUEL_STATIONS'] = "Tankstelle";
+									$custom_labels["German"]['FUEL_PRICES'] = "Treibstoffpreise";
+									$custom_labels["German"]['RENEWALS'] = "Erneuerungen";
+			$custom_labels["Italian"] = array();
+							$custom_labels["Italian"]['M___INSURANCE'] = "Assicurazioni";
+									$custom_labels["Italian"]['FLEET'] = "Fleet";
+									$custom_labels["Italian"]['SUPPLIERS'] = "Fornitori";
+									$custom_labels["Italian"]['STOCK_CODES'] = "Codici degli stock";
+									$custom_labels["Italian"]['FLEET_TYPES'] = "Tipi Fleet";
+									$custom_labels["Italian"]['VEHICLE_TYPES'] = "Tipi di veicoli";
+									$custom_labels["Italian"]['SERVICE_TYPES'] = "Tipi di servizio";
+									$custom_labels["Italian"]['FUEL_STATIONS'] = "Stazioni di carburante";
+									$custom_labels["Italian"]['FUEL_PRICES'] = "I prezzi del carburante";
+									$custom_labels["Italian"]['RENEWALS'] = "Rinnovi";
+		$custom_labels["Russian"] = array();
+								$custom_labels["Russian"]['M___INSURANCE'] = "????????? ????????";
+									$custom_labels["Russian"]['FLEET'] = "Fleet";
+									$custom_labels["Russian"]['SUPPLIERS'] = "??????????";
+									$custom_labels["Russian"]['STOCK_CODES'] = "????-????";
+									$custom_labels["Russian"]['FLEET_TYPES'] = "???? ?????";
+									$custom_labels["Russian"]['VEHICLE_TYPES'] = "???? ???????????? ???????";
+									$custom_labels["Russian"]['SERVICE_TYPES'] = "???? Service";
+									$custom_labels["Russian"]['FUEL_STATIONS'] = "??????????? ???????";
+									$custom_labels["Russian"]['FUEL_PRICES'] = "???? ?? ???????";
+									$custom_labels["Russian"]['RENEWALS'] = "?????????";
+	$custom_labels["Spanish"] = array();
+									$custom_labels["Spanish"]['M___INSURANCE'] = "Compañías de Seguros";
+									$custom_labels["Spanish"]['FLEET'] = "Flota";
+									$custom_labels["Spanish"]['SUPPLIERS'] = "Proveedores";
+									$custom_labels["Spanish"]['STOCK_CODES'] = "Códigos de Acciones";
+									$custom_labels["Spanish"]['FLEET_TYPES'] = "Tipos de Flota";
+									$custom_labels["Spanish"]['VEHICLE_TYPES'] = "Tipos de vehículos";
+									$custom_labels["Spanish"]['SERVICE_TYPES'] = "Tipos de Servicio";
+									$custom_labels["Spanish"]['FUEL_STATIONS'] = "Estaciones de Combustible";
+									$custom_labels["Spanish"]['FUEL_PRICES'] = "M - Precios de los combustibles";
+									$custom_labels["Spanish"]['RENEWALS'] = "Renovaciones";
 
 define('NOT_TABLE_BASED_TNAME', ".global");
 
@@ -160,6 +258,9 @@ define("EDIT_SIMPLE",0); 	//	standalone Edit page
 define("EDIT_INLINE",1);	//	inlineEdit
 define("EDIT_POPUP",3);		//	edit page in popup
 define("EDIT_DASHBOARD",4);	//	edit page in dashboard
+define("EDIT_SELECTED_SIMPLE",5);
+define("EDIT_SELECTED_POPUP",6);
+
 
 //	View page modes
 define("VIEW_SIMPLE",0); 	//	standalone View page
@@ -393,6 +494,11 @@ define('MENU_VERTICAL', "v");
 define('MENU_HORIZONTAL', "h");
 define('MENU_QUICKJUMP', "q");
 
+// paramsLogger types
+define('SSEARCH_PARAMS_TYPE', 1);
+define('CRESIZE_PARAMS_TYPE', 2);
+define('SHFIELDS_PARAMS_TYPE', 3);
+define('FORDER_PARAMS_TYPE', 4);
 
 $globalSettings = array();
 $globalSettings["nLoginForm"] = 2;
@@ -402,10 +508,24 @@ $globalSettings["nLoginMethod"] = 1;
 $globalSettings["popupPagesLayoutNames"] = array();
 						
 	;
-$globalSettings["popupPagesLayoutNames"]["login"] = "login";
+$globalSettings["popupPagesLayoutNames"]["login"] = "login_bootstrap";
 						
 	;
-$globalSettings["popupPagesLayoutNames"]["remind"] = "remind";
+$globalSettings["popupPagesLayoutNames"]["remind"] = "remind_bootstrap";
+
+//mail settings
+$globalSettings["useBuiltInMailer"] = true;
+
+$globalSettings["useCustomSMTPSettings"] = false;
+
+$globalSettings["strSMTPUser"] = "";
+$globalSettings["strSMTPServer"] = "localhost";
+$globalSettings["strSMTPPort"] = "25";
+$globalSettings["strSMTPPassword"] = "";
+$globalSettings["strFromEmail"] = "info@dplcom.com";
+
+$globalSettings["useSSL"] = false;
+//
 
 
 $ajaxSearchStartsWith = true;
@@ -415,20 +535,27 @@ $globalSettings["isDynamicPerm"] = true;
 
 
 
-$globalSettings["LandingPageType"] = 0;
+$globalSettings["LandingPageType"] = 1;
 $globalSettings["LandingTable"] = "";
-$globalSettings["LandingPage"] = "";
-$globalSettings["LandingURL"] = "";
+$globalSettings["LandingPage"] = "login";
+$globalSettings["LandingURL"] = "login.php";
 
 $globalSettings["ProjectLogo"] = array();
-$globalSettings["ProjectLogo"]["English"] = "carrier";
+$globalSettings["ProjectLogo"]["Afrikaans"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["Arabic"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["Chinese"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["English"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["French"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["German"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["Italian"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["Russian"] = "FLEETCO";
+$globalSettings["ProjectLogo"]["Spanish"] = "FLEETCO";
 
 $globalSettings["createLoginPage"] = true;
 
 $globalSettings["apiGoogleMapsCode"] = "";
 
 
-$globalSettings["useBuiltInMailer"] = true;
 
 //password global settings for register page
 $globalSettings["pwdStrong"] = true;
@@ -530,6 +657,12 @@ $menuSelector["id"] = "welcome_page";
 $menuSelector["name"] = "welcome_page";
 $menuSelector["horizontal"] = "0";
 $menuAssignments[] = $menuSelector;
+$menuSelector = array();
+$menuSelector["page"] = "welcome_page";
+$menuSelector["id"] = "welcome_page";
+$menuSelector["name"] = "welcome_page";
+$menuSelector["horizontal"] = "0";
+$menuAssignments[] = $menuSelector;
 
 $menuStyles = array();
 
@@ -537,10 +670,10 @@ $menuTreelikeFlags = array();
 $menuTreelikeFlags["main"] = 0;
 
 $menuDrillDownFlags = array();
-$menuDrillDownFlags["main"] = 0;
+$menuDrillDownFlags["main"] = 1;
 
 $menuTreelikeFlags["welcome_page"] = 0;
-$menuDrillDownFlags["welcome_page"] = 0;
+$menuDrillDownFlags["welcome_page"] = 1;
 
 
 
@@ -591,11 +724,370 @@ $tableCaptions["English"]["creategrn_disposal_rebuild"] = "Rebuild Tyre Disposal
 $tableCaptions["English"]["inventorymaster_pricing1"] = "Inventorymaster-pricing1";
 $tableCaptions["English"]["inventorymaster_pricing5"] = "Inventorymaster-pricing5";
 $tableCaptions["English"]["fuelmaster_Chart"] = "Fuelmaster Chart";
-$tableCaptions["English"]["maintenenace_Chart"] = "Maintenenace Chart";
+$tableCaptions["English"]["maintenenace_Chart"] = "Maintenance Chart";
+$tableCaptions["Afrikaans"] = array();
+$tableCaptions["Afrikaans"][""] = "";
+$tableCaptions["Afrikaans"]["inventorymaster"] = "M - Stock kodes";
+$tableCaptions["Afrikaans"]["creategrn"] = "Stock Movement";
+$tableCaptions["Afrikaans"]["vehiclemaster"] = "M - Vloot";
+$tableCaptions["Afrikaans"]["creategrn_issue"] = "Stock Kwessies";
+$tableCaptions["Afrikaans"]["inventorymaster_qty"] = "M - Inventaris Meester Sub";
+$tableCaptions["Afrikaans"]["creategrn_receive"] = "voorraadaankope";
+$tableCaptions["Afrikaans"]["fuelmaster"] = "brandstof Records";
+$tableCaptions["Afrikaans"]["suppliermaster"] = "M - Verskaffers";
+$tableCaptions["Afrikaans"]["accidents"] = "ongeluk Records";
+$tableCaptions["Afrikaans"]["maintenenace"] = "Onderhoud Records";
+$tableCaptions["Afrikaans"]["fleettype"] = "M - Vloot Tipes";
+$tableCaptions["Afrikaans"]["fuelprices"] = "M - Brandstof pryse";
+$tableCaptions["Afrikaans"]["fuelstationmaster"] = "M - vulstasies";
+$tableCaptions["Afrikaans"]["vehicletype"] = "Voertuig tipes - M";
+$tableCaptions["Afrikaans"]["servicetypemaster"] = "M - Service Tipes";
+$tableCaptions["Afrikaans"]["insurance_payments"] = "versekering betalings";
+$tableCaptions["Afrikaans"]["insuranceclaims"] = "versekeringseise";
+$tableCaptions["Afrikaans"]["insurancecompany"] = "M - Versekering Maatskappye";
+$tableCaptions["Afrikaans"]["maintenenace_regularservice"] = "Gereelde instandhouding";
+$tableCaptions["Afrikaans"]["maintenenace_general_repair"] = "algemene Repair";
+$tableCaptions["Afrikaans"]["maintenenace_accident_repair"] = "ongeluk Repair";
+$tableCaptions["Afrikaans"]["vehiclemaster_report"] = "vloot Verslag";
+$tableCaptions["Afrikaans"]["accidents_report"] = "ongeluk Verslag";
+$tableCaptions["Afrikaans"]["admin_rights"] = "Admin Rights";
+$tableCaptions["Afrikaans"]["carrierusers"] = "gebruikers Bestuur";
+$tableCaptions["Afrikaans"]["admin_members"] = "Admin Lede";
+$tableCaptions["Afrikaans"]["admin_users"] = "Voeg gebruikers / Redigeer";
+$tableCaptions["Afrikaans"]["inventorymaster_pricing"] = "Inventorymaster-pryse";
+$tableCaptions["Afrikaans"]["creategrn_remove"] = "Tirus Removals";
+$tableCaptions["Afrikaans"]["creategrn_issuetorebuild"] = "Stuur op te bou";
+$tableCaptions["Afrikaans"]["creategrn_receiveafterrebuild"] = "herbou Ontvangste";
+$tableCaptions["Afrikaans"]["creategrn_issue_rebuilt"] = "herbou Kwessies";
+$tableCaptions["Afrikaans"]["fuelmaster_reports"] = "brandstof Verslag";
+$tableCaptions["Afrikaans"]["creategrn_stock_balance"] = "Stock Balans";
+$tableCaptions["Afrikaans"]["rnewalmastertable"] = "M - Hernuwings";
+$tableCaptions["Afrikaans"]["otherrenewal"] = "ander Hernuwings";
+$tableCaptions["Afrikaans"]["creategrn_disposal"] = "Verkope";
+$tableCaptions["Afrikaans"]["creategrn_remove_other"] = "verskuiwings";
+$tableCaptions["Afrikaans"]["creategrn_disposal_rebuild"] = "Herbou Tirus Verkope";
+$tableCaptions["Afrikaans"]["inventorymaster_pricing1"] = "Inventorymaster-pricing1";
+$tableCaptions["Afrikaans"]["inventorymaster_pricing5"] = "Inventorymaster-pricing5";
+$tableCaptions["Afrikaans"]["fuelmaster_Chart"] = "Fuelmaster Chart";
+$tableCaptions["Afrikaans"]["maintenenace_Chart"] = "Onderhoud Chart";
+$tableCaptions["Arabic"] = array();
+$tableCaptions["Arabic"][""] = "";
+$tableCaptions["Arabic"]["inventorymaster"] = "???? ??????? - M";
+$tableCaptions["Arabic"]["creategrn"] = "???? ??????";
+$tableCaptions["Arabic"]["vehiclemaster"] = "M - ???????";
+$tableCaptions["Arabic"]["creategrn_issue"] = "????? ??????? ???????";
+$tableCaptions["Arabic"]["inventorymaster_qty"] = "M - ??? ????? ???????";
+$tableCaptions["Arabic"]["creategrn_receive"] = "??????? ??????? ???????";
+$tableCaptions["Arabic"]["fuelmaster"] = "??????? ??????";
+$tableCaptions["Arabic"]["suppliermaster"] = "M - ????????";
+$tableCaptions["Arabic"]["accidents"] = "???? ???????";
+$tableCaptions["Arabic"]["maintenenace"] = "????? ???????";
+$tableCaptions["Arabic"]["fleettype"] = "????? ??????? - M";
+$tableCaptions["Arabic"]["fuelprices"] = "????? ?????? - M";
+$tableCaptions["Arabic"]["fuelstationmaster"] = "M - ????? ??????";
+$tableCaptions["Arabic"]["vehicletype"] = "????? ???????? - M";
+$tableCaptions["Arabic"]["servicetypemaster"] = "????? ?????? - M";
+$tableCaptions["Arabic"]["insurance_payments"] = "????????? ???????";
+$tableCaptions["Arabic"]["insuranceclaims"] = "??????? ???????";
+$tableCaptions["Arabic"]["insurancecompany"] = "????? ??????? - M";
+$tableCaptions["Arabic"]["maintenenace_regularservice"] = "????? ?????";
+$tableCaptions["Arabic"]["maintenenace_general_repair"] = "????? ?????";
+$tableCaptions["Arabic"]["maintenenace_accident_repair"] = "????? ???????";
+$tableCaptions["Arabic"]["vehiclemaster_report"] = "????? ?????";
+$tableCaptions["Arabic"]["accidents_report"] = "????? ????";
+$tableCaptions["Arabic"]["admin_rights"] = "???? ??????";
+$tableCaptions["Arabic"]["carrierusers"] = "?????????????";
+$tableCaptions["Arabic"]["admin_members"] = "??????? ??????";
+$tableCaptions["Arabic"]["admin_users"] = "????? / ????? ??????????";
+$tableCaptions["Arabic"]["inventorymaster_pricing"] = "Inventorymaster ?????";
+$tableCaptions["Arabic"]["creategrn_remove"] = "??? ???";
+$tableCaptions["Arabic"]["creategrn_issuetorebuild"] = "???? ??? ?????";
+$tableCaptions["Arabic"]["creategrn_receiveafterrebuild"] = "??????? ????? ??????";
+$tableCaptions["Arabic"]["creategrn_issue_rebuilt"] = "????? ????? ??????";
+$tableCaptions["Arabic"]["fuelmaster_reports"] = "????? ??????";
+$tableCaptions["Arabic"]["creategrn_stock_balance"] = "????? ??????";
+$tableCaptions["Arabic"]["rnewalmastertable"] = "M - ???????";
+$tableCaptions["Arabic"]["otherrenewal"] = "??????? ????";
+$tableCaptions["Arabic"]["creategrn_disposal"] = "??????";
+$tableCaptions["Arabic"]["creategrn_remove_other"] = "?????";
+$tableCaptions["Arabic"]["creategrn_disposal_rebuild"] = "????? ???? ??? ?????????";
+$tableCaptions["Arabic"]["inventorymaster_pricing1"] = "Inventorymaster-pricing1";
+$tableCaptions["Arabic"]["inventorymaster_pricing5"] = "Inventorymaster-pricing5";
+$tableCaptions["Arabic"]["fuelmaster_Chart"] = "Fuelmaster ????? ???????";
+$tableCaptions["Arabic"]["maintenenace_Chart"] = "???? ?????";
+$tableCaptions["Chinese"] = array();
+$tableCaptions["Chinese"][""] = "";
+$tableCaptions["Chinese"]["inventorymaster"] = "M????";
+$tableCaptions["Chinese"]["creategrn"] = "????";
+$tableCaptions["Chinese"]["vehiclemaster"] = "M - ??";
+$tableCaptions["Chinese"]["creategrn_issue"] = "????";
+$tableCaptions["Chinese"]["inventorymaster_qty"] = "M - ????";
+$tableCaptions["Chinese"]["creategrn_receive"] = "????";
+$tableCaptions["Chinese"]["fuelmaster"] = "????";
+$tableCaptions["Chinese"]["suppliermaster"] = "M - ???";
+$tableCaptions["Chinese"]["accidents"] = "????";
+$tableCaptions["Chinese"]["maintenenace"] = "????";
+$tableCaptions["Chinese"]["fleettype"] = "M - ????";
+$tableCaptions["Chinese"]["fuelprices"] = "M - ????";
+$tableCaptions["Chinese"]["fuelstationmaster"] = "M - ???";
+$tableCaptions["Chinese"]["vehicletype"] = "M - ????";
+$tableCaptions["Chinese"]["servicetypemaster"] = "M - ????";
+$tableCaptions["Chinese"]["insurance_payments"] = "????";
+$tableCaptions["Chinese"]["insuranceclaims"] = "????";
+$tableCaptions["Chinese"]["insurancecompany"] = "M - ????";
+$tableCaptions["Chinese"]["maintenenace_regularservice"] = "????";
+$tableCaptions["Chinese"]["maintenenace_general_repair"] = "????";
+$tableCaptions["Chinese"]["maintenenace_accident_repair"] = "????";
+$tableCaptions["Chinese"]["vehiclemaster_report"] = "????";
+$tableCaptions["Chinese"]["accidents_report"] = "????";
+$tableCaptions["Chinese"]["admin_rights"] = "?????";
+$tableCaptions["Chinese"]["carrierusers"] = "????";
+$tableCaptions["Chinese"]["admin_members"] = "???";
+$tableCaptions["Chinese"]["admin_users"] = "??/????";
+$tableCaptions["Chinese"]["inventorymaster_pricing"] = "???????";
+$tableCaptions["Chinese"]["creategrn_remove"] = "????";
+$tableCaptions["Chinese"]["creategrn_issuetorebuild"] = "?????";
+$tableCaptions["Chinese"]["creategrn_receiveafterrebuild"] = "????";
+$tableCaptions["Chinese"]["creategrn_issue_rebuilt"] = "????";
+$tableCaptions["Chinese"]["fuelmaster_reports"] = "????";
+$tableCaptions["Chinese"]["creategrn_stock_balance"] = "????";
+$tableCaptions["Chinese"]["rnewalmastertable"] = "M - ??";
+$tableCaptions["Chinese"]["otherrenewal"] = "????";
+$tableCaptions["Chinese"]["creategrn_disposal"] = "??";
+$tableCaptions["Chinese"]["creategrn_remove_other"] = "??";
+$tableCaptions["Chinese"]["creategrn_disposal_rebuild"] = "??????";
+$tableCaptions["Chinese"]["inventorymaster_pricing1"] = "Inventorymaster-pricing1";
+$tableCaptions["Chinese"]["inventorymaster_pricing5"] = "Inventorymaster-pricing5";
+$tableCaptions["Chinese"]["fuelmaster_Chart"] = "Fuelmaster??";
+$tableCaptions["Chinese"]["maintenenace_Chart"] = "???";
+$tableCaptions["French"] = array();
+$tableCaptions["French"][""] = "";
+$tableCaptions["French"]["inventorymaster"] = "M - Codes d'actions";
+$tableCaptions["French"]["creategrn"] = "Mouvement de stock";
+$tableCaptions["French"]["vehiclemaster"] = "M - Flotte";
+$tableCaptions["French"]["creategrn_issue"] = "Problèmes d'inventaire";
+$tableCaptions["French"]["inventorymaster_qty"] = "M - Inventaire Master Sub";
+$tableCaptions["French"]["creategrn_receive"] = "Achats de stock";
+$tableCaptions["French"]["fuelmaster"] = "Disques de carburant";
+$tableCaptions["French"]["suppliermaster"] = "M - Fournisseurs";
+$tableCaptions["French"]["accidents"] = "Dossiers d'accident";
+$tableCaptions["French"]["maintenenace"] = "Dossiers de maintenance";
+$tableCaptions["French"]["fleettype"] = "M - Types de flotte";
+$tableCaptions["French"]["fuelprices"] = "M - Prix du carburant";
+$tableCaptions["French"]["fuelstationmaster"] = "M - Stations d'essence";
+$tableCaptions["French"]["vehicletype"] = "M - Types de véhicules";
+$tableCaptions["French"]["servicetypemaster"] = "M - Types de service";
+$tableCaptions["French"]["insurance_payments"] = "Paiements d'assurance";
+$tableCaptions["French"]["insuranceclaims"] = "Les réclamations d'assurance";
+$tableCaptions["French"]["insurancecompany"] = "M - Sociétés d'assurances";
+$tableCaptions["French"]["maintenenace_regularservice"] = "Maintenance régulière";
+$tableCaptions["French"]["maintenenace_general_repair"] = "Réparation générale";
+$tableCaptions["French"]["maintenenace_accident_repair"] = "Réparation d'accident";
+$tableCaptions["French"]["vehiclemaster_report"] = "Rapport sur la flotte";
+$tableCaptions["French"]["accidents_report"] = "Rapport d'accident";
+$tableCaptions["French"]["admin_rights"] = "Droits administratifs";
+$tableCaptions["French"]["carrierusers"] = "Gestion des utilisateurs";
+$tableCaptions["French"]["admin_members"] = "Membres Admin";
+$tableCaptions["French"]["admin_users"] = "Ajouter / Modifier des utilisateurs";
+$tableCaptions["French"]["inventorymaster_pricing"] = "Prix ??d'inventaire";
+$tableCaptions["French"]["creategrn_remove"] = "Déménagement";
+$tableCaptions["French"]["creategrn_issuetorebuild"] = "Envoyer à la reconstruction";
+$tableCaptions["French"]["creategrn_receiveafterrebuild"] = "Recouvrement des reçus";
+$tableCaptions["French"]["creategrn_issue_rebuilt"] = "Problèmes de reconstruction";
+$tableCaptions["French"]["fuelmaster_reports"] = "Rapport carburant";
+$tableCaptions["French"]["creategrn_stock_balance"] = "Balance des stocks";
+$tableCaptions["French"]["rnewalmastertable"] = "M - Renouvellements";
+$tableCaptions["French"]["otherrenewal"] = "Autres Renouvellements";
+$tableCaptions["French"]["creategrn_disposal"] = "Cessions";
+$tableCaptions["French"]["creategrn_remove_other"] = "Déménagements";
+$tableCaptions["French"]["creategrn_disposal_rebuild"] = "Reconstruction des pneus";
+$tableCaptions["French"]["inventorymaster_pricing1"] = "Prix ??d'inventaire1";
+$tableCaptions["French"]["inventorymaster_pricing5"] = "Prix ??d'inventaire-prix5";
+$tableCaptions["French"]["fuelmaster_Chart"] = "Graphique Fuelmaster";
+$tableCaptions["French"]["maintenenace_Chart"] = "Tableau d'entretien";
+$tableCaptions["German"] = array();
+$tableCaptions["German"][""] = "";
+$tableCaptions["German"]["inventorymaster"] = "M - Lagerbestände";
+$tableCaptions["German"]["creategrn"] = "Aktienbewegung";
+$tableCaptions["German"]["vehiclemaster"] = "M - Flotte";
+$tableCaptions["German"]["creategrn_issue"] = "Aktienemissionen";
+$tableCaptions["German"]["inventorymaster_qty"] = "M - Inventur Master Unter";
+$tableCaptions["German"]["creategrn_receive"] = "Aktienkäufe";
+$tableCaptions["German"]["fuelmaster"] = "Kraftstoffaufzeichnungen";
+$tableCaptions["German"]["suppliermaster"] = "M - Lieferanten";
+$tableCaptions["German"]["accidents"] = "Unfallaufzeichnungen";
+$tableCaptions["German"]["maintenenace"] = "Wartungsaufzeichnungen";
+$tableCaptions["German"]["fleettype"] = "M - Flottenarten";
+$tableCaptions["German"]["fuelprices"] = "M - Treibstoffpreise";
+$tableCaptions["German"]["fuelstationmaster"] = "M - Tankstelle";
+$tableCaptions["German"]["vehicletype"] = "M - Fahrzeugtypen";
+$tableCaptions["German"]["servicetypemaster"] = "M - Dienstleistungsarten";
+$tableCaptions["German"]["insurance_payments"] = "Versicherungsleistungen";
+$tableCaptions["German"]["insuranceclaims"] = "Versicherungsansprüche";
+$tableCaptions["German"]["insurancecompany"] = "M - Versicherungsgesellschaften";
+$tableCaptions["German"]["maintenenace_regularservice"] = "Routinewartung";
+$tableCaptions["German"]["maintenenace_general_repair"] = "Allgemeine Reparatur";
+$tableCaptions["German"]["maintenenace_accident_repair"] = "Unfallreparatur";
+$tableCaptions["German"]["vehiclemaster_report"] = "Flottenbericht";
+$tableCaptions["German"]["accidents_report"] = "Unfallbericht";
+$tableCaptions["German"]["admin_rights"] = "Admin-Rechte";
+$tableCaptions["German"]["carrierusers"] = "Benutzerverwaltung";
+$tableCaptions["German"]["admin_members"] = "Admin Mitglieder";
+$tableCaptions["German"]["admin_users"] = "Benutzer hinzufügen / bearbeiten";
+$tableCaptions["German"]["inventorymaster_pricing"] = "InventoryMaster-Preisgestaltung";
+$tableCaptions["German"]["creategrn_remove"] = "Reifenumzüge";
+$tableCaptions["German"]["creategrn_issuetorebuild"] = "Senden an Rebuild";
+$tableCaptions["German"]["creategrn_receiveafterrebuild"] = "Rebuilt Quittungen";
+$tableCaptions["German"]["creategrn_issue_rebuilt"] = "Rebuilt Probleme";
+$tableCaptions["German"]["fuelmaster_reports"] = "Kraftstoff-Bericht";
+$tableCaptions["German"]["creategrn_stock_balance"] = "Aktienbilanz";
+$tableCaptions["German"]["rnewalmastertable"] = "M - Erneuerungen";
+$tableCaptions["German"]["otherrenewal"] = "Sonstige Erneuerungen";
+$tableCaptions["German"]["creategrn_disposal"] = "Entsorgung";
+$tableCaptions["German"]["creategrn_remove_other"] = "Umzüge";
+$tableCaptions["German"]["creategrn_disposal_rebuild"] = "Wiederaufbauen von Reifenabfällen";
+$tableCaptions["German"]["inventorymaster_pricing1"] = "Inventorymaster-Preise1";
+$tableCaptions["German"]["inventorymaster_pricing5"] = "Inventorymaster-Preisgestaltung5";
+$tableCaptions["German"]["fuelmaster_Chart"] = "Fuelmaster-Diagramm";
+$tableCaptions["German"]["maintenenace_Chart"] = "Wartungsdiagramm";
+$tableCaptions["Italian"] = array();
+$tableCaptions["Italian"][""] = "";
+$tableCaptions["Italian"]["inventorymaster"] = "Codici degli stock - M";
+$tableCaptions["Italian"]["creategrn"] = "Movimento della";
+$tableCaptions["Italian"]["vehiclemaster"] = "M - Fleet";
+$tableCaptions["Italian"]["creategrn_issue"] = "Problemi di magazzino";
+$tableCaptions["Italian"]["inventorymaster_qty"] = "M - Inventory Master Sub";
+$tableCaptions["Italian"]["creategrn_receive"] = "acquisti stock";
+$tableCaptions["Italian"]["fuelmaster"] = "Records di carburante";
+$tableCaptions["Italian"]["suppliermaster"] = "M - Fornitori";
+$tableCaptions["Italian"]["accidents"] = "Incidente Records";
+$tableCaptions["Italian"]["maintenenace"] = "manutenzione Records";
+$tableCaptions["Italian"]["fleettype"] = "Tipi Fleet - M";
+$tableCaptions["Italian"]["fuelprices"] = "I prezzi del carburante - M";
+$tableCaptions["Italian"]["fuelstationmaster"] = "M - Stazioni di carburante";
+$tableCaptions["Italian"]["vehicletype"] = "Tipi di veicoli - M";
+$tableCaptions["Italian"]["servicetypemaster"] = "Tipi di servizio - M";
+$tableCaptions["Italian"]["insurance_payments"] = "indennità di assicurazione";
+$tableCaptions["Italian"]["insuranceclaims"] = "crediti di assicurazione";
+$tableCaptions["Italian"]["insurancecompany"] = "Assicurazioni - M";
+$tableCaptions["Italian"]["maintenenace_regularservice"] = "Manutenzione regolare";
+$tableCaptions["Italian"]["maintenenace_general_repair"] = "Riparazione generale";
+$tableCaptions["Italian"]["maintenenace_accident_repair"] = "riparazione dopo incidente";
+$tableCaptions["Italian"]["vehiclemaster_report"] = "Fleet Rapporto";
+$tableCaptions["Italian"]["accidents_report"] = "Denuncia di infortunio";
+$tableCaptions["Italian"]["admin_rights"] = "Diritti Admin";
+$tableCaptions["Italian"]["carrierusers"] = "Gestione utenti";
+$tableCaptions["Italian"]["admin_members"] = "Utenti Admin";
+$tableCaptions["Italian"]["admin_users"] = "Aggiungere gli utenti / Modifica";
+$tableCaptions["Italian"]["inventorymaster_pricing"] = "Inventorymaster-prezzi";
+$tableCaptions["Italian"]["creategrn_remove"] = "pneumatici Traslochi";
+$tableCaptions["Italian"]["creategrn_issuetorebuild"] = "Invia ricostruire";
+$tableCaptions["Italian"]["creategrn_receiveafterrebuild"] = "Ricevute ricostruiti";
+$tableCaptions["Italian"]["creategrn_issue_rebuilt"] = "Problemi ricostruiti";
+$tableCaptions["Italian"]["fuelmaster_reports"] = "Relazione del carburante";
+$tableCaptions["Italian"]["creategrn_stock_balance"] = "della Balance";
+$tableCaptions["Italian"]["rnewalmastertable"] = "M - Rinnovi";
+$tableCaptions["Italian"]["otherrenewal"] = "altri Rinnovi";
+$tableCaptions["Italian"]["creategrn_disposal"] = "Alienazioni";
+$tableCaptions["Italian"]["creategrn_remove_other"] = "Traslochi";
+$tableCaptions["Italian"]["creategrn_disposal_rebuild"] = "Ricostruire pneumatici Alienazioni";
+$tableCaptions["Italian"]["inventorymaster_pricing1"] = "Inventorymaster-pricing1";
+$tableCaptions["Italian"]["inventorymaster_pricing5"] = "Inventorymaster-pricing5";
+$tableCaptions["Italian"]["fuelmaster_Chart"] = "Grafico FuelMaster";
+$tableCaptions["Italian"]["maintenenace_Chart"] = "Grafico Manutenzione";
+$tableCaptions["Russian"] = array();
+$tableCaptions["Russian"][""] = "";
+$tableCaptions["Russian"]["inventorymaster"] = "M - ????-????";
+$tableCaptions["Russian"]["creategrn"] = "???? ????????";
+$tableCaptions["Russian"]["vehiclemaster"] = "M - Fleet";
+$tableCaptions["Russian"]["creategrn_issue"] = "???????? ??";
+$tableCaptions["Russian"]["inventorymaster_qty"] = "M - ????????? Master Sub";
+$tableCaptions["Russian"]["creategrn_receive"] = "??????? ?????? ?????";
+$tableCaptions["Russian"]["fuelmaster"] = "????????? ??????";
+$tableCaptions["Russian"]["suppliermaster"] = "M - ??????????";
+$tableCaptions["Russian"]["accidents"] = "?????? ??????";
+$tableCaptions["Russian"]["maintenenace"] = "???????????? ???????????? ????????????";
+$tableCaptions["Russian"]["fleettype"] = "???? ????? - ?";
+$tableCaptions["Russian"]["fuelprices"] = "M - ???? ?? ???????";
+$tableCaptions["Russian"]["fuelstationmaster"] = "M - ??????????? ???????";
+$tableCaptions["Russian"]["vehicletype"] = "???? ???????????? ??????? - M";
+$tableCaptions["Russian"]["servicetypemaster"] = "???? Service - M";
+$tableCaptions["Russian"]["insurance_payments"] = "????????? ???????";
+$tableCaptions["Russian"]["insuranceclaims"] = "????????? ?????????";
+$tableCaptions["Russian"]["insurancecompany"] = "M - ????????? ????????";
+$tableCaptions["Russian"]["maintenenace_regularservice"] = "?????????? ??????????? ????????????";
+$tableCaptions["Russian"]["maintenenace_general_repair"] = "????? ??????";
+$tableCaptions["Russian"]["maintenenace_accident_repair"] = "?????? ??????";
+$tableCaptions["Russian"]["vehiclemaster_report"] = "Fleet Report";
+$tableCaptions["Russian"]["accidents_report"] = "????? ??????";
+$tableCaptions["Russian"]["admin_rights"] = "????? ??????????????";
+$tableCaptions["Russian"]["carrierusers"] = "?????????? ??????????????";
+$tableCaptions["Russian"]["admin_members"] = "?????????????? ????????????";
+$tableCaptions["Russian"]["admin_users"] = "???????? / ????????????? ?????????????";
+$tableCaptions["Russian"]["inventorymaster_pricing"] = "Inventorymaster ???????????????";
+$tableCaptions["Russian"]["creategrn_remove"] = "?????? ?????????";
+$tableCaptions["Russian"]["creategrn_issuetorebuild"] = "????????? Rebuild";
+$tableCaptions["Russian"]["creategrn_receiveafterrebuild"] = "??????????????? ?????????";
+$tableCaptions["Russian"]["creategrn_issue_rebuilt"] = "??????????????? ???????";
+$tableCaptions["Russian"]["fuelmaster_reports"] = "????????? ?????";
+$tableCaptions["Russian"]["creategrn_stock_balance"] = "???? ??????";
+$tableCaptions["Russian"]["rnewalmastertable"] = "M - ?????????";
+$tableCaptions["Russian"]["otherrenewal"] = "?????? ?????????";
+$tableCaptions["Russian"]["creategrn_disposal"] = "???????";
+$tableCaptions["Russian"]["creategrn_remove_other"] = "????????";
+$tableCaptions["Russian"]["creategrn_disposal_rebuild"] = "??????????? Tyre ???????";
+$tableCaptions["Russian"]["inventorymaster_pricing1"] = "Inventorymaster-pricing1";
+$tableCaptions["Russian"]["inventorymaster_pricing5"] = "Inventorymaster-pricing5";
+$tableCaptions["Russian"]["fuelmaster_Chart"] = "Fuelmaster ?????????";
+$tableCaptions["Russian"]["maintenenace_Chart"] = "?????? ???????????? ????????????";
+$tableCaptions["Spanish"] = array();
+$tableCaptions["Spanish"][""] = "";
+$tableCaptions["Spanish"]["inventorymaster"] = "M - Códigos de Acciones";
+$tableCaptions["Spanish"]["creategrn"] = "Movimiento de acciones";
+$tableCaptions["Spanish"]["vehiclemaster"] = "M - Flota";
+$tableCaptions["Spanish"]["creategrn_issue"] = "Cuestiones de stock";
+$tableCaptions["Spanish"]["inventorymaster_qty"] = "M - Inventario Master Sub";
+$tableCaptions["Spanish"]["creategrn_receive"] = "Compras de acciones";
+$tableCaptions["Spanish"]["fuelmaster"] = "Registros de combustible";
+$tableCaptions["Spanish"]["suppliermaster"] = "M - Proveedores";
+$tableCaptions["Spanish"]["accidents"] = "Registros de Accidentes";
+$tableCaptions["Spanish"]["maintenenace"] = "Registros de mantenimiento";
+$tableCaptions["Spanish"]["fleettype"] = "M - Tipos de Flota";
+$tableCaptions["Spanish"]["fuelprices"] = "M - Precios de los combustibles";
+$tableCaptions["Spanish"]["fuelstationmaster"] = "M - Estaciones de Combustible";
+$tableCaptions["Spanish"]["vehicletype"] = "M - Tipos de vehículos";
+$tableCaptions["Spanish"]["servicetypemaster"] = "M - Tipos de Servicio";
+$tableCaptions["Spanish"]["insurance_payments"] = "Pagos del seguro";
+$tableCaptions["Spanish"]["insuranceclaims"] = "Reclamos de seguro";
+$tableCaptions["Spanish"]["insurancecompany"] = "M - Compañías de Seguros";
+$tableCaptions["Spanish"]["maintenenace_regularservice"] = "Mantenimiento regular";
+$tableCaptions["Spanish"]["maintenenace_general_repair"] = "Reparación General";
+$tableCaptions["Spanish"]["maintenenace_accident_repair"] = "Reparación de Accidentes";
+$tableCaptions["Spanish"]["vehiclemaster_report"] = "Informe de flota";
+$tableCaptions["Spanish"]["accidents_report"] = "Reporte de accidente";
+$tableCaptions["Spanish"]["admin_rights"] = "Derechos de administrador";
+$tableCaptions["Spanish"]["carrierusers"] = "Gestión de usuarios";
+$tableCaptions["Spanish"]["admin_members"] = "Miembros de Admin";
+$tableCaptions["Spanish"]["admin_users"] = "Añadir / Editar usuarios";
+$tableCaptions["Spanish"]["inventorymaster_pricing"] = "Precios de inventario";
+$tableCaptions["Spanish"]["creategrn_remove"] = "Remoción de neumáticos";
+$tableCaptions["Spanish"]["creategrn_issuetorebuild"] = "Enviar a reconstruir";
+$tableCaptions["Spanish"]["creategrn_receiveafterrebuild"] = "Recibos reconstruidos";
+$tableCaptions["Spanish"]["creategrn_issue_rebuilt"] = "Problemas de reconstrucción";
+$tableCaptions["Spanish"]["fuelmaster_reports"] = "Informe de combustible";
+$tableCaptions["Spanish"]["creategrn_stock_balance"] = "Balance de acciones";
+$tableCaptions["Spanish"]["rnewalmastertable"] = "M - Renovaciones";
+$tableCaptions["Spanish"]["otherrenewal"] = "Otras Renovaciones";
+$tableCaptions["Spanish"]["creategrn_disposal"] = "Eliminaciones";
+$tableCaptions["Spanish"]["creategrn_remove_other"] = "Mudanzas";
+$tableCaptions["Spanish"]["creategrn_disposal_rebuild"] = "Reconstruir la eliminación de neumáticos";
+$tableCaptions["Spanish"]["inventorymaster_pricing1"] = "Precios de inventario1";
+$tableCaptions["Spanish"]["inventorymaster_pricing5"] = "Precios de inventario-precio5";
+$tableCaptions["Spanish"]["fuelmaster_Chart"] = "Gráfico de Fuelmaster";
+$tableCaptions["Spanish"]["maintenenace_Chart"] = "Cuadro de mantenimiento";
 $tableCaptions[""] = array();
 $tableCaptions[""][""] = "";
 $tableCaptions[""]["inventorymaster"] = "M - Stock Codes";
-$tableCaptions[""]["accidents"] = "Accident Records";
 
 
 $globalEvents = new class_GlobalEvents;
@@ -608,10 +1100,35 @@ $cman = new ConnectionManager();
 
 $mlang_defaultlang = getDefaultLanguage();
 
+include(getabspath("include/languages.php"));
 
 
 $page_titles[".global"] = array();
 if(mlang_getcurrentlang()=="English")
+{
+}
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+}
+if(mlang_getcurrentlang()=="French")
+{
+}
+if(mlang_getcurrentlang()=="German")
+{
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+}
+if(mlang_getcurrentlang()=="Spanish")
 {
 }
 if(mlang_getcurrentlang()=="")

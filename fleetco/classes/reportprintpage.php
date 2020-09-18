@@ -8,29 +8,29 @@ class ReportPrintPage extends ReportPage
 	public $splitAtServer = false;
 	public $splitByGroups = 0;
 	public $pages = array();
-	
+
 	public $arrPages = array();
-	
+
 	/**
-	 *	PDF rendering mode. 
+	 *	PDF rendering mode.
 	 *  empty - regular page display
 	 * 	"build" - build page and return PDF
 	 * 	"prepare" - build page and return HTML for browser post-processing
 	 *	"convert" - convert post-processed HTML to PDF
 	 */
 	public $pdfContent = "";
-	
-	
+
+
 	/**
 	 *
 	 */
 	public $pdfFitToPage = 1;
-	
+
 	/**
 	 *
 	 */
 	public $landscape = 0;
-	
+
 	/**
 	 *
 	 */
@@ -39,14 +39,14 @@ class ReportPrintPage extends ReportPage
 	public $isReportEmpty = false;
 
 	public $multipleDetails = false;
-	
-	function __construct(&$params) 
+
+	function __construct(&$params)
 	{
 		parent::__construct($params);
-		
+
 		$this->crossTable = $this->pSet->isCrossTabReport() ? 1 : 0;
 		$this->jsSettings['tableSettings'][ $this->tName ]['reportType'] = $this->crossTable;
-		
+
 
 		if(	$this->pdfMode )
 		{
@@ -56,7 +56,7 @@ class ReportPrintPage extends ReportPage
 				$this->splitAtServer = true;
 				$this->splitByGroups = $this->pSet->getReportPrintPDFGroupsPerPage();
 			}
-		
+
 		}
 		else if( $this->format == "excel" || $this->format == "word")
 		{
@@ -64,7 +64,7 @@ class ReportPrintPage extends ReportPage
 			$this->splitAtServer = false;
 			$this->splitByGroups = 0;
 		}
-		else 
+		else
 		{
 			//	print mode
 			if( $this->pSet->getReportPrintPartitionType() != 0 )
@@ -79,31 +79,36 @@ class ReportPrintPage extends ReportPage
 		{
 			$this->splitAtServer = false;
 			$this->splitByGroups = 0;
-		} 
-		
+		}
+
+		//	Before Process event
+		if( $this->eventsObject->exists("BeforeProcessReportPrint") )
+			$this->eventsObject->BeforeProcessReportPrint( $this );
+
+
 		if (isRTL())
 			$this->jsSettings['tableSettings'][ $this->tName ]['isRTL'] = true;
-		
+
 		$this->jsSettings['tableSettings'][ $this->tName ]['reportPrintPartitionType'] = $this->pSet->getReportPrintPartitionType();
-		$this->jsSettings['tableSettings'][ $this->tName ]['reportPrintGroupsPerPage'] = $this->pSet->getReportPrintGroupsPerPage();		
+		$this->jsSettings['tableSettings'][ $this->tName ]['reportPrintGroupsPerPage'] = $this->pSet->getReportPrintGroupsPerPage();
 		$this->jsSettings['tableSettings'][ $this->tName ]['reportPrintLayout'] = $this->pSet->getReportPrintLayout();
 		$this->jsSettings['tableSettings'][ $this->tName ]['lowGroup'] = $this->pSet->getLowGroup();
 
-		$this->jsSettings['tableSettings'][ $this->tName ]['printerPagePDF'] = $this->pSet->isPrinterPagePDF();			
+		$this->jsSettings['tableSettings'][ $this->tName ]['printerPagePDF'] = $this->pSet->isPrinterPagePDF();
 
 		$this->jsSettings['tableSettings'][$this->tName]['printerPageOrientation'] = $this->pSet->getPrinterPageOrientation();
 		$this->jsSettings['tableSettings'][$this->tName]['printerPageScale'] = $this->pSet->getPrinterPageScale();
 		$this->jsSettings['tableSettings'][$this->tName]['isPrinterPageFitToPage'] = $this->pSet->isPrinterPageFitToPage();
-		
+
 		if( $this->pSet->getReportPrintPartitionType() == 0 )
 			$this->jsSettings['tableSettings'][$this->tName]['printerSplitRecords'] = 0;
 		else
 			$this->jsSettings['tableSettings'][$this->tName]['printerSplitRecords'] = $this->pSet->getReportPrintGroupsPerPage();
-			
+
 		$this->jsSettings['tableSettings'][$this->tName]['printerPDFSplitRecords'] = $this->pSet->getReportPrintPDFGroupsPerPage();
 
 	}
-	
+
 	/**
 	 * @param String format
 	 * @param Boolean exportPDF
@@ -112,16 +117,16 @@ class ReportPrintPage extends ReportPage
 	{
 		if( $exportPDF )
 			$this->jsSettings['tableSettings'][ $this->tName ]['exportPdf'] = 1;
-		
+
 		if( !$this->pdfMode )
 			return;
-			
+
 		$this->landscape = $this->pSet->isLandscapePrinterPagePDFOrientation();
 		$this->pdfFitToPage = $this->crossTable ? 1 : $this->pSet->isPrinterPagePDFFitToPage();
-		
+
 		$this->pageWidth = PDF_PAGE_WIDTH;
 		$this->pageHeight = PDF_PAGE_HEIGHT;
-		
+
 		if( !$this->pdfFitToPage )
 		{
 			$PrinterPagePDFScale = $this->pSet->getPrinterPagePDFScale();
@@ -133,18 +138,18 @@ class ReportPrintPage extends ReportPage
 		$this->jsSettings['tableSettings'][ $this->tName ]['printerPageOrientation'] = $this->landscape;
 		$this->jsSettings['tableSettings'][ $this->tName ]['createPdf'] = 1;
 		$this->jsSettings['tableSettings'][ $this->tName ]['pdfFitToPage'] = $this->pdfFitToPage;
-		
+
 		if( $this->landscape )
 		{
 			$temp = $this->pageWidth;
 			$this->pageWidth = $this->pageHeight;
 			$this->pageHeight = $temp;
 		}
-		
+
 		$this->jsSettings['tableSettings'][ $this->tName ]['pageWidth'] = $this->pageWidth;
-		$this->jsSettings['tableSettings'][ $this->tName ]['pageHeight'] = $this->pageHeight;		
+		$this->jsSettings['tableSettings'][ $this->tName ]['pageHeight'] = $this->pageHeight;
 	}
-	
+
 	/**
 	 * @return Array
 	 */
@@ -153,15 +158,15 @@ class ReportPrintPage extends ReportPage
 		$extraParams = parent::getExtraReportParams();
 		if( !$this->crossTable )
 			$extraParams['mode'] = MODE_PRINT;
-		
-		return $extraParams;	
+
+		return $extraParams;
 	}
 
 	/**
 	 * A stub
 	 */
 	protected function getnoRecOnFirstPageWhereCondition()
-	{	
+	{
 		return "";
 	}
 
@@ -172,20 +177,20 @@ class ReportPrintPage extends ReportPage
 	 * @param  Boolean showSummary
 	 */
 	protected function crossTableCommonAssign( $crosstableObj, $showSummary )
-	{	
+	{
 		$this->xt->assign("report_cross_header", $crosstableObj->getPrintCrossHeader());
-	
+
 		$arr_res = $crosstableObj->getValuesControl();
 		if( $arr_res[0] )
 			$this->xt->assign("totals", $crosstableObj->getTotalsName( $crosstableObj->getCurrentGroupFunction() ));
-		
+
 		$grid_row["data"] = $crosstableObj->getCrossTableData();
-		
+
 		if( count($grid_row["data"]) > 0 )
 		{
 			$this->xt->assign("grid_row", $grid_row);
 			$this->xt->assignbyref("group_header", $crosstableObj->getCrossTableHeader());
-			$this->xt->assignbyref("col_summary", $crosstableObj->getCrossTableSummary());	
+			$this->xt->assignbyref("col_summary", $crosstableObj->getCrossTableSummary());
 			$this->xt->assignbyref("total_summary", $crosstableObj->getTotalSummary());
 			$this->xt->assign("cross_totals", $showSummary);
 		}
@@ -193,33 +198,33 @@ class ReportPrintPage extends ReportPage
 			$this->isReportEmpty = true;
 			return;
 		}
-		
+
 		$pages = array();
 		$pages[0]['grid_row'] = $grid_row;
 		$pages[0]['begin'] = "<div name=page class=printpage>";
 		$pages[0]['end'] = "</div>";
-		
+
 		$this->xt->assign("pageno", 1);
 		$this->xt->assign("maxpages", 1);
 		$this->xt->assign("printheader", true);
 		$this->xt->assign_loopsection("pages", $pages);
 	}
-	
+
 	/**
 	 * Get data for standart report and assign with xt
 	 * @param &Array _options
 	 */
 	public function setStandartData(&$_options)
-	{			
+	{
 		include_once(getabspath('classes/reportlib.php'));
-		
+
 		if( !$_SESSION[ $this->sessionPrefix."_pagesize" ] )
 			$_SESSION[ $this->sessionPrefix."_pagesize" ] = -1; // a temporary fix
 
 		if( !$_SESSION[ $this->sessionPrefix."_pagenumber" ] )
-			$_SESSION[ $this->sessionPrefix."_pagenumber" ] = 1;			
+			$_SESSION[ $this->sessionPrefix."_pagenumber" ] = 1;
 
-		
+
 		if( isset($_REQUEST["all"]) && $_REQUEST["all"] || $this->isDetail )
 		{
 			$PageSize = 0;
@@ -229,25 +234,25 @@ class ReportPrintPage extends ReportPage
 		else
 		{
 			$PageSize = $_SESSION[ $this->sessionPrefix."_pagesize" ];
-			$pagestart = ($_SESSION[ $this->sessionPrefix."_pagenumber" ] - 1) * $PageSize;			
+			$pagestart = ($_SESSION[ $this->sessionPrefix."_pagenumber" ] - 1) * $PageSize;
 		}
 
-		
-		$whereComponents = $this->getWhereComponents();	
+
+		$whereComponents = $this->getWhereComponents();
 		$sqlArray = $this->getReportSQLData();
 		$rb = new Report($sqlArray, $this->pSet->GetTableData(".orderindexes"), $this->connection
 			, $PageSize, $this->splitByGroups, $_options, $whereComponents["searchWhere"], $whereComponents["searchHaving"], $this);
-		
+
 		$this->arrReport = $rb->getReport( $pagestart );
 		$this->arrPages = $rb->getPages();
-		$this->standardReportCommonAssign();		
+		$this->standardReportCommonAssign();
 	}
-	
+
 	/**
 	 * Assign the basic cross table xt variables
 	 */
 	protected function standardReportCommonAssign()
-	{		
+	{
 		$this->xt->assign( "printheader", true );
 		if( $this->splitAtServer )
 		{
@@ -265,28 +270,28 @@ class ReportPrintPage extends ReportPage
 			$this->isReportEmpty = true;
 			return;
 		}
-			
 
-		$this->xt->assign_loopsection("grid_row", $this->arrReport['list']);	
-		
+
+		$this->xt->assign_loopsection("grid_row", $this->arrReport['list']);
+
 		if( $this->arrReport['global'] )
 		{
 			foreach($this->arrReport['global'] as $key => $value)
 			{
 				$this->xt->assign($key, $value);
 			}
-		}	
+		}
 		$this->xt->assign("pageno", 1);
-		$this->xt->assign("maxpages", 1);		
+		$this->xt->assign("maxpages", 1);
 		if( !$this->pdfMode )
 			$this->xt->assign("printbuttons", true);
-		$this->xt->assign("global_summary", true);		
+		$this->xt->assign("global_summary", true);
 		//	legacy assignment
 		$this->xt->assign("pages", true);
 	}
 
 	protected function standardReportCommonAssignSplit()
-	{		
+	{
 		$page = array( 'grid_row' => array("data" => array()) );
 		$pageno = 1;
 		foreach( $this->arrReport['list'] as $pagerecords)
@@ -304,15 +309,15 @@ class ReportPrintPage extends ReportPage
 			{
 				$lastPage[$key] = $value;
 			}
-				
+
 			$lastPage['global_summary'] = true;
-		}	
-		
-		$this->xt->assign("maxpages", $pageno);		
-		
+		}
+
+		$this->xt->assign("maxpages", $pageno);
+
 		$this->body[ "data" ] = $this->pages;
 		$this->xt->assign( "page_number", true );
-		
+
 		$this->xt->assign( "pagecount", $pageno - 1 );
 		if( !$this->pdfMode )
 			$this->xt->assign("printbuttons", true);
@@ -343,7 +348,7 @@ class ReportPrintPage extends ReportPage
 		$page["pageno"] = $pageno;
 		$this->pages[] = $page;
 	}
-	
+
 	/**
 	 *
 	 */
@@ -360,20 +365,17 @@ class ReportPrintPage extends ReportPage
 					$contents = substr($contents, 0, $pos1).substr($contents, $pos2 + 1);
 			}
 		}
-		
+
 		$contents = str_ireplace("<img src=\"/".GetRootPathForResources("images/spacer.gif")."\">", "", $contents);
 		$contents = str_ireplace("<img src=\"/".GetRootPathForResources("images/spacer.gif")."\"/>", "", $contents);
 		$contents = str_ireplace("<img src=\"@webRootPath/images/spacer.gif\" />", "", $contents); // .net template compatibility
-		
+
 		return $contents;
 	}
 
 
 	public function processDetailPrint()
 	{
-		//	Before Process event
-		if( $this->eventsObject->exists("BeforeProcessReport") )
-			$this->eventsObject->BeforeProcessReport( $this );
 
 		// array with extra report params
 		$extraParams = $this->getExtraReportParams();
@@ -383,7 +385,7 @@ class ReportPrintPage extends ReportPage
 		if ( $this->isReportEmpty )
 			return;
 
-		$this->showDetailPrint();	
+		$this->showDetailPrint();
 	}
 
 	/**
@@ -396,7 +398,7 @@ class ReportPrintPage extends ReportPage
 		$this->xt->assign("grid_block", true);
 
 		$this->xt->load_template($this->templatefile);
-	
+
 		echo "<div class='rnr-print-details'>";
 		if( $this->multipleDetails )
 		{
@@ -409,6 +411,52 @@ class ReportPrintPage extends ReportPage
 		echo "</div>";
 		echo "</div>";
 	}
-	
+
+	public function showPage()
+	{
+		if( $this->eventsObject->exists("BeforeShowReportPrint") )
+			$this->eventsObject->BeforeShowReportPrint($this->xt, $this->templatefile, $this);
+
+		if( !$this->pdfMode )
+		{
+			if(@$this->format == "excel" || @$this->format == "word")
+			{
+				$this->xt->load_template($this->templatefile);
+				$contents = $this->prepareWordOrExcelTemplate($this->xt->template);
+				$this->xt->template = $contents;
+				$this->xt->display_loaded();
+			}
+			else
+			{
+				if( @$this->format == "pdf" )
+				{
+					$this->xt->displayBrickHidden("printpdf");
+					$this->AddCSSFile("styles/defaultPDF.css");
+					$this->assignStyleFiles();
+					$this->xt->load_template($this->templatefile);
+					$this->xt->display_loaded();
+				}
+				else
+					$this->display($this->templatefile);
+			}
+		}
+		else
+		{
+			$this->AddCSSFile("styles/defaultPDF.css");
+			$this->assignStyleFiles( true );
+			$this->xt->load_template($this->templatefile);
+			$page = $this->xt->fetch_loaded();
+
+			if( $this->pdfFitToPage )
+				$pagewidth = postvalue("width");
+			else
+				$pagewidth = $this->pageWidth;
+
+
+			$landscape = $this->landscape;
+			include(getabspath("plugins/page2pdf.php"));
+		}
+
+	}
 }
 ?>

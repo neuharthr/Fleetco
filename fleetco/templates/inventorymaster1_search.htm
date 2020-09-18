@@ -48,6 +48,25 @@
 		<td>NOT</td>
 		<td colspan=3>&nbsp; </td>
 	</tr>
+	<tr class="{$fielddispclass_Id}">
+	{BEGIN Id_fieldblock}		
+	<td>
+		{$label inventorymaster1 Id}
+	</td>
+	<td>
+		<input type="checkbox" {$Id_notbox}>
+	</td>
+	<td>
+		{$searchtype_Id}
+	</td>
+	<td>
+		{$Id_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$Id_editcontrol1}&nbsp;
+	</td>
+{END Id_fieldblock}
+	</tr>
 	<tr class="{$fielddispclass_ItemID}">
 	{BEGIN ItemID_fieldblock}		
 	<td>
@@ -124,44 +143,6 @@
 	</td>
 {END Supplier_fieldblock}
 	</tr>
-	<tr class="{$fielddispclass_SUM_CurrentStock_}">
-	{BEGIN SUM_CurrentStock__fieldblock}		
-	<td>
-		{$label inventorymaster1 SUM_CurrentStock_}
-	</td>
-	<td>
-		<input type="checkbox" {$SUM_CurrentStock__notbox}>
-	</td>
-	<td>
-		{$searchtype_SUM_CurrentStock_}
-	</td>
-	<td>
-		{$SUM_CurrentStock__editcontrol}&nbsp;
-	</td>
-	<td>
-		{$SUM_CurrentStock__editcontrol1}&nbsp;
-	</td>
-{END SUM_CurrentStock__fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_UnitPrice}">
-	{BEGIN UnitPrice_fieldblock}		
-	<td>
-		{$label inventorymaster1 UnitPrice}
-	</td>
-	<td>
-		<input type="checkbox" {$UnitPrice_notbox}>
-	</td>
-	<td>
-		{$searchtype_UnitPrice}
-	</td>
-	<td>
-		{$UnitPrice_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$UnitPrice_editcontrol1}&nbsp;
-	</td>
-{END UnitPrice_fieldblock}
-	</tr>
 
 </table></div>
 
@@ -195,7 +176,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

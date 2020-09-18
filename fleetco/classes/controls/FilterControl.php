@@ -236,10 +236,18 @@ class FilterControl
 		$ctrlsMap['multiSelect'] = $this->multiSelect;
 		$ctrlsMap['filtered'] = $this->filtered;
 		$ctrlsMap['separator'] = $this->separator;
+		$ctrlsMap['collapsed'] = $this->showCollapsed;
 		
 		if( $this->filtered )
+		{
 			$ctrlsMap['defaultValuesArray'] = $this->filteredFields[ $this->fName ]["values"];
-			
+			$ctrlsMap['defaultShowValues'] = array();
+			foreach( $ctrlsMap['defaultValuesArray'] as $dv )
+			{
+				$ctrlsMap['defaultShowValues'][] = $this->getValueToShow( $dv );
+			}
+		}
+		
 		return $ctrlsMap;	
 	}
 	

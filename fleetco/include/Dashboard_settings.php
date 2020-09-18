@@ -3,7 +3,7 @@ require_once(getabspath("classes/cipherer.php"));
 
 
 
-$tdataDashboard = array();	
+$tdataDashboard = array();
 $tdataDashboard[".ShortName"] = "Dashboard";
 
 //	field labels
@@ -13,21 +13,17 @@ $pageTitlesDashboard = array();
 if(mlang_getcurrentlang()=="English")
 {
 	$fieldLabelsDashboard["English"] = array();
-	$fieldLabelsDashboard["English"]["fuelmaster_Id"] = "ID";
-	$fieldLabelsDashboard["English"]["fuelmaster_SystemDate"] = "Sys. Date";
-	$fieldLabelsDashboard["English"]["fuelmaster_FuelDate"] = "Fuel Date";
-	$fieldLabelsDashboard["English"]["fuelmaster_Vehicle"] = "Vehicle";
-	$fieldLabelsDashboard["English"]["fuelmaster_MeterReading"] = "Mtr.Read.";
-	$fieldLabelsDashboard["English"]["fuelmaster_LitersPumped"] = "Ltr.Pump.";
-	$fieldLabelsDashboard["English"]["fuelmaster_PricePerLiter"] = "Ltr.Price";
-	$fieldLabelsDashboard["English"]["fuelmaster_FuelStation"] = "Fuel Stat.";
-	$fieldLabelsDashboard["English"]["fuelmaster_Fleet"] = "Fleet";
-	$fieldLabelsDashboard["English"]["fuelmaster_Cost"] = "Cost";
-	$fieldLabelsDashboard["English"]["fuelmaster_LastMileage"] = "Last Milea.";
-	$fieldLabelsDashboard["English"]["fuelmaster_Economy"] = "Economy";
-	$fieldLabelsDashboard["English"]["fuelmaster_FillType"] = "Fill Type";
-	$fieldLabelsDashboard["English"]["fuelmaster_CouponNo"] = "Coupon";
-	$fieldLabelsDashboard["English"]["fuelmaster_Driver"] = "Driver";
+	$fieldLabelsDashboard["English"]["vehiclemaster_ID"] = "ID";
+	$fieldLabelsDashboard["English"]["vehiclemaster_RegNo"] = "Reg No";
+	$fieldLabelsDashboard["English"]["vehiclemaster_Fleet"] = "Fleet";
+	$fieldLabelsDashboard["English"]["vehiclemaster_Type"] = "Type";
+	$fieldLabelsDashboard["English"]["vehiclemaster_RegDate"] = "Reg Date";
+	$fieldLabelsDashboard["English"]["vehiclemaster_Cost"] = "Cost";
+	$fieldLabelsDashboard["English"]["vehiclemaster_DriverAsigned"] = "Driver";
+	$fieldLabelsDashboard["English"]["vehiclemaster_Make"] = "Make";
+	$fieldLabelsDashboard["English"]["vehiclemaster_Model"] = "Model";
+	$fieldLabelsDashboard["English"]["vehiclemaster_InsuranceDue"] = "Renewal";
+	$fieldLabelsDashboard["English"]["vehiclemaster_Last_Mileage"] = "Last Mileage";
 }
 if(mlang_getcurrentlang()=="")
 {
@@ -37,92 +33,78 @@ if(mlang_getcurrentlang()=="")
 //	search fields
 $tdataDashboard[".searchFields"] = array();
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"Id" );
-$tdataDashboard[".searchFields"]["fuelmaster_Id"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"ID" );
+$tdataDashboard[".searchFields"]["vehiclemaster_ID"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"SystemDate" );
-$tdataDashboard[".searchFields"]["fuelmaster_SystemDate"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"RegNo" );
+$tdataDashboard[".searchFields"]["vehiclemaster_RegNo"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"FuelDate" );
-$tdataDashboard[".searchFields"]["fuelmaster_FuelDate"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"Fleet" );
+$tdataDashboard[".searchFields"]["vehiclemaster_Fleet"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"Vehicle" );
-$tdataDashboard[".searchFields"]["fuelmaster_Vehicle"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"Type" );
+$tdataDashboard[".searchFields"]["vehiclemaster_Type"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"MeterReading" );
-$tdataDashboard[".searchFields"]["fuelmaster_MeterReading"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"RegDate" );
+$tdataDashboard[".searchFields"]["vehiclemaster_RegDate"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"LitersPumped" );
-$tdataDashboard[".searchFields"]["fuelmaster_LitersPumped"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"Cost" );
+$tdataDashboard[".searchFields"]["vehiclemaster_Cost"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"PricePerLiter" );
-$tdataDashboard[".searchFields"]["fuelmaster_PricePerLiter"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"DriverAsigned" );
+$tdataDashboard[".searchFields"]["vehiclemaster_DriverAsigned"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"FuelStation" );
-$tdataDashboard[".searchFields"]["fuelmaster_FuelStation"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"Make" );
+$tdataDashboard[".searchFields"]["vehiclemaster_Make"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"Fleet" );
-$tdataDashboard[".searchFields"]["fuelmaster_Fleet"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"Model" );
+$tdataDashboard[".searchFields"]["vehiclemaster_Model"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"Cost" );
-$tdataDashboard[".searchFields"]["fuelmaster_Cost"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"InsuranceDue" );
+$tdataDashboard[".searchFields"]["vehiclemaster_InsuranceDue"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"LastMileage" );
-$tdataDashboard[".searchFields"]["fuelmaster_LastMileage"] = $dashField;
-$dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"Economy" );
-$tdataDashboard[".searchFields"]["fuelmaster_Economy"] = $dashField;
-$dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"FillType" );
-$tdataDashboard[".searchFields"]["fuelmaster_FillType"] = $dashField;
-$dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"CouponNo" );
-$tdataDashboard[".searchFields"]["fuelmaster_CouponNo"] = $dashField;
-$dashField = array();
-$dashField[] = array( "table"=>"fuelmaster", "field"=>"Driver" );
-$tdataDashboard[".searchFields"]["fuelmaster_Driver"] = $dashField;
+$dashField[] = array( "table"=>"vehiclemaster", "field"=>"Last Mileage" );
+$tdataDashboard[".searchFields"]["vehiclemaster_Last_Mileage"] = $dashField;
 
 // all search fields
 $tdataDashboard[".allSearchFields"] = array();
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_Id";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_SystemDate";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_FuelDate";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_Vehicle";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_MeterReading";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_LitersPumped";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_PricePerLiter";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_FuelStation";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_Fleet";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_Cost";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_LastMileage";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_Economy";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_FillType";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_CouponNo";
-$tdataDashboard[".allSearchFields"][] = "fuelmaster_Driver";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_ID";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_RegNo";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_Fleet";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_Type";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_RegDate";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_Cost";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_DriverAsigned";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_Make";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_Model";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_InsuranceDue";
+$tdataDashboard[".allSearchFields"][] = "vehiclemaster_Last_Mileage";
 
 // good like search fields
 $tdataDashboard[".googleLikeFields"] = array();
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_Id";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_SystemDate";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_FuelDate";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_Vehicle";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_MeterReading";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_LitersPumped";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_PricePerLiter";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_FuelStation";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_Fleet";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_Cost";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_LastMileage";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_Economy";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_FillType";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_CouponNo";
-$tdataDashboard[".googleLikeFields"][] = "fuelmaster_Driver";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_ID";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_RegNo";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_Fleet";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_Type";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_RegDate";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_Cost";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_DriverAsigned";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_Make";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_Model";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_InsuranceDue";
+$tdataDashboard[".googleLikeFields"][] = "vehiclemaster_Last_Mileage";
 
 $tdataDashboard[".dashElements"] = array();
 
-	$dbelement = array( "elementName" => "fuelmaster_search", "table" => "fuelmaster", "type" => 4);
+	$dbelement = array( "elementName" => "vehiclemaster_search", "table" => "vehiclemaster", "type" => 4);
 	$dbelement["cellName"] = "cell_0_0";
-	
+
+			
+
+	$tdataDashboard[".dashElements"][] = $dbelement;
+	$dbelement = array( "elementName" => "maintenenace_Chart_chart", "table" => "maintenenace Chart", "type" => 1);
+	$dbelement["cellName"] = "cell_0_1";
+
 			
 
 	$tdataDashboard[".dashElements"][] = $dbelement;

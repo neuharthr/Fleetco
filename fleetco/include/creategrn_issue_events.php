@@ -1,6 +1,6 @@
-<?php 
+<?php
 class eventclass_creategrn_issue  extends eventsBase
-{ 
+{
 	function __construct()
 	{
 	// fill list of events
@@ -15,6 +15,7 @@ class eventclass_creategrn_issue  extends eventsBase
 
 //	handlers
 
+		
 		
 		
 		
@@ -81,15 +82,20 @@ return true;
 		
 		
 		
-								
 		
 		
-			
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		
 
+		
 		
 		
 		
@@ -156,15 +162,19 @@ return true;
 		
 		
 		
-								
 		
 		
-			
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		
 //	onscreen events
 
-} 
+}
 ?>

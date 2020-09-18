@@ -16,59 +16,68 @@ if( !ViewPage::processEditPageSecurity( $strTableName ) )
 
 
 
-$layout = new TLayout("view_basic_2col_center", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
+$layout = new TLayout("view_bootstrap_2col", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "accidents_report_view";
 $layout->blocks["top"] = array();
-$layout->containers["all"] = array();
-$layout->container_properties["all"] = array(  );
-$layout->containers["all"][] = array("name"=>"wrapper",
-	"block"=>"", "substyle"=>1 , "container"=>"view" );
-$layout->containers["view"] = array();
-$layout->container_properties["view"] = array(  );
-$layout->containers["view"][] = array("name"=>"wrapper",
-	"block"=>"", "substyle"=>1 , "container"=>"pdf" );
-$layout->containers["pdf"] = array();
-$layout->container_properties["pdf"] = array(  );
-$layout->containers["pdf"][] = array("name"=>"viewpdf",
-	"block"=>"", "substyle"=>1  );
+$layout->containers["viewpage"] = array();
+$layout->container_properties["viewpage"] = array(  );
+$layout->containers["viewpage"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header" );
+$layout->containers["header"] = array();
+$layout->container_properties["header"] = array(  );
+$layout->containers["header"][] = array("name"=>"viewheader",
+	"block"=>"viewheader", "substyle"=>1  );
 
-$layout->skins["pdf"] = "empty";
+$layout->skins["header"] = "";
 
 
-$layout->containers["view"][] = array("name"=>"wrapper",
-	"block"=>"", "substyle"=>1 , "container"=>"fields" );
+$layout->skins["viewpage"] = "";
+
+$layout->blocks["top"][] = "viewpage";
 $layout->containers["fields"] = array();
 $layout->container_properties["fields"] = array(  );
-$layout->containers["fields"][] = array("name"=>"viewheader",
-	"block"=>"viewheader", "substyle"=>2  );
-
-$layout->containers["fields"][] = array("name"=>"viewfields2",
+$layout->containers["fields"][] = array("name"=>"viewfields",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"viewbuttons",
-	"block"=>"viewbuttons", "substyle"=>2  );
+$layout->skins["fields"] = "";
 
-$layout->skins["fields"] = "fields";
+$layout->blocks["top"][] = "fields";
+$layout->containers["bottombuttons"] = array();
+$layout->container_properties["bottombuttons"] = array(  );
+$layout->containers["bottombuttons"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"buttons" );
+$layout->containers["buttons"] = array();
+$layout->container_properties["buttons"] = array(  );
+$layout->containers["buttons"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"leftbuttons" );
+$layout->containers["leftbuttons"] = array();
+$layout->container_properties["leftbuttons"] = array(  );
+$layout->containers["leftbuttons"][] = array("name"=>"viewbuttons",
+	"block"=>"viewbuttons", "substyle"=>1  );
+
+$layout->skins["leftbuttons"] = "";
 
 
-$layout->skins["view"] = "empty";
+$layout->containers["buttons"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"leftbuttons_1" );
+$layout->containers["leftbuttons_1"] = array();
+$layout->container_properties["leftbuttons_1"] = array(  );
+$layout->containers["leftbuttons_1"][] = array("name"=>"rightviewbuttons",
+	"block"=>"rightviewbuttons", "substyle"=>1  );
+
+$layout->skins["leftbuttons_1"] = "";
 
 
-$layout->skins["all"] = "empty";
+$layout->skins["buttons"] = "";
 
-$layout->blocks["top"][] = "all";
+
+$layout->skins["bottombuttons"] = "";
+
+$layout->blocks["top"][] = "bottombuttons";
 $page_layouts["accidents_report_view"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
