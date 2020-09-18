@@ -468,8 +468,6 @@ function now()
  */
 function refine($str)
 {
-	if(get_magic_quotes_gpc())
-		return stripslashes($str);
 	return $str;
 }
 
