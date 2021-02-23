@@ -8,11 +8,11 @@ class UserControl extends EditControl
 		$this->buildControlEnd($validate, $mode);
 	}
 	
-	function buildUserControl($value, $mode, $fieldNum, $validate, $additionalCtrlParams, $data)
+	public function buildUserControl($value, $mode, $fieldNum, $validate, $additionalCtrlParams, $data)
 	{
 	}
 	
-	function initUserControl()
+	public function initUserControl()
 	{		
 	}
 	

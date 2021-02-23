@@ -33,7 +33,7 @@ class OracleConnection extends Connection
 	{
 		$this->conn = @ociplogon($this->user, $this->pwd, $this->sid);
 		if( !$this->conn )
-			trigger_error($this->lastError(), E_USER_ERROR);
+			$this->triggerError($this->lastError());
 			
 		$stmt = ociparse($this->conn, "alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS'");
 		ociexecute($stmt);
@@ -65,7 +65,7 @@ class OracleConnection extends Connection
 		$stmt_type = ocistatementtype($stmt);
 		if( !ociexecute($stmt) )
 		{
-			trigger_error($this->lastError(), E_USER_ERROR);
+			$this->triggerError($this->lastError());
 			return FALSE;
 		}
 		
@@ -75,6 +75,7 @@ class OracleConnection extends Connection
 	/**	
 	 * Execute an SQL query
 	 * @param String sql
+	 * @return Mixed
 	 */
 	public function exec( $sql )
 	{
@@ -84,8 +85,8 @@ class OracleConnection extends Connection
 		$stmt_type = ocistatementtype($stmt);
 		if( !ociexecute($stmt) )
 		{
-			trigger_error( $this->lastError(), E_USER_ERROR );
-			return 0;
+			$this->triggerError( $this->lastError() );
+			return FALSE;
 		}
 		
 		return 1;
@@ -110,13 +111,13 @@ class OracleConnection extends Connection
 	 * @param Number flags
 	 * @return Array
 	 */
-	protected function myoci_fetch_array($qHanle, $flags)
+	protected function myoci_fetch_array($qHandle, $flags)
 	{
 		if( function_exists("oci_fetch_array") )
-			return oci_fetch_array($qHanle, $flags);
+			return oci_fetch_array($qHandle, $flags);
 			
 		$data = array();
-		if( ocifetchinto($qHanle, $data, $flags) )
+		if( ocifetchinto($qHandle, $data, $flags) )
 			return $data;
 			
 		return array();
@@ -127,9 +128,9 @@ class OracleConnection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return $this->myoci_fetch_array($qHanle, OCI_ASSOC + OCI_RETURN_NULLS + OCI_RETURN_LOBS);
+		return $this->myoci_fetch_array($qHandle, OCI_ASSOC + OCI_RETURN_NULLS + OCI_RETURN_LOBS);
 	}
 	
 	/**	
@@ -137,21 +138,21 @@ class OracleConnection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
-		return $this->myoci_fetch_array($qHanle, OCI_NUM + OCI_RETURN_NULLS + OCI_RETURN_LOBS);
+		return $this->myoci_fetch_array($qHandle, OCI_NUM + OCI_RETURN_NULLS + OCI_RETURN_LOBS);
 	}
 	
 	/**	
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
 		if( function_exists("oci_free_statement") )
-			oci_free_statement($qHanle);
+			oci_free_statement($qHandle);
 		else
-			ocifreestatement($qHanle);
+			ocifreestatement($qHandle);
 	}
 
 	/**
@@ -170,9 +171,9 @@ class OracleConnection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
-		return OCIColumnName($qHanle, $offset + 1);
+		return OCIColumnName($qHandle, $offset + 1);
 	}
 
 	/**

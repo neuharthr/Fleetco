@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,218 +13,315 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-view" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_all}
-<div class="rnr-c rnr-cv rnr-c-all">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_view} rnr-wrapper rnr-cbw-view">
-
-{BEGIN container_view}
-<div class="rnr-c rnr-cv rnr-c-view">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pdf} rnr-wrapper rnr-cbw-pdf">
-
-{BEGIN container_pdf}
-<div class="rnr-c rnr-cv rnr-c-pdf">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-viewpdf {$brickclass_viewpdf}">{BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button" {$pdflink_attrs}>PDF View</a>
-{END pdflink_block}
-
-</div>
-
-
-</div>
-{END container_pdf}
-
-</div>
+{BEGIN container_viewpage}
+<div {$viewpage_chiddenattr} data-pageid="{$pageid}" data-container="viewpage" class="container    "> 
 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
-
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-12 "> 
 
 {BEGIN viewheader}
-<div  class="rnr-brickcontents style2 rnr-b-viewheader {$brickclass_viewheader}"><span>	<h1>{$pagetitlelabel maintenenace_regularservice view}</h1>
-</span></div>{END viewheader}
+	<h2 {$viewheader_hiddenattr} data-pageid="{$pageid}" data-brick="viewheader" >{$pagetitlelabel maintenenace_regularservice view}</h2>
+
+{END viewheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-viewfields2 {$brickclass_viewfields2}"><table class="fieldGrid fieldGrid2">
-
-<tr>
-<td>
-	{BEGIN Id_fieldblock}
-<div data-fieldname="Id" class="rnr-field style1 {$fielddispclass_Id}">
-  <span class="rnr-label">{$label maintenenace_regularservice Id}:</span>
-  <span class="rnr-control style3">{$Id_value}</span>
 </div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_viewpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class=" form-horizontal  col-md-12 "> 
+
+
+<div {$viewfields_hiddenattr} data-pageid="{$pageid}" data-brick="viewfields" >
+
+	<div class="container">
+					{BEGIN Id_fieldblock}
+	<div class="{$fielddispclass_Id} col-md-6 bs-viewcontrolgroup" data-fieldname="Id">
+		<label class="control-label" for="{$labelfor_Id}">
+			{$label maintenenace_regularservice Id}
+		</label>
+		<div class="" >
+			{$Id_value}&nbsp;
+		</div>
+	</div>
 {END Id_fieldblock}
-	{BEGIN Date_fieldblock}
-<div data-fieldname="Date" class="rnr-field style1 {$fielddispclass_Date}">
-  <span class="rnr-label">{$label maintenenace_regularservice Date}:</span>
-  <span class="rnr-control style3">{$Date_value}</span>
-</div>
+					{BEGIN Date_fieldblock}
+	<div class="{$fielddispclass_Date} col-md-6 bs-viewcontrolgroup" data-fieldname="Date">
+		<label class="control-label" for="{$labelfor_Date}">
+			{$label maintenenace_regularservice Date}
+		</label>
+		<div class="" >
+			{$Date_value}&nbsp;
+		</div>
+	</div>
 {END Date_fieldblock}
-	{BEGIN MaintType_fieldblock}
-<div data-fieldname="MaintType" class="rnr-field style1 {$fielddispclass_MaintType}">
-  <span class="rnr-label">{$label maintenenace_regularservice MaintType}:</span>
-  <span class="rnr-control style3">{$MaintType_value}</span>
-</div>
+					{BEGIN MaintType_fieldblock}
+	<div class="{$fielddispclass_MaintType} col-md-6 bs-viewcontrolgroup" data-fieldname="MaintType">
+		<label class="control-label" for="{$labelfor_MaintType}">
+			{$label maintenenace_regularservice MaintType}
+		</label>
+		<div class="" >
+			{$MaintType_value}&nbsp;
+		</div>
+	</div>
 {END MaintType_fieldblock}
-	{BEGIN Vehicle_fieldblock}
-<div data-fieldname="Vehicle" class="rnr-field style1 {$fielddispclass_Vehicle}">
-  <span class="rnr-label">{$label maintenenace_regularservice Vehicle}:</span>
-  <span class="rnr-control style3">{$Vehicle_value}</span>
-</div>
+					{BEGIN Vehicle_fieldblock}
+	<div class="{$fielddispclass_Vehicle} col-md-6 bs-viewcontrolgroup" data-fieldname="Vehicle">
+		<label class="control-label" for="{$labelfor_Vehicle}">
+			{$label maintenenace_regularservice Vehicle}
+		</label>
+		<div class="" >
+			{$Vehicle_value}&nbsp;
+		</div>
+	</div>
 {END Vehicle_fieldblock}
-	{BEGIN Fleet_fieldblock}
-<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
-  <span class="rnr-label">{$label maintenenace_regularservice Fleet}:</span>
-  <span class="rnr-control style3">{$Fleet_value}</span>
-</div>
+					{BEGIN Fleet_fieldblock}
+	<div class="{$fielddispclass_Fleet} col-md-6 bs-viewcontrolgroup" data-fieldname="Fleet">
+		<label class="control-label" for="{$labelfor_Fleet}">
+			{$label maintenenace_regularservice Fleet}
+		</label>
+		<div class="" >
+			{$Fleet_value}&nbsp;
+		</div>
+	</div>
 {END Fleet_fieldblock}
-	{BEGIN Type_fieldblock}
-<div data-fieldname="Type" class="rnr-field style1 {$fielddispclass_Type}">
-  <span class="rnr-label">{$label maintenenace_regularservice Type}:</span>
-  <span class="rnr-control style3">{$Type_value}</span>
-</div>
+					{BEGIN Type_fieldblock}
+	<div class="{$fielddispclass_Type} col-md-6 bs-viewcontrolgroup" data-fieldname="Type">
+		<label class="control-label" for="{$labelfor_Type}">
+			{$label maintenenace_regularservice Type}
+		</label>
+		<div class="" >
+			{$Type_value}&nbsp;
+		</div>
+	</div>
 {END Type_fieldblock}
-	{BEGIN MeterReading_fieldblock}
-<div data-fieldname="MeterReading" class="rnr-field style1 {$fielddispclass_MeterReading}">
-  <span class="rnr-label">{$label maintenenace_regularservice MeterReading}:</span>
-  <span class="rnr-control style3">{$MeterReading_value}</span>
-</div>
+					{BEGIN MeterReading_fieldblock}
+	<div class="{$fielddispclass_MeterReading} col-md-6 bs-viewcontrolgroup" data-fieldname="MeterReading">
+		<label class="control-label" for="{$labelfor_MeterReading}">
+			{$label maintenenace_regularservice MeterReading}
+		</label>
+		<div class="" >
+			{$MeterReading_value}&nbsp;
+		</div>
+	</div>
 {END MeterReading_fieldblock}
-	{BEGIN RefNo_fieldblock}
-<div data-fieldname="RefNo" class="rnr-field style1 {$fielddispclass_RefNo}">
-  <span class="rnr-label">{$label maintenenace_regularservice RefNo}:</span>
-  <span class="rnr-control style3">{$RefNo_value}</span>
-</div>
+					{BEGIN RefNo_fieldblock}
+	<div class="{$fielddispclass_RefNo} col-md-6 bs-viewcontrolgroup" data-fieldname="RefNo">
+		<label class="control-label" for="{$labelfor_RefNo}">
+			{$label maintenenace_regularservice RefNo}
+		</label>
+		<div class="" >
+			{$RefNo_value}&nbsp;
+		</div>
+	</div>
 {END RefNo_fieldblock}
-</td>
-<td>
-	{BEGIN Supplier_fieldblock}
-<div data-fieldname="Supplier" class="rnr-field style1 {$fielddispclass_Supplier}">
-  <span class="rnr-label">{$label maintenenace_regularservice Supplier}:</span>
-  <span class="rnr-control style3">{$Supplier_value}</span>
-</div>
+					{BEGIN Supplier_fieldblock}
+	<div class="{$fielddispclass_Supplier} col-md-6 bs-viewcontrolgroup" data-fieldname="Supplier">
+		<label class="control-label" for="{$labelfor_Supplier}">
+			{$label maintenenace_regularservice Supplier}
+		</label>
+		<div class="" >
+			{$Supplier_value}&nbsp;
+		</div>
+	</div>
 {END Supplier_fieldblock}
-	{BEGIN Cost_fieldblock}
-<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
-  <span class="rnr-label">{$label maintenenace_regularservice Cost}:</span>
-  <span class="rnr-control style3">{$Cost_value}</span>
-</div>
+					{BEGIN Cost_fieldblock}
+	<div class="{$fielddispclass_Cost} col-md-6 bs-viewcontrolgroup" data-fieldname="Cost">
+		<label class="control-label" for="{$labelfor_Cost}">
+			{$label maintenenace_regularservice Cost}
+		</label>
+		<div class="" >
+			{$Cost_value}&nbsp;
+		</div>
+	</div>
 {END Cost_fieldblock}
-	{BEGIN PaymentVoucher_fieldblock}
-<div data-fieldname="PaymentVoucher" class="rnr-field style1 {$fielddispclass_PaymentVoucher}">
-  <span class="rnr-label">{$label maintenenace_regularservice PaymentVoucher}:</span>
-  <span class="rnr-control style3">{$PaymentVoucher_value}</span>
-</div>
+					{BEGIN PaymentVoucher_fieldblock}
+	<div class="{$fielddispclass_PaymentVoucher} col-md-6 bs-viewcontrolgroup" data-fieldname="PaymentVoucher">
+		<label class="control-label" for="{$labelfor_PaymentVoucher}">
+			{$label maintenenace_regularservice PaymentVoucher}
+		</label>
+		<div class="" >
+			{$PaymentVoucher_value}&nbsp;
+		</div>
+	</div>
 {END PaymentVoucher_fieldblock}
-	{BEGIN Remarks_fieldblock}
-<div data-fieldname="Remarks" class="rnr-field style1 {$fielddispclass_Remarks}">
-  <span class="rnr-label">{$label maintenenace_regularservice Remarks}:</span>
-  <span class="rnr-control style3">{$Remarks_value}</span>
-</div>
+					{BEGIN Remarks_fieldblock}
+	<div class="{$fielddispclass_Remarks} col-md-6 bs-viewcontrolgroup" data-fieldname="Remarks">
+		<label class="control-label" for="{$labelfor_Remarks}">
+			{$label maintenenace_regularservice Remarks}
+		</label>
+		<div class="" >
+			{$Remarks_value}&nbsp;
+		</div>
+	</div>
 {END Remarks_fieldblock}
-	{BEGIN EnteredBy_fieldblock}
-<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
-  <span class="rnr-label">{$label maintenenace_regularservice EnteredBy}:</span>
-  <span class="rnr-control style3">{$EnteredBy_value}</span>
-</div>
+					{BEGIN EnteredBy_fieldblock}
+	<div class="{$fielddispclass_EnteredBy} col-md-6 bs-viewcontrolgroup" data-fieldname="EnteredBy">
+		<label class="control-label" for="{$labelfor_EnteredBy}">
+			{$label maintenenace_regularservice EnteredBy}
+		</label>
+		<div class="" >
+			{$EnteredBy_value}&nbsp;
+		</div>
+	</div>
 {END EnteredBy_fieldblock}
-	{BEGIN SysDate_fieldblock}
-<div data-fieldname="SysDate" class="rnr-field style1 {$fielddispclass_SysDate}">
-  <span class="rnr-label">{$label maintenenace_regularservice SysDate}:</span>
-  <span class="rnr-control style3">{$SysDate_value}</span>
-</div>
+					{BEGIN SysDate_fieldblock}
+	<div class="{$fielddispclass_SysDate} col-md-6 bs-viewcontrolgroup" data-fieldname="SysDate">
+		<label class="control-label" for="{$labelfor_SysDate}">
+			{$label maintenenace_regularservice SysDate}
+		</label>
+		<div class="" >
+			{$SysDate_value}&nbsp;
+		</div>
+	</div>
 {END SysDate_fieldblock}
-	{BEGIN Approval_fieldblock}
-<div data-fieldname="Approval" class="rnr-field style1 {$fielddispclass_Approval}">
-  <span class="rnr-label">{$label maintenenace_regularservice Approval}:</span>
-  <span class="rnr-control style3">{$Approval_value}</span>
-</div>
+					{BEGIN Approval_fieldblock}
+	<div class="{$fielddispclass_Approval} col-md-6 bs-viewcontrolgroup" data-fieldname="Approval">
+		<label class="control-label" for="{$labelfor_Approval}">
+			{$label maintenenace_regularservice Approval}
+		</label>
+		<div class="" >
+			{$Approval_value}&nbsp;
+		</div>
+	</div>
 {END Approval_fieldblock}
-</td>
-</tr>
-</table></div>
+	</div>
+</div>
 
 
-{BEGIN viewbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-viewbuttons {$brickclass_viewbuttons}"><div class="rnr-buttons-right">
-{BEGIN prev_button}
-<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
-{END prev_button}
-{BEGIN next_button}
-<a href="#" class="rnr-button {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
-{END next_button}
-</div>
-<div class="rnr-buttons-left">
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}
-{BEGIN close_button}
-<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
-{END close_button}
-{BEGIN edit_page_button}
-<a href="#" class="rnr-button" {$edit_page_button_attrs}>Edit</a>
-{END edit_page_button}
-</div>
-</div>{END viewbuttons}
 
 
 </div>
 {END container_fields}
 
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-6 "> 
+
+{BEGIN viewbuttons}
+{BEGIN back_button}
+<button class="btn btn-primary" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{BEGIN close_button}
+<button href="#" class="btn btn-primary" {$closebutton_attrs}>{mlang_message CLOSE_WINDOW}</button>
+{END close_button}
+{END viewbuttons}
+
+
+
 </div>
-
-
-</div>
-{END container_view}
-
-</div>
+{END container_leftbuttons}
 
 
 
-</div>
-{END container_all}
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
-		</div>
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="   col-md-4 "> 
+
+{BEGIN rightviewbuttons}
+<div class="btn-group" role="group">
+		{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+		<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle {$groupbutton_class}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+						{BEGIN pdflink_block}
+			<li><a href=# class="pdflink" {$pdflink_attrs}>{mlang_message PDF_VIEW}</a></li>
+			{END pdflink_block}
+						{BEGIN edit_page_button}
+				<li><a href=# {$edit_page_button_attrs}>{mlang_message EDIT}</a></li>
+			{END edit_page_button}
+		</ul>
 	</div>
-		
+</div>
+{END rightviewbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
 		{$footer}
 	{END body}
 	</body>

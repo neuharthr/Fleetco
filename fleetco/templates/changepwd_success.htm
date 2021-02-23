@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,56 +13,147 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-changepwd_success" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_page}
+<div {$page_chiddenattr} data-pageid="{$pageid}" data-container="page" class="container    "> 
+
+
+
+
+{BEGIN container_page_1}
+<div {$page_1_chiddenattr} data-pageid="{$pageid}" data-container="page_1" class=" bs-standalone-page  col-md-6 col-md-offset-3"> 
+
+
+
+
+{BEGIN container_panel}
+<div {$panel_chiddenattr} data-pageid="{$pageid}" data-container="panel" class=" bs-pagepanel panel panel-primary   "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class=" panel-heading   "> 
 
 {BEGIN changeheader}
-<div  class="rnr-brickcontents style2 rnr-b-changeheader {$brickclass_changeheader}"><span>	<h1>{$pagetitlelabel  changepwd_success}</h1>
-</span></div>{END changeheader}
+<h3 class="panel-title" {$changeheader_hiddenattr} data-pageid="{$pageid}" data-brick="changeheader" >
+{mlang_message CHANGE_PASSWORD}
+</h3>
+{END changeheader}
 
-
-
-<div  class="rnr-brickcontents style1 rnr-b-changepwd_message {$brickclass_changepwd_message}">Password was changed</div>
-
-
-
-<div  class="rnr-brickcontents style2 rnr-b-changesuccessbutton {$brickclass_changesuccessbutton}"><a  class="rnr-button" {$backlink_attrs}>Back</a>
-</div>
 
 
 </div>
-{END container_fields}
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_body}
+<div {$body_chiddenattr} data-pageid="{$pageid}" data-container="body" class=" panel-body   "> 
+
+
+
+
+{BEGIN container_header_1}
+<div {$header_1_chiddenattr} data-pageid="{$pageid}" data-container="header_1" class="   col-md-12 "> 
+
+
+<div class="alert alert-success" {$changepwd_message_hiddenattr} data-pageid="{$pageid}" data-brick="changepwd_message">
+{mlang_message PASSWORD_WAS_CHANGED}
+</div>
+
+
+
+
+</div>
+{END container_header_1}
+
+
+
+
+
+
+
+
+{BEGIN container_header_2}
+<div {$header_2_chiddenattr} data-pageid="{$pageid}" data-container="header_2" class="   col-md-8 col-md-offset-4"> 
+
+
+<a class="btn btn-primary" {$backlink_attrs}>{mlang_message BACK}</a>
+
+
+
+
+
+</div>
+{END container_header_2}
+
+
+
+
+
+
+</div>
+{END container_body}
+
+
+
+
+
+
+</div>
+{END container_panel}
+
+
+
+
+
+
+</div>
+{END container_page_1}
+
+
+
+
+
+
+</div>
+{END container_page}
 
 
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

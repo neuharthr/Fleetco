@@ -26,7 +26,7 @@ $layout->version = 2;
 $layout->blocks["center"] = array();
 $layout->containers["grid"] = array();
 $layout->container_properties["grid"] = array(  );
-$layout->containers["grid"][] = array("name"=>"report_print", 
+$layout->containers["grid"][] = array("name"=>"report_print",
 	"block"=>"", "substyle"=>1  );
 
 $layout->skins["grid"] = "empty";
@@ -35,7 +35,7 @@ $layout->blocks["center"][] = "grid";
 $layout->blocks["top"] = array();
 $layout->containers["pdf"] = array();
 $layout->container_properties["pdf"] = array(  "print" => "none"  );
-$layout->containers["pdf"][] = array("name"=>"printbuttons", 
+$layout->containers["pdf"][] = array("name"=>"printbuttons",
 	"block"=>"printbuttons", "substyle"=>1  );
 
 $layout->skins["pdf"] = "empty";
@@ -46,13 +46,13 @@ $layout->skins["master"] = "empty";
 $layout->blocks["top"][] = "master";
 $layout->containers["pageheader"] = array();
 $layout->container_properties["pageheader"] = array(  "print" => "repeat"  );
-$layout->containers["pageheader"][] = array("name"=>"report_style", 
+$layout->containers["pageheader"][] = array("name"=>"report_style",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["pageheader"][] = array("name"=>"printheader", 
+$layout->containers["pageheader"][] = array("name"=>"printheader",
 	"block"=>"printheader", "substyle"=>1  );
 
-$layout->containers["pageheader"][] = array("name"=>"page_of_print", 
+$layout->containers["pageheader"][] = array("name"=>"page_of_print",
 	"block"=>"page_number", "substyle"=>1  );
 
 $layout->skins["pageheader"] = "empty";
@@ -70,6 +70,7 @@ $layout->skinsparams["form"] = array("button"=>"button1");
 $layout->skinsparams["1"] = array("button"=>"button1");
 $layout->skinsparams["2"] = array("button"=>"button1");
 $layout->skinsparams["3"] = array("button"=>"button1");
+
 
 
 
@@ -96,6 +97,8 @@ $params["splitByGroups"] = postvalue("records");
 
 $pageObject = new ReportPrintPage($params);
 $pageObject->init();
+$pageObject->displayMasterTableInfo();
+
 
 $pageObject->assignPDFFormatSettings( @$_REQUEST["format"], postvalue("exportPdf") );
 
@@ -152,8 +155,6 @@ $xt->assign("Brand_fieldheader", true);
 $xt->assign("Description_fieldheader", true);
 $xt->assign("Supplier_fieldheader", true);
 
-
-
 if( @$_REQUEST["format"] && $_REQUEST["format"] != "pdf" )
 {
 	//$pages[0]["page_summary"] = false;
@@ -170,22 +171,5 @@ if (@$_REQUEST["format"] !== "pdf")
 
 $usePage2pdf = postvalue("pdf");
 
-if( !$usePage2pdf )
-{
-	if(@$_REQUEST["format"] == "excel" || @$_REQUEST["format"] == "word") 
-	{
-		$xt->load_template($pageObject->templatefile);
-		$contents = $pageObject->prepareWordOrExcelTemplate($xt->template);
-		$xt->template = $contents;
-		xt_process_template($xt, $xt->template);
-	}
-	else
-	{
-		$pageObject->display($pageObject->templatefile);		
-	}
-}
-else
-{
-}
-
+$pageObject->showPage();
 ?>

@@ -238,8 +238,8 @@ class SearchPage extends RunnerPage
 			return;
 		}
 		
-		$this->xt->unassign("header");
-		$this->xt->unassign("footer");
+		$this->xt->assign("header", false);
+		$this->xt->assign("footer", false);
 		$this->xt->assign("body", $this->body);
 		
 		$this->displayAJAX($templateFile, $this->flyId + 1);

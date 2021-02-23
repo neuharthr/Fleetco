@@ -55,13 +55,13 @@ class ListPage_DPList extends ListPage_DPInline
 			{
 				$controlsBlocks = '<span class="rnr-dbebrick ">'
 					.'<div class="style1 rnr-bl rnr-b-recordcontrols_new">'
-						.'<a class="rnr-button" href="#" '.$inlineaddlink_attrs.'>'."Add".'</a> '
+						.'<a class="rnr-button" href="#" '.$inlineaddlink_attrs.'>'.mlang_message("AA_P_ADD").'</a> '
 					.'</div>'
 				.'</span>';		
 			}
 			else
 			{
-				$buttons .= '<a class="' . $bs_button_class . '" href="#" '.$inlineaddlink_attrs.'>'."Add".'</a> ';		
+				$buttons .= '<a class="' . $bs_button_class . '" href="#" '.$inlineaddlink_attrs.'>'.mlang_message("AA_P_ADD").'</a> ';		
 			}
 		}
 
@@ -73,9 +73,9 @@ class ListPage_DPList extends ListPage_DPInline
 			
 			// "bs-invisible-button" class need for init hidden in bootstrap
 			if( $this->getLayoutVersion() != BOOTSTRAP_LAYOUT) 
-				$buttons.= '<a class="rnr-button bs-invisible-button" href="#" '.$editselectedlink_attrs.' '.$editselectedlink_span.'>'."Edit".'</a> ';
+				$buttons.= '<a class="rnr-button" href="#" '.$editselectedlink_attrs.' '.$editselectedlink_span.'>'.mlang_message("AA_P_EDIT").'</a> ';
 			else
-				$buttons.= '<a class="' . $bs_button_class . ' bs-invisible-button" href="#" '.$editselectedlink_attrs.' '.$editselectedlink_span.'>'."Edit".'</a> ';
+				$buttons.= '<a class="' . $bs_button_class . ' " disabled href="#" '.$editselectedlink_attrs.' '.$editselectedlink_span.'>'.mlang_message("AA_P_EDIT").'</a> ';
 		};	
 		
 		if( $this->xt->getVar("saveall_link") )
@@ -84,9 +84,9 @@ class ListPage_DPList extends ListPage_DPInline
 			$savealllink_span = $this->xt->getVar("savealllink_span");	
 	
 			if( $this->getLayoutVersion() != BOOTSTRAP_LAYOUT) 
-				$buttons.= '<a class="rnr-button" href="#" '.$savealllink_attrs.' '.$savealllink_span.'>'."Save all".'</a> ';					  
+				$buttons.= '<a class="rnr-button" href="#" '.$savealllink_attrs.' '.$savealllink_span.'>'.mlang_message("SAVE_ALL").'</a> ';					  
 			else
-				$buttons.= '<a class="' . $bs_button_class . '" href="#" '.$savealllink_attrs.' '.$savealllink_span.'>'."Save all".'</a> ';					  
+				$buttons.= '<a class="' . $bs_button_class . '" href="#" '.$savealllink_attrs.' '.$savealllink_span.'>'.mlang_message("SAVE_ALL").'</a> ';					  
 		}
 		
 		if( $this->xt->getVar("cancelall_link") )
@@ -95,9 +95,9 @@ class ListPage_DPList extends ListPage_DPInline
 			$cancelalllink_span = $this->xt->getVar("cancelalllink_span");
 
 			if( $this->getLayoutVersion() != BOOTSTRAP_LAYOUT) 
-				$buttons.= '<a class="rnr-button" href="#" '.$cancelalllink_attrs.' '.$cancelalllink_span.'>'."Cancel".'</a> ';					  
+				$buttons.= '<a class="rnr-button" href="#" '.$cancelalllink_attrs.' '.$cancelalllink_span.'>'.mlang_message("CANCEL_ALL").'</a> ';					  
 			else
-				$buttons.= '<a class="' . $bs_button_class . '" href="#" '.$cancelalllink_attrs.' '.$cancelalllink_span.'>'."Cancel".'</a> ';					  
+				$buttons.= '<a class="' . $bs_button_class . '" href="#" '.$cancelalllink_attrs.' '.$cancelalllink_span.'>'.mlang_message("CANCEL_ALL").'</a> ';					  
 		}
 		
 		if( $this->deleteAvailable() && $this->xt->getVar("deleteselected_link") )
@@ -107,9 +107,9 @@ class ListPage_DPList extends ListPage_DPInline
 
 			// "bs-invisible-button" class need for init hidden in bootstrap
 			if( $this->getLayoutVersion() != BOOTSTRAP_LAYOUT) 
-				$buttons.= '<a class="rnr-button bs-invisible-button" href="#" '.$deleteselectedlink_attrs.' '.$deleteselectedlink_span.'>'."Delete".'</a> ';		  
+				$buttons.= '<a class="rnr-button " href="#" '.$deleteselectedlink_attrs.' '.$deleteselectedlink_span.'>'.mlang_message("AA_P_DELETE").'</a> ';		  
 			else
-				$buttons.= '<a class="' . $bs_button_class . ' bs-invisible-button" href="#" '.$deleteselectedlink_attrs.' '.$deleteselectedlink_span.'>'."Delete".'</a> ';		  
+				$buttons.= '<a class="' . $bs_button_class . '" disabled href="#" '.$deleteselectedlink_attrs.' '.$deleteselectedlink_span.'>'.mlang_message("AA_P_DELETE").'</a> ';		  
 		}		
 
 		

@@ -28,6 +28,102 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsvehicletype["English"]))
 		$tdatavehicletype[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsvehicletype["Afrikaans"] = array();
+	$fieldToolTipsvehicletype["Afrikaans"] = array();
+	$pageTitlesvehicletype["Afrikaans"] = array();
+	$fieldLabelsvehicletype["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsvehicletype["Afrikaans"]["Id"] = "";
+	$fieldLabelsvehicletype["Afrikaans"]["VehicleType"] = "voertuig Tipe";
+	$fieldToolTipsvehicletype["Afrikaans"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["Afrikaans"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsvehicletype["Arabic"] = array();
+	$fieldToolTipsvehicletype["Arabic"] = array();
+	$pageTitlesvehicletype["Arabic"] = array();
+	$fieldLabelsvehicletype["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsvehicletype["Arabic"]["Id"] = "";
+	$fieldLabelsvehicletype["Arabic"]["VehicleType"] = "??? ???????";
+	$fieldToolTipsvehicletype["Arabic"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["Arabic"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsvehicletype["Chinese"] = array();
+	$fieldToolTipsvehicletype["Chinese"] = array();
+	$pageTitlesvehicletype["Chinese"] = array();
+	$fieldLabelsvehicletype["Chinese"]["Id"] = "ID";
+	$fieldToolTipsvehicletype["Chinese"]["Id"] = "";
+	$fieldLabelsvehicletype["Chinese"]["VehicleType"] = "????";
+	$fieldToolTipsvehicletype["Chinese"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["Chinese"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsvehicletype["French"] = array();
+	$fieldToolTipsvehicletype["French"] = array();
+	$pageTitlesvehicletype["French"] = array();
+	$fieldLabelsvehicletype["French"]["Id"] = "ID";
+	$fieldToolTipsvehicletype["French"]["Id"] = "";
+	$fieldLabelsvehicletype["French"]["VehicleType"] = "Type de véhicule";
+	$fieldToolTipsvehicletype["French"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["French"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsvehicletype["German"] = array();
+	$fieldToolTipsvehicletype["German"] = array();
+	$pageTitlesvehicletype["German"] = array();
+	$fieldLabelsvehicletype["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsvehicletype["German"]["Id"] = "";
+	$fieldLabelsvehicletype["German"]["VehicleType"] = "Fahrzeugtyp";
+	$fieldToolTipsvehicletype["German"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["German"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsvehicletype["Italian"] = array();
+	$fieldToolTipsvehicletype["Italian"] = array();
+	$pageTitlesvehicletype["Italian"] = array();
+	$fieldLabelsvehicletype["Italian"]["Id"] = "ID";
+	$fieldToolTipsvehicletype["Italian"]["Id"] = "";
+	$fieldLabelsvehicletype["Italian"]["VehicleType"] = "tipo di veicolo";
+	$fieldToolTipsvehicletype["Italian"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["Italian"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsvehicletype["Russian"] = array();
+	$fieldToolTipsvehicletype["Russian"] = array();
+	$pageTitlesvehicletype["Russian"] = array();
+	$fieldLabelsvehicletype["Russian"]["Id"] = "? ??";
+	$fieldToolTipsvehicletype["Russian"]["Id"] = "";
+	$fieldLabelsvehicletype["Russian"]["VehicleType"] = "??? ??????";
+	$fieldToolTipsvehicletype["Russian"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["Russian"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsvehicletype["Spanish"] = array();
+	$fieldToolTipsvehicletype["Spanish"] = array();
+	$pageTitlesvehicletype["Spanish"] = array();
+	$fieldLabelsvehicletype["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsvehicletype["Spanish"]["Id"] = "";
+	$fieldLabelsvehicletype["Spanish"]["VehicleType"] = "tipo de vehiculo";
+	$fieldToolTipsvehicletype["Spanish"]["VehicleType"] = "";
+	if (count($fieldToolTipsvehicletype["Spanish"]))
+		$tdatavehicletype[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsvehicletype[""] = array();
@@ -86,6 +182,9 @@ $tdatavehicletype[".afterAddActionDetTable"] = "";
 
 $tdatavehicletype[".list"] = true;
 
+
+
+
 $tdatavehicletype[".view"] = true;
 
 $tdatavehicletype[".import"] = true;
@@ -97,6 +196,14 @@ $tdatavehicletype[".printFriendly"] = true;
 $tdatavehicletype[".delete"] = true;
 
 $tdatavehicletype[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatavehicletype[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatavehicletype[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatavehicletype[".searchSaving"] = false;
@@ -118,6 +225,7 @@ $tdatavehicletype[".isUseTimeForSearch"] = false;
 
 
 
+$tdatavehicletype[".badgeColor"] = "40E0D0";
 
 
 $tdatavehicletype[".allSearchFields"] = array();
@@ -157,6 +265,7 @@ $tdatavehicletype[".geocodingEnabled"] = false;
 $tdatavehicletype[".listGridLayout"] = 3;
 
 
+$tdatavehicletype[".isResizeColumns"] = true;
 
 
 
@@ -249,6 +358,10 @@ $tdatavehicletype[".editFields"][] = "VehicleType";
 
 $tdatavehicletype[".inlineEditFields"] = array();
 
+$tdatavehicletype[".updateSelectedFields"] = array();
+$tdatavehicletype[".updateSelectedFields"][] = "VehicleType";
+
+
 $tdatavehicletype[".exportFields"] = array();
 $tdatavehicletype[".exportFields"][] = "Id";
 $tdatavehicletype[".exportFields"][] = "VehicleType";
@@ -282,6 +395,8 @@ $tdatavehicletype[".printFields"][] = "VehicleType";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -407,6 +522,9 @@ $tdatavehicletype[".printFields"][] = "VehicleType";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

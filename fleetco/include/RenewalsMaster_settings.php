@@ -4,194 +4,204 @@ require_once(getabspath("classes/cipherer.php"));
 
 
 
-$tdataRenewalsMaster = array();	
-	$tdataRenewalsMaster[".truncateText"] = true;
-	$tdataRenewalsMaster[".NumberOfChars"] = 80; 
-	$tdataRenewalsMaster[".ShortName"] = "RenewalsMaster";
-	$tdataRenewalsMaster[".OwnerID"] = "";
-	$tdataRenewalsMaster[".OriginalTable"] = "RenewalsMaster";
+$tdatarenewalsmaster = array();
+	$tdatarenewalsmaster[".truncateText"] = true;
+	$tdatarenewalsmaster[".NumberOfChars"] = 80;
+	$tdatarenewalsmaster[".ShortName"] = "renewalsmaster";
+	$tdatarenewalsmaster[".OwnerID"] = "";
+	$tdatarenewalsmaster[".OriginalTable"] = "renewalsmaster";
 
 //	field labels
-$fieldLabelsRenewalsMaster = array();
-$fieldToolTipsRenewalsMaster = array();
-$pageTitlesRenewalsMaster = array();
+$fieldLabelsrenewalsmaster = array();
+$fieldToolTipsrenewalsmaster = array();
+$pageTitlesrenewalsmaster = array();
 
 if(mlang_getcurrentlang()=="English")
 {
-	$fieldLabelsRenewalsMaster["English"] = array();
-	$fieldToolTipsRenewalsMaster["English"] = array();
-	$pageTitlesRenewalsMaster["English"] = array();
-	$fieldLabelsRenewalsMaster["English"]["ID"] = "ID";
-	$fieldToolTipsRenewalsMaster["English"]["ID"] = "";
-	$fieldLabelsRenewalsMaster["English"]["RenewalType"] = "Renewal Type";
-	$fieldToolTipsRenewalsMaster["English"]["RenewalType"] = "";
-	if (count($fieldToolTipsRenewalsMaster["English"]))
-		$tdataRenewalsMaster[".isUseToolTips"] = true;
+	$fieldLabelsrenewalsmaster["English"] = array();
+	$fieldToolTipsrenewalsmaster["English"] = array();
+	$pageTitlesrenewalsmaster["English"] = array();
+	$fieldLabelsrenewalsmaster["English"]["ID"] = "ID";
+	$fieldToolTipsrenewalsmaster["English"]["ID"] = "";
+	$fieldLabelsrenewalsmaster["English"]["Renewal"] = "Renewal";
+	$fieldToolTipsrenewalsmaster["English"]["Renewal"] = "";
+	if (count($fieldToolTipsrenewalsmaster["English"]))
+		$tdatarenewalsmaster[".isUseToolTips"] = true;
 }
 if(mlang_getcurrentlang()=="")
 {
-	$fieldLabelsRenewalsMaster[""] = array();
-	$fieldToolTipsRenewalsMaster[""] = array();
-	$pageTitlesRenewalsMaster[""] = array();
-	$fieldLabelsRenewalsMaster[""]["ID"] = "ID";
-	$fieldToolTipsRenewalsMaster[""]["ID"] = "";
-	$fieldLabelsRenewalsMaster[""]["RenewalType"] = "Renewal Type";
-	$fieldToolTipsRenewalsMaster[""]["RenewalType"] = "";
-	if (count($fieldToolTipsRenewalsMaster[""]))
-		$tdataRenewalsMaster[".isUseToolTips"] = true;
+	$fieldLabelsrenewalsmaster[""] = array();
+	$fieldToolTipsrenewalsmaster[""] = array();
+	$pageTitlesrenewalsmaster[""] = array();
+	$fieldLabelsrenewalsmaster[""]["ID"] = "ID";
+	$fieldToolTipsrenewalsmaster[""]["ID"] = "";
+	$fieldLabelsrenewalsmaster[""]["Renewal"] = "Renewal";
+	$fieldToolTipsrenewalsmaster[""]["Renewal"] = "";
+	if (count($fieldToolTipsrenewalsmaster[""]))
+		$tdatarenewalsmaster[".isUseToolTips"] = true;
 }
-	
-	
-	$tdataRenewalsMaster[".NCSearch"] = true;
+
+
+	$tdatarenewalsmaster[".NCSearch"] = true;
 
 
 
-$tdataRenewalsMaster[".shortTableName"] = "RenewalsMaster";
-$tdataRenewalsMaster[".nSecOptions"] = 0;
-$tdataRenewalsMaster[".recsPerRowList"] = 1;
-$tdataRenewalsMaster[".recsPerRowPrint"] = 1;
-$tdataRenewalsMaster[".mainTableOwnerID"] = "";
-$tdataRenewalsMaster[".moveNext"] = 1;
-$tdataRenewalsMaster[".entityType"] = 0;
+$tdatarenewalsmaster[".shortTableName"] = "renewalsmaster";
+$tdatarenewalsmaster[".nSecOptions"] = 0;
+$tdatarenewalsmaster[".recsPerRowList"] = 1;
+$tdatarenewalsmaster[".recsPerRowPrint"] = 1;
+$tdatarenewalsmaster[".mainTableOwnerID"] = "";
+$tdatarenewalsmaster[".moveNext"] = 1;
+$tdatarenewalsmaster[".entityType"] = 0;
 
-$tdataRenewalsMaster[".strOriginalTableName"] = "RenewalsMaster";
+$tdatarenewalsmaster[".strOriginalTableName"] = "renewalsmaster";
+
+		 
 
 
 
+$tdatarenewalsmaster[".showAddInPopup"] = false;
 
-$tdataRenewalsMaster[".showAddInPopup"] = false;
+$tdatarenewalsmaster[".showEditInPopup"] = false;
 
-$tdataRenewalsMaster[".showEditInPopup"] = false;
-
-$tdataRenewalsMaster[".showViewInPopup"] = false;
+$tdatarenewalsmaster[".showViewInPopup"] = false;
 
 //page's base css files names
 $popupPagesLayoutNames = array();
-$tdataRenewalsMaster[".popupPagesLayoutNames"] = $popupPagesLayoutNames;
+$tdatarenewalsmaster[".popupPagesLayoutNames"] = $popupPagesLayoutNames;
 
 
-$tdataRenewalsMaster[".fieldsForRegister"] = array();
+$tdatarenewalsmaster[".fieldsForRegister"] = array();
 
-$tdataRenewalsMaster[".listAjax"] = false;
+$tdatarenewalsmaster[".listAjax"] = false;
 
-	$tdataRenewalsMaster[".audit"] = false;
+	$tdatarenewalsmaster[".audit"] = false;
 
-	$tdataRenewalsMaster[".locking"] = false;
+	$tdatarenewalsmaster[".locking"] = false;
 
-$tdataRenewalsMaster[".edit"] = true;
-$tdataRenewalsMaster[".afterEditAction"] = 1;
-$tdataRenewalsMaster[".closePopupAfterEdit"] = 1;
-$tdataRenewalsMaster[".afterEditActionDetTable"] = "";
+$tdatarenewalsmaster[".edit"] = true;
+$tdatarenewalsmaster[".afterEditAction"] = 1;
+$tdatarenewalsmaster[".closePopupAfterEdit"] = 1;
+$tdatarenewalsmaster[".afterEditActionDetTable"] = "";
 
-$tdataRenewalsMaster[".add"] = true;
-$tdataRenewalsMaster[".afterAddAction"] = 1;
-$tdataRenewalsMaster[".closePopupAfterAdd"] = 1;
-$tdataRenewalsMaster[".afterAddActionDetTable"] = "";
+$tdatarenewalsmaster[".add"] = true;
+$tdatarenewalsmaster[".afterAddAction"] = 1;
+$tdatarenewalsmaster[".closePopupAfterAdd"] = 1;
+$tdatarenewalsmaster[".afterAddActionDetTable"] = "";
 
-$tdataRenewalsMaster[".list"] = true;
+$tdatarenewalsmaster[".list"] = true;
 
-$tdataRenewalsMaster[".view"] = true;
+$tdatarenewalsmaster[".inlineEdit"] = true;
 
-$tdataRenewalsMaster[".import"] = true;
 
-$tdataRenewalsMaster[".exportTo"] = true;
 
-$tdataRenewalsMaster[".printFriendly"] = true;
+$tdatarenewalsmaster[".inlineAdd"] = true;
+$tdatarenewalsmaster[".view"] = true;
 
-$tdataRenewalsMaster[".delete"] = true;
+$tdatarenewalsmaster[".import"] = true;
 
-$tdataRenewalsMaster[".showSimpleSearchOptions"] = false;
+$tdatarenewalsmaster[".exportTo"] = true;
 
-// search Saving settings
-$tdataRenewalsMaster[".searchSaving"] = false;
+$tdatarenewalsmaster[".printFriendly"] = true;
+
+$tdatarenewalsmaster[".delete"] = true;
+
+$tdatarenewalsmaster[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatarenewalsmaster[".allowShowHideFields"] = false;
 //
 
-$tdataRenewalsMaster[".showSearchPanel"] = true;
-		$tdataRenewalsMaster[".flexibleSearch"] = true;		
+// Allow Fields Reordering in GRID
+$tdatarenewalsmaster[".allowFieldsReordering"] = false;
+//
 
-if (isMobile())
-	$tdataRenewalsMaster[".isUseAjaxSuggest"] = false;
-else 
-	$tdataRenewalsMaster[".isUseAjaxSuggest"] = true;
+// search Saving settings
+$tdatarenewalsmaster[".searchSaving"] = false;
+//
 
-$tdataRenewalsMaster[".rowHighlite"] = true;
+$tdatarenewalsmaster[".showSearchPanel"] = true;
+		$tdatarenewalsmaster[".flexibleSearch"] = true;
+
+$tdatarenewalsmaster[".isUseAjaxSuggest"] = true;
+
+$tdatarenewalsmaster[".rowHighlite"] = true;
 
 
 
-$tdataRenewalsMaster[".addPageEvents"] = false;
+$tdatarenewalsmaster[".addPageEvents"] = false;
 
 // use timepicker for search panel
-$tdataRenewalsMaster[".isUseTimeForSearch"] = false;
+$tdatarenewalsmaster[".isUseTimeForSearch"] = false;
 
 
 
+$tdatarenewalsmaster[".badgeColor"] = "5F9EA0";
 
 
-$tdataRenewalsMaster[".allSearchFields"] = array();
-$tdataRenewalsMaster[".filterFields"] = array();
-$tdataRenewalsMaster[".requiredSearchFields"] = array();
+$tdatarenewalsmaster[".allSearchFields"] = array();
+$tdatarenewalsmaster[".filterFields"] = array();
+$tdatarenewalsmaster[".requiredSearchFields"] = array();
 
-$tdataRenewalsMaster[".allSearchFields"][] = "ID";
-	$tdataRenewalsMaster[".allSearchFields"][] = "RenewalType";
+$tdatarenewalsmaster[".allSearchFields"][] = "ID";
+	$tdatarenewalsmaster[".allSearchFields"][] = "Renewal";
 	
 
-$tdataRenewalsMaster[".googleLikeFields"] = array();
-$tdataRenewalsMaster[".googleLikeFields"][] = "ID";
-$tdataRenewalsMaster[".googleLikeFields"][] = "RenewalType";
+$tdatarenewalsmaster[".googleLikeFields"] = array();
+$tdatarenewalsmaster[".googleLikeFields"][] = "ID";
+$tdatarenewalsmaster[".googleLikeFields"][] = "Renewal";
 
 
-$tdataRenewalsMaster[".advSearchFields"] = array();
-$tdataRenewalsMaster[".advSearchFields"][] = "ID";
-$tdataRenewalsMaster[".advSearchFields"][] = "RenewalType";
+$tdatarenewalsmaster[".advSearchFields"] = array();
+$tdatarenewalsmaster[".advSearchFields"][] = "ID";
+$tdatarenewalsmaster[".advSearchFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".tableType"] = "list";
+$tdatarenewalsmaster[".tableType"] = "list";
 
-$tdataRenewalsMaster[".printerPageOrientation"] = 0;
-$tdataRenewalsMaster[".nPrinterPageScale"] = 100;
+$tdatarenewalsmaster[".printerPageOrientation"] = 0;
+$tdatarenewalsmaster[".nPrinterPageScale"] = 100;
 
-$tdataRenewalsMaster[".nPrinterSplitRecords"] = 40;
+$tdatarenewalsmaster[".nPrinterSplitRecords"] = 40;
 
-$tdataRenewalsMaster[".nPrinterPDFSplitRecords"] = 40;
-
-
-
-$tdataRenewalsMaster[".geocodingEnabled"] = false;
+$tdatarenewalsmaster[".nPrinterPDFSplitRecords"] = 40;
 
 
 
+$tdatarenewalsmaster[".geocodingEnabled"] = false;
 
-	
+
+
+
+
 
 
 
 
 
 // view page pdf
-$tdataRenewalsMaster[".isViewPagePDF"] = true;
-$tdataRenewalsMaster[".nViewPagePDFScale"] = 100;
 
 // print page pdf
-$tdataRenewalsMaster[".isPrinterPagePDF"] = true;
-$tdataRenewalsMaster[".nPrinterPagePDFScale"] = 100;
 
 
-$tdataRenewalsMaster[".pageSize"] = 20;
+$tdatarenewalsmaster[".pageSize"] = 20;
 
-$tdataRenewalsMaster[".warnLeavingPages"] = true;
+$tdatarenewalsmaster[".warnLeavingPages"] = true;
 
 
 
 $tstrOrderBy = "";
 if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
 	$tstrOrderBy = "order by ".$tstrOrderBy;
-$tdataRenewalsMaster[".strOrderBy"] = $tstrOrderBy;
+$tdatarenewalsmaster[".strOrderBy"] = $tstrOrderBy;
 
-$tdataRenewalsMaster[".orderindexes"] = array();
+$tdatarenewalsmaster[".orderindexes"] = array();
 
-$tdataRenewalsMaster[".sqlHead"] = "SELECT ID,  	RenewalType";
-$tdataRenewalsMaster[".sqlFrom"] = "FROM RenewalsMaster";
-$tdataRenewalsMaster[".sqlWhereExpr"] = "";
-$tdataRenewalsMaster[".sqlTail"] = "";
+$tdatarenewalsmaster[".sqlHead"] = "SELECT ID,  	Renewal";
+$tdatarenewalsmaster[".sqlFrom"] = "FROM renewalsmaster";
+$tdatarenewalsmaster[".sqlWhereExpr"] = "";
+$tdatarenewalsmaster[".sqlTail"] = "";
+
+
 
 
 
@@ -210,7 +220,7 @@ $arrRPP[] = 50;
 $arrRPP[] = 100;
 $arrRPP[] = 500;
 $arrRPP[] = -1;
-$tdataRenewalsMaster[".arrRecsPerPage"] = $arrRPP;
+$tdatarenewalsmaster[".arrRecsPerPage"] = $arrRPP;
 
 //fill array of groups per page for report with group fields
 $arrGPP = array();
@@ -221,50 +231,56 @@ $arrGPP[] = 10;
 $arrGPP[] = 50;
 $arrGPP[] = 100;
 $arrGPP[] = -1;
-$tdataRenewalsMaster[".arrGroupsPerPage"] = $arrGPP;
+$tdatarenewalsmaster[".arrGroupsPerPage"] = $arrGPP;
 
-$tdataRenewalsMaster[".highlightSearchResults"] = true;
+$tdatarenewalsmaster[".highlightSearchResults"] = true;
 
-$tableKeysRenewalsMaster = array();
-$tableKeysRenewalsMaster[] = "ID";
-$tdataRenewalsMaster[".Keys"] = $tableKeysRenewalsMaster;
+$tableKeysrenewalsmaster = array();
+$tableKeysrenewalsmaster[] = "ID";
+$tdatarenewalsmaster[".Keys"] = $tableKeysrenewalsmaster;
 
-$tdataRenewalsMaster[".listFields"] = array();
-$tdataRenewalsMaster[".listFields"][] = "ID";
-$tdataRenewalsMaster[".listFields"][] = "RenewalType";
+$tdatarenewalsmaster[".listFields"] = array();
+$tdatarenewalsmaster[".listFields"][] = "ID";
+$tdatarenewalsmaster[".listFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".hideMobileList"] = array();
+$tdatarenewalsmaster[".hideMobileList"] = array();
 
 
-$tdataRenewalsMaster[".viewFields"] = array();
-$tdataRenewalsMaster[".viewFields"][] = "ID";
-$tdataRenewalsMaster[".viewFields"][] = "RenewalType";
+$tdatarenewalsmaster[".viewFields"] = array();
+$tdatarenewalsmaster[".viewFields"][] = "ID";
+$tdatarenewalsmaster[".viewFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".addFields"] = array();
-$tdataRenewalsMaster[".addFields"][] = "RenewalType";
+$tdatarenewalsmaster[".addFields"] = array();
+$tdatarenewalsmaster[".addFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".masterListFields"] = array();
-$tdataRenewalsMaster[".masterListFields"][] = "ID";
-$tdataRenewalsMaster[".masterListFields"][] = "RenewalType";
+$tdatarenewalsmaster[".masterListFields"] = array();
+$tdatarenewalsmaster[".masterListFields"][] = "ID";
+$tdatarenewalsmaster[".masterListFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".inlineAddFields"] = array();
+$tdatarenewalsmaster[".inlineAddFields"] = array();
+$tdatarenewalsmaster[".inlineAddFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".editFields"] = array();
-$tdataRenewalsMaster[".editFields"][] = "RenewalType";
+$tdatarenewalsmaster[".editFields"] = array();
+$tdatarenewalsmaster[".editFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".inlineEditFields"] = array();
+$tdatarenewalsmaster[".inlineEditFields"] = array();
+$tdatarenewalsmaster[".inlineEditFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".exportFields"] = array();
-$tdataRenewalsMaster[".exportFields"][] = "ID";
-$tdataRenewalsMaster[".exportFields"][] = "RenewalType";
+$tdatarenewalsmaster[".updateSelectedFields"] = array();
+$tdatarenewalsmaster[".updateSelectedFields"][] = "Renewal";
 
-$tdataRenewalsMaster[".importFields"] = array();
-$tdataRenewalsMaster[".importFields"][] = "ID";
-$tdataRenewalsMaster[".importFields"][] = "RenewalType";
 
-$tdataRenewalsMaster[".printFields"] = array();
-$tdataRenewalsMaster[".printFields"][] = "ID";
-$tdataRenewalsMaster[".printFields"][] = "RenewalType";
+$tdatarenewalsmaster[".exportFields"] = array();
+$tdatarenewalsmaster[".exportFields"][] = "ID";
+$tdatarenewalsmaster[".exportFields"][] = "Renewal";
+
+$tdatarenewalsmaster[".importFields"] = array();
+$tdatarenewalsmaster[".importFields"][] = "ID";
+$tdatarenewalsmaster[".importFields"][] = "Renewal";
+
+$tdatarenewalsmaster[".printFields"] = array();
+$tdatarenewalsmaster[".printFields"][] = "ID";
+$tdatarenewalsmaster[".printFields"][] = "Renewal";
 
 //	ID
 //	Custom field settings
@@ -273,259 +289,267 @@ $tdataRenewalsMaster[".printFields"][] = "RenewalType";
 	$fdata["strName"] = "ID";
 	$fdata["GoodName"] = "ID";
 	$fdata["ownerTable"] = "renewalsmaster";
-	$fdata["Label"] = GetFieldLabel("RenewalsMaster","ID"); 
+	$fdata["Label"] = GetFieldLabel("renewalsmaster","ID");
 	$fdata["FieldType"] = 3;
+
 	
-		
 		$fdata["AutoInc"] = true;
+
 	
-		
-				
-		$fdata["bListPage"] = true; 
+										
+		$fdata["bListPage"] = true;
+
 	
-		
-		
-		
-		
-		$fdata["bViewPage"] = true; 
 	
-		$fdata["bAdvancedSearch"] = true; 
 	
-		$fdata["bPrinterPage"] = true; 
 	
-		$fdata["bExportPage"] = true; 
 	
-		$fdata["strField"] = "ID"; 
-	
+
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "ID";
+
 		$fdata["isSQLExpression"] = true;
 	$fdata["FullName"] = "ID";
+
 	
-		
-		
+	
 				$fdata["FieldPermissions"] = true;
-	
+
 				$fdata["UploadFolder"] = "files";
-		
+
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
-	
+
 	$vdata = array("ViewFormat" => "");
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$vdata["NeedEncode"] = true;
-	
+
 	$fdata["ViewFormats"]["view"] = $vdata;
 //  End View Formats
 
-//	Begin Edit Formats 	
+//	Begin Edit Formats
 	$fdata["EditFormats"] = array();
-	
+
 	$edata = array("EditFormat" => "Text field");
-	
-			
+
 	
 	
 
 
-		$edata["IsRequired"] = true; 
+
+		$edata["IsRequired"] = true;
+
 	
-		
-		
-		
+	
+	
 			$edata["acceptFileTypes"] = ".+$";
-	
+
 		$edata["maxNumberOfFiles"] = 1;
+
 	
-		
-		
-		
-		
+	
+	
+	
 			$edata["HTML5InuptType"] = "number";
-	
+
 		$edata["EditParams"] = "";
-			
+		
 		$edata["controlWidth"] = 200;
-	
+
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");	
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
 						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
 		
+	
 	//	End validation
+
 	
-		
-				
-		
+			
 	
-		
+	
+	
 	$fdata["EditFormats"]["edit"] = $edata;
 //	End Edit Formats
-	
-	
+
+
 	$fdata["isSeparate"] = false;
-	
-	
-	
-	
+
+
+
+
 // the field's search options settings
-		
+	
 			// the default search options list
-				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between");
-// the end of search options settings	
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
 
-	
 
-	
-	$tdataRenewalsMaster["ID"] = $fdata;
-//	RenewalType
+
+
+	$tdatarenewalsmaster["ID"] = $fdata;
+//	Renewal
 //	Custom field settings
 	$fdata = array();
 	$fdata["Index"] = 2;
-	$fdata["strName"] = "RenewalType";
-	$fdata["GoodName"] = "RenewalType";
+	$fdata["strName"] = "Renewal";
+	$fdata["GoodName"] = "Renewal";
 	$fdata["ownerTable"] = "renewalsmaster";
-	$fdata["Label"] = GetFieldLabel("RenewalsMaster","RenewalType"); 
+	$fdata["Label"] = GetFieldLabel("renewalsmaster","Renewal");
 	$fdata["FieldType"] = 200;
+
 	
-		
-		
-		
-				
-		$fdata["bListPage"] = true; 
 	
-		$fdata["bAddPage"] = true; 
 	
-		
-		$fdata["bEditPage"] = true; 
-	
-		
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
-		$fdata["strField"] = "RenewalType"; 
-	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+		$fdata["bInlineAdd"] = true;
+
+		$fdata["bEditPage"] = true;
+
+		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
+
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Renewal";
+
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "RenewalType";
+	$fdata["FullName"] = "Renewal";
+
 	
-		
-		
+	
 				$fdata["FieldPermissions"] = true;
-	
+
 				$fdata["UploadFolder"] = "files";
-		
+
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
-	
+
 	$vdata = array("ViewFormat" => "");
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$vdata["NeedEncode"] = true;
-	
+
 	$fdata["ViewFormats"]["view"] = $vdata;
 //  End View Formats
 
-//	Begin Edit Formats 	
+//	Begin Edit Formats
 	$fdata["EditFormats"] = array();
-	
+
 	$edata = array("EditFormat" => "Text field");
-	
-			
+
 	
 	
 
 
-		
-		
-		
-		
+
+	
+	
+	
+	
 			$edata["acceptFileTypes"] = ".+$";
-	
+
 		$edata["maxNumberOfFiles"] = 1;
+
 	
-		
-		
-		
-		
+	
+	
+	
 			$edata["HTML5InuptType"] = "text";
-	
+
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=50";
-	
+
 		$edata["controlWidth"] = 200;
-	
+
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-		
-		
+	
+	
 	//	End validation
+
 	
-		
-				
-		
+			
 	
-		
+	
+	
 	$fdata["EditFormats"]["edit"] = $edata;
 //	End Edit Formats
-	
-	
+
+
 	$fdata["isSeparate"] = false;
-	
-	
-	
-	
+
+
+
+
 // the field's search options settings
-		
+		$fdata["defaultSearchOption"] = "Contains";
+
 			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
-// the end of search options settings	
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
 
-	
 
-	
-	$tdataRenewalsMaster["RenewalType"] = $fdata;
 
-	
-$tables_data["RenewalsMaster"]=&$tdataRenewalsMaster;
-$field_labels["RenewalsMaster"] = &$fieldLabelsRenewalsMaster;
-$fieldToolTips["RenewalsMaster"] = &$fieldToolTipsRenewalsMaster;
-$page_titles["RenewalsMaster"] = &$pageTitlesRenewalsMaster;
+
+	$tdatarenewalsmaster["Renewal"] = $fdata;
+
+
+$tables_data["renewalsmaster"]=&$tdatarenewalsmaster;
+$field_labels["renewalsmaster"] = &$fieldLabelsrenewalsmaster;
+$fieldToolTips["renewalsmaster"] = &$fieldToolTipsrenewalsmaster;
+$page_titles["renewalsmaster"] = &$pageTitlesrenewalsmaster;
 
 // -----------------start  prepare master-details data arrays ------------------------------//
 // tables which are detail tables for current table (master)
-$detailsTablesData["RenewalsMaster"] = array();
-	
+$detailsTablesData["renewalsmaster"] = array();
+
 // tables which are master tables for current table (detail)
-$masterTablesData["RenewalsMaster"] = array();
+$masterTablesData["renewalsmaster"] = array();
 
 
 // -----------------end  prepare master-details data arrays ------------------------------//
@@ -541,127 +565,133 @@ require_once(getabspath("classes/sql.php"));
 
 
 
-function createSqlQuery_RenewalsMaster()
+function createSqlQuery_renewalsmaster()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "ID,  	RenewalType";
-$proto0["m_strFrom"] = "FROM RenewalsMaster";
+$proto0["m_strFieldList"] = "ID,  	Renewal";
+$proto0["m_strFrom"] = "FROM renewalsmaster";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
 $proto0["m_strTail"] = "";
-			$proto0["cipherer"] = null;
-$proto1=array();
-$proto1["m_sql"] = "";
-$proto1["m_uniontype"] = "SQLL_UNKNOWN";
+	
+					
+;
+						$proto0["cipherer"] = null;
+$proto2=array();
+$proto2["m_sql"] = "";
+$proto2["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto1["m_column"]=$obj;
-$proto1["m_contained"] = array();
-$proto1["m_strCase"] = "";
-$proto1["m_havingmode"] = false;
-$proto1["m_inBrackets"] = false;
-$proto1["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto1);
+$proto2["m_column"]=$obj;
+$proto2["m_contained"] = array();
+$proto2["m_strCase"] = "";
+$proto2["m_havingmode"] = false;
+$proto2["m_inBrackets"] = false;
+$proto2["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto2);
 
 $proto0["m_where"] = $obj;
-$proto3=array();
-$proto3["m_sql"] = "";
-$proto3["m_uniontype"] = "SQLL_UNKNOWN";
+$proto4=array();
+$proto4["m_sql"] = "";
+$proto4["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto3["m_column"]=$obj;
-$proto3["m_contained"] = array();
-$proto3["m_strCase"] = "";
-$proto3["m_havingmode"] = false;
-$proto3["m_inBrackets"] = false;
-$proto3["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto3);
+$proto4["m_column"]=$obj;
+$proto4["m_contained"] = array();
+$proto4["m_strCase"] = "";
+$proto4["m_havingmode"] = false;
+$proto4["m_inBrackets"] = false;
+$proto4["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto4);
 
 $proto0["m_having"] = $obj;
 $proto0["m_fieldlist"] = array();
-						$proto5=array();
+						$proto6=array();
 			$obj = new SQLField(array(
 	"m_strName" => "ID",
 	"m_strTable" => "renewalsmaster",
-	"m_srcTableName" => "RenewalsMaster"
+	"m_srcTableName" => "renewalsmaster"
 ));
 
-$proto5["m_sql"] = "ID";
-$proto5["m_srcTableName"] = "RenewalsMaster";
-$proto5["m_expr"]=$obj;
-$proto5["m_alias"] = "";
-$obj = new SQLFieldListItem($proto5);
+$proto6["m_sql"] = "ID";
+$proto6["m_srcTableName"] = "renewalsmaster";
+$proto6["m_expr"]=$obj;
+$proto6["m_alias"] = "";
+$obj = new SQLFieldListItem($proto6);
 
 $proto0["m_fieldlist"][]=$obj;
-						$proto7=array();
+						$proto8=array();
 			$obj = new SQLField(array(
-	"m_strName" => "RenewalType",
+	"m_strName" => "Renewal",
 	"m_strTable" => "renewalsmaster",
-	"m_srcTableName" => "RenewalsMaster"
+	"m_srcTableName" => "renewalsmaster"
 ));
 
-$proto7["m_sql"] = "RenewalType";
-$proto7["m_srcTableName"] = "RenewalsMaster";
-$proto7["m_expr"]=$obj;
-$proto7["m_alias"] = "";
-$obj = new SQLFieldListItem($proto7);
+$proto8["m_sql"] = "Renewal";
+$proto8["m_srcTableName"] = "renewalsmaster";
+$proto8["m_expr"]=$obj;
+$proto8["m_alias"] = "";
+$obj = new SQLFieldListItem($proto8);
 
 $proto0["m_fieldlist"][]=$obj;
 $proto0["m_fromlist"] = array();
-												$proto9=array();
-$proto9["m_link"] = "SQLL_MAIN";
-			$proto10=array();
-$proto10["m_strName"] = "renewalsmaster";
-$proto10["m_srcTableName"] = "RenewalsMaster";
-$proto10["m_columns"] = array();
-$proto10["m_columns"][] = "ID";
-$proto10["m_columns"][] = "RenewalType";
-$obj = new SQLTable($proto10);
+												$proto10=array();
+$proto10["m_link"] = "SQLL_MAIN";
+			$proto11=array();
+$proto11["m_strName"] = "renewalsmaster";
+$proto11["m_srcTableName"] = "renewalsmaster";
+$proto11["m_columns"] = array();
+$proto11["m_columns"][] = "ID";
+$proto11["m_columns"][] = "Renewal";
+$obj = new SQLTable($proto11);
 
-$proto9["m_table"] = $obj;
-$proto9["m_sql"] = "RenewalsMaster";
-$proto9["m_alias"] = "";
-$proto9["m_srcTableName"] = "RenewalsMaster";
-$proto11=array();
-$proto11["m_sql"] = "";
-$proto11["m_uniontype"] = "SQLL_UNKNOWN";
+$proto10["m_table"] = $obj;
+$proto10["m_sql"] = "renewalsmaster";
+$proto10["m_alias"] = "";
+$proto10["m_srcTableName"] = "renewalsmaster";
+$proto12=array();
+$proto12["m_sql"] = "";
+$proto12["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto11["m_column"]=$obj;
-$proto11["m_contained"] = array();
-$proto11["m_strCase"] = "";
-$proto11["m_havingmode"] = false;
-$proto11["m_inBrackets"] = false;
-$proto11["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto11);
+$proto12["m_column"]=$obj;
+$proto12["m_contained"] = array();
+$proto12["m_strCase"] = "";
+$proto12["m_havingmode"] = false;
+$proto12["m_inBrackets"] = false;
+$proto12["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto12);
 
-$proto9["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto9);
+$proto10["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto10);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-$proto0["m_srcTableName"]="RenewalsMaster";		
+$proto0["m_srcTableName"]="renewalsmaster";		
 $obj = new SQLQuery($proto0);
 
 	return $obj;
 }
-$queryData_RenewalsMaster = createSqlQuery_RenewalsMaster();
+$queryData_renewalsmaster = createSqlQuery_renewalsmaster();
 
 
 	
+					
+;
+
 		
-	
-$tdataRenewalsMaster[".sqlquery"] = $queryData_RenewalsMaster;
 
-$tableEvents["RenewalsMaster"] = new eventsBase;
-$tdataRenewalsMaster[".hasEvents"] = false;
+$tdatarenewalsmaster[".sqlquery"] = $queryData_renewalsmaster;
+
+$tableEvents["renewalsmaster"] = new eventsBase;
+$tdatarenewalsmaster[".hasEvents"] = false;
 
 ?>

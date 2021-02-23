@@ -28,6 +28,102 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsservicetypemaster["English"]))
 		$tdataservicetypemaster[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsservicetypemaster["Afrikaans"] = array();
+	$fieldToolTipsservicetypemaster["Afrikaans"] = array();
+	$pageTitlesservicetypemaster["Afrikaans"] = array();
+	$fieldLabelsservicetypemaster["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsservicetypemaster["Afrikaans"]["Id"] = "";
+	$fieldLabelsservicetypemaster["Afrikaans"]["Type"] = "tipe";
+	$fieldToolTipsservicetypemaster["Afrikaans"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["Afrikaans"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsservicetypemaster["Arabic"] = array();
+	$fieldToolTipsservicetypemaster["Arabic"] = array();
+	$pageTitlesservicetypemaster["Arabic"] = array();
+	$fieldLabelsservicetypemaster["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsservicetypemaster["Arabic"]["Id"] = "";
+	$fieldLabelsservicetypemaster["Arabic"]["Type"] = "????";
+	$fieldToolTipsservicetypemaster["Arabic"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["Arabic"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsservicetypemaster["Chinese"] = array();
+	$fieldToolTipsservicetypemaster["Chinese"] = array();
+	$pageTitlesservicetypemaster["Chinese"] = array();
+	$fieldLabelsservicetypemaster["Chinese"]["Id"] = "ID";
+	$fieldToolTipsservicetypemaster["Chinese"]["Id"] = "";
+	$fieldLabelsservicetypemaster["Chinese"]["Type"] = "??";
+	$fieldToolTipsservicetypemaster["Chinese"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["Chinese"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsservicetypemaster["French"] = array();
+	$fieldToolTipsservicetypemaster["French"] = array();
+	$pageTitlesservicetypemaster["French"] = array();
+	$fieldLabelsservicetypemaster["French"]["Id"] = "ID";
+	$fieldToolTipsservicetypemaster["French"]["Id"] = "";
+	$fieldLabelsservicetypemaster["French"]["Type"] = "Type";
+	$fieldToolTipsservicetypemaster["French"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["French"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsservicetypemaster["German"] = array();
+	$fieldToolTipsservicetypemaster["German"] = array();
+	$pageTitlesservicetypemaster["German"] = array();
+	$fieldLabelsservicetypemaster["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsservicetypemaster["German"]["Id"] = "";
+	$fieldLabelsservicetypemaster["German"]["Type"] = "Art";
+	$fieldToolTipsservicetypemaster["German"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["German"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsservicetypemaster["Italian"] = array();
+	$fieldToolTipsservicetypemaster["Italian"] = array();
+	$pageTitlesservicetypemaster["Italian"] = array();
+	$fieldLabelsservicetypemaster["Italian"]["Id"] = "ID";
+	$fieldToolTipsservicetypemaster["Italian"]["Id"] = "";
+	$fieldLabelsservicetypemaster["Italian"]["Type"] = "Digitare";
+	$fieldToolTipsservicetypemaster["Italian"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["Italian"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsservicetypemaster["Russian"] = array();
+	$fieldToolTipsservicetypemaster["Russian"] = array();
+	$pageTitlesservicetypemaster["Russian"] = array();
+	$fieldLabelsservicetypemaster["Russian"]["Id"] = "? ??";
+	$fieldToolTipsservicetypemaster["Russian"]["Id"] = "";
+	$fieldLabelsservicetypemaster["Russian"]["Type"] = "???";
+	$fieldToolTipsservicetypemaster["Russian"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["Russian"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsservicetypemaster["Spanish"] = array();
+	$fieldToolTipsservicetypemaster["Spanish"] = array();
+	$pageTitlesservicetypemaster["Spanish"] = array();
+	$fieldLabelsservicetypemaster["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsservicetypemaster["Spanish"]["Id"] = "";
+	$fieldLabelsservicetypemaster["Spanish"]["Type"] = "Tipo";
+	$fieldToolTipsservicetypemaster["Spanish"]["Type"] = "";
+	if (count($fieldToolTipsservicetypemaster["Spanish"]))
+		$tdataservicetypemaster[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsservicetypemaster[""] = array();
@@ -86,6 +182,9 @@ $tdataservicetypemaster[".afterAddActionDetTable"] = "";
 
 $tdataservicetypemaster[".list"] = true;
 
+
+
+
 $tdataservicetypemaster[".view"] = true;
 
 $tdataservicetypemaster[".import"] = true;
@@ -97,6 +196,14 @@ $tdataservicetypemaster[".printFriendly"] = true;
 $tdataservicetypemaster[".delete"] = true;
 
 $tdataservicetypemaster[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdataservicetypemaster[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdataservicetypemaster[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdataservicetypemaster[".searchSaving"] = false;
@@ -118,6 +225,7 @@ $tdataservicetypemaster[".isUseTimeForSearch"] = false;
 
 
 
+$tdataservicetypemaster[".badgeColor"] = "FFAD5B";
 
 
 $tdataservicetypemaster[".allSearchFields"] = array();
@@ -157,6 +265,7 @@ $tdataservicetypemaster[".geocodingEnabled"] = false;
 $tdataservicetypemaster[".listGridLayout"] = 3;
 
 
+$tdataservicetypemaster[".isResizeColumns"] = true;
 
 
 
@@ -249,6 +358,10 @@ $tdataservicetypemaster[".editFields"][] = "Type";
 
 $tdataservicetypemaster[".inlineEditFields"] = array();
 
+$tdataservicetypemaster[".updateSelectedFields"] = array();
+$tdataservicetypemaster[".updateSelectedFields"][] = "Type";
+
+
 $tdataservicetypemaster[".exportFields"] = array();
 $tdataservicetypemaster[".exportFields"][] = "Id";
 $tdataservicetypemaster[".exportFields"][] = "Type";
@@ -282,6 +395,8 @@ $tdataservicetypemaster[".printFields"][] = "Type";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -407,6 +522,9 @@ $tdataservicetypemaster[".printFields"][] = "Type";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

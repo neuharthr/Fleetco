@@ -51,7 +51,7 @@ class ImportPage extends RunnerPage
 		
 		$this->audit = GetAuditObject( $this->tName );
 		
-		$this->jsSettings['tableSettings'][ $this->tName ]["importFieldsLables"] = $this->getImportfieldsLabels();
+		$this->jsSettings["tableSettings"][ $this->tName ]["importFieldsLables"] = $this->getImportfieldsLabels();
 	}
 
 	/**
@@ -154,7 +154,7 @@ class ImportPage extends RunnerPage
 		if( $returnJSON != false )
 			echo $returnJSON;
 		else
-			echo "The file you're trying to import cannot be parsed";
+			echo mlang_message("IMPORT_FILE_PARSING_FAILED");
 		
 		exit();	
 	}
@@ -164,7 +164,7 @@ class ImportPage extends RunnerPage
 	 */
 	protected function runImportAndSendResultReport()
 	{
-		if( $this->eventsObject->exists('BeforeImport') )
+		if( $this->eventsObject->exists("BeforeImport") )
 		{
 			$message = "";
 			if( $this->eventsObject->BeforeImport($this, $message) === false )
@@ -179,7 +179,7 @@ class ImportPage extends RunnerPage
 		// remove a temporary import file
 		runner_delete_file( $rnrTempImportFilePath );
 		
-		if( $this->eventsObject->exists('AfterImport') )
+		if( $this->eventsObject->exists("AfterImport") )
 			$this->eventsObject->AfterImport( $resultData["totalRecordsNumber"], $resultData["unprocessedRecordsNumber"], $this);
 		
 		// keep all necessary data in SESSION variables 
@@ -242,7 +242,7 @@ class ImportPage extends RunnerPage
 		// assign body begin
 		$this->body["begin"] = GetBaseScriptsForPage(false);
 		// assign body end
-		$this->body['end'] = XTempl::create_method_assignment( "assignBodyEnd", $this);
+		$this->body["end"] = XTempl::create_method_assignment( "assignBodyEnd", $this);
 
 		$this->xt->assignbyref("body", $this->body);
 	}
@@ -398,7 +398,7 @@ class ImportPage extends RunnerPage
 		$headerFieldsFromCSV = parceCSVLine( $fieldsNamesLine, $delimiter, true );
 		
 		// add the first line with columns' names to the preview 
-		$linesData[] = implode($delimiter, $headerFieldsFromCSV);
+		$linesData[] = $fieldsNamesLine;
 		
 		$fieldsData = $this->getCorrespondingImportFieldsData( $headerFieldsFromCSV );
 		$previewData["fieldsData"] = $fieldsData; 
@@ -410,12 +410,13 @@ class ImportPage extends RunnerPage
 		{
 			if( !strlen( trim($line) ) )
 				break;
+				
+			$linesData[] = $line;
 			
-			$elems = parceCSVLine( $line, $delimiter, true );
-			$linesData[] = implode($delimiter, $elems);
 			if( !$hasDTFields )
 				continue;
 			
+			$elems = parceCSVLine( $line, $delimiter, true );
 			foreach($elems as $idx => $elem)
 			{
 				if( isset($fieldsData[ $idx ]) && $fieldsData[ $idx ]["dateTimeType"] && !strlen($dateFormat) )
@@ -789,16 +790,16 @@ class ImportPage extends RunnerPage
 	}
 	
 	/**
-	 * Check if there is an auto-incremented field amoung the import fields
+	 * Check if there is an auto-incremented field among the import fields
 	 * @param Array fieldsData
 	 * @return Boolean
 	 */
 	protected function hasAutoincImportFields( $fieldsData )
 	{
-		$importFields = $this->pSet->getImportFields();
-		foreach($importFields as $fName)
+//		$importFields = $this->pSet->getImportFields();
+		foreach( $fieldsData as $f )
 		{
-			if( $this->pSet->isAutoincField( $fName ) )
+			if( $this->pSet->isAutoincField( $f[ "fName" ] ) )
 				return true;
 		}
 		
@@ -966,88 +967,94 @@ class ImportPage extends RunnerPage
 		$fieldsValuesData = $this->prepareFiledsValuesData( $fieldsValuesData );	
 		$fieldNames = array_keys( $fieldsValuesData );	
 		
-		if( $this->eventsObject->exists('BeforeInsert') )
+		$errorMessage="";
+		$failed = false;
+		
+		if( $this->eventsObject->exists("BeforeInsert") )
 		{
-			$message = "";
-			if( $this->eventsObject->BeforeInsert($rawvalues, $fieldsValuesData, $this, $message) === false )
-			{
-				// update not successful		
-				if( !count($unprocessedData) )
-					$unprocessedData[] = $this->getImportFieldsLogCSVLine( $fieldNames );
-				$unprocessedData[] = $this->parseValuesDataInLogCSVLine( $fieldsValuesData );
-				$errorMessages[] = $message;
-				return;
-			}
+			//	fire event
+			if( $this->eventsObject->BeforeInsert($rawvalues, $fieldsValuesData, $this, $errorMessage) === false )
+				$failed = true;
 		}	
-		//	$fieldsValuesData might have been changed in the event
-		$fieldNames = array_keys( $fieldsValuesData );	
 		
-		// try to insert the record
-		$sql = $this->getInsertSQL( $fieldNames, $fieldsValuesData );	
-		if( db_exec_import($sql, $this->connection, $this->connection->addTableWrappers( $this->strOriginalTableName ), $isIdentityOffNeeded) )
+		if( !$failed )
 		{
-			$addedRecords = $addedRecords + 1;
+			//	$fieldsValuesData might have been changed in the event
+			$fieldNames = array_keys( $fieldsValuesData );	
 			
-			if( $this->audit )
-				$this->audit->LogAdd( $this->tName, $fieldsValuesData, GetKeysArray($fieldsValuesData, $this, true) );
-			
-			return;	
-		}
-			
-		$tempErrorMessage = $this->connection->lastError();
-		
-		$keyFieldsNames = array_intersect($fieldNames, $keys);
-		if( !$keyFieldsNames )
-		{
-			if( !count($unprocessedData) )
-				$unprocessedData[] = $this->getImportFieldsLogCSVLine( $fieldNames );
-			$unprocessedData[] = $this->parseValuesDataInLogCSVLine( $fieldsValuesData );
-			$errorMessages[] = $tempErrorMessage;
-			return;	
-		}
+			// try to insert the record
+			$sql = $this->getInsertSQL( $fieldNames, $fieldsValuesData );	
+			if( db_exec_import($sql, $this->connection, $this->connection->addTableWrappers( $this->strOriginalTableName ), $isIdentityOffNeeded) )
+			{
+				//	insert successful
+				$addedRecords = $addedRecords + 1;
 				
-		// try to update the record
-		$updateWhere = $this->getUpdateSQLWhere($keyFieldsNames, $fieldsValuesData);
-		$getAllUpdatedSQL = "select * from " .$this->connection->addTableWrappers( $this->strOriginalTableName ). " where " . $updateWhere;
-		$data = $this->connection->query( $getAllUpdatedSQL )->fetchAssoc();
-						
-		if( $data )
+				if( $this->audit )
+					$this->audit->LogAdd( $this->tName, $fieldsValuesData, GetKeysArray($fieldsValuesData, $this, true) );
+				
+				return;	
+			}
+				
+			$errorMessage = $this->connection->lastError();
+
+			//	prepare for updating attempt
+
+			$keyFieldsNames = array_intersect($fieldNames, $keys);
+
+			//	don't update if we don't have all the key field values
+			if( !$keyFieldsNames || count($keyFieldsNames) != count($keys) )
+				$failed = true;
+		}
+
+		if( !$failed )
+		{
+			//	prepare update
+			$updateWhere = $this->getUpdateSQLWhere($keyFieldsNames, $fieldsValuesData);
+			$getAllUpdatedSQL = "select * from " .$this->connection->addTableWrappers( $this->strOriginalTableName ). " where " . $updateWhere;
+			
+			$rs = $this->connection->querySilent( $getAllUpdatedSQL );
+			$data = null;
+			if( $rs )
+				$data = $rs->fetchAssoc();
+			if( !$data )
+				$failed = true;
+		}
+		
+		if( !$failed )
 		{ 			
+			// do update
 			$notKeyFieldsNames = array_diff($fieldNames, $keys);
 			
 			$sql = $this->getUpdateSQL($notKeyFieldsNames, $fieldsValuesData, $updateWhere);
-			if( db_exec_import($sql, $this->connection, $this->connection->addTableWrappers( $this->strOriginalTableName ), $isIdentityOffNeeded) )
-			{
-				// update successful				
-				$updatedRecords = $updatedRecords + 1;
-				
-				if( $this->audit )
-				{
-					$auditOldValues = array();
-					foreach ($data as $key => $val) 
-					{
-						$auditOldValues[ $key ] = $val;
-					}
-					
-					$this->audit->LogEdit( $this->tName, $fieldsValuesData, $auditOldValues, GetKeysArray($fieldsValuesData, $this) );
-				}
-			}
-			else
-			{
-				// update not successful		
-				if( !count($unprocessedData) )
-					$unprocessedData[] = $this->getImportFieldsLogCSVLine( $fieldNames );
-				$unprocessedData[] = $this->parseValuesDataInLogCSVLine( $fieldsValuesData );
-				$errorMessages[] = $this->connection->lastError();
-			}				
+			if( !db_exec_import($sql, $this->connection, $this->connection->addTableWrappers( $this->strOriginalTableName ), $isIdentityOffNeeded) )
+				$failed = true;
 		}
-		else 
+		
+		if( !$failed )
+		{
+			// report update successful				
+			$updatedRecords = $updatedRecords + 1;
+			
+			if( $this->audit )
+			{
+				$auditOldValues = array();
+				foreach ($data as $key => $val) 
+				{
+					$auditOldValues[ $key ] = $val;
+				}
+				
+				$this->audit->LogEdit( $this->tName, $fieldsValuesData, $auditOldValues, GetKeysArray($fieldsValuesData, $this) );
+			}
+		}
+
+		if( $failed )
 		{	
+			// report error
 			if( !count($unprocessedData) )
 				$unprocessedData[] = $this->getImportFieldsLogCSVLine( $fieldNames );			
 			// nothing to update
-			$unprocessedData[] = $this->parseValuesDataInLogCSVLine( $fieldsValuesData );
-			$errorMessages[] = $tempErrorMessage;
+			$unprocessedData[] = $this->parseValuesDataInLogCSVLine( $rawvalues );
+			$errorMessages[] = $errorMessage;
 		}
 	}
 
@@ -1122,16 +1129,16 @@ class ImportPage extends RunnerPage
 		}
 		else
 		{
-			$reportText .= "Import into"." ".$this->strOriginalTableName.$lineBreak.
+			$reportText .= mlang_message("IMPORT_INTO")." ".$this->strOriginalTableName.$lineBreak.
 				str_format_datetime( db2time( now() ) ) .$lineBreak.$lineBreak;
 		}
 		
-		$reportText .= mysprintf("%s out of %s records processed successfully.", array($boldBegin.$importedReords.$boldEnd, $boldBegin.$totalRecords.$boldEnd)) .$lineBreak.
-			mysprintf("%s records added.", array($boldBegin.$addedRecords.$boldEnd)) .$lineBreak.
-			mysprintf("%s records updated.", array($boldBegin.$updatedRecords.$boldEnd)) .$lineBreak;
+		$reportText .= mysprintf(mlang_message("IMPORT_RECORD_PROCESSED_SUCCESSFULLY"), array($boldBegin.$importedReords.$boldEnd, $boldBegin.$totalRecords.$boldEnd)) .$lineBreak.
+			mysprintf(mlang_message("IMPORT_RECORDS_ADDED"), array($boldBegin.$addedRecords.$boldEnd)) .$lineBreak.
+			mysprintf(mlang_message("IMPORT_RECORDS_UPDATED"), array($boldBegin.$updatedRecords.$boldEnd)) .$lineBreak;
 			
 		if( $notImportedRecords )
-			$reportText.= mysprintf("%s records processed with errors", array($boldBegin.$notImportedRecords.$boldEnd));
+			$reportText.= mysprintf(mlang_message("IMPORT_RECORDS_PROC_WITH_ERRORS"), array($boldBegin.$notImportedRecords.$boldEnd));
 		
 		if( $notImportedRecords && count($errorMessages) )
 		{
@@ -1144,7 +1151,7 @@ class ImportPage extends RunnerPage
 				}
 				else
 				{
-					$reportText.= $lineBreak.$lineBreak.$errorMessages[ $i ].$lineBreak.$unprocessedData[$i + 1];
+					$reportText.= $lineBreak.$lineBreak.$errorMessages[ $i ].$lineBreak.$unprocessedData[ $i + 1 ];
 				}
 			}
 		}
@@ -1236,7 +1243,7 @@ class ImportPage extends RunnerPage
 					if( $charNext == "\"" )
 					{
 						$i++;
-						$lines[$j].= $char;
+						$lines[ $j ].= $char;
 					}
 					else
 						$flag = true;
@@ -1248,7 +1255,7 @@ class ImportPage extends RunnerPage
 				$i+=1;
 			}
 			else	
-				$lines[$j].= $char;
+				$lines[ $j ].= $char;
 		}
 		return $lines;
 	}

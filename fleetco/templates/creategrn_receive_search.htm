@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,326 +13,355 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-search" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN searchheader}
-<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel creategrn_receive search}</h1>
-</span></div>{END searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel creategrn_receive search}</h2>
 
-
-{BEGIN conditions_block}
-<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
-	<span class=fieldname>Criteria:&nbsp;</span>	
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
-	&nbsp;&nbsp;&nbsp;
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
-	</center></div>{END conditions_block}
+{END searchheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
-	<tr>
-		<td>&nbsp;</td>
-		<td>NOT</td>
-		<td colspan=3>&nbsp; </td>
-	</tr>
-	<tr class="{$fielddispclass_Status}">
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
 	{BEGIN Status_fieldblock}		
-	<td>
-		{$label creategrn_receive Status}
-	</td>
-	<td>
-		<input type="checkbox" {$Status_notbox}>
-	</td>
-	<td>
-		{$searchtype_Status}
-	</td>
-	<td>
-		{$Status_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Status_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Status}" data-fieldname="Status">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive Status}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Status}
+			</div>
+			<div class="col-md-4" >
+				{$Status_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Status_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Status_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Fleet}">
 	{BEGIN Fleet_fieldblock}		
-	<td>
-		{$label creategrn_receive Fleet}
-	</td>
-	<td>
-		<input type="checkbox" {$Fleet_notbox}>
-	</td>
-	<td>
-		{$searchtype_Fleet}
-	</td>
-	<td>
-		{$Fleet_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Fleet_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Fleet}" data-fieldname="Fleet">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive Fleet}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Fleet}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Fleet_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_GRNDate}">
 	{BEGIN GRNDate_fieldblock}		
-	<td>
-		{$label creategrn_receive GRNDate}
-	</td>
-	<td>
-		<input type="checkbox" {$GRNDate_notbox}>
-	</td>
-	<td>
-		{$searchtype_GRNDate}
-	</td>
-	<td>
-		{$GRNDate_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$GRNDate_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_GRNDate}" data-fieldname="GRNDate">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive GRNDate}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_GRNDate}
+			</div>
+			<div class="col-md-4" >
+				{$GRNDate_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$GRNDate_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END GRNDate_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_ItemCode}">
 	{BEGIN ItemCode_fieldblock}		
-	<td>
-		{$label creategrn_receive ItemCode}
-	</td>
-	<td>
-		<input type="checkbox" {$ItemCode_notbox}>
-	</td>
-	<td>
-		{$searchtype_ItemCode}
-	</td>
-	<td>
-		{$ItemCode_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$ItemCode_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_ItemCode}" data-fieldname="ItemCode">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive ItemCode}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_ItemCode}
+			</div>
+			<div class="col-md-4" >
+				{$ItemCode_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$ItemCode_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END ItemCode_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Brand}">
 	{BEGIN Brand_fieldblock}		
-	<td>
-		{$label creategrn_receive Brand}
-	</td>
-	<td>
-		<input type="checkbox" {$Brand_notbox}>
-	</td>
-	<td>
-		{$searchtype_Brand}
-	</td>
-	<td>
-		{$Brand_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Brand_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Brand}" data-fieldname="Brand">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive Brand}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Brand}
+			</div>
+			<div class="col-md-4" >
+				{$Brand_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Brand_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Brand_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Description}">
 	{BEGIN Description_fieldblock}		
-	<td>
-		{$label creategrn_receive Description}
-	</td>
-	<td>
-		<input type="checkbox" {$Description_notbox}>
-	</td>
-	<td>
-		{$searchtype_Description}
-	</td>
-	<td>
-		{$Description_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Description_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Description}" data-fieldname="Description">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive Description}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Description}
+			</div>
+			<div class="col-md-4" >
+				{$Description_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Description_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Description_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Supplier}">
 	{BEGIN Supplier_fieldblock}		
-	<td>
-		{$label creategrn_receive Supplier}
-	</td>
-	<td>
-		<input type="checkbox" {$Supplier_notbox}>
-	</td>
-	<td>
-		{$searchtype_Supplier}
-	</td>
-	<td>
-		{$Supplier_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Supplier_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Supplier}" data-fieldname="Supplier">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive Supplier}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Supplier}
+			</div>
+			<div class="col-md-4" >
+				{$Supplier_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Supplier_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Supplier_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_UnitPrice}">
 	{BEGIN UnitPrice_fieldblock}		
-	<td>
-		{$label creategrn_receive UnitPrice}
-	</td>
-	<td>
-		<input type="checkbox" {$UnitPrice_notbox}>
-	</td>
-	<td>
-		{$searchtype_UnitPrice}
-	</td>
-	<td>
-		{$UnitPrice_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$UnitPrice_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_UnitPrice}" data-fieldname="UnitPrice">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive UnitPrice}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_UnitPrice}
+			</div>
+			<div class="col-md-4" >
+				{$UnitPrice_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$UnitPrice_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END UnitPrice_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Quantity}">
 	{BEGIN Quantity_fieldblock}		
-	<td>
-		{$label creategrn_receive Quantity}
-	</td>
-	<td>
-		<input type="checkbox" {$Quantity_notbox}>
-	</td>
-	<td>
-		{$searchtype_Quantity}
-	</td>
-	<td>
-		{$Quantity_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Quantity_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Quantity}" data-fieldname="Quantity">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive Quantity}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Quantity}
+			</div>
+			<div class="col-md-4" >
+				{$Quantity_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Quantity_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Quantity_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_RefNumber}">
 	{BEGIN RefNumber_fieldblock}		
-	<td>
-		{$label creategrn_receive RefNumber}
-	</td>
-	<td>
-		<input type="checkbox" {$RefNumber_notbox}>
-	</td>
-	<td>
-		{$searchtype_RefNumber}
-	</td>
-	<td>
-		{$RefNumber_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$RefNumber_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_RefNumber}" data-fieldname="RefNumber">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive RefNumber}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_RefNumber}
+			</div>
+			<div class="col-md-4" >
+				{$RefNumber_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$RefNumber_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END RefNumber_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_SystemDate}">
 	{BEGIN SystemDate_fieldblock}		
-	<td>
-		{$label creategrn_receive SystemDate}
-	</td>
-	<td>
-		<input type="checkbox" {$SystemDate_notbox}>
-	</td>
-	<td>
-		{$searchtype_SystemDate}
-	</td>
-	<td>
-		{$SystemDate_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$SystemDate_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_SystemDate}" data-fieldname="SystemDate">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive SystemDate}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_SystemDate}
+			</div>
+			<div class="col-md-4" >
+				{$SystemDate_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$SystemDate_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END SystemDate_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Cost}">
 	{BEGIN Cost_fieldblock}		
-	<td>
-		{$label creategrn_receive Cost}
-	</td>
-	<td>
-		<input type="checkbox" {$Cost_notbox}>
-	</td>
-	<td>
-		{$searchtype_Cost}
-	</td>
-	<td>
-		{$Cost_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Cost_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Cost}" data-fieldname="Cost">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive Cost}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Cost}
+			</div>
+			<div class="col-md-4" >
+				{$Cost_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Cost_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Cost_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_EnteredBy}">
 	{BEGIN EnteredBy_fieldblock}		
-	<td>
-		{$label creategrn_receive EnteredBy}
-	</td>
-	<td>
-		<input type="checkbox" {$EnteredBy_notbox}>
-	</td>
-	<td>
-		{$searchtype_EnteredBy}
-	</td>
-	<td>
-		{$EnteredBy_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$EnteredBy_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_EnteredBy}" data-fieldname="EnteredBy">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_receive EnteredBy}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_EnteredBy}
+			</div>
+			<div class="col-md-4" >
+				{$EnteredBy_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$EnteredBy_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END EnteredBy_fieldblock}
-	</tr>
-
-</table></div>
+</div>
 
 
-{BEGIN searchbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
-<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
-{END search_button} 
-{BEGIN reset_button}
-<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-{END reset_button}
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}</div>{END searchbuttons}
 
 
 </div>
 {END container_fields}
 
 
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-4"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>{mlang_message RESET}</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

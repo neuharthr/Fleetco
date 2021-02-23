@@ -60,7 +60,7 @@ class ReportField
 	function getStringSql($forGroupedField = false) { die; }
 
 	
-	function getFieldName($fieldValue, $data = null) { die; }
+	function getFieldName($fieldValue, $data = null, $pageObject = null ) { die; }
 
 	
 	function getSelectSql($hasGrouping = false)
@@ -199,8 +199,8 @@ class ReportNumericField extends ReportField
 			return $fname;
 		}
 	}
-
-	function getFieldName($fieldValue, $data)
+	
+	function getFieldName( $fieldValue, $data = null, $pageObject = null )
 	{
 		$value = $data[$this->_recordBasedRequest ? $this->_name : $this->_sqlname];
 		if($value == null)
@@ -278,7 +278,7 @@ class ReportCharField extends ReportField
 		}
 	}
 
-	function getFieldName($fieldValue, $data)
+	function getFieldName($fieldValue, $data = null, $pageObject = null )
 	{
 		$value = $data[$this->_recordBasedRequest ? $this->_name : $this->_sqlname];
 		if($value == null)
@@ -422,7 +422,7 @@ class ReportDateField extends ReportField
 		return $grp;
 	}
 
-	function getSelectSql($hasGrouping)
+	function getSelectSql($hasGrouping = false)
 	{
 		$fname = $this->_oldAlgorithm ? RunnerPage::_getFieldSQLDecrypt($this->_name, $this->_connection, $this->pSet, $this->cipherer) : cached_ffn($this->_name, true);
 		if($this->_interval == 0)
@@ -518,7 +518,7 @@ class ReportDateField extends ReportField
 		return $ret ? '('.$ret.')' : '';
 	}
 
-	function getFieldName($fieldValue, $data)
+	function getFieldName($fieldValue, $data = null, $pageObject = null )
 	{
 		global $locale_info;
 
@@ -530,8 +530,6 @@ class ReportDateField extends ReportField
 		{
 			if($this->_viewFormat)
 			{
-				global $pageObject;
-
 				if( !$this->_recordBasedRequest )
 					$data[ $this->_name ] = $value;
 
@@ -878,11 +876,12 @@ class SQLStatement
 	var $_connection;
 
 	var $_cipherer;
+	var $pageObject;
 
 	var $searchWhereClause = "";
 	var $searchHavingClause = "";
 
-	function __construct($sql, $order, $groupsTotal, $connection, &$params, $searchWhereClause, $searchHavingClause, $cipherer)
+	function __construct($sql, $order, $groupsTotal, $connection, &$params, $searchWhereClause, $searchHavingClause, $cipherer, $pageObject)
 	{
 		// copy properties to object
 		RunnerApply($this, $params);
@@ -891,6 +890,7 @@ class SQLStatement
 		$this->searchWhereClause = $searchWhereClause;
 		$this->searchHavingClause = $searchHavingClause;
 		$this->pSet = new ProjectSettings($this->tName, PAGE_REPORT);
+		$this->pageObject = $pageObject;
 		if(!is_array($sql))
 			die ('Invalid sql parameter');
 
@@ -1042,13 +1042,25 @@ class SQLStatement
 	{
 		global $strTableName;
 		$sql = $this->_originalSql;
-
-		if(tableEventExists("BeforeQueryReport", $strTableName))
+		if( $this->pageObject) 
 		{
-			$hwhere = $sql[2];
-			$eventObj = getEventObject($strTableName);
-			$eventObj->BeforeQueryReport($hwhere);
-			$sql[2] = $hwhere;
+			if( $this->pageObject->pageType == PAGE_REPORT ) {
+				if($this->pageObject->eventsObject->exists("BeforeQueryReport"))
+				{
+					$hwhere = $sql[2];
+					$this->pageObject->eventsObject->BeforeQueryReport($hwhere);
+					$sql[2] = $hwhere;
+				}
+			}
+			else {
+				if($this->pageObject->eventsObject->exists("BeforeQueryReportPrint"))
+				{
+					$hwhere = $sql[2];
+					$this->pageObject->eventsObject->BeforeQueryReportPrint($hwhere);
+					$sql[2] = $hwhere;
+				}
+				
+			}
 		}
 		return $sql[0].' '.($useOriginalOrder && $this->_order_in && !$this->_oldAlgorithm ? ', ' . $this->_order_in . ' ' : '').$sql[1].' '.
 			($sql[2] ? ' WHERE ' . $sql[2] : '').' '.$sql[3].' '.($sql[4] ? ' HAVING ' . $sql[4] : '');
@@ -1849,7 +1861,7 @@ class ReportLogic extends Summarable
 		parent::__construct($params);
         $this->_connection = $connection;
 		$this->cipherer = new RunnerCipherer($this->tName);
-		$this->_sql = new SQLStatement($sql, $order, $groupsTotal, $connection, $params, $searchWhereClause, $searchHavingClause, $this->cipherer );
+		$this->_sql = new SQLStatement($sql, $order, $groupsTotal, $connection, $params, $searchWhereClause, $searchHavingClause, $this->cipherer, $pageObject );
 		$this->_groups = new ReportGroups($this->_sql, $connection, $groupsTotal, $params);
 		$this->_groupsTotal = $groupsTotal;
 		$this->_groupsPerPage = $groupsPerPage;
@@ -2195,14 +2207,29 @@ class ReportLogic extends Summarable
 
 			// iterate through records in these groups
 			$hsql = $this->_sql->sql2($groups);
-			if(tableEventExists('BeforeQueryReport',$this->tName))
+			
+			if( $this->pageObject) 
 			{
-				$hwhere = $hsql['where'];
-				$eventsObj = getEventObject($this->tName);
-				$eventsObj->BeforeQueryReport($hwhere);
-				$hsql['where'] = $hwhere;
+				if( $this->pageObject->pageType == PAGE_REPORT ) {
+					if($this->pageObject->eventsObject->exists("BeforeQueryReport"))
+					{
+						$hwhere = $hsql['where'];
+						$this->pageObject->eventsObject->BeforeQueryReport($hwhere);
+						$hsql['where'] = $hwhere;
+					}
+				}
+				else {
+					if($this->pageObject->eventsObject->exists("BeforeQueryReportPrint"))
+					{
+						$hwhere = $hsql['where'];
+						$this->pageObject->eventsObject->BeforeQueryReportPrint($hwhere);
+						$hsql['where'] = $hwhere;
+					}
+					
+				}
 			}
-
+				
+		
 			$sql = $this->_sql->buildsql($hsql);
 			$qResult = $this->_connection->query( $sql );
 		    while($data = $this->cipherer->DecryptFetchedArray( $qResult->fetchAssoc() ))
@@ -2426,7 +2453,7 @@ class Report extends ReportLogic
 					if ($this->fieldsArr[$j]['name'] == $this->repGroupFields[$i]['strGroupField'])
 					{
 						$field = $this->_sql->field($nField);
-						$gvalue = $field->getFieldName($gkey, $grp['_first']);
+						$gvalue = $field->getFieldName($gkey, $grp['_first'], $this->pageObject );
 					    if($field->overrideFormat())
 						{
 							$begin[GoodFieldName(GoodFieldName($gname).'_grval')] = ($this->forExport == 'excel') ? runner_htmlspecialchars($gvalue) : $gvalue;

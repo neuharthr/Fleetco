@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,100 +13,280 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-login" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_page}
+<div {$page_chiddenattr} data-pageid="{$pageid}" data-container="page" class="container    "> 
+
+
+
+
+{BEGIN container_page_1}
+<div {$page_1_chiddenattr} data-pageid="{$pageid}" data-container="page_1" class=" bs-standalone-page  col-md-6 col-md-offset-3"> 
+
+
+
+
+{BEGIN container_panel}
+<div {$panel_chiddenattr} data-pageid="{$pageid}" data-container="panel" class=" bs-pagepanel panel panel-primary   "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class=" panel-heading   "> 
 
 {BEGIN loginheader}
-<div  class="rnr-brickcontents style2 rnr-b-loginheader {$brickclass_loginheader}"><span>	<h1>{$pagetitlelabel  login}</h1>
-</span></div>{END loginheader}
+<h3 class="panel-title" {$loginheader_hiddenattr} data-pageid="{$pageid}" data-brick="loginheader" >
+{BEGIN languages_block}
+<span class="pull-right btn-group">	
+	<button class="dropdown-toggle btn btn-flat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="glyphicon glyphicon-globe"></span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+	{BEGIN AfrikaansLANGLINK}
+		<li><a href="#" data-lang="Afrikaans" class="rnr-langlink">
+			{BEGIN AfrikaansLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END AfrikaansLANGLINK_ACTIVE}
+			Afrikaans</a></li>
+	{END AfrikaansLANGLINK}
+	{BEGIN ArabicLANGLINK}
+		<li><a href="#" data-lang="Arabic" class="rnr-langlink">
+			{BEGIN ArabicLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ArabicLANGLINK_ACTIVE}
+			العربية</a></li>
+	{END ArabicLANGLINK}
+	{BEGIN ChineseLANGLINK}
+		<li><a href="#" data-lang="Chinese" class="rnr-langlink">
+			{BEGIN ChineseLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ChineseLANGLINK_ACTIVE}
+			中文(简体)</a></li>
+	{END ChineseLANGLINK}
+	{BEGIN EnglishLANGLINK}
+		<li><a href="#" data-lang="English" class="rnr-langlink">
+			{BEGIN EnglishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END EnglishLANGLINK_ACTIVE}
+			English</a></li>
+	{END EnglishLANGLINK}
+	{BEGIN FrenchLANGLINK}
+		<li><a href="#" data-lang="French" class="rnr-langlink">
+			{BEGIN FrenchLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END FrenchLANGLINK_ACTIVE}
+			Français</a></li>
+	{END FrenchLANGLINK}
+	{BEGIN GermanLANGLINK}
+		<li><a href="#" data-lang="German" class="rnr-langlink">
+			{BEGIN GermanLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END GermanLANGLINK_ACTIVE}
+			Deutsch</a></li>
+	{END GermanLANGLINK}
+	{BEGIN ItalianLANGLINK}
+		<li><a href="#" data-lang="Italian" class="rnr-langlink">
+			{BEGIN ItalianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ItalianLANGLINK_ACTIVE}
+			Italiano</a></li>
+	{END ItalianLANGLINK}
+	{BEGIN RussianLANGLINK}
+		<li><a href="#" data-lang="Russian" class="rnr-langlink">
+			{BEGIN RussianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END RussianLANGLINK_ACTIVE}
+			Русский</a></li>
+	{END RussianLANGLINK}
+	{BEGIN SpanishLANGLINK}
+		<li><a href="#" data-lang="Spanish" class="rnr-langlink">
+			{BEGIN SpanishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END SpanishLANGLINK_ACTIVE}
+			Español</a></li>
+	{END SpanishLANGLINK}
+	</ul>
+	</span>
+{END languages_block}
 
+	{$pagetitlelabel  login}
+</h3>
+
+{END loginheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_body}
+<div {$body_chiddenattr} data-pageid="{$pageid}" data-container="body" class=" panel-body   "> 
+
+
+
+
+{BEGIN container_header_1}
+<div {$header_1_chiddenattr} data-pageid="{$pageid}" data-container="header_1" class="   col-md-12 "> 
 
 {BEGIN message_block}
-<div  class="rnr-brickcontents style3 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
+{END message_block}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-loginfields {$brickclass_loginfields}"><table class="fieldGrid">
-	<tr>
-		<td>
-			{BEGIN username_label}Username:{END username_label}
-		</td>
-		<td class="rnr-control">
-			<input type="text" name="username" {$username_attrs}>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			{BEGIN password_label}Password:{END password_label}
-		</td>
-		<td class="rnr-control">
-			<input type="password" name="password" {$password_attrs}>
-		</td>
-	</tr>
-					<tr>
-		<td>
-			{BEGIN remember_password_label}Remember Password:{END remember_password_label}
-		</td>
-		<td>
-			<input type="checkbox" {$rememberbox_attrs}>
-		</td>
-	</tr>
-</table>
-								</div>
-
-
-{BEGIN guestlink_block}
-<div  class="rnr-brickcontents style3 rnr-b-mesguest {$brickclass_mesguest}"><a {$guestlink_attrs} >Login as Guest</a>
-</div>{END guestlink_block}
+</div>
+{END container_header_1}
 
 
 
 
-<div  class="rnr-brickcontents style3 rnr-b-mesforgot {$brickclass_mesforgot}"><a href="remind.php" {$forgotpasswordlink_attrs}>Forgot password?</a>
+
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$loginfields_hiddenattr} data-pageid="{$pageid}" data-brick="loginfields" class="form-horizontal" role="form">
+	<div class="form-group" >
+		<label class="col-md-4 control-label" for="username">
+			{BEGIN username_label}{mlang_message USERNAME}:{END username_label}
+		</label>
+		<div class="col-md-6" >
+			<input type="text" class="form-control" name="username" {$username_attrs} id="username">
+		</div>
+	</div>
+	<div class="form-group" >
+		<label class="col-md-4 control-label" for="password">
+			{BEGIN password_label}{mlang_message PASSWORD}:{END password_label}
+		</label>
+		<div class="col-md-6" >
+			<input type="password" class="form-control" name="password" {$password_attrs} id="password">
+		</div>
+	</div>
+	<div class="form-group" >
+		<div class="col-md-6 col-md-offset-4" >
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" {$rememberbox_attrs}> {BEGIN remember_password_label}<span>{mlang_message REMEMBER_ME}</span>{END remember_password_label}
+				</label>
+			</div>
+		</div>
+	</div>
+	
 </div>
 
 
-{BEGIN loginbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-loginbuttons {$brickclass_loginbuttons}"><a href="#" class="rnr-button main" {$loginlink_attrs}>Submit</a>
-{BEGIN continue_button}
-<a href="#" class="rnr-button" {$continuebutton_attrs}>Continue</a>
-{END continue_button}
-</div>{END loginbuttons}
+
+
 
 
 </div>
 {END container_fields}
 
 
+
+
+
+
+
+
+{BEGIN container_header_2}
+<div {$header_2_chiddenattr} data-pageid="{$pageid}" data-container="header_2" class="   col-md-8 col-md-offset-4"> 
+
+{BEGIN loginbuttons}
+<button class="btn btn-primary" {$loginlink_attrs}>{mlang_message SIGN_IN}</button>
+{BEGIN continue_button}
+<button class="btn btn-primary" {$continuebutton_attrs}>{mlang_message CONTINUE}</button>
+{END continue_button}
+
+{BEGIN guestlink_block}
+<div class="btn btn-link"><a {$guestlink_attrs} >{mlang_message GUEST}</a></div>
+{END guestlink_block}
+
+
+{END loginbuttons}
+
+
+
+</div>
+{END container_header_2}
+
+
+
+
+
+
+</div>
+{END container_body}
+
+
+
+
+
+
+</div>
+{END container_panel}
+
+
+
+
+
+
+
+
+{BEGIN container_register}
+<div {$register_chiddenattr} data-pageid="{$pageid}" data-container="register" class="  text-center col-md-12 "> 
+
+
+<span {$bsloginregister_hiddenattr} data-pageid="{$pageid}" data-brick="bsloginregister">
+	<a href="remind.php" class="btn btn-link btn-xs" {$forgotpasswordlink_attrs}>{mlang_message FORGOT}</a>
+</span>
+
+
+
+
+
+</div>
+{END container_register}
+
+
+
+
+
+
+</div>
+{END container_page_1}
+
+
+
+
+
+
+</div>
+{END container_page}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

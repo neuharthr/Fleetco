@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,56 +13,49 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-print" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
 {BEGIN container_pdf}
-<div class="rnr-c rnr-ch rnr-c-pdf">
+<div {$pdf_chiddenattr} data-pageid="{$pageid}" data-container="pdf" class="   col-md-12 "> 
 
 {BEGIN printbuttons}
-<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
-<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
-{END divideintopages_block}
 {BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>PDF View</a>
+<a href="#" class="pdflink btn btn-default" {$pdflink_attrs}>{mlang_message PDF_VIEW}</a>
 {END pdflink_block}
-</div>
+
 {END printbuttons}
 
-<div class="rnr-hfiller"></div>
+
+
 </div>
 {END container_pdf}
 
 
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
 
 {BEGIN container_pageheader}
-<div class="rnr-c rnr-cv rnr-c-pageheader">
+<div {$pageheader_chiddenattr} data-pageid="{$pageid}" data-container="pageheader" class="    "> 
 
 {BEGIN printheader}
-<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel inventorymaster_pricing5 print}</h1>
-</div>{END printheader}
+	<h2 {$printheader_hiddenattr} data-pageid="{$pageid}" data-brick="printheader" >{$pagetitlelabel inventorymaster_pricing5 print}</h2>
+
+{END printheader}
 
 
 {BEGIN page_number}
-<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+<span>{mlang_message PAGE1} <span class="rp-pageno">{$pageno}</span> {mlang_message PAGE2} <span class="rp-pagecount">{$pagecount}</span></span>
+{END page_number}
+
 
 
 </div>
@@ -73,147 +67,121 @@
 
 
 {BEGIN grid_block}
-	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<table class="table table-bordered rp-maintable" {$printgrid_hiddenattr} data-pageid="{$pageid}" data-brick="printgrid" >
 	<thead>
 	{BEGIN grid_header}
-<tr class="rnr-toprow style1 {$gridHeader_class}" >
-{BEGIN record_header}
-		{BEGIN ItemID_fieldheadercolumn}
-<th class="runner-cc {$ItemID_class}" {$ItemID_style}>
-	{BEGIN ItemID_fieldheader}
-	<b>{$label inventorymaster_pricing5 ItemID}</b>
-	{END ItemID_fieldheader}
-</th>
-{END ItemID_fieldheadercolumn}
-	{BEGIN Brand_fieldheadercolumn}
-<th class="runner-cc {$Brand_class}" {$Brand_style}>
-	{BEGIN Brand_fieldheader}
-	<b>{$label inventorymaster_pricing5 Brand}</b>
-	{END Brand_fieldheader}
-</th>
-{END Brand_fieldheadercolumn}
-	{BEGIN Description_fieldheadercolumn}
-<th class="runner-cc {$Description_class}" {$Description_style}>
-	{BEGIN Description_fieldheader}
-	<b>{$label inventorymaster_pricing5 Description}</b>
-	{END Description_fieldheader}
-</th>
-{END Description_fieldheadercolumn}
-	{BEGIN Supplier_fieldheadercolumn}
-<th class="runner-cc {$Supplier_class}" {$Supplier_style}>
-	{BEGIN Supplier_fieldheader}
-	<b>{$label inventorymaster_pricing5 Supplier}</b>
-	{END Supplier_fieldheader}
-</th>
-{END Supplier_fieldheadercolumn}
-	{BEGIN UnitPrice_fieldheadercolumn}
-<th class="runner-cc {$UnitPrice_class}" {$UnitPrice_style}>
-	{BEGIN UnitPrice_fieldheader}
-	<b>{$label inventorymaster_pricing5 UnitPrice}</b>
-	{END UnitPrice_fieldheader}
-</th>
-{END UnitPrice_fieldheadercolumn}
-	{BEGIN GRNDate_fieldheadercolumn}
-<th class="runner-cc {$GRNDate_class}" {$GRNDate_style}>
-	{BEGIN GRNDate_fieldheader}
-	<b>{$label inventorymaster_pricing5 GRNDate}</b>
-	{END GRNDate_fieldheader}
-</th>
-{END GRNDate_fieldheadercolumn}
-	{BEGIN ID1_fieldheadercolumn}
-<th class="runner-cc {$ID1_class}" {$ID1_style}>
-	{BEGIN ID1_fieldheader}
-	<b>{$label inventorymaster_pricing5 ID1}</b>
-	{END ID1_fieldheader}
-</th>
-{END ID1_fieldheadercolumn}
-	{BEGIN Status_fieldheadercolumn}
-<th class="runner-cc {$Status_class}" {$Status_style}>
-	{BEGIN Status_fieldheader}
-	<b>{$label inventorymaster_pricing5 Status}</b>
-	{END Status_fieldheader}
-</th>
-{END Status_fieldheadercolumn}
-	{BEGIN creategrn_ID_fieldheadercolumn}
-<th class="runner-cc {$creategrn_ID_class}" {$creategrn_ID_style}>
-	{BEGIN creategrn_ID_fieldheader}
-	<b>{$label inventorymaster_pricing5 creategrn_ID}</b>
-	{END creategrn_ID_fieldheader}
-</th>
-{END creategrn_ID_fieldheadercolumn}
-		
-	<th class="rnr-edge">&nbsp;</th>
-	{BEGIN endrecordheader_block}
-	<th class="rnr-cs">&nbsp;</th>
-	{END endrecordheader_block}
-	{END record_header}
-</tr>
-{END grid_header}
-
+		<tr class="{$gridHeader_class}" >
+		{BEGIN record_header}
+			{BEGIN ItemID_fieldheadercolumn}
+			<th class="{$ItemID_class}" {$ItemID_style}  data-field="ItemID">
+				{$label inventorymaster_pricing5 ItemID}
+			</th>
+			{END ItemID_fieldheadercolumn}
+			{BEGIN Brand_fieldheadercolumn}
+			<th class="{$Brand_class}" {$Brand_style}  data-field="Brand">
+				{$label inventorymaster_pricing5 Brand}
+			</th>
+			{END Brand_fieldheadercolumn}
+			{BEGIN Description_fieldheadercolumn}
+			<th class="{$Description_class}" {$Description_style}  data-field="Description">
+				{$label inventorymaster_pricing5 Description}
+			</th>
+			{END Description_fieldheadercolumn}
+			{BEGIN Supplier_fieldheadercolumn}
+			<th class="{$Supplier_class}" {$Supplier_style}  data-field="Supplier">
+				{$label inventorymaster_pricing5 Supplier}
+			</th>
+			{END Supplier_fieldheadercolumn}
+			{BEGIN UnitPrice_fieldheadercolumn}
+			<th class="{$UnitPrice_class}" {$UnitPrice_style}  data-field="UnitPrice">
+				{$label inventorymaster_pricing5 UnitPrice}
+			</th>
+			{END UnitPrice_fieldheadercolumn}
+			{BEGIN GRNDate_fieldheadercolumn}
+			<th class="{$GRNDate_class}" {$GRNDate_style}  data-field="GRNDate">
+				{$label inventorymaster_pricing5 GRNDate}
+			</th>
+			{END GRNDate_fieldheadercolumn}
+			{BEGIN ID1_fieldheadercolumn}
+			<th class="{$ID1_class}" {$ID1_style}  data-field="ID1">
+				{$label inventorymaster_pricing5 ID1}
+			</th>
+			{END ID1_fieldheadercolumn}
+			{BEGIN Status_fieldheadercolumn}
+			<th class="{$Status_class}" {$Status_style}  data-field="Status">
+				{$label inventorymaster_pricing5 Status}
+			</th>
+			{END Status_fieldheadercolumn}
+			{BEGIN creategrn_ID_fieldheadercolumn}
+			<th class="{$creategrn_ID_class}" {$creategrn_ID_style}  data-field="creategrn_ID">
+				{$label inventorymaster_pricing5 creategrn_ID}
+			</th>
+			{END creategrn_ID_fieldheadercolumn}
+			{BEGIN endrecordheader_block}
+			<th class="rnr-cs">&nbsp;</th>
+			{END endrecordheader_block}
+		{END record_header}
+		</tr>
+	{END grid_header}
 	</thead>
+	
 	<tbody>	
 	{BEGIN grid_row}
-	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
 		{BEGIN grid_record}
-				{BEGIN ItemID_fieldcolumn}
-<td  class="runner-cc {$ItemID_class}" {$ItemID_style} {$recordattrs}>
-	{$ItemID_value}
-</td>
-{END ItemID_fieldcolumn}
-	{BEGIN Brand_fieldcolumn}
-<td  class="runner-cc {$Brand_class}" {$Brand_style} {$recordattrs}>
-	{$Brand_value}
-</td>
-{END Brand_fieldcolumn}
-	{BEGIN Description_fieldcolumn}
-<td  class="runner-cc {$Description_class}" {$Description_style} {$recordattrs}>
-	{$Description_value}
-</td>
-{END Description_fieldcolumn}
-	{BEGIN Supplier_fieldcolumn}
-<td  class="runner-cc {$Supplier_class}" {$Supplier_style} {$recordattrs}>
-	{$Supplier_value}
-</td>
-{END Supplier_fieldcolumn}
-	{BEGIN UnitPrice_fieldcolumn}
-<td  class="runner-cc {$UnitPrice_class}" {$UnitPrice_style} {$recordattrs}>
-	{$UnitPrice_value}
-</td>
-{END UnitPrice_fieldcolumn}
-	{BEGIN GRNDate_fieldcolumn}
-<td  class="runner-cc {$GRNDate_class}" {$GRNDate_style} {$recordattrs}>
-	{$GRNDate_value}
-</td>
-{END GRNDate_fieldcolumn}
-	{BEGIN ID1_fieldcolumn}
-<td  class="runner-cc {$ID1_class}" {$ID1_style} {$recordattrs}>
-	{$ID1_value}
-</td>
-{END ID1_fieldcolumn}
-	{BEGIN Status_fieldcolumn}
-<td  class="runner-cc {$Status_class}" {$Status_style} {$recordattrs}>
-	{$Status_value}
-</td>
-{END Status_fieldcolumn}
-	{BEGIN creategrn_ID_fieldcolumn}
-<td  class="runner-cc {$creategrn_ID_class}" {$creategrn_ID_style} {$recordattrs}>
-	{$creategrn_ID_value}
-</td>
-{END creategrn_ID_fieldcolumn}
-
-		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
-		{BEGIN endrecord_block}
-		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
-		{END endrecord_block}
-										
+			{BEGIN ItemID_fieldcolumn}
+			<td  class="{$ItemID_class}" {$ItemID_style} {$recordattrs}>
+				{$ItemID_value}
+			</td>
+			{END ItemID_fieldcolumn}
+			{BEGIN Brand_fieldcolumn}
+			<td  class="{$Brand_class}" {$Brand_style} {$recordattrs}>
+				{$Brand_value}
+			</td>
+			{END Brand_fieldcolumn}
+			{BEGIN Description_fieldcolumn}
+			<td  class="{$Description_class}" {$Description_style} {$recordattrs}>
+				{$Description_value}
+			</td>
+			{END Description_fieldcolumn}
+			{BEGIN Supplier_fieldcolumn}
+			<td  class="{$Supplier_class}" {$Supplier_style} {$recordattrs}>
+				{$Supplier_value}
+			</td>
+			{END Supplier_fieldcolumn}
+			{BEGIN UnitPrice_fieldcolumn}
+			<td  class="{$UnitPrice_class}" {$UnitPrice_style} {$recordattrs}>
+				{$UnitPrice_value}
+			</td>
+			{END UnitPrice_fieldcolumn}
+			{BEGIN GRNDate_fieldcolumn}
+			<td  class="{$GRNDate_class}" {$GRNDate_style} {$recordattrs}>
+				{$GRNDate_value}
+			</td>
+			{END GRNDate_fieldcolumn}
+			{BEGIN ID1_fieldcolumn}
+			<td  class="{$ID1_class}" {$ID1_style} {$recordattrs}>
+				{$ID1_value}
+			</td>
+			{END ID1_fieldcolumn}
+			{BEGIN Status_fieldcolumn}
+			<td  class="{$Status_class}" {$Status_style} {$recordattrs}>
+				{$Status_value}
+			</td>
+			{END Status_fieldcolumn}
+			{BEGIN creategrn_ID_fieldcolumn}
+			<td  class="{$creategrn_ID_class}" {$creategrn_ID_style} {$recordattrs}>
+				{$creategrn_ID_value}
+			</td>
+			{END creategrn_ID_fieldcolumn}
+			{BEGIN endrecord_block}
+			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+			{END endrecord_block}
 		{END grid_record}
-
-	</tr>
-	{END grid_row}
-
-
-	
+		</tr>
+{END grid_row}
 	</tbody>
+
 </table>
 
 {END grid_block}
@@ -223,16 +191,24 @@
 {END container_grid}
 
 
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

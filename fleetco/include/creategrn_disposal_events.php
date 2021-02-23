@@ -1,6 +1,6 @@
-<?php 
+<?php
 class eventclass_creategrn_disposal  extends eventsBase
-{ 
+{
 	function __construct()
 	{
 	// fill list of events
@@ -15,6 +15,7 @@ class eventclass_creategrn_disposal  extends eventsBase
 
 //	handlers
 
+		
 		
 		
 		
@@ -76,15 +77,20 @@ return true;
 		
 		
 		
-								
 		
 		
-			
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		
 
+		
 		
 		
 		
@@ -146,15 +152,19 @@ return true;
 		
 		
 		
-								
 		
 		
-			
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		
 //	onscreen events
 
-} 
+}
 ?>

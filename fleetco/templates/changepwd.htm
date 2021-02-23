@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,96 +13,210 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-changepwd" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_page}
+<div {$page_chiddenattr} data-pageid="{$pageid}" data-container="page" class="container    "> 
+
+
+
+
+{BEGIN container_page_1}
+<div {$page_1_chiddenattr} data-pageid="{$pageid}" data-container="page_1" class=" bs-standalone-page  col-md-6 col-md-offset-3"> 
+
+
+
+
+{BEGIN container_panel}
+<div {$panel_chiddenattr} data-pageid="{$pageid}" data-container="panel" class=" bs-pagepanel panel panel-primary   "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class=" panel-heading   "> 
 
 {BEGIN changeheader}
-<div  class="rnr-brickcontents style2 rnr-b-changeheader {$brickclass_changeheader}"><span>	<h1>{$pagetitlelabel  changepwd}</h1>
-</span></div>{END changeheader}
+<h3 class="panel-title" {$changeheader_hiddenattr} data-pageid="{$pageid}" data-brick="changeheader" >
+{$pagetitlelabel  changepwd}
+</h3>
+{END changeheader}
 
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_body}
+<div {$body_chiddenattr} data-pageid="{$pageid}" data-container="body" class=" panel-body   "> 
+
+
+
+
+{BEGIN container_header_1}
+<div {$header_1_chiddenattr} data-pageid="{$pageid}" data-container="header_1" class="   col-md-12 "> 
 
 {BEGIN message_block}
-<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
+{END message_block}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-changefields {$brickclass_changefields}"><table class="fieldGrid">
-	{BEGIN oldpass_block}
-	<tr>
-		<td>
-			{BEGIN oldpass_label}Old password:{END oldpass_label}
-		</td>
-		<td class="rnr-control">
-			{$oldpass_editcontrol}
-		</td>
-	</tr>
-	{END oldpass_block}
-	{BEGIN newpass_block}
-	<tr>
-		<td>
-			{BEGIN newpass_label}New password:{END newpass_label}
-		</td>
-		<td class="rnr-control">
-			{$newpass_editcontrol}
-		</td>
-	</tr>
-	{END newpass_block}
-	{BEGIN confirm_block}
-	<tr>
-		<td>
-			{BEGIN confirm_label}Confirm password:{END confirm_label}
-		</td>
-		<td class="rnr-control">
-			{$confirm_editcontrol}
-		</td>
-	</tr>
-	{END confirm_block}
-</table>
+</div>
+{END container_header_1}
+
+
+
+
+
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$changefields_hiddenattr} data-pageid="{$pageid}" data-brick="changefields" class="form-horizontal" role="form">
+{BEGIN oldpass_block}
+<div class="form-group" data-fieldname="oldpass" data-signal-error-for="oldpass{$id}">
+	<label class="col-md-3 control-label" for="{$labelfor_oldpass}">
+	{BEGIN oldpass_label}
+		{mlang_message OLD_PASSWORD}
+	{END oldpass_label}
+	</label>
+	<div class="col-md-6" >
+		{$oldpass_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="oldpass"></div>
+</div>
+{END oldpass_block}
+{BEGIN newpass_block}
+<div class="form-group" data-fieldname="newpass" data-signal-error-for="newpass{$id}">
+	<label class="col-md-3 control-label" for="{$labelfor_newpass}">
+	{BEGIN newpass_label}
+		{mlang_message NEW_PASSWORD}
+	{END newpass_label}
+	</label>
+	<div class="col-md-6" >
+		{$newpass_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="newpass"></div>
+</div>
+{END newpass_block}
+{BEGIN confirm_block}
+<div class="form-group" data-fieldname="confirm" data-signal-error-for="confirm{$id}">
+	<label class="col-md-3 control-label" for="{$labelfor_confirm}">
+	{BEGIN confirm_label}
+		{mlang_message CONFIRM_PASSWORD}
+	{END confirm_label}
+	</label>
+	<div class="col-md-6" >
+		{$confirm_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="confirm">
+	</div>
+</div>
+{END confirm_block}	
 </div>
 
 
-{BEGIN changebuttons}
-<div  class="rnr-brickcontents style2 rnr-b-changebuttons {$brickclass_changebuttons}"><div class="rnr-withsidelink">
-	<a href="#" class="rnr-button main" {$submit_attrs}>Submit</a>
-	<a  class="rnr-button link rnr-sidelink" {$backlink_attrs}>Back</a>
-</div>
-
-</div>{END changebuttons}
 
 
 </div>
 {END container_fields}
 
 
+
+
+
+
+
+
+{BEGIN container_header_2}
+<div {$header_2_chiddenattr} data-pageid="{$pageid}" data-container="header_2" class="   col-md-8 col-md-offset-4"> 
+
+{BEGIN changebuttons}
+<div {$changebuttons_hiddenattr} data-pageid="{$pageid}" data-brick="changebuttons">
+	<a href="#" class="btn btn-primary" {$submit_attrs}>{mlang_message SUBMIT}</a>
+	<a class="btn btn-link" {$backlink_attrs}>{mlang_message BACK}</a>
+</div>
+
+
+
+{END changebuttons}
+
+
+
+</div>
+{END container_header_2}
+
+
+
+
+
+
+</div>
+{END container_body}
+
+
+
+
+
+
+</div>
+{END container_panel}
+
+
+
+
+
+
+</div>
+{END container_page_1}
+
+
+
+
+
+
+</div>
+{END container_page}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

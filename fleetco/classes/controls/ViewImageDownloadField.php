@@ -37,7 +37,7 @@ class ViewImageDownloadField extends ViewFileField
 	 * addJSFiles
 	 * Add control JS files to page object
 	 */
-	function addJSFiles()
+	public function addJSFiles()
 	{
 				$this->AddJSFile("include/sudo/jquery.sudoSlider.js");
 		$this->AddJSFile("include/zoombox/zoombox.js");

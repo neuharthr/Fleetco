@@ -304,7 +304,7 @@ class LookupField extends EditControl
 				echo '<select id="'.$this->cfield.'" size="'.$this->lookupSize.'" '.$dataAttr.$selectClass.' name="'.$this->cfield.$this->postfix.'" '
 					.$this->multiple.' '.$this->inputStyle.'>';
 				if( !$this->multiselect )
-					echo '<option value="">'."Please select".'</option>';
+					echo '<option value="">'.mlang_message("PLEASE_SELECT").'</option>';
 				else if($mode == MODE_SEARCH)
 					echo '<option value=""> </option>';
 					
@@ -398,13 +398,13 @@ class LookupField extends EditControl
 			{			
 				$dataAttr = $listSearchHasSimpleBox ? ' data-usesuggests="true"' : '';
 				$visibility = $listOptionContains ? ' style="visibility: hidden;"' : '';
-				echo '&nbsp;<a href="#" id="'.$this->openlookup.'"'.$visibility.'>'."Select".'</a>';
+				echo '&nbsp;<a href="#" id="'.$this->openlookup.'"'.$visibility.'>'.mlang_message("SELECT_LIST").'</a>';
 			}				
 			
 			echo '<input type="hidden" id="'.$this->cfield.'" '.$valueAttr.' name="'.$this->cfield.'"'.$dataAttr.'>';
 			
 			if( $this->addnewitem )
-				echo "&nbsp;<a href=# id='addnew_".$this->cfield."'>"."Add new"."</a>";
+				echo "&nbsp;<a href=# id='addnew_".$this->cfield."'>".mlang_message("ADD_NEW")."</a>";
 				
 			return;
 		}
@@ -460,13 +460,13 @@ class LookupField extends EditControl
 		{
 			$dataAttr = $listSearchHasSimpleBox ? ' data-usesuggests="true"' : '';
 			$visibility = $listOptionContains ? ' style="visibility: hidden;"' : '';
-			echo '&nbsp;<a href="#" id="'.$this->openlookup.'"'.$visibility .'>'."Select".'</a>';			
+			echo '&nbsp;<a href="#" id="'.$this->openlookup.'"'.$visibility .'>'.mlang_message("SELECT_LIST").'</a>';			
 		}
 		
 		echo '<input type="hidden" id="'.$this->cfield.'" name="'.$this->cfield.'" value="'.runner_htmlspecialchars($value).'"'.$dataAttr.'>';
 		
 		if( $this->addnewitem )
-			echo "&nbsp;<a href=# id='addnew_".$this->cfield."'>"."Add new"."</a>";		
+			echo "&nbsp;<a href=# id='addnew_".$this->cfield."'>".mlang_message("ADD_NEW")."</a>";		
 	}
 		
 	/**
@@ -490,10 +490,10 @@ class LookupField extends EditControl
 			$forLinkView = "<br>";
 		
 		if( $this->LCType == LCT_LIST )
-			echo $forLinkView.'<a href="#" id="'.$this->openlookup.'">'."Select".'</a>';
+			echo $forLinkView.'<a href="#" id="'.$this->openlookup.'">'.mlang_message("SELECT_LIST").'</a>';
 		
 		if( $this->addnewitem )
-			echo $forLinkView."<a href=# id='addnew_".$this->cfield."'>"."Add new"."</a>";				
+			echo $forLinkView."<a href=# id='addnew_".$this->cfield."'>".mlang_message("ADD_NEW")."</a>";				
 	}
 	
 	/**
@@ -598,13 +598,13 @@ class LookupField extends EditControl
 				
 					echo '<select size="'.$this->lookupSize.'" id="'.$this->cfield.'" name="'.$this->cfield.$this->postfix.'"'.$selectClass.$dataAttr.
 						$this->multiple.' '.$this->inputStyle.'>';
-					echo '<option value="">'."Please select".'</option>';
+					echo '<option value="">'.mlang_message("PLEASE_SELECT").'</option>';
 					echo '</select>';
 					break;
 			}
 			
 			if( $this->addnewitem )
-				echo $forLinkView."<a href=# id='addnew_".$this->cfield."'>"."Add new"."</a>";
+				echo $forLinkView."<a href=# id='addnew_".$this->cfield."'>".mlang_message("ADD_NEW")."</a>";
 			
 			return;
 		}		
@@ -629,7 +629,7 @@ class LookupField extends EditControl
 			echo '<select size="'.$this->lookupSize.'" id="'.$this->cfield.'" '
 				.$this->alt.' name="'.$this->cfield.$this->postfix.'"'.$dataAttr.$selectClass.' '.$this->multiple.' '.$this->inputStyle.'>';
 			if( !$this->multiselect )
-				echo '<option value="">'."Please select".'</option>';
+				echo '<option value="">'.mlang_message("PLEASE_SELECT").'</option>';
 			else if($mode == MODE_SEARCH)
 				echo '<option value=""> </option>';
 		}
@@ -684,7 +684,7 @@ class LookupField extends EditControl
 		echo $footer;
 			
 		if( $this->addnewitem )
-			echo $forLinkView.'<a href="#" id="addnew_'.$this->cfield.'">'."Add new".'</a>';
+			echo $forLinkView.'<a href="#" id="addnew_'.$this->cfield.'">'.mlang_message("ADD_NEW").'</a>';
 	}
 	
 	/**

@@ -22,7 +22,7 @@ class ViewDatabaseImageField extends ViewControl
 	 * addJSFiles
 	 * Add control JS files to page object
 	 */
-	function addJSFiles()
+	public function addJSFiles()
 	{
 				$this->AddJSFile("include/zoombox/zoombox.js");
 		$this->getJSControl();	
@@ -112,7 +112,7 @@ class ViewDatabaseImageField extends ViewControl
 	 */
 	public function getExportValue(&$data, $keylink = "")
 	{
-		return "LONG BINARY DATA - CANNOT BE DISPLAYED";
+		return mlang_message("LONG_BINARY");
 	}
 	
 	/**

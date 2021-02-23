@@ -34,24 +34,6 @@
 <div class="rnr-c rnr-cv rnr-c-view">
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pdf} rnr-wrapper rnr-cbw-pdf">
-
-{BEGIN container_pdf}
-<div class="rnr-c rnr-cv rnr-c-pdf">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-viewpdf {$brickclass_viewpdf}">{BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button" {$pdflink_attrs}>PDF View</a>
-{END pdflink_block}
-
-</div>
-
-
-</div>
-{END container_pdf}
-
-</div>
-
 
 
 <div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
@@ -60,7 +42,7 @@
 <div class="rnr-c rnr-cv rnr-c-fields">
 
 {BEGIN viewheader}
-<div  class="rnr-brickcontents style2 rnr-b-viewheader {$brickclass_viewheader}"><span>	<h1>{$pagetitlelabel RenewalsMaster view}</h1>
+<div  class="rnr-brickcontents style2 rnr-b-viewheader {$brickclass_viewheader}"><span>	<h1>{$pagetitlelabel renewalsmaster view}</h1>
 </span></div>{END viewheader}
 
 
@@ -71,18 +53,18 @@
 <td>
 	{BEGIN ID_fieldblock}
 <div data-fieldname="ID" class="rnr-field style1 {$fielddispclass_ID}">
-  <span class="rnr-label">{$label RenewalsMaster ID}:</span>
+  <span class="rnr-label">{$label renewalsmaster ID}:</span>
   <span class="rnr-control style3">{$ID_value}</span>
 </div>
 {END ID_fieldblock}
 </td>
 <td>
-	{BEGIN RenewalType_fieldblock}
-<div data-fieldname="RenewalType" class="rnr-field style1 {$fielddispclass_RenewalType}">
-  <span class="rnr-label">{$label RenewalsMaster RenewalType}:</span>
-  <span class="rnr-control style3">{$RenewalType_value}</span>
+	{BEGIN Renewal_fieldblock}
+<div data-fieldname="Renewal" class="rnr-field style1 {$fielddispclass_Renewal}">
+  <span class="rnr-label">{$label renewalsmaster Renewal}:</span>
+  <span class="rnr-control style3">{$Renewal_value}</span>
 </div>
-{END RenewalType_fieldblock}
+{END Renewal_fieldblock}
 </td>
 </tr>
 </table></div>
@@ -141,7 +123,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

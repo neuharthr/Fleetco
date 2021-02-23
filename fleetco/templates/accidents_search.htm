@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,402 +13,427 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-search" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN searchheader}
-<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel accidents search}</h1>
-</span></div>{END searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel accidents search}</h2>
 
-
-{BEGIN conditions_block}
-<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
-	<span class=fieldname>Criteria:&nbsp;</span>	
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
-	&nbsp;&nbsp;&nbsp;
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
-	</center></div>{END conditions_block}
+{END searchheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
-	<tr>
-		<td>&nbsp;</td>
-		<td>NOT</td>
-		<td colspan=3>&nbsp; </td>
-	</tr>
-	<tr class="{$fielddispclass_Id}">
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
 	{BEGIN Id_fieldblock}		
-	<td>
-		{$label accidents Id}
-	</td>
-	<td>
-		<input type="checkbox" {$Id_notbox}>
-	</td>
-	<td>
-		{$searchtype_Id}
-	</td>
-	<td>
-		{$Id_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Id_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Id}" data-fieldname="Id">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Id}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Id}
+			</div>
+			<div class="col-md-4" >
+				{$Id_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Id_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Id_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Date}">
 	{BEGIN Date_fieldblock}		
-	<td>
-		{$label accidents Date}
-	</td>
-	<td>
-		<input type="checkbox" {$Date_notbox}>
-	</td>
-	<td>
-		{$searchtype_Date}
-	</td>
-	<td>
-		{$Date_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Date_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Date}" data-fieldname="Date">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Date}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Date}
+			</div>
+			<div class="col-md-4" >
+				{$Date_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Date_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Date_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Vehicle}">
 	{BEGIN Vehicle_fieldblock}		
-	<td>
-		{$label accidents Vehicle}
-	</td>
-	<td>
-		<input type="checkbox" {$Vehicle_notbox}>
-	</td>
-	<td>
-		{$searchtype_Vehicle}
-	</td>
-	<td>
-		{$Vehicle_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Vehicle_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Vehicle}" data-fieldname="Vehicle">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Vehicle}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Vehicle}
+			</div>
+			<div class="col-md-4" >
+				{$Vehicle_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Vehicle_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Vehicle_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Fleet}">
 	{BEGIN Fleet_fieldblock}		
-	<td>
-		{$label accidents Fleet}
-	</td>
-	<td>
-		<input type="checkbox" {$Fleet_notbox}>
-	</td>
-	<td>
-		{$searchtype_Fleet}
-	</td>
-	<td>
-		{$Fleet_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Fleet_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Fleet}" data-fieldname="Fleet">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Fleet}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Fleet}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Fleet_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Type}">
 	{BEGIN Type_fieldblock}		
-	<td>
-		{$label accidents Type}
-	</td>
-	<td>
-		<input type="checkbox" {$Type_notbox}>
-	</td>
-	<td>
-		{$searchtype_Type}
-	</td>
-	<td>
-		{$Type_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Type_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Type}" data-fieldname="Type">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Type}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Type}
+			</div>
+			<div class="col-md-4" >
+				{$Type_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Type_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Type_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Time}">
 	{BEGIN Time_fieldblock}		
-	<td>
-		{$label accidents Time}
-	</td>
-	<td>
-		<input type="checkbox" {$Time_notbox}>
-	</td>
-	<td>
-		{$searchtype_Time}
-	</td>
-	<td>
-		{$Time_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Time_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Time}" data-fieldname="Time">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Time}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Time}
+			</div>
+			<div class="col-md-4" >
+				{$Time_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Time_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Time_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Location}">
 	{BEGIN Location_fieldblock}		
-	<td>
-		{$label accidents Location}
-	</td>
-	<td>
-		<input type="checkbox" {$Location_notbox}>
-	</td>
-	<td>
-		{$searchtype_Location}
-	</td>
-	<td>
-		{$Location_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Location_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Location}" data-fieldname="Location">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Location}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Location}
+			</div>
+			<div class="col-md-4" >
+				{$Location_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Location_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Location_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Driver}">
 	{BEGIN Driver_fieldblock}		
-	<td>
-		{$label accidents Driver}
-	</td>
-	<td>
-		<input type="checkbox" {$Driver_notbox}>
-	</td>
-	<td>
-		{$searchtype_Driver}
-	</td>
-	<td>
-		{$Driver_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Driver_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Driver}" data-fieldname="Driver">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Driver}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Driver}
+			</div>
+			<div class="col-md-4" >
+				{$Driver_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Driver_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Driver_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Deaths}">
 	{BEGIN Deaths_fieldblock}		
-	<td>
-		{$label accidents Deaths}
-	</td>
-	<td>
-		<input type="checkbox" {$Deaths_notbox}>
-	</td>
-	<td>
-		{$searchtype_Deaths}
-	</td>
-	<td>
-		{$Deaths_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Deaths_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Deaths}" data-fieldname="Deaths">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Deaths}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Deaths}
+			</div>
+			<div class="col-md-4" >
+				{$Deaths_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Deaths_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Deaths_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Injured}">
 	{BEGIN Injured_fieldblock}		
-	<td>
-		{$label accidents Injured}
-	</td>
-	<td>
-		<input type="checkbox" {$Injured_notbox}>
-	</td>
-	<td>
-		{$searchtype_Injured}
-	</td>
-	<td>
-		{$Injured_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Injured_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Injured}" data-fieldname="Injured">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Injured}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Injured}
+			</div>
+			<div class="col-md-4" >
+				{$Injured_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Injured_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Injured_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_StatusInjured}">
 	{BEGIN StatusInjured_fieldblock}		
-	<td>
-		{$label accidents StatusInjured}
-	</td>
-	<td>
-		<input type="checkbox" {$StatusInjured_notbox}>
-	</td>
-	<td>
-		{$searchtype_StatusInjured}
-	</td>
-	<td>
-		{$StatusInjured_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$StatusInjured_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_StatusInjured}" data-fieldname="StatusInjured">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents StatusInjured}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_StatusInjured}
+			</div>
+			<div class="col-md-4" >
+				{$StatusInjured_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$StatusInjured_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END StatusInjured_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Details}">
 	{BEGIN Details_fieldblock}		
-	<td>
-		{$label accidents Details}
-	</td>
-	<td>
-		<input type="checkbox" {$Details_notbox}>
-	</td>
-	<td>
-		{$searchtype_Details}
-	</td>
-	<td>
-		{$Details_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Details_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Details}" data-fieldname="Details">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Details}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Details}
+			</div>
+			<div class="col-md-4" >
+				{$Details_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Details_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Details_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_DamageToVehicle}">
 	{BEGIN DamageToVehicle_fieldblock}		
-	<td>
-		{$label accidents DamageToVehicle}
-	</td>
-	<td>
-		<input type="checkbox" {$DamageToVehicle_notbox}>
-	</td>
-	<td>
-		{$searchtype_DamageToVehicle}
-	</td>
-	<td>
-		{$DamageToVehicle_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$DamageToVehicle_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_DamageToVehicle}" data-fieldname="DamageToVehicle">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents DamageToVehicle}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_DamageToVehicle}
+			</div>
+			<div class="col-md-4" >
+				{$DamageToVehicle_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$DamageToVehicle_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END DamageToVehicle_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_EnteredBy}">
 	{BEGIN EnteredBy_fieldblock}		
-	<td>
-		{$label accidents EnteredBy}
-	</td>
-	<td>
-		<input type="checkbox" {$EnteredBy_notbox}>
-	</td>
-	<td>
-		{$searchtype_EnteredBy}
-	</td>
-	<td>
-		{$EnteredBy_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$EnteredBy_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_EnteredBy}" data-fieldname="EnteredBy">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents EnteredBy}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_EnteredBy}
+			</div>
+			<div class="col-md-4" >
+				{$EnteredBy_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$EnteredBy_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END EnteredBy_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_3rdPartyDamages}">
 	{BEGIN 3rdPartyDamages_fieldblock}		
-	<td>
-		{$label accidents 3rdPartyDamages}
-	</td>
-	<td>
-		<input type="checkbox" {$3rdPartyDamages_notbox}>
-	</td>
-	<td>
-		{$searchtype_3rdPartyDamages}
-	</td>
-	<td>
-		{$3rdPartyDamages_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$3rdPartyDamages_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_3rdPartyDamages}" data-fieldname="3rdPartyDamages">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents 3rdPartyDamages}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_3rdPartyDamages}
+			</div>
+			<div class="col-md-4" >
+				{$3rdPartyDamages_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$3rdPartyDamages_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END 3rdPartyDamages_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Images}">
 	{BEGIN Images_fieldblock}		
-	<td>
-		{$label accidents Images}
-	</td>
-	<td>
-		<input type="checkbox" {$Images_notbox}>
-	</td>
-	<td>
-		{$searchtype_Images}
-	</td>
-	<td>
-		{$Images_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Images_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Images}" data-fieldname="Images">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents Images}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Images}
+			</div>
+			<div class="col-md-4" >
+				{$Images_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Images_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Images_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_SysDate}">
 	{BEGIN SysDate_fieldblock}		
-	<td>
-		{$label accidents SysDate}
-	</td>
-	<td>
-		<input type="checkbox" {$SysDate_notbox}>
-	</td>
-	<td>
-		{$searchtype_SysDate}
-	</td>
-	<td>
-		{$SysDate_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$SysDate_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_SysDate}" data-fieldname="SysDate">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label accidents SysDate}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_SysDate}
+			</div>
+			<div class="col-md-4" >
+				{$SysDate_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$SysDate_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END SysDate_fieldblock}
-	</tr>
-
-</table></div>
+</div>
 
 
-{BEGIN searchbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
-<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
-{END search_button} 
-{BEGIN reset_button}
-<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-{END reset_button}
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}</div>{END searchbuttons}
 
 
 </div>
 {END container_fields}
 
 
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-4"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>{mlang_message RESET}</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

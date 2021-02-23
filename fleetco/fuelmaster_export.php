@@ -15,38 +15,79 @@ if( !Security::processPageSecurity( $strtablename, 'P' ) )
 
 
 
-$layout = new TLayout("export", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
+$layout = new TLayout("export_bootstrap", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "fuelmaster_export";
 $layout->blocks["top"] = array();
-$layout->containers["export"] = array();
-$layout->container_properties["export"] = array(  );
-$layout->containers["export"][] = array("name"=>"exportheader",
-	"block"=>"", "substyle"=>2  );
+$layout->containers["page"] = array();
+$layout->container_properties["page"] = array(  );
+$layout->containers["page"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"page_1" );
+$layout->containers["page_1"] = array();
+$layout->container_properties["page_1"] = array(  );
+$layout->containers["page_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"panel" );
+$layout->containers["panel"] = array();
+$layout->container_properties["panel"] = array(  );
+$layout->containers["panel"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header" );
+$layout->containers["header"] = array();
+$layout->container_properties["header"] = array(  );
+$layout->containers["header"][] = array("name"=>"exportheader",
+	"block"=>"exportheader", "substyle"=>1  );
 
-$layout->containers["export"][] = array("name"=>"exprange",
+$layout->skins["header"] = "";
+
+
+$layout->containers["panel"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"body" );
+$layout->containers["body"] = array();
+$layout->container_properties["body"] = array(  );
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"range" );
+$layout->containers["range"] = array();
+$layout->container_properties["range"] = array(  );
+$layout->containers["range"][] = array("name"=>"bsexprange",
 	"block"=>"range_block", "substyle"=>1  );
 
-$layout->containers["export"][] = array("name"=>"expoutput",
+$layout->skins["range"] = "";
+
+
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"fields" );
+$layout->containers["fields"] = array();
+$layout->container_properties["fields"] = array(  );
+$layout->containers["fields"][] = array("name"=>"bsexpoutput",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["export"][] = array("name"=>"expbuttons",
+$layout->skins["fields"] = "";
+
+
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"buttons" );
+$layout->containers["buttons"] = array();
+$layout->container_properties["buttons"] = array(  );
+$layout->containers["buttons"][] = array("name"=>"bsexpbuttons",
 	"block"=>"", "substyle"=>2  );
 
-$layout->skins["export"] = "fields";
+$layout->skins["buttons"] = "";
 
-$layout->blocks["top"][] = "export";
+
+$layout->skins["body"] = "";
+
+
+$layout->skins["panel"] = "";
+
+
+$layout->skins["page_1"] = "";
+
+
+$layout->skins["page"] = "";
+
+$layout->blocks["top"][] = "page";
 $page_layouts["fuelmaster_export"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 

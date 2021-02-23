@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,307 +13,337 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-search" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN searchheader}
-<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel otherrenewal search}</h1>
-</span></div>{END searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel otherrenewal search}</h2>
 
-
-{BEGIN conditions_block}
-<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
-	<span class=fieldname>Criteria:&nbsp;</span>	
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
-	&nbsp;&nbsp;&nbsp;
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
-	</center></div>{END conditions_block}
+{END searchheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
-	<tr>
-		<td>&nbsp;</td>
-		<td>NOT</td>
-		<td colspan=3>&nbsp; </td>
-	</tr>
-	<tr class="{$fielddispclass_ID}">
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
 	{BEGIN ID_fieldblock}		
-	<td>
-		{$label otherrenewal ID}
-	</td>
-	<td>
-		<input type="checkbox" {$ID_notbox}>
-	</td>
-	<td>
-		{$searchtype_ID}
-	</td>
-	<td>
-		{$ID_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$ID_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_ID}" data-fieldname="ID">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal ID}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_ID}
+			</div>
+			<div class="col-md-4" >
+				{$ID_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$ID_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END ID_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Fleet}">
 	{BEGIN Fleet_fieldblock}		
-	<td>
-		{$label otherrenewal Fleet}
-	</td>
-	<td>
-		<input type="checkbox" {$Fleet_notbox}>
-	</td>
-	<td>
-		{$searchtype_Fleet}
-	</td>
-	<td>
-		{$Fleet_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Fleet_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Fleet}" data-fieldname="Fleet">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal Fleet}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Fleet}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Fleet_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_VehicleNo}">
 	{BEGIN VehicleNo_fieldblock}		
-	<td>
-		{$label otherrenewal VehicleNo}
-	</td>
-	<td>
-		<input type="checkbox" {$VehicleNo_notbox}>
-	</td>
-	<td>
-		{$searchtype_VehicleNo}
-	</td>
-	<td>
-		{$VehicleNo_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$VehicleNo_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_VehicleNo}" data-fieldname="VehicleNo">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal VehicleNo}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_VehicleNo}
+			</div>
+			<div class="col-md-4" >
+				{$VehicleNo_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$VehicleNo_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END VehicleNo_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_VehicleType}">
 	{BEGIN VehicleType_fieldblock}		
-	<td>
-		{$label otherrenewal VehicleType}
-	</td>
-	<td>
-		<input type="checkbox" {$VehicleType_notbox}>
-	</td>
-	<td>
-		{$searchtype_VehicleType}
-	</td>
-	<td>
-		{$VehicleType_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$VehicleType_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_VehicleType}" data-fieldname="VehicleType">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal VehicleType}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_VehicleType}
+			</div>
+			<div class="col-md-4" >
+				{$VehicleType_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$VehicleType_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END VehicleType_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_PaymentType}">
 	{BEGIN PaymentType_fieldblock}		
-	<td>
-		{$label otherrenewal PaymentType}
-	</td>
-	<td>
-		<input type="checkbox" {$PaymentType_notbox}>
-	</td>
-	<td>
-		{$searchtype_PaymentType}
-	</td>
-	<td>
-		{$PaymentType_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$PaymentType_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_PaymentType}" data-fieldname="PaymentType">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal PaymentType}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_PaymentType}
+			</div>
+			<div class="col-md-4" >
+				{$PaymentType_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$PaymentType_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END PaymentType_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_PaymentDate}">
 	{BEGIN PaymentDate_fieldblock}		
-	<td>
-		{$label otherrenewal PaymentDate}
-	</td>
-	<td>
-		<input type="checkbox" {$PaymentDate_notbox}>
-	</td>
-	<td>
-		{$searchtype_PaymentDate}
-	</td>
-	<td>
-		{$PaymentDate_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$PaymentDate_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_PaymentDate}" data-fieldname="PaymentDate">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal PaymentDate}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_PaymentDate}
+			</div>
+			<div class="col-md-4" >
+				{$PaymentDate_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$PaymentDate_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END PaymentDate_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Cost}">
 	{BEGIN Cost_fieldblock}		
-	<td>
-		{$label otherrenewal Cost}
-	</td>
-	<td>
-		<input type="checkbox" {$Cost_notbox}>
-	</td>
-	<td>
-		{$searchtype_Cost}
-	</td>
-	<td>
-		{$Cost_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Cost_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Cost}" data-fieldname="Cost">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal Cost}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Cost}
+			</div>
+			<div class="col-md-4" >
+				{$Cost_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Cost_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Cost_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_PeriodFrom}">
 	{BEGIN PeriodFrom_fieldblock}		
-	<td>
-		{$label otherrenewal PeriodFrom}
-	</td>
-	<td>
-		<input type="checkbox" {$PeriodFrom_notbox}>
-	</td>
-	<td>
-		{$searchtype_PeriodFrom}
-	</td>
-	<td>
-		{$PeriodFrom_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$PeriodFrom_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_PeriodFrom}" data-fieldname="PeriodFrom">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal PeriodFrom}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_PeriodFrom}
+			</div>
+			<div class="col-md-4" >
+				{$PeriodFrom_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$PeriodFrom_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END PeriodFrom_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_PeriodTo}">
 	{BEGIN PeriodTo_fieldblock}		
-	<td>
-		{$label otherrenewal PeriodTo}
-	</td>
-	<td>
-		<input type="checkbox" {$PeriodTo_notbox}>
-	</td>
-	<td>
-		{$searchtype_PeriodTo}
-	</td>
-	<td>
-		{$PeriodTo_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$PeriodTo_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_PeriodTo}" data-fieldname="PeriodTo">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal PeriodTo}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_PeriodTo}
+			</div>
+			<div class="col-md-4" >
+				{$PeriodTo_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$PeriodTo_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END PeriodTo_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_PaymentRef}">
 	{BEGIN PaymentRef_fieldblock}		
-	<td>
-		{$label otherrenewal PaymentRef}
-	</td>
-	<td>
-		<input type="checkbox" {$PaymentRef_notbox}>
-	</td>
-	<td>
-		{$searchtype_PaymentRef}
-	</td>
-	<td>
-		{$PaymentRef_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$PaymentRef_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_PaymentRef}" data-fieldname="PaymentRef">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal PaymentRef}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_PaymentRef}
+			</div>
+			<div class="col-md-4" >
+				{$PaymentRef_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$PaymentRef_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END PaymentRef_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_SystemDate}">
 	{BEGIN SystemDate_fieldblock}		
-	<td>
-		{$label otherrenewal SystemDate}
-	</td>
-	<td>
-		<input type="checkbox" {$SystemDate_notbox}>
-	</td>
-	<td>
-		{$searchtype_SystemDate}
-	</td>
-	<td>
-		{$SystemDate_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$SystemDate_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_SystemDate}" data-fieldname="SystemDate">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal SystemDate}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_SystemDate}
+			</div>
+			<div class="col-md-4" >
+				{$SystemDate_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$SystemDate_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END SystemDate_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_EnteredBy}">
 	{BEGIN EnteredBy_fieldblock}		
-	<td>
-		{$label otherrenewal EnteredBy}
-	</td>
-	<td>
-		<input type="checkbox" {$EnteredBy_notbox}>
-	</td>
-	<td>
-		{$searchtype_EnteredBy}
-	</td>
-	<td>
-		{$EnteredBy_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$EnteredBy_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_EnteredBy}" data-fieldname="EnteredBy">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label otherrenewal EnteredBy}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_EnteredBy}
+			</div>
+			<div class="col-md-4" >
+				{$EnteredBy_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$EnteredBy_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END EnteredBy_fieldblock}
-	</tr>
-
-</table></div>
+</div>
 
 
-{BEGIN searchbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
-<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
-{END search_button} 
-{BEGIN reset_button}
-<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-{END reset_button}
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}</div>{END searchbuttons}
 
 
 </div>
 {END container_fields}
 
 
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-4"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>{mlang_message RESET}</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

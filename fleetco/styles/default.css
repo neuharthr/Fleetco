@@ -983,6 +983,7 @@
 		white-space: pre;
 		background-color: #ffffe1;
 		border: solid 1pt #747474;
+		color: #333;
 	}
 	/*End multiple sorting hint style*/
 
@@ -1015,6 +1016,7 @@
 		height: 1pt;
 		display: block;
 		overflow: hidden;
+		position: absolute;
 	}
 	/*End s508 style*/
 

@@ -38,6 +38,182 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipscarrierusers["English"]))
 		$tdatacarrierusers[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelscarrierusers["Afrikaans"] = array();
+	$fieldToolTipscarrierusers["Afrikaans"] = array();
+	$pageTitlescarrierusers["Afrikaans"] = array();
+	$fieldLabelscarrierusers["Afrikaans"]["ID"] = "ID";
+	$fieldToolTipscarrierusers["Afrikaans"]["ID"] = "";
+	$fieldLabelscarrierusers["Afrikaans"]["username"] = "Gebruikersnaam";
+	$fieldToolTipscarrierusers["Afrikaans"]["username"] = "";
+	$fieldLabelscarrierusers["Afrikaans"]["password"] = "wagwoord";
+	$fieldToolTipscarrierusers["Afrikaans"]["password"] = "";
+	$fieldLabelscarrierusers["Afrikaans"]["email"] = "e-pos";
+	$fieldToolTipscarrierusers["Afrikaans"]["email"] = "";
+	$fieldLabelscarrierusers["Afrikaans"]["fullname"] = "Volle naam";
+	$fieldToolTipscarrierusers["Afrikaans"]["fullname"] = "";
+	$fieldLabelscarrierusers["Afrikaans"]["groupid"] = "groepid";
+	$fieldToolTipscarrierusers["Afrikaans"]["groupid"] = "";
+	$fieldLabelscarrierusers["Afrikaans"]["active"] = "aktiewe";
+	$fieldToolTipscarrierusers["Afrikaans"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["Afrikaans"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelscarrierusers["Arabic"] = array();
+	$fieldToolTipscarrierusers["Arabic"] = array();
+	$pageTitlescarrierusers["Arabic"] = array();
+	$fieldLabelscarrierusers["Arabic"]["ID"] = "???? ?????";
+	$fieldToolTipscarrierusers["Arabic"]["ID"] = "";
+	$fieldLabelscarrierusers["Arabic"]["username"] = "??? ????????";
+	$fieldToolTipscarrierusers["Arabic"]["username"] = "";
+	$fieldLabelscarrierusers["Arabic"]["password"] = "???? ????";
+	$fieldToolTipscarrierusers["Arabic"]["password"] = "";
+	$fieldLabelscarrierusers["Arabic"]["email"] = "?????? ??????????";
+	$fieldToolTipscarrierusers["Arabic"]["email"] = "";
+	$fieldLabelscarrierusers["Arabic"]["fullname"] = "????? ??????";
+	$fieldToolTipscarrierusers["Arabic"]["fullname"] = "";
+	$fieldLabelscarrierusers["Arabic"]["groupid"] = "Groupid";
+	$fieldToolTipscarrierusers["Arabic"]["groupid"] = "";
+	$fieldLabelscarrierusers["Arabic"]["active"] = "???";
+	$fieldToolTipscarrierusers["Arabic"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["Arabic"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelscarrierusers["Chinese"] = array();
+	$fieldToolTipscarrierusers["Chinese"] = array();
+	$pageTitlescarrierusers["Chinese"] = array();
+	$fieldLabelscarrierusers["Chinese"]["ID"] = "ID";
+	$fieldToolTipscarrierusers["Chinese"]["ID"] = "";
+	$fieldLabelscarrierusers["Chinese"]["username"] = "???";
+	$fieldToolTipscarrierusers["Chinese"]["username"] = "";
+	$fieldLabelscarrierusers["Chinese"]["password"] = "??";
+	$fieldToolTipscarrierusers["Chinese"]["password"] = "";
+	$fieldLabelscarrierusers["Chinese"]["email"] = "????";
+	$fieldToolTipscarrierusers["Chinese"]["email"] = "";
+	$fieldLabelscarrierusers["Chinese"]["fullname"] = "??";
+	$fieldToolTipscarrierusers["Chinese"]["fullname"] = "";
+	$fieldLabelscarrierusers["Chinese"]["groupid"] = "Groupid";
+	$fieldToolTipscarrierusers["Chinese"]["groupid"] = "";
+	$fieldLabelscarrierusers["Chinese"]["active"] = "??";
+	$fieldToolTipscarrierusers["Chinese"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["Chinese"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelscarrierusers["French"] = array();
+	$fieldToolTipscarrierusers["French"] = array();
+	$pageTitlescarrierusers["French"] = array();
+	$fieldLabelscarrierusers["French"]["ID"] = "ID";
+	$fieldToolTipscarrierusers["French"]["ID"] = "";
+	$fieldLabelscarrierusers["French"]["username"] = "Nom d'utilisateur";
+	$fieldToolTipscarrierusers["French"]["username"] = "";
+	$fieldLabelscarrierusers["French"]["password"] = "Mot de passe";
+	$fieldToolTipscarrierusers["French"]["password"] = "";
+	$fieldLabelscarrierusers["French"]["email"] = "Email";
+	$fieldToolTipscarrierusers["French"]["email"] = "";
+	$fieldLabelscarrierusers["French"]["fullname"] = "Nom complet";
+	$fieldToolTipscarrierusers["French"]["fullname"] = "";
+	$fieldLabelscarrierusers["French"]["groupid"] = "Groupid";
+	$fieldToolTipscarrierusers["French"]["groupid"] = "";
+	$fieldLabelscarrierusers["French"]["active"] = "actif";
+	$fieldToolTipscarrierusers["French"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["French"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelscarrierusers["German"] = array();
+	$fieldToolTipscarrierusers["German"] = array();
+	$pageTitlescarrierusers["German"] = array();
+	$fieldLabelscarrierusers["German"]["ID"] = "ICH WÜRDE";
+	$fieldToolTipscarrierusers["German"]["ID"] = "";
+	$fieldLabelscarrierusers["German"]["username"] = "Benutzername";
+	$fieldToolTipscarrierusers["German"]["username"] = "";
+	$fieldLabelscarrierusers["German"]["password"] = "Passwort";
+	$fieldToolTipscarrierusers["German"]["password"] = "";
+	$fieldLabelscarrierusers["German"]["email"] = "Email";
+	$fieldToolTipscarrierusers["German"]["email"] = "";
+	$fieldLabelscarrierusers["German"]["fullname"] = "Vollständiger Name";
+	$fieldToolTipscarrierusers["German"]["fullname"] = "";
+	$fieldLabelscarrierusers["German"]["groupid"] = "Groupid";
+	$fieldToolTipscarrierusers["German"]["groupid"] = "";
+	$fieldLabelscarrierusers["German"]["active"] = "Aktiv";
+	$fieldToolTipscarrierusers["German"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["German"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelscarrierusers["Italian"] = array();
+	$fieldToolTipscarrierusers["Italian"] = array();
+	$pageTitlescarrierusers["Italian"] = array();
+	$fieldLabelscarrierusers["Italian"]["ID"] = "ID";
+	$fieldToolTipscarrierusers["Italian"]["ID"] = "";
+	$fieldLabelscarrierusers["Italian"]["username"] = "Nome utente";
+	$fieldToolTipscarrierusers["Italian"]["username"] = "";
+	$fieldLabelscarrierusers["Italian"]["password"] = "parola d'ordine";
+	$fieldToolTipscarrierusers["Italian"]["password"] = "";
+	$fieldLabelscarrierusers["Italian"]["email"] = "E-mail";
+	$fieldToolTipscarrierusers["Italian"]["email"] = "";
+	$fieldLabelscarrierusers["Italian"]["fullname"] = "Nome e cognome";
+	$fieldToolTipscarrierusers["Italian"]["fullname"] = "";
+	$fieldLabelscarrierusers["Italian"]["groupid"] = "groupid";
+	$fieldToolTipscarrierusers["Italian"]["groupid"] = "";
+	$fieldLabelscarrierusers["Italian"]["active"] = "Attivo";
+	$fieldToolTipscarrierusers["Italian"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["Italian"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelscarrierusers["Russian"] = array();
+	$fieldToolTipscarrierusers["Russian"] = array();
+	$pageTitlescarrierusers["Russian"] = array();
+	$fieldLabelscarrierusers["Russian"]["ID"] = "? ??";
+	$fieldToolTipscarrierusers["Russian"]["ID"] = "";
+	$fieldLabelscarrierusers["Russian"]["username"] = "??? ????????????";
+	$fieldToolTipscarrierusers["Russian"]["username"] = "";
+	$fieldLabelscarrierusers["Russian"]["password"] = "??????";
+	$fieldToolTipscarrierusers["Russian"]["password"] = "";
+	$fieldLabelscarrierusers["Russian"]["email"] = "??. ?????";
+	$fieldToolTipscarrierusers["Russian"]["email"] = "";
+	$fieldLabelscarrierusers["Russian"]["fullname"] = "?????? ???";
+	$fieldToolTipscarrierusers["Russian"]["fullname"] = "";
+	$fieldLabelscarrierusers["Russian"]["groupid"] = "GroupID";
+	$fieldToolTipscarrierusers["Russian"]["groupid"] = "";
+	$fieldLabelscarrierusers["Russian"]["active"] = "????????";
+	$fieldToolTipscarrierusers["Russian"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["Russian"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelscarrierusers["Spanish"] = array();
+	$fieldToolTipscarrierusers["Spanish"] = array();
+	$pageTitlescarrierusers["Spanish"] = array();
+	$fieldLabelscarrierusers["Spanish"]["ID"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipscarrierusers["Spanish"]["ID"] = "";
+	$fieldLabelscarrierusers["Spanish"]["username"] = "Nombre de usuario";
+	$fieldToolTipscarrierusers["Spanish"]["username"] = "";
+	$fieldLabelscarrierusers["Spanish"]["password"] = "Contraseña";
+	$fieldToolTipscarrierusers["Spanish"]["password"] = "";
+	$fieldLabelscarrierusers["Spanish"]["email"] = "Email";
+	$fieldToolTipscarrierusers["Spanish"]["email"] = "";
+	$fieldLabelscarrierusers["Spanish"]["fullname"] = "Nombre completo";
+	$fieldToolTipscarrierusers["Spanish"]["fullname"] = "";
+	$fieldLabelscarrierusers["Spanish"]["groupid"] = "Groupid";
+	$fieldToolTipscarrierusers["Spanish"]["groupid"] = "";
+	$fieldLabelscarrierusers["Spanish"]["active"] = "Activo";
+	$fieldToolTipscarrierusers["Spanish"]["active"] = "";
+	if (count($fieldToolTipscarrierusers["Spanish"]))
+		$tdatacarrierusers[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelscarrierusers[""] = array();
@@ -79,7 +255,7 @@ $tdatacarrierusers[".popupPagesLayoutNames"] = $popupPagesLayoutNames;
 
 $tdatacarrierusers[".fieldsForRegister"] = array();
 
-$tdatacarrierusers[".listAjax"] = false;
+	$tdatacarrierusers[".listAjax"] = true;
 
 	$tdatacarrierusers[".audit"] = false;
 
@@ -93,7 +269,18 @@ $tdatacarrierusers[".listAjax"] = false;
 
 
 
+
+
+
 $tdatacarrierusers[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatacarrierusers[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatacarrierusers[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatacarrierusers[".searchSaving"] = false;
@@ -133,14 +320,6 @@ $tdatacarrierusers[".googleLikeFields"][] = "groupid";
 $tdatacarrierusers[".googleLikeFields"][] = "active";
 
 
-$tdatacarrierusers[".advSearchFields"] = array();
-$tdatacarrierusers[".advSearchFields"][] = "ID";
-$tdatacarrierusers[".advSearchFields"][] = "username";
-$tdatacarrierusers[".advSearchFields"][] = "password";
-$tdatacarrierusers[".advSearchFields"][] = "email";
-$tdatacarrierusers[".advSearchFields"][] = "fullname";
-$tdatacarrierusers[".advSearchFields"][] = "groupid";
-$tdatacarrierusers[".advSearchFields"][] = "active";
 
 $tdatacarrierusers[".tableType"] = "list";
 
@@ -162,6 +341,7 @@ $tdatacarrierusers[".geocodingEnabled"] = false;
 $tdatacarrierusers[".listGridLayout"] = 3;
 
 
+$tdatacarrierusers[".isResizeColumns"] = true;
 
 
 
@@ -249,6 +429,9 @@ $tdatacarrierusers[".editFields"] = array();
 
 $tdatacarrierusers[".inlineEditFields"] = array();
 
+$tdatacarrierusers[".updateSelectedFields"] = array();
+
+
 $tdatacarrierusers[".exportFields"] = array();
 
 $tdatacarrierusers[".importFields"] = array();
@@ -275,6 +458,8 @@ $tdatacarrierusers[".printFields"] = array();
 	
 	
 	
+	
+
 	
 	
 	
@@ -388,6 +573,8 @@ $tdatacarrierusers[".printFields"] = array();
 	
 	
 	
+
+	
 	
 	
 	
@@ -499,6 +686,8 @@ $tdatacarrierusers[".printFields"] = array();
 	
 	
 	
+
+	
 	
 	
 	
@@ -607,6 +796,8 @@ $tdatacarrierusers[".printFields"] = array();
 	
 	
 	
+	
+
 	
 	
 	
@@ -718,6 +909,8 @@ $tdatacarrierusers[".printFields"] = array();
 	
 	
 	
+
+	
 	
 	
 	
@@ -828,6 +1021,8 @@ $tdatacarrierusers[".printFields"] = array();
 	
 	
 	
+
+	
 	
 	
 	
@@ -937,6 +1132,8 @@ $tdatacarrierusers[".printFields"] = array();
 	
 	
 	
+	
+
 	
 	
 	

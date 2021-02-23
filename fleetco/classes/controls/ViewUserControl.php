@@ -6,14 +6,15 @@ class ViewUserControl extends ViewControl
 	 * @var boolean
 	 */
 	public $userControl;
-	function initUserControl()
+	
+	public function initUserControl()
 	{		
 	}
 	
 	/**
 	 * Control settings filling
 	 */
-	function init()
+	public function init()
 	{
 		$this->userControl = true;
 		

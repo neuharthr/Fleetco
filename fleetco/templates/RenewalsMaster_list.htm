@@ -36,12 +36,20 @@
 	{END loggedas_message}
 	{BEGIN guestloginbutton}
 	<span>
+		{BEGIN embeded_log_fields}
+		<span>
 		<input type="text" name="username" {$username_attrs}>&nbsp;
 		<input type="password" name="password" {$password_attrs}>
+		</span>
+		{END embeded_log_fields}
 		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+		{BEGIN embeded_log_ctrls}
+		<span>
 		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
 			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
-		</span>
+			</span>
+		{END embeded_log_ctrls}
+	</span>
 	{END guestloginbutton}
 	{BEGIN logoutbutton}
 	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
@@ -50,6 +58,9 @@
 	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
 	{END adminarea_link}
 
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
 </div></div>
 {END security_block}
 
@@ -95,9 +106,8 @@
 {END searchsaving_block}
 
 <div class="rnr-hfiller"></div>
-
-<div  class="style1 rnr-br rnr-b-printpanel {$brickclass_printpanel}">{BEGIN print_friendly}
-<div class="rnr-printpanelblock" id="printpanelblock{$id}">
+{BEGIN print_friendly}
+<div  class="style1 rnr-br rnr-b-printpanel {$brickclass_printpanel}"><div class="rnr-printpanelblock" id="printpanelblock{$id}">
 <div class="rnr-printtab">
 <a data-icon="printdown" class="rnr-printicon" id="print_friendly_togger{$id}" title="Print-friendly page"></a>
 </div>
@@ -106,13 +116,13 @@
 	<tr>
 		<td class="rnr-printScopeCell">Scope:</td>
 		{BEGIN print_friendly_all}
-		<td class="rnr-printScopeCell"><input type="radio" id="printAll{$id}" data-href="RenewalsMaster_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">&nbsp;<label for="printAll{$id}">Print all pages</label></td>
+		<td class="rnr-printScopeCell"><input type="radio" id="printAll{$id}" data-href="renewalsmaster_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">&nbsp;<label for="printAll{$id}">Print all pages</label></td>
 		{END print_friendly_all}
 
 	</tr>
 	<tr>
 		<td></td>
-		<td class="rnr-printScopeCell"><input type="radio" id="printPage{$id}" data-href="RenewalsMaster_print.php?{$crosstable_attrs}" name="printScope" checked>&nbsp;<label for="printPage{$id}">Print this page</label></td>
+		<td class="rnr-printScopeCell"><input type="radio" id="printPage{$id}" data-href="renewalsmaster_print.php?{$crosstable_attrs}" name="printScope" checked>&nbsp;<label for="printPage{$id}">Print this page</label></td>
 	</tr>
 		<tr>
 		<td></td>
@@ -132,9 +142,8 @@
 </div>
 </div>
 </div>
-{END print_friendly}
 </div>
-
+{END print_friendly}
 
 
 </div>
@@ -213,10 +222,13 @@
 
 {BEGIN newrecord_controls_block}
 <div  class="style1 rnr-bl rnr-b-recordcontrols_new {$brickclass_recordcontrols_new}">		{BEGIN add_link}
-		<a href="RenewalsMaster_add.php" class="rnr-button" {$addlink_attrs}>Add new</a>
+		<a href="renewalsmaster_add.php{$addlink_getparams}" class="rnr-button" {$addlink_attrs}>Add new</a>
 	{END add_link}
 
-	
+		{BEGIN inlineadd_link}
+		<a href="#" class="rnr-button" {$inlineaddlink_attrs}>Inline Add</a>
+	{END inlineadd_link}
+
 
 </div>
 {END newrecord_controls_block}
@@ -228,7 +240,12 @@
 <a class="rnr-button {$withSelectedClass}" href="#" id="selectButtonsToggler{$id}">With selected...</a>
 <ul class="rnr-list" id="selectButtonsGroup{$id}">
 
-	
+		{BEGIN editselected_link}
+<li>
+		<a href="#" class="rnr-button link" {$editselectedlink_attrs} {$editselectedlink_span}>Edit</a>
+</li>
+	{END editselected_link}
+
 		{BEGIN deleteselected_link}
 <li>
 		<a href="#" class="rnr-button link" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>Delete</a>
@@ -244,7 +261,13 @@
 </ul>
 </span>
 {END widhtSelected}
-	</div>
+		{BEGIN saveall_link}
+		<a href="#" class="rnr-button" {$savealllink_attrs} {$savealllink_span}>Save all</a>
+	{END saveall_link}
+	{BEGIN cancelall_link}
+		<a href="#" class="rnr-button" {$cancelalllink_attrs} {$cancelalllink_span}>Cancel</a>
+	{END cancelall_link}
+</div>
 {END record_controls_block}
 
 
@@ -256,19 +279,19 @@
 
 {BEGIN asearch_link}
 <li>
-	<a href="RenewalsMaster_search.php" class="rnr-button link" {$advsearchlink_attrs}>Advanced search</a>
+	<a href="renewalsmaster_search.php" class="rnr-button link" {$advsearchlink_attrs}>Advanced search</a>
 </li>
 {END asearch_link}
 
 {BEGIN export_link}
 <li>
-	<a target="_blank" href="RenewalsMaster_export.php" class="rnr-button link" {$exportlink_attrs}>Export results</a>
+	<a target="_blank" href="renewalsmaster_export.php" class="rnr-button link" {$exportlink_attrs}>Export results</a>
 </li>
 {END export_link}
 
 {BEGIN import_link}
 <li>
-	<a href="RenewalsMaster_import.php?{$crosstable_attrs}" class="rnr-button link" {$importlink_attrs}>Import</a>
+	<a href="renewalsmaster_import.php?{$crosstable_attrs}" class="rnr-button link" {$importlink_attrs}>Import</a>
 </li>
 {END import_link}
 </ul>
@@ -356,21 +379,21 @@
 									<th class="rnr-gridfieldlabel {$ID_class}">
 									{BEGIN ID_fieldheader}
 																				<span {$ID_orderlinkattrs}>
-											{$label RenewalsMaster ID}
+											{$label renewalsmaster ID}
 										</span>
 									{END ID_fieldheader}
 									</th>
 									{END ID_fieldheadercolumn}
 
-																	{BEGIN RenewalType_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$RenewalType_class}">
-									{BEGIN RenewalType_fieldheader}
-																				<span {$RenewalType_orderlinkattrs}>
-											{$label RenewalsMaster RenewalType}
+																	{BEGIN Renewal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Renewal_class}">
+									{BEGIN Renewal_fieldheader}
+																				<span {$Renewal_orderlinkattrs}>
+											{$label renewalsmaster Renewal}
 										</span>
-									{END RenewalType_fieldheader}
+									{END Renewal_fieldheader}
 									</th>
-									{END RenewalType_fieldheadercolumn}
+									{END Renewal_fieldheadercolumn}
 
 
 									
@@ -398,7 +421,12 @@
 									{END edit_link}
 									{END edit_column}
 
-									
+																		{BEGIN inlineedit_column}
+									{BEGIN inlineedit_link}
+																			<a class="rnr-button-img" {$inlineeditlink_attrs} data-icon="inlineedit" title="Inline Edit"></a>
+									{END inlineedit_link}
+									{END inlineedit_column}
+
 									
 																		{BEGIN view_column}
 									{BEGIN view_link}
@@ -423,11 +451,11 @@
 	</td>
 {END ID_fieldcolumn}
 
-	{BEGIN RenewalType_fieldcolumn}
-	<td class="{$RenewalType_class}" {$RenewalType_style} {$recordattrs}>
-		{$RenewalType_value}
+	{BEGIN Renewal_fieldcolumn}
+	<td class="{$Renewal_class}" {$Renewal_style} {$recordattrs}>
+		{$Renewal_value}
 	</td>
-{END RenewalType_fieldcolumn}
+{END Renewal_fieldcolumn}
 
 
 									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
@@ -495,7 +523,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

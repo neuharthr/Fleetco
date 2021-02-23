@@ -28,6 +28,7 @@
 <div class="rnr-c rnr-cv rnr-c-all">
 
 
+
 <div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
 
 {BEGIN container_fields}
@@ -48,8 +49,32 @@
 
 <tr>
 <td>
+	{BEGIN ItemID_fieldblock}
+<div data-fieldname="ItemID" class="rnr-field style1 {$fielddispclass_ItemID}">
+  <span class="rnr-label">{BEGIN ItemID_label}{$label inventorymaster1 ItemID}{END ItemID_label}</span>
+  <span class="rnr-control style3">{$ItemID_editcontrol}</span>
+</div>
+{END ItemID_fieldblock}
+	{BEGIN Brand_fieldblock}
+<div data-fieldname="Brand" class="rnr-field style1 {$fielddispclass_Brand}">
+  <span class="rnr-label">{BEGIN Brand_label}{$label inventorymaster1 Brand}{END Brand_label}</span>
+  <span class="rnr-control style3">{$Brand_editcontrol}</span>
+</div>
+{END Brand_fieldblock}
 </td>
 <td>
+	{BEGIN Description_fieldblock}
+<div data-fieldname="Description" class="rnr-field style1 {$fielddispclass_Description}">
+  <span class="rnr-label">{BEGIN Description_label}{$label inventorymaster1 Description}{END Description_label}</span>
+  <span class="rnr-control style3">{$Description_editcontrol}</span>
+</div>
+{END Description_fieldblock}
+	{BEGIN Supplier_fieldblock}
+<div data-fieldname="Supplier" class="rnr-field style1 {$fielddispclass_Supplier}">
+  <span class="rnr-label">{BEGIN Supplier_label}{$label inventorymaster1 Supplier}{END Supplier_label}</span>
+  <span class="rnr-control style3">{$Supplier_editcontrol}</span>
+</div>
+{END Supplier_fieldblock}
 </td>
 </tr>
 </table></div>
@@ -108,7 +133,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

@@ -13,7 +13,7 @@ class SearchPanelLookup extends SearchPanel {
 	{
 		parent::searchAssign();
 		
-		$searchforAttrs = 'placeholder="'. "search".'"';
+		$searchforAttrs = 'placeholder="'. mlang_message("SEARCH_TIP").'"';
 				
 		$searchGlobalParams = $this->searchClauseObj->getSearchGlobalParams();
 		if($this->searchClauseObj->isUsedSrch())

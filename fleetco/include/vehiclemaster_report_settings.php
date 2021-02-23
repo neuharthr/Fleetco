@@ -44,6 +44,230 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsvehiclemaster_report["English"]))
 		$tdatavehiclemaster_report[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsvehiclemaster_report["Afrikaans"] = array();
+	$fieldToolTipsvehiclemaster_report["Afrikaans"] = array();
+	$pageTitlesvehiclemaster_report["Afrikaans"] = array();
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["ID"] = "ID";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["RegNo"] = "Reg No";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["Type"] = "tipe";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["RegDate"] = "Reg Datum";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["Cost"] = "koste";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["DriverAsigned"] = "bestuurder";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["Make"] = "maak";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["Model"] = "model";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["Afrikaans"]["InsuranceDue"] = "hernuwing";
+	$fieldToolTipsvehiclemaster_report["Afrikaans"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["Afrikaans"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsvehiclemaster_report["Arabic"] = array();
+	$fieldToolTipsvehiclemaster_report["Arabic"] = array();
+	$pageTitlesvehiclemaster_report["Arabic"] = array();
+	$fieldLabelsvehiclemaster_report["Arabic"]["ID"] = "???? ?????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["RegNo"] = "??? ??";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["Type"] = "????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["RegDate"] = "??? ???????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["Cost"] = "????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["DriverAsigned"] = "????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["Make"] = "???";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["Model"] = "?????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["Arabic"]["InsuranceDue"] = "?????";
+	$fieldToolTipsvehiclemaster_report["Arabic"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["Arabic"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsvehiclemaster_report["Chinese"] = array();
+	$fieldToolTipsvehiclemaster_report["Chinese"] = array();
+	$pageTitlesvehiclemaster_report["Chinese"] = array();
+	$fieldLabelsvehiclemaster_report["Chinese"]["ID"] = "ID";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["RegNo"] = "???";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["Type"] = "??";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["RegDate"] = "????";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["Cost"] = "??";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["DriverAsigned"] = "????";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["Make"] = "?";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["Model"] = "??";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["Chinese"]["InsuranceDue"] = "??";
+	$fieldToolTipsvehiclemaster_report["Chinese"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["Chinese"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsvehiclemaster_report["French"] = array();
+	$fieldToolTipsvehiclemaster_report["French"] = array();
+	$pageTitlesvehiclemaster_report["French"] = array();
+	$fieldLabelsvehiclemaster_report["French"]["ID"] = "ID";
+	$fieldToolTipsvehiclemaster_report["French"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["RegNo"] = "Reg No";
+	$fieldToolTipsvehiclemaster_report["French"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsvehiclemaster_report["French"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["Type"] = "Type";
+	$fieldToolTipsvehiclemaster_report["French"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["RegDate"] = "Date d'enregistrement";
+	$fieldToolTipsvehiclemaster_report["French"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["Cost"] = "Coût";
+	$fieldToolTipsvehiclemaster_report["French"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["DriverAsigned"] = "Chauffeur";
+	$fieldToolTipsvehiclemaster_report["French"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["Make"] = "Faire";
+	$fieldToolTipsvehiclemaster_report["French"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["Model"] = "Modèle";
+	$fieldToolTipsvehiclemaster_report["French"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["French"]["InsuranceDue"] = "Renouvellement";
+	$fieldToolTipsvehiclemaster_report["French"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["French"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsvehiclemaster_report["German"] = array();
+	$fieldToolTipsvehiclemaster_report["German"] = array();
+	$pageTitlesvehiclemaster_report["German"] = array();
+	$fieldLabelsvehiclemaster_report["German"]["ID"] = "ICH WÜRDE";
+	$fieldToolTipsvehiclemaster_report["German"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["RegNo"] = "Reg. Nr";
+	$fieldToolTipsvehiclemaster_report["German"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsvehiclemaster_report["German"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["Type"] = "Art";
+	$fieldToolTipsvehiclemaster_report["German"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["RegDate"] = "Reg Datum";
+	$fieldToolTipsvehiclemaster_report["German"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["Cost"] = "Kosten";
+	$fieldToolTipsvehiclemaster_report["German"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["DriverAsigned"] = "Treiber";
+	$fieldToolTipsvehiclemaster_report["German"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["Make"] = "Machen";
+	$fieldToolTipsvehiclemaster_report["German"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["Model"] = "Modell";
+	$fieldToolTipsvehiclemaster_report["German"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["German"]["InsuranceDue"] = "Erneuerung";
+	$fieldToolTipsvehiclemaster_report["German"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["German"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsvehiclemaster_report["Italian"] = array();
+	$fieldToolTipsvehiclemaster_report["Italian"] = array();
+	$pageTitlesvehiclemaster_report["Italian"] = array();
+	$fieldLabelsvehiclemaster_report["Italian"]["ID"] = "ID";
+	$fieldToolTipsvehiclemaster_report["Italian"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["RegNo"] = "Reg No";
+	$fieldToolTipsvehiclemaster_report["Italian"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsvehiclemaster_report["Italian"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["Type"] = "Digitare";
+	$fieldToolTipsvehiclemaster_report["Italian"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["RegDate"] = "Reg Data";
+	$fieldToolTipsvehiclemaster_report["Italian"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["Cost"] = "Costo";
+	$fieldToolTipsvehiclemaster_report["Italian"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["DriverAsigned"] = "autista";
+	$fieldToolTipsvehiclemaster_report["Italian"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["Make"] = "Rendere";
+	$fieldToolTipsvehiclemaster_report["Italian"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["Model"] = "Modello";
+	$fieldToolTipsvehiclemaster_report["Italian"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["Italian"]["InsuranceDue"] = "Rinnovo";
+	$fieldToolTipsvehiclemaster_report["Italian"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["Italian"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsvehiclemaster_report["Russian"] = array();
+	$fieldToolTipsvehiclemaster_report["Russian"] = array();
+	$pageTitlesvehiclemaster_report["Russian"] = array();
+	$fieldLabelsvehiclemaster_report["Russian"]["ID"] = "? ??";
+	$fieldToolTipsvehiclemaster_report["Russian"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["RegNo"] = "??? ???";
+	$fieldToolTipsvehiclemaster_report["Russian"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["Fleet"] = "????";
+	$fieldToolTipsvehiclemaster_report["Russian"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["Type"] = "???";
+	$fieldToolTipsvehiclemaster_report["Russian"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["RegDate"] = "??? ????";
+	$fieldToolTipsvehiclemaster_report["Russian"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["Cost"] = "?????????";
+	$fieldToolTipsvehiclemaster_report["Russian"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["DriverAsigned"] = "????????";
+	$fieldToolTipsvehiclemaster_report["Russian"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["Make"] = "??????";
+	$fieldToolTipsvehiclemaster_report["Russian"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["Model"] = "??????";
+	$fieldToolTipsvehiclemaster_report["Russian"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["Russian"]["InsuranceDue"] = "??????????";
+	$fieldToolTipsvehiclemaster_report["Russian"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["Russian"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsvehiclemaster_report["Spanish"] = array();
+	$fieldToolTipsvehiclemaster_report["Spanish"] = array();
+	$pageTitlesvehiclemaster_report["Spanish"] = array();
+	$fieldLabelsvehiclemaster_report["Spanish"]["ID"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["ID"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["RegNo"] = "Reg No";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["RegNo"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["Fleet"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["Type"] = "Tipo";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["Type"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["RegDate"] = "Fecha de registro";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["RegDate"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["Cost"] = "Costo";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["Cost"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["DriverAsigned"] = "Conductor";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["DriverAsigned"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["Make"] = "Hacer";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["Make"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["Model"] = "Modelo";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["Model"] = "";
+	$fieldLabelsvehiclemaster_report["Spanish"]["InsuranceDue"] = "Renovación";
+	$fieldToolTipsvehiclemaster_report["Spanish"]["InsuranceDue"] = "";
+	if (count($fieldToolTipsvehiclemaster_report["Spanish"]))
+		$tdatavehiclemaster_report[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsvehiclemaster_report[""] = array();
@@ -94,6 +318,9 @@ $tdatavehiclemaster_report[".fieldsForRegister"] = array();
 
 $tdatavehiclemaster_report[".list"] = true;
 
+
+
+
 $tdatavehiclemaster_report[".view"] = true;
 
 
@@ -102,7 +329,15 @@ $tdatavehiclemaster_report[".exportTo"] = true;
 $tdatavehiclemaster_report[".printFriendly"] = true;
 
 
-$tdatavehiclemaster_report[".showSimpleSearchOptions"] = true;
+$tdatavehiclemaster_report[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatavehiclemaster_report[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatavehiclemaster_report[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatavehiclemaster_report[".searchSaving"] = false;
@@ -190,6 +425,7 @@ $tdatavehiclemaster_report[".geocodingEnabled"] = false;
 $tdatavehiclemaster_report[".listGridLayout"] = 3;
 
 
+$tdatavehiclemaster_report[".isResizeColumns"] = true;
 
 
 
@@ -304,6 +540,9 @@ $tdatavehiclemaster_report[".editFields"] = array();
 
 $tdatavehiclemaster_report[".inlineEditFields"] = array();
 
+$tdatavehiclemaster_report[".updateSelectedFields"] = array();
+
+
 $tdatavehiclemaster_report[".exportFields"] = array();
 $tdatavehiclemaster_report[".exportFields"][] = "ID";
 $tdatavehiclemaster_report[".exportFields"][] = "Fleet";
@@ -351,6 +590,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -480,6 +721,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -607,6 +850,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -760,6 +1005,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -913,6 +1160,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1039,6 +1288,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1166,6 +1417,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1293,6 +1546,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1422,6 +1677,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1549,6 +1806,8 @@ $tdatavehiclemaster_report[".printFields"][] = "InsuranceDue";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

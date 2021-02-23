@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,89 +13,220 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-export" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_export}
-<div class="rnr-c rnr-cv rnr-c-export">
+{BEGIN container_page}
+<div {$page_chiddenattr} data-pageid="{$pageid}" data-container="page" class="container    "> 
 
 
-<div  class="rnr-brickcontents style2 rnr-b-exportheader {$brickclass_exportheader}"><span>	<h1>{$pagetitlelabel creategrn_disposal export}</h1>
-</span></div>
 
+
+{BEGIN container_page_1}
+<div {$page_1_chiddenattr} data-pageid="{$pageid}" data-container="page_1" class=" bs-standalone-page  col-md-6 col-md-offset-3"> 
+
+
+
+
+{BEGIN container_panel}
+<div {$panel_chiddenattr} data-pageid="{$pageid}" data-container="panel" class=" bs-pagepanel panel panel-primary   "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class=" panel-heading   "> 
+
+{BEGIN exportheader}
+<h3 class="panel-title" {$exportheader_hiddenattr} data-pageid="{$pageid}" data-brick="exportheader" >
+{$pagetitlelabel creategrn_disposal export}
+</h3>
+{END exportheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_body}
+<div {$body_chiddenattr} data-pageid="{$pageid}" data-container="body" class=" panel-body   "> 
+
+
+
+
+{BEGIN container_range}
+<div {$range_chiddenattr} data-pageid="{$pageid}" data-container="range" class="   col-md-12 "> 
 
 {BEGIN range_block}
-<div  class="rnr-brickcontents style1 rnr-b-exprange {$brickclass_exprange}"><div class="rnr-field style2">
-Data range
-</div>
-<div class="rnr-field style1">
-<span class="rnr-hoption">
-	<INPUT TYPE="radio" class="rnr-radio-button" NAME="records" VALUE="all" CHECKED {$allpageradio_attrs}>
-	<span class="rnr-radio-label"> All records</span>&nbsp;&nbsp;
-</span>
-<span class="rnr-hoption">
-	<INPUT TYPE="radio" class="rnr-radio-button" NAME="records" VALUE="page" {$pageradio_attrs}>
-	<span class="rnr-radio-label">  Current page only</span>
-</span>
-</div></div>{END range_block}
-
-
-
-<div  class="rnr-brickcontents style1 rnr-b-expoutput {$brickclass_expoutput}"><div class="rnr-field style2">
-Output format	
-</div>
-{BEGIN groupExcel}
-<div class="rnr-field style1">
-	<INPUT TYPE="radio" class="rnr-radio-button" NAME="type" VALUE="excel2007" CHECKED {$excelradio_attrs}><span class="rnr-radio-label"> <img src="images/excel.gif" align="absmiddle" alt=" ">&nbsp;Excel 2007</span>
-</div>
-{END groupExcel}
-<div class="rnr-field style1">
-	<INPUT TYPE="radio" class="rnr-radio-button" NAME="type" VALUE="word" {$wordradio_attrs}><span class="rnr-radio-label"> <img src="images/word.gif" align="absmiddle" alt=" ">&nbsp;Word</span>
-</div>
-<div class="rnr-field style1">
-	<INPUT TYPE="radio" class="rnr-radio-button" NAME="type" VALUE="csv" {$csvradio_attrs}><span class="rnr-radio-label"> <img src="images/csv.gif" align="absmiddle" alt=" ">&nbsp;CSV (comma separated values)</span>
-</div>
-<div class="rnr-field style1">
-	<INPUT TYPE="radio" class="rnr-radio-button" NAME="type" VALUE="xml" {$xmlradio_attrs}><span class="rnr-radio-label"> <img src="images/xml.gif" align="absmiddle" alt=" ">&nbsp;XML</span>
-</div>
-</div>
-
-
-
-<div  class="rnr-brickcontents style2 rnr-b-expbuttons {$brickclass_expbuttons}"><a href="#" class="rnr-button main" {$exportlink_attrs}>Export</a>
-</div>
-
-
-</div>
-{END container_export}
-
-
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
+<div {$bsexprange_hiddenattr} data-pageid="{$pageid}" data-brick="bsexprange" class="form-horizontal" role="form">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				{mlang_message DATA_RANGE}
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<div class="row">
+			<div class="col-md-2">
+				<INPUT TYPE="radio" NAME="records" VALUE="all" CHECKED {$allpageradio_attrs}>
+				<span>  {mlang_message ALL_RECORDS}</span>&nbsp;&nbsp;
+			</div>
+			<div class="col-md-2">
+				<INPUT TYPE="radio" NAME="records" VALUE="page" {$pageradio_attrs}>
+				<span>  {mlang_message CURRENT_PAGE}</span>
+			</div>
 		</div>
 	</div>
-		
+</div>
+{END range_block}
+
+
+
+</div>
+{END container_range}
+
+
+
+
+
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bsexpoutput_hiddenattr} data-pageid="{$pageid}" data-brick="bsexpoutput" class="form-horizontal" role="form">
+	<div class="container">
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="col-md-2">
+				{mlang_message OUTPUT_FORMAT}	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+								{BEGIN groupExcel}
+					<INPUT TYPE="radio" NAME="type" VALUE="excel2007" CHECKED {$excelradio_attrs}>
+					<span> <img src="images/excel.gif" align="absmiddle" alt=" ">&nbsp;Excel 2007</span>
+				{END groupExcel}
+			</div>
+		</div>
+		<div class="row">
+			<div  class="col-md-4">
+				<INPUT TYPE="radio" NAME="type" VALUE="word" {$wordradio_attrs}>
+				<span> <img src="images/word.gif" align="absmiddle" alt=" ">&nbsp;Word</span>
+			</div>
+		</div>
+		<div class="row">
+			<div  class="col-md-4">
+				<INPUT TYPE="radio" NAME="type" VALUE="csv" {$csvradio_attrs}>
+				<span> <img src="images/csv.gif" align="absmiddle" alt=" ">&nbsp;{mlang_message CSV}</span>
+			</div>
+		</div>
+		<div class="row">	
+			<div  class="col-md-4">
+				<INPUT TYPE="radio" NAME="type" VALUE="xml" {$xmlradio_attrs}>
+				<span> <img src="images/xml.gif" align="absmiddle" alt=" ">&nbsp;XML</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class="   col-md-8 col-md-offset-5"> 
+
+
+<div {$bsexpbuttons_hiddenattr} data-pageid="{$pageid}" data-brick="bsexpbuttons">
+	<a href="#" class="btn btn-primary" {$exportlink_attrs}>{mlang_message EXPORT}</a>
+</div>
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_body}
+
+
+
+
+
+
+</div>
+{END container_panel}
+
+
+
+
+
+
+</div>
+{END container_page_1}
+
+
+
+
+
+
+</div>
+{END container_page}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
 		{$footer}
 	{END body}
 	</body>

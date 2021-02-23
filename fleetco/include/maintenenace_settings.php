@@ -32,7 +32,7 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsmaintenenace["English"]["Supplier"] = "Supplier";
 	$fieldToolTipsmaintenenace["English"]["Supplier"] = "";
 	$fieldLabelsmaintenenace["English"]["Cost"] = "Cost";
-	$fieldToolTipsmaintenenace["English"]["Cost"] = "Cost without Tax";
+	$fieldToolTipsmaintenenace["English"]["Cost"] = "";
 	$fieldLabelsmaintenenace["English"]["Remarks"] = "Remarks";
 	$fieldToolTipsmaintenenace["English"]["Remarks"] = "";
 	$fieldLabelsmaintenenace["English"]["RefNo"] = "PO No";
@@ -46,7 +46,7 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsmaintenenace["English"]["Approval"] = "Edited By";
 	$fieldToolTipsmaintenenace["English"]["Approval"] = "";
 	$fieldLabelsmaintenenace["English"]["MeterReading"] = "Meter Reading";
-	$fieldToolTipsmaintenenace["English"]["MeterReading"] = "Required for regular maintenance like lub/mechanical service";
+	$fieldToolTipsmaintenenace["English"]["MeterReading"] = "";
 	$fieldLabelsmaintenenace["English"]["AccidentRef"] = "Accident Ref";
 	$fieldToolTipsmaintenenace["English"]["AccidentRef"] = "";
 	$fieldLabelsmaintenenace["English"]["PaymentVoucher"] = "Pay. Vou. No.";
@@ -54,6 +54,326 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsmaintenenace["English"]["MaintType"] = "Maint. Type";
 	$fieldToolTipsmaintenenace["English"]["MaintType"] = "";
 	if (count($fieldToolTipsmaintenenace["English"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsmaintenenace["Afrikaans"] = array();
+	$fieldToolTipsmaintenenace["Afrikaans"] = array();
+	$pageTitlesmaintenenace["Afrikaans"] = array();
+	$fieldLabelsmaintenenace["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Id"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Fleet"] = "vloot";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Vehicle"] = "voertuig";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Type"] = "vloot tipe";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Type"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Supplier"] = "verskaffer";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Cost"] = "koste";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Cost"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Remarks"] = "opmerkings";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["RefNo"] = "Bestelling nommer";
+	$fieldToolTipsmaintenenace["Afrikaans"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["SysDate"] = "stelsel Datum";
+	$fieldToolTipsmaintenenace["Afrikaans"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Date"] = "datum";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Date"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["EnteredBy"] = "aangegaan deur";
+	$fieldToolTipsmaintenenace["Afrikaans"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["Approval"] = "geredigeer deur";
+	$fieldToolTipsmaintenenace["Afrikaans"]["Approval"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["MeterReading"] = "meterlesing";
+	$fieldToolTipsmaintenenace["Afrikaans"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["AccidentRef"] = "ongeluk Verw";
+	$fieldToolTipsmaintenenace["Afrikaans"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["PaymentVoucher"] = "Betaling Voucher No.";
+	$fieldToolTipsmaintenenace["Afrikaans"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["Afrikaans"]["MaintType"] = "Onderhoud Tipe";
+	$fieldToolTipsmaintenenace["Afrikaans"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["Afrikaans"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsmaintenenace["Arabic"] = array();
+	$fieldToolTipsmaintenenace["Arabic"] = array();
+	$pageTitlesmaintenenace["Arabic"] = array();
+	$fieldLabelsmaintenenace["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsmaintenenace["Arabic"]["Id"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Fleet"] = "?????";
+	$fieldToolTipsmaintenenace["Arabic"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Vehicle"] = "?????";
+	$fieldToolTipsmaintenenace["Arabic"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Type"] = "??? ?????";
+	$fieldToolTipsmaintenenace["Arabic"]["Type"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Supplier"] = "??????";
+	$fieldToolTipsmaintenenace["Arabic"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Cost"] = "????";
+	$fieldToolTipsmaintenenace["Arabic"]["Cost"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Remarks"] = "???????";
+	$fieldToolTipsmaintenenace["Arabic"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["RefNo"] = "??? ??? ??????";
+	$fieldToolTipsmaintenenace["Arabic"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["SysDate"] = "????? ??????";
+	$fieldToolTipsmaintenenace["Arabic"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Date"] = "?????";
+	$fieldToolTipsmaintenenace["Arabic"]["Date"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["EnteredBy"] = "?? ?????? ??????";
+	$fieldToolTipsmaintenenace["Arabic"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["Approval"] = "???? ??????";
+	$fieldToolTipsmaintenenace["Arabic"]["Approval"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["MeterReading"] = "????? ??????";
+	$fieldToolTipsmaintenenace["Arabic"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["AccidentRef"] = "?????? ???????";
+	$fieldToolTipsmaintenenace["Arabic"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["PaymentVoucher"] = "??? ????? ???";
+	$fieldToolTipsmaintenenace["Arabic"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["Arabic"]["MaintType"] = "??? ???????";
+	$fieldToolTipsmaintenenace["Arabic"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["Arabic"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsmaintenenace["Chinese"] = array();
+	$fieldToolTipsmaintenenace["Chinese"] = array();
+	$pageTitlesmaintenenace["Chinese"] = array();
+	$fieldLabelsmaintenenace["Chinese"]["Id"] = "ID";
+	$fieldToolTipsmaintenenace["Chinese"]["Id"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Fleet"] = "??";
+	$fieldToolTipsmaintenenace["Chinese"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Vehicle"] = "??";
+	$fieldToolTipsmaintenenace["Chinese"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Type"] = "????";
+	$fieldToolTipsmaintenenace["Chinese"]["Type"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Supplier"] = "???";
+	$fieldToolTipsmaintenenace["Chinese"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Cost"] = "??";
+	$fieldToolTipsmaintenenace["Chinese"]["Cost"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Remarks"] = "??";
+	$fieldToolTipsmaintenenace["Chinese"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["RefNo"] = "?????";
+	$fieldToolTipsmaintenenace["Chinese"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["SysDate"] = "????";
+	$fieldToolTipsmaintenenace["Chinese"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Date"] = "??";
+	$fieldToolTipsmaintenenace["Chinese"]["Date"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["EnteredBy"] = "???";
+	$fieldToolTipsmaintenenace["Chinese"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["Approval"] = "??";
+	$fieldToolTipsmaintenenace["Chinese"]["Approval"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["MeterReading"] = "????";
+	$fieldToolTipsmaintenenace["Chinese"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["AccidentRef"] = "????";
+	$fieldToolTipsmaintenenace["Chinese"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["PaymentVoucher"] = "?????";
+	$fieldToolTipsmaintenenace["Chinese"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["Chinese"]["MaintType"] = "????";
+	$fieldToolTipsmaintenenace["Chinese"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["Chinese"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsmaintenenace["French"] = array();
+	$fieldToolTipsmaintenenace["French"] = array();
+	$pageTitlesmaintenenace["French"] = array();
+	$fieldLabelsmaintenenace["French"]["Id"] = "ID";
+	$fieldToolTipsmaintenenace["French"]["Id"] = "";
+	$fieldLabelsmaintenenace["French"]["Fleet"] = "Flotte";
+	$fieldToolTipsmaintenenace["French"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["French"]["Vehicle"] = "Véhicule";
+	$fieldToolTipsmaintenenace["French"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["French"]["Type"] = "Type de flotte";
+	$fieldToolTipsmaintenenace["French"]["Type"] = "";
+	$fieldLabelsmaintenenace["French"]["Supplier"] = "Fournisseur";
+	$fieldToolTipsmaintenenace["French"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["French"]["Cost"] = "Coût";
+	$fieldToolTipsmaintenenace["French"]["Cost"] = "";
+	$fieldLabelsmaintenenace["French"]["Remarks"] = "Remarques";
+	$fieldToolTipsmaintenenace["French"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["French"]["RefNo"] = "Numéro de commande";
+	$fieldToolTipsmaintenenace["French"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["French"]["SysDate"] = "Date du système";
+	$fieldToolTipsmaintenenace["French"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["French"]["Date"] = "date";
+	$fieldToolTipsmaintenenace["French"]["Date"] = "";
+	$fieldLabelsmaintenenace["French"]["EnteredBy"] = "Entré par";
+	$fieldToolTipsmaintenenace["French"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["French"]["Approval"] = "Édité par";
+	$fieldToolTipsmaintenenace["French"]["Approval"] = "";
+	$fieldLabelsmaintenenace["French"]["MeterReading"] = "Lecture de compteur";
+	$fieldToolTipsmaintenenace["French"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["French"]["AccidentRef"] = "Réf. Accident";
+	$fieldToolTipsmaintenenace["French"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["French"]["PaymentVoucher"] = "Numéro de bon de paiement";
+	$fieldToolTipsmaintenenace["French"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["French"]["MaintType"] = "Type d'entretien";
+	$fieldToolTipsmaintenenace["French"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["French"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsmaintenenace["German"] = array();
+	$fieldToolTipsmaintenenace["German"] = array();
+	$pageTitlesmaintenenace["German"] = array();
+	$fieldLabelsmaintenenace["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsmaintenenace["German"]["Id"] = "";
+	$fieldLabelsmaintenenace["German"]["Fleet"] = "Flotte";
+	$fieldToolTipsmaintenenace["German"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["German"]["Vehicle"] = "Fahrzeug";
+	$fieldToolTipsmaintenenace["German"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["German"]["Type"] = "Flottenart";
+	$fieldToolTipsmaintenenace["German"]["Type"] = "";
+	$fieldLabelsmaintenenace["German"]["Supplier"] = "Lieferant";
+	$fieldToolTipsmaintenenace["German"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["German"]["Cost"] = "Kosten";
+	$fieldToolTipsmaintenenace["German"]["Cost"] = "";
+	$fieldLabelsmaintenenace["German"]["Remarks"] = "Bemerkungen";
+	$fieldToolTipsmaintenenace["German"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["German"]["RefNo"] = "Bestellnummer";
+	$fieldToolTipsmaintenenace["German"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["German"]["SysDate"] = "Systemdatum";
+	$fieldToolTipsmaintenenace["German"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["German"]["Date"] = "Datum";
+	$fieldToolTipsmaintenenace["German"]["Date"] = "";
+	$fieldLabelsmaintenenace["German"]["EnteredBy"] = "Betreten von";
+	$fieldToolTipsmaintenenace["German"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["German"]["Approval"] = "Bearbeitet von";
+	$fieldToolTipsmaintenenace["German"]["Approval"] = "";
+	$fieldLabelsmaintenenace["German"]["MeterReading"] = "Zählerstand";
+	$fieldToolTipsmaintenenace["German"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["German"]["AccidentRef"] = "Unfall";
+	$fieldToolTipsmaintenenace["German"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["German"]["PaymentVoucher"] = "Zahlungsbeleg Nr.";
+	$fieldToolTipsmaintenenace["German"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["German"]["MaintType"] = "Wartungsart";
+	$fieldToolTipsmaintenenace["German"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["German"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsmaintenenace["Italian"] = array();
+	$fieldToolTipsmaintenenace["Italian"] = array();
+	$pageTitlesmaintenenace["Italian"] = array();
+	$fieldLabelsmaintenenace["Italian"]["Id"] = "ID";
+	$fieldToolTipsmaintenenace["Italian"]["Id"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Fleet"] = "Flotta";
+	$fieldToolTipsmaintenenace["Italian"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Vehicle"] = "Veicolo";
+	$fieldToolTipsmaintenenace["Italian"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Type"] = "tipo di Fleet";
+	$fieldToolTipsmaintenenace["Italian"]["Type"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Supplier"] = "Fornitore";
+	$fieldToolTipsmaintenenace["Italian"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Cost"] = "Costo";
+	$fieldToolTipsmaintenenace["Italian"]["Cost"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Remarks"] = "Osservazioni";
+	$fieldToolTipsmaintenenace["Italian"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["Italian"]["RefNo"] = "Numero dell'ordine d'acquisto";
+	$fieldToolTipsmaintenenace["Italian"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["Italian"]["SysDate"] = "Data di sistema";
+	$fieldToolTipsmaintenenace["Italian"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Date"] = "Data";
+	$fieldToolTipsmaintenenace["Italian"]["Date"] = "";
+	$fieldLabelsmaintenenace["Italian"]["EnteredBy"] = "Inserito da";
+	$fieldToolTipsmaintenenace["Italian"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["Italian"]["Approval"] = "A cura di";
+	$fieldToolTipsmaintenenace["Italian"]["Approval"] = "";
+	$fieldLabelsmaintenenace["Italian"]["MeterReading"] = "Lettura contatori";
+	$fieldToolTipsmaintenenace["Italian"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["Italian"]["AccidentRef"] = "Rif Accident";
+	$fieldToolTipsmaintenenace["Italian"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["Italian"]["PaymentVoucher"] = "Il pagamento Voucher No.";
+	$fieldToolTipsmaintenenace["Italian"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["Italian"]["MaintType"] = "Tipo di manutenzione";
+	$fieldToolTipsmaintenenace["Italian"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["Italian"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsmaintenenace["Russian"] = array();
+	$fieldToolTipsmaintenenace["Russian"] = array();
+	$pageTitlesmaintenenace["Russian"] = array();
+	$fieldLabelsmaintenenace["Russian"]["Id"] = "? ??";
+	$fieldToolTipsmaintenenace["Russian"]["Id"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Fleet"] = "????";
+	$fieldToolTipsmaintenenace["Russian"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Vehicle"] = "???????? ????????????";
+	$fieldToolTipsmaintenenace["Russian"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Type"] = "??? ?????";
+	$fieldToolTipsmaintenenace["Russian"]["Type"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Supplier"] = "?????????";
+	$fieldToolTipsmaintenenace["Russian"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Cost"] = "?????????";
+	$fieldToolTipsmaintenenace["Russian"]["Cost"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Remarks"] = "?????????";
+	$fieldToolTipsmaintenenace["Russian"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["Russian"]["RefNo"] = "????? ?????? ?? ????????";
+	$fieldToolTipsmaintenenace["Russian"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["Russian"]["SysDate"] = "System Date";
+	$fieldToolTipsmaintenenace["Russian"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Date"] = "????";
+	$fieldToolTipsmaintenenace["Russian"]["Date"] = "";
+	$fieldLabelsmaintenenace["Russian"]["EnteredBy"] = "??????";
+	$fieldToolTipsmaintenenace["Russian"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["Russian"]["Approval"] = "???????????????";
+	$fieldToolTipsmaintenenace["Russian"]["Approval"] = "";
+	$fieldLabelsmaintenenace["Russian"]["MeterReading"] = "????????? ????????";
+	$fieldToolTipsmaintenenace["Russian"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["Russian"]["AccidentRef"] = "?????? ??????";
+	$fieldToolTipsmaintenenace["Russian"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["Russian"]["PaymentVoucher"] = "?????? ???????? ?????? ?";
+	$fieldToolTipsmaintenenace["Russian"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["Russian"]["MaintType"] = "??? ???????????? ????????????";
+	$fieldToolTipsmaintenenace["Russian"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["Russian"]))
+		$tdatamaintenenace[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsmaintenenace["Spanish"] = array();
+	$fieldToolTipsmaintenenace["Spanish"] = array();
+	$pageTitlesmaintenenace["Spanish"] = array();
+	$fieldLabelsmaintenenace["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsmaintenenace["Spanish"]["Id"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Fleet"] = "Flota";
+	$fieldToolTipsmaintenenace["Spanish"]["Fleet"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Vehicle"] = "Vehículo";
+	$fieldToolTipsmaintenenace["Spanish"]["Vehicle"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Type"] = "Tipo de flota";
+	$fieldToolTipsmaintenenace["Spanish"]["Type"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Supplier"] = "Proveedor";
+	$fieldToolTipsmaintenenace["Spanish"]["Supplier"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Cost"] = "Costo";
+	$fieldToolTipsmaintenenace["Spanish"]["Cost"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Remarks"] = "Observaciones";
+	$fieldToolTipsmaintenenace["Spanish"]["Remarks"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["RefNo"] = "Número de orden de compra";
+	$fieldToolTipsmaintenenace["Spanish"]["RefNo"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["SysDate"] = "Fecha del sistema";
+	$fieldToolTipsmaintenenace["Spanish"]["SysDate"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Date"] = "Fecha";
+	$fieldToolTipsmaintenenace["Spanish"]["Date"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["EnteredBy"] = "Introducido por";
+	$fieldToolTipsmaintenenace["Spanish"]["EnteredBy"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["Approval"] = "Editado por";
+	$fieldToolTipsmaintenenace["Spanish"]["Approval"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["MeterReading"] = "Lectura del medidor";
+	$fieldToolTipsmaintenenace["Spanish"]["MeterReading"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["AccidentRef"] = "Ref. Accidente";
+	$fieldToolTipsmaintenenace["Spanish"]["AccidentRef"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["PaymentVoucher"] = "Número de comprobante de pago";
+	$fieldToolTipsmaintenenace["Spanish"]["PaymentVoucher"] = "";
+	$fieldLabelsmaintenenace["Spanish"]["MaintType"] = "Tipo de mantenimiento";
+	$fieldToolTipsmaintenenace["Spanish"]["MaintType"] = "";
+	if (count($fieldToolTipsmaintenenace["Spanish"]))
 		$tdatamaintenenace[".isUseToolTips"] = true;
 }
 if(mlang_getcurrentlang()=="")
@@ -106,6 +426,9 @@ $tdatamaintenenace[".fieldsForRegister"] = array();
 
 $tdatamaintenenace[".list"] = true;
 
+
+
+
 $tdatamaintenenace[".view"] = true;
 
 
@@ -114,7 +437,15 @@ $tdatamaintenenace[".exportTo"] = true;
 $tdatamaintenenace[".printFriendly"] = true;
 
 
-$tdatamaintenenace[".showSimpleSearchOptions"] = true;
+$tdatamaintenenace[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatamaintenenace[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatamaintenenace[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatamaintenenace[".searchSaving"] = false;
@@ -136,6 +467,7 @@ $tdatamaintenenace[".isUseTimeForSearch"] = false;
 
 
 
+$tdatamaintenenace[".badgeColor"] = "8B0000";
 
 
 $tdatamaintenenace[".allSearchFields"] = array();
@@ -213,6 +545,7 @@ $tdatamaintenenace[".geocodingEnabled"] = false;
 $tdatamaintenenace[".listGridLayout"] = 3;
 
 
+$tdatamaintenenace[".isResizeColumns"] = true;
 
 
 
@@ -347,6 +680,9 @@ $tdatamaintenenace[".editFields"] = array();
 
 $tdatamaintenenace[".inlineEditFields"] = array();
 
+$tdatamaintenenace[".updateSelectedFields"] = array();
+
+
 $tdatamaintenenace[".exportFields"] = array();
 $tdatamaintenenace[".exportFields"][] = "MaintType";
 $tdatamaintenenace[".exportFields"][] = "Id";
@@ -404,6 +740,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -529,6 +867,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -650,6 +990,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -801,6 +1143,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -922,6 +1266,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1069,6 +1415,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1196,6 +1544,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1318,6 +1668,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1442,6 +1794,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 	
@@ -1554,6 +1908,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1680,6 +2036,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1799,6 +2157,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -1920,6 +2280,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2045,6 +2407,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -2168,6 +2532,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+
+	
 	
 	
 	
@@ -2278,6 +2644,8 @@ $tdatamaintenenace[".printFields"][] = "Approval";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

@@ -168,7 +168,7 @@ class ChangePasswordPage extends RunnerPage
 			return $retval;		
 		}
 
-		$this->message = "Invalid password";
+		$this->message = mlang_message("INVALID_PASSWORD");
 		return false;
 	}
 
@@ -181,27 +181,27 @@ class ChangePasswordPage extends RunnerPage
 		$pwdLen = GetGlobalData("pwdLen", 0);
 		if($pwdLen)
 		{
-			$fmt = "Password must be at least %% characters length.";
+			$fmt = mlang_message("SEC_PWD_LEN");
 			$fmt = str_replace("%%", "".$pwdLen, $fmt);
 			$msg.= "<br>".$fmt;
 		}
 		$pwdUnique = GetGlobalData("pwdUnique", 0);
 		if($pwdUnique)
 		{
-			$fmt = "Password must contain %% unique characters.";
+			$fmt = mlang_message("SEC_PWD_UNIQUE");
 			$fmt = str_replace("%%", "".$pwdUnique, $fmt);
 			$msg.= "<br>".$fmt;
 		}
 		$pwdDigits = GetGlobalData("pwdDigits", 0);
 		if($pwdDigits)
 		{
-			$fmt = "Password must contain %% digits or symbols.";
+			$fmt = mlang_message("SEC_PWD_DIGIT");
 			$fmt = str_replace("%%", "".$pwdDigits, $fmt);
 			$msg.= "<br>".$fmt;
 		}
 		if(GetGlobalData("pwdUpperLower", false))
 		{
-			$fmt = "Password must contain letters in upper and lower case.";
+			$fmt = mlang_message("SEC_PWD_CASE");
 			$msg.= "<br>".$fmt;
 		}
 		

@@ -41,7 +41,7 @@ class DB2Connection extends Connection
 		$this->conn = db2_connect($conn_string, '', '');
 		
 		if( !$this->conn ) 
-			trigger_error( db2_conn_errormsg(), E_USER_ERROR );
+			$this->triggerError( db2_conn_errormsg() );
 		
 		return $this->conn;
 	}
@@ -66,7 +66,7 @@ class DB2Connection extends Connection
 		$ret = db2_exec( $this->conn, $sql );
 		if( !$ret )
 		{
-			trigger_error(db2_stmt_errormsg(), E_USER_ERROR);
+			$this->triggerError(db2_stmt_errormsg());
 			return FALSE;
 		}
 		
@@ -106,9 +106,9 @@ class DB2Connection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return db2_fetch_assoc($qHanle);
+		return db2_fetch_assoc($qHandle);
 	}
 	
 	/**	
@@ -116,18 +116,18 @@ class DB2Connection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
-		return db2_fetch_array($qHanle);
+		return db2_fetch_array($qHandle);
 	}
 	
 	/**	
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
-		@db2_free_result($qHanle);
+		@db2_free_result($qHandle);
 	}
 
 	/**	
@@ -146,9 +146,9 @@ class DB2Connection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
-		return db2_field_name($qHanle, $offset);
+		return db2_field_name($qHandle, $offset);
 	}
 
 	/**

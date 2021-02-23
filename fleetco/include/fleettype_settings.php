@@ -30,6 +30,118 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsfleettype["English"]))
 		$tdatafleettype[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsfleettype["Afrikaans"] = array();
+	$fieldToolTipsfleettype["Afrikaans"] = array();
+	$pageTitlesfleettype["Afrikaans"] = array();
+	$fieldLabelsfleettype["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsfleettype["Afrikaans"]["Id"] = "";
+	$fieldLabelsfleettype["Afrikaans"]["FleetType"] = "vloot Tipe";
+	$fieldToolTipsfleettype["Afrikaans"]["FleetType"] = "";
+	$fieldLabelsfleettype["Afrikaans"]["In_Charge"] = "In-bevel";
+	$fieldToolTipsfleettype["Afrikaans"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["Afrikaans"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsfleettype["Arabic"] = array();
+	$fieldToolTipsfleettype["Arabic"] = array();
+	$pageTitlesfleettype["Arabic"] = array();
+	$fieldLabelsfleettype["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsfleettype["Arabic"]["Id"] = "";
+	$fieldLabelsfleettype["Arabic"]["FleetType"] = "????? ???";
+	$fieldToolTipsfleettype["Arabic"]["FleetType"] = "";
+	$fieldLabelsfleettype["Arabic"]["In_Charge"] = "????? ??";
+	$fieldToolTipsfleettype["Arabic"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["Arabic"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsfleettype["Chinese"] = array();
+	$fieldToolTipsfleettype["Chinese"] = array();
+	$pageTitlesfleettype["Chinese"] = array();
+	$fieldLabelsfleettype["Chinese"]["Id"] = "ID";
+	$fieldToolTipsfleettype["Chinese"]["Id"] = "";
+	$fieldLabelsfleettype["Chinese"]["FleetType"] = "????";
+	$fieldToolTipsfleettype["Chinese"]["FleetType"] = "";
+	$fieldLabelsfleettype["Chinese"]["In_Charge"] = "??";
+	$fieldToolTipsfleettype["Chinese"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["Chinese"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsfleettype["French"] = array();
+	$fieldToolTipsfleettype["French"] = array();
+	$pageTitlesfleettype["French"] = array();
+	$fieldLabelsfleettype["French"]["Id"] = "ID";
+	$fieldToolTipsfleettype["French"]["Id"] = "";
+	$fieldLabelsfleettype["French"]["FleetType"] = "Type de flotte";
+	$fieldToolTipsfleettype["French"]["FleetType"] = "";
+	$fieldLabelsfleettype["French"]["In_Charge"] = "En charge";
+	$fieldToolTipsfleettype["French"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["French"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsfleettype["German"] = array();
+	$fieldToolTipsfleettype["German"] = array();
+	$pageTitlesfleettype["German"] = array();
+	$fieldLabelsfleettype["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsfleettype["German"]["Id"] = "";
+	$fieldLabelsfleettype["German"]["FleetType"] = "Flottenart";
+	$fieldToolTipsfleettype["German"]["FleetType"] = "";
+	$fieldLabelsfleettype["German"]["In_Charge"] = "Verantwortlich";
+	$fieldToolTipsfleettype["German"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["German"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsfleettype["Italian"] = array();
+	$fieldToolTipsfleettype["Italian"] = array();
+	$pageTitlesfleettype["Italian"] = array();
+	$fieldLabelsfleettype["Italian"]["Id"] = "ID";
+	$fieldToolTipsfleettype["Italian"]["Id"] = "";
+	$fieldLabelsfleettype["Italian"]["FleetType"] = "Fleet Tipo";
+	$fieldToolTipsfleettype["Italian"]["FleetType"] = "";
+	$fieldLabelsfleettype["Italian"]["In_Charge"] = "In carica";
+	$fieldToolTipsfleettype["Italian"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["Italian"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsfleettype["Russian"] = array();
+	$fieldToolTipsfleettype["Russian"] = array();
+	$pageTitlesfleettype["Russian"] = array();
+	$fieldLabelsfleettype["Russian"]["Id"] = "? ??";
+	$fieldToolTipsfleettype["Russian"]["Id"] = "";
+	$fieldLabelsfleettype["Russian"]["FleetType"] = "???? ???";
+	$fieldToolTipsfleettype["Russian"]["FleetType"] = "";
+	$fieldLabelsfleettype["Russian"]["In_Charge"] = "?????????????";
+	$fieldToolTipsfleettype["Russian"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["Russian"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsfleettype["Spanish"] = array();
+	$fieldToolTipsfleettype["Spanish"] = array();
+	$pageTitlesfleettype["Spanish"] = array();
+	$fieldLabelsfleettype["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsfleettype["Spanish"]["Id"] = "";
+	$fieldLabelsfleettype["Spanish"]["FleetType"] = "Tipo de flota";
+	$fieldToolTipsfleettype["Spanish"]["FleetType"] = "";
+	$fieldLabelsfleettype["Spanish"]["In_Charge"] = "En cargo";
+	$fieldToolTipsfleettype["Spanish"]["In_Charge"] = "";
+	if (count($fieldToolTipsfleettype["Spanish"]))
+		$tdatafleettype[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsfleettype[""] = array();
@@ -88,6 +200,9 @@ $tdatafleettype[".afterAddActionDetTable"] = "";
 
 $tdatafleettype[".list"] = true;
 
+
+
+
 $tdatafleettype[".view"] = true;
 
 $tdatafleettype[".import"] = true;
@@ -99,6 +214,14 @@ $tdatafleettype[".printFriendly"] = true;
 $tdatafleettype[".delete"] = true;
 
 $tdatafleettype[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatafleettype[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatafleettype[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatafleettype[".searchSaving"] = false;
@@ -120,6 +243,7 @@ $tdatafleettype[".isUseTimeForSearch"] = false;
 
 
 
+$tdatafleettype[".badgeColor"] = "FFD700";
 
 
 $tdatafleettype[".allSearchFields"] = array();
@@ -162,6 +286,7 @@ $tdatafleettype[".geocodingEnabled"] = false;
 $tdatafleettype[".listGridLayout"] = 3;
 
 
+$tdatafleettype[".isResizeColumns"] = true;
 
 
 
@@ -259,6 +384,11 @@ $tdatafleettype[".editFields"][] = "In-Charge";
 
 $tdatafleettype[".inlineEditFields"] = array();
 
+$tdatafleettype[".updateSelectedFields"] = array();
+$tdatafleettype[".updateSelectedFields"][] = "FleetType";
+$tdatafleettype[".updateSelectedFields"][] = "In-Charge";
+
+
 $tdatafleettype[".exportFields"] = array();
 $tdatafleettype[".exportFields"][] = "Id";
 $tdatafleettype[".exportFields"][] = "FleetType";
@@ -295,6 +425,8 @@ $tdatafleettype[".printFields"][] = "In-Charge";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -420,6 +552,9 @@ $tdatafleettype[".printFields"][] = "In-Charge";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -543,6 +678,9 @@ $tdatafleettype[".printFields"][] = "In-Charge";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

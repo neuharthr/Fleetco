@@ -6,7 +6,6 @@ include_once(getabspath("classes/files.php"));
  */
 class RunnerPage
 {
-
 	/**
      * Id on page.
      * @var integer
@@ -320,7 +319,7 @@ class RunnerPage
 	 * @var object
 	 * @intellisense
 	 */	
-	protected $eventsObject;
+	public $eventsObject;
 	
 	/**
 	 * Master table requested keys
@@ -745,6 +744,18 @@ class RunnerPage
 	public $isScrollGridBody = false;
 	
 	/**
+	 * Suppress Post/Redirect/Get pattern after submitting the form on Add/Edit/Register/Delete pages
+	 * With $this->stopPRG=false the page will not be redirected.
+	 */
+	public $stopPRG = false;
+	
+	/**
+	 * Override default page title
+	 * @type String
+	 */
+	public $pageTitle = null;
+	
+	/**
 	 * @constructor
 	 * @param &Array params
 	 */
@@ -823,7 +834,7 @@ class RunnerPage
 			$this->setSessionVariables();
 		
 		//	get locking object
-		$this->lockingObj = GetLockingObject($this->tName);	
+		$this->lockingObj = $this->getLockingObject();	
 		$this->warnLeavingPages = $this->pSet->warnLeavingPages(); 
 		$this->is508 = isEnableSection508();
 		$this->mapProvider = getMapProvider();
@@ -860,6 +871,12 @@ class RunnerPage
 			$this->jsSettings['tableSettings'][$this->tName]['pageSkinStyle'] = array();
 			$this->jsSettings['tableSettings'][$this->tName]['pageSkinStyle'][ $this->pageType ] = $this->pageLayout->style." page-".$this->pageLayout->name;
 			$this->AddCSSFile( $this->pageLayout->getCSSFiles(isRTL(), isPageLayoutMobile( $this->templatefile ), $this->pdfMode != "" ) );
+			foreach( $this->getArrTabs() as $tabs )
+			{
+				$layout = GetPageLayout( $this->shortTableName, $this->pageType, $tabs['tabId'] );
+				if( $layout )
+					$this->AddCSSFile( $layout->getCSSFiles(isRTL(), $this->mobileTemplateMode(), $this->pdfMode != "" ) );				
+			}
 		}
 		
 		if( $this->mobileTemplateMode() )
@@ -927,6 +944,7 @@ class RunnerPage
 		$this->settingsMap["tableSettings"]["showAddInPopup"] = array("default"=>false, "jsName"=>"showAddInPopup");
 		$this->settingsMap["tableSettings"]["showEditInPopup"] = array("default"=>false,"jsName"=>"showEditInPopup");
 		$this->settingsMap["tableSettings"]["showViewInPopup"] = array("default"=>false,"jsName"=>"showViewInPopup");
+		$this->settingsMap["tableSettings"]["updateSelected"] = array("default"=>false,"jsName"=>"updateSelected");
 		$this->settingsMap["tableSettings"]["isResizeColumns"] = array("default"=>false,"jsName"=>"isUseResize");
 		$this->settingsMap["tableSettings"]["detailsLinksOnList"] = array("default"=>DL_SINGLE,"jsName"=>"detailsLinksOnList");
 		$this->settingsMap['tableSettings']['isUsebuttonHandlers'] = array("default"=>false,"jsName"=>"isUseButtons");
@@ -1076,6 +1094,16 @@ class RunnerPage
 		$this->processMasterKeyValue();
 		$this->assignSearchLogger();	
 	}
+	
+	/**
+	 * get locking object
+	 * @retunr Mixed
+	 */
+	protected function getLockingObject()
+	{
+		return GetLockingObject( $this->tName );
+	}
+	
 	/**
 	 * Check is dashboard element
 	 */
@@ -1519,6 +1547,30 @@ class RunnerPage
 					$this->masterKeysReq[$i + 1] = $_SESSION[$this->sessionPrefix."_masterkey".($i + 1)];
 			}	
 		}
+		
+		if( !in_array( $this->pageType, array( PAGE_LIST, PAGE_REPORT, PAGE_CHART ) ) 
+			|| !$this->masterTable || $this->getLayoutVersion() != BOOTSTRAP_LAYOUT )
+		{
+			return;
+		}
+		
+		$masterTableData = $this->getMasterTableInfoByPSet( $this->tName, $this->masterTable, $this->pSet );
+		if( !$masterTableData )
+			return;
+		
+		$mPSet = new ProjectSettings( $this->masterTable, $masterTableData["type"] );
+		foreach( $mPSet->getDetailTablesArr() as $dt )
+		{
+			if( $dt["dDataSourceTable"] == $this->tName && $dt["dType"] == $this->pageType )
+				continue;
+
+			$masterRecordData = $this->getMasterRecord();	
+				
+			foreach( $dt["masterKeys"] as $idx => $dk )
+			{
+				$_SESSION[ $dt["dDataSourceTable"]."_masterkey".($idx + 1) ] = $masterRecordData[ $dk ];
+			}				
+		}		
 	}
 	
 	/**
@@ -1529,6 +1581,13 @@ class RunnerPage
 		$masterTableData = $this->getMasterTableInfo();
 		if( !$masterTableData ) 
 			return;
+
+
+		$this->xt->assign("mastertable_block", true);
+		$backButtonHref = GetTableLink($masterTableData['mShortTable'], $masterTableData["type"], "a=return"); 
+		$this->xt->assign("backtomasterlink_attrs", "href=\"".$backButtonHref."\"");
+		$this->xt->assign("backtomasterlink_caption", GetTableCaption( GoodFieldName($masterTableData['mDataSourceTable']) ));		
+
 
 		// process "Display master data on details pages" if report, chart then check "list", if rprint then check "print"
 		$checkDisplay = $this->pageType;
@@ -1621,10 +1680,6 @@ class RunnerPage
 		
 		$this->genId();
 	
-		$this->xt->assign("mastertable_block", true);
-		$backButtonHref = GetTableLink($masterTableData['mShortTable'], $masterTableData["type"], "a=return"); 
-		$this->xt->assign("backtomasterlink_attrs", "href=\"".$backButtonHref."\"");
-		$this->xt->assign("backtomasterlink_caption", GetTableCaption( GoodFieldName($masterTableData['mDataSourceTable']) ));		
 	}
 	
 	/**
@@ -1769,10 +1824,10 @@ class RunnerPage
 	 */
 	function getMasterRecord()
 	{
-		if ($this->masterRecordData)
+		if( $this->masterRecordData )
 			return $this->masterRecordData;
 		
-		if(!$this->masterTable)
+		if( !$this->masterTable )
 			return null;
 	
 	
@@ -2643,7 +2698,8 @@ class RunnerPage
 		// more button visible
 		if ( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT ) {
 			$multilang = false;
-						$showMoreButton = $multilang || $this->exportAvailable() || $this->printAvailable() || $this->importAvailable() ||  $this->advSearchAvailable() || $this->inlineEditAvailable() || $this->deleteAvailable();
+						$multilang = true;
+			$showMoreButton = $multilang || $this->exportAvailable() || $this->printAvailable() || $this->importAvailable() ||  $this->advSearchAvailable() || $this->inlineEditAvailable() || $this->deleteAvailable();
 			$moreButtHideClass = $showMoreButton ? "" : "hideMoreButton";
 			$this->xt->assign("moreButtHideClass", $moreButtHideClass );			
 		}
@@ -3068,7 +3124,7 @@ class RunnerPage
 		elseif($this->pageType == PAGE_REGISTER)
 			return $this->pSet->getRegisterTabs();
 		else
-			return null;
+			return array();
 	}
 	
 	/**
@@ -3324,6 +3380,7 @@ class RunnerPage
 	 */
 	function setLangParams()
 	{
+		SetLangVars($this->xt, $this->shortTableName, $this->pageType);
 	}
 	
 	/**
@@ -3337,6 +3394,7 @@ class RunnerPage
 			$this->AddJSFile("include/bootstrap/js/bootstrap.min.js");
 				$this->AddJSFile("include/jquery-ui/jquery-ui.min.js");
 			$this->AddCSSFile("include/jquery-ui/smoothness/jquery-ui.min.css"); // css?
+			$this->AddJSFile("include/bootstrap/js/jquery.mousewheel.min.js");
 			$this->AddJSFile("include/bootstrap/js/jquery.mCustomScrollbar.min.js");
 			$this->AddCSSFile("include/bootstrap/css/jquery.mCustomScrollbar.css"); // css?
 
@@ -3393,6 +3451,7 @@ class RunnerPage
 			$this->AddJSFile("include/runnerJS/pages/AddPageDash.js", "include/runnerJS/pages/AddPage.js");
 			$this->AddJSFile("include/runnerJS/pages/EditPage.js", "include/runnerJS/pages/EditorPage.js");
 			$this->AddJSFile("include/runnerJS/pages/EditPageDash.js", "include/runnerJS/pages/EditPage.js");
+			$this->AddJSFile("include/runnerJS/pages/EditSelectedPage.js", "include/runnerJS/pages/EditPage.js");
 			
 			$this->AddJSFile("include/runnerJS/pages/DataPageWithSearch.js", "include/runnerJS/pages/RunnerPage.js");
 			$this->AddJSFile("include/runnerJS/pages/ListPageCommon.js", "include/runnerJS/pages/DataPageWithSearch.js");
@@ -3991,6 +4050,11 @@ class RunnerPage
 		return $this->eventsObject->exists($name);
 	}
 	
+	function events() 
+	{
+		return $this->eventsObject;
+	}
+	
 	/**
 	 * Check is googlemaps exists on current page
 	 *
@@ -4482,7 +4546,7 @@ class RunnerPage
 			if ($nCaptchaType==0 && @strtolower($this->captchaValue) != strtolower(@$_SESSION["captcha_" . $this->getCaptchaId()]) )
 			{
 				$this->isCaptchaOk = false;
-				$this->message = "Invalid security code.";
+				$this->message = mlang_message("SEC_INVALID_CAPTCHA_CODE");
 			}
 			else if ($nCaptchaType==1 && !verifyRecaptchaResponse($this->captchaValue) )
 			{
@@ -4538,7 +4602,7 @@ class RunnerPage
 	{		
 		$captchaHTML = '<div class="captcha_block">';
 
-		$typeCodeMessage = "Type the code you see above";
+		$typeCodeMessage = mlang_message("SEC_TYPETHECODE");
 		$path = GetCaptchaPath();
 		$swfPath = GetCaptchaSwfPath();
 
@@ -4585,11 +4649,11 @@ class RunnerPage
 			return $this->bsCreatePerPage();
 		}
 		$classString = "";
-		$allMessage = "Show all";
+		$allMessage = mlang_message("SHOW_ALL");
 		if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
 		{
 			$classString = 'class="form-control"';
-			$allMessage = "All";
+			$allMessage = mlang_message("ALL");
 		}
 		$rpp = "<select ".$classString." id=\"recordspp".$this->id."\">";
 		
@@ -4610,7 +4674,7 @@ class RunnerPage
 	{
 		$txtVal = $this->pageSize;
 		if( $this->pageSize == -1 )
-			$txtVal = "Show all";
+			$txtVal = mlang_message("SHOW_ALL");
 		$rpp = '<div class="dropdown btn-group">
 			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="dropdown-text">' . $txtVal . '</span> <span class="caret"></span></button>
 			<ul class="dropdown-menu pull-right" role="menu">';
@@ -4619,7 +4683,7 @@ class RunnerPage
 			$val = $this->arrRecsPerPage[$i];
 			$txtVal = $val;
 			if( $val == -1 )
-				$txtVal = "Show all";
+				$txtVal = mlang_message("SHOW_ALL");
 			$selectedAttr = '';
 			if( $this->pageSize == $val )
 				$selectedAttr = 'aria-selected="true" class="active"';
@@ -4701,11 +4765,11 @@ class RunnerPage
 	{
 		$isSearchRun = count($this->searchClauseObj->getSearchFields()) ? true : false;
 		if($this->pSetSearch->noRecordsOnFirstPage() && !$isSearchRun)
-			return "Nothing to see. Run some search.";
+			return mlang_message("NOTHING_TO_SEE");
 		elseif(!$this->rowsFound && !$isSearchRun && !$this->searchClauseObj->filtersActivated)
-			return "No data yet.";
+			return mlang_message("NO_DATA_YET");
 		elseif(($isSearchRun || $this->searchClauseObj->filtersActivated)&& !$this->rowsFound)	
-			return "No results found.";
+			return mlang_message("NO_RECORDS");
 	}
 	
 	function showNoRecordsMessage()
@@ -4782,11 +4846,12 @@ class RunnerPage
 			$this->xt->assign("records_found", $this->numRowsFromSQL);
 			$this->jsSettings["tableSettings"][$this->tName]['maxPages'] = $this->maxPages;
 			
-			$this->xt->assign("firstrecord", ( $this->myPage - 1 ) * $this->pageSize + 1 );
-			$lastrecord = ( $this->myPage ) * $this->pageSize;
+			$firstDisplayed = ( $this->myPage - 1 )	 * $this->pageSize + 1;
+			$lastDisplayed = ( $this->myPage ) * $this->pageSize;
 			if( $this->pageSize < 0 || $lastrecord > $this->numRowsFromSQL )
-				$lastrecord = $this->numRowsFromSQL;
-			$this->xt->assign("lastrecord", $lastrecord );
+				$lastDisplayed = $this->numRowsFromSQL;
+
+			$this->prepareRecordsIndicator( $firstDisplayed, $lastDisplayed, $this->numRowsFromSQL );
 			
 			$this->xt->assign("page", $this->myPage);
 			$this->xt->assign("maxpages", $this->maxPages);
@@ -4809,8 +4874,8 @@ class RunnerPage
 					$counterend = $this->maxPages;
 				if($counterstart != 1) 
 				{
-					$pagination.= $this->getPaginationLink(1,"First") . $advSeparator;
-					$pagination.= $this->getPaginationLink($counterstart - 1,"Previous").$separator;
+					$pagination.= $this->getPaginationLink(1,mlang_message("FIRST")) . $advSeparator;
+					$pagination.= $this->getPaginationLink($counterstart - 1,mlang_message("PREVIOUS")).$separator;
 				}
 				$pageLinks = "";
 				
@@ -4836,8 +4901,8 @@ class RunnerPage
 				$pagination .= $pageLinks;
 				if($counterend != $this->maxPages) 
 				{
-					$pagination.= $separator . $this->getPaginationLink($counterend + 1,"Next") . $advSeparator;
-					$pagination.= $this->getPaginationLink($this->maxPages,"Last");
+					$pagination.= $separator . $this->getPaginationLink($counterend + 1,mlang_message("NEXT")) . $advSeparator;
+					$pagination.= $this->getPaginationLink($this->maxPages,mlang_message("LAST"));
 				}
 				if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
 					$pagination = '<nav class="text-center"><ul class="pagination" data-function="pagination' . $this->id . '">' . $pagination . '</ul></nav>';
@@ -4856,6 +4921,20 @@ class RunnerPage
 				}
 			}
 		}
+	}
+
+	function prepareRecordsIndicator($firstDisplayed, $lastDisplayed, $totalDisplayed)
+	{
+		$this->xt->assign("firstrecord", $firstDisplayed );
+		$this->xt->assign("lastrecord", $lastDisplayed );
+		
+		$template = mlang_message("DISPLAYING");
+		$template = str_replace( array( '%first%', '%last%', '%total%'), 
+			array( '<span class="bs-number">'.$firstDisplayed.'</span>', 
+				'<span class="bs-number">'.$lastDisplayed.'</span>', 
+				'<span class="bs-number">'.$totalDisplayed.'</span>' ),
+			$template );
+		$this->xt->assign( "records_indicator", $template );
 	}
 	
 	/**
@@ -5289,7 +5368,7 @@ class RunnerPage
 			{
 				$this->errorFields[] = $fieldName;
 				if($this->mode != EDIT_POPUP && $this->mode != ADD_POPUP)
-					$message = $fieldName." "."Field should not contain a duplicate value";
+					$message = $fieldName." ".mlang_message("INLINE_DENY_DUPLICATES");
 				
 				return true;
 			}				
@@ -5306,6 +5385,10 @@ class RunnerPage
 	 */
 	function hasDuplicateValue($fieldName, $value)
 	{
+		//skip empty value
+		if( !strlen( $value ) )
+			return false;
+		
 		if( $this->cipherer->isFieldEncrypted($fieldName) )
 		{
 			$value = $this->cipherer->MakeDBValue($fieldName, $value, "", true);	
@@ -5627,13 +5710,13 @@ class RunnerPage
 		
 		//set bricks, which	must be shown on details preview page
 		if( $this->pageType == PAGE_CHART )
-			$bricksExcept = array('chart');
+			$bricksExcept = array('chart', 'message');
 		else
 			$bricksExcept = array('grid', 'pagination');
 
 		// if we use details inline. We don't need show the header/footer.
-		$this->xt->unassign('header');
-		$this->xt->unassign('footer');
+		$this->xt->assign("header", false);
+		$this->xt->assign("footer", false);
 		
 		$this->xt->hideAllBricksExcept($bricksExcept);
 		
@@ -5653,6 +5736,7 @@ class RunnerPage
 	function proccessDetailGridInfo(&$record, &$data, $gridRowInd)
 	{
 		$hideDPLink = true;
+		$tabNamesToHide = array();
 		
 		for($i = 0; $i < count($this->allDetailsTablesArr); $i ++) 
 		{
@@ -5686,7 +5770,7 @@ class RunnerPage
 			}
 			
 			//	add count of child records to SQL
-			if( ($detailTableData['dispChildCount'] || $detailTableData['hideChild']) && !$this->isDetailTableSubquerySupported( $dDataSourceTable, $i ) )
+			if( ($detailTableData['dispChildCount'] || $detailTableData['hideChild']) && !$this->isDetailTableSubqueryApplied( $dDataSourceTable, $i ) )
 			{
 				$data[ $dDataSourceTable."_cnt" ] = $this->countDetailsRecsNoSubQ($i, $detailid);
 			}
@@ -5733,7 +5817,11 @@ class RunnerPage
 			{
 				if( !($data[ $dDataSourceTable."_cnt" ] + 0) ) 
 				{
-					$record[ $dShortTable."_dtablelink_attrs" ] .= " class=\"".$this->makeClassName("hiddenelem")."\"";
+					$record[ $dShortTable."_dtablelink_attrs" ] .= " class=\"".$this->makeClassName("hiddenelem")."\" data-hidden data-hidetab";
+					if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT && $this->detailsLinksOnList == DL_SINGLE )
+					{
+						$tabNamesToHide[] = $dDataSourceTable;
+					}						
 				}
 				elseif( $detailTableData["previewOnList"] && $hideDPLink )
 				{
@@ -5746,9 +5834,15 @@ class RunnerPage
 		
 		$record["dtables_link_attrs"] = " href=\"#\" id=\"details_".$this->recId."\" ";
 		if( $hideDPLink )
-			$record["dtables_link_attrs"].= " class=\"".$this->makeClassName("hiddenelem")."\"";
+		{
+			$record["dtables_link_attrs"].= " class=\"".$this->makeClassName("hiddenelem")."\" data-hidden";
+			if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+				$record["dtables_link_class"] = $this->makeClassName("hiddenelem");
+		}
+		
+		if( $this->detailsLinksOnList == DL_SINGLE && count($tabNamesToHide) )
+			$record["dtables_link_attrs"].= " data-hiddentabs=\"".runner_htmlspecialchars( my_json_encode( $tabNamesToHide ) )."\"";	
 	}
-
 	/**
 	 * Get proceed link for details previews
 	 * return HTML link
@@ -5772,7 +5866,7 @@ class RunnerPage
 
 		return '<span class="rnr-dbebrick">'
 			.'<a href="' . $proceedLink . '" name="dp' . $this->id . '">'
-			.  "Proceed to" . ' '. GetTableCaption( GoodFieldName( $this->tName ) ) 
+			.  mlang_message("PROCEED_TO") . ' '. GetTableCaption( GoodFieldName( $this->tName ) ) 
 			. '</a>' 
 			. "&nbsp;&nbsp;</span>";
 	}
@@ -5786,6 +5880,16 @@ class RunnerPage
 	protected function isDetailTableSubquerySupported( $dDataSourceTName, $dTableIndex )
 	{	
 		return false;
+	}
+	
+	/**
+	 * @param String dDataSourceTable	The detail datasource table name
+	 * @param Number dTableIndex	The detail table index in the allDetailsTablesArr prop	
+	 * @return Boolean	
+	 */
+	protected function isDetailTableSubqueryApplied( $dDataSourceTName, $dTableIndex )
+	{
+		return $this->isDetailTableSubquerySupported( $dDataSourceTName, $dTableIndex );
 	}
 	
 	/**
@@ -5937,12 +6041,11 @@ class RunnerPage
 			$listPageObject->addControlsJSAndCSS();
 			$listPageObject->fillSetCntrlMaps();
 			
-			$this->copyDetailPreviewJSAndCSS( $listPageObject ); 
-
+			$listPageObject->BeforeShowList();
 			$this->assignDisplayDetailTableXtVariable( $listPageObject );
 		
-			$this->updateSettingsWidthDPData( $listPageObject );		
-			
+			$this->copyDetailPreviewJSAndCSS( $listPageObject ); 
+			$this->updateSettingsWidthDPData( $listPageObject );			
 			
 			$this->viewControlsMap["dViewControlsMap"][ $listTName ] = $listPageObject->viewControlsMap;
 		
@@ -5987,23 +6090,22 @@ class RunnerPage
 		$reportPageObject = new ReportPage( $options );
 		$reportPageObject->init();
 		
-		if ($this->mobileTemplateMode())
+		if( $this->mobileTemplateMode() )
 			$reportPageObject->pageSize = -1;
-		
 		
 		$reportPageObject->prepareDetailsForEditViewPage();
 		
-		if(!$reportPageObject->isDispReport())
+		if( !$reportPageObject->isDispReport() )
 			return false;
+			
 		//add detail settings to master settings
 		$reportPageObject->addControlsJSAndCSS();
 		$reportPageObject->fillSetCntrlMaps();		
 
-		
-		$this->copyDetailPreviewJSAndCSS( $reportPageObject ); 
-
+		$reportPageObject->beforeShowReport();
 		$this->assignDisplayDetailTableXtVariable( $reportPageObject );
 
+		$this->copyDetailPreviewJSAndCSS( $reportPageObject ); 
 		$this->updateSettingsWidthDPData( $reportPageObject );
 		
 		
@@ -6061,11 +6163,12 @@ class RunnerPage
 		$chartXtParams["ctype"] =  $chartPageObject->pSet->getChartType(); 
 		$chartXtParams["chartname"] = $chartPageObject->shortTableName;
 		$chartXtParams["singlePage"] = true;
-		
+		$chartXtParams["containerId"] = "rnr" . $chartXtParams["chartname"] . $chartXtParams["id"];
+
 		$xt->assign_function( $chartPageObject->shortTableName."_chart","xt_showchart", $chartXtParams );			
 
-		$xt->assign("body", $chartPageObject->body);
-		$xt->assign("chart_block", true);
+		$chartPageObject->prepareDetailsForEditViewPage();
+		
 		if( $this->mobileTemplateMode() )
 			$xt->assign("container_menu", false);
 
@@ -6074,11 +6177,11 @@ class RunnerPage
 		
 		$this->AddJSFile('libs/js/anychart.min.js');
 		$this->AddJSFile('libs/js/migrationTool.js');			
+			
+		$chartPageObject->beforeShowChart();
+		$this->assignDisplayDetailTableXtVariable( $chartPageObject );
 		
 		$this->copyDetailPreviewJSAndCSS( $chartPageObject ); 
-		
-		$this->assignDisplayDetailTableXtVariable( $chartPageObject );
-
 		//add detail settings to master settings
 		$this->updateSettingsWidthDPData( $chartPageObject );
 				
@@ -6143,9 +6246,8 @@ class RunnerPage
 	 */
 	protected function assignDisplayDetailTableXtVariable( &$dtPageObject )
 	{
-		$this->xt->assign("details_".GoodFieldName($dtPageObject->tName), true);
-		
-		$this->xt->assign_method("displayDetailTable_".GoodFieldName($dtPageObject->tName), $dtPageObject, 'showPageDp', false );		
+		$this->xt->assign("details_". $dtPageObject->shortTableName, true);	
+		$this->xt->assign_method("displayDetailTable_". $dtPageObject->shortTableName , $dtPageObject, 'showPageDp', false );		
 	}
 
 	/**
@@ -6154,9 +6256,14 @@ class RunnerPage
 	 * @param Number screenWidth
 	 * @param Number screenHeight
 	 * @param String orientation		The current device orientation identifier
+	 * @return Array
 	 */
-	public function removeHiddenColumnsFromInlineFields( &$inlineControlFields, $screenWidth, $screenHeight, $orientation ) 
+	public function removeHiddenColumnsFromInlineFields( $inlineControlFields, $screenWidth, $screenHeight, $orientation ) 
 	{
+		//	don't remove inline fields if the user can show them
+		if( $this->pSet->isAllowShowHideFields() )
+			return $inlineControlFields;
+		
 		$devices = array( DESKTOP, TABLET_10_IN, SMARTPHONE_LANDSCAPE, SMARTPHONE_PORTRAIT, TABLET_7_IN );
 		foreach( $devices as $d )
 		{
@@ -6171,8 +6278,10 @@ class RunnerPage
 					array_splice( $inlineControlFields, $fieldPos, 1);
 			}
 			
-			return;		
-		}		
+			return $inlineControlFields;		
+		}
+
+		return $inlineControlFields;	
 	}
 	
 	/**
@@ -6187,7 +6296,7 @@ class RunnerPage
 	protected function isColumnHiddenForDevice( $d, $screenWidth, $screenHeight, $orientation )
 	{
 		if( $d == DESKTOP )
-			return $screenWidth >= 1280 && $screenHeight >= 1024 || $screenWidth >= 1360;
+			return $screenWidth >= 1281;
 			
 		if( $d == TABLET_10_IN )	
 			return $screenWidth == 768 && $screenHeight == 1024 || $screenWidth >= 1025 && $screenWidth <= 1280 && $screenHeight <= 1023 || $screenHeight >= 1025 && $screenHeight <= 1280 && $screenWidth <= 1023;
@@ -6234,17 +6343,17 @@ class RunnerPage
 	protected function getDefaultPageTitle($page, $table, $pSet)
 	{
 		if( $page == "add" )
-			return GetTableCaption($table).", "."Add new";
+			return GetTableCaption($table).", ".mlang_message("ADD_NEW");
 		if( $page == "edit" )
-			return GetTableCaption($table).", "."Edit"." [". $this->getKeysTitleTemplate( $table, $pSet ). "]";
+			return GetTableCaption($table).", ".mlang_message("EDIT")." [". $this->getKeysTitleTemplate( $table, $pSet ). "]";
 		if( $page == "view" )
 			return GetTableCaption($table)." [". $this->getKeysTitleTemplate( $table, $pSet ). "]";
 		if( $page == "export" )
-			return "Export";
+			return mlang_message("EXPORT");
 		if( $page == "import" )
-			return GetTableCaption($table).", "."Import";
+			return GetTableCaption($table).", ".mlang_message("IMPORT");
 		if( $page == "search" )
-			return GetTableCaption($table)." - "."Advanced search";
+			return GetTableCaption($table)." - ".mlang_message("ADVANCED_SEARCH");
 		if( $page == "print" )
 			return GetTableCaption($table);
 		if( $page == "rprint" )
@@ -6260,17 +6369,17 @@ class RunnerPage
 		if( $page == "masterprint" )
 			return GetTableCaption($table)." [". $this->getKeysTitleTemplate( $table, $pSet ). "]";		
 		if( $page == "login" )
-			return "Login";
+			return mlang_message("LOGIN");
 		if( $page == "register" )
-			return "Register";
+			return mlang_message("REGISTER");
 		if( $page == "register_success" )
-			return "Registration successful!";
+			return mlang_message("REG_SUCCESS");
 		if( $page == "changepwd" )
-			return "Change password";
+			return mlang_message("CHANGE_PASSWORD");
 		if( $page == "changepwd" )
-			return "";
+			return mlang_message("CHANGE_SUCCESS");
 		if( $page == "remind" )
-			return "Password reminder";	
+			return mlang_message("REMINDER");	
 		if( $page == "chart" )
 			return GetTableCaption($table); 
 		if( $page == "report" )
@@ -6278,7 +6387,7 @@ class RunnerPage
 		if( $page == "dashboard" )
 			return GetTableCaption($table);	
 		if( $page == "menu" )
-			return "Menu";
+			return mlang_message("MENU");
 	}
 	
 	/**
@@ -6347,6 +6456,11 @@ class RunnerPage
 			}
 		}
 		return $templ;
+	}
+	
+	
+	public function setPageTitle( $str ) {
+		$this->xt->assign( "pagetitlelabel", $str );
 	}
 
 	function getCurrentRecord()
@@ -6505,6 +6619,9 @@ class RunnerPage
 	function inlineEditAvailable() {
 		return $this->permis[$this->tName]["edit"] && $this->pSet->hasInlineEdit();
 	}
+	function updateSelectedAvailable() {
+		return $this->permis[$this->tName]["edit"] && $this->pSet->hasUpdateSelected();
+	}
 	function inlineAddAvailable() {
 		return $this->permis[$this->tName]["add"] && $this->pSet->hasInlineAdd();
 	}
@@ -6569,8 +6686,13 @@ class RunnerPage
 		}
 		
 	}
+	
 	function displaySection( $tabInfo )
 	{
+		$layout = GetPageLayout( $this->shortTableName, $this->pageType, $tabInfo['tabId'] );
+		if( $layout )
+			$this->AddCSSFile( $layout->getCSSFiles(isRTL(), $this->mobileTemplateMode(), $this->pdfMode != "" ) );		
+		
 		if( $this->getLayoutVersion() != BOOTSTRAP_LAYOUT )
 		{
 			if($tabInfo['expandSec'] || $this->pdfMode)
@@ -6585,22 +6707,22 @@ class RunnerPage
 				$hiddenStyle = 'style="display: none;"';
 			}
 			$layoutClasses = '';
-			$layout = GetPageLayout($this->shortTableName, $this->pageType, $tabInfo['tabId']);
-			if($layout)
-			{
+			if( $layout )
 				$layoutClasses = ' '.$layout->style." page-".$layout->name;
-				$this->AddCSSFile($layout->getCSSFiles(isRTL(), $this->mobileTemplateMode(), $this->pdfMode != "" ));
-			}
+		
 			if( !$this->pdfMode )
 				echo '<img id="section_'.$tabInfo['tabId'].$this->id.'Butt" border="0" src="'.GetRootPathForResources($src).'" valign="middle" alt="*" />';
 			echo $tabInfo['tabName'].'<br>
 					<div id="section_'.$tabInfo['tabId'].$this->id.'" class="sectionFrame rnr-pagewrapper'.$layoutClasses.'" '.$hiddenStyle.' >';
 			$this->xt->displayPartial(GetTemplateName($this->shortTableName, $this->pageType."_".$tabInfo['tabId']));
 			echo '</div>';
-		} else {
+		} 
+		else 
+		{
 			$this->xt->displayPartial(GetTemplateName($this->shortTableName, $this->pageType."_".$tabInfo['tabId']));
 		}
 	}
+	
 	function displayTabGroup( $startIndex )
 	{
 		$tabs = $this->getArrTabs();
@@ -6622,6 +6744,7 @@ class RunnerPage
 			}
 			return;
 		}
+	
 		//	display tab control
 		
 		if( $this->getLayoutVersion() != BOOTSTRAP_LAYOUT )
@@ -6649,11 +6772,11 @@ class RunnerPage
 					break;
 
 				$layoutClasses = '';
-				$layout = GetPageLayout($this->shortTableName, $this->pageType, $tabs[$i]['tabId']);
-				if($layout)
+				$layout = GetPageLayout( $this->shortTableName, $this->pageType, $tabs[$i]['tabId'] );
+				if( $layout )
 				{
+					$this->AddCSSFile( $layout->getCSSFiles(isRTL(), $this->mobileTemplateMode(), $this->pdfMode != "" ) );				
 					$layoutClasses = ' '.$layout->style." page-".$layout->name;
-					$this->AddCSSFile($layout->getCSSFiles(isRTL(), $this->mobileTemplateMode(), $this->pdfMode != "" ));
 				}
 				if( !$firstTab )
 					$layoutClasses.= ' rnr-hidden-tab-panel';
@@ -6688,16 +6811,21 @@ class RunnerPage
 			{
 				if( $tabGroupId != $tabs[$i]['tabGroup'] )
 					break;
-				
+					
+				$layout = GetPageLayout( $this->shortTableName, $this->pageType, $tabs[$i]['tabId'] );
+				if( $layout )
+				{
+					$this->AddCSSFile( $layout->getCSSFiles(isRTL(), $this->mobileTemplateMode(), $this->pdfMode != "" ) );		
+				}	
 				echo '<div role="tabpanel" class="tab-pane ' . $selected . '" id="' . $tabs[$i]['tabId'] . $this->id . '">';
 				$this->xt->displayPartial(GetTemplateName($this->shortTableName, $this->pageType."_".$tabs[$i]['tabId']));
 				echo '</div>';
 				$selected = "";
 			}
 			echo '</div>';
-
 		}
 	}
+	
 	function displayStep( $index )
 	{
 		$tabs = $this->getArrTabs();
@@ -6950,9 +7078,71 @@ class RunnerPage
 	}
 	
 	/**
-	 *
+	 * @param String mTName
+	 * @param String mType
+	 * @param String tName
+	 * @param String pType
+	 * @return Array
 	 */
-	protected function getMasterDetailMenuItems( &$menuRoot,  &$currentMenuItem )
+	protected function getMenuItemDetailPeersData( $mTName, $mType, $tName, $pType )
+	{
+		$mPSet = new ProjectSettings( $mTName, $mType );
+		$peers = array();
+		
+		foreach( $mPSet->getDetailTablesArr() as $dt )
+		{
+			if( $dt["dDataSourceTable"] == $tName && $dt["dType"] == $pType )
+				continue;
+			
+			if( $dt["dType"] == PAGE_LIST )
+				$type = "List";
+			elseif( $dt["dType"] == PAGE_CHART )
+				$type = "Chart";
+			else
+				$type = "Report";
+			
+			if( !$this->isUserHaveTablePerm( $dt["dDataSourceTable"], $type ) )
+				continue;
+			
+			$mKeys = array();
+			$keys = array();
+			foreach( $dt["masterKeys"] as $idx => $dk )
+			{
+				if( !isset( $_SESSION[ $dt["dDataSourceTable"]."_masterkey".($idx + 1) ] ) )
+					break;
+					
+				$keys[] = $_SESSION[ $dt["dDataSourceTable"]."_masterkey".($idx + 1) ];
+				$mKeys[] =  "masterkey".($idx + 1)."=".rawurlencode( $_SESSION[ $dt["dDataSourceTable"]."_masterkey".($idx + 1) ] );
+			}				
+			
+			if( !count( $keys ) )
+			{
+				$masterRecordData = $this->getMasterRecord();	
+				foreach( $dt["masterKeys"] as $idx => $dk )
+				{
+					$keys[] = $masterRecordData[ $dk ];
+					$mKeys[] = "masterkey".($idx + 1)."=".rawurlencode( $masterRecordData[ $dk ] );
+				}	
+			}
+			
+			$href = GetTableLink( GetTableURL( $dt["dDataSourceTable"] ), $dt["dType"] );
+			$href.= "?".implode("&", $mKeys) ."&mastertable=" . rawurlencode($mTName);
+			
+			$keyTitle = implode(", ", $keys);
+			$caption = GetTableCaption( GoodFieldName( $dt["dDataSourceTable" ]) ) ." [".$keyTitle."]";
+			
+			$peers[] = array("title" => $caption, "href" => $href);			
+		}
+		
+		return $peers;
+	}
+	
+	/**
+	 * @param &MenuItem menuRoot
+	 * @param &MenuItem currentMenuItem
+	 * @return Array
+	 */
+	protected function getMasterDetailMenuItems( &$menuRoot, &$currentMenuItem )
 	{
 		$items = array();
 		
@@ -6976,13 +7166,25 @@ class RunnerPage
 				
 				if( $currentMenuItem )
 				{
-					$items[] = array("isMenuItem" => true, "menuItem" => $currentMenuItem, "keyTitle" => implode(", ", $keys));
+					$itemData = array("isMenuItem" => true, "menuItem" => $currentMenuItem);
 				}
 				else
 				{
+					$caption = GetTableCaption( GoodFieldName( $tName ) );
 					$href = GetTableLink( GetTableURL( $tName ), $pType );
-					$items[] = array("isMenuItem" => false, "menuItem" => array( "title" => $caption, "href" => $href ), "keyTitle" => implode(", ", $keys));
-				}	
+					$itemData = array("isMenuItem" => false, "menuItem" => array( "title" => $caption, "href" => $href ));
+				}
+
+				if( !count( $items ) )
+				{
+					$otherDetailsData = $this->getMenuItemDetailPeersData( $mTName, $masterTableData["type"], $tName, $pType );	
+					if(  count( $otherDetailsData ) > 0 ) 
+						$itemData["detailPeers"] = $otherDetailsData;
+				}
+				
+				$itemData["keyTitle"] = implode(", ", $keys);
+				$items[] = $itemData;
+				
 				$currentMenuItem = $menuRoot->getItemByTypeAndTable( $mTName, $masterTableData["type"] );
 				
 				$tName = $mTName;
@@ -7011,7 +7213,7 @@ class RunnerPage
 	}
 	
 	/**
-	 *
+	 * @param String menuId
 	 */
 	protected function prepareBreadcrumbs( $menuId )
 	{	
@@ -7026,8 +7228,11 @@ class RunnerPage
 		if( !$currentMenuItem && !$detailItem )
 			return;
 		
-		if( $currentMenuItem && !$currentMenuItem->parentItem && !$detailItem )
-			return;
+		if( $currentMenuItem && !$detailItem )
+		{
+			if( !$currentMenuItem->parentItem )
+				return;
+		}
 		
 		$this->xt->assign( "breadcrumbs", true );
 		
@@ -7084,7 +7289,7 @@ class RunnerPage
 			
 			$crumb["crumb_title"] = $title;
 			
-			if(  $i < $firstShowPeersIndex )
+			if(  $i < $firstShowPeersIndex && !count( $itemData["detailPeers"] ) || ( $this->isAdminTable() && GetGlobalData("nLoginMethod", 0) == SECURITY_AD ))
 			{
 				$breadcrumbs[] = $crumb;
 				continue;
@@ -7095,15 +7300,28 @@ class RunnerPage
 			
 			$dropItems = array();
 			$peers = array();
-			$item->parentItem->getItemDescendants( $peers );
+			$detailPeers = count( $itemData["detailPeers"] ) > 0;
 			
-			if( count( $peers ) > 1 )
+			if( $detailPeers  )
+				$peers = $itemData["detailPeers"];
+			else	
+				$item->parentItem->getItemDescendants( $peers );
+			
+			if( count( $peers ) > 1 || $detailPeers )
 			{
-				$crumb["crumb_title"] .= '<span class="caret"></span>';
 				foreach( $peers as $p )
-				{
+				{		
+					if( $detailPeers )
+					{
+						$dropItems[] = '<li><a href="'. $p["href"] .'">'. $p["title"] .'</a></li>';
+						continue;
+					}
+					
 					if( $p->id == $item->id )
 						continue;
+					
+					$attrs = array();
+					
 					if( !$p->isShowAsLink() && $p->isShowAsGroup() )
 					{
 						//	show link to the first child if group
@@ -7111,19 +7329,27 @@ class RunnerPage
 						if( $childWithLink )
 							$attrs = $childWithLink->getMenuItemAttributes();
 					}
-					else
+					else if( $p->isShowAsLink() )
 					{
 						$attrs = $p->getMenuItemAttributes();
 					}
-					$dropItems[] = '<li><a href="' . $attrs["href"] . '">' . $p->title . '</a></li>';
+					
+					if( count( $attrs ) )
+						$dropItems[] = '<li><a href="' . $attrs["href"] . '">' . $p->title . '</a></li>';
 				}
-				$crumb["crumb_attrs"] .= ' class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"';
-				$crumb["crumb_item_class"] = 'dropdown';
-				$crumb["crumb_dropdown"] = '<ul class="dropdown-menu">' . implode( "", $dropItems ) . '</ul>';
+				
+				if( count( $dropItems ) > 0 )
+				{
+					$crumb["crumb_title"] .= '<span class="caret"></span>';
+					$crumb["crumb_attrs"] .= ' class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"';
+					$crumb["crumb_item_class"] = 'dropdown';
+					$crumb["crumb_dropdown"] = '<ul class="dropdown-menu">'. implode( "", $dropItems ) .'</ul>';
+				}
 			}
+			
 			$breadcrumbs[] = $crumb;
 		}
-		$this->xt->assign_loopsection("crumb", $breadcrumbs );
+		$this->xt->assign_loopsection( "crumb", $breadcrumbs );
 	}
 	
 	/**
@@ -7248,6 +7474,72 @@ class RunnerPage
 	public function mobileTemplateMode() {
 		return mobileDeviceDetected() && $this->getLayoutVersion() != BOOTSTRAP_LAYOUT;
 	}
+	
+	
+	/**
+	 * 	
+	 * 	@return Array
+	 */
+	protected function getColumnsToHide() 
+	{
+		return $this->getHiddenColumnsByDevice();
+	}
+	
+	protected static function deviceClassToMacro( $deviceClass ) {
+		if( $deviceClass == TABLET_10_IN || $deviceClass == TABLET_7_IN )
+			return 1;
+		if( $deviceClass == SMARTPHONE_LANDSCAPE || $deviceClass == SMARTPHONE_PORTRAIT )
+			return 2;
+		return 0;
+	}
+	
+	/**
+	 * 	Prepare array with Show/Hide fields data combined with Columns by device
+	 * 	@return Array
+	 */
+	protected function getCombinedHiddenColumns() 
+	{
+		if( !$this->pSet->isAllowShowHideFields() ) 
+			return $this->getHiddenColumnsByDevice();
+		
+		include_once getabspath("classes/paramsLogger.php");
+		
+		$logger = new paramsLogger( $this->tName, SHFIELDS_PARAMS_TYPE );
+		$hideColumns = $logger->getShowHideData();
+		
+		$columnsByDeviceEnabled = $this->pSet->columnsByDeviceEnabled();
+		
+		$ret = array();
+		$devices = array( DESKTOP, TABLET_10_IN, SMARTPHONE_LANDSCAPE, SMARTPHONE_PORTRAIT, TABLET_7_IN );
+		foreach( $devices as $d )
+		{
+			if( !$columnsByDeviceEnabled )
+				$ret[ $d ] = $hideColumns[ 0 ];
+			else if( $hideColumns[ RunnerPage::deviceClassToMacro($d) ] )
+				$ret[ $d ] = $hideColumns[ RunnerPage::deviceClassToMacro($d) ];
+			else
+			{
+				$ret[ $d ] = array_keys( $this->pSet->getHiddenGoodNameFields( $d ) );
+			}
+		}
+		return $ret;
+	}
+
+	/**
+	 * 	Prepare array with Columns by device
+	 * 	@return Array
+	 */
+	protected function getHiddenColumnsByDevice() 
+	{
+		$columnsToHide = array();
+		$devices = array( TABLET_7_IN, SMARTPHONE_PORTRAIT, SMARTPHONE_LANDSCAPE, TABLET_10_IN, DESKTOP );
+		foreach( $devices as $d )
+		{
+			$columnsToHide[ $d ] = array_keys($this->pSet->getHiddenGoodNameFields( $d ));
+		}
+		return $columnsToHide;
+	}
+	
 }
 
 

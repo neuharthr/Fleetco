@@ -4,9 +4,9 @@ require_once(getabspath("classes/cipherer.php"));
 
 
 
-$tdatainventorymaster_Report = array();	
+$tdatainventorymaster_Report = array();
 	$tdatainventorymaster_Report[".truncateText"] = true;
-	$tdatainventorymaster_Report[".NumberOfChars"] = 80; 
+	$tdatainventorymaster_Report[".NumberOfChars"] = 80;
 	$tdatainventorymaster_Report[".ShortName"] = "inventorymaster_Report";
 	$tdatainventorymaster_Report[".OwnerID"] = "";
 	$tdatainventorymaster_Report[".OriginalTable"] = "inventorymaster";
@@ -39,28 +39,17 @@ if(mlang_getcurrentlang()=="")
 	$fieldLabelsinventorymaster_Report[""] = array();
 	$fieldToolTipsinventorymaster_Report[""] = array();
 	$pageTitlesinventorymaster_Report[""] = array();
-	$fieldLabelsinventorymaster_Report[""]["Id"] = "Id";
-	$fieldToolTipsinventorymaster_Report[""]["Id"] = "";
-	$fieldLabelsinventorymaster_Report[""]["ItemID"] = "Item ID";
-	$fieldToolTipsinventorymaster_Report[""]["ItemID"] = "";
-	$fieldLabelsinventorymaster_Report[""]["Brand"] = "Brand";
-	$fieldToolTipsinventorymaster_Report[""]["Brand"] = "";
-	$fieldLabelsinventorymaster_Report[""]["Description"] = "Description";
-	$fieldToolTipsinventorymaster_Report[""]["Description"] = "";
-	$fieldLabelsinventorymaster_Report[""]["Supplier"] = "Supplier";
-	$fieldToolTipsinventorymaster_Report[""]["Supplier"] = "";
 	if (count($fieldToolTipsinventorymaster_Report[""]))
 		$tdatainventorymaster_Report[".isUseToolTips"] = true;
 }
-	
-	
+
+
 	$tdatainventorymaster_Report[".NCSearch"] = true;
 
 
 
 $tdatainventorymaster_Report[".shortTableName"] = "inventorymaster_Report";
 $tdatainventorymaster_Report[".nSecOptions"] = 0;
-$tdatainventorymaster_Report[".recsPerRowList"] = 1;
 $tdatainventorymaster_Report[".recsPerRowPrint"] = 1;
 $tdatainventorymaster_Report[".mainTableOwnerID"] = "";
 $tdatainventorymaster_Report[".moveNext"] = 1;
@@ -68,6 +57,7 @@ $tdatainventorymaster_Report[".entityType"] = 2;
 
 $tdatainventorymaster_Report[".strOriginalTableName"] = "inventorymaster";
 
+		 
 
 
 
@@ -103,6 +93,9 @@ $tdatainventorymaster_Report[".afterAddActionDetTable"] = "";
 $tdatainventorymaster_Report[".list"] = true;
 
 $tdatainventorymaster_Report[".inlineEdit"] = true;
+
+
+
 $tdatainventorymaster_Report[".inlineAdd"] = true;
 $tdatainventorymaster_Report[".view"] = true;
 
@@ -115,17 +108,22 @@ $tdatainventorymaster_Report[".delete"] = true;
 
 $tdatainventorymaster_Report[".showSimpleSearchOptions"] = false;
 
+// Allow Show/Hide Fields in GRID
+$tdatainventorymaster_Report[".allowShowHideFields"] = false;
+//
+
+// Allow Fields Reordering in GRID
+$tdatainventorymaster_Report[".allowFieldsReordering"] = false;
+//
+
 // search Saving settings
 $tdatainventorymaster_Report[".searchSaving"] = false;
 //
 
 $tdatainventorymaster_Report[".showSearchPanel"] = true;
-		$tdatainventorymaster_Report[".flexibleSearch"] = true;		
+		$tdatainventorymaster_Report[".flexibleSearch"] = true;
 
-if (isMobile())
-	$tdatainventorymaster_Report[".isUseAjaxSuggest"] = false;
-else 
-	$tdatainventorymaster_Report[".isUseAjaxSuggest"] = true;
+$tdatainventorymaster_Report[".isUseAjaxSuggest"] = true;
 
 
 
@@ -179,50 +177,32 @@ $tdatainventorymaster_Report[".nPrinterPDFSplitRecords"] = 40;
 $tdatainventorymaster_Report[".geocodingEnabled"] = false;
 
 //report settings
+$tdatainventorymaster_Report[".printReportLayout"] = 6;
 
-$tdatainventorymaster_Report[".reportPrintPartitionType"] = 1;	
-$tdatainventorymaster_Report[".reportPrintGroupsPerPage"] = 3;	
-	$tdatainventorymaster_Report[".reportPrintPDFGroupsPerPage"] = 3;	
-$tdatainventorymaster_Report[".lowGroup"] = 2;
-
-
-
-$tdatainventorymaster_Report[".reportGroupFields"] = true;
-$tdatainventorymaster_Report[".pageSize"] = 5;
-$reportGroupFields = array();
-	$rgroupField = array();
-	$rgroupField['strGroupField'] = "Id";
-	$rgroupField['groupInterval'] = 0;
-	$rgroupField['groupOrder'] = 1;
-	$rgroupField['showGroupSummary'] = "1";
-	$rgroupField['crossTabAxis'] = "0";
-	$reportGroupFields[] = $rgroupField;
-	$rgroupField = array();
-	$rgroupField['strGroupField'] = "ItemID";
-	$rgroupField['groupInterval'] = 0;
-	$rgroupField['groupOrder'] = 2;
-	$rgroupField['showGroupSummary'] = "1";
-	$rgroupField['crossTabAxis'] = "1";
-	$reportGroupFields[] = $rgroupField;
-$tdatainventorymaster_Report[".reportGroupFieldsData"] = $reportGroupFields;
+$tdatainventorymaster_Report[".reportPrintPartitionType"] = 1;
+$tdatainventorymaster_Report[".reportPrintGroupsPerPage"] = 40;
+$tdatainventorymaster_Report[".reportPrintPDFGroupsPerPage"] = 40;
+$tdatainventorymaster_Report[".lowGroup"] = 0;
 
 
-$tdatainventorymaster_Report[".isExistTotalFields"] = true;
+
+$tdatainventorymaster_Report[".pageSize"] = 20;
 
 
-$tdatainventorymaster_Report[".reportPageSummary"] = true;
 
-$tdatainventorymaster_Report[".reportGlobalSummary"] = true;
+
+
 
 $tdatainventorymaster_Report[".repShowDet"] = true;
 
-$tdatainventorymaster_Report[".reportLayout"] = 0;
+$tdatainventorymaster_Report[".reportLayout"] = 6;
 
 //end of report settings
 
 
 
-	
+
+$tdatainventorymaster_Report[".listGridLayout"] = 3;
 
 
 
@@ -245,6 +225,8 @@ $tdatainventorymaster_Report[".sqlHead"] = "SELECT Id,  	ItemID,  	Brand,  	Desc
 $tdatainventorymaster_Report[".sqlFrom"] = "FROM inventorymaster";
 $tdatainventorymaster_Report[".sqlWhereExpr"] = "";
 $tdatainventorymaster_Report[".sqlTail"] = "";
+
+
 
 
 
@@ -330,6 +312,13 @@ $tdatainventorymaster_Report[".inlineEditFields"][] = "Brand";
 $tdatainventorymaster_Report[".inlineEditFields"][] = "Description";
 $tdatainventorymaster_Report[".inlineEditFields"][] = "Supplier";
 
+$tdatainventorymaster_Report[".updateSelectedFields"] = array();
+$tdatainventorymaster_Report[".updateSelectedFields"][] = "ItemID";
+$tdatainventorymaster_Report[".updateSelectedFields"][] = "Brand";
+$tdatainventorymaster_Report[".updateSelectedFields"][] = "Description";
+$tdatainventorymaster_Report[".updateSelectedFields"][] = "Supplier";
+
+
 $tdatainventorymaster_Report[".exportFields"] = array();
 $tdatainventorymaster_Report[".exportFields"][] = "Id";
 $tdatainventorymaster_Report[".exportFields"][] = "ItemID";
@@ -358,124 +347,126 @@ $tdatainventorymaster_Report[".printFields"][] = "Supplier";
 	$fdata["strName"] = "Id";
 	$fdata["GoodName"] = "Id";
 	$fdata["ownerTable"] = "inventorymaster";
-	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Id"); 
+	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Id");
 	$fdata["FieldType"] = 3;
-	
+
 		// report field settings
 					// end of report field settings
-	
+
 		$fdata["AutoInc"] = true;
+
 	
-		
-				
-		$fdata["bListPage"] = true; 
+										
+		$fdata["bListPage"] = true;
+
 	
-		
-		
-		
-		
-		$fdata["bViewPage"] = true; 
 	
-		$fdata["bAdvancedSearch"] = true; 
 	
-		$fdata["bPrinterPage"] = true; 
 	
-		$fdata["bExportPage"] = true; 
 	
-		$fdata["strField"] = "Id"; 
-	
+
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Id";
+
 		$fdata["isSQLExpression"] = true;
 	$fdata["FullName"] = "Id";
+
 	
-		
-		
+	
 				$fdata["FieldPermissions"] = true;
-	
+
 				$fdata["UploadFolder"] = "files";
-		
+
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
-	
+
 	$vdata = array("ViewFormat" => "");
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$vdata["NeedEncode"] = true;
-	
+
 	$fdata["ViewFormats"]["report"] = $vdata;
 //  End View Formats
 
-//	Begin Edit Formats 	
+//	Begin Edit Formats
 	$fdata["EditFormats"] = array();
-	
+
 	$edata = array("EditFormat" => "Text field");
-	
-			
+
 	
 	
 
 
-		$edata["IsRequired"] = true; 
+
+		$edata["IsRequired"] = true;
+
 	
-		
-		
-		
+	
+	
 			$edata["acceptFileTypes"] = ".+$";
-	
+
 		$edata["maxNumberOfFiles"] = 1;
+
 	
-		
-		
-		
-		
+	
+	
+	
 			$edata["HTML5InuptType"] = "number";
-	
+
 		$edata["EditParams"] = "";
-			
+		
 		$edata["controlWidth"] = 200;
-	
+
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");	
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
 						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
 		
+	
 	//	End validation
+
 	
-		
-		
-		
 	
-		
+	
+	
+	
 	$fdata["EditFormats"]["search"] = $edata;
 //	End Edit Formats
-	
-	
+
+
 	$fdata["isSeparate"] = false;
-	
-	
-	
-	
+
+
+
+
 // the field's search options settings
-		
+	
 			// the default search options list
-				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between");
-// the end of search options settings	
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
 
-	
 
-	
+
+
 	$tdatainventorymaster_Report["Id"] = $fdata;
 //	ItemID
 //	Custom field settings
@@ -484,125 +475,133 @@ $tdatainventorymaster_Report[".printFields"][] = "Supplier";
 	$fdata["strName"] = "ItemID";
 	$fdata["GoodName"] = "ItemID";
 	$fdata["ownerTable"] = "inventorymaster";
-	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","ItemID"); 
+	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","ItemID");
 	$fdata["FieldType"] = 200;
-	
+
 		// report field settings
 					// end of report field settings
+
 	
-		
-		
-				
-		$fdata["bListPage"] = true; 
 	
-		$fdata["bAddPage"] = true; 
-	
-		$fdata["bInlineAdd"] = true; 
-	
-		$fdata["bEditPage"] = true; 
-	
-		$fdata["bInlineEdit"] = true; 
-	
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
-		$fdata["strField"] = "ItemID"; 
-	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+		$fdata["bInlineAdd"] = true;
+
+		$fdata["bEditPage"] = true;
+
+		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
+
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "ItemID";
+
 		$fdata["isSQLExpression"] = true;
 	$fdata["FullName"] = "ItemID";
+
 	
-		
-		
+	
 				$fdata["FieldPermissions"] = true;
-	
+
 				$fdata["UploadFolder"] = "files";
-		
+
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
-	
+
 	$vdata = array("ViewFormat" => "");
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$vdata["NeedEncode"] = true;
-	
+
 	$fdata["ViewFormats"]["report"] = $vdata;
 //  End View Formats
 
-//	Begin Edit Formats 	
+//	Begin Edit Formats
 	$fdata["EditFormats"] = array();
-	
+
 	$edata = array("EditFormat" => "Text field");
-	
-			
+
 	
 	
 
 
-		
-		
-		
-		
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
 			$edata["acceptFileTypes"] = ".+$";
-	
+
 		$edata["maxNumberOfFiles"] = 1;
+
 	
-		
-		
-		
-		
+	
+	
+	
 			$edata["HTML5InuptType"] = "text";
-	
+
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=50";
-	
+
 		$edata["controlWidth"] = 200;
-	
+
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-		
-		
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+			$edata["validateAs"]["basicValidate"][] = "DenyDuplicated";
+	$edata["validateAs"]["customMessages"]["DenyDuplicated"] = array("message" => "Value %value% already exists", "messageType" => "Text");
+
+	
 	//	End validation
+
 	
-		
-		
-		
 	
-		
+	
+		$edata["denyDuplicates"] = true;
+
+	
 	$fdata["EditFormats"]["search"] = $edata;
 //	End Edit Formats
-	
-	
+
+
 	$fdata["isSeparate"] = false;
-	
-	
-	
-	
+
+
+
+
 // the field's search options settings
-		
+	
 			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
-// the end of search options settings	
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
 
-	
 
-	
+
+
 	$tdatainventorymaster_Report["ItemID"] = $fdata;
 //	Brand
 //	Custom field settings
@@ -611,126 +610,128 @@ $tdatainventorymaster_Report[".printFields"][] = "Supplier";
 	$fdata["strName"] = "Brand";
 	$fdata["GoodName"] = "Brand";
 	$fdata["ownerTable"] = "inventorymaster";
-	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Brand"); 
+	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Brand");
 	$fdata["FieldType"] = 200;
-	
+
 		// report field settings
-		$fdata["isTotalMin"] = true;
-				// end of report field settings
+					// end of report field settings
+
 	
-		
-		
-				
-		$fdata["bListPage"] = true; 
 	
-		$fdata["bAddPage"] = true; 
-	
-		$fdata["bInlineAdd"] = true; 
-	
-		$fdata["bEditPage"] = true; 
-	
-		$fdata["bInlineEdit"] = true; 
-	
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
-		$fdata["strField"] = "Brand"; 
-	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+		$fdata["bInlineAdd"] = true;
+
+		$fdata["bEditPage"] = true;
+
+		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
+
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Brand";
+
 		$fdata["isSQLExpression"] = true;
 	$fdata["FullName"] = "Brand";
+
 	
-		
-		
+	
 				$fdata["FieldPermissions"] = true;
-	
+
 				$fdata["UploadFolder"] = "files";
-		
+
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
-	
+
 	$vdata = array("ViewFormat" => "");
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$vdata["NeedEncode"] = true;
-	
+
 	$fdata["ViewFormats"]["report"] = $vdata;
 //  End View Formats
 
-//	Begin Edit Formats 	
+//	Begin Edit Formats
 	$fdata["EditFormats"] = array();
-	
+
 	$edata = array("EditFormat" => "Text field");
-	
-			
+
 	
 	
 
 
-		
-		
-		
-		
+
+	
+	
+	
+	
 			$edata["acceptFileTypes"] = ".+$";
-	
+
 		$edata["maxNumberOfFiles"] = 1;
+
 	
-		
-		
-		
-		
+	
+	
+	
 			$edata["HTML5InuptType"] = "text";
-	
+
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=50";
-	
+
 		$edata["controlWidth"] = 200;
-	
+
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-		
-		
+	
+	
 	//	End validation
+
 	
-		
-		
-		
 	
-		
+	
+	
+	
 	$fdata["EditFormats"]["search"] = $edata;
 //	End Edit Formats
-	
-	
+
+
 	$fdata["isSeparate"] = false;
-	
-	
-	
-	
+
+
+
+
 // the field's search options settings
-		
+	
 			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
-// the end of search options settings	
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
 
-	
 
-	
+
+
 	$tdatainventorymaster_Report["Brand"] = $fdata;
 //	Description
 //	Custom field settings
@@ -739,125 +740,128 @@ $tdatainventorymaster_Report[".printFields"][] = "Supplier";
 	$fdata["strName"] = "Description";
 	$fdata["GoodName"] = "Description";
 	$fdata["ownerTable"] = "inventorymaster";
-	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Description"); 
+	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Description");
 	$fdata["FieldType"] = 200;
-	
+
 		// report field settings
 					// end of report field settings
+
 	
-		
-		
-				
-		$fdata["bListPage"] = true; 
 	
-		$fdata["bAddPage"] = true; 
-	
-		$fdata["bInlineAdd"] = true; 
-	
-		$fdata["bEditPage"] = true; 
-	
-		$fdata["bInlineEdit"] = true; 
-	
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
-		$fdata["strField"] = "Description"; 
-	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+		$fdata["bInlineAdd"] = true;
+
+		$fdata["bEditPage"] = true;
+
+		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
+
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Description";
+
 		$fdata["isSQLExpression"] = true;
 	$fdata["FullName"] = "Description";
+
 	
-		
-		
+	
 				$fdata["FieldPermissions"] = true;
-	
+
 				$fdata["UploadFolder"] = "files";
-		
+
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
-	
+
 	$vdata = array("ViewFormat" => "");
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$vdata["NeedEncode"] = true;
-	
+
 	$fdata["ViewFormats"]["report"] = $vdata;
 //  End View Formats
 
-//	Begin Edit Formats 	
+//	Begin Edit Formats
 	$fdata["EditFormats"] = array();
-	
+
 	$edata = array("EditFormat" => "Text field");
-	
-			
+
 	
 	
 
 
-		
-		
-		
-		
+
+	
+	
+	
+	
 			$edata["acceptFileTypes"] = ".+$";
-	
+
 		$edata["maxNumberOfFiles"] = 1;
+
 	
-		
-		
-		
-		
+	
+	
+	
 			$edata["HTML5InuptType"] = "text";
-	
+
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=50";
-	
+
 		$edata["controlWidth"] = 200;
-	
+
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-		
-		
+	
+	
 	//	End validation
+
 	
-		
-		
-		
 	
-		
+	
+	
+	
 	$fdata["EditFormats"]["search"] = $edata;
 //	End Edit Formats
-	
-	
+
+
 	$fdata["isSeparate"] = false;
-	
-	
-	
-	
+
+
+
+
 // the field's search options settings
-		
+	
 			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
-// the end of search options settings	
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
 
-	
 
-	
+
+
 	$tdatainventorymaster_Report["Description"] = $fdata;
 //	Supplier
 //	Custom field settings
@@ -866,163 +870,166 @@ $tdatainventorymaster_Report[".printFields"][] = "Supplier";
 	$fdata["strName"] = "Supplier";
 	$fdata["GoodName"] = "Supplier";
 	$fdata["ownerTable"] = "inventorymaster";
-	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Supplier"); 
+	$fdata["Label"] = GetFieldLabel("inventorymaster_Report","Supplier");
 	$fdata["FieldType"] = 200;
-	
+
 		// report field settings
 					// end of report field settings
+
 	
-		
-		
-				
-		$fdata["bListPage"] = true; 
 	
-		$fdata["bAddPage"] = true; 
-	
-		$fdata["bInlineAdd"] = true; 
-	
-		$fdata["bEditPage"] = true; 
-	
-		$fdata["bInlineEdit"] = true; 
-	
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
-		$fdata["strField"] = "Supplier"; 
-	
+										
+		$fdata["bListPage"] = true;
+
+		$fdata["bAddPage"] = true;
+
+		$fdata["bInlineAdd"] = true;
+
+		$fdata["bEditPage"] = true;
+
+		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
+
+		$fdata["bViewPage"] = true;
+
+		$fdata["bAdvancedSearch"] = true;
+
+		$fdata["bPrinterPage"] = true;
+
+		$fdata["bExportPage"] = true;
+
+		$fdata["strField"] = "Supplier";
+
 		$fdata["isSQLExpression"] = true;
 	$fdata["FullName"] = "Supplier";
+
 	
-		
-		
+	
 				$fdata["FieldPermissions"] = true;
-	
+
 				$fdata["UploadFolder"] = "files";
-		
+
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
-	
+
 	$vdata = array("ViewFormat" => "");
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$vdata["NeedEncode"] = true;
-	
+
 	$fdata["ViewFormats"]["report"] = $vdata;
 //  End View Formats
 
-//	Begin Edit Formats 	
+//	Begin Edit Formats
 	$fdata["EditFormats"] = array();
-	
+
 	$edata = array("EditFormat" => "Lookup wizard");
+
 	
-			
 	
-	
+
 // Begin Lookup settings
 				$edata["LookupType"] = 2;
 	$edata["LookupTable"] = "suppliermaster";
 		$edata["autoCompleteFieldsOnEdit"] = 0;
 	$edata["autoCompleteFields"] = array();
 		$edata["LCType"] = 0;
+
+	
 		
-		
-			
 	$edata["LinkField"] = "SupplierName";
 	$edata["LinkFieldType"] = 0;
 	$edata["DisplayField"] = "SupplierName";
+
 	
-		
 	$edata["LookupOrderBy"] = "SupplierName";
-	
-		
-			
-		
-				
+
 	
 	
-		
+	
+	
+
+	
+	
 		$edata["SelectSize"] = 1;
-		
+
 // End Lookup Settings
 
 
-		$edata["IsRequired"] = true; 
+		$edata["IsRequired"] = true;
+
 	
-		
-		
-		
+	
+	
 			$edata["acceptFileTypes"] = ".+$";
-	
+
 		$edata["maxNumberOfFiles"] = 1;
+
 	
-		
-		
-		
-		
-		
-		
+	
+	
+	
+	
+	
 		$edata["controlWidth"] = 200;
-	
+
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
 						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
 		
+	
 	//	End validation
+
 	
-		
-		
-		
 	
-		
+	
+	
+	
 	$fdata["EditFormats"]["search"] = $edata;
 //	End Edit Formats
-	
-	
+
+
 	$fdata["isSeparate"] = false;
-	
-	
-	
-	
+
+
+
+
 // the field's search options settings
 		$fdata["defaultSearchOption"] = "Equals";
-	
+
 			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
-// the end of search options settings	
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
 
-	
 
-	
+
+
 	$tdatainventorymaster_Report["Supplier"] = $fdata;
 
-	
+
 $tables_data["inventorymaster Report"]=&$tdatainventorymaster_Report;
 $field_labels["inventorymaster_Report"] = &$fieldLabelsinventorymaster_Report;
-$fieldToolTips["inventorymaster Report"] = &$fieldToolTipsinventorymaster_Report;
+$fieldToolTips["inventorymaster_Report"] = &$fieldToolTipsinventorymaster_Report;
 $page_titles["inventorymaster_Report"] = &$pageTitlesinventorymaster_Report;
 
 // -----------------start  prepare master-details data arrays ------------------------------//
 // tables which are detail tables for current table (master)
 $detailsTablesData["inventorymaster Report"] = array();
-	
+
 // tables which are master tables for current table (detail)
 $masterTablesData["inventorymaster Report"] = array();
 
@@ -1049,145 +1056,148 @@ $proto0["m_strFrom"] = "FROM inventorymaster";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
 $proto0["m_strTail"] = "";
+	
+					
+;
 						$proto0["cipherer"] = null;
-$proto1=array();
-$proto1["m_sql"] = "";
-$proto1["m_uniontype"] = "SQLL_UNKNOWN";
+$proto2=array();
+$proto2["m_sql"] = "";
+$proto2["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto1["m_column"]=$obj;
-$proto1["m_contained"] = array();
-$proto1["m_strCase"] = "";
-$proto1["m_havingmode"] = false;
-$proto1["m_inBrackets"] = false;
-$proto1["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto1);
+$proto2["m_column"]=$obj;
+$proto2["m_contained"] = array();
+$proto2["m_strCase"] = "";
+$proto2["m_havingmode"] = false;
+$proto2["m_inBrackets"] = false;
+$proto2["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto2);
 
 $proto0["m_where"] = $obj;
-$proto3=array();
-$proto3["m_sql"] = "";
-$proto3["m_uniontype"] = "SQLL_UNKNOWN";
+$proto4=array();
+$proto4["m_sql"] = "";
+$proto4["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto3["m_column"]=$obj;
-$proto3["m_contained"] = array();
-$proto3["m_strCase"] = "";
-$proto3["m_havingmode"] = false;
-$proto3["m_inBrackets"] = false;
-$proto3["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto3);
+$proto4["m_column"]=$obj;
+$proto4["m_contained"] = array();
+$proto4["m_strCase"] = "";
+$proto4["m_havingmode"] = false;
+$proto4["m_inBrackets"] = false;
+$proto4["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto4);
 
 $proto0["m_having"] = $obj;
 $proto0["m_fieldlist"] = array();
-						$proto5=array();
+						$proto6=array();
 			$obj = new SQLField(array(
 	"m_strName" => "Id",
 	"m_strTable" => "inventorymaster",
 	"m_srcTableName" => "inventorymaster Report"
 ));
 
-$proto5["m_sql"] = "Id";
-$proto5["m_srcTableName"] = "inventorymaster Report";
-$proto5["m_expr"]=$obj;
-$proto5["m_alias"] = "";
-$obj = new SQLFieldListItem($proto5);
+$proto6["m_sql"] = "Id";
+$proto6["m_srcTableName"] = "inventorymaster Report";
+$proto6["m_expr"]=$obj;
+$proto6["m_alias"] = "";
+$obj = new SQLFieldListItem($proto6);
 
 $proto0["m_fieldlist"][]=$obj;
-						$proto7=array();
+						$proto8=array();
 			$obj = new SQLField(array(
 	"m_strName" => "ItemID",
 	"m_strTable" => "inventorymaster",
 	"m_srcTableName" => "inventorymaster Report"
 ));
 
-$proto7["m_sql"] = "ItemID";
-$proto7["m_srcTableName"] = "inventorymaster Report";
-$proto7["m_expr"]=$obj;
-$proto7["m_alias"] = "";
-$obj = new SQLFieldListItem($proto7);
+$proto8["m_sql"] = "ItemID";
+$proto8["m_srcTableName"] = "inventorymaster Report";
+$proto8["m_expr"]=$obj;
+$proto8["m_alias"] = "";
+$obj = new SQLFieldListItem($proto8);
 
 $proto0["m_fieldlist"][]=$obj;
-						$proto9=array();
+						$proto10=array();
 			$obj = new SQLField(array(
 	"m_strName" => "Brand",
 	"m_strTable" => "inventorymaster",
 	"m_srcTableName" => "inventorymaster Report"
 ));
 
-$proto9["m_sql"] = "Brand";
-$proto9["m_srcTableName"] = "inventorymaster Report";
-$proto9["m_expr"]=$obj;
-$proto9["m_alias"] = "";
-$obj = new SQLFieldListItem($proto9);
+$proto10["m_sql"] = "Brand";
+$proto10["m_srcTableName"] = "inventorymaster Report";
+$proto10["m_expr"]=$obj;
+$proto10["m_alias"] = "";
+$obj = new SQLFieldListItem($proto10);
 
 $proto0["m_fieldlist"][]=$obj;
-						$proto11=array();
+						$proto12=array();
 			$obj = new SQLField(array(
 	"m_strName" => "Description",
 	"m_strTable" => "inventorymaster",
 	"m_srcTableName" => "inventorymaster Report"
 ));
 
-$proto11["m_sql"] = "Description";
-$proto11["m_srcTableName"] = "inventorymaster Report";
-$proto11["m_expr"]=$obj;
-$proto11["m_alias"] = "";
-$obj = new SQLFieldListItem($proto11);
+$proto12["m_sql"] = "Description";
+$proto12["m_srcTableName"] = "inventorymaster Report";
+$proto12["m_expr"]=$obj;
+$proto12["m_alias"] = "";
+$obj = new SQLFieldListItem($proto12);
 
 $proto0["m_fieldlist"][]=$obj;
-						$proto13=array();
+						$proto14=array();
 			$obj = new SQLField(array(
 	"m_strName" => "Supplier",
 	"m_strTable" => "inventorymaster",
 	"m_srcTableName" => "inventorymaster Report"
 ));
 
-$proto13["m_sql"] = "Supplier";
-$proto13["m_srcTableName"] = "inventorymaster Report";
-$proto13["m_expr"]=$obj;
-$proto13["m_alias"] = "";
-$obj = new SQLFieldListItem($proto13);
+$proto14["m_sql"] = "Supplier";
+$proto14["m_srcTableName"] = "inventorymaster Report";
+$proto14["m_expr"]=$obj;
+$proto14["m_alias"] = "";
+$obj = new SQLFieldListItem($proto14);
 
 $proto0["m_fieldlist"][]=$obj;
 $proto0["m_fromlist"] = array();
-												$proto15=array();
-$proto15["m_link"] = "SQLL_MAIN";
-			$proto16=array();
-$proto16["m_strName"] = "inventorymaster";
-$proto16["m_srcTableName"] = "inventorymaster Report";
-$proto16["m_columns"] = array();
-$proto16["m_columns"][] = "Id";
-$proto16["m_columns"][] = "ItemID";
-$proto16["m_columns"][] = "Brand";
-$proto16["m_columns"][] = "Description";
-$proto16["m_columns"][] = "Supplier";
-$obj = new SQLTable($proto16);
+												$proto16=array();
+$proto16["m_link"] = "SQLL_MAIN";
+			$proto17=array();
+$proto17["m_strName"] = "inventorymaster";
+$proto17["m_srcTableName"] = "inventorymaster Report";
+$proto17["m_columns"] = array();
+$proto17["m_columns"][] = "Id";
+$proto17["m_columns"][] = "ItemID";
+$proto17["m_columns"][] = "Brand";
+$proto17["m_columns"][] = "Description";
+$proto17["m_columns"][] = "Supplier";
+$obj = new SQLTable($proto17);
 
-$proto15["m_table"] = $obj;
-$proto15["m_sql"] = "inventorymaster";
-$proto15["m_alias"] = "";
-$proto15["m_srcTableName"] = "inventorymaster Report";
-$proto17=array();
-$proto17["m_sql"] = "";
-$proto17["m_uniontype"] = "SQLL_UNKNOWN";
+$proto16["m_table"] = $obj;
+$proto16["m_sql"] = "inventorymaster";
+$proto16["m_alias"] = "";
+$proto16["m_srcTableName"] = "inventorymaster Report";
+$proto18=array();
+$proto18["m_sql"] = "";
+$proto18["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto17["m_column"]=$obj;
-$proto17["m_contained"] = array();
-$proto17["m_strCase"] = "";
-$proto17["m_havingmode"] = false;
-$proto17["m_inBrackets"] = false;
-$proto17["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto17);
+$proto18["m_column"]=$obj;
+$proto18["m_contained"] = array();
+$proto18["m_strCase"] = "";
+$proto18["m_havingmode"] = false;
+$proto18["m_inBrackets"] = false;
+$proto18["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto18);
 
-$proto15["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto15);
+$proto16["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto16);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -1202,7 +1212,10 @@ $queryData_inventorymaster_Report = createSqlQuery_inventorymaster_Report();
 
 	
 					
-	
+;
+
+					
+
 $tdatainventorymaster_Report[".sqlquery"] = $queryData_inventorymaster_Report;
 
 $tableEvents["inventorymaster Report"] = new eventsBase;

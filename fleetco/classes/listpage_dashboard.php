@@ -5,9 +5,9 @@ class ListPage_Dashboard extends ListPage_Embed
 	public $showNoData = false;
 	
 	/**
-     * @constructor
-     * @param array params
-     */
+	 * @constructor
+	 * @param array params
+	 */
 	function __construct(&$params)
 	{
 		parent::__construct($params);
@@ -18,7 +18,8 @@ class ListPage_Dashboard extends ListPage_Embed
 			array( "name" => "newrecord_controls_block", "align" => "right" ), 
 			array( "name" => "record_controls_block", "align" => "right" ),
 			array( "name" => "details_found", "align" => "right" )
-		);	
+		);
+		
 		$this->formBricks["footer"] = array( "pagination_block" );	
 		
 		if( $this->mapRefresh )
@@ -56,13 +57,42 @@ class ListPage_Dashboard extends ListPage_Embed
 	 */
 	function isDispGrid() 
 	{
-		return $this->permis[$this->tName]['search'];
+		return $this->permis[ $this->tName ]['search'];
 	}
 	
 	function addCommonJs()
 	{
+		$this->addJsForGrid();
 		$this->addControlsJSAndCSS();
 		$this->addButtonHandlers();
+	}
+	
+	function addJsForGrid()
+	{ 
+		if( $this->isResizeColumns )
+			$this->prepareForResizeColumns();
+		
+		$this->jsSettings['tableSettings'][ $this->tName ]['showRows'] = ($this->numRowsFromSQL ? true : false);
+	}
+	
+	function prepareForResizeColumns()
+	{
+		if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+		{
+			$this->AddJSFile( 'include/colresizable.js' );
+
+			include_once getabspath("classes/paramsLogger.php");	
+			
+			$logger = new paramsLogger( $this->dashTName."_".$this->dashElementName, CRESIZE_PARAMS_TYPE );
+			$resizableColumnsData = $logger->getData();
+			if( $resizableColumnsData )
+				$this->jsSettings["tableSettings"][ $this->dashTName ]["proxy"][ "resizableColumnsData_".$this->dashElementName ] = $resizableColumnsData;
+				
+			return;
+		}
+		
+		if( $this->debugJSMode === true ) //?
+			$this->AddJSFile("include/runnerJS/RunnerResizeGrid.js");
 	}
 	
 	function commonAssign()
@@ -251,7 +281,7 @@ class ListPage_Dashboard extends ListPage_Embed
 			$markerData["lng"] = str_replace( ",", ".", ($data[ $dElem["lonF"] ] ? $data[ $dElem["lonF"] ] : "") );
 			$markerData["address"] = $data[ $dElem["addressF"] ] ? $data[ $dElem["addressF"] ] : "";
 			$markerData["desc"] = $data[ $dElem["descF"] ] ? $data[ $dElem["descF"] ] : $markerData["address"];				
-			$markerData["mapIcon"] = $this->dashSet->getDashMapIcon( $this->dashElementName, $data );
+			$markerData["mapIcon"] = $this->dashSet->getDashMapIcon( $dElem["elementName"], $data );
 			
 			$markerData["recId"] = $this->recId;
 			$markerData["keys"] = $keys; 
@@ -265,6 +295,7 @@ class ListPage_Dashboard extends ListPage_Embed
 				$this->googleMapCfg["mapsData"][ $mapId ] = array();
 				$this->googleMapCfg["mapsData"][ $mapId ]["skipped"] = true;
 				$this->googleMapCfg["mapsData"][ $mapId ]["dashMap"] = true;
+				$this->googleMapCfg["mapsData"][ $mapId ]["heatMap"] = $dElem["heatMap"];
 			}
 			
 			if( !isset( $this->googleMapCfg["mapsData"][ $mapId ]["markers"] ) )	
@@ -285,7 +316,7 @@ class ListPage_Dashboard extends ListPage_Embed
 	/**
 	 * A stub
 	 */
-	function rulePRG()  {}
+	function rulePRG() {}
 	
 	/**
 	 * A stub

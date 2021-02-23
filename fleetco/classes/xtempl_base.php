@@ -114,7 +114,15 @@ class XTempl_Base
 		
 		$mlang_charsets=array();
 		
-$mlang_charsets["English"]="Windows-1252";;
+$mlang_charsets["Afrikaans"]="Windows-1252";
+$mlang_charsets["Arabic"]="Windows-1256";
+$mlang_charsets["Chinese"]="GB18030";
+$mlang_charsets["English"]="Windows-1252";
+$mlang_charsets["French"]="Windows-1252";
+$mlang_charsets["German"]="Windows-1252";
+$mlang_charsets["Italian"]="Windows-1252";
+$mlang_charsets["Russian"]="Windows-1251";
+$mlang_charsets["Spanish"]="Windows-1252";;
 		$this->charsets = &$mlang_charsets;
 		
 		$html_attrs = '';

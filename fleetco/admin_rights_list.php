@@ -23,14 +23,14 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("inventorymaster", " " . "M - Stock Codes");
+$tables[$table] = array("inventorymaster", " " . GetTableCaption("inventorymaster"));
 $table = "creategrn";
 $mask="";
 				$mask .= "S";
 $mask .= "P";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn", " " . "Stock Movement");
+$tables[$table] = array("creategrn", " " . GetTableCaption("creategrn"));
 $table = "vehiclemaster";
 $mask="";
 	$mask .= "A";
@@ -41,7 +41,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("vehiclemaster", " " . "M - Fleet");
+$tables[$table] = array("vehiclemaster", " " . GetTableCaption("vehiclemaster"));
 $table = "creategrn-issue";
 $mask="";
 	$mask .= "A";
@@ -52,7 +52,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_issue", " " . "Stock Issues");
+$tables[$table] = array("creategrn_issue", " " . GetTableCaption("creategrn_issue"));
 $table = "inventorymaster-qty";
 $mask="";
 	$mask .= "A";
@@ -63,7 +63,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("inventorymaster_qty", " " . "M - Inventory Master Sub");
+$tables[$table] = array("inventorymaster_qty", " " . GetTableCaption("inventorymaster_qty"));
 $table = "creategrn-receive";
 $mask="";
 	$mask .= "A";
@@ -74,7 +74,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_receive", " " . "Stock Purchases");
+$tables[$table] = array("creategrn_receive", " " . GetTableCaption("creategrn_receive"));
 $table = "fuelmaster";
 $mask="";
 	$mask .= "A";
@@ -85,7 +85,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("fuelmaster", " " . "Fuel Records");
+$tables[$table] = array("fuelmaster", " " . GetTableCaption("fuelmaster"));
 $table = "suppliermaster";
 $mask="";
 	$mask .= "A";
@@ -96,7 +96,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("suppliermaster", " " . "M - Suppliers");
+$tables[$table] = array("suppliermaster", " " . GetTableCaption("suppliermaster"));
 $table = "accidents";
 $mask="";
 	$mask .= "A";
@@ -107,14 +107,14 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("accidents", " " . "Accident Records");
+$tables[$table] = array("accidents", " " . GetTableCaption("accidents"));
 $table = "maintenenace";
 $mask="";
 				$mask .= "S";
 $mask .= "P";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("maintenenace", " " . "Maintenance Records");
+$tables[$table] = array("maintenenace", " " . GetTableCaption("maintenenace"));
 $table = "fleettype";
 $mask="";
 	$mask .= "A";
@@ -125,7 +125,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("fleettype", " " . "M - Fleet Types");
+$tables[$table] = array("fleettype", " " . GetTableCaption("fleettype"));
 $table = "fuelprices";
 $mask="";
 	$mask .= "A";
@@ -136,7 +136,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("fuelprices", " " . "M - Fuel Prices");
+$tables[$table] = array("fuelprices", " " . GetTableCaption("fuelprices"));
 $table = "fuelstationmaster";
 $mask="";
 	$mask .= "A";
@@ -147,7 +147,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("fuelstationmaster", " " . "M - Fuel Stations");
+$tables[$table] = array("fuelstationmaster", " " . GetTableCaption("fuelstationmaster"));
 $table = "vehicletype";
 $mask="";
 	$mask .= "A";
@@ -158,7 +158,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("vehicletype", " " . "M - Vehicle Types");
+$tables[$table] = array("vehicletype", " " . GetTableCaption("vehicletype"));
 $table = "servicetypemaster";
 $mask="";
 	$mask .= "A";
@@ -169,7 +169,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("servicetypemaster", " " . "M - Service Types");
+$tables[$table] = array("servicetypemaster", " " . GetTableCaption("servicetypemaster"));
 $table = "insurance-payments";
 $mask="";
 	$mask .= "A";
@@ -180,7 +180,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("insurance_payments", " " . "Insurance Payments");
+$tables[$table] = array("insurance_payments", " " . GetTableCaption("insurance_payments"));
 $table = "insuranceclaims";
 $mask="";
 	$mask .= "A";
@@ -191,7 +191,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("insuranceclaims", " " . "Insurance Claims");
+$tables[$table] = array("insuranceclaims", " " . GetTableCaption("insuranceclaims"));
 $table = "insurancecompany";
 $mask="";
 	$mask .= "A";
@@ -202,7 +202,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("insurancecompany", " " . "M - Insurance Companies");
+$tables[$table] = array("insurancecompany", " " . GetTableCaption("insurancecompany"));
 $table = "maintenenace-regularservice";
 $mask="";
 	$mask .= "A";
@@ -213,7 +213,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("maintenenace_regularservice", " " . "Regular Maint.");
+$tables[$table] = array("maintenenace_regularservice", " " . GetTableCaption("maintenenace_regularservice"));
 $table = "maintenenace-general-repair";
 $mask="";
 	$mask .= "A";
@@ -224,7 +224,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("maintenenace_general_repair", " " . "General Repair");
+$tables[$table] = array("maintenenace_general_repair", " " . GetTableCaption("maintenenace_general_repair"));
 $table = "maintenenace-accident-repair";
 $mask="";
 	$mask .= "A";
@@ -235,14 +235,14 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("maintenenace_accident_repair", " " . "Accident Repair");
+$tables[$table] = array("maintenenace_accident_repair", " " . GetTableCaption("maintenenace_accident_repair"));
 $table = "vehiclemaster-report";
 $mask="";
 				$mask .= "S";
 $mask .= "P";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("vehiclemaster_report", " " . "Fleet Report");
+$tables[$table] = array("vehiclemaster_report", " " . GetTableCaption("vehiclemaster_report"));
 $table = "accidents-report";
 $mask="";
 				$mask .= "S";
@@ -250,12 +250,12 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("accidents_report", " " . "Accident Report");
+$tables[$table] = array("accidents_report", " " . GetTableCaption("accidents_report"));
 $table = "carrierusers";
 $mask="";
 			
 $pageMask[$table] = $mask;
-$tables[$table] = array("carrierusers", " " . "User Management");
+$tables[$table] = array("carrierusers", " " . GetTableCaption("carrierusers"));
 $table = "inventorymaster-pricing";
 $mask="";
 	$mask .= "A";
@@ -266,7 +266,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("inventorymaster_pricing", " " . "Inventorymaster-pricing");
+$tables[$table] = array("inventorymaster_pricing", " " . GetTableCaption("inventorymaster_pricing"));
 $table = "creategrn-remove";
 $mask="";
 	$mask .= "A";
@@ -277,7 +277,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_remove", " " . "Tyre Removals");
+$tables[$table] = array("creategrn_remove", " " . GetTableCaption("creategrn_remove"));
 $table = "creategrn-issuetorebuild";
 $mask="";
 	$mask .= "A";
@@ -288,7 +288,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_issuetorebuild", " " . "Send to Rebuild");
+$tables[$table] = array("creategrn_issuetorebuild", " " . GetTableCaption("creategrn_issuetorebuild"));
 $table = "creategrn-receiveafterrebuild";
 $mask="";
 	$mask .= "A";
@@ -299,7 +299,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_receiveafterrebuild", " " . "Rebuilt Receipts");
+$tables[$table] = array("creategrn_receiveafterrebuild", " " . GetTableCaption("creategrn_receiveafterrebuild"));
 $table = "creategrn-issue-rebuilt";
 $mask="";
 	$mask .= "A";
@@ -310,21 +310,21 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_issue_rebuilt", " " . "Rebuilt Issues");
+$tables[$table] = array("creategrn_issue_rebuilt", " " . GetTableCaption("creategrn_issue_rebuilt"));
 $table = "fuelmaster-reports";
 $mask="";
 				$mask .= "S";
 $mask .= "P";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("fuelmaster_reports", " " . "Fuel Report");
+$tables[$table] = array("fuelmaster_reports", " " . GetTableCaption("fuelmaster_reports"));
 $table = "creategrn-stock-balance";
 $mask="";
 				$mask .= "S";
 $mask .= "P";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_stock_balance", " " . "Stock Balance");
+$tables[$table] = array("creategrn_stock_balance", " " . GetTableCaption("creategrn_stock_balance"));
 $table = "rnewalmastertable";
 $mask="";
 	$mask .= "A";
@@ -334,7 +334,7 @@ $mask="";
 $mask .= "P";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("rnewalmastertable", " " . "M - Renewals");
+$tables[$table] = array("rnewalmastertable", " " . GetTableCaption("rnewalmastertable"));
 $table = "otherrenewal";
 $mask="";
 	$mask .= "A";
@@ -344,7 +344,7 @@ $mask="";
 $mask .= "P";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("otherrenewal", " " . "Other Renewals");
+$tables[$table] = array("otherrenewal", " " . GetTableCaption("otherrenewal"));
 $table = "creategrn-disposal";
 $mask="";
 	$mask .= "A";
@@ -355,7 +355,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_disposal", " " . "Disposals");
+$tables[$table] = array("creategrn_disposal", " " . GetTableCaption("creategrn_disposal"));
 $table = "creategrn-remove-other";
 $mask="";
 	$mask .= "A";
@@ -366,7 +366,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_remove_other", " " . "Removals");
+$tables[$table] = array("creategrn_remove_other", " " . GetTableCaption("creategrn_remove_other"));
 $table = "creategrn-disposal-rebuild";
 $mask="";
 	$mask .= "A";
@@ -377,7 +377,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("creategrn_disposal_rebuild", " " . "Rebuild Tyre Disposals");
+$tables[$table] = array("creategrn_disposal_rebuild", " " . GetTableCaption("creategrn_disposal_rebuild"));
 $table = "inventorymaster-pricing1";
 $mask="";
 	$mask .= "A";
@@ -388,7 +388,7 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("inventorymaster_pricing1", " " . "Inventorymaster-pricing1");
+$tables[$table] = array("inventorymaster_pricing1", " " . GetTableCaption("inventorymaster_pricing1"));
 $table = "inventorymaster-pricing5";
 $mask="";
 	$mask .= "A";
@@ -399,100 +399,175 @@ $mask .= "P";
 $mask .= "I";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("inventorymaster_pricing5", " " . "Inventorymaster-pricing5");
+$tables[$table] = array("inventorymaster_pricing5", " " . GetTableCaption("inventorymaster_pricing5"));
 $table = "fuelmaster Chart";
 $mask="";
 	$mask .= "S";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("fuelmaster_Chart", " " . "Fuelmaster Chart");
+$tables[$table] = array("fuelmaster_Chart", " " . GetTableCaption("fuelmaster_Chart"));
 $table = "maintenenace Chart";
 $mask="";
 	$mask .= "S";
 
 $pageMask[$table] = $mask;
-$tables[$table] = array("maintenenace_Chart", " " . "Maintenenace Chart");
+$tables[$table] = array("maintenenace_Chart", " " . GetTableCaption("maintenenace_Chart"));
 
 
 
 
-$layout = new TLayout("ug_rights", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
-$layout->blocks["center"] = array();
-$layout->containers["ugcontrols"] = array();
-$layout->container_properties["ugcontrols"] = array(  );
-$layout->containers["ugcontrols"][] = array("name"=>"ugbuttons",
-	"block"=>"savebuttons_block", "substyle"=>1  );
+$layout = new TLayout("admin_rights_list_bootstrap3", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "_admin_rights_list";
+$layout->blocks["left"] = array();
+$layout->containers["logo"] = array();
+$layout->container_properties["logo"] = array(  );
+$layout->containers["logo"][] = array("name"=>"logo",
+	"block"=>"logo_block", "substyle"=>1  );
 
-$layout->containers["ugcontrols"][] = array("name"=>"ugrightbuttons",
-	"block"=>"savebuttons_block", "substyle"=>1  );
+$layout->skins["logo"] = "";
 
-$layout->skins["ugcontrols"] = "1";
+$layout->blocks["left"][] = "logo";
+$layout->containers["hdr"] = array();
+$layout->container_properties["hdr"] = array(  );
+$layout->containers["hdr"][] = array("name"=>"bsnavbarcollapse",
+	"block"=>"collapse_block", "substyle"=>1  );
 
-$layout->blocks["center"][] = "ugcontrols";
+$layout->skins["hdr"] = "";
+
+$layout->blocks["left"][] = "hdr";
+$layout->containers["sidemenu"] = array();
+$layout->container_properties["sidemenu"] = array(  );
+$layout->containers["sidemenu"][] = array("name"=>"vmenu",
+	"block"=>"menu_block", "substyle"=>1  );
+
+$layout->skins["sidemenu"] = "";
+
+$layout->blocks["left"][] = "sidemenu";
+$layout->skins["left"] = "";
+
+$layout->blocks["left"][] = "left";
+$layout->blocks["top"] = array();
+$layout->containers["menu"] = array();
+$layout->container_properties["menu"] = array(  );
+$layout->containers["menu"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"bc" );
+$layout->containers["bc"] = array();
+$layout->container_properties["bc"] = array(  );
+$layout->containers["bc"][] = array("name"=>"breadcrumbs",
+	"block"=>"breadcrumbs", "substyle"=>1  );
+
+$layout->skins["bc"] = "";
+
+
+$layout->containers["menu"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"menu_1" );
+$layout->containers["menu_1"] = array();
+$layout->container_properties["menu_1"] = array(  );
+$layout->containers["menu_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"more" );
+$layout->containers["more"] = array();
+$layout->container_properties["more"] = array(  );
+$layout->containers["more"][] = array("name"=>"morebutton",
+	"block"=>"more_list", "substyle"=>1  );
+
+$layout->containers["more"][] = array("name"=>"loggedas",
+	"block"=>"security_block", "substyle"=>1  );
+
+$layout->skins["more"] = "";
+
+
+$layout->containers["menu_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"more_1" );
+$layout->containers["more_1"] = array();
+$layout->container_properties["more_1"] = array(  );
+$layout->containers["more_1"][] = array("name"=>"search",
+	"block"=>"searchform_block", "substyle"=>1  );
+
+$layout->skins["more_1"] = "";
+
+
+$layout->skins["menu_1"] = "";
+
+
+$layout->skins["menu"] = "";
+
+$layout->blocks["top"][] = "menu";
+$layout->blocks["topmiddle"] = array();
+$layout->containers["messagerow"] = array();
+$layout->container_properties["messagerow"] = array(  );
+$layout->containers["messagerow"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"message" );
 $layout->containers["message"] = array();
 $layout->container_properties["message"] = array(  );
 $layout->containers["message"][] = array("name"=>"message",
 	"block"=>"message_block", "substyle"=>1  );
 
-$layout->skins["message"] = "1";
+$layout->skins["message"] = "";
 
-$layout->blocks["center"][] = "message";
-$layout->containers["grid"] = array();
-$layout->container_properties["grid"] = array(  );
-$layout->containers["grid"][] = array("name"=>"ugrightsblock",
-	"block"=>"rights_block", "substyle"=>1  );
 
-$layout->skins["grid"] = "grid";
+$layout->skins["messagerow"] = "";
 
-$layout->blocks["center"][] = "grid";
-$layout->containers["pagination"] = array();
-$layout->container_properties["pagination"] = array(  );
-$layout->containers["pagination"][] = array("name"=>"pagination",
-	"block"=>"pagination_block", "substyle"=>1  );
-
-$layout->skins["pagination"] = "2";
-
-$layout->blocks["center"][] = "pagination";
-$layout->blocks["left"] = array();
-$layout->containers["left"] = array();
-$layout->container_properties["left"] = array(  );
-$layout->containers["left"][] = array("name"=>"loggedas",
-	"block"=>"security_block", "substyle"=>1  );
-
-$layout->containers["left"][] = array("name"=>"vmenu",
-	"block"=>"menu_block", "substyle"=>1  );
-
-$layout->skins["left"] = "menu";
-
-$layout->blocks["left"][] = "left";
-$layout->containers["uggroup"] = array();
-$layout->container_properties["uggroup"] = array(  );
-$layout->containers["uggroup"][] = array("name"=>"ugrightsgroup",
+$layout->blocks["topmiddle"][] = "messagerow";
+$layout->containers["ugcontrols"] = array();
+$layout->container_properties["ugcontrols"] = array(  );
+$layout->containers["ugcontrols"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"save" );
+$layout->containers["save"] = array();
+$layout->container_properties["save"] = array(  );
+$layout->containers["save"][] = array("name"=>"ugbuttons",
 	"block"=>"", "substyle"=>1  );
 
-$layout->skins["uggroup"] = "1";
+$layout->skins["save"] = "";
 
-$layout->blocks["left"][] = "uggroup";
-$layout->blocks["top"] = array();
-$layout->skins["master"] = "empty";
 
-$layout->blocks["top"][] = "master";
-$layout->skins["toplinks"] = "2";
+$layout->containers["ugcontrols"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"filter" );
+$layout->containers["filter"] = array();
+$layout->container_properties["filter"] = array(  );
+$layout->containers["filter"][] = array("name"=>"ugrightbuttons",
+	"block"=>"savebuttons_block", "substyle"=>1  );
 
-$layout->blocks["top"][] = "toplinks";
+$layout->skins["filter"] = "";
+
+
+$layout->skins["ugcontrols"] = "";
+
+$layout->blocks["topmiddle"][] = "ugcontrols";
+$layout->containers["grcontrols"] = array();
+$layout->container_properties["grcontrols"] = array(  );
+$layout->containers["grcontrols"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"groupcontrols" );
+$layout->containers["groupcontrols"] = array();
+$layout->container_properties["groupcontrols"] = array(  );
+$layout->containers["groupcontrols"][] = array("name"=>"bsugrights_groupbuttons",
+	"block"=>"", "substyle"=>1  );
+
+$layout->skins["groupcontrols"] = "";
+
+
+$layout->skins["grcontrols"] = "";
+
+$layout->blocks["topmiddle"][] = "grcontrols";
+$layout->containers["uggroups"] = array();
+$layout->container_properties["uggroups"] = array(  );
+$layout->containers["uggroups"][] = array("name"=>"bsugrightsgroups",
+	"block"=>"", "substyle"=>1  );
+
+$layout->skins["uggroups"] = "";
+
+$layout->blocks["topmiddle"][] = "uggroups";
+$layout->containers["permgrid"] = array();
+$layout->container_properties["permgrid"] = array(  );
+$layout->containers["permgrid"][] = array("name"=>"ugrightsblock",
+	"block"=>"", "substyle"=>1  );
+
+$layout->skins["permgrid"] = "";
+
+$layout->blocks["topmiddle"][] = "permgrid";
 $page_layouts["admin_rights_list"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 

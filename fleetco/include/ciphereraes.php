@@ -10,7 +10,7 @@ class RunnerCiphererAES
 
 	var $mcryptModule = null;
 
-	function RunnerCiphererAES($key){
+	function __construct($key){
 		$this->mcryptModule = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
 		$this->key = substr($key, 0, mcrypt_enc_get_key_size($this->mcryptModule));
 	}

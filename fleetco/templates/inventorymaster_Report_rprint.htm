@@ -49,38 +49,6 @@
 <style>
 	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {background-color:#ffffbb;}
 	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color:#ffe0b0;}
-	.rnr-report {width: 100%;}
-	td {padding: 2px; 4px;}
-
-		td.group_1{background-color: #90EE90;}
-		td.nbgroup_1{background-color: #90EE90;}
-		td.header_1 {
-			background-color: #7ACA7A; 
-			font-size:120%;
-			padding: 2px 8px;
-			font-weight: bold;
-		}
-
-		td.group_2{background-color: #ADD8E6;}
-		td.nbgroup_2{background-color: #ADD8E6;}
-		td.header_2 {
-			background-color: #93B7C3; 
-			font-size:120%;
-			padding: 2px 8px;
-			font-weight: bold;
-		}
-	td.blackshade {
-		font-size:140%;
-		padding: 4px 8px;
-	}
-	.summaryrow > * {
-		border:solid #808080 1px; 
-		border-left: none; 
-		border-right: none;
-	}
-	.grouptotalsrow + :not(.grouptotalsrow) > * {
-		border-top:solid #808080 1px; 
-	}
 
 </style>
 
@@ -114,153 +82,46 @@
 <style>
 	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {background-color:#ffffbb;}
 	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color:#ffe0b0;}
-	.rnr-report {width: 100%;}
-	td {padding: 2px; 4px;}
-
-		td.group_1{background-color: #90EE90;}
-		td.nbgroup_1{background-color: #90EE90;}
-		td.header_1 {
-			background-color: #7ACA7A; 
-			font-size:120%;
-			padding: 2px 8px;
-			font-weight: bold;
-		}
-
-		td.group_2{background-color: #ADD8E6;}
-		td.nbgroup_2{background-color: #ADD8E6;}
-		td.header_2 {
-			background-color: #93B7C3; 
-			font-size:120%;
-			padding: 2px 8px;
-			font-weight: bold;
-		}
-	td.blackshade {
-		font-size:140%;
-		padding: 4px 8px;
-	}
-	.summaryrow > * {
-		border:solid #808080 1px; 
-		border-left: none; 
-		border-right: none;
-	}
-	.grouptotalsrow + :not(.grouptotalsrow) > * {
-		border-top:solid #808080 1px; 
-	}
 
 </style>
 
 <div id="grid_block{$id}" class="rnr-report-gridblock">
-		<div class="rnr-cw-grid rnr-s-empty asbuttons {$pageStyleName}">		
-						<div class="rnr-c rnr-cv rnr-c-grid">
-		<div class="rnr-brickcontents style1 rnr-b-report">		
-			<table class="rnr-report" cellspacing=0 cellpadding=0 border=0>
-			
-			
-			{BEGIN grid_row}
+		<div class="rnr-cw-grid rnr-s-grid asbuttons {$pageStyleName}">
+		{BEGIN grid_block}
+<TABLE class="rnr-c rnr-b-report report" CELLPADDING=0>
+<thead>
+<tr class="rnr-toprow table-header style1">
 
-			{BEGIN Id_newgroup}
-								<tr class="group-headers">
-					<td class="blackshade">{$label inventorymaster_Report Id}</td>
-					<td class="blackshade">{$label inventorymaster_Report ItemID}</td>
-										<td class="blackshade">{$label inventorymaster_Report Brand}</td>
-					<td class="blackshade">{$label inventorymaster_Report Description}</td>
-					<td class="blackshade">{$label inventorymaster_Report Supplier}</td>
-				</tr>
-				<tr class="group-spliter-1" >
-																				<td colspan=5 class=header_1><font >{$Id_grval}</font></td>
-										</tr>
-			{END Id_newgroup}
-			{BEGIN ItemID_newgroup}
-								<tr class="group-spliter-2" {$rowattrs}>
-													<td class=" group_1" >&nbsp;</td>
-													
-							<td colspan=4 class=header_2>
-								<font>
-									{$ItemID_grval} 
+<th>{$label inventorymaster_Report Id}</th>
+<th>{$label inventorymaster_Report ItemID}</th>
+<th>{$label inventorymaster_Report Brand}</th>
+<th>{$label inventorymaster_Report Description}</th>
+<th>{$label inventorymaster_Report Supplier}</th>
+<th class="rnr-edge"></th>
+</tr>
+</thead>
+<tbody>
+{BEGIN grid_row}
+<!-------------------------------------  data ----------------------------------------->
+{BEGIN row_data}
+<tr class="rnr-row style1" {$rowattrs}>
+	
+	<!-------------------------------------  begin detail links for row ----------------------------------------->
+		<!-------------------------------------  end detail links for row ----------------------------------------->
 
-								</font>
-							</td>
-				</tr>
-			{END ItemID_newgroup}
-						<!-------------------------------------  data ----------------------------------------->
-			{BEGIN row_data}
-				<tr >
-										<td class=" group_1" >&nbsp;</td>
-										<td class=" group_2" >&nbsp;</td>
-									<td class=data>{$Brand_value}</td>
-					<td class=data>{$Description_value}</td>
-					<td class=data>{$Supplier_value}</td>
-				</tr>
-			{END row_data}
-			<!-------------------------------------  group summary ----------------------------------------->
-						{BEGIN ItemID_endgroup}
-				<tr class="summaryrow"  style="display:none; height:0px" >
-					<td class=group_1 style="border-top: none;"></td>
-										<td  class="group_2" colspan=4 >
-				Summary for {$label inventorymaster_Report ItemID} {$ItemID_grval}
-					- <span class="summary-2" data-type="summary" data-value="{$groupItemID_total_cnt}">{$groupItemID_total_cnt}</span> records total</td>
-				</tr>
-												<!--  Min -->
-				<tr class="grouptotalsrow"  style="display:none; height:0px" >
-										<td class=group_1 >&nbsp;</td>
-										<td class=group_2>Min</td>
-										<td class=group_2><span class="summary-2" data-type="min" data-value="{$groupItemID_totalBrand_min}" data-field="Brand">{$groupItemID_totalBrand_min}</span></td>
-										<td class=group_2>&nbsp;</td>
-										<td class=group_2>&nbsp;</td>
-				</tr>	
-						{END ItemID_endgroup}
-						{BEGIN Id_endgroup}
-				<tr class="summaryrow"  style="display:none; height:0px" >
-										<td  class="group_1" colspan=5 >
-				Summary for {$label inventorymaster_Report Id} {$Id_grval}
-					- <span class="summary-1" data-type="summary" data-value="{$groupId_total_cnt}">{$groupId_total_cnt}</span> records total</td>
-				</tr>
-												<!--  Min -->
-				<tr class="grouptotalsrow"  style="display:none; height:0px" >
-										<td class=group_1>Min</td>
-										<td class=group_1>&nbsp;</td>
-										<td class=group_1><span class="summary-1" data-type="min" data-value="{$groupId_totalBrand_min}" data-field="Brand">{$groupId_totalBrand_min}</span></td>
-										<td class=group_1>&nbsp;</td>
-										<td class=group_1>&nbsp;</td>
-				</tr>	
-						{END Id_endgroup}
-			{END grid_row}
-
-							<!--------------------------------------page summary-------------------------------------------->
-				<tr class="summaryrow summary-page">
-					
-										<td class=pagesummary colspan=5>Page summary 
-					 <span class="page-summary" data-type="summary">{$page_total_cnt}</span> - records total</td>
-				</tr>
-																<!--  Min -->
-				<tr class="summary-page">
-											<td class=pagesummary>Min</td>
-											<td class=pagesummary>&nbsp;</td>
-											<td class=pagesummary><span class="page-summary" data-type="min" data-field="Brand">{$page_totalBrand_min}</span></td>
-											<td class=pagesummary>&nbsp;</td>
-											<td class=pagesummary>&nbsp;</td>
-				</tr>	
-												<!--------------------------------------global summary-------------------------------------------->
-				{BEGIN global_summary}
-				<tr class="summaryrow summary-global">
-					
-										<td class=globalsummary colspan=5>Global summary 
-					 {$global_total_cnt} - records total</td>
-				</tr>
-																<!--  Min -->
-				<tr class="summary-global">
-											<td class=globalsummary>Min</td>
-											<td class=globalsummary>&nbsp;</td>
-											<td class=globalsummary>{$global_totalBrand_min}</td>
-											<td class=globalsummary>&nbsp;</td>
-											<td class=globalsummary>&nbsp;</td>
-				</tr>	
-								{END global_summary}
-			</table>
-		</div>
-	</div>
-
-	</div>
+	<td {$recordattrs}>{$Id_value}</td>
+	<td {$recordattrs}>{$ItemID_value}</td>
+	<td {$recordattrs}>{$Brand_value}</td>
+	<td {$recordattrs}>{$Description_value}</td>
+	<td {$recordattrs}>{$Supplier_value}</td>
+	<td class="rnr-edge" {$recordattrs}></td>
+</tr>
+{END row_data}
+{END grid_row}
+</tbody>
+</table>
+{END grid_block}
+	</div>		
 </div>
 
 
@@ -276,7 +137,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

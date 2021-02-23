@@ -2,6 +2,8 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,211 +14,172 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-chart" {$bodyattrs}>
 	{BEGIN body}
-		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+<style>
+{$containerCss}
+</style>
+<div class="sidebar bs-fixed clearfix mCustomScrollbar" data-mcs-theme="minimal-dark" {$blockattr_left}>
+	<div class="sidebar-contents mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside">
+		
 
+{BEGIN container_logo}
+<div {$logo_chiddenattr} data-pageid="{$pageid}" data-container="logo" class=" bs-sidebarlogo   "> 
 
-
-{BEGIN container_toplinks}
-<div class="rnr-c rnr-ch rnr-c-toplinks">
-<div class="rnr-hfiller"></div>
-{BEGIN security_block}
-<div  class="style1 rnr-br rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
-	{BEGIN loggedas_message} 
-	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
-	{END loggedas_message}
-	{BEGIN guestloginbutton}
-	<span>
-		{BEGIN embeded_log_fields}
-		<span>
-		<input type="text" name="username" {$username_attrs}>&nbsp;
-		<input type="password" name="password" {$password_attrs}>
-		</span>
-		{END embeded_log_fields}
-		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
-		{BEGIN embeded_log_ctrls}
-		<span>
-		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
-			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
-			</span>
-		{END embeded_log_ctrls}
-	</span>
-	{END guestloginbutton}
-	{BEGIN logoutbutton}
-	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
-	{END logoutbutton}
-	{BEGIN adminarea_link}
-	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
-	{END adminarea_link}
-
-	{BEGIN changepwd_link}
-	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
-	{END changepwd_link}
-</div></div>
-{END security_block}
+{BEGIN logo_block}
+<a href="{$home_link}" {$logo_hiddenattr} data-pageid="{$pageid}" data-brick="logo" class="navbar-brand" >{$logo}</a>
+{END logo_block}
 
 
 
 </div>
-{END container_toplinks}
+{END container_logo}
 
 
 
-{BEGIN container_hmenu}
-<div class="rnr-c rnr-ch rnr-c-hmenu">
-<div class="rnr-hfiller"></div>
-{BEGIN searchform_block}
-<div  class="style1 rnr-br rnr-b-search {$brickclass_search}">	<span>
-		{BEGIN searchform_text}
-		<input type="text" {$searchfor_attrs} size="25">
-		{END searchform_text}
-		{BEGIN searchform_search}
-			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
-		{END searchform_search}
-		{BEGIN searchform_showall}	
-		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
-		{END searchform_showall}
-	</span>
-</div>
-{END searchform_block}
+{BEGIN container_hdr}
+<div {$hdr_chiddenattr} data-pageid="{$pageid}" data-container="hdr" class=" navbar-default clearfix   "> 
 
+{BEGIN collapse_block}
+<button {$bsnavbarcollapse_hiddenattr} data-pageid="{$pageid}" data-brick="bsnavbarcollapse" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target=".bs-navcontrolled">	
+	<span class="sr-only">Toggle navigation</span>	
+	<span class="icon-bar"></span>					
+</button>												
 
-{BEGIN searchformbuttons_block}
-<div  class="style1 rnr-br rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
-<span>
-	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
-	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
-</span>
-{END searchPanelTopButtons}
-</div>
-{END searchformbuttons_block}
-
-
-{BEGIN searchsaving_block}
-<div  class="style1 rnr-br rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
-{END searchsaving_block}
-
-
+{END collapse_block}
 
 
 
 </div>
-{END container_hmenu}
+{END container_hdr}
 
-
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-
-{BEGIN container_left}
-<div class="rnr-c rnr-cv rnr-c-left">
-
+{BEGIN container_sidemenu}<div {$sidemenu_chiddenattr} data-pageid="{$pageid}" data-container="sidemenu" class="bs-navform navbar-collapse sidebar-menu bs-hidden-xs bs-navcontrolled" aria-expanded="false" >												   
 {BEGIN menu_block}
 {$menu main}
+
 {END menu_block}
 
+												</div>						{END container_sidemenu}
+
+{BEGIN container_left}
+<div {$left_chiddenattr} data-pageid="{$pageid}" data-container="left" class=" sidebar-container   "> 
 
 {BEGIN searchPanel}
-<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
-<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
-	
+<div {$searchpanel_hiddenattr} data-pageid="{$pageid}" data-brick="searchpanel" class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} >
 	<!-- Search panel content -->
-	<div class="srchCritTop" style="display: none;">
-		Criteria:&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
-		&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
-	</div>
 	
-	<div class="addOption">
-		<span class="rnr-buttons-group">
-			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
-		</span>
-		
-		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
-	</div>
-	
+	<div class="panel-heading">
+		<div class="btn-group" id="addSearchFieldButton{$id}">
+			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			{mlang_message SEARCH_IN}
+			<span class="caret"></span>
+			</button>
+		</div>
 
-	<table class="controlsBlock {$controls_block_class}">
-				{BEGIN searchCtrlBlock}
-		<tr class="srchPanelRow" {$filterRow_attrs}>
-			<td class="srchPanelCell">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-				<div class="rnr-searchtype">{$searchtype}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
-			</td>	
-		</tr>
+		
+		<div class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-left">
+				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>{mlang_message SEARCH_SHOW_OPTIONS_BUTTON}</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ALL_CONDITIONS}</label></a></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ANY_CONDITIONS}</label></a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>{mlang_message HIDE}</a></li>
+			</ul>
+		</div>
+	
+		
+		</div>
+	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
+
+
+		
+		{BEGIN searchCtrlBlock}
+		<div class="srchPanelRow form-group" {$filterRow_attrs}>
+			<label>{$fLabel}</label>	{$delCtrlButt}
+				<span class="rnr-searchtype">{$searchtype}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
+		</div>
 		{END searchCtrlBlock}
 		 
 		{BEGIN searchCtrlBlock_Fleet}
-		<tr class="srchPanelRow {$filterRow_class_Fleet}" {$filterRow_attrs_Fleet}>
-						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$label maintenenace_Chart Fleet}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-								<div class="rnr-searchtype">{$searchtype_Fleet}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol_Fleet}</div>
-								<div class="rnr-searchcontrol">{$searchcontrol1_Fleet}</div>
-			</td>	
-		</tr>
+		
+		
+		<div class="form-group srchPanelRow {$filterRow_class_Fleet}" {$filterRow_attrs_Fleet}>
+			<label>
+			
+			{$label maintenenace_Chart Fleet}</label>
+							{$delCtrlButt}
+
+								<span class="rnr-searchtype">{$searchtype_Fleet}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol_Fleet}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Fleet}</span>
+		</div>
 		{END searchCtrlBlock_Fleet}
 		 
 		{BEGIN searchCtrlBlock_Vehicle}
-		<tr class="srchPanelRow {$filterRow_class_Vehicle}" {$filterRow_attrs_Vehicle}>
-						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$label maintenenace_Chart Vehicle}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-								<div class="rnr-searchtype">{$searchtype_Vehicle}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol_Vehicle}</div>
-								<div class="rnr-searchcontrol">{$searchcontrol1_Vehicle}</div>
-			</td>	
-		</tr>
+		
+		
+		<div class="form-group srchPanelRow {$filterRow_class_Vehicle}" {$filterRow_attrs_Vehicle}>
+			<label>
+			
+			{$label maintenenace_Chart Vehicle}</label>
+							{$delCtrlButt}
+
+								<span class="rnr-searchtype">{$searchtype_Vehicle}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol_Vehicle}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Vehicle}</span>
+		</div>
 		{END searchCtrlBlock_Vehicle}
 		 
 		{BEGIN searchCtrlBlock_Date}
-		<tr class="srchPanelRow {$filterRow_class_Date}" {$filterRow_attrs_Date}>
-						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$label maintenenace_Chart Date}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-								<div class="rnr-searchtype">{$searchtype_Date}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol_Date}</div>
-								<div class="rnr-searchcontrol">{$searchcontrol1_Date}</div>
-			</td>	
-		</tr>
+		
+		
+		<div class="form-group srchPanelRow {$filterRow_class_Date}" {$filterRow_attrs_Date}>
+			<label>
+			
+			{$label maintenenace_Chart Date}</label>
+							{$delCtrlButt}
+
+								<span class="rnr-searchtype">{$searchtype_Date}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol_Date}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Date}</span>
+		</div>
 		{END searchCtrlBlock_Date}
 		 
 		{BEGIN searchCtrlBlock_MaintType}
-		<tr class="srchPanelRow {$filterRow_class_MaintType}" {$filterRow_attrs_MaintType}>
-						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$label maintenenace_Chart MaintType}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-								<div class="rnr-searchtype">{$searchtype_MaintType}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol_MaintType}</div>
-								<div class="rnr-searchcontrol">{$searchcontrol1_MaintType}</div>
-			</td>	
-		</tr>
+		
+		
+		<div class="form-group srchPanelRow {$filterRow_class_MaintType}" {$filterRow_attrs_MaintType}>
+			<label>
+			
+			{$label maintenenace_Chart MaintType}</label>
+							{$delCtrlButt}
+
+								<span class="rnr-searchtype">{$searchtype_MaintType}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol_MaintType}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_MaintType}</span>
+		</div>
 		{END searchCtrlBlock_MaintType}
-	</table>	
 
 
+	</div>
 	
-	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
-		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	<div class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+		<button class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>{mlang_message SHOW_ALL}</button>
 	</div>
 </div>
 
-</div></div>{END searchPanel}
+
+{END searchPanel}
+
 
 
 
@@ -224,33 +187,234 @@
 {END container_left}
 
 
-			</div>
-			<div class="rnr-center {$blockclass_center}">
+	</div>
+</div>	
+<div class="bs-wrapper">
+	<div class="bs-fixedheader" id="fixedheader{$id}">
+		{BEGIN container_menu}<nav {$menu_chiddenattr} data-pageid="{$pageid}" data-container="menu" class="navbar navbar-default bs-fullwidth-navbar">					
+
+
+
+{BEGIN container_bc}
+<div {$bc_chiddenattr} data-pageid="{$pageid}" data-container="bc" class=" navbar-form navbar-left   "> 
+
+{BEGIN breadcrumbs}
+<ol class="breadcrumb">
+<li ><a href="{$home_link}"><span class="glyphicon glyphicon-home"></span></a>{$crumb_dropdown}</li>
+{BEGIN crumb}
+  <li class="{$crumb_item_class}">
+{BEGIN crumb_title_link}
+	<a {$crumb_attrs}>{$crumb_title}</a>
+{END crumb_title_link}
+{BEGIN crumb_title_span}
+	<span {$crumb_attrs}>{$crumb_title}</span>
+{END crumb_title_span}	
+	{$crumb_dropdown}
+  </li>
+{END crumb}
+</ol>
+{END breadcrumbs}
+
+
+
+</div>
+{END container_bc}
+
+
+
+
+
+
+{BEGIN container_menu_1}<div {$menu_1_chiddenattr} data-pageid="{$pageid}" data-container="menu_1" class="bs-navform navbar-collapse bs-hidden-xs bs-navcontrolled" aria-expanded="false" >												   
+
+
+
+{BEGIN container_more}
+<div {$more_chiddenattr} data-pageid="{$pageid}" data-container="more" class=" navbar-right navbar-form   "> 
+
+{BEGIN more_list}
+<div {$morebutton_hiddenattr} data-pageid="{$pageid}" data-brick="morebutton" class="btn-group bs-navsection">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="glyphicon glyphicon-cog"></span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+		
 				
+				
+		
+				{BEGIN asearch_link}
+		<li><a href="maintenenace_Chart_search.php" {$advsearchlink_attrs}>{mlang_message ADVANCED_SEARCH}</a></li>
+		{END asearch_link}
 
-{BEGIN container_recordcontrols}
-<div class="rnr-c rnr-ch rnr-c-recordcontrols">
-
-{BEGIN asearch_link}
-<div  class="style1 rnr-bl rnr-b-toplinks_advsearch {$brickclass_toplinks_advsearch}">	<a href="maintenenace_Chart_search.php" class="rnr-button" {$advsearchlink_attrs}>Advanced search</a>
+				{BEGIN searchPanelTopButtons}
+		<li><a href=# id="showOptPanel{$id}">{mlang_message SHOW_SEARCH_PANEL}</a></li>
+		{END searchPanelTopButtons}	
+		
+				
+				
+				
+		
+		
+					<li role="separator" class="divider"></li>
+				{BEGIN AfrikaansLANGLINK}
+				<li><a href="#" data-lang="Afrikaans" class="rnr-langlink">
+					{BEGIN AfrikaansLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END AfrikaansLANGLINK_ACTIVE}
+					Afrikaans</a></li>
+				{END AfrikaansLANGLINK}
+				{BEGIN ArabicLANGLINK}
+				<li><a href="#" data-lang="Arabic" class="rnr-langlink">
+					{BEGIN ArabicLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ArabicLANGLINK_ACTIVE}
+					العربية</a></li>
+				{END ArabicLANGLINK}
+				{BEGIN ChineseLANGLINK}
+				<li><a href="#" data-lang="Chinese" class="rnr-langlink">
+					{BEGIN ChineseLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ChineseLANGLINK_ACTIVE}
+					中文(简体)</a></li>
+				{END ChineseLANGLINK}
+				{BEGIN EnglishLANGLINK}
+				<li><a href="#" data-lang="English" class="rnr-langlink">
+					{BEGIN EnglishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END EnglishLANGLINK_ACTIVE}
+					English</a></li>
+				{END EnglishLANGLINK}
+				{BEGIN FrenchLANGLINK}
+				<li><a href="#" data-lang="French" class="rnr-langlink">
+					{BEGIN FrenchLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END FrenchLANGLINK_ACTIVE}
+					Français</a></li>
+				{END FrenchLANGLINK}
+				{BEGIN GermanLANGLINK}
+				<li><a href="#" data-lang="German" class="rnr-langlink">
+					{BEGIN GermanLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END GermanLANGLINK_ACTIVE}
+					Deutsch</a></li>
+				{END GermanLANGLINK}
+				{BEGIN ItalianLANGLINK}
+				<li><a href="#" data-lang="Italian" class="rnr-langlink">
+					{BEGIN ItalianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ItalianLANGLINK_ACTIVE}
+					Italiano</a></li>
+				{END ItalianLANGLINK}
+				{BEGIN RussianLANGLINK}
+				<li><a href="#" data-lang="Russian" class="rnr-langlink">
+					{BEGIN RussianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END RussianLANGLINK_ACTIVE}
+					Русский</a></li>
+				{END RussianLANGLINK}
+				{BEGIN SpanishLANGLINK}
+				<li><a href="#" data-lang="Spanish" class="rnr-langlink">
+					{BEGIN SpanishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END SpanishLANGLINK_ACTIVE}
+					Español</a></li>
+				{END SpanishLANGLINK}
+		
+	</ul>  
 </div>
-{END asearch_link}
+
+{END more_list}
+
+
+{BEGIN security_block}
+<span {$loggedas_hiddenattr} data-pageid="{$pageid}" data-brick="loggedas" id="login_block{$id}" class="bs-navsection">
+	{BEGIN guestloginbutton}
+		<span class="form-inline">
+		{BEGIN embeded_log_fields}
+			<span>
+				<input type="text" name="username" class="form-control" {$username_attrs}>&nbsp;
+				<input type="password" name="password" class="form-control" {$password_attrs}>
+			</span>
+		{END embeded_log_fields}
+			<button class="btn btn-info" {$guestloginlink_attrs}>{mlang_message LOGIN}</button>
+		{BEGIN embeded_log_ctrls}
+			{END embeded_log_ctrls}
+		</span>
+	{END guestloginbutton}
+	{BEGIN loggedas_message} 
+		<span class="dropdown">
+			<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-user"></span>	{$username}</button>
+			<ul class="dropdown-menu">
+		{BEGIN logoutbutton}
+				<li><a href="#" {$logoutlink_attrs}>{mlang_message LOG_OUT}</a></li>
+		{END logoutbutton}
+		
+		{BEGIN adminarea_link}
+				<li><a href="admin_rights_list.php" {$adminarealink_attrs}>{mlang_message AA_ADMINAREA}</a></li>
+		{END adminarea_link}
+
+
+	{BEGIN changepwd_link}
+				<li><a href="#" {$changepwdlink_attrs}>{mlang_message CHANGE_PASSWORD}</a></li>
+	{END changepwd_link}
+			</ul>
+		</span>
+	{END loggedas_message}
+</span>
+{END security_block}
 
 
 
-
-<div class="rnr-hfiller"></div>
 </div>
-{END container_recordcontrols}
+{END container_more}
 
 
+
+
+
+
+
+
+{BEGIN container_more_1}
+<div {$more_1_chiddenattr} data-pageid="{$pageid}" data-container="more_1" class=" navbar-right navbar-form   "> 
+
+{BEGIN searchform_block}
+<span {$search_hiddenattr} data-pageid="{$pageid}" data-brick="search" class="form-group">
+
+ <div  class="input-group">
+{BEGIN searchform_text}
+	<input type="search" class="form-control" {$searchfor_attrs} size="25">
+{END searchform_text}
+	<span class="input-group-btn">
+	{BEGIN searchform_showall}
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="{mlang_message SHOW_ALL}">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	{END searchform_showall}
+	{BEGIN searchform_search}
+	<button {$searchbutton_attrs} class="btn btn-primary" >
+		<span class="glyphicon glyphicon-search"></span>
+	</button>
+	{END searchform_search}
+	</span>
+</div>
+		
+</span>
+{END searchform_block}
+
+
+
+</div>
+{END container_more_1}
+
+
+
+
+												</div>						{END container_menu_1}
+
+
+									</nav>{END container_menu}
+	</div>	
+	<div class="container-fluid bs-underheader bs-fixedsidebarmain" id="underheader{$id}">
+		{$header}
+		<div class="bs-sidebar-screenbound">
+			
+		</div>
+		<div></div>
+		<div class="bs-sidebar-screenbound bs-minwidth">
+			
 
 {BEGIN container_message}
-<div class="rnr-c rnr-ch rnr-c-message">
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="    "> 
 
 {BEGIN message_block}
-<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
 {END message_block}
+
 
 
 </div>
@@ -259,31 +423,27 @@
 
 
 {BEGIN container_form}
-<div class="rnr-c rnr-ch rnr-c-form">
+<div {$form_chiddenattr} data-pageid="{$pageid}" data-container="form" class="bs-grid    "> 
 
 
-<div  class="style1 rnr-bl rnr-b-chart {$brickclass_chart}">       {BEGIN chart_block}
+       {BEGIN chart_block}
        <div id="chart_block{$id}">
 {$maintenenace_Chart_chart 700 530}
         </div>
-        {END chart_block}</div>
+        {END chart_block}
 
 
-<div class="rnr-hfiller"></div>
+
+
 </div>
 {END container_form}
 
 
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
 		</div>
 	</div>
-		
+</div>
+	
+
 		{$footer}
 	{END body}
 	</body>

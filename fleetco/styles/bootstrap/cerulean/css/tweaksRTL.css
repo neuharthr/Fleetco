@@ -1,0 +1,26 @@
+@media (min-width:768px) {
+	.navbar.navbar-default .breadcrumb > li > a,
+	.navbar.navbar-default .breadcrumb>li+li:before {
+		color: white;
+	}
+
+	.navbar.navbar-default .btn-primary {
+		border-color: hsla(202,79%,45%,1);
+	}	
+
+}
+
+.navbar.navbar-default .navbar-brand {
+	color: white;
+}
+
+@media (max-width: 767px) {
+	.navbar .navbar-form .dropdown-menu a
+	{
+		color: #333333;
+	}
+	
+	.bs-sidebarlogo a {
+		color: white;
+	}
+}

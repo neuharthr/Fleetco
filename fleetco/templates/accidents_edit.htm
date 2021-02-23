@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,203 +13,490 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-edit" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_all}
-<div class="rnr-c rnr-cv rnr-c-all">
+{BEGIN container_editpage}
+<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
 
 {BEGIN editheader}
-<div  class="rnr-brickcontents style2 rnr-b-editheader {$brickclass_editheader}"><span>	<h1>{$pagetitlelabel accidents edit}</h1>
-</span></div>{END editheader}
+	<h2 {$editheader_hiddenattr} data-pageid="{$pageid}" data-brick="editheader" >{$pagetitlelabel accidents edit}</h2>
 
+{END editheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN message_block}
-<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		<button class="btn btn-sm btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>{mlang_message VIEW}</button>
+{END view_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-editfields2 {$brickclass_editfields2}"><table class="fieldGrid fieldGrid2 edit">
 
-<tr>
-<td>
-	{BEGIN Date_fieldblock}
-<div data-fieldname="Date" class="rnr-field style1 {$fielddispclass_Date}">
-  <span class="rnr-label">{BEGIN Date_label}{$label accidents Date}{END Date_label}</span>
-  <span class="rnr-control style3">{$Date_editcontrol}</span>
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$editfields_hiddenattr} data-pageid="{$pageid}" data-brick="editfields" class="form-horizontal" role="form">
+
+
+
+			{BEGIN Date_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Date}" data-fieldname="Date" data-signal-error-for="Date{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Date}">
+		{BEGIN Date_label}{$label accidents Date}{END Date_label}
+	</label>
+	<div class="col-md-6" >
+		{$Date_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Date">
+		<div class="text-muted" >
+		{$tooltip accidents Date}
+		</div>
+	</div>
+</div>
 </div>
 {END Date_fieldblock}
-	{BEGIN Vehicle_fieldblock}
-<div data-fieldname="Vehicle" class="rnr-field style1 {$fielddispclass_Vehicle}">
-  <span class="rnr-label">{BEGIN Vehicle_label}{$label accidents Vehicle}{END Vehicle_label}</span>
-  <span class="rnr-control style3">{$Vehicle_editcontrol}</span>
+
+			{BEGIN Vehicle_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Vehicle}" data-fieldname="Vehicle" data-signal-error-for="Vehicle{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Vehicle}">
+		{BEGIN Vehicle_label}{$label accidents Vehicle}{END Vehicle_label}
+	</label>
+	<div class="col-md-6" >
+		{$Vehicle_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Vehicle">
+		<div class="text-muted" >
+		{$tooltip accidents Vehicle}
+		</div>
+	</div>
+</div>
 </div>
 {END Vehicle_fieldblock}
-	{BEGIN Fleet_fieldblock}
-<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
-  <span class="rnr-label">{BEGIN Fleet_label}{$label accidents Fleet}{END Fleet_label}</span>
-  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+
+			{BEGIN Fleet_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Fleet}" data-fieldname="Fleet" data-signal-error-for="Fleet{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Fleet}">
+		{BEGIN Fleet_label}{$label accidents Fleet}{END Fleet_label}
+	</label>
+	<div class="col-md-6" >
+		{$Fleet_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Fleet">
+		<div class="text-muted" >
+		{$tooltip accidents Fleet}
+		</div>
+	</div>
+</div>
 </div>
 {END Fleet_fieldblock}
-	{BEGIN Type_fieldblock}
-<div data-fieldname="Type" class="rnr-field style1 {$fielddispclass_Type}">
-  <span class="rnr-label">{BEGIN Type_label}{$label accidents Type}{END Type_label}</span>
-  <span class="rnr-control style3">{$Type_editcontrol}</span>
+
+			{BEGIN Type_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Type}" data-fieldname="Type" data-signal-error-for="Type{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Type}">
+		{BEGIN Type_label}{$label accidents Type}{END Type_label}
+	</label>
+	<div class="col-md-6" >
+		{$Type_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Type">
+		<div class="text-muted" >
+		{$tooltip accidents Type}
+		</div>
+	</div>
+</div>
 </div>
 {END Type_fieldblock}
-	{BEGIN Time_fieldblock}
-<div data-fieldname="Time" class="rnr-field style1 {$fielddispclass_Time}">
-  <span class="rnr-label">{BEGIN Time_label}{$label accidents Time}{END Time_label}</span>
-  <span class="rnr-control style3">{$Time_editcontrol}</span>
+
+			{BEGIN Time_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Time}" data-fieldname="Time" data-signal-error-for="Time{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Time}">
+		{BEGIN Time_label}{$label accidents Time}{END Time_label}
+	</label>
+	<div class="col-md-6" >
+		{$Time_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Time">
+		<div class="text-muted" >
+		{$tooltip accidents Time}
+		</div>
+	</div>
+</div>
 </div>
 {END Time_fieldblock}
-	{BEGIN Location_fieldblock}
-<div data-fieldname="Location" class="rnr-field style1 {$fielddispclass_Location}">
-  <span class="rnr-label">{BEGIN Location_label}{$label accidents Location}{END Location_label}</span>
-  <span class="rnr-control style3">{$Location_editcontrol}</span>
+
+			{BEGIN Location_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Location}" data-fieldname="Location" data-signal-error-for="Location{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Location}">
+		{BEGIN Location_label}{$label accidents Location}{END Location_label}
+	</label>
+	<div class="col-md-6" >
+		{$Location_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Location">
+		<div class="text-muted" >
+		{$tooltip accidents Location}
+		</div>
+	</div>
+</div>
 </div>
 {END Location_fieldblock}
-	{BEGIN Driver_fieldblock}
-<div data-fieldname="Driver" class="rnr-field style1 {$fielddispclass_Driver}">
-  <span class="rnr-label">{BEGIN Driver_label}{$label accidents Driver}{END Driver_label}</span>
-  <span class="rnr-control style3">{$Driver_editcontrol}</span>
+
+			{BEGIN Driver_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Driver}" data-fieldname="Driver" data-signal-error-for="Driver{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Driver}">
+		{BEGIN Driver_label}{$label accidents Driver}{END Driver_label}
+	</label>
+	<div class="col-md-6" >
+		{$Driver_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Driver">
+		<div class="text-muted" >
+		{$tooltip accidents Driver}
+		</div>
+	</div>
+</div>
 </div>
 {END Driver_fieldblock}
-	{BEGIN Deaths_fieldblock}
-<div data-fieldname="Deaths" class="rnr-field style1 {$fielddispclass_Deaths}">
-  <span class="rnr-label">{BEGIN Deaths_label}{$label accidents Deaths}{END Deaths_label}</span>
-  <span class="rnr-control style3">{$Deaths_editcontrol}</span>
+
+			{BEGIN Deaths_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Deaths}" data-fieldname="Deaths" data-signal-error-for="Deaths{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Deaths}">
+		{BEGIN Deaths_label}{$label accidents Deaths}{END Deaths_label}
+	</label>
+	<div class="col-md-6" >
+		{$Deaths_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Deaths">
+		<div class="text-muted" >
+		{$tooltip accidents Deaths}
+		</div>
+	</div>
+</div>
 </div>
 {END Deaths_fieldblock}
-</td>
-<td>
-	{BEGIN Injured_fieldblock}
-<div data-fieldname="Injured" class="rnr-field style1 {$fielddispclass_Injured}">
-  <span class="rnr-label">{BEGIN Injured_label}{$label accidents Injured}{END Injured_label}</span>
-  <span class="rnr-control style3">{$Injured_editcontrol}</span>
+
+			{BEGIN Injured_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Injured}" data-fieldname="Injured" data-signal-error-for="Injured{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Injured}">
+		{BEGIN Injured_label}{$label accidents Injured}{END Injured_label}
+	</label>
+	<div class="col-md-6" >
+		{$Injured_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Injured">
+		<div class="text-muted" >
+		{$tooltip accidents Injured}
+		</div>
+	</div>
+</div>
 </div>
 {END Injured_fieldblock}
-	{BEGIN StatusInjured_fieldblock}
-<div data-fieldname="StatusInjured" class="rnr-field style1 {$fielddispclass_StatusInjured}">
-  <span class="rnr-label">{BEGIN StatusInjured_label}{$label accidents StatusInjured}{END StatusInjured_label}</span>
-  <span class="rnr-control style3">{$StatusInjured_editcontrol}</span>
+
+			{BEGIN StatusInjured_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_StatusInjured}" data-fieldname="StatusInjured" data-signal-error-for="StatusInjured{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_StatusInjured}">
+		{BEGIN StatusInjured_label}{$label accidents StatusInjured}{END StatusInjured_label}
+	</label>
+	<div class="col-md-6" >
+		{$StatusInjured_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="StatusInjured">
+		<div class="text-muted" >
+		{$tooltip accidents StatusInjured}
+		</div>
+	</div>
+</div>
 </div>
 {END StatusInjured_fieldblock}
-	{BEGIN Details_fieldblock}
-<div data-fieldname="Details" class="rnr-field style1 {$fielddispclass_Details}">
-  <span class="rnr-label">{BEGIN Details_label}{$label accidents Details}{END Details_label}</span>
-  <span class="rnr-control style3">{$Details_editcontrol}</span>
+
+			{BEGIN Details_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Details}" data-fieldname="Details" data-signal-error-for="Details{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Details}">
+		{BEGIN Details_label}{$label accidents Details}{END Details_label}
+	</label>
+	<div class="col-md-6" >
+		{$Details_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Details">
+		<div class="text-muted" >
+		{$tooltip accidents Details}
+		</div>
+	</div>
+</div>
 </div>
 {END Details_fieldblock}
-	{BEGIN DamageToVehicle_fieldblock}
-<div data-fieldname="DamageToVehicle" class="rnr-field style1 {$fielddispclass_DamageToVehicle}">
-  <span class="rnr-label">{BEGIN DamageToVehicle_label}{$label accidents DamageToVehicle}{END DamageToVehicle_label}</span>
-  <span class="rnr-control style3">{$DamageToVehicle_editcontrol}</span>
+
+			{BEGIN DamageToVehicle_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_DamageToVehicle}" data-fieldname="DamageToVehicle" data-signal-error-for="DamageToVehicle{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_DamageToVehicle}">
+		{BEGIN DamageToVehicle_label}{$label accidents DamageToVehicle}{END DamageToVehicle_label}
+	</label>
+	<div class="col-md-6" >
+		{$DamageToVehicle_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="DamageToVehicle">
+		<div class="text-muted" >
+		{$tooltip accidents DamageToVehicle}
+		</div>
+	</div>
+</div>
 </div>
 {END DamageToVehicle_fieldblock}
-	{BEGIN EnteredBy_fieldblock}
-<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
-  <span class="rnr-label">{BEGIN EnteredBy_label}{$label accidents EnteredBy}{END EnteredBy_label}</span>
-  <span class="rnr-control style3">{$EnteredBy_editcontrol}</span>
+
+			{BEGIN EnteredBy_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_EnteredBy}" data-fieldname="EnteredBy" data-signal-error-for="EnteredBy{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_EnteredBy}">
+		{BEGIN EnteredBy_label}{$label accidents EnteredBy}{END EnteredBy_label}
+	</label>
+	<div class="col-md-6" >
+		{$EnteredBy_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="EnteredBy">
+		<div class="text-muted" >
+		{$tooltip accidents EnteredBy}
+		</div>
+	</div>
+</div>
 </div>
 {END EnteredBy_fieldblock}
-	{BEGIN 3rdPartyDamages_fieldblock}
-<div data-fieldname="3rdPartyDamages" class="rnr-field style1 {$fielddispclass_3rdPartyDamages}">
-  <span class="rnr-label">{BEGIN 3rdPartyDamages_label}{$label accidents 3rdPartyDamages}{END 3rdPartyDamages_label}</span>
-  <span class="rnr-control style3">{$3rdPartyDamages_editcontrol}</span>
+
+			{BEGIN 3rdPartyDamages_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_3rdPartyDamages}" data-fieldname="3rdPartyDamages" data-signal-error-for="3rdPartyDamages{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_3rdPartyDamages}">
+		{BEGIN 3rdPartyDamages_label}{$label accidents 3rdPartyDamages}{END 3rdPartyDamages_label}
+	</label>
+	<div class="col-md-6" >
+		{$3rdPartyDamages_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="3rdPartyDamages">
+		<div class="text-muted" >
+		{$tooltip accidents 3rdPartyDamages}
+		</div>
+	</div>
+</div>
 </div>
 {END 3rdPartyDamages_fieldblock}
-	{BEGIN Images_fieldblock}
-<div data-fieldname="Images" class="rnr-field style1 {$fielddispclass_Images}">
-  <span class="rnr-label">{BEGIN Images_label}{$label accidents Images}{END Images_label}</span>
-  <span class="rnr-control style3">{$Images_editcontrol}</span>
+
+			{BEGIN Images_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Images}" data-fieldname="Images" data-signal-error-for="Images{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Images}">
+		{BEGIN Images_label}{$label accidents Images}{END Images_label}
+	</label>
+	<div class="col-md-6" >
+		{$Images_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Images">
+		<div class="text-muted" >
+		{$tooltip accidents Images}
+		</div>
+	</div>
+</div>
 </div>
 {END Images_fieldblock}
-	{BEGIN SysDate_fieldblock}
-<div data-fieldname="SysDate" class="rnr-field style1 {$fielddispclass_SysDate}">
-  <span class="rnr-label">{BEGIN SysDate_label}{$label accidents SysDate}{END SysDate_label}</span>
-  <span class="rnr-control style3">{$SysDate_editcontrol}</span>
+
+			{BEGIN SysDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_SysDate}" data-fieldname="SysDate" data-signal-error-for="SysDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_SysDate}">
+		{BEGIN SysDate_label}{$label accidents SysDate}{END SysDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$SysDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="SysDate">
+		<div class="text-muted" >
+		{$tooltip accidents SysDate}
+		</div>
+	</div>
+</div>
 </div>
 {END SysDate_fieldblock}
-</td>
-</tr>
-</table></div>
 
 
-{BEGIN editbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-editbuttons {$brickclass_editbuttons}"><div class="rnr-buttons-right">
-	{BEGIN prev_button}
-	<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
-	{END prev_button}
-	{BEGIN next_button}
-	<a href="#" class="rnr-button  {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
-	{END next_button}
 </div>
-<div class="rnr-buttons-left">
-		{BEGIN save_button}
-	<a href="#" class="rnr-button main" {$savebutton_attrs}>Save</a>
-	{END save_button}
-	{BEGIN reset_button}
-	<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-	{END reset_button}
-	{BEGIN back_button}
-		<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-	{END back_button}
-	{BEGIN close_button}
-	<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
-	{END close_button}
-		{BEGIN view_page_button}
-	<a href="#" class="rnr-button" {$view_page_button_attrs}>View</a>
-	{END view_page_button}
-</div>
-</div>{END editbuttons}
+
+
 
 
 </div>
 {END container_fields}
 
-</div>
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN editbuttons}
+	{BEGIN save_button}
+	<button class="btn btn-primary" {$savebutton_attrs}>{mlang_message SAVE}</button>
+	{END save_button}
+	{BEGIN back_button}
+		<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+	{END back_button}
+	{BEGIN close_button}
+	<a href="#" class="btn btn-default" {$closebutton_attrs}>{mlang_message CANCEL}</a>
+	{END close_button}
+
+{END editbuttons}
 
 
 
 </div>
-{END container_all}
+{END container_leftbuttons}
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
-		</div>
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="  text-right col-md-3 "> 
+
+{BEGIN righteditbuttons}
+<div class="btn-group" role="group">
+
+	{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default  {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+			{BEGIN reset_button}
+				<li><a href="#" {$resetbutton_attrs}>{mlang_message RESET}</a></li>
+			{END reset_button}
+			{BEGIN view_page_button}
+				<li><a href="#" {$view_page_button_attrs}>{mlang_message VIEW}</a></li>
+			{END view_page_button}
+		</ul>
 	</div>
-		
+</div>
+{END righteditbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
 		{$footer}
 	{END body}
 	</body>

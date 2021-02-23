@@ -22,7 +22,7 @@ if(@$_SERVER["REQUEST_URI"])
 }
 
 //	isolate sessions for projects running on the same site
-@session_name(str_replace(" ", "", "s1472109772"));
+@session_name(str_replace(" ", "", "s1468434625"));
 
 // Setting the cache limiter to '' will turn off automatic sending of cache headers entirely
 @session_cache_limiter("");

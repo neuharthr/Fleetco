@@ -11,73 +11,148 @@ require_once(getabspath("classes/cipherer.php"));
 
 
 
-$layout = new TLayout("remind", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
+$layout = new TLayout("remind_bootstrap", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "_remind";
 $layout->blocks["top"] = array();
-$layout->containers["fields"] = array();
-$layout->container_properties["fields"] = array(  );
-$layout->containers["fields"][] = array("name"=>"remindheader",
-	"block"=>"remindheader", "substyle"=>2  );
+$layout->containers["page"] = array();
+$layout->container_properties["page"] = array(  );
+$layout->containers["page"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"page_1" );
+$layout->containers["page_1"] = array();
+$layout->container_properties["page_1"] = array(  );
+$layout->containers["page_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"panel" );
+$layout->containers["panel"] = array();
+$layout->container_properties["panel"] = array(  );
+$layout->containers["panel"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header" );
+$layout->containers["header"] = array();
+$layout->container_properties["header"] = array(  );
+$layout->containers["header"][] = array("name"=>"remindheader",
+	"block"=>"remindheader", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"message",
+$layout->skins["header"] = "";
+
+
+$layout->containers["panel"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"body" );
+$layout->containers["body"] = array();
+$layout->container_properties["body"] = array(  );
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header_1" );
+$layout->containers["header_1"] = array();
+$layout->container_properties["header_1"] = array(  );
+$layout->containers["header_1"][] = array("name"=>"message",
 	"block"=>"message_block", "substyle"=>1  );
 
+$layout->skins["header_1"] = "";
+
+
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"fields" );
+$layout->containers["fields"] = array();
+$layout->container_properties["fields"] = array(  );
 $layout->containers["fields"][] = array("name"=>"remindfields",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"remindbuttons",
-	"block"=>"remindbuttons", "substyle"=>2  );
+$layout->skins["fields"] = "";
 
-$layout->skins["fields"] = "fields";
 
-$layout->blocks["top"][] = "fields";
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header_2" );
+$layout->containers["header_2"] = array();
+$layout->container_properties["header_2"] = array(  );
+$layout->containers["header_2"][] = array("name"=>"remindbuttons",
+	"block"=>"remindbuttons", "substyle"=>1  );
+
+$layout->skins["header_2"] = "";
+
+
+$layout->skins["body"] = "";
+
+
+$layout->skins["panel"] = "";
+
+
+$layout->skins["page_1"] = "";
+
+
+$layout->skins["page"] = "";
+
+$layout->blocks["top"][] = "page";
 $page_layouts["remind"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
 
 
 
-$layout = new TLayout("remind_success", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
+$layout = new TLayout("remind_success_bootstrap", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "_remind_success";
 $layout->blocks["top"] = array();
+$layout->containers["page"] = array();
+$layout->container_properties["page"] = array(  );
+$layout->containers["page"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"page_1" );
+$layout->containers["page_1"] = array();
+$layout->container_properties["page_1"] = array(  );
+$layout->containers["page_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"panel" );
+$layout->containers["panel"] = array();
+$layout->container_properties["panel"] = array(  );
+$layout->containers["panel"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header" );
+$layout->containers["header"] = array();
+$layout->container_properties["header"] = array(  );
+$layout->containers["header"][] = array("name"=>"remindheader",
+	"block"=>"remindheader", "substyle"=>1  );
+
+$layout->skins["header"] = "";
+
+
+$layout->containers["panel"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"body" );
+$layout->containers["body"] = array();
+$layout->container_properties["body"] = array(  );
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"fields" );
 $layout->containers["fields"] = array();
 $layout->container_properties["fields"] = array(  );
-$layout->containers["fields"][] = array("name"=>"remindheader",
-	"block"=>"remindheader", "substyle"=>2  );
-
 $layout->containers["fields"][] = array("name"=>"weresent_message",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"remindsucbuttons",
-	"block"=>"", "substyle"=>2  );
+$layout->skins["fields"] = "";
 
-$layout->skins["fields"] = "fields";
 
-$layout->blocks["top"][] = "fields";
+$layout->containers["body"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"header_1" );
+$layout->containers["header_1"] = array();
+$layout->container_properties["header_1"] = array(  );
+$layout->containers["header_1"][] = array("name"=>"remindsucbuttons",
+	"block"=>"", "substyle"=>1  );
+
+$layout->skins["header_1"] = "";
+
+
+$layout->skins["body"] = "";
+
+
+$layout->skins["panel"] = "";
+
+
+$layout->skins["page_1"] = "";
+
+
+$layout->skins["page"] = "";
+
+$layout->blocks["top"][] = "page";
 $page_layouts["remind_success"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
@@ -103,3 +178,5 @@ $pageObject = new RemindPasswordPage( $params );
 $pageObject->init();
 
 $pageObject->process();
+
+?>

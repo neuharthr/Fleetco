@@ -53,6 +53,7 @@ class tDAL
 	var $tblcarrier_at_localhost__carrier_ugrights;
 	var $tblcarrier_at_localhost__carrierusers;
 	var $tblcarrier_at_localhost__creategrn;
+	var $tblcarrier_at_localhost__fleetcov96_settings;
 	var $tblcarrier_at_localhost__fleettype;
 	var $tblcarrier_at_localhost__fuelmaster;
 	var $tblcarrier_at_localhost__fuelprices;
@@ -81,6 +82,7 @@ class tDAL
 		$this->lstTables[] = array("name" => "carrier_ugrights", "varname" => "carrier_at_localhost__carrier_ugrights", "altvarname" => "carrier_ugrights", "connId" => "carrier_at_localhost", "schema" => "", "connName" => "carrier at localhost");
 		$this->lstTables[] = array("name" => "carrierusers", "varname" => "carrier_at_localhost__carrierusers", "altvarname" => "carrierusers", "connId" => "carrier_at_localhost", "schema" => "", "connName" => "carrier at localhost");
 		$this->lstTables[] = array("name" => "creategrn", "varname" => "carrier_at_localhost__creategrn", "altvarname" => "creategrn", "connId" => "carrier_at_localhost", "schema" => "", "connName" => "carrier at localhost");
+		$this->lstTables[] = array("name" => "fleetcov96_settings", "varname" => "carrier_at_localhost__fleetcov96_settings", "altvarname" => "fleetcov96_settings", "connId" => "carrier_at_localhost", "schema" => "", "connName" => "carrier at localhost");
 		$this->lstTables[] = array("name" => "fleettype", "varname" => "carrier_at_localhost__fleettype", "altvarname" => "fleettype", "connId" => "carrier_at_localhost", "schema" => "", "connName" => "carrier at localhost");
 		$this->lstTables[] = array("name" => "fuelmaster", "varname" => "carrier_at_localhost__fuelmaster", "altvarname" => "fuelmaster", "connId" => "carrier_at_localhost", "schema" => "", "connName" => "carrier at localhost");
 		$this->lstTables[] = array("name" => "fuelprices", "varname" => "carrier_at_localhost__fuelprices", "altvarname" => "fuelprices", "connId" => "carrier_at_localhost", "schema" => "", "connName" => "carrier at localhost");

@@ -53,6 +53,7 @@ class PrintPage_Details extends PrintPage
 		$this->commonAssign();
 		$this->setMapParams();
 
+		$this->splitByRecords = 0; // show all details in master list print page
 		$this->allPagesMode = true;
 		$this->buildSQL();
 		$this->openQuery();

@@ -21,6 +21,7 @@ class LookupTextField extends LookupField
 		$this->displayFieldName = $this->localPSet->getDisplayField($this->field);
 		$this->linkFieldName = $this->localPSet->getLinkField($this->field);
 		$this->linkAndDisplaySame = $this->displayFieldName == $this->linkFieldName;
+		$this->setLookupConnection();
 
 		$this->ciphererLink = new RunnerCipherer($this->pageObject->tName);
 		if($this->lookupType == LT_QUERY)

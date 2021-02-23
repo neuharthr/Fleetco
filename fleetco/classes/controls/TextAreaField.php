@@ -85,7 +85,7 @@ class TextAreaField extends TextControl
 	 */
 	protected function CreateCKeditor($value)
 	{
-		echo '<div id="disabledCKE_'.$this->cfield.'"><textarea id="'.$this->cfield.'" name="'.$this->cfield.'" rows="8" cols="60">'.runner_htmlspecialchars($value).'</textarea>';
+		echo '<div id="disabledCKE_'.$this->cfield.'"><textarea id="'.$this->cfield.'" name="'.$this->cfield.'" rows="8" cols="60">'.runner_htmlspecialchars($value).'</textarea></div>';
 	}
 }
 ?>

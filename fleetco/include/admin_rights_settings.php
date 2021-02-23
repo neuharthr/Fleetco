@@ -30,6 +30,118 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsadmin_rights["English"]))
 		$tdataadmin_rights[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsadmin_rights["Afrikaans"] = array();
+	$fieldToolTipsadmin_rights["Afrikaans"] = array();
+	$pageTitlesadmin_rights["Afrikaans"] = array();
+	$fieldLabelsadmin_rights["Afrikaans"]["TableName"] = "Table Naam";
+	$fieldToolTipsadmin_rights["Afrikaans"]["TableName"] = "";
+	$fieldLabelsadmin_rights["Afrikaans"]["GroupID"] = "groep ID";
+	$fieldToolTipsadmin_rights["Afrikaans"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["Afrikaans"]["AccessMask"] = "toegang masker";
+	$fieldToolTipsadmin_rights["Afrikaans"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["Afrikaans"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsadmin_rights["Arabic"] = array();
+	$fieldToolTipsadmin_rights["Arabic"] = array();
+	$pageTitlesadmin_rights["Arabic"] = array();
+	$fieldLabelsadmin_rights["Arabic"]["TableName"] = "??? ??????";
+	$fieldToolTipsadmin_rights["Arabic"]["TableName"] = "";
+	$fieldLabelsadmin_rights["Arabic"]["GroupID"] = "?????? ????";
+	$fieldToolTipsadmin_rights["Arabic"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["Arabic"]["AccessMask"] = "???? ??????";
+	$fieldToolTipsadmin_rights["Arabic"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["Arabic"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsadmin_rights["Chinese"] = array();
+	$fieldToolTipsadmin_rights["Chinese"] = array();
+	$pageTitlesadmin_rights["Chinese"] = array();
+	$fieldLabelsadmin_rights["Chinese"]["TableName"] = "??";
+	$fieldToolTipsadmin_rights["Chinese"]["TableName"] = "";
+	$fieldLabelsadmin_rights["Chinese"]["GroupID"] = "?ID";
+	$fieldToolTipsadmin_rights["Chinese"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["Chinese"]["AccessMask"] = "????";
+	$fieldToolTipsadmin_rights["Chinese"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["Chinese"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsadmin_rights["French"] = array();
+	$fieldToolTipsadmin_rights["French"] = array();
+	$pageTitlesadmin_rights["French"] = array();
+	$fieldLabelsadmin_rights["French"]["TableName"] = "Nom de la table";
+	$fieldToolTipsadmin_rights["French"]["TableName"] = "";
+	$fieldLabelsadmin_rights["French"]["GroupID"] = "ID de groupe";
+	$fieldToolTipsadmin_rights["French"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["French"]["AccessMask"] = "Masque d'accès";
+	$fieldToolTipsadmin_rights["French"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["French"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsadmin_rights["German"] = array();
+	$fieldToolTipsadmin_rights["German"] = array();
+	$pageTitlesadmin_rights["German"] = array();
+	$fieldLabelsadmin_rights["German"]["TableName"] = "Tabellenname";
+	$fieldToolTipsadmin_rights["German"]["TableName"] = "";
+	$fieldLabelsadmin_rights["German"]["GroupID"] = "Gruppen-ID";
+	$fieldToolTipsadmin_rights["German"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["German"]["AccessMask"] = "Zugriffsmaske";
+	$fieldToolTipsadmin_rights["German"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["German"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsadmin_rights["Italian"] = array();
+	$fieldToolTipsadmin_rights["Italian"] = array();
+	$pageTitlesadmin_rights["Italian"] = array();
+	$fieldLabelsadmin_rights["Italian"]["TableName"] = "Nome tabella";
+	$fieldToolTipsadmin_rights["Italian"]["TableName"] = "";
+	$fieldLabelsadmin_rights["Italian"]["GroupID"] = "ID gruppo";
+	$fieldToolTipsadmin_rights["Italian"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["Italian"]["AccessMask"] = "maschera di accesso";
+	$fieldToolTipsadmin_rights["Italian"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["Italian"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsadmin_rights["Russian"] = array();
+	$fieldToolTipsadmin_rights["Russian"] = array();
+	$pageTitlesadmin_rights["Russian"] = array();
+	$fieldLabelsadmin_rights["Russian"]["TableName"] = "???????? ???????";
+	$fieldToolTipsadmin_rights["Russian"]["TableName"] = "";
+	$fieldLabelsadmin_rights["Russian"]["GroupID"] = "????????????? ??????";
+	$fieldToolTipsadmin_rights["Russian"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["Russian"]["AccessMask"] = "????? ???????";
+	$fieldToolTipsadmin_rights["Russian"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["Russian"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsadmin_rights["Spanish"] = array();
+	$fieldToolTipsadmin_rights["Spanish"] = array();
+	$pageTitlesadmin_rights["Spanish"] = array();
+	$fieldLabelsadmin_rights["Spanish"]["TableName"] = "Nombre de la tabla";
+	$fieldToolTipsadmin_rights["Spanish"]["TableName"] = "";
+	$fieldLabelsadmin_rights["Spanish"]["GroupID"] = "ID de grupo";
+	$fieldToolTipsadmin_rights["Spanish"]["GroupID"] = "";
+	$fieldLabelsadmin_rights["Spanish"]["AccessMask"] = "Máscara de acceso";
+	$fieldToolTipsadmin_rights["Spanish"]["AccessMask"] = "";
+	if (count($fieldToolTipsadmin_rights["Spanish"]))
+		$tdataadmin_rights[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsadmin_rights[""] = array();
@@ -84,7 +196,18 @@ $tdataadmin_rights[".listAjax"] = false;
 
 
 
+
+
+
 $tdataadmin_rights[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdataadmin_rights[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdataadmin_rights[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdataadmin_rights[".searchSaving"] = false;
@@ -120,10 +243,6 @@ $tdataadmin_rights[".googleLikeFields"][] = "GroupID";
 $tdataadmin_rights[".googleLikeFields"][] = "AccessMask";
 
 
-$tdataadmin_rights[".advSearchFields"] = array();
-$tdataadmin_rights[".advSearchFields"][] = "TableName";
-$tdataadmin_rights[".advSearchFields"][] = "GroupID";
-$tdataadmin_rights[".advSearchFields"][] = "AccessMask";
 
 $tdataadmin_rights[".tableType"] = "list";
 
@@ -247,6 +366,12 @@ $tdataadmin_rights[".inlineEditFields"][] = "TableName";
 $tdataadmin_rights[".inlineEditFields"][] = "GroupID";
 $tdataadmin_rights[".inlineEditFields"][] = "AccessMask";
 
+$tdataadmin_rights[".updateSelectedFields"] = array();
+$tdataadmin_rights[".updateSelectedFields"][] = "TableName";
+$tdataadmin_rights[".updateSelectedFields"][] = "GroupID";
+$tdataadmin_rights[".updateSelectedFields"][] = "AccessMask";
+
+
 $tdataadmin_rights[".exportFields"] = array();
 $tdataadmin_rights[".exportFields"][] = "TableName";
 $tdataadmin_rights[".exportFields"][] = "GroupID";
@@ -285,6 +410,9 @@ $tdataadmin_rights[".printFields"][] = "AccessMask";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -404,6 +532,9 @@ $tdataadmin_rights[".printFields"][] = "AccessMask";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 
@@ -525,6 +656,9 @@ $tdataadmin_rights[".printFields"][] = "AccessMask";
 		$fdata["bEditPage"] = true;
 
 		$fdata["bInlineEdit"] = true;
+
+		$fdata["bUpdateSelected"] = true;
+
 
 		$fdata["bViewPage"] = true;
 

@@ -1,13 +1,13 @@
-<?php 
+<?php
 class eventsBase
 {
 	var $events = array();
 	var $maps = array();
-	function exists($event, $table = "") 
-	{ 
+	function exists($event, $table = "")
+	{
 		if($table == "")
 			return (array_key_exists($event,$this->events)!==FALSE);
-		else 
+		else
 			return isset($this->events[$event]) && isset($this->events[$event][$table]);
 	}
 
@@ -18,7 +18,7 @@ class eventsBase
 }
 
 class class_GlobalEvents extends eventsBase
-{ 
+{
 	function __construct()
 	{
 	// fill list of events
@@ -26,13 +26,12 @@ class class_GlobalEvents extends eventsBase
 //	onscreen events
 
 
-	
-	
+
 		}
 
 //	handlers
 
 //	onscreen events
 
-} 
+}
 ?>

@@ -1,86 +1,60 @@
-<!doctype html>
-<html  {$html_attrs}>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<title>{$pagetitle}</title>
+<!DOCTYPE html>
+<HTML {$html_attrs}><HEAD> 
+<META http-equiv="X-UA-Compatible" content="IE=Edge"> 
+<META name="viewport" content="width=device-width, initial-scale=1.0"> <TITLE>
+{$pagetitle} </TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<LINK href="styles/default.css" rel="stylesheet" type="text/css"> {BEGIN rtlCSS}<LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">{END rtlCSS} {BEGIN styleCSSFiles}<LINK href="{$stylepath}" rel="stylesheet" type="text/css">{END styleCSSFiles} 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001">      
+</HEAD> 
+<BODY class="{$stylename} function-menu" {$bodyattrs}>{BEGIN body}
 
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link REL="stylesheet" href="styles/default.css" type="text/css">
-		{BEGIN rtlCSS}
-		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
-		{END rtlCSS}
-		{BEGIN styleCSSFiles}
-		<link REL="stylesheet" href="{$stylepath}" type="text/css">
-		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
-	</head>
-	
-	<body class="{$stylename} function-menu" {$bodyattrs}>
-	{BEGIN body}
-		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
-
-{BEGIN container_menu}
-<div class="rnr-c rnr-cv rnr-c-menu">
-
-{BEGIN loggedas_block}
-<div  class="rnr-brickcontents style1 rnr-b-login_menu {$brickclass_login_menu}"><div id="login_block{$id}">
-	{BEGIN loggedas_message}
-	<span>Logged on as&nbsp;<b>{$username}</b><br><br>
-	</span>
-	{END loggedas_message}
-	{BEGIN guestloginbutton}
-	<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
-	{END guestloginbutton}
-	{BEGIN logoutbutton}
-	<a class="rnr-button" href="login.php?a=logout" {$logoutlink_attrs}>Log out</a>
-	{END logoutbutton}
-<!-- Permissions -->
-  {BEGIN adminarea_link}
-<div>
-	<a class="rnr-button" href="admin_rights_list.php" {$adminarealink_attrs}>Admin Area</a>
-</div>
-  {END adminarea_link}
-{BEGIN changepwd_link}
-<div>
-	<a class="rnr-button" href="changepwd.php" {$changepwdlink_attrs}>Change password</a>
-</div>
-{END changepwd_link}
-</div>
-</div>{END loggedas_block}
-
-
-{BEGIN menu_block}
-{$menu main}
-{END menu_block}
-
-
-</div>
-{END container_menu}
-
-
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
-		</div>
-	</div>
-		
-		{$footer}
-	{END body}
-	</body>
-</html>
+<STYLE>
+        {$containerCss}
+      </STYLE>
+ 
+<DIV class="sidebar bs-fixed clearfix mCustomScrollbar" data-mcs-theme="minimal-dark" {$blockattr_left}>
+<DIV class="sidebar-contents mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside">
+{BEGIN container_logo}<DIV class="bs-sidebarlogo" data-container="logo" data-pageid="{$pageid}" {$logo_chiddenattr}>{BEGIN logo_block}<A class="navbar-brand" href="{$home_link}" data-brick="logo" data-pageid="{$pageid}" {$logo_hiddenattr}>{$logo} </A> {END logo_block}</DIV>
+{END container_logo}{BEGIN container_hdr}<DIV class="navbar-default clearfix" data-container="hdr" data-pageid="{$pageid}" {$hdr_chiddenattr}>{BEGIN collapse_block}<BUTTON class="navbar-toggle collapsed" type="button" data-brick="bsnavbarcollapse" data-pageid="{$pageid}" data-target=".bs-navcontrolled" data-runner-toggle="collapse" {$bsnavbarcollapse_hiddenattr}><SPAN class="sr-only"> Toggle navigation </SPAN> 
+<SPAN class="icon-bar"></SPAN></BUTTON> {END collapse_block}</DIV>
+{END container_hdr}{BEGIN container_sidemenu}<DIV class="bs-navform navbar-collapse sidebar-menu bs-hidden-xs bs-navcontrolled" aria-expanded="false" data-container="sidemenu" data-pageid="{$pageid}" {$sidemenu_chiddenattr}>{BEGIN menu_block}
+{$menu main}{END menu_block} 
+</DIV>{END container_sidemenu}</DIV></DIV>
+<DIV class="bs-wrapper">
+<DIV class="bs-fixedheader" id="fixedheader{$id}">{BEGIN container_menu}<NAV class="navbar navbar-default bs-fullwidth-navbar" data-container="menu" data-pageid="{$pageid}" {$menu_chiddenattr}>
+{BEGIN container_menu_1}<DIV class="bs-navform navbar-collapse bs-hidden-xs bs-navcontrolled" aria-expanded="false" data-container="menu_1" data-pageid="{$pageid}" {$menu_1_chiddenattr}>
+{BEGIN container_more}<DIV class="navbar-right navbar-form" data-container="more" data-pageid="{$pageid}" {$more_chiddenattr}>
+{BEGIN more_list}<DIV class="btn-group bs-navsection" data-brick="morebutton" data-pageid="{$pageid}" {$morebutton_hiddenattr}><BUTTON class="btn btn-default dropdown-toggle" aria-expanded="false" aria-haspopup="true" type="button" data-toggle="dropdown"><SPAN class="glyphicon glyphicon-cog"> 
+</SPAN> <SPAN class="caret"></SPAN> </BUTTON> 
+<UL class="dropdown-menu">
+  {BEGIN AfrikaansLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="Afrikaans">{BEGIN AfrikaansLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok"> &nbsp;</SPAN>{END AfrikaansLANGLINK_ACTIVE} Afrikaans </A></LI>
+  {END AfrikaansLANGLINK}{BEGIN ArabicLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="Arabic">{BEGIN ArabicLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok"> &nbsp;</SPAN>{END ArabicLANGLINK_ACTIVE}  العربية </A></LI>
+  {END ArabicLANGLINK}{BEGIN ChineseLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="Chinese">{BEGIN ChineseLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok">&nbsp;</SPAN>{END ChineseLANGLINK_ACTIVE}  中文(简体) </A></LI>
+  {END ChineseLANGLINK}{BEGIN EnglishLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="English">{BEGIN EnglishLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok"> &nbsp;</SPAN>{END EnglishLANGLINK_ACTIVE}  English </A></LI>
+  {END EnglishLANGLINK}{BEGIN FrenchLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="French">{BEGIN FrenchLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok"> &nbsp;</SPAN>{END FrenchLANGLINK_ACTIVE} Français </A></LI>
+  {END FrenchLANGLINK}{BEGIN GermanLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="German">{BEGIN GermanLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok"> &nbsp;</SPAN>{END GermanLANGLINK_ACTIVE} Deutsch </A></LI>
+  {END GermanLANGLINK}{BEGIN ItalianLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="Italian">{BEGIN ItalianLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok"> &nbsp;</SPAN>{END ItalianLANGLINK_ACTIVE} Italiano </A></LI>
+  {END ItalianLANGLINK}{BEGIN RussianLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="Russian">{BEGIN RussianLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok"> &nbsp;</SPAN>{END RussianLANGLINK_ACTIVE}  Русский </A></LI>
+  {END RussianLANGLINK}{BEGIN SpanishLANGLINK}<LI><A class="rnr-langlink" href="#" data-lang="Spanish">{BEGIN SpanishLANGLINK_ACTIVE}<SPAN class="glyphicon glyphicon-ok">&nbsp;</SPAN>{END SpanishLANGLINK_ACTIVE}  Español </A></LI>{END SpanishLANGLINK}</UL></DIV> {END more_list}{BEGIN security_block}<SPAN class="bs-navsection" id="login_block{$id}" data-brick="loggedas" data-pageid="{$pageid}" {$loggedas_hiddenattr}>{BEGIN guestloginbutton}<SPAN class="form-inline">{BEGIN embeded_log_fields}<SPAN><INPUT name="username" class="form-control" type="text" {$username_attrs}> 
+               
+&nbsp;<INPUT name="password" class="form-control" type="password" {$password_attrs}> 
+</SPAN> {END embeded_log_fields}<BUTTON class="btn btn-info" {$guestloginlink_attrs}>
+{mlang_message LOGIN} </BUTTON> </SPAN> {END guestloginbutton}{BEGIN loggedas_message}<SPAN class="dropdown"><BUTTON class="btn btn-info dropdown-toggle" aria-expanded="false" aria-haspopup="true" type="button" data-toggle="dropdown"><SPAN class="glyphicon glyphicon-user"> </SPAN> 
+{$username} </BUTTON> 
+<UL class="dropdown-menu">
+  {BEGIN logoutbutton}<LI><A href="#" {$logoutlink_attrs}>
+  {mlang_message LOG_OUT}</A></LI>
+  {END logoutbutton}{BEGIN adminarea_link}<LI><A href="admin_rights_list.php" {$adminarealink_attrs}>
+  {mlang_message AA_ADMINAREA}</A></LI>
+  {END adminarea_link}{BEGIN changepwd_link}<LI><A href="#" {$changepwdlink_attrs}>
+  {mlang_message CHANGE_PASSWORD}</A></LI>{END changepwd_link}</UL></SPAN> {END loggedas_message}</SPAN> 
+{END security_block}</DIV>{END container_more}</DIV>{END container_menu_1}</NAV>{END container_menu}</DIV>
+<DIV class="container-fluid bs-underheader bs-fixedsidebarmain" id="underheader{$id}">
+{$header} 
+<DIV class="bs-sidebar-screenbound">
+{BEGIN container_center}<DIV class="container" style="width: 862px; height: 711px;" data-container="center" data-pageid="{$pageid}" {$center_chiddenattr}>
+{$menu welcome_page}</DIV>{END container_center}</DIV>
+<DIV></DIV>
+<DIV class="bs-sidebar-screenbound bs-minwidth"></DIV> </DIV></DIV>
+{$footer}{END body} </BODY></HTML>

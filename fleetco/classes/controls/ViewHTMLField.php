@@ -409,7 +409,7 @@ class ViewHTMLField extends ViewControl
 		{
 			$tName = $this->getContainer()->tName;
 			$params = 'pagetype='.$this->container->pSet->_viewPage.'&table='.GetTableURL($tName).'&field='.rawurlencode($this->field).$keylink;
-			$link = ' <a href="javascript:void(0);" data-query="'.GetTableLink("fulltext").'?'.$params.'">'."More".'&nbsp;...</a>';
+			$link = ' <a href="javascript:void(0);" data-query="'.GetTableLink("fulltext").'?'.$params.'">'.mlang_message("MORE").'&nbsp;...</a>';
 			$processedValue.= $link;			
 		}
 			

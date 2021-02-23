@@ -80,7 +80,7 @@ class MySQLConnection extends Connection
 		if (!$this->conn || !mysql_select_db($this->sys_dbname, $this->conn)) 
 		{
 			unset( $_SESSION["myqsladdress"] );
-			trigger_error( mysql_error(), E_USER_ERROR );
+			$this->triggerError( mysql_error() );
 		}
 		
 		if( $cMySQLNames != "" )
@@ -134,7 +134,7 @@ class MySQLConnection extends Connection
 		$ret = mysql_query($sql, $this->conn);
 		if( !$ret )
 		{
-			trigger_error(mysql_error(), E_USER_ERROR);
+			$this->triggerError(mysql_error());
 			return FALSE;
 		}
 		
@@ -177,9 +177,9 @@ class MySQLConnection extends Connection
 	 * @param Mixed qHanle		The query handle
 	 * @return Array
 	 */
-	public function fetch_array( $qHanle )
+	public function fetch_array( $qHandle )
 	{
-		return @mysql_fetch_array($qHanle, MYSQL_ASSOC);
+		return @mysql_fetch_array($qHandle, MYSQL_ASSOC);
 	}
 	
 	/**	
@@ -187,18 +187,18 @@ class MySQLConnection extends Connection
 	 * @param Mixed qHanle		The query handle	 
 	 * @return Array
 	 */
-	public function fetch_numarray( $qHanle )
+	public function fetch_numarray( $qHandle )
 	{
-		return @mysql_fetch_array($qHanle, MYSQL_NUM);
+		return @mysql_fetch_array($qHandle, MYSQL_NUM);
 	}
 	
 	/**	
 	 * Free resources associated with a query result set 
 	 * @param Mixed qHanle		The query handle		 
 	 */
-	public function closeQuery( $qHanle )
+	public function closeQuery( $qHandle )
 	{
-		@mysql_free_result($qHanle);
+		@mysql_free_result($qHandle);
 	}
 
 	/**
@@ -217,9 +217,9 @@ class MySQLConnection extends Connection
 	 * @param Number offset
 	 * @return String
 	 */	 
-	public function field_name( $qHanle, $offset )
+	public function field_name( $qHandle, $offset )
 	{
-		return @mysql_field_name($qHanle, $offset);
+		return @mysql_field_name($qHandle, $offset);
 	}
 	
 	/**

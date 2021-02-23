@@ -39,7 +39,8 @@ class TimeField extends DateTimeControl
 		{
 			$outputValue = str_format_time( db2time( $data[ $this->field ] ) );
 		}
-		else {
+		else 
+		{
 			$numbers = parsenumbers( $data[ $this->field ] );
 			if( count($numbers) ) {
 				while( count($numbers) < 3 )
@@ -90,11 +91,12 @@ class TimeField extends DateTimeControl
 				{
 					$resultHtml .= "<span></span>"; // for bootstrap calend icon anomaly
 				}
-				$resultHtml = '<div class="input-group">' . $resultHtml . '</div>';
+				$resultHtml = '<div class="input-group" '.$this->inputStyle.' >' . $resultHtml . '</div>';
 			}
 
 			echo $resultHtml;
 		}
+		
 		$this->buildControlEnd($validate, $mode);
 	}
 
@@ -135,5 +137,15 @@ class TimeField extends DateTimeControl
 		$SearchFor2 = prepare_for_db($this->field, $SearchFor2, "time");
 		return parent::SQLWhere($SearchFor, $strSearchOption, $SearchFor2, $etype, $isSuggest);
 	}
+
+	function addCSSFiles()
+	{
+
+		if ( $this->pageObject->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+		{
+			$this->pageObject->AddCSSFile("include/bootstrap/css/bootstrap-datetimepicker.min.css");
+		}
+	}
+	
 }
 ?>

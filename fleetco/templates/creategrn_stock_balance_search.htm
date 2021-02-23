@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,174 +13,211 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-search" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN searchheader}
-<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel creategrn_stock_balance search}</h1>
-</span></div>{END searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel creategrn_stock_balance search}</h2>
 
-
-{BEGIN conditions_block}
-<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
-	<span class=fieldname>Criteria:&nbsp;</span>	
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
-	&nbsp;&nbsp;&nbsp;
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
-	</center></div>{END conditions_block}
+{END searchheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
-	<tr>
-		<td>&nbsp;</td>
-		<td>NOT</td>
-		<td colspan=3>&nbsp; </td>
-	</tr>
-	<tr class="{$fielddispclass_ItemID}">
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
 	{BEGIN ItemID_fieldblock}		
-	<td>
-		{$label creategrn_stock_balance ItemID}
-	</td>
-	<td>
-		<input type="checkbox" {$ItemID_notbox}>
-	</td>
-	<td>
-		{$searchtype_ItemID}
-	</td>
-	<td>
-		{$ItemID_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$ItemID_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_ItemID}" data-fieldname="ItemID">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_stock_balance ItemID}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_ItemID}
+			</div>
+			<div class="col-md-4" >
+				{$ItemID_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$ItemID_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END ItemID_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Brand}">
 	{BEGIN Brand_fieldblock}		
-	<td>
-		{$label creategrn_stock_balance Brand}
-	</td>
-	<td>
-		<input type="checkbox" {$Brand_notbox}>
-	</td>
-	<td>
-		{$searchtype_Brand}
-	</td>
-	<td>
-		{$Brand_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Brand_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Brand}" data-fieldname="Brand">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_stock_balance Brand}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Brand}
+			</div>
+			<div class="col-md-4" >
+				{$Brand_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Brand_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Brand_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Description}">
 	{BEGIN Description_fieldblock}		
-	<td>
-		{$label creategrn_stock_balance Description}
-	</td>
-	<td>
-		<input type="checkbox" {$Description_notbox}>
-	</td>
-	<td>
-		{$searchtype_Description}
-	</td>
-	<td>
-		{$Description_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Description_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Description}" data-fieldname="Description">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_stock_balance Description}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Description}
+			</div>
+			<div class="col-md-4" >
+				{$Description_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Description_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Description_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Supplier}">
 	{BEGIN Supplier_fieldblock}		
-	<td>
-		{$label creategrn_stock_balance Supplier}
-	</td>
-	<td>
-		<input type="checkbox" {$Supplier_notbox}>
-	</td>
-	<td>
-		{$searchtype_Supplier}
-	</td>
-	<td>
-		{$Supplier_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Supplier_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Supplier}" data-fieldname="Supplier">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_stock_balance Supplier}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Supplier}
+			</div>
+			<div class="col-md-4" >
+				{$Supplier_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Supplier_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Supplier_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_SUM_Quantity_}">
 	{BEGIN SUM_Quantity__fieldblock}		
-	<td>
-		{$label creategrn_stock_balance SUM_Quantity_}
-	</td>
-	<td>
-		<input type="checkbox" {$SUM_Quantity__notbox}>
-	</td>
-	<td>
-		{$searchtype_SUM_Quantity_}
-	</td>
-	<td>
-		{$SUM_Quantity__editcontrol}&nbsp;
-	</td>
-	<td>
-		{$SUM_Quantity__editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_SUM_Quantity_}" data-fieldname="SUM_Quantity_">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label creategrn_stock_balance SUM_Quantity_}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_SUM_Quantity_}
+			</div>
+			<div class="col-md-4" >
+				{$SUM_Quantity__editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$SUM_Quantity__editcontrol1}
+			</div>
+		</div>
+	</div>
 {END SUM_Quantity__fieldblock}
-	</tr>
-
-</table></div>
+</div>
 
 
-{BEGIN searchbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
-<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
-{END search_button} 
-{BEGIN reset_button}
-<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-{END reset_button}
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}</div>{END searchbuttons}
 
 
 </div>
 {END container_fields}
 
 
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-4"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>{mlang_message RESET}</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

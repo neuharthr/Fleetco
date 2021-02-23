@@ -55,7 +55,7 @@ class ViewPage extends RunnerPage
 		$messageLink = "";
 		
 		if( !isLogged() || isLoggedAsGuest() ) 		
-			$messageLink = " <a href='#' id='loginButtonContinue'>". "Login" . "</a>";		
+			$messageLink = " <a href='#' id='loginButtonContinue'>". mlang_message("SESSION_EXPIRED3") . "</a>";		
 		
 		if( !Security::processPageSecurity( $table, "S", $pageMode != VIEW_SIMPLE, $messageLink) )
 			return false;
@@ -389,13 +389,10 @@ class ViewPage extends RunnerPage
 		}
 		$keylink = implode("", $keyParams);
 		
-		$fieldclass = "rnr-nowrap";
-		if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
-			$fieldclass = "";
 		foreach( $viewFields as $f )
 		{
 			$gname = GoodFieldName( $f );
-			$value = '<span id="view'.$this->id.'_'.$gname.'" class="' . $fieldclass . '">' . $this->showDBValue( $f, $data, $keylink ). '</span>';
+			$value = '<span id="view'.$this->id.'_'.$gname.'" >' . $this->showDBValue( $f, $data, $keylink ). '</span>';
 			$this->xt->assign( $gname . "_value", $value );
 
 			if( !$this->isAppearOnTabs( $f ) )
@@ -473,7 +470,12 @@ class ViewPage extends RunnerPage
 		$this->prepareNextPrevButtons();
 		
 		if( $this->mode == VIEW_DASHBOARD )
+		{
+			if ( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+				$this->xt->assign("groupbutton_class", "rnr-invisible-button");
+				
 			return;
+		}
 		
 		if( $this->mode == VIEW_SIMPLE )
 		{
@@ -496,8 +498,8 @@ class ViewPage extends RunnerPage
 			$this->xt->assign("close_button", true);
 			$this->xt->assign("closebutton_attrs", "id=\"closeButton".$this->id."\"");
 		}
-
-		if( $this->editAvailable())
+		
+		if( $this->editAvailable() )
 		{
 			$data = $this->getCurrentRecordInternal();
 			$editable = CheckSecurity($data[ $this->pSet->getTableOwnerID() ], "Edit");
@@ -510,8 +512,8 @@ class ViewPage extends RunnerPage
 				$this->xt->assign("edit_page_button", true);
 				$this->xt->assign("edit_page_button_attrs", "id=\"editPageButton".$this->id."\"");
 				$this->xt->assign("header_edit_page_button_attrs", "id=\"headerEditPageButton".$this->id."\"");
-			}
-		}		
+			} 
+		}
 	}	
 
 	public static function readViewModeFromRequest()

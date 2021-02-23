@@ -13,68 +13,148 @@ if( !Security::processAdminPageSecurity( false ) )
 
 
 
-$layout = new TLayout("ug_members", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
-$layout->blocks["center"] = array();
-$layout->containers["ugcontrols"] = array();
-$layout->container_properties["ugcontrols"] = array(  );
-$layout->containers["ugcontrols"][] = array("name"=>"ugbuttons",
-	"block"=>"savebuttons_block", "substyle"=>1  );
+$layout = new TLayout("admin_members_list_bootstrap3", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "_admin_members_list";
+$layout->blocks["left"] = array();
+$layout->containers["logo"] = array();
+$layout->container_properties["logo"] = array(  );
+$layout->containers["logo"][] = array("name"=>"logo",
+	"block"=>"logo_block", "substyle"=>1  );
 
-$layout->containers["ugcontrols"][] = array("name"=>"ugmembersbuttons",
-	"block"=>"savebuttons_block", "substyle"=>1  );
+$layout->skins["logo"] = "";
 
-$layout->skins["ugcontrols"] = "1";
+$layout->blocks["left"][] = "logo";
+$layout->containers["hdr"] = array();
+$layout->container_properties["hdr"] = array(  );
+$layout->containers["hdr"][] = array("name"=>"bsnavbarcollapse",
+	"block"=>"collapse_block", "substyle"=>1  );
 
-$layout->blocks["center"][] = "ugcontrols";
+$layout->skins["hdr"] = "";
+
+$layout->blocks["left"][] = "hdr";
+$layout->containers["sidemenu"] = array();
+$layout->container_properties["sidemenu"] = array(  );
+$layout->containers["sidemenu"][] = array("name"=>"vmenu",
+	"block"=>"menu_block", "substyle"=>1  );
+
+$layout->skins["sidemenu"] = "";
+
+$layout->blocks["left"][] = "sidemenu";
+$layout->containers["left"] = array();
+$layout->container_properties["left"] = array(  );
+$layout->containers["left"][] = array("name"=>"searchpanel",
+	"block"=>"searchPanel", "substyle"=>1  );
+
+$layout->skins["left"] = "";
+
+$layout->blocks["left"][] = "left";
+$layout->blocks["top"] = array();
+$layout->containers["menu"] = array();
+$layout->container_properties["menu"] = array(  );
+$layout->containers["menu"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"bc" );
+$layout->containers["bc"] = array();
+$layout->container_properties["bc"] = array(  );
+$layout->containers["bc"][] = array("name"=>"breadcrumbs",
+	"block"=>"breadcrumbs", "substyle"=>1  );
+
+$layout->skins["bc"] = "";
+
+
+$layout->containers["menu"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"menu_1" );
+$layout->containers["menu_1"] = array();
+$layout->container_properties["menu_1"] = array(  );
+$layout->containers["menu_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"more" );
+$layout->containers["more"] = array();
+$layout->container_properties["more"] = array(  );
+$layout->containers["more"][] = array("name"=>"morebutton",
+	"block"=>"more_list", "substyle"=>1  );
+
+$layout->containers["more"][] = array("name"=>"loggedas",
+	"block"=>"security_block", "substyle"=>1  );
+
+$layout->skins["more"] = "";
+
+
+$layout->containers["menu_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"more_1" );
+$layout->containers["more_1"] = array();
+$layout->container_properties["more_1"] = array(  );
+$layout->containers["more_1"][] = array("name"=>"search",
+	"block"=>"searchform_block", "substyle"=>1  );
+
+$layout->skins["more_1"] = "";
+
+
+$layout->skins["menu_1"] = "";
+
+
+$layout->skins["menu"] = "";
+
+$layout->blocks["top"][] = "menu";
+$layout->blocks["topmiddle"] = array();
+$layout->containers["messagerow"] = array();
+$layout->container_properties["messagerow"] = array(  );
+$layout->containers["messagerow"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"message" );
 $layout->containers["message"] = array();
 $layout->container_properties["message"] = array(  );
 $layout->containers["message"][] = array("name"=>"message",
 	"block"=>"message_block", "substyle"=>1  );
 
-$layout->skins["message"] = "1";
+$layout->skins["message"] = "";
 
-$layout->blocks["center"][] = "message";
-$layout->containers["grid"] = array();
-$layout->container_properties["grid"] = array(  );
-$layout->containers["grid"][] = array("name"=>"ugmemgrid",
+
+$layout->skins["messagerow"] = "";
+
+$layout->blocks["topmiddle"][] = "messagerow";
+$layout->containers["ugcontrols"] = array();
+$layout->container_properties["ugcontrols"] = array(  );
+$layout->containers["ugcontrols"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"save" );
+$layout->containers["save"] = array();
+$layout->container_properties["save"] = array(  );
+$layout->containers["save"][] = array("name"=>"ugbuttons",
+	"block"=>"", "substyle"=>1  );
+
+$layout->skins["save"] = "";
+
+
+$layout->containers["ugcontrols"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"filter" );
+$layout->containers["filter"] = array();
+$layout->container_properties["filter"] = array(  );
+$layout->containers["filter"][] = array("name"=>"ugmembersbuttons",
+	"block"=>"", "substyle"=>1  );
+
+$layout->skins["filter"] = "";
+
+
+$layout->skins["ugcontrols"] = "";
+
+$layout->blocks["topmiddle"][] = "ugcontrols";
+$layout->containers["permgrid"] = array();
+$layout->container_properties["permgrid"] = array(  );
+$layout->containers["permgrid"][] = array("name"=>"ugmemgrid",
 	"block"=>"grid_block", "substyle"=>1  );
 
-$layout->skins["grid"] = "grid";
+$layout->skins["permgrid"] = "";
 
-$layout->blocks["center"][] = "grid";
+$layout->blocks["topmiddle"][] = "permgrid";
 $layout->containers["pagination"] = array();
 $layout->container_properties["pagination"] = array(  );
 $layout->containers["pagination"][] = array("name"=>"pagination",
 	"block"=>"pagination_block", "substyle"=>1  );
 
-$layout->skins["pagination"] = "2";
+$layout->skins["pagination"] = "";
 
-$layout->blocks["center"][] = "pagination";
-$layout->blocks["left"] = array();
-$layout->containers["left"] = array();
-$layout->container_properties["left"] = array(  );
-$layout->containers["left"][] = array("name"=>"loggedas",
-	"block"=>"security_block", "substyle"=>1  );
-
-$layout->containers["left"][] = array("name"=>"vmenu",
-	"block"=>"menu_block", "substyle"=>1  );
-
-$layout->skins["left"] = "menu";
-
-$layout->blocks["left"][] = "left";
+$layout->blocks["topmiddle"][] = "pagination";
 $page_layouts["admin_members_list"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 

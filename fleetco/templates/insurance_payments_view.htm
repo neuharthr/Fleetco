@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,206 +13,295 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-view" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_all}
-<div class="rnr-c rnr-cv rnr-c-all">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_view} rnr-wrapper rnr-cbw-view">
-
-{BEGIN container_view}
-<div class="rnr-c rnr-cv rnr-c-view">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pdf} rnr-wrapper rnr-cbw-pdf">
-
-{BEGIN container_pdf}
-<div class="rnr-c rnr-cv rnr-c-pdf">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-viewpdf {$brickclass_viewpdf}">{BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button" {$pdflink_attrs}>PDF View</a>
-{END pdflink_block}
-
-</div>
-
-
-</div>
-{END container_pdf}
-
-</div>
+{BEGIN container_viewpage}
+<div {$viewpage_chiddenattr} data-pageid="{$pageid}" data-container="viewpage" class="container    "> 
 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
-
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-12 "> 
 
 {BEGIN viewheader}
-<div  class="rnr-brickcontents style2 rnr-b-viewheader {$brickclass_viewheader}"><span>	<h1>{$pagetitlelabel insurance_payments view}</h1>
-</span></div>{END viewheader}
+	<h2 {$viewheader_hiddenattr} data-pageid="{$pageid}" data-brick="viewheader" >{$pagetitlelabel insurance_payments view}</h2>
+
+{END viewheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-viewfields2 {$brickclass_viewfields2}"><table class="fieldGrid fieldGrid2">
-
-<tr>
-<td>
-	{BEGIN Fleet_fieldblock}
-<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
-  <span class="rnr-label">{$label insurance_payments Fleet}:</span>
-  <span class="rnr-control style3">{$Fleet_value}</span>
 </div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_viewpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class=" form-horizontal  col-md-12 "> 
+
+
+<div {$viewfields_hiddenattr} data-pageid="{$pageid}" data-brick="viewfields" >
+
+	<div class="container">
+					{BEGIN Fleet_fieldblock}
+	<div class="{$fielddispclass_Fleet} col-md-6 bs-viewcontrolgroup" data-fieldname="Fleet">
+		<label class="control-label" for="{$labelfor_Fleet}">
+			{$label insurance_payments Fleet}
+		</label>
+		<div class="" >
+			{$Fleet_value}&nbsp;
+		</div>
+	</div>
 {END Fleet_fieldblock}
-	{BEGIN Id_fieldblock}
-<div data-fieldname="Id" class="rnr-field style1 {$fielddispclass_Id}">
-  <span class="rnr-label">{$label insurance_payments Id}:</span>
-  <span class="rnr-control style3">{$Id_value}</span>
-</div>
+					{BEGIN Id_fieldblock}
+	<div class="{$fielddispclass_Id} col-md-6 bs-viewcontrolgroup" data-fieldname="Id">
+		<label class="control-label" for="{$labelfor_Id}">
+			{$label insurance_payments Id}
+		</label>
+		<div class="" >
+			{$Id_value}&nbsp;
+		</div>
+	</div>
 {END Id_fieldblock}
-	{BEGIN VehicleNo_fieldblock}
-<div data-fieldname="VehicleNo" class="rnr-field style1 {$fielddispclass_VehicleNo}">
-  <span class="rnr-label">{$label insurance_payments VehicleNo}:</span>
-  <span class="rnr-control style3">{$VehicleNo_value}</span>
-</div>
+					{BEGIN VehicleNo_fieldblock}
+	<div class="{$fielddispclass_VehicleNo} col-md-6 bs-viewcontrolgroup" data-fieldname="VehicleNo">
+		<label class="control-label" for="{$labelfor_VehicleNo}">
+			{$label insurance_payments VehicleNo}
+		</label>
+		<div class="" >
+			{$VehicleNo_value}&nbsp;
+		</div>
+	</div>
 {END VehicleNo_fieldblock}
-	{BEGIN Type_fieldblock}
-<div data-fieldname="Type" class="rnr-field style1 {$fielddispclass_Type}">
-  <span class="rnr-label">{$label insurance_payments Type}:</span>
-  <span class="rnr-control style3">{$Type_value}</span>
-</div>
+					{BEGIN Type_fieldblock}
+	<div class="{$fielddispclass_Type} col-md-6 bs-viewcontrolgroup" data-fieldname="Type">
+		<label class="control-label" for="{$labelfor_Type}">
+			{$label insurance_payments Type}
+		</label>
+		<div class="" >
+			{$Type_value}&nbsp;
+		</div>
+	</div>
 {END Type_fieldblock}
-	{BEGIN RenewalDueDate_fieldblock}
-<div data-fieldname="RenewalDueDate" class="rnr-field style1 {$fielddispclass_RenewalDueDate}">
-  <span class="rnr-label">{$label insurance_payments RenewalDueDate}:</span>
-  <span class="rnr-control style3">{$RenewalDueDate_value}</span>
-</div>
+					{BEGIN RenewalDueDate_fieldblock}
+	<div class="{$fielddispclass_RenewalDueDate} col-md-6 bs-viewcontrolgroup" data-fieldname="RenewalDueDate">
+		<label class="control-label" for="{$labelfor_RenewalDueDate}">
+			{$label insurance_payments RenewalDueDate}
+		</label>
+		<div class="" >
+			{$RenewalDueDate_value}&nbsp;
+		</div>
+	</div>
 {END RenewalDueDate_fieldblock}
-	{BEGIN Insurer_fieldblock}
-<div data-fieldname="Insurer" class="rnr-field style1 {$fielddispclass_Insurer}">
-  <span class="rnr-label">{$label insurance_payments Insurer}:</span>
-  <span class="rnr-control style3">{$Insurer_value}</span>
-</div>
+					{BEGIN Insurer_fieldblock}
+	<div class="{$fielddispclass_Insurer} col-md-6 bs-viewcontrolgroup" data-fieldname="Insurer">
+		<label class="control-label" for="{$labelfor_Insurer}">
+			{$label insurance_payments Insurer}
+		</label>
+		<div class="" >
+			{$Insurer_value}&nbsp;
+		</div>
+	</div>
 {END Insurer_fieldblock}
-	{BEGIN Premium_fieldblock}
-<div data-fieldname="Premium" class="rnr-field style1 {$fielddispclass_Premium}">
-  <span class="rnr-label">{$label insurance_payments Premium}:</span>
-  <span class="rnr-control style3">{$Premium_value}</span>
-</div>
+					{BEGIN Premium_fieldblock}
+	<div class="{$fielddispclass_Premium} col-md-6 bs-viewcontrolgroup" data-fieldname="Premium">
+		<label class="control-label" for="{$labelfor_Premium}">
+			{$label insurance_payments Premium}
+		</label>
+		<div class="" >
+			{$Premium_value}&nbsp;
+		</div>
+	</div>
 {END Premium_fieldblock}
-</td>
-<td>
-	{BEGIN From_fieldblock}
-<div data-fieldname="From" class="rnr-field style1 {$fielddispclass_From}">
-  <span class="rnr-label">{$label insurance_payments From}:</span>
-  <span class="rnr-control style3">{$From_value}</span>
-</div>
+					{BEGIN From_fieldblock}
+	<div class="{$fielddispclass_From} col-md-6 bs-viewcontrolgroup" data-fieldname="From">
+		<label class="control-label" for="{$labelfor_From}">
+			{$label insurance_payments From}
+		</label>
+		<div class="" >
+			{$From_value}&nbsp;
+		</div>
+	</div>
 {END From_fieldblock}
-	{BEGIN To_fieldblock}
-<div data-fieldname="To" class="rnr-field style1 {$fielddispclass_To}">
-  <span class="rnr-label">{$label insurance_payments To}:</span>
-  <span class="rnr-control style3">{$To_value}</span>
-</div>
+					{BEGIN To_fieldblock}
+	<div class="{$fielddispclass_To} col-md-6 bs-viewcontrolgroup" data-fieldname="To">
+		<label class="control-label" for="{$labelfor_To}">
+			{$label insurance_payments To}
+		</label>
+		<div class="" >
+			{$To_value}&nbsp;
+		</div>
+	</div>
 {END To_fieldblock}
-	{BEGIN DateofPayment_fieldblock}
-<div data-fieldname="DateofPayment" class="rnr-field style1 {$fielddispclass_DateofPayment}">
-  <span class="rnr-label">{$label insurance_payments DateofPayment}:</span>
-  <span class="rnr-control style3">{$DateofPayment_value}</span>
-</div>
+					{BEGIN DateofPayment_fieldblock}
+	<div class="{$fielddispclass_DateofPayment} col-md-6 bs-viewcontrolgroup" data-fieldname="DateofPayment">
+		<label class="control-label" for="{$labelfor_DateofPayment}">
+			{$label insurance_payments DateofPayment}
+		</label>
+		<div class="" >
+			{$DateofPayment_value}&nbsp;
+		</div>
+	</div>
 {END DateofPayment_fieldblock}
-	{BEGIN PaymentVoucher_fieldblock}
-<div data-fieldname="PaymentVoucher" class="rnr-field style1 {$fielddispclass_PaymentVoucher}">
-  <span class="rnr-label">{$label insurance_payments PaymentVoucher}:</span>
-  <span class="rnr-control style3">{$PaymentVoucher_value}</span>
-</div>
+					{BEGIN PaymentVoucher_fieldblock}
+	<div class="{$fielddispclass_PaymentVoucher} col-md-6 bs-viewcontrolgroup" data-fieldname="PaymentVoucher">
+		<label class="control-label" for="{$labelfor_PaymentVoucher}">
+			{$label insurance_payments PaymentVoucher}
+		</label>
+		<div class="" >
+			{$PaymentVoucher_value}&nbsp;
+		</div>
+	</div>
 {END PaymentVoucher_fieldblock}
-	{BEGIN SysDate_fieldblock}
-<div data-fieldname="SysDate" class="rnr-field style1 {$fielddispclass_SysDate}">
-  <span class="rnr-label">{$label insurance_payments SysDate}:</span>
-  <span class="rnr-control style3">{$SysDate_value}</span>
-</div>
+					{BEGIN SysDate_fieldblock}
+	<div class="{$fielddispclass_SysDate} col-md-6 bs-viewcontrolgroup" data-fieldname="SysDate">
+		<label class="control-label" for="{$labelfor_SysDate}">
+			{$label insurance_payments SysDate}
+		</label>
+		<div class="" >
+			{$SysDate_value}&nbsp;
+		</div>
+	</div>
 {END SysDate_fieldblock}
-	{BEGIN EnteredBy_fieldblock}
-<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
-  <span class="rnr-label">{$label insurance_payments EnteredBy}:</span>
-  <span class="rnr-control style3">{$EnteredBy_value}</span>
-</div>
+					{BEGIN EnteredBy_fieldblock}
+	<div class="{$fielddispclass_EnteredBy} col-md-6 bs-viewcontrolgroup" data-fieldname="EnteredBy">
+		<label class="control-label" for="{$labelfor_EnteredBy}">
+			{$label insurance_payments EnteredBy}
+		</label>
+		<div class="" >
+			{$EnteredBy_value}&nbsp;
+		</div>
+	</div>
 {END EnteredBy_fieldblock}
-</td>
-</tr>
-</table></div>
+	</div>
+</div>
 
 
-{BEGIN viewbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-viewbuttons {$brickclass_viewbuttons}"><div class="rnr-buttons-right">
-{BEGIN prev_button}
-<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
-{END prev_button}
-{BEGIN next_button}
-<a href="#" class="rnr-button {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
-{END next_button}
-</div>
-<div class="rnr-buttons-left">
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}
-{BEGIN close_button}
-<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
-{END close_button}
-{BEGIN edit_page_button}
-<a href="#" class="rnr-button" {$edit_page_button_attrs}>Edit</a>
-{END edit_page_button}
-</div>
-</div>{END viewbuttons}
 
 
 </div>
 {END container_fields}
 
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-6 "> 
+
+{BEGIN viewbuttons}
+{BEGIN back_button}
+<button class="btn btn-primary" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{BEGIN close_button}
+<button href="#" class="btn btn-primary" {$closebutton_attrs}>{mlang_message CLOSE_WINDOW}</button>
+{END close_button}
+{END viewbuttons}
+
+
+
 </div>
-
-
-</div>
-{END container_view}
-
-</div>
+{END container_leftbuttons}
 
 
 
-</div>
-{END container_all}
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
-		</div>
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="   col-md-4 "> 
+
+{BEGIN rightviewbuttons}
+<div class="btn-group" role="group">
+		{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+		<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle {$groupbutton_class}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+						{BEGIN pdflink_block}
+			<li><a href=# class="pdflink" {$pdflink_attrs}>{mlang_message PDF_VIEW}</a></li>
+			{END pdflink_block}
+						{BEGIN edit_page_button}
+				<li><a href=# {$edit_page_button_attrs}>{mlang_message EDIT}</a></li>
+			{END edit_page_button}
+		</ul>
 	</div>
-		
+</div>
+{END rightviewbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
 		{$footer}
 	{END body}
 	</body>

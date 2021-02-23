@@ -1,5 +1,8 @@
 <?php
-class SearchClause
+
+require_once(getabspath('classes/searchclause_base.php'));
+
+class SearchClause extends SearchClauseBase
 {
 	/**
 	 * Array with all session data
@@ -1447,7 +1450,26 @@ class SearchClause
 		
 		return $obj;
 	}
-	
+/*
+	public function Serialize()
+	{
+		return serialize($this);
+		// PHP7 can't serialize connection object which is linked through one of the objects
+		$_pset = $this->pSetSearch;
+		$_cipherer = $obj->cipherer;
+		$this->pSetSearch = null;
+		$obj->cipherer = null;
+		
+		$ret = serialize($this);
+		
+		$this->pSetSearch = $_pset;
+		$obj->cipherer = $_cipherer;
+		
+		return $ret;
+		
+	}
+
+	*/
 	/**
 	 * User Search API
 	 * @return Array
@@ -1511,11 +1533,15 @@ class SearchClause
 	 */
 	public function isSearchPanelByUserApiRun()
 	{
+		if ( !count( $this->_where[ $this->sessionPrefix."_srchFields" ] ) )
+			return false;
+			
 		foreach( $this->_where[ $this->sessionPrefix."_srchFields" ] as $ind => $sfData )
 		{	
 			if( $sfData['byUserApi'] )
 				return true;
 		}
+		
 		return false;
 	}
 	

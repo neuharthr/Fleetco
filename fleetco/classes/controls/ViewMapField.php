@@ -52,9 +52,11 @@ class ViewMapField extends ViewControl
 		return '<img border="0" alt="" src="'.$src.'">';
 	}
 	
-	function getStaticMapURL($location, $zoom, $icon){
+	function getStaticMapURL($location, $zoom, $icon)
+	{
 		$markerLocation = $location;
-		switch( getMapProvider() ){
+		switch( getMapProvider() )
+		{
 			case GOOGLE_MAPS:
 				$src = 'http://maps.googleapis.com/maps/api/staticmap';
 				$src2 = '&sensor=false';

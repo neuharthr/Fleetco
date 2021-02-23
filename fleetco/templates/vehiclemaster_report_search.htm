@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,269 +13,301 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-search" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN searchheader}
-<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel vehiclemaster_report search}</h1>
-</span></div>{END searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel vehiclemaster_report search}</h2>
 
-
-{BEGIN conditions_block}
-<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
-	<span class=fieldname>Criteria:&nbsp;</span>	
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
-	&nbsp;&nbsp;&nbsp;
-	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
-	</center></div>{END conditions_block}
+{END searchheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
-	<tr>
-		<td>&nbsp;</td>
-		<td>NOT</td>
-		<td colspan=3>&nbsp; </td>
-	</tr>
-	<tr class="{$fielddispclass_ID}">
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
 	{BEGIN ID_fieldblock}		
-	<td>
-		{$label vehiclemaster_report ID}
-	</td>
-	<td>
-		<input type="checkbox" {$ID_notbox}>
-	</td>
-	<td>
-		{$searchtype_ID}
-	</td>
-	<td>
-		{$ID_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$ID_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_ID}" data-fieldname="ID">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report ID}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_ID}
+			</div>
+			<div class="col-md-4" >
+				{$ID_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$ID_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END ID_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Fleet}">
 	{BEGIN Fleet_fieldblock}		
-	<td>
-		{$label vehiclemaster_report Fleet}
-	</td>
-	<td>
-		<input type="checkbox" {$Fleet_notbox}>
-	</td>
-	<td>
-		{$searchtype_Fleet}
-	</td>
-	<td>
-		{$Fleet_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Fleet_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Fleet}" data-fieldname="Fleet">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report Fleet}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Fleet}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Fleet_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Fleet_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Type}">
 	{BEGIN Type_fieldblock}		
-	<td>
-		{$label vehiclemaster_report Type}
-	</td>
-	<td>
-		<input type="checkbox" {$Type_notbox}>
-	</td>
-	<td>
-		{$searchtype_Type}
-	</td>
-	<td>
-		{$Type_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Type_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Type}" data-fieldname="Type">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report Type}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Type}
+			</div>
+			<div class="col-md-4" >
+				{$Type_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Type_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Type_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_RegDate}">
 	{BEGIN RegDate_fieldblock}		
-	<td>
-		{$label vehiclemaster_report RegDate}
-	</td>
-	<td>
-		<input type="checkbox" {$RegDate_notbox}>
-	</td>
-	<td>
-		{$searchtype_RegDate}
-	</td>
-	<td>
-		{$RegDate_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$RegDate_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_RegDate}" data-fieldname="RegDate">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report RegDate}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_RegDate}
+			</div>
+			<div class="col-md-4" >
+				{$RegDate_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$RegDate_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END RegDate_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_RegNo}">
 	{BEGIN RegNo_fieldblock}		
-	<td>
-		{$label vehiclemaster_report RegNo}
-	</td>
-	<td>
-		<input type="checkbox" {$RegNo_notbox}>
-	</td>
-	<td>
-		{$searchtype_RegNo}
-	</td>
-	<td>
-		{$RegNo_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$RegNo_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_RegNo}" data-fieldname="RegNo">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report RegNo}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_RegNo}
+			</div>
+			<div class="col-md-4" >
+				{$RegNo_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$RegNo_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END RegNo_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Make}">
 	{BEGIN Make_fieldblock}		
-	<td>
-		{$label vehiclemaster_report Make}
-	</td>
-	<td>
-		<input type="checkbox" {$Make_notbox}>
-	</td>
-	<td>
-		{$searchtype_Make}
-	</td>
-	<td>
-		{$Make_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Make_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Make}" data-fieldname="Make">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report Make}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Make}
+			</div>
+			<div class="col-md-4" >
+				{$Make_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Make_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Make_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Model}">
 	{BEGIN Model_fieldblock}		
-	<td>
-		{$label vehiclemaster_report Model}
-	</td>
-	<td>
-		<input type="checkbox" {$Model_notbox}>
-	</td>
-	<td>
-		{$searchtype_Model}
-	</td>
-	<td>
-		{$Model_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Model_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Model}" data-fieldname="Model">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report Model}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Model}
+			</div>
+			<div class="col-md-4" >
+				{$Model_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Model_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Model_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_Cost}">
 	{BEGIN Cost_fieldblock}		
-	<td>
-		{$label vehiclemaster_report Cost}
-	</td>
-	<td>
-		<input type="checkbox" {$Cost_notbox}>
-	</td>
-	<td>
-		{$searchtype_Cost}
-	</td>
-	<td>
-		{$Cost_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$Cost_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_Cost}" data-fieldname="Cost">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report Cost}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_Cost}
+			</div>
+			<div class="col-md-4" >
+				{$Cost_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$Cost_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END Cost_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_DriverAsigned}">
 	{BEGIN DriverAsigned_fieldblock}		
-	<td>
-		{$label vehiclemaster_report DriverAsigned}
-	</td>
-	<td>
-		<input type="checkbox" {$DriverAsigned_notbox}>
-	</td>
-	<td>
-		{$searchtype_DriverAsigned}
-	</td>
-	<td>
-		{$DriverAsigned_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$DriverAsigned_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_DriverAsigned}" data-fieldname="DriverAsigned">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report DriverAsigned}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_DriverAsigned}
+			</div>
+			<div class="col-md-4" >
+				{$DriverAsigned_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$DriverAsigned_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END DriverAsigned_fieldblock}
-	</tr>
-	<tr class="{$fielddispclass_InsuranceDue}">
 	{BEGIN InsuranceDue_fieldblock}		
-	<td>
-		{$label vehiclemaster_report InsuranceDue}
-	</td>
-	<td>
-		<input type="checkbox" {$InsuranceDue_notbox}>
-	</td>
-	<td>
-		{$searchtype_InsuranceDue}
-	</td>
-	<td>
-		{$InsuranceDue_editcontrol}&nbsp;
-	</td>
-	<td>
-		{$InsuranceDue_editcontrol1}&nbsp;
-	</td>
+	<div class="container {$fielddispclass_InsuranceDue}" data-fieldname="InsuranceDue">
+		<div class="form-group">
+			<div class="col-md-2">
+				{$label vehiclemaster_report InsuranceDue}
+			</div>
+			<div class="col-md-2" >
+				{$searchtype_InsuranceDue}
+			</div>
+			<div class="col-md-4" >
+				{$InsuranceDue_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$InsuranceDue_editcontrol1}
+			</div>
+		</div>
+	</div>
 {END InsuranceDue_fieldblock}
-	</tr>
-
-</table></div>
+</div>
 
 
-{BEGIN searchbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
-<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
-{END search_button} 
-{BEGIN reset_button}
-<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-{END reset_button}
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}</div>{END searchbuttons}
 
 
 </div>
 {END container_fields}
 
 
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-4"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>{mlang_message RESET}</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
 		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
 				
 			</div>
-			<div class="rnr-center {$blockclass_center}">
+			<div class="bs-left" {$blockattr_left}>
 				
 			</div>
-			<div class="rnr-right {$blockclass_right}">
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
 				
 			</div>
 		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
+		<DIV class="bs-bottom">
+        
 		</div>
-	</div>
-		
 		{$footer}
 	{END body}
 	</body>

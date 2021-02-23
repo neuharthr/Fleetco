@@ -34,6 +34,150 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipscreategrn_stock_balance["English"]))
 		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelscreategrn_stock_balance["Afrikaans"] = array();
+	$fieldToolTipscreategrn_stock_balance["Afrikaans"] = array();
+	$pageTitlescreategrn_stock_balance["Afrikaans"] = array();
+	$fieldLabelscreategrn_stock_balance["Afrikaans"]["ItemID"] = "item ID";
+	$fieldToolTipscreategrn_stock_balance["Afrikaans"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["Afrikaans"]["Brand"] = "Brand";
+	$fieldToolTipscreategrn_stock_balance["Afrikaans"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["Afrikaans"]["Description"] = "beskrywing";
+	$fieldToolTipscreategrn_stock_balance["Afrikaans"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["Afrikaans"]["Supplier"] = "verskaffer";
+	$fieldToolTipscreategrn_stock_balance["Afrikaans"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["Afrikaans"]["SUM_Quantity_"] = "Stock Balans";
+	$fieldToolTipscreategrn_stock_balance["Afrikaans"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["Afrikaans"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelscreategrn_stock_balance["Arabic"] = array();
+	$fieldToolTipscreategrn_stock_balance["Arabic"] = array();
+	$pageTitlescreategrn_stock_balance["Arabic"] = array();
+	$fieldLabelscreategrn_stock_balance["Arabic"]["ItemID"] = "??? ??????";
+	$fieldToolTipscreategrn_stock_balance["Arabic"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["Arabic"]["Brand"] = "????? ??????";
+	$fieldToolTipscreategrn_stock_balance["Arabic"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["Arabic"]["Description"] = "???";
+	$fieldToolTipscreategrn_stock_balance["Arabic"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["Arabic"]["Supplier"] = "??????";
+	$fieldToolTipscreategrn_stock_balance["Arabic"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["Arabic"]["SUM_Quantity_"] = "????? ??????";
+	$fieldToolTipscreategrn_stock_balance["Arabic"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["Arabic"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelscreategrn_stock_balance["Chinese"] = array();
+	$fieldToolTipscreategrn_stock_balance["Chinese"] = array();
+	$pageTitlescreategrn_stock_balance["Chinese"] = array();
+	$fieldLabelscreategrn_stock_balance["Chinese"]["ItemID"] = "??ID";
+	$fieldToolTipscreategrn_stock_balance["Chinese"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["Chinese"]["Brand"] = "?";
+	$fieldToolTipscreategrn_stock_balance["Chinese"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["Chinese"]["Description"] = "??";
+	$fieldToolTipscreategrn_stock_balance["Chinese"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["Chinese"]["Supplier"] = "???";
+	$fieldToolTipscreategrn_stock_balance["Chinese"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["Chinese"]["SUM_Quantity_"] = "????";
+	$fieldToolTipscreategrn_stock_balance["Chinese"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["Chinese"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelscreategrn_stock_balance["French"] = array();
+	$fieldToolTipscreategrn_stock_balance["French"] = array();
+	$pageTitlescreategrn_stock_balance["French"] = array();
+	$fieldLabelscreategrn_stock_balance["French"]["ItemID"] = "ID de l'article";
+	$fieldToolTipscreategrn_stock_balance["French"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["French"]["Brand"] = "Marque";
+	$fieldToolTipscreategrn_stock_balance["French"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["French"]["Description"] = "La description";
+	$fieldToolTipscreategrn_stock_balance["French"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["French"]["Supplier"] = "Fournisseur";
+	$fieldToolTipscreategrn_stock_balance["French"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["French"]["SUM_Quantity_"] = "Balance des stocks";
+	$fieldToolTipscreategrn_stock_balance["French"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["French"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelscreategrn_stock_balance["German"] = array();
+	$fieldToolTipscreategrn_stock_balance["German"] = array();
+	$pageTitlescreategrn_stock_balance["German"] = array();
+	$fieldLabelscreategrn_stock_balance["German"]["ItemID"] = "Artikel Identifikationsnummer";
+	$fieldToolTipscreategrn_stock_balance["German"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["German"]["Brand"] = "Marke";
+	$fieldToolTipscreategrn_stock_balance["German"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["German"]["Description"] = "Beschreibung";
+	$fieldToolTipscreategrn_stock_balance["German"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["German"]["Supplier"] = "Lieferant";
+	$fieldToolTipscreategrn_stock_balance["German"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["German"]["SUM_Quantity_"] = "Aktienbilanz";
+	$fieldToolTipscreategrn_stock_balance["German"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["German"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelscreategrn_stock_balance["Italian"] = array();
+	$fieldToolTipscreategrn_stock_balance["Italian"] = array();
+	$pageTitlescreategrn_stock_balance["Italian"] = array();
+	$fieldLabelscreategrn_stock_balance["Italian"]["ItemID"] = "Numero identificativo dell'oggetto";
+	$fieldToolTipscreategrn_stock_balance["Italian"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["Italian"]["Brand"] = "Marca";
+	$fieldToolTipscreategrn_stock_balance["Italian"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["Italian"]["Description"] = "Descrizione";
+	$fieldToolTipscreategrn_stock_balance["Italian"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["Italian"]["Supplier"] = "Fornitore";
+	$fieldToolTipscreategrn_stock_balance["Italian"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["Italian"]["SUM_Quantity_"] = "della Balance";
+	$fieldToolTipscreategrn_stock_balance["Italian"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["Italian"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelscreategrn_stock_balance["Russian"] = array();
+	$fieldToolTipscreategrn_stock_balance["Russian"] = array();
+	$pageTitlescreategrn_stock_balance["Russian"] = array();
+	$fieldLabelscreategrn_stock_balance["Russian"]["ItemID"] = "Item ID";
+	$fieldToolTipscreategrn_stock_balance["Russian"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["Russian"]["Brand"] = "?????";
+	$fieldToolTipscreategrn_stock_balance["Russian"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["Russian"]["Description"] = "????????";
+	$fieldToolTipscreategrn_stock_balance["Russian"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["Russian"]["Supplier"] = "?????????";
+	$fieldToolTipscreategrn_stock_balance["Russian"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["Russian"]["SUM_Quantity_"] = "???? ??????";
+	$fieldToolTipscreategrn_stock_balance["Russian"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["Russian"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelscreategrn_stock_balance["Spanish"] = array();
+	$fieldToolTipscreategrn_stock_balance["Spanish"] = array();
+	$pageTitlescreategrn_stock_balance["Spanish"] = array();
+	$fieldLabelscreategrn_stock_balance["Spanish"]["ItemID"] = "Identificación del artículo";
+	$fieldToolTipscreategrn_stock_balance["Spanish"]["ItemID"] = "";
+	$fieldLabelscreategrn_stock_balance["Spanish"]["Brand"] = "Marca";
+	$fieldToolTipscreategrn_stock_balance["Spanish"]["Brand"] = "";
+	$fieldLabelscreategrn_stock_balance["Spanish"]["Description"] = "Descripción";
+	$fieldToolTipscreategrn_stock_balance["Spanish"]["Description"] = "";
+	$fieldLabelscreategrn_stock_balance["Spanish"]["Supplier"] = "Proveedor";
+	$fieldToolTipscreategrn_stock_balance["Spanish"]["Supplier"] = "";
+	$fieldLabelscreategrn_stock_balance["Spanish"]["SUM_Quantity_"] = "Balance de acciones";
+	$fieldToolTipscreategrn_stock_balance["Spanish"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipscreategrn_stock_balance["Spanish"]))
+		$tdatacreategrn_stock_balance[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelscreategrn_stock_balance[""] = array();
@@ -86,12 +230,23 @@ $tdatacreategrn_stock_balance[".list"] = true;
 
 
 
+
+
+
 $tdatacreategrn_stock_balance[".exportTo"] = true;
 
 $tdatacreategrn_stock_balance[".printFriendly"] = true;
 
 
-$tdatacreategrn_stock_balance[".showSimpleSearchOptions"] = true;
+$tdatacreategrn_stock_balance[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatacreategrn_stock_balance[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatacreategrn_stock_balance[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatacreategrn_stock_balance[".searchSaving"] = false;
@@ -161,6 +316,7 @@ $tdatacreategrn_stock_balance[".geocodingEnabled"] = false;
 $tdatacreategrn_stock_balance[".listGridLayout"] = 3;
 
 
+$tdatacreategrn_stock_balance[".isResizeColumns"] = true;
 
 
 
@@ -254,6 +410,9 @@ $tdatacreategrn_stock_balance[".editFields"] = array();
 
 $tdatacreategrn_stock_balance[".inlineEditFields"] = array();
 
+$tdatacreategrn_stock_balance[".updateSelectedFields"] = array();
+
+
 $tdatacreategrn_stock_balance[".exportFields"] = array();
 $tdatacreategrn_stock_balance[".exportFields"][] = "ItemID";
 $tdatacreategrn_stock_balance[".exportFields"][] = "Brand";
@@ -290,6 +449,8 @@ $tdatacreategrn_stock_balance[".printFields"][] = "SUM(Quantity)";
 	
 	
 	
+	
+
 	
 		$fdata["bAdvancedSearch"] = true;
 
@@ -409,6 +570,8 @@ $tdatacreategrn_stock_balance[".printFields"][] = "SUM(Quantity)";
 	
 	
 	
+	
+
 	
 		$fdata["bAdvancedSearch"] = true;
 
@@ -532,6 +695,8 @@ $tdatacreategrn_stock_balance[".printFields"][] = "SUM(Quantity)";
 	
 	
 	
+
+	
 		$fdata["bAdvancedSearch"] = true;
 
 		$fdata["bPrinterPage"] = true;
@@ -653,6 +818,8 @@ $tdatacreategrn_stock_balance[".printFields"][] = "SUM(Quantity)";
 	
 	
 	
+	
+
 	
 		$fdata["bAdvancedSearch"] = true;
 
@@ -799,6 +966,8 @@ $tdatacreategrn_stock_balance[".printFields"][] = "SUM(Quantity)";
 	
 	
 	
+	
+
 	
 		$fdata["bAdvancedSearch"] = true;
 

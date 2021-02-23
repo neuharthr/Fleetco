@@ -166,7 +166,7 @@ class Security
 	 */
 	public static function sendPermissionError( $message = '' )
 	{
-		echo printJSON(array("success" => false, "message" => "You don't have permissions to access this table".$message));
+		echo printJSON(array("success" => false, "message" => mlang_message("NO_PERMISSIONS").$message));
 		exit();
 	}
 

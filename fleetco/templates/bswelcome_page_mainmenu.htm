@@ -1,20 +1,21 @@
 <div class="bs-welcome">
 
 		{BEGIN item1_menulink}
-		<div class=" clearfix col-lg-12">
-	<h2>{$item1_icon}{$item1_title}</h2>
-		{BEGIN item1_comments}
-		<div class="bs-welcome-group-comments">
-			{$item1_comments_text}
+		<div class="col-lg-3 col-md-4 col-sm-6">
+		<div class="bs-welcome-item">
+			<div class="bs-welcome-header" {$item1_menulink_style}> 
+				<a {$item1_menulink_attrs}>{$item1_icon}{$item1_title}</a>
+			</div>
+			{BEGIN item1_comments}
+			<div class="bs-welcome-content">
+				{$item1_comments_text}
+			</div>
+			{END item1_comments}
 		</div>
-		{END item1_comments}
-	
 	</div>
 	{END item1_menulink}
 	
 	
-		<div class="clearfix">
-	</div>
 		{BEGIN item2_menulink}
 		<div class="col-lg-3 col-md-4 col-sm-6">
 		<div class="bs-welcome-item">
@@ -157,38 +158,6 @@
 		</div>
 	</div>
 	{END item10_menulink}
-	
-	
-		{BEGIN item11_menulink}
-		<div class="col-lg-3 col-md-4 col-sm-6">
-		<div class="bs-welcome-item">
-			<div class="bs-welcome-header" {$item11_menulink_style}> 
-				<a {$item11_menulink_attrs}>{$item11_icon}{$item11_title}</a>
-			</div>
-			{BEGIN item11_comments}
-			<div class="bs-welcome-content">
-				{$item11_comments_text}
-			</div>
-			{END item11_comments}
-		</div>
-	</div>
-	{END item11_menulink}
-	
-	
-		{BEGIN item12_menulink}
-		<div class="col-lg-3 col-md-4 col-sm-6">
-		<div class="bs-welcome-item">
-			<div class="bs-welcome-header" {$item12_menulink_style}> 
-				<a {$item12_menulink_attrs}>{$item12_icon}{$item12_title}</a>
-			</div>
-			{BEGIN item12_comments}
-			<div class="bs-welcome-content">
-				{$item12_comments_text}
-			</div>
-			{END item12_comments}
-		</div>
-	</div>
-	{END item12_menulink}
 	
 	
 </div>

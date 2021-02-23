@@ -34,12 +34,20 @@
 	{END loggedas_message}
 	{BEGIN guestloginbutton}
 	<span>
+		{BEGIN embeded_log_fields}
+		<span>
 		<input type="text" name="username" {$username_attrs}>&nbsp;
 		<input type="password" name="password" {$password_attrs}>
+		</span>
+		{END embeded_log_fields}
 		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+		{BEGIN embeded_log_ctrls}
+		<span>
 		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
 			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
-		</span>
+			</span>
+		{END embeded_log_ctrls}
+	</span>
 	{END guestloginbutton}
 	{BEGIN logoutbutton}
 	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
@@ -48,6 +56,9 @@
 	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
 	{END adminarea_link}
 
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
 </div></div>
 {END security_block}
 
@@ -121,12 +132,14 @@
 
 
 
-{$db_fuelmaster_search}
+{$db_vehiclemaster_search}
 </td>
 
 <td class="rnr-dbelement" colspan="1" rowspan="1">
 
 
+
+{$db_maintenenace_Chart_chart}
 </td>
 </tr>
 
@@ -165,7 +178,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

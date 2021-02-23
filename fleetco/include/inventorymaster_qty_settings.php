@@ -36,6 +36,166 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsinventorymaster_qty["English"]))
 		$tdatainventorymaster_qty[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsinventorymaster_qty["Afrikaans"] = array();
+	$fieldToolTipsinventorymaster_qty["Afrikaans"] = array();
+	$pageTitlesinventorymaster_qty["Afrikaans"] = array();
+	$fieldLabelsinventorymaster_qty["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsinventorymaster_qty["Afrikaans"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["Afrikaans"]["ItemID"] = "item ID";
+	$fieldToolTipsinventorymaster_qty["Afrikaans"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["Afrikaans"]["Brand"] = "Brand";
+	$fieldToolTipsinventorymaster_qty["Afrikaans"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["Afrikaans"]["Description"] = "beskrywing";
+	$fieldToolTipsinventorymaster_qty["Afrikaans"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["Afrikaans"]["Supplier"] = "verskaffer";
+	$fieldToolTipsinventorymaster_qty["Afrikaans"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["Afrikaans"]["SUM_Quantity_"] = "Som (Hoeveelheid)";
+	$fieldToolTipsinventorymaster_qty["Afrikaans"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["Afrikaans"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsinventorymaster_qty["Arabic"] = array();
+	$fieldToolTipsinventorymaster_qty["Arabic"] = array();
+	$pageTitlesinventorymaster_qty["Arabic"] = array();
+	$fieldLabelsinventorymaster_qty["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsinventorymaster_qty["Arabic"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["Arabic"]["ItemID"] = "??? ??????";
+	$fieldToolTipsinventorymaster_qty["Arabic"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["Arabic"]["Brand"] = "????? ??????";
+	$fieldToolTipsinventorymaster_qty["Arabic"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["Arabic"]["Description"] = "???";
+	$fieldToolTipsinventorymaster_qty["Arabic"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["Arabic"]["Supplier"] = "??????";
+	$fieldToolTipsinventorymaster_qty["Arabic"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["Arabic"]["SUM_Quantity_"] = "SUM (??????)";
+	$fieldToolTipsinventorymaster_qty["Arabic"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["Arabic"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsinventorymaster_qty["Chinese"] = array();
+	$fieldToolTipsinventorymaster_qty["Chinese"] = array();
+	$pageTitlesinventorymaster_qty["Chinese"] = array();
+	$fieldLabelsinventorymaster_qty["Chinese"]["Id"] = "ID";
+	$fieldToolTipsinventorymaster_qty["Chinese"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["Chinese"]["ItemID"] = "??ID";
+	$fieldToolTipsinventorymaster_qty["Chinese"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["Chinese"]["Brand"] = "?";
+	$fieldToolTipsinventorymaster_qty["Chinese"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["Chinese"]["Description"] = "??";
+	$fieldToolTipsinventorymaster_qty["Chinese"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["Chinese"]["Supplier"] = "???";
+	$fieldToolTipsinventorymaster_qty["Chinese"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["Chinese"]["SUM_Quantity_"] = "SUM????";
+	$fieldToolTipsinventorymaster_qty["Chinese"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["Chinese"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsinventorymaster_qty["French"] = array();
+	$fieldToolTipsinventorymaster_qty["French"] = array();
+	$pageTitlesinventorymaster_qty["French"] = array();
+	$fieldLabelsinventorymaster_qty["French"]["Id"] = "Id";
+	$fieldToolTipsinventorymaster_qty["French"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["French"]["ItemID"] = "ID de l'article";
+	$fieldToolTipsinventorymaster_qty["French"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["French"]["Brand"] = "Marque";
+	$fieldToolTipsinventorymaster_qty["French"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["French"]["Description"] = "La description";
+	$fieldToolTipsinventorymaster_qty["French"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["French"]["Supplier"] = "Fournisseur";
+	$fieldToolTipsinventorymaster_qty["French"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["French"]["SUM_Quantity_"] = "SOMME (Quantité)";
+	$fieldToolTipsinventorymaster_qty["French"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["French"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsinventorymaster_qty["German"] = array();
+	$fieldToolTipsinventorymaster_qty["German"] = array();
+	$pageTitlesinventorymaster_qty["German"] = array();
+	$fieldLabelsinventorymaster_qty["German"]["Id"] = "Ich würde";
+	$fieldToolTipsinventorymaster_qty["German"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["German"]["ItemID"] = "Artikel Identifikationsnummer";
+	$fieldToolTipsinventorymaster_qty["German"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["German"]["Brand"] = "Marke";
+	$fieldToolTipsinventorymaster_qty["German"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["German"]["Description"] = "Beschreibung";
+	$fieldToolTipsinventorymaster_qty["German"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["German"]["Supplier"] = "Lieferant";
+	$fieldToolTipsinventorymaster_qty["German"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["German"]["SUM_Quantity_"] = "SUM (Anzahl)";
+	$fieldToolTipsinventorymaster_qty["German"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["German"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsinventorymaster_qty["Italian"] = array();
+	$fieldToolTipsinventorymaster_qty["Italian"] = array();
+	$pageTitlesinventorymaster_qty["Italian"] = array();
+	$fieldLabelsinventorymaster_qty["Italian"]["Id"] = "Id";
+	$fieldToolTipsinventorymaster_qty["Italian"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["Italian"]["ItemID"] = "Numero identificativo dell'oggetto";
+	$fieldToolTipsinventorymaster_qty["Italian"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["Italian"]["Brand"] = "Marca";
+	$fieldToolTipsinventorymaster_qty["Italian"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["Italian"]["Description"] = "Descrizione";
+	$fieldToolTipsinventorymaster_qty["Italian"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["Italian"]["Supplier"] = "Fornitore";
+	$fieldToolTipsinventorymaster_qty["Italian"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["Italian"]["SUM_Quantity_"] = "SUM (Quantità)";
+	$fieldToolTipsinventorymaster_qty["Italian"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["Italian"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsinventorymaster_qty["Russian"] = array();
+	$fieldToolTipsinventorymaster_qty["Russian"] = array();
+	$pageTitlesinventorymaster_qty["Russian"] = array();
+	$fieldLabelsinventorymaster_qty["Russian"]["Id"] = "? ??";
+	$fieldToolTipsinventorymaster_qty["Russian"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["Russian"]["ItemID"] = "Item ID";
+	$fieldToolTipsinventorymaster_qty["Russian"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["Russian"]["Brand"] = "?????";
+	$fieldToolTipsinventorymaster_qty["Russian"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["Russian"]["Description"] = "????????";
+	$fieldToolTipsinventorymaster_qty["Russian"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["Russian"]["Supplier"] = "?????????";
+	$fieldToolTipsinventorymaster_qty["Russian"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["Russian"]["SUM_Quantity_"] = "????? (??????????)";
+	$fieldToolTipsinventorymaster_qty["Russian"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["Russian"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsinventorymaster_qty["Spanish"] = array();
+	$fieldToolTipsinventorymaster_qty["Spanish"] = array();
+	$pageTitlesinventorymaster_qty["Spanish"] = array();
+	$fieldLabelsinventorymaster_qty["Spanish"]["Id"] = "Carné de identidad";
+	$fieldToolTipsinventorymaster_qty["Spanish"]["Id"] = "";
+	$fieldLabelsinventorymaster_qty["Spanish"]["ItemID"] = "Identificación del artículo";
+	$fieldToolTipsinventorymaster_qty["Spanish"]["ItemID"] = "";
+	$fieldLabelsinventorymaster_qty["Spanish"]["Brand"] = "Marca";
+	$fieldToolTipsinventorymaster_qty["Spanish"]["Brand"] = "";
+	$fieldLabelsinventorymaster_qty["Spanish"]["Description"] = "Descripción";
+	$fieldToolTipsinventorymaster_qty["Spanish"]["Description"] = "";
+	$fieldLabelsinventorymaster_qty["Spanish"]["Supplier"] = "Proveedor";
+	$fieldToolTipsinventorymaster_qty["Spanish"]["Supplier"] = "";
+	$fieldLabelsinventorymaster_qty["Spanish"]["SUM_Quantity_"] = "SUM (Cantidad)";
+	$fieldToolTipsinventorymaster_qty["Spanish"]["SUM_Quantity_"] = "";
+	if (count($fieldToolTipsinventorymaster_qty["Spanish"]))
+		$tdatainventorymaster_qty[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsinventorymaster_qty[""] = array();
@@ -94,6 +254,9 @@ $tdatainventorymaster_qty[".afterAddActionDetTable"] = "";
 
 $tdatainventorymaster_qty[".list"] = true;
 
+
+
+
 $tdatainventorymaster_qty[".view"] = true;
 
 $tdatainventorymaster_qty[".import"] = true;
@@ -105,6 +268,14 @@ $tdatainventorymaster_qty[".printFriendly"] = true;
 $tdatainventorymaster_qty[".delete"] = true;
 
 $tdatainventorymaster_qty[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatainventorymaster_qty[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatainventorymaster_qty[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatainventorymaster_qty[".searchSaving"] = false;
@@ -177,6 +348,7 @@ $tdatainventorymaster_qty[".geocodingEnabled"] = false;
 $tdatainventorymaster_qty[".listGridLayout"] = 3;
 
 
+$tdatainventorymaster_qty[".isResizeColumns"] = true;
 
 
 
@@ -285,6 +457,13 @@ $tdatainventorymaster_qty[".editFields"][] = "Supplier";
 
 $tdatainventorymaster_qty[".inlineEditFields"] = array();
 
+$tdatainventorymaster_qty[".updateSelectedFields"] = array();
+$tdatainventorymaster_qty[".updateSelectedFields"][] = "ItemID";
+$tdatainventorymaster_qty[".updateSelectedFields"][] = "Brand";
+$tdatainventorymaster_qty[".updateSelectedFields"][] = "Description";
+$tdatainventorymaster_qty[".updateSelectedFields"][] = "Supplier";
+
+
 $tdatainventorymaster_qty[".exportFields"] = array();
 $tdatainventorymaster_qty[".exportFields"][] = "ItemID";
 $tdatainventorymaster_qty[".exportFields"][] = "Brand";
@@ -326,6 +505,8 @@ $tdatainventorymaster_qty[".printFields"][] = "SUM(Quantity)";
 	
 	
 	
+	
+
 	
 		$fdata["bAdvancedSearch"] = true;
 
@@ -448,6 +629,9 @@ $tdatainventorymaster_qty[".printFields"][] = "SUM(Quantity)";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -571,6 +755,9 @@ $tdatainventorymaster_qty[".printFields"][] = "SUM(Quantity)";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -694,6 +881,9 @@ $tdatainventorymaster_qty[".printFields"][] = "SUM(Quantity)";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -817,6 +1007,9 @@ $tdatainventorymaster_qty[".printFields"][] = "SUM(Quantity)";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -938,6 +1131,8 @@ $tdatainventorymaster_qty[".printFields"][] = "SUM(Quantity)";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

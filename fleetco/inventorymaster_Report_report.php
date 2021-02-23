@@ -6,13 +6,13 @@ require_once('include/xtempl.php');
 
 add_nocache_headers();
 
+require_once('classes/reportpage.php');
+require_once('classes/searchclause.php');
 require_once("include/inventorymaster_Report_variables.php");
 
 if( !Security::processPageSecurity( $strTableName, 'S' ) )
 	return;
 
-require_once('classes/reportpage.php');
-require_once('classes/searchclause.php');
 
 
 
@@ -22,10 +22,10 @@ $layout->version = 2;
 $layout->blocks["center"] = array();
 $layout->containers["recordcontrols"] = array();
 $layout->container_properties["recordcontrols"] = array(  );
-$layout->containers["recordcontrols"][] = array("name"=>"toplinks_advsearch", 
+$layout->containers["recordcontrols"][] = array("name"=>"toplinks_advsearch",
 	"block"=>"asearch_link", "substyle"=>1  );
 
-$layout->containers["recordcontrols"][] = array("name"=>"toplinks_export_links", 
+$layout->containers["recordcontrols"][] = array("name"=>"toplinks_export_links",
 	"block"=>"export_link", "substyle"=>1  );
 
 $layout->skins["recordcontrols"] = "2";
@@ -33,7 +33,7 @@ $layout->skins["recordcontrols"] = "2";
 $layout->blocks["center"][] = "recordcontrols";
 $layout->containers["message"] = array();
 $layout->container_properties["message"] = array(  );
-$layout->containers["message"][] = array("name"=>"message", 
+$layout->containers["message"][] = array("name"=>"message",
 	"block"=>"message_block", "substyle"=>1  );
 
 $layout->skins["message"] = "2";
@@ -41,7 +41,7 @@ $layout->skins["message"] = "2";
 $layout->blocks["center"][] = "message";
 $layout->containers["grid"] = array();
 $layout->container_properties["grid"] = array(  );
-$layout->containers["grid"][] = array("name"=>"report", 
+$layout->containers["grid"][] = array("name"=>"report",
 	"block"=>"", "substyle"=>1  );
 
 $layout->skins["grid"] = "grid";
@@ -49,7 +49,7 @@ $layout->skins["grid"] = "grid";
 $layout->blocks["center"][] = "grid";
 $layout->containers["pagination_bottom"] = array();
 $layout->container_properties["pagination_bottom"] = array(  );
-$layout->containers["pagination_bottom"][] = array("name"=>"pagination", 
+$layout->containers["pagination_bottom"][] = array("name"=>"pagination",
 	"block"=>"pagination_block", "substyle"=>1  );
 
 $layout->skins["pagination_bottom"] = "2";
@@ -58,10 +58,10 @@ $layout->blocks["center"][] = "pagination_bottom";
 $layout->blocks["left"] = array();
 $layout->containers["left"] = array();
 $layout->container_properties["left"] = array(  );
-$layout->containers["left"][] = array("name"=>"vmenu", 
+$layout->containers["left"][] = array("name"=>"vmenu",
 	"block"=>"menu_block", "substyle"=>1  );
 
-$layout->containers["left"][] = array("name"=>"searchpanel", 
+$layout->containers["left"][] = array("name"=>"searchpanel",
 	"block"=>"searchPanel", "substyle"=>1  );
 
 $layout->skins["left"] = "menu";
@@ -73,7 +73,7 @@ $layout->skins["master"] = "empty";
 $layout->blocks["top"][] = "master";
 $layout->containers["toplinks"] = array();
 $layout->container_properties["toplinks"] = array(  );
-$layout->containers["toplinks"][] = array("name"=>"loggedas", 
+$layout->containers["toplinks"][] = array("name"=>"loggedas",
 	"block"=>"security_block", "substyle"=>1  );
 
 $layout->skins["toplinks"] = "empty";
@@ -81,26 +81,26 @@ $layout->skins["toplinks"] = "empty";
 $layout->blocks["top"][] = "toplinks";
 $layout->containers["hmenu"] = array();
 $layout->container_properties["hmenu"] = array(  );
-$layout->containers["hmenu"][] = array("name"=>"search", 
+$layout->containers["hmenu"][] = array("name"=>"search",
 	"block"=>"searchform_block", "substyle"=>1  );
 
-$layout->containers["hmenu"][] = array("name"=>"search_buttons", 
+$layout->containers["hmenu"][] = array("name"=>"search_buttons",
 	"block"=>"searchformbuttons_block", "substyle"=>1  );
 
-$layout->containers["hmenu"][] = array("name"=>"search_saving_buttons", 
+$layout->containers["hmenu"][] = array("name"=>"search_saving_buttons",
 	"block"=>"searchsaving_block", "substyle"=>1  );
 
-$layout->containers["hmenu"][] = array("name"=>"details_found", 
+$layout->containers["hmenu"][] = array("name"=>"details_found",
 	"block"=>"details_block", "substyle"=>1  );
 
-$layout->containers["hmenu"][] = array("name"=>"page_of", 
+$layout->containers["hmenu"][] = array("name"=>"page_of",
 	"block"=>"pages_block", "substyle"=>1  );
 
-$layout->containers["hmenu"][] = array("name"=>"recsperpage", 
+$layout->containers["hmenu"][] = array("name"=>"recsperpage",
 	"block"=>"recordspp_block", "substyle"=>1  );
 
-$layout->containers["hmenu"][] = array("name"=>"printpanel", 
-	"block"=>"", "substyle"=>1  );
+$layout->containers["hmenu"][] = array("name"=>"printpanel",
+	"block"=>"print_friendly", "substyle"=>1  );
 
 $layout->skins["hmenu"] = "undermenu";
 
@@ -199,6 +199,7 @@ if( postvalue("deleteSearch") && postvalue("searchName") && !is_null($pageObject
 {
 	$searchName = postvalue("searchName");
 	$pageObject->searchLogger->deleteSearch( $searchName );
+	echo my_json_encode( array() );
 	exit();
 }
 

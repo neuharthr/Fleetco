@@ -136,17 +136,17 @@ class EditControlsContainer
 			$fields = array_merge($searchFields, $fields);
 			$fields = array_unique($fields);			
 		}
-		for($i = 0; $i < count($fields); $i++)
+		foreach( $fields as $i => $f )
 		{
 			$appear = false;
-			if($this->pageType == PAGE_REGISTER || $this->pageType == PAGE_SEARCH || in_array($fields[$i], $searchFields))
+			if($this->pageType == PAGE_REGISTER || $this->pageType == PAGE_SEARCH || in_array($f, $searchFields))
 				$appear = true;
 			else if($appearOnPageFunc) 
-				$appear = $this->pSetEdit->$appearOnPageFunc($fields[$i]);
+				$appear = $this->pSetEdit->$appearOnPageFunc($f);
 			if($appear)
 			{
-				$this->getControl($fields[$i])->addJSFiles();
-				$this->getControl($fields[$i])->addCSSFiles();
+				$this->getControl($f)->addJSFiles();
+				$this->getControl($f)->addCSSFiles();
 			}
 		}
 	}

@@ -208,7 +208,15 @@ function getFilenameFromURI( $uri )
 function getLangFileName($langName)
 {
 	$langArr = array();
+	$langArr["Afrikaans"] = "Afrikaans";
+	$langArr["Arabic"] = "Arabic";
+	$langArr["Chinese"] = "Chinese";
 	$langArr["English"] = "English";
+	$langArr["French"] = "French";
+	$langArr["German"] = "German";
+	$langArr["Italian"] = "Italian";
+	$langArr["Russian"] = "Russian";
+	$langArr["Spanish"] = "Spanish";
 	return $langArr[$langName];
 }
 
@@ -1286,29 +1294,25 @@ function ReadUserPermissions($userID = "")
 
 	$groups = array();
 	$bIsAdmin = false;
+	$gConn = $cman->getForUserGroups();
+	
 	if($userID != "Guest")
 	{
-		$grConnection = $cman->getForUserGroups();
 
-		if(!$caseInsensitiveUsername)
-		{
-			$sql = "select ".$grConnection->addFieldWrappers( "GroupID" )
-				.", ".$grConnection->addFieldWrappers( "UserName" )
-				." from ". $grConnection->addTableWrappers( "carrier_ugmembers" )
-				." where ".$grConnection->addFieldWrappers( "UserName" )."=".$grConnection->prepareString($userID);
-		}
+		if($caseInsensitiveUsername)
+			$usernameClause = $gConn->upper($gConn->addFieldWrappers( "UserName" )) . "=" . $gConn->upper( $gConn->prepareString($userID) );
 		else
-		{
-			$sql = "select ".$grConnection->addFieldWrappers( "GroupID" )
-				.", ".$grConnection->addFieldWrappers( "UserName" )
-				." from ". $grConnection->addTableWrappers( "carrier_ugmembers" )
-				." where ".$grConnection->addFieldWrappers( "UserName" )."=".strtoupper( $grConnection->prepareString($userID) );
-		}
+			$usernameClause = $gConn->addFieldWrappers( "UserName" ) . "=" . $gConn->prepareString($userID);
 
-		$qResult = $grConnection->query( $sql );
+		$sql = "select ".$gConn->addFieldWrappers( "GroupID" )
+			.", ".$gConn->addFieldWrappers( "UserName" )
+			." from ". $gConn->addTableWrappers( "carrier_ugmembers" )
+			." where " . $usernameClause;
+
+		$qResult = $gConn->query( $sql );
 		while( $data = $qResult->fetchNumeric() )
 		{
-			if ($caseInsensitiveUsername || strcmp($data[1],$userID) == 0)
+			if ( $caseInsensitiveUsername || strcmp($data[1],$userID) == 0 )
 				$groups[] = $data[0];
 		}
 
@@ -1318,7 +1322,6 @@ function ReadUserPermissions($userID = "")
 	else
 		$groups[] = -3;
 
-	$rConnection = $cman->getForUserGroups();
 
 	$groupstr = "";
 	foreach($groups as $g)
@@ -1331,12 +1334,12 @@ function ReadUserPermissions($userID = "")
 	}
 	$rights = array();
 
-	$sql = "select ". $rConnection->addFieldWrappers( "TableName" )
-		.", ". $rConnection->addFieldWrappers( "AccessMask" )
-		." from ". $rConnection->addTableWrappers( "carrier_ugrights" )
-		." where ". $rConnection->addFieldWrappers( "GroupID" ) ." in (".$groupstr.")";
+	$sql = "select ". $gConn->addFieldWrappers( "TableName" )
+		.", ". $gConn->addFieldWrappers( "AccessMask" )
+		." from ". $gConn->addTableWrappers( "carrier_ugrights" )
+		." where ". $gConn->addFieldWrappers( "GroupID" ) ." in (".$groupstr.")";
 
-	$qResult = $rConnection->query( $sql );
+	$qResult = $gConn->query( $sql );
 	while( $data = $qResult->fetchNumeric() )
 	{
 		if(!array_key_exists($data[0], $rights))
@@ -1363,102 +1366,6 @@ function ReadUserPermissions($userID = "")
 	$gPermissionsRead = true;
 }
 
-/**
- * @intellisense
- */
-function guestHasPermissions()
-{
-	ReadUserPermissions("Guest");
-	if(!count($_SESSION["UserRights"]["Guest"]))
-		return false;
-	if(array_key_exists("inventorymaster",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("vehiclemaster",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-issue",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("inventorymaster-qty",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-receive",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("fuelmaster",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("suppliermaster",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("accidents",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("maintenenace",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("fleettype",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("fuelprices",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("fuelstationmaster",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("vehicletype",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("servicetypemaster",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("insurance-payments",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("insuranceclaims",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("insurancecompany",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("maintenenace-regularservice",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("maintenenace-general-repair",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("maintenenace-accident-repair",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("vehiclemaster-report",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("accidents-report",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("admin_rights",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("carrierusers",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("admin_members",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("admin_users",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("inventorymaster-pricing",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-remove",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-issuetorebuild",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-receiveafterrebuild",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-issue-rebuilt",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("fuelmaster-reports",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-stock-balance",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("rnewalmastertable",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("otherrenewal",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-disposal",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-remove-other",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("creategrn-disposal-rebuild",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("inventorymaster-pricing1",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("inventorymaster-pricing5",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("fuelmaster Chart",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("maintenenace Chart",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	return false;
-}
 
 /**
  * @intellisense
@@ -1495,7 +1402,7 @@ function GetUserPermissionsDynamic($table="")
  */
 function IsAdmin()
 {
-	global $gPermissionsRefreshTime, $gPermissionsRead;
+	global $gPermissionsRefreshTime, $gPermissionsRead, $caseInsensitiveUsername;
 	ReadUserPermissions();
 	return array_key_exists(".IsAdmin", @$_SESSION["UserRights"][ $_SESSION["UserID"] ]);
 }
@@ -1535,6 +1442,24 @@ function isLogged()
 {
 	if (@$_SESSION["UserID"])
 		return true;
+	return false;
+}
+
+
+
+/**
+ * @intellisense
+ */
+function guestHasPermissions()
+{
+	$tables = GetTablesListWithoutSecurity();
+	ReadUserPermissions("Guest");
+	if(!count($_SESSION["UserRights"]["Guest"]))
+		return false;
+	foreach($tables as $t) {
+		if(array_key_exists( $t ,$_SESSION["UserRights"]["Guest"]))
+			return true;
+	}
 	return false;
 }
 
@@ -1612,7 +1537,7 @@ function DoLogin($callAfterLoginEvent = false, $userID = "Guest", $userName = ""
 	global $globalEvents;
 
 	if($userID == "Guest" && $userName == "")
-		$userName = "Guest";
+		$userName = mlang_message("AA_GROUP_GUEST");
 
 	$_SESSION["UserID"] = $userID;
 	$_SESSION["UserName"] = runner_htmlspecialchars( $userName );
@@ -2400,7 +2325,15 @@ function SetLangVars($xt, $prefix, $pageName = "", $extraparams = "")
 
 	$xt->assign($currentLang . "LANGLINK_ACTIVE", true);
 
+	$xt->assign("AfrikaansLANGLINK", "Afrikaans" != $currentLang);
+	$xt->assign("ArabicLANGLINK", "Arabic" != $currentLang);
+	$xt->assign("ChineseLANGLINK", "Chinese" != $currentLang);
 	$xt->assign("EnglishLANGLINK", "English" != $currentLang);
+	$xt->assign("FrenchLANGLINK", "French" != $currentLang);
+	$xt->assign("GermanLANGLINK", "German" != $currentLang);
+	$xt->assign("ItalianLANGLINK", "Italian" != $currentLang);
+	$xt->assign("RussianLANGLINK", "Russian" != $currentLang);
+	$xt->assign("SpanishLANGLINK", "Spanish" != $currentLang);
 
 	if( isEnableSection508() )
 		$xt->assign_section("lang_label", "<label for=\"languageSelector\">","</label>");
@@ -2518,18 +2451,18 @@ function mlang_getlanglist()
 function getMountNames()
 {
 	$mounts = array();
-		$mounts[1] = "January";
-	$mounts[2] = "February";
-	$mounts[3] = "March";
-	$mounts[4] = "April";
-	$mounts[5] = "May";
-	$mounts[6] = "June";
-	$mounts[7] = "July";
-	$mounts[8] = "August";
-	$mounts[9] = "September";
-	$mounts[10] = "October";
-	$mounts[11] = "November";
-	$mounts[12] = "December";
+		$mounts[1] = mlang_message("MONTH_JAN");
+	$mounts[2] = mlang_message("MONTH_FEB");
+	$mounts[3] = mlang_message("MONTH_MAR");
+	$mounts[4] = mlang_message("MONTH_APR");
+	$mounts[5] = mlang_message("MONTH_MAY");
+	$mounts[6] = mlang_message("MONTH_JUN");
+	$mounts[7] = mlang_message("MONTH_JUL");
+	$mounts[8] = mlang_message("MONTH_AUG");
+	$mounts[9] = mlang_message("MONTH_SEP");
+	$mounts[10] = mlang_message("MONTH_OCT");
+	$mounts[11] = mlang_message("MONTH_NOV");
+	$mounts[12] = mlang_message("MONTH_DEC");
 
 	return $mounts;
 }
@@ -3584,7 +3517,15 @@ function getDefaultLanguage()
 	if( strlen($_SESSION["language"]) == 0 && $_SERVER['HTTP_ACCEPT_LANGUAGE'] )
 	{
 		$arrWizardLang = array();
+		$arrWizardLang[] = "Afrikaans";
+		$arrWizardLang[] = "Arabic";
+		$arrWizardLang[] = "Chinese";
 		$arrWizardLang[] = "English";
+		$arrWizardLang[] = "French";
+		$arrWizardLang[] = "German";
+		$arrWizardLang[] = "Italian";
+		$arrWizardLang[] = "Russian";
+		$arrWizardLang[] = "Spanish";
 		$arrLang = array();
 		$arrLang["af"] = "Afrikaans";
 		$arrLang["ar"] = "Arabic";
@@ -3703,18 +3644,14 @@ function xt_showchart($params)
 
 	$settings = new ProjectSettings(GetTableByShort($params["chartname"]));
 	$refresh = $settings->getChartRefreshTime();
-	/*if( ( $params["ctype"]=="2DPie" || $params["ctype"]=="2DDoughnut" || $params["ctype"]=="Funnel"
-		|| $params["ctype"]=="OHLC" || $params["ctype"]=="Candle" ) )
-	{
-		$refresh = 0;
-	}*/
 
 	$chartParams = array();
 	$chartParams['width'] = $width;
 	$chartParams['height'] = $height;
 	$chartParams['showDetails'] = $showDetails;
 	$chartParams['chartName'] = $params["chartname"];
-	$chartParams['containerId'] = $params["chartname"].$params["id"];
+	//css id identifiers are not allowed to start with a number or underscore
+	$chartParams['containerId'] = "rnr".$params["chartname"].$params["id"];
 	$chartParams['chartType'] = $params["ctype"];
 	$chartParams['refreshTime'] = $refresh;
 	$chartParams['xmlFile'] = GetTableLink("dchartdata") . '?chartname=' . $params["chartname"] . $chartPreview .
@@ -3761,20 +3698,7 @@ function xt_showchart($params)
 	{
 		$chartParams["webRootPath"] = GetWebRootPath();
 
-		echo '<script type="text/javascript" language="javascript" src="' . GetRootPathForResources( 'libs/js/anychart.min.js' ) . '"></script>';
-		echo '<script type="text/javascript" language="javascript" src="' . GetRootPathForResources( 'libs/js/migrationTool.js' ) . '"></script>';
-		echo '<script type="text/javascript" language="javascript">
-		(function(){
-			var params = ' . my_json_encode( $chartParams ) . ';
-			if ( Runner && Runner.Charts ) {
-				Runner.Charts.createChart( params );
-			} else {
-				$(document).ready( function() {
-					Runner.Charts.createChart( params );
-				} );
-			}
-		})();
-		</script>';
+		echo '<div data-runner-chart-params="' . runner_htmlspecialchars( my_json_encode( $chartParams ) ) . '"></div>';
 	}
 }
 
@@ -3799,6 +3723,8 @@ function getHomePage()
 
 	if( $globalSettings["LandingPage"]=="" || $globalSettings["LandingPage"] == "login" || $globalSettings["LandingPage"] == "register" )
 		return GetLocalLink("menu");
+	
+	return GetLocalLink( $globalSettings["LandingTable"], $globalSettings["LandingPage"] );
 }
 
 function printHomeLink( $params )

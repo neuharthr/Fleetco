@@ -198,6 +198,11 @@ class ListPage extends RunnerPage
 	 */
 	protected $showViewInPopup = false;
 	
+	/**
+	 * fieldClass function cache
+	 * @type Array
+	 */
+	protected $fieldClasses = array();
 	
 	/**
 	 * Constructor, set initial params
@@ -282,7 +287,9 @@ class ListPage extends RunnerPage
 		
 		$this->orderClause = new OrderClause($this);
 		$this->orderClause->moveNext = $this->pSet->useMoveNext();
+
 	}
+
 
 	/**
 	 * add Order data for set in URL 
@@ -380,10 +387,10 @@ class ListPage extends RunnerPage
 			$this->body["begin"].= "<div id=\"search_suggest\" class=\"search_suggest\"></div>";
 		
 		if($this->is508) {
-			$this->body["begin"].= "<a href=\"#skipdata\" title=\""."Skip to table data"."\" class=\"".$this->makeClassName("s508")."\">"."Skip to table data"."</a>";
-			$this->body["begin"].= "<a href=\"#skipmenu\" title=\""."Skip to menu"."\" class=\"".$this->makeClassName("s508")."\">"."Skip to menu"."</a>";
-			$this->body["begin"].= "<a href=\"#skipsearch\" title=\""."Skip to search"."\" class=\"".$this->makeClassName("s508")."\">"."Skip to search"."</a>";
-			$this->body["begin"].= "<a href=\"templates/helpshortcut.htm\" title=\""."Hotkeys reference"."\" class=\"".$this->makeClassName("s508")."\">"."Hotkeys reference"."</a>";
+			$this->body["begin"].= "<a href=\"#skipdata\" title=\"".mlang_message("508_SKIP_DATA")."\" class=\"".$this->makeClassName("s508")."\">".mlang_message("508_SKIP_DATA")."</a>";
+			$this->body["begin"].= "<a href=\"#skipmenu\" title=\"".mlang_message("508_SKIP_MENU")."\" class=\"".$this->makeClassName("s508")."\">".mlang_message("508_SKIP_MENU")."</a>";
+			$this->body["begin"].= "<a href=\"#skipsearch\" title=\"".mlang_message("508_SKIP_SEARCH")."\" class=\"".$this->makeClassName("s508")."\">".mlang_message("508_SKIP_SEARCH")."</a>";
+			$this->body["begin"].= "<a href=\"templates/helpshortcut.htm\" title=\"".mlang_message("508_HELP")."\" class=\"".$this->makeClassName("s508")."\">".mlang_message("508_HELP")."</a>";
 		}
 		
 		//prepare for dispaly master table info on details table
@@ -415,8 +422,14 @@ class ListPage extends RunnerPage
 	 */
 	function addJsForGrid()
 	{ 
-		if($this->isResizeColumns)
+		if( $this->isResizeColumns )
 			$this->prepareForResizeColumns();
+
+		if( $this->pSet->isAllowFieldsReordering() && $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
+		{
+						$jqueryUiFile = "include/jquery-ui/jquery-ui.min.js";
+			$this->AddJSFile( 'include/jquery.dragtable.js', $jqueryUiFile );
+		}
 		
 		$this->jsSettings['tableSettings'][$this->tName]['showRows'] = ($this->numRowsFromSQL ? true : false);
 		
@@ -434,9 +447,10 @@ class ListPage extends RunnerPage
 			$this->AddJSFile( 'include/colresizable.js' );
 			return;
 		}
-		if($this->mode!=LIST_AJAX)
+		
+		if( $this->mode != LIST_AJAX )
 		{
-			if($this->debugJSMode === true)
+			if( $this->debugJSMode === true )
 				$this->AddJSFile("include/runnerJS/RunnerResizeGrid.js");
 		}
 	}
@@ -452,8 +466,9 @@ class ListPage extends RunnerPage
 		//	reset search and page number
 		$_SESSION[$this->sessionPrefix."_search"] = 0;
 		if($this->firstTime)
-			$_SESSION[$this->sessionPrefix."_pagenumber"] = 1;
+			$_SESSION[$this->sessionPrefix."_pagenumber"] = 1;		
 	}
+	
 	/**
 	 * Add event before process list
 	 */
@@ -469,7 +484,7 @@ class ListPage extends RunnerPage
 	{
 		parent::setSessionVariables();
 		
-		if($this->searchClauseObj->bIsUsedSrch)
+		if( $this->searchClauseObj->isSearchFunctionalityActivated() )
 		{
 			// if search used serialize clause object
 			$_SESSION[$this->sessionPrefix.'_advsearch'] = serialize($this->searchClauseObj);
@@ -502,6 +517,21 @@ class ListPage extends RunnerPage
 			$this->pageSize = $this->gPageSize;	
 	}
 	
+	protected function assignColumnHeaderClasses()
+	{
+		for($i = 0; $i < count($this->listFields); $i ++) 
+		{
+			$field = $this->listFields[$i]['fName'];
+			$goodName = GoodFieldname($field);
+			// add class for field header as field value
+			$fieldClassStr = $this->fieldClass($field);
+			// add class for mobile columns hiding
+			if( isset( $this->hiddenColumnClasses[$goodName] ) )
+				$fieldClassStr .= " ".$this->hiddenColumnClasses[$goodName ];
+			$this->xt->assign(GoodFieldName($field)."_class", $fieldClassStr); 
+		}
+	}
+	
 	/**
 	 * Order links attribute for order on list page
 	 */
@@ -513,12 +543,6 @@ class ListPage extends RunnerPage
 			$goodName = GoodFieldname($field);
 			$this->xt->assign($goodName."_orderlinkattrs", $this->setLinksAttr(GoodFieldName($this->listFields[$i]['fName'])));
 			$this->xt->assign($goodName."_fieldheader", true);			
-			// add class for field header as field value
-			$fieldClassStr = $this->fieldClass($field);
-			// add class for mobile columns hiding
-			if( isset( $this->hiddenColumnClasses[$field] ) )
-				$fieldClassStr .= " ".$this->hiddenColumnClasses[$field];
-			$this->xt->assign(GoodFieldName($this->listFields[$i]['fName'])."_class", $fieldClassStr); 
 		}
 	}
 	/**
@@ -543,7 +567,8 @@ class ListPage extends RunnerPage
 	function deleteRecords() 
 	{	
 		global $globalEvents; 
-		
+		if( @$_REQUEST["a"] != "delete" )
+			return;
 		$message_class = "alert-warning";
 		$this->deleteMessage = "";
 		if(@$_REQUEST["mdelete"]) 
@@ -673,6 +698,9 @@ class ListPage extends RunnerPage
 	 */
 	function rulePRG() 
 	{		
+		if( $this->stopPRG )
+			return false;
+		
 		if(no_output_done() && count($this->selectedRecs) && !strlen($this->deleteMessage)) 
 		{	
 			// redirect, add a=return param for saving SESSION
@@ -751,6 +779,9 @@ class ListPage extends RunnerPage
 		
 		//edit selected link and attr
 		$this->editSelectedLinkAttrs();
+
+		//update selected link and attr
+		$this->updateSelectedLinkAttrs();
 		
 		//save all link, attr, span	
 		$this->saveAllLinkAttrs();
@@ -953,6 +984,18 @@ class ListPage extends RunnerPage
 					name=\"edit_selected".$this->id."\" 
 					id=\"edit_selected".$this->id."\"");
 	}
+
+	function updateSelectedLinkAttrs()
+	{
+		if( !$this->updateSelectedAvailable() ) 
+			return;
+
+		$this->xt->assign("updateselected_link", true );
+		$this->xt->assign("updateselectedlink_attrs","
+					href='".GetTableLink($this->shortTableName, "edit")."' 
+					name=\"update_selected".$this->id."\" 
+					id=\"update_selected".$this->id."\"" . $this->buttonShowHideStyle() );
+	}
 	
 	/**
 	 * Assign saveAll link and attrs
@@ -991,6 +1034,11 @@ class ListPage extends RunnerPage
 	function getDeleteLinksAttrs()
 	{
 		return "id=\"delete_selected".$this->id."\" name=\"delete_selected".$this->id."\" ";
+	}
+	
+	function getEditLinksAttrs()
+	{
+		return "id=\"edit_selected".$this->id."\" name=\"edit_selected".$this->id."\" ";
 	}
 	
 	function getFormInputsHTML() 
@@ -1040,9 +1088,6 @@ class ListPage extends RunnerPage
 		if( $this->connection->dbType == nDATABASE_DB2 ) 
 			$this->gsqlHead.=", ROW_NUMBER() over () as DB2_ROW_NUMBER ";
 	
-		// add to gsqlHead subquery counting the number of details
-		$this->addMasterDetailSubQuery();
-	
 		$this->gsqlFrom = $this->gQuery->FromToSql();
 		$this->gsqlWhereExpr = $this->gQuery->WhereToSql();
 		$this->gsqlGroupBy = $this->gQuery->GroupByToSql();
@@ -1052,6 +1097,7 @@ class ListPage extends RunnerPage
 		$searchWhere = $whereComponents["searchWhere"];
 		$searchHaving = $whereComponents["searchHaving"];
 		$joinFromPart = $whereComponents["joinFromPart"];
+		$searchCombineType = $whereComponents["searchUnionRequired"] ? "or" : "and";	
 		
 		$filterWhere = $this->getFiltersWhere();
 		$filterHaving = $this->getFiltersHaving();
@@ -1060,32 +1106,20 @@ class ListPage extends RunnerPage
 		$sqlWhere = combineSQLCriteria( array($whereComponents["commonWhere"], $filterWhere, $this->strWhereClause) ); 		
 		$sqlHaving = combineSQLCriteria( array($whereComponents["commonHaving"], $filterHaving) );
 		$sqlFrom = $this->gsqlFrom.$joinFromPart;
-		
-		$strSecuritySql = $this->SecuritySQL("Search", $this->tName);
-		// where clause with foreign keys of current table and it's master table master keys		
-		$masterWhere = $this->getMasterTableSQLClause();
-		$this->strWhereClause = combineSQLCriteria( array($this->strWhereClause, $searchWhere, $strSecuritySql, $masterWhere, $filterWhere) );
+
+		$this->strWhereClause = combineSQLCriteria( array($this->strWhereClause, $searchWhere, $this->SecuritySQL("Search", $this->tName),
+			$this->getMasterTableSQLClause(), $filterWhere) );
+			
 		$this->strHavingClause = combineSQLCriteria( array($searchHaving, $filterHaving) );
-		
-		
+			
 		if( $this->mode != LIST_DETAILS && $this->noRecordsFirstPage && !$this->isRequiredSearchRunning() )
 		{
 			$this->strWhereClause = whereAdd($this->strWhereClause, "1=0");
 			$sqlWhere = combineSQLCriteria( array($sqlWhere, "1=0") );
-		}
-		
-		$searchCombineType = $whereComponents["searchUnionRequired"] ? "or" : "and";			
+		}		
 		
 		$strSQL = SQLQuery::gSQLWhere_having($this->gsqlHead, $sqlFrom, $sqlWhere, $this->gsqlGroupBy, $sqlHaving, $searchWhere, $searchHaving, $searchCombineType);	
 		$strSQL.= " ".trim( $this->strOrderBy );
-		
-		//	save SQL parts to use in "Export" and "Printer-friendly" pages and to get prev\next records
-		$_SESSION[$this->sessionPrefix."_sql"] = $strSQL;
-		$_SESSION[$this->sessionPrefix."_where"] = $this->strWhereClause;
-		$_SESSION[$this->sessionPrefix."_having"] = $this->strHavingClause;
-		$_SESSION[$this->sessionPrefix."_criteria"] = $searchCombineType;
-		$_SESSION[$this->sessionPrefix."_order"] = $this->strOrderBy;
-		$_SESSION[$this->sessionPrefix."_joinFromPart"] = $joinFromPart;
 		
 		$strSQLbak = $strSQL;
 		$whereModifiedInEvent = false;
@@ -1136,15 +1170,39 @@ class ListPage extends RunnerPage
 			}
 		}
 
+		if( $this->addMasterDetailSubQuery() ) 
+		{		
+			$strSQL = SQLQuery::gSQLWhere_having($this->gsqlHead, $sqlFrom, $sqlWhere, $this->gsqlGroupBy, $sqlHaving, $searchWhere, $searchHaving, $searchCombineType);	
+			$strSQL.= " ".trim( $this->strOrderBy );		
+		}
+		
+		//	save SQL parts to use in "Export" and "Printer-friendly" pages and to get prev\next records
+		$_SESSION[$this->sessionPrefix."_sql"] = $strSQL;
+		$_SESSION[$this->sessionPrefix."_where"] = $this->strWhereClause;
+		$_SESSION[$this->sessionPrefix."_having"] = $this->strHavingClause;
+		$_SESSION[$this->sessionPrefix."_criteria"] = $searchCombineType;
+		$_SESSION[$this->sessionPrefix."_order"] = $this->strOrderBy;
+		$_SESSION[$this->sessionPrefix."_joinFromPart"] = $joinFromPart;			
+		
 		LogInfo($strSQL);
 		$this->querySQL = $strSQL;
  	}
 	
 	/**
 	 * Adds sub query for counting details recs number
+	 * add to gsqlHead subquery counting the number of details
+	 * @return Boolean
 	 */
 	protected function addMasterDetailSubQuery() 
 	{
+		if( $this->numRowsFromSQL == 0 )
+			return false;
+
+		if( $this->pageSize <= 20 || $this->pageSize / $this->numRowsFromSQL < 0.1 ) // #12351
+			return false;
+		
+		$added = false;
+		
 		for($i = 0; $i < count($this->allDetailsTablesArr); $i++) 
 		{
 			$detailData = $this->allDetailsTablesArr[$i];
@@ -1152,7 +1210,7 @@ class ListPage extends RunnerPage
 			{
 				$dataSourceTName = $detailData['dDataSourceTable'];
 
-				if( !$this->isDetailTableSubquerySupported( $dataSourceTName, $i )	)
+				if( !$this->isDetailTableSubquerySupported( $dataSourceTName, $i ) )
 					continue;
 				
 				$detailsSettings = $this->pSet->getTable($dataSourceTName);
@@ -1192,9 +1250,13 @@ class ListPage extends RunnerPage
 				$subQ.= " ".$detailsQuery->TailToSql();	
 				
 				$countsql = "SELECT count(*) FROM (".$subQ.") ".$this->connection->addTableWrappers("subQuery_cnt")." WHERE ".$masterWhere;
-				$this->gsqlHead.= ",(".$countsql.") as ".$this->connection->addFieldWrappers($dataSourceTName."_cnt")." "; 
+				$this->gsqlHead.= ",(".$countsql.") as ".$this->connection->addFieldWrappers($dataSourceTName."_cnt")." ";
+				
+				$added = true;
 			}
 		}
+		
+		return $added;
 	}
 
 	/**
@@ -1212,6 +1274,16 @@ class ListPage extends RunnerPage
 			&& $this->checkfDMLinkFieldsOfTheSameType( $dDataSourceTName, $dTableIndex );
 	}
 
+	/**
+	 * #12351
+	 * @param String dDataSourceTable	The detail datasource table name
+	 * @param Number dTableIndex	The detail table index in the allDetailsTablesArr prop	
+	 * @return Boolean	
+	 */
+	protected function isDetailTableSubqueryApplied( $dDataSourceTName, $dTableIndex )
+	{
+		return !( $this->pageSize <= 20 || $this->pageSize / $this->numRowsFromSQL < 0.1 ) && $this->isDetailTableSubquerySupported( $dDataSourceTName, $dTableIndex );
+	}	
 	
 	/**
 	 * Check if detail and master tables' link fields have the same type.
@@ -1665,13 +1737,13 @@ class ListPage extends RunnerPage
 	 */
 	protected function addHiddenColumnClasses(&$record, $field)
 	{
-		if( isset( $this->hiddenColumnClasses[$field] ) )
-		{
-			$gFieldName = GoodFieldName( $field );
-			$record[ $gFieldName."_class" ] .= " " . $this->hiddenColumnClasses[$field];
+		$gFieldName = GoodFieldName( $field );
+		if( isset( $this->hiddenColumnClasses[$gFieldName] ) )
+		{	
+			$record[ $gFieldName."_class" ] .= " " . $this->hiddenColumnClasses[$gFieldName];
 			
 			if( $this->listGridLayout != gltHORIZONTAL )
-				$record[ $gFieldName."_label_class" ] = $this->hiddenColumnClasses[$field];
+				$record[ $gFieldName."_label_class" ] = $this->hiddenColumnClasses[$gFieldName];
 		}
 	}
 	
@@ -1684,6 +1756,13 @@ class ListPage extends RunnerPage
 	 * @return string
 	 */
 	function fieldClass($f)
+	{
+		if( !isset($this->fieldClasses[$f]) )
+			$this->fieldClasses[$f] = $this->calcFieldClass( $f );
+		return $this->fieldClasses[$f];
+	}
+	
+	function calcFieldClass($f)
 	{
 		if( $this->pSet->getEditFormat($f) == FORMAT_LOOKUP_WIZARD )
 			return '';
@@ -1795,9 +1874,7 @@ class ListPage extends RunnerPage
 	 */
 	function addSpanVal($fName, &$data) 
 	{
-		global $strTableName;
-		$pSet = new ProjectSettings($strTableName, PAGE_LIST);
-		$type = $pSet->getFieldType($fName);
+		$type = $this->pSet->getFieldType($fName);
 		if((@$this->arrFieldSpanVal[$fName] == 2 || @$this->arrFieldSpanVal[$fName] == 1) && !IsBinaryType($type))
 		{
 			return "val=\"".runner_htmlspecialchars($data[$fName])."\" ";
@@ -1900,7 +1977,9 @@ class ListPage extends RunnerPage
 		$this->seekPageInRecSet($this->querySQL);
 		
 		$this->setGoogleMapsParams($this->listFields);
-
+		$this->setGridUserParams();
+		$this->assignColumnHeaderClasses();
+		
 		// fill grid data
 		$this->fillGridData();
 		
@@ -2052,30 +2131,26 @@ class ListPage extends RunnerPage
 	 */	
 	protected function buildMobileCssRules()
 	{
-		$devices = array( TABLET_7_IN, SMARTPHONE_PORTRAIT, SMARTPHONE_LANDSCAPE, TABLET_10_IN, DESKTOP );
+		if( $this->pSet->isAllowShowHideFields() ) 
+			return;
 		$cssBlocks = array();
-		$columnsToHide = array();
-		foreach( $devices as $d )
-		{
-			$columnsToHide[ $d ] = $this->pSet->getHiddenFields( $d );
-		}
+		$columnsToHide = $this->getColumnsToHide();
+		
+		$devices = array( TABLET_7_IN, SMARTPHONE_PORTRAIT, SMARTPHONE_LANDSCAPE, TABLET_10_IN, DESKTOP );
 		
 		//	build CSS code
 		foreach( $this->listFields as $f )
 		{
+			$gFieldName = GoodFieldName( $f['fName'] );
 			$fieldMentioned = false;
 			$field = $f['fName'];
 			foreach( $devices as $d )
 			{
-				if( isset($columnsToHide[ $d ][ $field ]) )
+				if( in_array($gFieldName, $columnsToHide[ $d ]) )
 				{
-					$this->hiddenColumnClasses[$field] = "column".GoodFieldName( $field );
-					$cssBlocks[$d] .= "." . $this->hiddenColumnClasses[$field] . " { display: none !important;; }\n";
+					$this->hiddenColumnClasses[$gFieldName] = "column".GoodFieldName( $field );
+					$cssBlocks[$d] .= "." . $this->hiddenColumnClasses[$gFieldName] . ":not([data-forced-visible-column]) { display: none !important;; }\n";
 					$fieldMentioned = true;
-				}
-				else if( isset( $this->hiddenColumnClasses[$field] ) )
-				{
-					$cssBlocks[$d] .= "." . $this->hiddenColumnClasses[$field] . " { display: table-cell !important;; }\n";
 				}
 			}
 		}
@@ -2213,6 +2288,74 @@ class ListPage extends RunnerPage
 	public function isPageSortable()
 	{
 		return true;
-	}	
+	}
+	
+	public function processSaveSearch() 
+	{
+		// Read Search parameters from the request
+
+		if( postvalue("saveSearch") && postvalue("searchName") && !is_null($this->searchLogger) ) 
+		{
+			$searchName = postvalue("searchName");
+			$searchParams = $this->getSearchParamsForSaving();
+			$this->searchLogger->saveSearch( $searchName, $searchParams );
+			
+			$this->searchClauseObj->savedSearchIsRun = true;
+			$_SESSION[$this->sessionPrefix.'_advsearch'] = serialize( $this->searchClauseObj );
+			
+			echo my_json_encode( $searchParams );
+			return true;
+		}
+
+		// Delete the saved search
+		if( postvalue("deleteSearch") && postvalue("searchName") && !is_null($this->searchLogger) ) 
+		{
+			$searchName = postvalue("searchName");
+			$this->searchLogger->deleteSearch( $searchName );
+			echo my_json_encode( array() );
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * save user setting
+	 * @param String table
+	 * @return Boolean
+	 */
+	public static function processSaveParams( $table ) 
+	{
+		if( postvalue("saveParam")  ) 
+		{
+			$paramType = intval( postvalue("saveParam") );
+			$paramData = my_json_decode(postvalue("data"));
+			
+			include_once getabspath("classes/paramsLogger.php");
+			
+			if( postvalue("onDashboard") )
+				$paramsLogger = new paramsLogger( postvalue("dashElementId"), $paramType );
+			else
+				$paramsLogger = new paramsLogger( $table, $paramType );			
+			
+			if( $paramType == SHFIELDS_PARAMS_TYPE )
+			{
+				$macroDeviceClass = RunnerPage::deviceClassToMacro( postvalue("deviceClass") );
+				$ps = new ProjectSettings($table);
+				if( !$ps->columnsByDeviceEnabled() )
+					$macroDeviceClass = 0;
+				$paramsLogger->saveShowHideData( $macroDeviceClass, $paramData );
+			}
+			else
+				$paramsLogger->save( $paramData );
+			return true;
+		}
+
+		return false;		
+	}
+	protected function setGridUserParams() 
+	{
+		
+	}
+	
 }
 ?>

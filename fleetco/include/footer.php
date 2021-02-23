@@ -1,10 +1,4 @@
- <BR>
-<TABLE width="100%" bgcolor="#ffffff" border="0" cellspacing="0" 
-cellpadding="0">
-  <TBODY>
-  <TR>
-    <TD>
-      <P><BR></P>
-      <P align="center">Fleetco - Open Source Fleet Maintenance System       
-      1.0</P> 
-      <P><BR></P></TD></TR></TBODY></TABLE>
+ 
+<P align="center"><FONT 
+size="1">Fleetco v2.0 <A 
+href="http://www.fleetco.space">www.fleetco.space</A></FONT></P>

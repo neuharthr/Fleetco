@@ -21,8 +21,7 @@ class DateField extends DateTimeControl
 		{
 			$this->pageObject->AddJSFile("include/bootstrap/js/moment.js", "include/bootstrap/js/bootstrap.min.js");
 			$this->pageObject->AddJSFile("include/bootstrap/js/bootstrap-datetimepicker.js", "include/bootstrap/js/moment.js");
-		}
-			
+		}	
 	}
 
 	function addCSSFiles()
@@ -175,8 +174,8 @@ class DateField extends DateTimeControl
 					$initMonthOpt = "<option>" . $months[$time[1]] . "</option>";
 				}
 				$initMonthOpt .= "<option>" . $this->maxLengthMonth() . "</option>";
-				$initDayOpt = "<option>" . ($time[2] ? $time[2] : "&nbsp") ." </option><option>22</option>";							
-				$initYearOpt = "<option>" . ($time[0] ? $time[0] : "&nbsp") . "</option><option>2000</option>";
+				$initDayOpt = "<option>" . ($time[2] ? $time[2] : "&nbsp;") ." </option><option>22</option>";							
+				$initYearOpt = "<option>" . ($time[0] ? $time[0] : "&nbsp;") . "</option><option>2000</option>";
 				$retday='<select class="'. $classString.'" id="day'.$this->cfield.'" '.$dayStyle.$alt.'name="day'.$this->cfield.'" >'.$initDayOpt.'</select>';
 				$retmonth='<select class="'. $classString.'" id="month'.$this->cfield.'" '.$monthStyle.$alt.'name="month'.$this->cfield.'" >'.$initMonthOpt.'</option></select>';
 				$retyear='<select class="'. $classString.'" id="year'.$this->cfield.'" '.$yearStyle.$alt.'name="year'.$this->cfield.'" >'.$initYearOpt.'</select>';

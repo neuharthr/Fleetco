@@ -5,11 +5,11 @@
 require_once("include/dbcommon.php");
 add_nocache_headers();
 
+require_once("classes/searchclause.php");
 require_once("include/Dashboard_variables.php");
 require_once("classes/searchcontrol.php");
 require_once("classes/advancedsearchcontrol.php");
 require_once("classes/panelsearchcontrol.php");
-require_once("classes/searchclause.php");
 
 
 if( !isLogged() )
@@ -36,16 +36,16 @@ $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["fields"] = array();
 $layout->container_properties["fields"] = array(  );
-$layout->containers["fields"][] = array("name"=>"srchheader", 
+$layout->containers["fields"][] = array("name"=>"srchheader",
 	"block"=>"searchheader", "substyle"=>2  );
 
-$layout->containers["fields"][] = array("name"=>"srchconditions", 
+$layout->containers["fields"][] = array("name"=>"srchconditions",
 	"block"=>"conditions_block", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"srchfields", 
+$layout->containers["fields"][] = array("name"=>"srchfields",
 	"block"=>"", "substyle"=>1  );
 
-$layout->containers["fields"][] = array("name"=>"srchbuttons", 
+$layout->containers["fields"][] = array("name"=>"srchbuttons",
 	"block"=>"searchbuttons", "substyle"=>2  );
 
 $layout->skins["fields"] = "fields";
@@ -82,6 +82,7 @@ else if( postvalue("mode") == "inlineLoadCtrl" )
 {
 	// load search panel control
 	$mode = SEARCH_LOAD_CONTROL;
+	$layoutVersion = postvalue("layoutVersion");
 }
 
 $params = array();
@@ -94,6 +95,7 @@ $params['tName'] = $strTableName;
 $params['pageType'] = PAGE_SEARCH;
 $params['templatefile'] = $templatefile;
 $params['shortTableName'] = 'Dashboard';
+$params['layoutVersion'] = $layoutVersion;
 
 $params['searchControllerId'] = postvalue('searchControllerId') ? postvalue('searchControllerId') : $id;
 $params['ctrlField'] = postvalue('ctrlField');

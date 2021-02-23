@@ -1,6 +1,6 @@
-<?php 
+<?php
 class eventclass_fuelmaster  extends eventsBase
-{ 
+{
 	function __construct()
 	{
 	// fill list of events
@@ -15,6 +15,7 @@ class eventclass_fuelmaster  extends eventsBase
 
 //	handlers
 
+		
 		
 		
 		
@@ -81,15 +82,20 @@ Return true;
 		
 		
 		
-								
 		
 		
-			
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		
 
+		
 		
 		
 		
@@ -156,15 +162,19 @@ Return true;
 		
 		
 		
-								
 		
 		
-			
+		
+		
+		
+		
+		
+		
 		
 		
 		
 		
 //	onscreen events
 
-} 
+}
 ?>

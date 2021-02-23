@@ -11,11 +11,11 @@ $locale_info["LOCALE_LANGNAME"]="en";
 $locale_info["LOCALE_CTRYNAME"]="US";
 //	date settings
 $locale_info["LOCALE_ICENTURY"]="1";
-$locale_info["LOCALE_IDATE"]="1";
+$locale_info["LOCALE_IDATE"]="0";
 $locale_info["LOCALE_ILDATE"]="0";
 $locale_info["LOCALE_SDATE"]="/";
-$locale_info["LOCALE_SLONGDATE"]="dddd, MMMM dd, yyyy";
-$locale_info["LOCALE_SSHORTDATE"]="dd/MM/yyyy";
+$locale_info["LOCALE_SLONGDATE"]="dddd, MMMM d, yyyy";
+$locale_info["LOCALE_SSHORTDATE"]="M/d/yyyy";
 //	weekday names
 $locale_info["LOCALE_IFIRSTDAYOFWEEK"]="6";
 $locale_info["LOCALE_SDAYNAME1"]="Monday";
@@ -58,18 +58,18 @@ $locale_info["LOCALE_SABBREVMONTHNAME10"]="Oct";
 $locale_info["LOCALE_SABBREVMONTHNAME11"]="Nov";
 $locale_info["LOCALE_SABBREVMONTHNAME12"]="Dec";
 //	time settings
-$locale_info["LOCALE_ITIME"]="1";
+$locale_info["LOCALE_ITIME"]="0";
 $locale_info["LOCALE_ITIMEMARKPOSN"]="0";
-$locale_info["LOCALE_ITLZERO"]="1";
+$locale_info["LOCALE_ITLZERO"]="0";
 $locale_info["LOCALE_S1159"]="AM";
 $locale_info["LOCALE_S2359"]="PM";
 $locale_info["LOCALE_STIME"]=":";
-$locale_info["LOCALE_STIMEFORMAT"]="HH:mm:ss";
+$locale_info["LOCALE_STIMEFORMAT"]="h:mm:ss tt";
 //	currency settings
 $locale_info["LOCALE_ICURRDIGITS"]="2";
 $locale_info["LOCALE_ICURRENCY"]="0";
 $locale_info["LOCALE_INEGCURR"]="0";
-$locale_info["LOCALE_SCURRENCY"]=" ";
+$locale_info["LOCALE_SCURRENCY"]="\$";
 $locale_info["LOCALE_SMONDECIMALSEP"]=".";
 $locale_info["LOCALE_SMONGROUPING"]="3;0";
 $locale_info["LOCALE_SMONTHOUSANDSEP"]=",";

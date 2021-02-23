@@ -2,6 +2,8 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,200 +14,112 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-list" {$bodyattrs}>
 	{BEGIN body}
-		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+<style>
+{$containerCss}
+</style>
+<div class="sidebar bs-fixed clearfix mCustomScrollbar" data-mcs-theme="minimal-dark" {$blockattr_left}>
+	<div class="sidebar-contents mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside">
+		
 
+{BEGIN container_logo}
+<div {$logo_chiddenattr} data-pageid="{$pageid}" data-container="logo" class=" bs-sidebarlogo   "> 
 
-
-{BEGIN container_toplinks}
-<div class="rnr-c rnr-ch rnr-c-toplinks">
-<div class="rnr-hfiller"></div>
-{BEGIN security_block}
-<div  class="style1 rnr-br rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
-	{BEGIN loggedas_message} 
-	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
-	{END loggedas_message}
-	{BEGIN guestloginbutton}
-	<span>
-		{BEGIN embeded_log_fields}
-		<span>
-		<input type="text" name="username" {$username_attrs}>&nbsp;
-		<input type="password" name="password" {$password_attrs}>
-		</span>
-		{END embeded_log_fields}
-		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
-		{BEGIN embeded_log_ctrls}
-		<span>
-		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
-			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
-			</span>
-		{END embeded_log_ctrls}
-	</span>
-	{END guestloginbutton}
-	{BEGIN logoutbutton}
-	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
-	{END logoutbutton}
-	{BEGIN exitadminarea_link}
-	<a href="#" class="rnr-button" {$exitaalink_attrs}>Exit Admin Area</a>
-	{END exitadminarea_link}
-
-	{BEGIN changepwd_link}
-	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
-	{END changepwd_link}
-</div></div>
-{END security_block}
+{BEGIN logo_block}
+<a href="{$home_link}" {$logo_hiddenattr} data-pageid="{$pageid}" data-brick="logo" class="navbar-brand" >{$logo}</a>
+{END logo_block}
 
 
 
 </div>
-{END container_toplinks}
+{END container_logo}
 
 
 
-{BEGIN container_hmenu}
-<div class="rnr-c rnr-ch rnr-c-hmenu">
+{BEGIN container_hdr}
+<div {$hdr_chiddenattr} data-pageid="{$pageid}" data-container="hdr" class=" navbar-default clearfix   "> 
 
-{BEGIN searchform_block}
-<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
-		{BEGIN searchform_text}
-		<input type="text" {$searchfor_attrs} size="25">
-		{END searchform_text}
-		{BEGIN searchform_search}
-			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
-		{END searchform_search}
-		{BEGIN searchform_showall}	
-		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
-		{END searchform_showall}
-	</span>
-</div>
-{END searchform_block}
+{BEGIN collapse_block}
+<button {$bsnavbarcollapse_hiddenattr} data-pageid="{$pageid}" data-brick="bsnavbarcollapse" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target=".bs-navcontrolled">	
+	<span class="sr-only">Toggle navigation</span>	
+	<span class="icon-bar"></span>					
+</button>												
 
+{END collapse_block}
 
-{BEGIN searchformbuttons_block}
-<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
-<span>
-	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
-	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
-</span>
-{END searchPanelTopButtons}
-</div>
-{END searchformbuttons_block}
-
-
-{BEGIN searchsaving_block}
-<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
-{END searchsaving_block}
-
-<div class="rnr-hfiller"></div>
-{BEGIN print_friendly}
-<div  class="style1 rnr-br rnr-b-printpanel {$brickclass_printpanel}"><div class="rnr-printpanelblock" id="printpanelblock{$id}">
-<div class="rnr-printtab">
-<a data-icon="printdown" class="rnr-printicon" id="print_friendly_togger{$id}" title="Print-friendly page"></a>
-</div>
-<div class="rnr-printpanel" >
-<table class="rnr-printscope" id="print_friendly_scope{$id}">
-	<tr>
-		<td class="rnr-printScopeCell">Scope:</td>
-		{BEGIN print_friendly_all}
-		<td class="rnr-printScopeCell"><input type="radio" id="printAll{$id}" data-href="admin_users_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">&nbsp;<label for="printAll{$id}">Print all pages</label></td>
-		{END print_friendly_all}
-
-	</tr>
-	<tr>
-		<td></td>
-		<td class="rnr-printScopeCell"><input type="radio" id="printPage{$id}" data-href="admin_users_print.php?{$crosstable_attrs}" name="printScope" checked>&nbsp;<label for="printPage{$id}">Print this page</label></td>
-	</tr>
-		<tr>
-		<td></td>
-		<td class="rnr-printScopeCell"><input type="radio" id="printSelection{$id}" name="printScope" disabled="disabled">&nbsp;<label for="printSelection{$id}" style="color: gray;">Print selected</label></td>
-	</tr>
-</table>
-
-
-<div class="rnr-printdetails">
-<label for="printPerPage{$id}">
-	Records Per Page:
-</label>&nbsp;<input type=number id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">&nbsp;
-</div>
-
-<div class="rnr-printbutton">
-<a href=# class="rnr-button button" id="print_friendly_button{$id}" >Print</a>
-</div>
-</div>
-</div>
-</div>
-{END print_friendly}
 
 
 </div>
-{END container_hmenu}
+{END container_hdr}
 
-
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-
-{BEGIN container_left}
-<div class="rnr-c rnr-cv rnr-c-left">
-
+{BEGIN container_sidemenu}<div {$sidemenu_chiddenattr} data-pageid="{$pageid}" data-container="sidemenu" class="bs-navform navbar-collapse sidebar-menu bs-hidden-xs bs-navcontrolled" aria-expanded="false" >												   
 {BEGIN menu_block}
 {$menu main}
+
 {END menu_block}
 
+												</div>						{END container_sidemenu}
+
+{BEGIN container_left}
+<div {$left_chiddenattr} data-pageid="{$pageid}" data-container="left" class=" sidebar-container   "> 
 
 {BEGIN searchPanel}
-<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
-<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
-	
+<div {$searchpanel_hiddenattr} data-pageid="{$pageid}" data-brick="searchpanel" class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} >
 	<!-- Search panel content -->
-	<div class="srchCritTop" style="display: none;">
-		Criteria:&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
-		&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
-	</div>
 	
-	<div class="addOption">
-		<span class="rnr-buttons-group">
-			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
-		</span>
+	<div class="panel-heading">
+		<div class="btn-group" id="addSearchFieldButton{$id}">
+			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			{mlang_message SEARCH_IN}
+			<span class="caret"></span>
+			</button>
+		</div>
+
 		
-		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+		<div class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-left">
+				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>{mlang_message SEARCH_SHOW_OPTIONS_BUTTON}</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ALL_CONDITIONS}</label></a></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>{mlang_message SEARCH_ANY_CONDITIONS}</label></a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>{mlang_message HIDE}</a></li>
+			</ul>
+		</div>
+	
+		
+		</div>
+	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
+
+
+		
+		{BEGIN searchCtrlBlock}
+		<div class="srchPanelRow form-group" {$filterRow_attrs}>
+			<label>{$fLabel}</label>	{$delCtrlButt}
+				<span class="rnr-searchtype">{$searchtype}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
+		</div>
+		{END searchCtrlBlock}
+
+
 	</div>
 	
-
-	<table class="controlsBlock {$controls_block_class}">
-				{BEGIN searchCtrlBlock}
-		<tr class="srchPanelRow" {$filterRow_attrs}>
-			<td class="srchPanelCell">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-				<div class="rnr-searchtype">{$searchtype}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
-			</td>	
-		</tr>
-		{END searchCtrlBlock}
-	</table>	
-
-
-	
-	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
-		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	<div class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+		<button class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>{mlang_message SEARCH}</button>
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>{mlang_message SHOW_ALL}</button>
 	</div>
 </div>
 
-</div></div>{END searchPanel}
+
+{END searchPanel}
+
 
 
 
@@ -213,99 +127,252 @@
 {END container_left}
 
 
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
+	</div>
+</div>	
+<div class="bs-wrapper">
+	<div class="bs-fixedheader" id="fixedheader{$id}">
+		{BEGIN container_menu}<nav {$menu_chiddenattr} data-pageid="{$pageid}" data-container="menu" class="navbar navbar-default bs-fullwidth-navbar">					
 
-{BEGIN container_recordcontrols}
-<div class="rnr-c rnr-ch rnr-c-recordcontrols">
 
-{BEGIN newrecord_controls_block}
-<div  class="style1 rnr-bl rnr-b-recordcontrols_new {$brickclass_recordcontrols_new}">	
-		{BEGIN inlineadd_link}
-		<a href="#" class="rnr-button" {$inlineaddlink_attrs}>Inline Add</a>
-	{END inlineadd_link}
+
+{BEGIN container_bc}
+<div {$bc_chiddenattr} data-pageid="{$pageid}" data-container="bc" class=" navbar-form navbar-left   "> 
+
+{BEGIN breadcrumbs}
+<ol class="breadcrumb">
+<li ><a href="{$home_link}"><span class="glyphicon glyphicon-home"></span></a>{$crumb_dropdown}</li>
+{BEGIN crumb}
+  <li class="{$crumb_item_class}">
+{BEGIN crumb_title_link}
+	<a {$crumb_attrs}>{$crumb_title}</a>
+{END crumb_title_link}
+{BEGIN crumb_title_span}
+	<span {$crumb_attrs}>{$crumb_title}</span>
+{END crumb_title_span}	
+	{$crumb_dropdown}
+  </li>
+{END crumb}
+</ol>
+{END breadcrumbs}
+
 
 
 </div>
-{END newrecord_controls_block}
+{END container_bc}
 
 
-{BEGIN record_controls_block}
-<div  class="style1 rnr-bl rnr-b-recordcontrol {$brickclass_recordcontrol}">{BEGIN selectall_link}
-	<a href="#" class="rnr-button" {$selectalllink_span} {$selectalllink_attrs}>Select all</a>
-{END selectall_link}
-{BEGIN widhtSelected}
-<span class="rnr-buttons-group">
-<a class="rnr-button {$withSelectedClass}" href="#" id="selectButtonsToggler{$id}">With selected...</a>
-<ul class="rnr-list" id="selectButtonsGroup{$id}">
 
-		{BEGIN editselected_link}
-<li>
-		<a href="#" class="rnr-button link" {$editselectedlink_attrs} {$editselectedlink_span}>Edit</a>
-</li>
-	{END editselected_link}
 
-		{BEGIN deleteselected_link}
-<li>
-		<a href="#" class="rnr-button link" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>Delete</a>
-</li>
-	{END deleteselected_link}
 
-		{BEGIN exportselected_link}
-<li>
-		<a href="#" class="rnr-button link" {$exportselectedlink_attrs} {$exportselectedlink_span}>Export</a>
-</li>
-	{END exportselected_link}
 
-</ul>
-</span>
-{END widhtSelected}
-		{BEGIN saveall_link}
-		<a href="#" class="rnr-button" {$savealllink_attrs} {$savealllink_span}>Save all</a>
-	{END saveall_link}
-	{BEGIN cancelall_link}
-		<a href="#" class="rnr-button" {$cancelalllink_attrs} {$cancelalllink_span}>Cancel</a>
-	{END cancelall_link}
-</div>
-{END record_controls_block}
+{BEGIN container_menu_1}<div {$menu_1_chiddenattr} data-pageid="{$pageid}" data-container="menu_1" class="bs-navform navbar-collapse bs-hidden-xs bs-navcontrolled" aria-expanded="false" >												   
 
+
+
+{BEGIN container_more}
+<div {$more_chiddenattr} data-pageid="{$pageid}" data-container="more" class=" navbar-right navbar-form   "> 
 
 {BEGIN more_list}
-<div  class="style1 rnr-bl rnr-b-toplinks {$brickclass_toplinks}"><span class="rnr-buttons-group">
-{BEGIN moreButtons}
-<a class="rnr-button" id="extraButtonsToggler{$id}" href="#">More...</a>
-<ul class="rnr-list rnr-buttons-group" id="extraButtonsGroup{$id}">
+<div {$morebutton_hiddenattr} data-pageid="{$pageid}" data-brick="morebutton" class="btn-group bs-navsection">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="glyphicon glyphicon-cog"></span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+				{BEGIN editselected_link}
+		<li class="massButton{$id} disabled"><a href="#" {$editselectedlink_attrs} {$editselectedlink_span} >{mlang_message EDIT_SELECTED}</a></li>
+		{END editselected_link}
 
-{BEGIN asearch_link}
-<li>
-	<a href="admin_users_search.php" class="rnr-button link" {$advsearchlink_attrs}>Advanced search</a>
-</li>
-{END asearch_link}
+				{BEGIN exportselected_link}
+		<li class="massButton{$id} disabled"><a href="#" {$exportselectedlink_attrs} {$exportselectedlink_span} >{mlang_message EXPORT_SELECTED}</a></li>
+		{END exportselected_link}
+		
+				{BEGIN deleteselected_link}
+		<li class="massButton{$id} disabled"><a href="#" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>{mlang_message DELETE_SELECTED}</a></li>
+		{END deleteselected_link}
+		
+				<li role="separator" class="divider"></li>	
 
-{BEGIN export_link}
-<li>
-	<a target="_blank" href="admin_users_export.php" class="rnr-button link" {$exportlink_attrs}>Export results</a>
-</li>
-{END export_link}
+				{BEGIN asearch_link}
+		<li><a href="admin_users_search.php" {$advsearchlink_attrs}>{mlang_message ADVANCED_SEARCH}</a></li>
+		{END asearch_link}
 
-</ul>
-{END moreButtons}
-</span></div>
+				{BEGIN searchPanelTopButtons}
+		<li><a href=# id="showOptPanel{$id}">{mlang_message SHOW_SEARCH_PANEL}</a></li>
+		{END searchPanelTopButtons}	
+		
+				
+				<li role="separator" class="divider"></li>	
+		
+				
+				{BEGIN export_link}
+		<li><a target="_blank" href="admin_users_export.php"  {$exportlink_attrs}>{mlang_message EXPORT_RESULTS}</a></li>
+		{END export_link}
+
+		
+					<li role="separator" class="divider"></li>
+				{BEGIN AfrikaansLANGLINK}
+				<li><a href="#" data-lang="Afrikaans" class="rnr-langlink">
+					{BEGIN AfrikaansLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END AfrikaansLANGLINK_ACTIVE}
+					Afrikaans</a></li>
+				{END AfrikaansLANGLINK}
+				{BEGIN ArabicLANGLINK}
+				<li><a href="#" data-lang="Arabic" class="rnr-langlink">
+					{BEGIN ArabicLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ArabicLANGLINK_ACTIVE}
+					العربية</a></li>
+				{END ArabicLANGLINK}
+				{BEGIN ChineseLANGLINK}
+				<li><a href="#" data-lang="Chinese" class="rnr-langlink">
+					{BEGIN ChineseLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ChineseLANGLINK_ACTIVE}
+					中文(简体)</a></li>
+				{END ChineseLANGLINK}
+				{BEGIN EnglishLANGLINK}
+				<li><a href="#" data-lang="English" class="rnr-langlink">
+					{BEGIN EnglishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END EnglishLANGLINK_ACTIVE}
+					English</a></li>
+				{END EnglishLANGLINK}
+				{BEGIN FrenchLANGLINK}
+				<li><a href="#" data-lang="French" class="rnr-langlink">
+					{BEGIN FrenchLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END FrenchLANGLINK_ACTIVE}
+					Français</a></li>
+				{END FrenchLANGLINK}
+				{BEGIN GermanLANGLINK}
+				<li><a href="#" data-lang="German" class="rnr-langlink">
+					{BEGIN GermanLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END GermanLANGLINK_ACTIVE}
+					Deutsch</a></li>
+				{END GermanLANGLINK}
+				{BEGIN ItalianLANGLINK}
+				<li><a href="#" data-lang="Italian" class="rnr-langlink">
+					{BEGIN ItalianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END ItalianLANGLINK_ACTIVE}
+					Italiano</a></li>
+				{END ItalianLANGLINK}
+				{BEGIN RussianLANGLINK}
+				<li><a href="#" data-lang="Russian" class="rnr-langlink">
+					{BEGIN RussianLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END RussianLANGLINK_ACTIVE}
+					Русский</a></li>
+				{END RussianLANGLINK}
+				{BEGIN SpanishLANGLINK}
+				<li><a href="#" data-lang="Spanish" class="rnr-langlink">
+					{BEGIN SpanishLANGLINK_ACTIVE}<span class="glyphicon glyphicon-ok">&nbsp;</span>{END SpanishLANGLINK_ACTIVE}
+					Español</a></li>
+				{END SpanishLANGLINK}
+		
+	</ul>  
+</div>
+
 {END more_list}
 
-<div class="rnr-hfiller"></div>
+
+{BEGIN security_block}
+<span {$loggedas_hiddenattr} data-pageid="{$pageid}" data-brick="loggedas" id="login_block{$id}" class="bs-navsection">
+	{BEGIN guestloginbutton}
+		<span class="form-inline">
+		{BEGIN embeded_log_fields}
+			<span>
+				<input type="text" name="username" class="form-control" {$username_attrs}>&nbsp;
+				<input type="password" name="password" class="form-control" {$password_attrs}>
+			</span>
+		{END embeded_log_fields}
+			<button class="btn btn-info" {$guestloginlink_attrs}>{mlang_message LOGIN}</button>
+		{BEGIN embeded_log_ctrls}
+			{END embeded_log_ctrls}
+		</span>
+	{END guestloginbutton}
+	{BEGIN loggedas_message} 
+		<span class="dropdown">
+			<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-user"></span>	{$username}</button>
+			<ul class="dropdown-menu">
+		{BEGIN logoutbutton}
+				<li><a href="#" {$logoutlink_attrs}>{mlang_message LOG_OUT}</a></li>
+		{END logoutbutton}
+		
+		{BEGIN exitadminarea_link}
+				<li><a href="#" {$exitaalink_attrs}>{mlang_message AA_EXIT_ADMINAREA}</a></li>
+		{END exitadminarea_link}
+
+
+	{BEGIN changepwd_link}
+				<li><a href="#" {$changepwdlink_attrs}>{mlang_message CHANGE_PASSWORD}</a></li>
+	{END changepwd_link}
+			</ul>
+		</span>
+	{END loggedas_message}
+</span>
+{END security_block}
+
+
+
 </div>
-{END container_recordcontrols}
+{END container_more}
+
+
+
+
+
+
+
+
+{BEGIN container_more_1}
+<div {$more_1_chiddenattr} data-pageid="{$pageid}" data-container="more_1" class=" navbar-right navbar-form   "> 
+
+{BEGIN searchform_block}
+<span {$search_hiddenattr} data-pageid="{$pageid}" data-brick="search" class="form-group">
+
+ <div  class="input-group">
+{BEGIN searchform_text}
+	<input type="search" class="form-control" {$searchfor_attrs} size="25">
+{END searchform_text}
+	<span class="input-group-btn">
+	{BEGIN searchform_showall}
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="{mlang_message SHOW_ALL}">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	{END searchform_showall}
+	{BEGIN searchform_search}
+	<button {$searchbutton_attrs} class="btn btn-primary" >
+		<span class="glyphicon glyphicon-search"></span>
+	</button>
+	{END searchform_search}
+	</span>
+</div>
+		
+</span>
+{END searchform_block}
+
+
+
+</div>
+{END container_more_1}
+
+
+
+
+												</div>						{END container_menu_1}
+
+
+									</nav>{END container_menu}
+	</div>	
+	<div class="container-fluid bs-underheader bs-fixedsidebarmain" id="underheader{$id}">
+		{$header}
+		<div class="bs-sidebar-screenbound">
+			
+
+
+
+{BEGIN container_messagerow}
+<div {$messagerow_chiddenattr} data-pageid="{$pageid}" data-container="messagerow" class="    "> 
+
 
 
 
 {BEGIN container_message}
-<div class="rnr-c rnr-ch rnr-c-message">
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-12 "> 
 
 {BEGIN message_block}
-<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
 {END message_block}
+
 
 
 </div>
@@ -313,65 +380,284 @@
 
 
 
-{BEGIN container_pagination}
-<div class="rnr-c rnr-ch rnr-multialign rnr-c-pagination">
 
-{BEGIN pagination_block}
-<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
-{END pagination_block}
 
-<div class="rnr-leftbricks">
-{BEGIN details_block}
-<div  class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
-			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+
+</div>
+{END container_messagerow}
+
+
+
+{BEGIN container_gridcontrols}
+<div {$gridcontrols_chiddenattr} data-pageid="{$pageid}" data-container="gridcontrols" class=" bs-navcontrolled bs-hidden-xs   "> 
+
+
+
+
+{BEGIN container_add_delete}
+<div {$add_delete_chiddenattr} data-pageid="{$pageid}" data-container="add_delete" class=" bottom-margin  col-md-6 "> 
+
+{BEGIN newrecord_controls_block}
+	
+		{BEGIN inlineadd_link}
+		<button {$add_hiddenattr} data-pageid="{$pageid}" data-brick="add" type="button" class="btn btn-primary" {$inlineaddlink_attrs}>{mlang_message INLINE_ADD}</button>
+	{END inlineadd_link}
+
+{END newrecord_controls_block}
+
+
+{BEGIN record_controls_block}
+<span {$recordcontrol_hiddenattr} data-pageid="{$pageid}" data-brick="recordcontrol">
+		{BEGIN deleteselected_link}
+	<button type="button" class="btn btn-default" {$deleteselectedlink_attrs} {$deleteselectedlink_span} disabled>{mlang_message DELETE}</button>
+	{END deleteselected_link}
+			{BEGIN saveall_link}
+		<button type="button" class="btn btn-primary" {$savealllink_attrs} {$savealllink_span}>{mlang_message SAVE_ALL}</button>
+	{END saveall_link}
+	{BEGIN cancelall_link}
+		<button type="button" class="btn btn-default" {$cancelalllink_attrs} {$cancelalllink_span}>{mlang_message CANCEL_ALL}</button>
+	{END cancelall_link}
+</span>
+
+{END record_controls_block}
+
+
+
+</div>
+{END container_add_delete}
+
+
+
+
+
+
+
+
+{BEGIN container_gridinfo}
+<div {$gridinfo_chiddenattr} data-pageid="{$pageid}" data-container="gridinfo" class=" bottom-margin text-right col-md-6 "> 
+
+{BEGIN details_found}
+<span {$details_found_hiddenattr} data-pageid="{$pageid}" data-brick="details_found" class="form-inline form-inline-always">
+	{$records_indicator}
+	<span>
+	{BEGIN recordspp_block}
+			{$recsPerPage}
+	{END recordspp_block}
 	</span>
-</div>
-{END details_block}
-
-</div><div class="rnr-rightbricks">
-{BEGIN pages_block}
-<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
-		Page <b>{$page}</b> of <b>{$maxpages}</b>
-	</span>
-
-</div>
-{END pages_block}
+</span>
+{END details_found}
 
 
-{BEGIN recordspp_block}
-<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
-			Records Per Page:&nbsp;{$recsPerPage}
-	</span>	
+{BEGIN print_friendly}
+<span {$printpanel_hiddenattr} data-pageid="{$pageid}" data-brick="printpanel" class="bs-printpanel" id="printpanelblock{$id}">
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="{mlang_message WR_PRINT_FRIENDLY}">
+		<span class="glyphicon glyphicon-print" ></span>
+		<span class="caret"></span>
+    </button>
+	<ul class="dropdown-menu pull-right" >
+		<li>
+			<div class="container-fluid" id="print_friendly_scope{$id}">
+				<div class="row">
+					<div class="col-md-4">{mlang_message PPANEL_SCOPE}</div>
+										{BEGIN print_friendly_all}
+					<div class="col-md-8">
+						<label for="printAll{$id}">
+							<input type="radio" id="printAll{$id}" data-href="admin_users_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">
+							{mlang_message PPANEL_ALL_PAGES}
+						</label>
+					</div>
+					{END print_friendly_all}
+				</div>
+				<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printPage{$id}">
+							<input type="radio" id="printPage{$id}" data-href="admin_users_print.php?{$crosstable_attrs}" name="printScope" checked>
+							{mlang_message PPANEL_THIS_PAGE}
+						</label>
+					</div>
+				</div>
+								<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printSelection{$id}" style="color: gray;">
+							<input type="radio" id="printSelection{$id}" name="printScope" disabled="disabled">
+							{mlang_message PPANEL_SELECTED}
+						</label>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+
+		
+				<li>	
+			<div class="rnr-printdetails">
+				<label for="printPerPage{$id}">
+											{mlang_message RECORDS_PP}:
+				</label>
+				<input type="number" id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">		
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+		<li class="rnr-printbutton">				
+			<button type="button" class="btn btn-primary" id="print_friendly_button{$id}" >{mlang_message PPANEL_PRINT}</button>			
+		</li>
+	</ul>	
+</span>
+
+{END print_friendly}
+
+
+{BEGIN field_hide_panel}
+<div {$bsfieldhidepanel_hiddenattr} data-pageid="{$pageid}" data-brick="bsfieldhidepanel" id="fildhidepanel{$id}" class="keep-open btn-group" title="{mlang_message SHOW_HIDE_COLUMNS}">
+	<button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"><i class="glyphicon glyphicon-th-list"></i> <span class="caret"></span></button>
+	<ul role="menu" class="dropdown-menu dropdown-left">
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_ID" checked="checked" value="1" data-field="ID">
+			  <span>{$label admin_users ID}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_username" checked="checked" value="1" data-field="username">
+			  <span>{$label admin_users username}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_email" checked="checked" value="1" data-field="email">
+			  <span>{$label admin_users email}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_password" checked="checked" value="1" data-field="password">
+			  <span>{$label admin_users password}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_fullname" checked="checked" value="1" data-field="fullname">
+			  <span>{$label admin_users fullname}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_groupid" checked="checked" value="1" data-field="groupid">
+			  <span>{$label admin_users groupid}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+		<li>
+		<a>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox" id="hide_active" checked="checked" value="1" data-field="active">
+			  <span>{$label admin_users active}</span>
+			</label>
+		</div>
+		</a>
+		</li>
+	</ul>
 </div>
-{END recordspp_block}
+
+{END field_hide_panel}
+
+
 
 </div>
+{END container_gridinfo}
+
+
+
+
+
+
 </div>
-{END container_pagination}
+{END container_gridcontrols}
+
+
+		</div>
+		<div></div>
+		<div class="bs-sidebar-screenbound bs-minwidth">
+			
+
+{BEGIN container_center}
+<div {$center_chiddenattr} data-pageid="{$pageid}" data-container="center" class="    "> 
+
 
 
 
 {BEGIN container_grid}
-
+<div {$grid_chiddenattr} data-pageid="{$pageid}" data-container="grid" class="bs-grid    "> 
 
 {BEGIN grid_block}
-						<table class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0" >
-						<thead>
-															{BEGIN grid_header}
-								<tr class="rnr-toprow style1 {$gridHeader_class}" >
+	<style>
+	.bs-gridcell[data-field=ID]:before {
+		content: "{$label admin_users ID}";
+	}
+	.bs-gridcell[data-field=username]:before {
+		content: "{$label admin_users username}";
+	}
+	.bs-gridcell[data-field=password]:before {
+		content: "{$label admin_users password}";
+	}
+	.bs-gridcell[data-field=email]:before {
+		content: "{$label admin_users email}";
+	}
+	.bs-gridcell[data-field=fullname]:before {
+		content: "{$label admin_users fullname}";
+	}
+	.bs-gridcell[data-field=groupid]:before {
+		content: "{$label admin_users groupid}";
+	}
+	.bs-gridcell[data-field=active]:before {
+		content: "{$label admin_users active}";
+	}
+</style>
+<table {$grid_hiddenattr} data-pageid="{$pageid}" data-brick="grid" class="table {$grid_classes} bs-flexgrid rnr-b-grid rnr-gridtable" cellpadding="0" >
+	<thead>
+										{BEGIN grid_header}
+								<tr class="rnr-toprow {$gridHeader_class}" >
 									{BEGIN record_header}
 									{BEGIN listIcons_column}
 									<th iEditCont="all">&nbsp;</th>
 									{END listIcons_column}	
 
 																		{BEGIN checkbox_column}
-									<th class="rnr-bc">
+									<th class="">
 										<input type="checkbox" {$checkboxheader_attrs}>
 									</th>
 									{END checkbox_column}
 
-																																			{BEGIN ID_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$ID_class}">
+																		
+									{BEGIN ID_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$ID_class}" data-field=ID>
 									{BEGIN ID_fieldheader}
 																				<span {$ID_orderlinkattrs}>
 											{$label admin_users ID}
@@ -379,9 +665,12 @@
 									{END ID_fieldheader}
 									</th>
 									{END ID_fieldheadercolumn}
-
-																	{BEGIN username_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$username_class}">
+									
+									
+									
+									
+									{BEGIN username_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$username_class}" data-field=username>
 									{BEGIN username_fieldheader}
 																				<span {$username_orderlinkattrs}>
 											{$label admin_users username}
@@ -389,9 +678,12 @@
 									{END username_fieldheader}
 									</th>
 									{END username_fieldheadercolumn}
-
-																	{BEGIN email_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$email_class}">
+									
+									
+									
+									
+									{BEGIN email_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$email_class}" data-field=email>
 									{BEGIN email_fieldheader}
 																				<span {$email_orderlinkattrs}>
 											{$label admin_users email}
@@ -399,9 +691,12 @@
 									{END email_fieldheader}
 									</th>
 									{END email_fieldheadercolumn}
-
-																	{BEGIN password_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$password_class}">
+									
+									
+									
+									
+									{BEGIN password_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$password_class}" data-field=password>
 									{BEGIN password_fieldheader}
 																				<span {$password_orderlinkattrs}>
 											{$label admin_users password}
@@ -409,9 +704,12 @@
 									{END password_fieldheader}
 									</th>
 									{END password_fieldheadercolumn}
-
-																	{BEGIN fullname_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$fullname_class}">
+									
+									
+									
+									
+									{BEGIN fullname_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$fullname_class}" data-field=fullname>
 									{BEGIN fullname_fieldheader}
 																				<span {$fullname_orderlinkattrs}>
 											{$label admin_users fullname}
@@ -419,9 +717,12 @@
 									{END fullname_fieldheader}
 									</th>
 									{END fullname_fieldheadercolumn}
-
-																	{BEGIN groupid_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$groupid_class}">
+									
+									
+									
+									
+									{BEGIN groupid_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$groupid_class}" data-field=groupid>
 									{BEGIN groupid_fieldheader}
 																				<span {$groupid_orderlinkattrs}>
 											{$label admin_users groupid}
@@ -429,9 +730,12 @@
 									{END groupid_fieldheader}
 									</th>
 									{END groupid_fieldheadercolumn}
-
-																	{BEGIN active_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$active_class}">
+									
+									
+									
+									
+									{BEGIN active_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$active_class}" data-field=active>
 									{BEGIN active_fieldheader}
 																				<span {$active_orderlinkattrs}>
 											{$label admin_users active}
@@ -439,10 +743,10 @@
 									{END active_fieldheader}
 									</th>
 									{END active_fieldheadercolumn}
-
-
 									
-									<th class="rnr-edge">&nbsp;</th>
+									
+									
+									
 									{BEGIN endrecordheader_block}
 									<th class="rnr-cs">&nbsp;</th>
 									
@@ -453,145 +757,135 @@
 								</tr>
 								{END grid_header}
 
-						</thead>
-						<tbody>	
-															{BEGIN grid_row}
-								<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
-									{BEGIN grid_record}
-									{BEGIN listIcons_column}
-									<td class="rnr-cc rnr-bc rnr-icons" iEditCont="all" {$rowstyle} {$recordattrs}>
-									
-																		{BEGIN inlineedit_column}
-									{BEGIN inlineedit_link}
-																			<a class="rnr-button-img" {$inlineeditlink_attrs} data-icon="inlineedit" title="Inline Edit"></a>
-									{END inlineedit_link}
-									{END inlineedit_column}
+	</thead>
+	<tbody>	
+		{BEGIN grid_row}
+<tr class="{$rowclass} bs-gridrow" {$rowattrs} {$rowstyle}>
+	{BEGIN grid_record}
+	{BEGIN listIcons_column}
+	<td class="bs-gridicons" iEditCont="all" {$rowstyle} {$recordattrs}>
+	
+		{BEGIN inlineedit_column}
+	{BEGIN inlineedit_link}
+			<a class="glyphicon glyphicon-edit" {$inlineeditlink_attrs} title="{mlang_message INLINE_EDIT}"></a>
+	{END inlineedit_link}
+	{END inlineedit_column}
 
-									
-																		</td>	
-									{END listIcons_column}	
+	
+		</td>	
+	{END listIcons_column}	
 
-																		{BEGIN checkbox_column}
-									<td class="rnr-bc" iEditCont="checkBox" {$rowstyle} {$recordattrs}>
-									{BEGIN checkbox}
-									<input type="checkbox" {$checkbox_attrs}>
-									{END checkbox}
-									</td>
-									{END checkbox_column}
+		{BEGIN checkbox_column}
+	<td  iEditCont="checkBox" class="bs-gridcheckbox" {$rowstyle} {$recordattrs}>
+	{BEGIN checkbox}
+	<input type="checkbox" {$checkbox_attrs}>
+	{END checkbox}
+	</td>
+	{END checkbox_column}
 
-									
-										{BEGIN ID_fieldcolumn}
-	<td class="{$ID_class}" {$ID_style} {$recordattrs}>
+	
+
+	{BEGIN ID_fieldcolumn}
+	<td class="bs-gridcell {$ID_class}"  data-field=ID {$rowstyle} {$recordattrs}>
 		{$ID_value}
 	</td>
 {END ID_fieldcolumn}
 
+
 	{BEGIN username_fieldcolumn}
-	<td class="{$username_class}" {$username_style} {$recordattrs}>
+	<td class="bs-gridcell {$username_class}"  data-field=username {$rowstyle} {$recordattrs}>
 		{$username_value}
 	</td>
 {END username_fieldcolumn}
 
+
 	{BEGIN email_fieldcolumn}
-	<td class="{$email_class}" {$email_style} {$recordattrs}>
+	<td class="bs-gridcell {$email_class}"  data-field=email {$rowstyle} {$recordattrs}>
 		{$email_value}
 	</td>
 {END email_fieldcolumn}
 
+
 	{BEGIN password_fieldcolumn}
-	<td class="{$password_class}" {$password_style} {$recordattrs}>
+	<td class="bs-gridcell {$password_class}"  data-field=password {$rowstyle} {$recordattrs}>
 		{$password_value}
 	</td>
 {END password_fieldcolumn}
 
+
 	{BEGIN fullname_fieldcolumn}
-	<td class="{$fullname_class}" {$fullname_style} {$recordattrs}>
+	<td class="bs-gridcell {$fullname_class}"  data-field=fullname {$rowstyle} {$recordattrs}>
 		{$fullname_value}
 	</td>
 {END fullname_fieldcolumn}
 
+
 	{BEGIN groupid_fieldcolumn}
-	<td class="{$groupid_class}" {$groupid_style} {$recordattrs}>
+	<td class="bs-gridcell {$groupid_class}"  data-field=groupid {$rowstyle} {$recordattrs}>
 		{$groupid_value}
 	</td>
 {END groupid_fieldcolumn}
 
+
 	{BEGIN active_fieldcolumn}
-	<td class="{$active_class}" {$active_style} {$recordattrs}>
+	<td class="bs-gridcell {$active_class}"  data-field=active {$rowstyle} {$recordattrs}>
 		{$active_value}
 	</td>
 {END active_fieldcolumn}
 
+	{BEGIN endrecord_block}
+	<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+	{END endrecord_block}
+									
+	{END grid_record}
 
-									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
-									{BEGIN endrecord_block}
-									<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
-									{END endrecord_block}
-																	
-									{END grid_record}
+</tr>
+{END grid_row}
+	</tbody>
+	<tfoot>
+										
+	</tfoot>
+</table>
 
-								</tr>
-								{END grid_row}
-															
-						</tbody>
-					</table>
-					
+
 
 {END grid_block}
 
 
 
+</div>
 {END container_grid}
 
 
 
-{BEGIN container_pagination_bottom}
-<div class="rnr-c rnr-ch rnr-multialign rnr-c-pagination_bottom">
+
+
+
+</div>
+{END container_center}
+
+
+
+{BEGIN container_pagination}
+<div {$pagination_chiddenattr} data-pageid="{$pageid}" data-container="pagination" class="  text-center col-md-12 "> 
 
 {BEGIN pagination_block}
-<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+<div {$pagination_hiddenattr} data-pageid="{$pageid}" data-brick="pagination">
+{$pagination}
+</div>
 {END pagination_block}
 
-<div class="rnr-leftbricks">
-{BEGIN details_block}
-<div  class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
-			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
-	</span>
-</div>
-{END details_block}
 
-</div><div class="rnr-rightbricks">
-{BEGIN pages_block}
-<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
-		Page <b>{$page}</b> of <b>{$maxpages}</b>
-	</span>
 
 </div>
-{END pages_block}
+{END container_pagination}
 
 
-{BEGIN recordspp_block}
-<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
-			Records Per Page:&nbsp;{$recsPerPage}
-	</span>	
-</div>
-{END recordspp_block}
-
-</div>
-</div>
-{END container_pagination_bottom}
-
-
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
 		</div>
 	</div>
-		
+</div>
+	
+
 		{$footer}
 	{END body}
 	</body>

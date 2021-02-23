@@ -156,6 +156,7 @@ class ReportPage extends RunnerPage
 		$cross_array["table_type"] = "project";
 		$cross_array["tables"][] = $this->tName;
 		$cross_array["sessionPrefix"] = $this->sessionPrefix;
+		$cross_array["pageType"] = $this->pageType;
 		
 		if( $this->mode == REPORT_DASHBOARD )
 		{
@@ -388,11 +389,11 @@ class ReportPage extends RunnerPage
 		//	prepare for create pagination
 		$this->maxPages = $this->arrReport['maxpages'];
 
-		$this->xt->assign("firstrecord", ( $this->myPage - 1 ) * $this->pageSize + 1 );
 		$lastrecord = ( $this->myPage ) * $this->pageSize;
 		if( $this->pageSize < 0 || $lastrecord > $this->arrReport['countRows'] )
 			$lastrecord = $this->arrReport['countRows'];
-		$this->xt->assign("lastrecord", $lastrecord );
+		
+		$this->prepareRecordsIndicator( ( $this->myPage - 1 ) * $this->pageSize + 1, $lastrecord, $this->arrReport['countRows'] );
 		
 		if($this->maxPages > 1)
 		{		
@@ -410,8 +411,8 @@ class ReportPage extends RunnerPage
 				$counterend = $this->maxPages;
 			if($counterstart != 1) 
 			{
-				$pagination.= $this->getPaginationLink(1,"First")."&nbsp;:&nbsp;";
-				$pagination.= $this->getPaginationLink($counterstart - 1,"Previous")."&nbsp;";
+				$pagination.= $this->getPaginationLink(1,mlang_message("FIRST"))."&nbsp;:&nbsp;";
+				$pagination.= $this->getPaginationLink($counterstart - 1,mlang_message("PREVIOUS"))."&nbsp;";
 			}
 			$pageLinks = "";
 				
@@ -438,8 +439,8 @@ class ReportPage extends RunnerPage
 
 			if($counterend != $this->maxPages) 
 			{
-				$pagination.= "&nbsp;".$this->getPaginationLink($counterend + 1,"Next")."&nbsp;:&nbsp;";
-				$pagination.= "&nbsp;".$this->getPaginationLink($this->maxPages,"Last");
+				$pagination.= "&nbsp;".$this->getPaginationLink($counterend + 1,mlang_message("NEXT"))."&nbsp;:&nbsp;";
+				$pagination.= "&nbsp;".$this->getPaginationLink($this->maxPages,mlang_message("LAST"));
 			}			
 			if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
 				$pagination = '<nav><ul class="pagination" data-function="pagination' . $this->id . '">' . $pagination . '</ul></nav>';
@@ -646,7 +647,7 @@ class ReportPage extends RunnerPage
 		$location = GetTableLink( runner_htmlspecialchars(rawurlencode( $this->shortTableName )), $this->pageType );
 		
 		$classString = "";
-		$allMessage = "Show all";
+		$allMessage = mlang_message("SHOW_ALL");
 		if( $this->getLayoutVersion() == BOOTSTRAP_LAYOUT )
 		{
 			$classString = 'class="form-control"';
@@ -696,6 +697,7 @@ class ReportPage extends RunnerPage
 		
 		$this->assignBody();
 		
+		$this->setLangParams();
 	
 		if( $this->isDynamicPerm && IsAdmin() )
 		{
@@ -778,12 +780,20 @@ class ReportPage extends RunnerPage
 	}
 	
 	/**
+	 *
+	 */
+	public function beforeShowReport()
+	{
+		if( $this->eventsObject->exists("BeforeShowReport") )
+			$this->eventsObject->BeforeShowReport($this->xt, $this->templatefile, $this);	
+	}
+	
+	/**
 	 * Display the report page
 	 */
 	public function showPage()
 	{
-		if( $this->eventsObject->exists("BeforeShowReport") )
-			$this->eventsObject->BeforeShowReport($this->xt, $this->templatefile, $this);
+		$this->beforeShowReport();
 
 		if( $this->mode == REPORT_SIMPLE ) 
 		{
@@ -795,8 +805,8 @@ class ReportPage extends RunnerPage
 		$this->body["end"] = '';
 		$this->xt->assign("body", $this->body);	
 		
-		$this->xt->unassign('header');
-		$this->xt->unassign('footer');		
+		$this->xt->assign("header", false);
+		$this->xt->assign("footer", false);
 	
 		if( $this->mode == REPORT_DASHBOARD )
 		{	

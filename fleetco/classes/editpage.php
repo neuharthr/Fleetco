@@ -31,7 +31,7 @@ class EditPage extends RunnerPage
 	protected $lockingMessageStyle = "display:none;";
 	protected $lockingMessageText = "";
 
-	protected $messageType = MESSAGE_ERROR;
+	public $messageType = MESSAGE_ERROR;
 
 	protected $auditObj = null;
 
@@ -98,7 +98,15 @@ class EditPage extends RunnerPage
 	 */
 	protected function addPageSettings()
 	{
-		if( $this->mode != EDIT_SIMPLE && $this->mode != EDIT_POPUP )
+		if( $_SESSION[ $this->sessionPrefix . "_recordUpdated" ] )
+		{
+			$this->setProxyValue( $this->shortTableName."_recordUpdated", true );
+			unset( $_SESSION[ $this->sessionPrefix . "_recordUpdated" ] );
+		} 
+		else
+			$this->setProxyValue( $this->shortTableName."_recordUpdated", false );
+		
+		if( !$this->isPopupMode() && !$this->isSimpleMode() )
 			return;
 
 		$afterEditAction = $this->getAfterEditAction();
@@ -129,7 +137,7 @@ class EditPage extends RunnerPage
 
 		$action = $this->pSet->getAfterEditAction();
 
-		if( $this->mode == EDIT_POPUP && $this->pSet->checkClosePopupAfterEdit()
+		if( $this->isPopupMode() && $this->pSet->checkClosePopupAfterEdit()
 			|| $action == AE_TO_VIEW && !$this->viewAvailable()
 			|| $action == AE_TO_NEXT_EDIT && !count( $this->getNextKeys() )
 			|| $action == AE_TO_PREV_EDIT && !count( $this->getPrevKeys() ) )
@@ -156,7 +164,7 @@ class EditPage extends RunnerPage
 	 */
 	protected function assignSessionPrefix()
 	{
-		if( $this->mode == EDIT_DASHBOARD || ( $this->mode == EDIT_POPUP || $this->mode == EDIT_INLINE ) && $this->dashTName )
+		if( $this->mode == EDIT_DASHBOARD || ( $this->isPopupMode() || $this->mode == EDIT_INLINE ) && $this->dashTName )
 		{
 			$this->sessionPrefix = $this->dashTName."_".$this->tName;
 			return;
@@ -274,7 +282,7 @@ class EditPage extends RunnerPage
 
 			$this->readEditValues = !$this->updatedSuccessfully;
 
-			if( $this->mode == EDIT_INLINE || $this->mode == EDIT_POPUP )
+			if( $this->mode == EDIT_INLINE || $this->isPopupMode() )
 			{
 				$this->reportInlineSaveStatus();
 				return;
@@ -406,7 +414,7 @@ class EditPage extends RunnerPage
 		$this->assignEditFieldsBlocksAndLabels();
 
 		//	body["end"]	- this assignment is very important
-		if($this->mode == EDIT_SIMPLE)
+		if($this->isSimpleMode() )
 		{
 			$this->assignBody();
 			// assign body end
@@ -426,13 +434,13 @@ class EditPage extends RunnerPage
 		if( $this->eventsObject->exists("BeforeShowEdit") )
 			$this->eventsObject->BeforeShowEdit($this->xt, $templateFile, $this->getCurrentrecordInternal(), $this);
 
-		if( $this->mode == EDIT_SIMPLE )
+		if( $this->isSimpleMode() )
 		{
 			$this->display($templateFile);
 			return;
 		}
 
-		if( $this->mode == EDIT_POPUP || $this->mode == EDIT_DASHBOARD )
+		if( $this->isPopupMode() || $this->mode == EDIT_DASHBOARD )
 		{
 			$this->xt->assign("footer", false);
 			$this->xt->assign("header", false);
@@ -454,6 +462,7 @@ class EditPage extends RunnerPage
 			{
 				if( $this->detailKeysByM && in_array($f, $this->detailKeysByM) )
 					continue;
+					
 				$returnJSON["html"][ $f ] = $this->xt->fetchVar(GoodFieldName($f)."_editcontrol");
 			}
 			$returnJSON["additionalJS"] = $this->grabAllJsFiles();
@@ -521,7 +530,7 @@ class EditPage extends RunnerPage
 
 		$this->prepareNextPrevButtons();
 
-		if( $this->mode == EDIT_SIMPLE)
+		if( $this->isSimpleMode() )
 		{
 			//	back to list/menu buttons
 			if( $this->pSet->hasListPage() )
@@ -537,7 +546,7 @@ class EditPage extends RunnerPage
 			}
 		}
 
-		if($this->mode == EDIT_POPUP)
+		if( $this->isPopupMode() )
 		{
 			$this->xt->assign("close_button", true);
 			$this->xt->assign("closebutton_attrs", "id=\"closeButton".$this->id."\"");
@@ -588,7 +597,7 @@ class EditPage extends RunnerPage
 	{
 		if( $this->getCurrentRecordInternal() )
 			return true;
-		if($this->mode == EDIT_SIMPLE)
+		if($this->isSimpleMode() )
 		{
 			HeaderRedirect($this->pSet->getShortTableName(), "list", "a=return");
 			exit();
@@ -693,7 +702,7 @@ class EditPage extends RunnerPage
 	{
 		$returnJSON = array();
 
-		if( $this->action != "edited" || $this->mode == EDIT_SIMPLE )
+		if( $this->action != "edited" || $this->isSimpleMode() )
 			return $returnJSON;
 
 		$returnJSON['success'] = $this->updatedSuccessfully;
@@ -743,7 +752,7 @@ class EditPage extends RunnerPage
 			if( IsBinaryType( $this->pSet->getFieldType( $f ) ) )
 				$rawValues[ $f ] = "";
 			else
-				$rawValues[ $f ] = substr($data[ $f ], 0, 100);
+				$rawValues[ $f ] = runner_substr($data[ $f ], 0, 100);
 
 		}
 
@@ -785,7 +794,7 @@ class EditPage extends RunnerPage
 	 */
 	protected function afterEditActionRedirect()
 	{
-		if( $this->mode != EDIT_SIMPLE )
+		if( !$this->isSimpleMode() )
 			return false;
 
 		switch( $this->getAfterEditAction() )
@@ -837,8 +846,8 @@ class EditPage extends RunnerPage
 		$query = $this->pSet->getQueryObject();
 
 		$fieldsList = $this->getOrderClauseFieldsList();
-		if( !count($fieldsList) )
-			return  array();
+		if( !count( $fieldsList ) )
+			return array();
 
 		$option = $isNext ? "next" : "prev";
 
@@ -917,11 +926,14 @@ class EditPage extends RunnerPage
 	 */
 	protected function prgRedirect()
 	{
-		if( !$this->updatedSuccessfully || $this->mode != EDIT_SIMPLE || !no_output_done() )
+		if( $this->stopPRG )
+			return false;
+		if( !$this->updatedSuccessfully || !$this->isSimpleMode() || !no_output_done() )
 			return false;
 
 		$_SESSION["message_edit"] = $this->message . "";
-
+		$_SESSION["message_edit_type"] = $this->messageType;
+		
 		HeaderRedirect( $this->pSet->getShortTableName(), $this->getPageType(), $this->getKeyParams() );
 		exit();
 		return true;
@@ -933,10 +945,12 @@ class EditPage extends RunnerPage
 	 */
 	protected function prgReadMessage()
 	{
-		if( $this->mode != EDIT_SIMPLE || !isset($_SESSION["message_edit"]) )
+		if( !$this->isSimpleMode() || !isset($_SESSION["message_edit"]) )
 			return;
+			
 		$this->setMessage( $_SESSION["message_edit"] );
-		$this->messageType = MESSAGE_INFO;
+		$this->messageType = $_SESSION["message_edit_type"];
+		
 		unset($_SESSION["message_edit"]);
 	}
 
@@ -1100,9 +1114,7 @@ class EditPage extends RunnerPage
 		global $locale_info;
 		if( $this->mode == EDIT_INLINE )
 		{
-			$fields = $this->editFields;
-			$this->removeHiddenColumnsFromInlineFields( $fields, $this->screenWidth, $this->screenHeight, $this->orientation );
-			$this->editFields = $fields;
+			$this->editFields = $this->removeHiddenColumnsFromInlineFields( $this->editFields, $this->screenWidth, $this->screenHeight, $this->orientation );
 		}
 
 		//	prepare values
@@ -1222,7 +1234,7 @@ class EditPage extends RunnerPage
 	 */
 	public function assignEditFieldsBlocksAndLabels()
 	{
-		$editFields = $this->pSet->getEditFields();
+		$editFields = $this->getPageFields();
 
 		foreach($editFields as $fName)
 		{
@@ -1267,7 +1279,7 @@ class EditPage extends RunnerPage
 		{
 			$messageLink = "";
 			if( !isLogged() || isLoggedAsGuest() )
-				$messageLink = " <a href='#' id='loginButtonContinue'>". "Login" . "</a>";
+				$messageLink = " <a href='#' id='loginButtonContinue'>". mlang_message("SESSION_EXPIRED3") . "</a>";
 			Security::sendPermissionError( $messageLink );
 			return false;
 		}
@@ -1306,7 +1318,7 @@ class EditPage extends RunnerPage
 		{
 			$returnJSON = array();
 			$returnJSON['success'] = false;
-			$returnJSON['message'] = "Error occurred";
+			$returnJSON['message'] = mlang_message("INLINE_ERROR");
 			$returnJSON['fatalError'] = true;
 			echo printJSON($returnJSON);
 			exit();
@@ -1319,7 +1331,7 @@ class EditPage extends RunnerPage
 				exit();
 			}
 			else
-				$_SESSION["message_edit"] = "<< "."Error occurred"." >>";
+				$_SESSION["message_edit"] = "<< ".mlang_message("INLINE_ERROR")." >>";
 		}
 	}
 
@@ -1407,6 +1419,9 @@ class EditPage extends RunnerPage
 		}
 		//	after save steps
 
+		if( in_array( $this->getAfterEditAction(), array( AE_TO_EDIT, AE_TO_PREV_EDIT, AE_TO_NEXT_EDIT ) ) )
+			$_SESSION[ $this->sessionPrefix . "_recordUpdated" ] = true;		
+		
 		$this->ProcessFiles();
 
 		$this->messageType = MESSAGE_INFO;
@@ -1435,7 +1450,7 @@ class EditPage extends RunnerPage
 		if( $this->isMessageSet() )
 			return;
 
-		$this->setMessage( "<strong>&lt;&lt;&lt; "."Record updated". " &gt;&gt;&gt;</strong>" );
+		$this->setMessage( "<strong>&lt;&lt;&lt; ".mlang_message("RECORD_UPDATED"). " &gt;&gt;&gt;</strong>" );
 	}
 
 	/**
@@ -1458,16 +1473,22 @@ class EditPage extends RunnerPage
 				continue;
 
 			$this->errorFields[] = $f;
-			$this->setMessage( $this->pSet->label( $f ) . " " . "Field should not contain a duplicate value" );
+			$this->setMessage( $this->pSet->label( $f ) . " " . mlang_message("INLINE_DENY_DUPLICATES") );
 			return false;
 		}
 		return true;
 	}
 
-	protected function auditLogEdit()
+	/**
+	 * @param Array keys (optional)
+	 */
+	protected function auditLogEdit( $keys = array() )
 	{
+		if( !count( $keys ) )
+			$keys = $this->keys;
+			
 		if( $this->auditObj )
-			$this->auditObj->LogEdit($this->tName, $this->newRecordData, $this->getOldRecordData(), $this->keys);
+			$this->auditObj->LogEdit( $this->tName, $this->newRecordData, $this->getOldRecordData(), $keys );
 	}
 
 	/**
@@ -1611,10 +1632,10 @@ class EditPage extends RunnerPage
 			return true;
 		if( isLoggedAsGuest() || !isLogged() )
 		{
-			$this->setMessage( "Your session has expired." .
+			$this->setMessage( mlang_message("SESSION_EXPIRED1") .
 				"<a href='#' id='loginButtonContinue" . $this->id . "'>" .
-				"Login" . "</a>" .
-				" to save data." );
+				mlang_message("SESSION_EXPIRED3") . "</a>" .
+				mlang_message("SESSION_EXPIRED4") );
 		}
 		else
 		{
@@ -1681,7 +1702,7 @@ class EditPage extends RunnerPage
 	{
 		if($this->mode == EDIT_INLINE)
 		{
-			echo printJSON(array("success" => false, "message" => "The record is not editable"));
+			echo printJSON(array("success" => false, "message" => mlang_message("RECORD_ISNOT_EDITABLE")));
 			exit();
 		}
 		Security::redirectToList( $this->tName );
@@ -1751,10 +1772,10 @@ class EditPage extends RunnerPage
 	{
 		if( $this->mode != EDIT_INLINE )
 		{
-			$this->message = "<strong>&lt;&lt;&lt; "."Record was NOT edited"."</strong> &gt;&gt;&gt;<br><br>".$message;
+			$this->message = "<strong>&lt;&lt;&lt; ".mlang_message("RECORD_NOT_UPDATED")."</strong> &gt;&gt;&gt;<br><br>".$message;
 		}
 		else
-			$this->message = "Record was NOT edited".". ".$message;
+			$this->message = mlang_message("RECORD_NOT_UPDATED").". ".$message;
 
 		$this->messageType = MESSAGE_ERROR;
 	}
@@ -1766,7 +1787,7 @@ class EditPage extends RunnerPage
 	protected function checkFieldOnPage( $fName )
 	{
 		if( $this->mode == EDIT_INLINE )
-			return $this->pSet->appearOnInlineEdit( $fName  );
+			return $this->pSet->appearOnInlineEdit( $fName );
 
 		return $this->pSet->appearOnEditPage( $fName );
 	}
@@ -1788,15 +1809,16 @@ class EditPage extends RunnerPage
 	}
 
 	/**
-	 *	Returns true is the page has multistepped layout
-	 *  @return boolean
+	 * Returns true is the page has multistepped layout
+	 * @return boolean
 	 */
 	function isMultistepped()
 	{
 		return $this->pSet->isEditMultistep();
 	}
 
-	function viewAvailable() {
+	function viewAvailable() 
+	{
 
 		if( $this->dashElementData )
 			return parent::viewAvailable() && $this->dashElementData["details"][$this->tName]["view"];
@@ -1814,6 +1836,62 @@ class EditPage extends RunnerPage
 			return $layout->version;
 		return 2;
 	}
+
+	/**
+	 *	API
+	 *
+	 */
+	public function setMessageType( $type ) 
+	{
+		$this->messageType = $type;
+	}
 	
+	
+	protected function isPopupMode() 
+	{
+		return $this->mode == EDIT_POPUP;
+	}
+
+	protected function isSimpleMode() 
+	{
+		return $this->mode == EDIT_SIMPLE;
+	}
+	
+	public static function EditPageFactory( $params ) {
+		if( !$params["selection"] || !is_array( $params["selection"] ) )
+		{
+			//	PRG after update Selected
+			$params["selection"] = $_SESSION["edit_seletion"];
+			unset( $_SESSION["edit_seletion"] );
+		}
+		
+		if( $params["selection"] && is_array( $params["selection"] ) )
+		{
+			if( count( $params["selection"] ) > 1 )
+			{
+				if( $params["mode"] == EDIT_SIMPLE )
+					$params["mode"] = EDIT_SELECTED_SIMPLE;
+					
+				if( $params["mode"] == EDIT_POPUP )
+					$params["mode"] = EDIT_SELECTED_POPUP;
+					
+				require_once( getabspath("classes/editselectedpage.php") );
+				return new EditSelectedPage( $params );
+			}
+			else
+			{
+				$arrKeys = explode( "&", refine( $params["selection"][0] ) );
+
+				$keyFields = array_keys( $params["keys"] );
+				
+				foreach( $keyFields as $i => $kf )
+				{
+					$params["keys"][$kf] = $arrKeys[ $i ];
+				}
+			}
+		}
+		
+		return new EditPage($params);
+	}
 }
 ?>

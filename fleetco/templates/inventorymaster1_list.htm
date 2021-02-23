@@ -36,11 +36,20 @@
 	{END loggedas_message}
 	{BEGIN guestloginbutton}
 	<span>
+		{BEGIN embeded_log_fields}
+		<span>
 		<input type="text" name="username" {$username_attrs}>&nbsp;
 		<input type="password" name="password" {$password_attrs}>
+		</span>
+		{END embeded_log_fields}
 		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+		{BEGIN embeded_log_ctrls}
+		<span>
 		<input type="checkbox" {$rememberbox_attrs}>&nbsp;remember
+			<a href="remind.php" class="rnr-button" {$forgotlink_attrs}>?</a>
 			</span>
+		{END embeded_log_ctrls}
+	</span>
 	{END guestloginbutton}
 	{BEGIN logoutbutton}
 	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
@@ -49,6 +58,9 @@
 	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
 	{END adminarea_link}
 
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
 </div></div>
 {END security_block}
 
@@ -94,9 +106,8 @@
 {END searchsaving_block}
 
 <div class="rnr-hfiller"></div>
-
-<div  class="style1 rnr-br rnr-b-printpanel {$brickclass_printpanel}">{BEGIN print_friendly}
-<div class="rnr-printpanelblock" id="printpanelblock{$id}">
+{BEGIN print_friendly}
+<div  class="style1 rnr-br rnr-b-printpanel {$brickclass_printpanel}"><div class="rnr-printpanelblock" id="printpanelblock{$id}">
 <div class="rnr-printtab">
 <a data-icon="printdown" class="rnr-printicon" id="print_friendly_togger{$id}" title="Print-friendly page"></a>
 </div>
@@ -131,9 +142,8 @@
 </div>
 </div>
 </div>
-{END print_friendly}
 </div>
-
+{END print_friendly}
 
 
 </div>
@@ -212,7 +222,7 @@
 
 {BEGIN newrecord_controls_block}
 <div  class="style1 rnr-bl rnr-b-recordcontrols_new {$brickclass_recordcontrols_new}">		{BEGIN add_link}
-		<a href="inventorymaster1_add.php" class="rnr-button" {$addlink_attrs}>Add new</a>
+		<a href="inventorymaster1_add.php{$addlink_getparams}" class="rnr-button" {$addlink_attrs}>Add new</a>
 	{END add_link}
 
 	
@@ -222,7 +232,10 @@
 
 
 {BEGIN record_controls_block}
-<div  class="style1 rnr-bl rnr-b-recordcontrol {$brickclass_recordcontrol}">{BEGIN widhtSelected}
+<div  class="style1 rnr-bl rnr-b-recordcontrol {$brickclass_recordcontrol}">{BEGIN selectall_link}
+	<a href="#" class="rnr-button" {$selectalllink_span} {$selectalllink_attrs}>Select all</a>
+{END selectall_link}
+{BEGIN widhtSelected}
 <span class="rnr-buttons-group">
 <a class="rnr-button {$withSelectedClass}" href="#" id="selectButtonsToggler{$id}">With selected...</a>
 <ul class="rnr-list" id="selectButtonsGroup{$id}">
@@ -351,25 +364,15 @@
 									</th>
 									{END checkbox_column}
 
-																																			{BEGIN UnitPrice_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$UnitPrice_class}">
-									{BEGIN UnitPrice_fieldheader}
-																				<span {$UnitPrice_orderlinkattrs}>
-											{$label inventorymaster1 UnitPrice}
+																																			{BEGIN Id_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Id_class}">
+									{BEGIN Id_fieldheader}
+																				<span {$Id_orderlinkattrs}>
+											{$label inventorymaster1 Id}
 										</span>
-									{END UnitPrice_fieldheader}
+									{END Id_fieldheader}
 									</th>
-									{END UnitPrice_fieldheadercolumn}
-
-																	{BEGIN SUM_CurrentStock__fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$SUM_CurrentStock__class}">
-									{BEGIN SUM_CurrentStock__fieldheader}
-																				<span {$SUM_CurrentStock__orderlinkattrs}>
-											{$label inventorymaster1 SUM_CurrentStock_}
-										</span>
-									{END SUM_CurrentStock__fieldheader}
-									</th>
-									{END SUM_CurrentStock__fieldheadercolumn}
+									{END Id_fieldheadercolumn}
 
 																	{BEGIN ItemID_fieldheadercolumn}
 									<th class="rnr-gridfieldlabel {$ItemID_class}">
@@ -456,17 +459,11 @@
 									{END checkbox_column}
 
 									
-										{BEGIN UnitPrice_fieldcolumn}
-	<td class="{$UnitPrice_class}" {$UnitPrice_style} {$recordattrs}>
-		{$UnitPrice_value}
+										{BEGIN Id_fieldcolumn}
+	<td class="{$Id_class}" {$Id_style} {$recordattrs}>
+		{$Id_value}
 	</td>
-{END UnitPrice_fieldcolumn}
-
-	{BEGIN SUM_CurrentStock__fieldcolumn}
-	<td class="{$SUM_CurrentStock__class}" {$SUM_CurrentStock__style} {$recordattrs}>
-		{$SUM_CurrentStock__value}
-	</td>
-{END SUM_CurrentStock__fieldcolumn}
+{END Id_fieldcolumn}
 
 	{BEGIN ItemID_fieldcolumn}
 	<td class="{$ItemID_class}" {$ItemID_style} {$recordattrs}>
@@ -558,7 +555,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

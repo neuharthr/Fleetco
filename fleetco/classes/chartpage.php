@@ -120,6 +120,7 @@ class ChartPage extends RunnerPage
 		if( $this->isShowMenu() )
 			$this->xt->assign("menu_block", true);		
 
+		$this->setLangParams();
 			
 		$this->xt->assign("chart_block", true);
 		$this->xt->assign("asearch_link", true);
@@ -209,6 +210,18 @@ class ChartPage extends RunnerPage
 		$this->xt->assign_function( $this->shortTableName."_chart", "xt_showchart", $chartXtParams );
 	}
 	
+	/**
+	 *
+	 */
+	public function prepareDetailsForEditViewPage()
+	{
+		$this->addButtonHandlers();
+		
+		$this->xt->assign("body", $this->body);
+		$this->xt->assign("chart_block", true);
+		$this->xt->assign("message_block", true);		
+	}
+	
 	protected function getExtraAjaxPageParams()
 	{
 		$returnJSON = array();
@@ -220,28 +233,30 @@ class ChartPage extends RunnerPage
 		return $returnJSON;
 	}
 	
-	public function showPage()
+	public function beforeShowChart()
 	{
 		if( $this->eventsObject->exists("BeforeShowChart") )
-			$this->eventsObject->BeforeShowChart($this->xt, $this->templatefile, $this);
+			$this->eventsObject->BeforeShowChart($this->xt, $this->templatefile, $this);	
+	}
+	
+	public function showPage()
+	{
+		$this->beforeShowChart();
 	
 		if( $this->mode == CHART_DETAILS || $this->mode == CHART_DASHBOARD || $this->mode == CHART_DASHDETAILS )
 		{
 			$this->addControlsJSAndCSS();
 			$this->fillSetCntrlMaps();
 			
-			$this->xt->unassign("header");
-			$this->xt->unassign("footer");
+			$this->xt->assign("header", false);
+			$this->xt->assign("footer", false);
 			
 			$this->body["begin"] = "";
 			$this->body["end"] = "";
 			$this->xt->assign("body", $this->body);	
 
-			$bricksExcept = array("chart");
+			$bricksExcept = array("chart", "message");
 			$this->xt->hideAllBricksExcept($bricksExcept);
-			
-			if( $this->show_message_block )
-				$this->xt->assign("message_block", true);
 			
 			$this->displayAJAX($this->templatefile, $this->id + 1);
 			exit();
@@ -250,8 +265,8 @@ class ChartPage extends RunnerPage
 		if( $this->mode == CHART_POPUPDETAILS ) //currently unused
 		{
 			$bricksExcept = array("grid","pagination");
-			$this->xt->unassign('header');
-			$this->xt->unassign('footer');
+			$this->xt->assign("header", false);
+			$this->xt->assign("footer", false);
 			$this->body["begin"] = '';
 			$this->body["end"] = '';
 			

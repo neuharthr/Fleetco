@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,191 +13,454 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-edit" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_all}
-<div class="rnr-c rnr-cv rnr-c-all">
+{BEGIN container_editpage}
+<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
 
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
 
 {BEGIN editheader}
-<div  class="rnr-brickcontents style2 rnr-b-editheader {$brickclass_editheader}"><span>	<h1>{$pagetitlelabel creategrn_disposal_rebuild edit}</h1>
-</span></div>{END editheader}
+	<h2 {$editheader_hiddenattr} data-pageid="{$pageid}" data-brick="editheader" >{$pagetitlelabel creategrn_disposal_rebuild edit}</h2>
 
+{END editheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
 
 {BEGIN message_block}
-<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		<button class="btn btn-sm btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>{mlang_message VIEW}</button>
+{END view_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-editfields2 {$brickclass_editfields2}"><table class="fieldGrid fieldGrid2 edit">
 
-<tr>
-<td>
-	{BEGIN Status_fieldblock}
-<div data-fieldname="Status" class="rnr-field style1 {$fielddispclass_Status}">
-  <span class="rnr-label">{BEGIN Status_label}{$label creategrn_disposal_rebuild Status}{END Status_label}</span>
-  <span class="rnr-control style3">{$Status_editcontrol}</span>
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$editfields_hiddenattr} data-pageid="{$pageid}" data-brick="editfields" class="form-horizontal" role="form">
+
+
+
+			{BEGIN Status_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Status}" data-fieldname="Status" data-signal-error-for="Status{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Status}">
+		{BEGIN Status_label}{$label creategrn_disposal_rebuild Status}{END Status_label}
+	</label>
+	<div class="col-md-6" >
+		{$Status_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Status">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild Status}
+		</div>
+	</div>
+</div>
 </div>
 {END Status_fieldblock}
-	{BEGIN Fleet_fieldblock}
-<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
-  <span class="rnr-label">{BEGIN Fleet_label}{$label creategrn_disposal_rebuild Fleet}{END Fleet_label}</span>
-  <span class="rnr-control style3">{$Fleet_editcontrol}</span>
+
+			{BEGIN Fleet_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Fleet}" data-fieldname="Fleet" data-signal-error-for="Fleet{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Fleet}">
+		{BEGIN Fleet_label}{$label creategrn_disposal_rebuild Fleet}{END Fleet_label}
+	</label>
+	<div class="col-md-6" >
+		{$Fleet_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Fleet">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild Fleet}
+		</div>
+	</div>
+</div>
 </div>
 {END Fleet_fieldblock}
-	{BEGIN GRNDate_fieldblock}
-<div data-fieldname="GRNDate" class="rnr-field style1 {$fielddispclass_GRNDate}">
-  <span class="rnr-label">{BEGIN GRNDate_label}{$label creategrn_disposal_rebuild GRNDate}{END GRNDate_label}</span>
-  <span class="rnr-control style3">{$GRNDate_editcontrol}</span>
+
+			{BEGIN GRNDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_GRNDate}" data-fieldname="GRNDate" data-signal-error-for="GRNDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_GRNDate}">
+		{BEGIN GRNDate_label}{$label creategrn_disposal_rebuild GRNDate}{END GRNDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$GRNDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="GRNDate">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild GRNDate}
+		</div>
+	</div>
+</div>
 </div>
 {END GRNDate_fieldblock}
-	{BEGIN ItemCode_fieldblock}
-<div data-fieldname="ItemCode" class="rnr-field style1 {$fielddispclass_ItemCode}">
-  <span class="rnr-label">{BEGIN ItemCode_label}{$label creategrn_disposal_rebuild ItemCode}{END ItemCode_label}</span>
-  <span class="rnr-control style3">{$ItemCode_editcontrol}</span>
+
+			{BEGIN ItemCode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_ItemCode}" data-fieldname="ItemCode" data-signal-error-for="ItemCode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_ItemCode}">
+		{BEGIN ItemCode_label}{$label creategrn_disposal_rebuild ItemCode}{END ItemCode_label}
+	</label>
+	<div class="col-md-6" >
+		{$ItemCode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="ItemCode">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild ItemCode}
+		</div>
+	</div>
+</div>
 </div>
 {END ItemCode_fieldblock}
-	{BEGIN Quantity_fieldblock}
-<div data-fieldname="Quantity" class="rnr-field style1 {$fielddispclass_Quantity}">
-  <span class="rnr-label">{BEGIN Quantity_label}{$label creategrn_disposal_rebuild Quantity}{END Quantity_label}</span>
-  <span class="rnr-control style3">{$Quantity_editcontrol}</span>
+
+			{BEGIN Quantity_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Quantity}" data-fieldname="Quantity" data-signal-error-for="Quantity{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Quantity}">
+		{BEGIN Quantity_label}{$label creategrn_disposal_rebuild Quantity}{END Quantity_label}
+	</label>
+	<div class="col-md-6" >
+		{$Quantity_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Quantity">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild Quantity}
+		</div>
+	</div>
+</div>
 </div>
 {END Quantity_fieldblock}
-	{BEGIN Brand_fieldblock}
-<div data-fieldname="Brand" class="rnr-field style1 {$fielddispclass_Brand}">
-  <span class="rnr-label">{BEGIN Brand_label}{$label creategrn_disposal_rebuild Brand}{END Brand_label}</span>
-  <span class="rnr-control style3">{$Brand_editcontrol}</span>
+
+			{BEGIN Brand_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Brand}" data-fieldname="Brand" data-signal-error-for="Brand{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Brand}">
+		{BEGIN Brand_label}{$label creategrn_disposal_rebuild Brand}{END Brand_label}
+	</label>
+	<div class="col-md-6" >
+		{$Brand_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Brand">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild Brand}
+		</div>
+	</div>
+</div>
 </div>
 {END Brand_fieldblock}
-	{BEGIN Description_fieldblock}
-<div data-fieldname="Description" class="rnr-field style1 {$fielddispclass_Description}">
-  <span class="rnr-label">{BEGIN Description_label}{$label creategrn_disposal_rebuild Description}{END Description_label}</span>
-  <span class="rnr-control style3">{$Description_editcontrol}</span>
+
+			{BEGIN Description_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Description}" data-fieldname="Description" data-signal-error-for="Description{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Description}">
+		{BEGIN Description_label}{$label creategrn_disposal_rebuild Description}{END Description_label}
+	</label>
+	<div class="col-md-6" >
+		{$Description_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Description">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild Description}
+		</div>
+	</div>
+</div>
 </div>
 {END Description_fieldblock}
-</td>
-<td>
-	{BEGIN Supplier_fieldblock}
-<div data-fieldname="Supplier" class="rnr-field style1 {$fielddispclass_Supplier}">
-  <span class="rnr-label">{BEGIN Supplier_label}{$label creategrn_disposal_rebuild Supplier}{END Supplier_label}</span>
-  <span class="rnr-control style3">{$Supplier_editcontrol}</span>
+
+			{BEGIN Supplier_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Supplier}" data-fieldname="Supplier" data-signal-error-for="Supplier{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Supplier}">
+		{BEGIN Supplier_label}{$label creategrn_disposal_rebuild Supplier}{END Supplier_label}
+	</label>
+	<div class="col-md-6" >
+		{$Supplier_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Supplier">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild Supplier}
+		</div>
+	</div>
+</div>
 </div>
 {END Supplier_fieldblock}
-	{BEGIN UnitPrice_fieldblock}
-<div data-fieldname="UnitPrice" class="rnr-field style1 {$fielddispclass_UnitPrice}">
-  <span class="rnr-label">{BEGIN UnitPrice_label}{$label creategrn_disposal_rebuild UnitPrice}{END UnitPrice_label}</span>
-  <span class="rnr-control style3">{$UnitPrice_editcontrol}</span>
+
+			{BEGIN UnitPrice_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_UnitPrice}" data-fieldname="UnitPrice" data-signal-error-for="UnitPrice{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_UnitPrice}">
+		{BEGIN UnitPrice_label}{$label creategrn_disposal_rebuild UnitPrice}{END UnitPrice_label}
+	</label>
+	<div class="col-md-6" >
+		{$UnitPrice_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="UnitPrice">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild UnitPrice}
+		</div>
+	</div>
+</div>
 </div>
 {END UnitPrice_fieldblock}
-	{BEGIN Cost_fieldblock}
-<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
-  <span class="rnr-label">{BEGIN Cost_label}{$label creategrn_disposal_rebuild Cost}{END Cost_label}</span>
-  <span class="rnr-control style3">{$Cost_editcontrol}</span>
+
+			{BEGIN Cost_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_Cost}" data-fieldname="Cost" data-signal-error-for="Cost{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Cost}">
+		{BEGIN Cost_label}{$label creategrn_disposal_rebuild Cost}{END Cost_label}
+	</label>
+	<div class="col-md-6" >
+		{$Cost_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Cost">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild Cost}
+		</div>
+	</div>
+</div>
 </div>
 {END Cost_fieldblock}
-	{BEGIN CurrentStock_fieldblock}
-<div data-fieldname="CurrentStock" class="rnr-field style1 {$fielddispclass_CurrentStock}">
-  <span class="rnr-label">{BEGIN CurrentStock_label}{$label creategrn_disposal_rebuild CurrentStock}{END CurrentStock_label}</span>
-  <span class="rnr-control style3">{$CurrentStock_editcontrol}</span>
+
+			{BEGIN CurrentStock_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_CurrentStock}" data-fieldname="CurrentStock" data-signal-error-for="CurrentStock{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_CurrentStock}">
+		{BEGIN CurrentStock_label}{$label creategrn_disposal_rebuild CurrentStock}{END CurrentStock_label}
+	</label>
+	<div class="col-md-6" >
+		{$CurrentStock_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="CurrentStock">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild CurrentStock}
+		</div>
+	</div>
+</div>
 </div>
 {END CurrentStock_fieldblock}
-	{BEGIN SystemDate_fieldblock}
-<div data-fieldname="SystemDate" class="rnr-field style1 {$fielddispclass_SystemDate}">
-  <span class="rnr-label">{BEGIN SystemDate_label}{$label creategrn_disposal_rebuild SystemDate}{END SystemDate_label}</span>
-  <span class="rnr-control style3">{$SystemDate_editcontrol}</span>
+
+			{BEGIN SystemDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_SystemDate}" data-fieldname="SystemDate" data-signal-error-for="SystemDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_SystemDate}">
+		{BEGIN SystemDate_label}{$label creategrn_disposal_rebuild SystemDate}{END SystemDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$SystemDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="SystemDate">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild SystemDate}
+		</div>
+	</div>
+</div>
 </div>
 {END SystemDate_fieldblock}
-	{BEGIN EnteredBy_fieldblock}
-<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
-  <span class="rnr-label">{BEGIN EnteredBy_label}{$label creategrn_disposal_rebuild EnteredBy}{END EnteredBy_label}</span>
-  <span class="rnr-control style3">{$EnteredBy_editcontrol}</span>
+
+			{BEGIN EnteredBy_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_EnteredBy}" data-fieldname="EnteredBy" data-signal-error-for="EnteredBy{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_EnteredBy}">
+		{BEGIN EnteredBy_label}{$label creategrn_disposal_rebuild EnteredBy}{END EnteredBy_label}
+	</label>
+	<div class="col-md-6" >
+		{$EnteredBy_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="EnteredBy">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild EnteredBy}
+		</div>
+	</div>
+</div>
 </div>
 {END EnteredBy_fieldblock}
-	{BEGIN ApprovedBy_fieldblock}
-<div data-fieldname="ApprovedBy" class="rnr-field style1 {$fielddispclass_ApprovedBy}">
-  <span class="rnr-label">{BEGIN ApprovedBy_label}{$label creategrn_disposal_rebuild ApprovedBy}{END ApprovedBy_label}</span>
-  <span class="rnr-control style3">{$ApprovedBy_editcontrol}</span>
+
+			{BEGIN ApprovedBy_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_ApprovedBy}" data-fieldname="ApprovedBy" data-signal-error-for="ApprovedBy{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_ApprovedBy}">
+		{BEGIN ApprovedBy_label}{$label creategrn_disposal_rebuild ApprovedBy}{END ApprovedBy_label}
+	</label>
+	<div class="col-md-6" >
+		{$ApprovedBy_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="ApprovedBy">
+		<div class="text-muted" >
+		{$tooltip creategrn_disposal_rebuild ApprovedBy}
+		</div>
+	</div>
+</div>
 </div>
 {END ApprovedBy_fieldblock}
-</td>
-</tr>
-</table></div>
 
 
-{BEGIN editbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-editbuttons {$brickclass_editbuttons}"><div class="rnr-buttons-right">
-	{BEGIN prev_button}
-	<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
-	{END prev_button}
-	{BEGIN next_button}
-	<a href="#" class="rnr-button  {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
-	{END next_button}
 </div>
-<div class="rnr-buttons-left">
-		{BEGIN save_button}
-	<a href="#" class="rnr-button main" {$savebutton_attrs}>Save</a>
-	{END save_button}
-	{BEGIN reset_button}
-	<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
-	{END reset_button}
-	{BEGIN back_button}
-		<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-	{END back_button}
-	{BEGIN close_button}
-	<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
-	{END close_button}
-		{BEGIN view_page_button}
-	<a href="#" class="rnr-button" {$view_page_button_attrs}>View</a>
-	{END view_page_button}
-</div>
-</div>{END editbuttons}
+
+
 
 
 </div>
 {END container_fields}
 
-</div>
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN editbuttons}
+	{BEGIN save_button}
+	<button class="btn btn-primary" {$savebutton_attrs}>{mlang_message SAVE}</button>
+	{END save_button}
+	{BEGIN back_button}
+		<button class="btn btn-default" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+	{END back_button}
+	{BEGIN close_button}
+	<a href="#" class="btn btn-default" {$closebutton_attrs}>{mlang_message CANCEL}</a>
+	{END close_button}
+
+{END editbuttons}
 
 
 
 </div>
-{END container_all}
+{END container_leftbuttons}
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
-		</div>
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="  text-right col-md-3 "> 
+
+{BEGIN righteditbuttons}
+<div class="btn-group" role="group">
+
+	{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default  {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+			{BEGIN reset_button}
+				<li><a href="#" {$resetbutton_attrs}>{mlang_message RESET}</a></li>
+			{END reset_button}
+			{BEGIN view_page_button}
+				<li><a href="#" {$view_page_button_attrs}>{mlang_message VIEW}</a></li>
+			{END view_page_button}
+		</ul>
 	</div>
-		
+</div>
+{END righteditbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
 		{$footer}
 	{END body}
 	</body>

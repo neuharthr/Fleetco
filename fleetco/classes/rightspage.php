@@ -94,9 +94,9 @@ class RightsPage extends ListPage
 		global $cman;
 		$grConnection = $cman->getForUserGroups();
 
-		$this->groups[-1] = "<"."Admin".">";
-		$this->groups[-2] = "<"."Default".">";
-		$this->groups[-3] = "<"."Guest".">";
+		$this->groups[-1] = "<".mlang_message("AA_GROUP_ADMIN").">";
+		$this->groups[-2] = "<".mlang_message("AA_GROUP_DEFAULT").">";
+		$this->groups[-3] = "<".mlang_message("AA_GROUP_GUEST").">";
 
 		$sql = "select ". $grConnection->addFieldWrappers( "GroupID" ) .", ". $grConnection->addFieldWrappers( "Label" )
 			." from ". $grConnection->addTableWrappers( "carrier_uggroups" ) ." order by ". $grConnection->addFieldWrappers( "Label" );
@@ -260,8 +260,8 @@ class RightsPage extends ListPage
 				$addedTables[ $m["table"] ] = true;
 				$arr["table"] = $m["table"];
 			}
-			else if( $m["type"] == "Leaf" )
-				continue;
+//			else if( $m["type"] == "Leaf" )
+//				continue;
 
 			if( $m["parent"] )
 			{
@@ -269,7 +269,7 @@ class RightsPage extends ListPage
 				$this->menuOrderedTables[ $arr["parent"] ]["items"][] = count($this->menuOrderedTables);
 			}
 
-			if( $m["type"] == "Group" )
+			if( true || $m["type"] == "Group" )
 			{
 				$groupsMap[ $m["id"] ] = count($this->menuOrderedTables);
 				//	add all groups
@@ -286,7 +286,7 @@ class RightsPage extends ListPage
 			$unlistedId = count($this->menuOrderedTables);
 			$arr = array();
 			$arr["collapsed"] = true;
-			$arr["title"] = "Unlisted tables";
+			$arr["title"] = mlang_message("UNLISTED");
 			$arr["items"] = array();
 			$this->menuOrderedTables[] = $arr;
 			foreach( $this->alphaOrderedTables as $table)
@@ -311,7 +311,7 @@ class RightsPage extends ListPage
 		{
 			if(isset($this->menuOrderedTables[$idx]["items"]))
 				$count += $this->getItemsCount($idx);
-			else
+			if(isset($this->menuOrderedTables[$idx]["table"]))
 				$count++;
 		}
 		return $count;
@@ -384,7 +384,8 @@ class RightsPage extends ListPage
 				$row["tblrowclass"] .= "rightsindent" . count($parentStack);
 			}
 
-			if( isset($tbl["items"]) && count($tbl["items"]) )
+			$childrenCount = $this->getItemsCount($idx);
+			if( isset($tbl["items"]) && $childrenCount )
 			{
 				$row["tablename"] .= "<span class='tablecount' dir='LTR'>&nbsp;(".$this->getItemsCount($idx).")</span>";
 				$row["tablerowattrs"] .= " data-groupid=\"".$idx."\"";

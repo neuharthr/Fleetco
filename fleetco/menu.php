@@ -21,32 +21,72 @@ if (($_SESSION["MyURL"] == "") || (!isLoggedAsGuest())) {
 
 
 
-$layout = new TLayout("menu", "AvenueAvenue", "MobileAvenue");
-$layout->version = 2;
+$layout = new TLayout("menu_bootstrap3", "AvenueAvenue", "MobileAvenue");
+$layout->version = 3;
+	$layout->bootstrapTheme = "default";
+		$layout->customCssPageName = "_menu";
+$layout->blocks["left"] = array();
+$layout->containers["logo"] = array();
+$layout->container_properties["logo"] = array(  );
+$layout->containers["logo"][] = array("name"=>"logo",
+	"block"=>"logo_block", "substyle"=>1  );
+
+$layout->skins["logo"] = "";
+
+$layout->blocks["left"][] = "logo";
+$layout->containers["hdr"] = array();
+$layout->container_properties["hdr"] = array(  );
+$layout->containers["hdr"][] = array("name"=>"bsnavbarcollapse",
+	"block"=>"collapse_block", "substyle"=>1  );
+
+$layout->skins["hdr"] = "";
+
+$layout->blocks["left"][] = "hdr";
+$layout->containers["sidemenu"] = array();
+$layout->container_properties["sidemenu"] = array(  );
+$layout->containers["sidemenu"][] = array("name"=>"vmenu",
+	"block"=>"menu_block", "substyle"=>1  );
+
+$layout->skins["sidemenu"] = "";
+
+$layout->blocks["left"][] = "sidemenu";
 $layout->blocks["top"] = array();
 $layout->containers["menu"] = array();
 $layout->container_properties["menu"] = array(  );
-$layout->containers["menu"][] = array("name"=>"login_menu",
-	"block"=>"loggedas_block", "substyle"=>1  );
+$layout->containers["menu"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"menu_1" );
+$layout->containers["menu_1"] = array();
+$layout->container_properties["menu_1"] = array(  );
+$layout->containers["menu_1"][] = array("name"=>"wrapper",
+	"block"=>"", "substyle"=>1 , "container"=>"more" );
+$layout->containers["more"] = array();
+$layout->container_properties["more"] = array(  );
+$layout->containers["more"][] = array("name"=>"morebutton",
+	"block"=>"more_list", "substyle"=>1  );
 
-$layout->containers["menu"][] = array("name"=>"vmenu",
-	"block"=>"menu_block", "substyle"=>1  );
+$layout->containers["more"][] = array("name"=>"loggedas",
+	"block"=>"security_block", "substyle"=>1  );
 
-$layout->skins["menu"] = "menu";
+$layout->skins["more"] = "";
+
+
+$layout->skins["menu_1"] = "";
+
+
+$layout->skins["menu"] = "";
 
 $layout->blocks["top"][] = "menu";
+$layout->blocks["topmiddle"] = array();
+$layout->containers["center"] = array();
+$layout->container_properties["center"] = array(  );
+$layout->containers["center"][] = array("name"=>"welcome",
+	"block"=>"", "substyle"=>1  );
+
+$layout->skins["center"] = "";
+
+$layout->blocks["topmiddle"][] = "center";
 $page_layouts["menu"] = $layout;
 
-$layout->skinsparams = array();
-$layout->skinsparams["empty"] = array("button"=>"button2");
-$layout->skinsparams["menu"] = array("button"=>"button1");
-$layout->skinsparams["hmenu"] = array("button"=>"button1");
-$layout->skinsparams["undermenu"] = array("button"=>"button1");
-$layout->skinsparams["fields"] = array("button"=>"button1");
-$layout->skinsparams["form"] = array("button"=>"button1");
-$layout->skinsparams["1"] = array("button"=>"button1");
-$layout->skinsparams["2"] = array("button"=>"button1");
-$layout->skinsparams["3"] = array("button"=>"button1");
 
 
 

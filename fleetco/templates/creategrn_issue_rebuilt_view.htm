@@ -2,6 +2,7 @@
 <html  {$html_attrs}>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{$pagetitle}</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,230 +13,335 @@
 		{BEGIN styleCSSFiles}
 		<link REL="stylesheet" href="{$stylepath}" type="text/css">
 		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
 	</head>
-	
+
 	<body class="{$stylename} function-view" {$bodyattrs}>
 	{BEGIN body}
 		{$header}
-	<div class="rnr-page">
-		<div class="rnr-top {$blockclass_top}">
-			
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
 
-{BEGIN container_all}
-<div class="rnr-c rnr-cv rnr-c-all">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_view} rnr-wrapper rnr-cbw-view">
-
-{BEGIN container_view}
-<div class="rnr-c rnr-cv rnr-c-view">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pdf} rnr-wrapper rnr-cbw-pdf">
-
-{BEGIN container_pdf}
-<div class="rnr-c rnr-cv rnr-c-pdf">
-
-
-<div  class="rnr-brickcontents style1 rnr-b-viewpdf {$brickclass_viewpdf}">{BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button" {$pdflink_attrs}>PDF View</a>
-{END pdflink_block}
-
-</div>
-
-
-</div>
-{END container_pdf}
-
-</div>
+{BEGIN container_viewpage}
+<div {$viewpage_chiddenattr} data-pageid="{$pageid}" data-container="viewpage" class="container    "> 
 
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
-
-{BEGIN container_fields}
-<div class="rnr-c rnr-cv rnr-c-fields">
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-12 "> 
 
 {BEGIN viewheader}
-<div  class="rnr-brickcontents style2 rnr-b-viewheader {$brickclass_viewheader}"><span>	<h1>{$pagetitlelabel creategrn_issue_rebuilt view}</h1>
-</span></div>{END viewheader}
+	<h2 {$viewheader_hiddenattr} data-pageid="{$pageid}" data-brick="viewheader" >{$pagetitlelabel creategrn_issue_rebuilt view}</h2>
+
+{END viewheader}
 
 
 
-<div  class="rnr-brickcontents style1 rnr-b-viewfields2 {$brickclass_viewfields2}"><table class="fieldGrid fieldGrid2">
-
-<tr>
-<td>
-	{BEGIN ID_fieldblock}
-<div data-fieldname="ID" class="rnr-field style1 {$fielddispclass_ID}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt ID}:</span>
-  <span class="rnr-control style3">{$ID_value}</span>
 </div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_viewpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class=" form-horizontal  col-md-12 "> 
+
+
+<div {$viewfields_hiddenattr} data-pageid="{$pageid}" data-brick="viewfields" >
+
+	<div class="container">
+					{BEGIN ID_fieldblock}
+	<div class="{$fielddispclass_ID} col-md-6 bs-viewcontrolgroup" data-fieldname="ID">
+		<label class="control-label" for="{$labelfor_ID}">
+			{$label creategrn_issue_rebuilt ID}
+		</label>
+		<div class="" >
+			{$ID_value}&nbsp;
+		</div>
+	</div>
 {END ID_fieldblock}
-	{BEGIN Status_fieldblock}
-<div data-fieldname="Status" class="rnr-field style1 {$fielddispclass_Status}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Status}:</span>
-  <span class="rnr-control style3">{$Status_value}</span>
-</div>
+					{BEGIN Status_fieldblock}
+	<div class="{$fielddispclass_Status} col-md-6 bs-viewcontrolgroup" data-fieldname="Status">
+		<label class="control-label" for="{$labelfor_Status}">
+			{$label creategrn_issue_rebuilt Status}
+		</label>
+		<div class="" >
+			{$Status_value}&nbsp;
+		</div>
+	</div>
 {END Status_fieldblock}
-	{BEGIN Fleet_fieldblock}
-<div data-fieldname="Fleet" class="rnr-field style1 {$fielddispclass_Fleet}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Fleet}:</span>
-  <span class="rnr-control style3">{$Fleet_value}</span>
-</div>
+					{BEGIN Fleet_fieldblock}
+	<div class="{$fielddispclass_Fleet} col-md-6 bs-viewcontrolgroup" data-fieldname="Fleet">
+		<label class="control-label" for="{$labelfor_Fleet}">
+			{$label creategrn_issue_rebuilt Fleet}
+		</label>
+		<div class="" >
+			{$Fleet_value}&nbsp;
+		</div>
+	</div>
 {END Fleet_fieldblock}
-	{BEGIN RemovedFrom_fieldblock}
-<div data-fieldname="RemovedFrom" class="rnr-field style1 {$fielddispclass_RemovedFrom}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt RemovedFrom}:</span>
-  <span class="rnr-control style3">{$RemovedFrom_value}</span>
-</div>
+					{BEGIN RemovedFrom_fieldblock}
+	<div class="{$fielddispclass_RemovedFrom} col-md-6 bs-viewcontrolgroup" data-fieldname="RemovedFrom">
+		<label class="control-label" for="{$labelfor_RemovedFrom}">
+			{$label creategrn_issue_rebuilt RemovedFrom}
+		</label>
+		<div class="" >
+			{$RemovedFrom_value}&nbsp;
+		</div>
+	</div>
 {END RemovedFrom_fieldblock}
-	{BEGIN GRNDate_fieldblock}
-<div data-fieldname="GRNDate" class="rnr-field style1 {$fielddispclass_GRNDate}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt GRNDate}:</span>
-  <span class="rnr-control style3">{$GRNDate_value}</span>
-</div>
+					{BEGIN GRNDate_fieldblock}
+	<div class="{$fielddispclass_GRNDate} col-md-6 bs-viewcontrolgroup" data-fieldname="GRNDate">
+		<label class="control-label" for="{$labelfor_GRNDate}">
+			{$label creategrn_issue_rebuilt GRNDate}
+		</label>
+		<div class="" >
+			{$GRNDate_value}&nbsp;
+		</div>
+	</div>
 {END GRNDate_fieldblock}
-	{BEGIN ItemCode_fieldblock}
-<div data-fieldname="ItemCode" class="rnr-field style1 {$fielddispclass_ItemCode}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt ItemCode}:</span>
-  <span class="rnr-control style3">{$ItemCode_value}</span>
-</div>
+					{BEGIN ItemCode_fieldblock}
+	<div class="{$fielddispclass_ItemCode} col-md-6 bs-viewcontrolgroup" data-fieldname="ItemCode">
+		<label class="control-label" for="{$labelfor_ItemCode}">
+			{$label creategrn_issue_rebuilt ItemCode}
+		</label>
+		<div class="" >
+			{$ItemCode_value}&nbsp;
+		</div>
+	</div>
 {END ItemCode_fieldblock}
-	{BEGIN Remarks_fieldblock}
-<div data-fieldname="Remarks" class="rnr-field style1 {$fielddispclass_Remarks}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Remarks}:</span>
-  <span class="rnr-control style3">{$Remarks_value}</span>
-</div>
+					{BEGIN Remarks_fieldblock}
+	<div class="{$fielddispclass_Remarks} col-md-6 bs-viewcontrolgroup" data-fieldname="Remarks">
+		<label class="control-label" for="{$labelfor_Remarks}">
+			{$label creategrn_issue_rebuilt Remarks}
+		</label>
+		<div class="" >
+			{$Remarks_value}&nbsp;
+		</div>
+	</div>
 {END Remarks_fieldblock}
-	{BEGIN CurrentStock_fieldblock}
-<div data-fieldname="CurrentStock" class="rnr-field style1 {$fielddispclass_CurrentStock}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt CurrentStock}:</span>
-  <span class="rnr-control style3">{$CurrentStock_value}</span>
-</div>
+					{BEGIN CurrentStock_fieldblock}
+	<div class="{$fielddispclass_CurrentStock} col-md-6 bs-viewcontrolgroup" data-fieldname="CurrentStock">
+		<label class="control-label" for="{$labelfor_CurrentStock}">
+			{$label creategrn_issue_rebuilt CurrentStock}
+		</label>
+		<div class="" >
+			{$CurrentStock_value}&nbsp;
+		</div>
+	</div>
 {END CurrentStock_fieldblock}
-	{BEGIN Quantity_fieldblock}
-<div data-fieldname="Quantity" class="rnr-field style1 {$fielddispclass_Quantity}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Quantity}:</span>
-  <span class="rnr-control style3">{$Quantity_value}</span>
-</div>
+					{BEGIN Quantity_fieldblock}
+	<div class="{$fielddispclass_Quantity} col-md-6 bs-viewcontrolgroup" data-fieldname="Quantity">
+		<label class="control-label" for="{$labelfor_Quantity}">
+			{$label creategrn_issue_rebuilt Quantity}
+		</label>
+		<div class="" >
+			{$Quantity_value}&nbsp;
+		</div>
+	</div>
 {END Quantity_fieldblock}
-</td>
-<td>
-	{BEGIN Brand_fieldblock}
-<div data-fieldname="Brand" class="rnr-field style1 {$fielddispclass_Brand}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Brand}:</span>
-  <span class="rnr-control style3">{$Brand_value}</span>
-</div>
+					{BEGIN Brand_fieldblock}
+	<div class="{$fielddispclass_Brand} col-md-6 bs-viewcontrolgroup" data-fieldname="Brand">
+		<label class="control-label" for="{$labelfor_Brand}">
+			{$label creategrn_issue_rebuilt Brand}
+		</label>
+		<div class="" >
+			{$Brand_value}&nbsp;
+		</div>
+	</div>
 {END Brand_fieldblock}
-	{BEGIN Description_fieldblock}
-<div data-fieldname="Description" class="rnr-field style1 {$fielddispclass_Description}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Description}:</span>
-  <span class="rnr-control style3">{$Description_value}</span>
-</div>
+					{BEGIN Description_fieldblock}
+	<div class="{$fielddispclass_Description} col-md-6 bs-viewcontrolgroup" data-fieldname="Description">
+		<label class="control-label" for="{$labelfor_Description}">
+			{$label creategrn_issue_rebuilt Description}
+		</label>
+		<div class="" >
+			{$Description_value}&nbsp;
+		</div>
+	</div>
 {END Description_fieldblock}
-	{BEGIN Supplier_fieldblock}
-<div data-fieldname="Supplier" class="rnr-field style1 {$fielddispclass_Supplier}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Supplier}:</span>
-  <span class="rnr-control style3">{$Supplier_value}</span>
-</div>
+					{BEGIN Supplier_fieldblock}
+	<div class="{$fielddispclass_Supplier} col-md-6 bs-viewcontrolgroup" data-fieldname="Supplier">
+		<label class="control-label" for="{$labelfor_Supplier}">
+			{$label creategrn_issue_rebuilt Supplier}
+		</label>
+		<div class="" >
+			{$Supplier_value}&nbsp;
+		</div>
+	</div>
 {END Supplier_fieldblock}
-	{BEGIN UnitPrice_fieldblock}
-<div data-fieldname="UnitPrice" class="rnr-field style1 {$fielddispclass_UnitPrice}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt UnitPrice}:</span>
-  <span class="rnr-control style3">{$UnitPrice_value}</span>
-</div>
+					{BEGIN UnitPrice_fieldblock}
+	<div class="{$fielddispclass_UnitPrice} col-md-6 bs-viewcontrolgroup" data-fieldname="UnitPrice">
+		<label class="control-label" for="{$labelfor_UnitPrice}">
+			{$label creategrn_issue_rebuilt UnitPrice}
+		</label>
+		<div class="" >
+			{$UnitPrice_value}&nbsp;
+		</div>
+	</div>
 {END UnitPrice_fieldblock}
-	{BEGIN Cost_fieldblock}
-<div data-fieldname="Cost" class="rnr-field style1 {$fielddispclass_Cost}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt Cost}:</span>
-  <span class="rnr-control style3">{$Cost_value}</span>
-</div>
+					{BEGIN Cost_fieldblock}
+	<div class="{$fielddispclass_Cost} col-md-6 bs-viewcontrolgroup" data-fieldname="Cost">
+		<label class="control-label" for="{$labelfor_Cost}">
+			{$label creategrn_issue_rebuilt Cost}
+		</label>
+		<div class="" >
+			{$Cost_value}&nbsp;
+		</div>
+	</div>
 {END Cost_fieldblock}
-	{BEGIN SystemDate_fieldblock}
-<div data-fieldname="SystemDate" class="rnr-field style1 {$fielddispclass_SystemDate}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt SystemDate}:</span>
-  <span class="rnr-control style3">{$SystemDate_value}</span>
-</div>
+					{BEGIN SystemDate_fieldblock}
+	<div class="{$fielddispclass_SystemDate} col-md-6 bs-viewcontrolgroup" data-fieldname="SystemDate">
+		<label class="control-label" for="{$labelfor_SystemDate}">
+			{$label creategrn_issue_rebuilt SystemDate}
+		</label>
+		<div class="" >
+			{$SystemDate_value}&nbsp;
+		</div>
+	</div>
 {END SystemDate_fieldblock}
-	{BEGIN EnteredBy_fieldblock}
-<div data-fieldname="EnteredBy" class="rnr-field style1 {$fielddispclass_EnteredBy}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt EnteredBy}:</span>
-  <span class="rnr-control style3">{$EnteredBy_value}</span>
-</div>
+					{BEGIN EnteredBy_fieldblock}
+	<div class="{$fielddispclass_EnteredBy} col-md-6 bs-viewcontrolgroup" data-fieldname="EnteredBy">
+		<label class="control-label" for="{$labelfor_EnteredBy}">
+			{$label creategrn_issue_rebuilt EnteredBy}
+		</label>
+		<div class="" >
+			{$EnteredBy_value}&nbsp;
+		</div>
+	</div>
 {END EnteredBy_fieldblock}
-	{BEGIN ApprovedBy_fieldblock}
-<div data-fieldname="ApprovedBy" class="rnr-field style1 {$fielddispclass_ApprovedBy}">
-  <span class="rnr-label">{$label creategrn_issue_rebuilt ApprovedBy}:</span>
-  <span class="rnr-control style3">{$ApprovedBy_value}</span>
-</div>
+					{BEGIN ApprovedBy_fieldblock}
+	<div class="{$fielddispclass_ApprovedBy} col-md-6 bs-viewcontrolgroup" data-fieldname="ApprovedBy">
+		<label class="control-label" for="{$labelfor_ApprovedBy}">
+			{$label creategrn_issue_rebuilt ApprovedBy}
+		</label>
+		<div class="" >
+			{$ApprovedBy_value}&nbsp;
+		</div>
+	</div>
 {END ApprovedBy_fieldblock}
-</td>
-</tr>
-</table></div>
+	</div>
+</div>
 
 
-{BEGIN viewbuttons}
-<div  class="rnr-brickcontents style2 rnr-b-viewbuttons {$brickclass_viewbuttons}"><div class="rnr-buttons-right">
-{BEGIN prev_button}
-<a href="#" class="rnr-button {$prevbutton_class}" {$prevbutton_attrs}>&lt;&lt;&lt;</a>
-{END prev_button}
-{BEGIN next_button}
-<a href="#" class="rnr-button {$nextbutton_class}" {$nextbutton_attrs}>&gt;&gt;&gt;</a>
-{END next_button}
-</div>
-<div class="rnr-buttons-left">
-{BEGIN back_button}
-<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
-{END back_button}
-{BEGIN close_button}
-<a href="#" class="rnr-button" {$closebutton_attrs}>Close window</a>
-{END close_button}
-{BEGIN edit_page_button}
-<a href="#" class="rnr-button" {$edit_page_button_attrs}>Edit</a>
-{END edit_page_button}
-</div>
-</div>{END viewbuttons}
 
 
 </div>
 {END container_fields}
 
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-6 "> 
+
+{BEGIN viewbuttons}
+{BEGIN back_button}
+<button class="btn btn-primary" {$backbutton_attrs}>{mlang_message BACK_TO_LIST}</button>
+{END back_button}
+{BEGIN close_button}
+<button href="#" class="btn btn-primary" {$closebutton_attrs}>{mlang_message CLOSE_WINDOW}</button>
+{END close_button}
+{END viewbuttons}
+
+
+
 </div>
-
-
-</div>
-{END container_view}
-
-</div>
+{END container_leftbuttons}
 
 
 
-</div>
-{END container_all}
 
 
-		</div>
-		<div class="rnr-middle">
-			<div class="rnr-left {$blockclass_left}">
-				
-			</div>
-			<div class="rnr-center {$blockclass_center}">
-				
-			</div>
-			<div class="rnr-right {$blockclass_right}">
-				
-			</div>
-		</div>
-		<div class="rnr-bottom {$blockclass_bottom}">
-			
-		</div>
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="   col-md-4 "> 
+
+{BEGIN rightviewbuttons}
+<div class="btn-group" role="group">
+		{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+		<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle {$groupbutton_class}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+						{BEGIN pdflink_block}
+			<li><a href=# class="pdflink" {$pdflink_attrs}>{mlang_message PDF_VIEW}</a></li>
+			{END pdflink_block}
+						{BEGIN edit_page_button}
+				<li><a href=# {$edit_page_button_attrs}>{mlang_message EDIT}</a></li>
+			{END edit_page_button}
+		</ul>
 	</div>
-		
+</div>
+{END rightviewbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
 		{$footer}
 	{END body}
 	</body>

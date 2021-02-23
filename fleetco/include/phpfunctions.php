@@ -91,11 +91,9 @@ class facebookWrapper
  * @return Array
  * @intellisense
  */
-
-function runner_mail($params)
+function runner_mail( $params )
 {
-	$customSMTP = "0";
-	if (!GetGlobalData("useBuiltInMailer", false))
+	if( !GetGlobalData("useBuiltInMailer", false) )
 	{
 		include_once(getabspath('libs/phpmailer/class.phpmailer.php'));
 		include_once(getabspath('libs/phpmailer/class.smtp.php'));
@@ -103,23 +101,23 @@ function runner_mail($params)
 	}
 
 	$from = isset($params['from']) ? $params['from'] : "";
-	if(!$from)
-	{
-		$from = "info@dplcom.com";
-	}
+	if( !$from )
+		$from = GetGlobalData("strFromEmail", "");
+	
 	$to = isset($params['to']) ? $params['to'] : "";
 	$body = isset($params['body']) ? $params['body'] : "";
 	$cc = isset($params['cc']) ? $params['cc'] : "";
 	$bcc = isset($params['bcc']) ? $params['bcc'] : "";
 	$replyTo = isset($params['replyTo']) ? $params['replyTo'] : "";
 	$priority = isset($params['priority']) ? $params['priority'] : "";
+	
 	$charset = "";
 	$isHtml = false;
-	if(!$body)
+	if( !$body )
 	{
 		$body = isset($params['htmlbody']) ? $params['htmlbody'] : "";
 		$charset = isset($params['charset']) ? $params['charset'] : "";
-		if(!$charset)
+		if( !$charset )
 			$charset = "utf-8";
 		$isHtml = true;
 	}
@@ -127,23 +125,25 @@ function runner_mail($params)
 
 	//
 	$header = "";
-	if($isHtml)
+	if( $isHtml )
 	{
 		$header .= "MIME-Version: 1.0\r\n";
 		$header .= 'Content-Type: text/html;' . ( $charset ? ' charset=' . $charset . ';' : '' ) . "\r\n";
 	}
 
-	if($from)
+	if( $from )
 	{
-		if(strpos($from, '<') !== false)
+		if( strpos($from, '<') !== false )
 			$header .= 'From: ' . $from . "\r\n";
 		else
 			$header .= 'From: <' . $from . ">\r\n";
 
 		@ini_set("sendmail_from", $from);
 	}
+	
 	if($cc)
 		$header .= 'Cc: ' . $cc . "\r\n";
+	
 	if($bcc)
 		$header .= 'Bcc: ' . $bcc . "\r\n";
 
@@ -152,18 +152,17 @@ function runner_mail($params)
 
 	if($replyTo)
 	{
-		if(strpos($replyTo, '<') !== false)
+		if( strpos($replyTo, '<') !== false )
 			$header .= 'Reply-to: '.$replyTo."\r\n";
 		else
 			$header .= 'Reply-to: <'.$replyTo.">\r\n";
 	}
 
-
 	$eh = new ErrorHandler();
 	set_error_handler(array($eh, "handle_mail_error"));
 
 	$res = false;
-	if(!$header)
+	if( !$header )
 	{
 		$res = mail($to, $subject, $body);
 	}
@@ -173,8 +172,9 @@ function runner_mail($params)
 	}
 
 	restore_error_handler();
-	return array('mailed' => $res, 'errors' => $eh->errorstack, "message"=> nl2br($eh->getErrorMessage()));
+	return array("mailed" => $res, "errors" => $eh->errorstack, "message"=> nl2br( $eh->getErrorMessage() ));
 }
+
 /**
  * Gets absolute path
  *
@@ -468,8 +468,6 @@ function now()
  */
 function refine($str)
 {
-	if(get_magic_quotes_gpc())
-		return stripslashes($str);
 	return $str;
 }
 
@@ -1806,121 +1804,145 @@ function parse_addr_list($to)
 }
 
 /**
+ * @param Array params
+ * @return Array
  * @intellisense
  */
-function runner_mail_smtp($params)
+function runner_mail_smtp( $params )
 {
-	$mail = new PHPMailer();
+	$mail = new PHPMailer( true );
 	$mail->IsSMTP(); // telling the class to use SMTP
 
-	$from = isset($params['from']) ? $params['from'] : "";
-	if(!$from)
+	$useCustomSMTP = GetGlobalData("useCustomSMTPSettings", false);
+	$SMTPUser = GetGlobalData("strSMTPUser", "");
+	
+	if( $useCustomSMTP && $SMTPUser != "" || isset( $params['username'] ) )
 	{
-		$from = "info@dplcom.com";
-	}
-	$to = isset($params['to']) ? $params['to'] : "";
-	$body = isset($params['body']) ? $params['body'] : "";
-
-	$subject = $params['subject'];
-
-	if ("0" == "1" && ""!="" || isset($params['username']))
-	{
-		$mail->SMTPAuth   = true;                  				// enable SMTP authentication
-		$mail->Username   = isset($params['username']) ? $params['username'] : "";  		// SMTP username
-		$mail->Password   = isset($params['password']) ? $params['password'] : "";   // SMTP password
-	}else{
-		$mail->SMTPAuth = false;
-	}
-	if("0" == "1" && "localhost" != "" || isset($params['host']))
-	{
-		$mail->Host = isset($params['host']) ? $params['host'] : "localhost";     // sets SMTP server
-	}
-	else if(ini_get('SMTP') != '')
-		$mail->Host = ini_get('SMTP');
-
-	if("0" == "1" && "25" != "" || isset($params['port']))
-		$mail->Port = isset($params['port']) ? $params['port'] + 0 : "25"+0;     	// set the SMTP port
-	else if(ini_get('smtp_port') != '')
-		 $mail->Port = ini_get('smtp_port')+0;
-	if ("0" == "1")
-		$mail->SMTPSecure = "ssl";
-
-
-	$mail->SetFrom($from, isset($params['fromName']) ? $params['fromName'] : "");
-
-
-	$mail->Subject    = $subject;
-
-	if ($to != ""){
-		$arr_to = array();
-		$arr_to = parse_addr_list($to);
-
-		foreach($arr_to as $email){
-			$mail->AddAddress($email['addr'], $email['name']);
-		}
-	}
-
-
-	// replyTo
-	if ( isset($params['replyTo']) )
-		$mail->AddReplyTo($params['replyTo'],"");
-
-	// body, htmlbody
-	if (isset($params['htmlbody']))
-	{
-		$mail->AltBody    = $body;
-		$mail->MsgHTML($params['htmlbody']);
+		$mail->SMTPAuth = true;  // enable SMTP authentication
+		$mail->Username = isset( $params['username'] ) ? $params['username'] : $SMTPUser;  // SMTP username
+		$mail->Password = isset( $params['password'] ) ? $params['password'] : GetGlobalData("strSMTPPassword", "");  // SMTP password
 	}
 	else
 	{
-		$mail->Body    = $body;
+		$mail->SMTPAuth = false;
+	}
+	
+	$SMTPServer = GetGlobalData("strSMTPServer", "");
+	if( $useCustomSMTP && $SMTPServer != "" || isset( $params['host'] ) )
+	{
+		$mail->Host = isset( $params['host'] ) ? $params['host'] : $SMTPServer;  // sets SMTP server
+	}
+	else if( ini_get('SMTP') != '' )
+	{
+		$mail->Host = ini_get('SMTP');
+	}
+	
+	$SMTPPort = GetGlobalData("strSMTPPort", "");
+	if( $useCustomSMTP && $SMTPPort != "" || isset( $params['port'] ) )
+	{
+		$mail->Port = isset( $params['port'] ) ? $params['port'] + 0 : $SMTPPort + 0;  // set the SMTP port
+	}
+	else if( ini_get('smtp_port') != '' )
+	{
+		 $mail->Port = ini_get('smtp_port') + 0;
 	}
 
+	if( GetGlobalData("useSSL") )
+		$mail->SMTPSecure = "ssl";
+
+	$mail->Subject = $params['subject'];
+
+	$from = isset( $params['from'] ) ? $params['from'] : "";
+	if( !$from )
+		$from = GetGlobalData("strFromEmail");
+		
+	try 
+	{
+		$mail->SetFrom( $from, isset( $params['fromName'] ) ? $params['fromName'] : "" );
+	}
+	catch( phpmailerException $e )
+	{
+		return array( "mailed" => false, "message"=> nl2br( $e->getMessage() ) );
+	}
+	
+	$to = isset( $params['to'] ) ? $params['to'] : "";
+	if( $to != "" )
+	{
+		$arr_to = parse_addr_list( $to );
+		foreach( $arr_to as $email )
+		{
+			$mail->AddAddress( $email['addr'], $email['name'] );
+		}
+	}
+
+	// replyTo
+	if ( isset( $params['replyTo'] ) )
+		$mail->AddReplyTo( $params['replyTo'], "" );
+
+	$body = isset( $params['body'] ) ? $params['body'] : "";
+	
+	// body, htmlbody
+	if ( isset( $params['htmlbody'] ) )
+	{
+		$mail->AltBody = $body;
+		$mail->MsgHTML( $params['htmlbody'] );
+	}
+	else
+	{
+		$mail->Body = $body;
+	}
 
 	// charset
-	if (isset($params['charset']))
+	if ( isset( $params['charset'] ) )
 		$mail->CharSet = $params['charset'];
 	else
 		$mail->CharSet = "utf-8";
 
-
 	// priority
-	if (isset($params['priority']))
-		$mail->Priority = isset($params['priority']);
+	if( isset( $params['priority'] ) )
+		$mail->Priority = $params['priority'];
 
-	// CC/BCC
-
-
-	if (isset($params['cc'])){
-		$arr_cc = array();
-		$arr_cc = parse_addr_list($params['cc']);
-
-		foreach($arr_cc as $cc){
-			$mail->AddCC($cc['addr'], $cc['name']);
+	// CC
+	if( isset( $params['cc'] ) )
+	{
+		$arr_cc = parse_addr_list( $params['cc'] );
+		foreach( $arr_cc as $cc )
+		{
+			$mail->AddCC( $cc['addr'], $cc['name'] );
+		}
+	}
+	
+	// BCC
+	if( isset( $params['bcc'] ) )
+	{
+		$arr_bcc = parse_addr_list( $params['bcc'] );
+		foreach( $arr_bcc as $bcc )
+		{
+			$mail->AddBCC( $bcc['addr'], $bcc['name'] );
 		}
 	}
 
-	if (isset($params['bcc'])){
-		$arr_cc = array();
-		$arr_cc = parse_addr_list($params['bcc']);
-
-		foreach($arr_cc as $bcc){
-			$mail->AddBCC($bcc['addr'], $bcc['name']);
+	if( isset( $params['attachments'] ) && is_array( $params['attachments'] ) )
+	{
+		foreach ( $params['attachments'] as $attachment )
+		{
+			$mail->AddAttachment( $attachment['path'],
+				isset( $attachment['name'] ) ? $attachment['name'] : '',
+				isset( $attachment["encoding"] ) ? $attachment["encoding"] : 'base64',
+				isset( $attachment["type"] ) ? $attachment["type"] : 'application/octet-stream' );
 		}
 	}
-
-	if(isset($params['attachments']) && is_array($params['attachments'])){
-		foreach ($params['attachments'] as $attachment){
-			$mail->AddAttachment($attachment['path'],
-				isset($attachment['name']) ? $attachment['name'] : '',
-				isset($attachment["encoding"]) ? $attachment["encoding"] : 'base64',
-				isset($attachment["type"]) ? $attachment["type"] : 'application/octet-stream');
-		}
+	
+	try
+	{
+		$res = $mail->Send();
 	}
-
-	$res = $mail->Send();
-
-	return array('mailed' => $res, "message"=> nl2br($mail->ErrorInfo));
+	catch( phpmailerException $e )
+	{
+		return array( "mailed" => false, "message"=> nl2br( $e->getMessage() ) );
+	}
+	
+	return array( "mailed" => $res, "message"=> nl2br( $mail->ErrorInfo ) );
 }
 
 /**

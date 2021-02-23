@@ -10,6 +10,8 @@ class FilterIntervalSlider extends FilterControl
 	protected $minKnobValue;	
 	protected $maxKnobValue;
 	
+	protected $showCollapsed = false;
+	
 	public function __construct($fName, $pageObject, $id, $viewControls)
 	{
 		parent::__construct($fName, $pageObject, $id, $viewControls);
@@ -26,7 +28,8 @@ class FilterIntervalSlider extends FilterControl
 		
 		if( $this->filtered )
 			$this->assignKnobsValues();
-	
+
+		$this->showCollapsed = $this->pSet->showCollapsed($fName);
 		
 		$this->separator = $this->getSeparator();
 	}
@@ -338,6 +341,7 @@ class FilterIntervalSlider extends FilterControl
 		$ctrlsMap['knobsType'] = $this->knobsType;
 		$ctrlsMap['useApllyBtn'] = $this->useApllyBtn;
 		$ctrlsMap['step'] = $this->getStepValue();
+		$ctrlsMap['collapsed'] = $this->showCollapsed;
 			
 		return $ctrlsMap;	
 	}

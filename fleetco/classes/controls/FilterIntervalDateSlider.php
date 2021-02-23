@@ -62,18 +62,18 @@ class FilterIntervalDateSlider extends FilterIntervalSlider
 		if($this->stepType == FSST_MONTHS)
 		{
 			$this->months = array(	
-				"January",
-				"February",
-				"March",
-				"April",
-				"May",
-				"June",
-				"July",
-				"August",
-				"September",
-				"October",
-				"November",
-				"December" );
+				mlang_message("MONTH_JAN"),
+				mlang_message("MONTH_FEB"),
+				mlang_message("MONTH_MAR"),
+				mlang_message("MONTH_APR"),
+				mlang_message("MONTH_MAY"),
+				mlang_message("MONTH_JUN"),
+				mlang_message("MONTH_JUL"),
+				mlang_message("MONTH_AUG"),
+				mlang_message("MONTH_SEP"),
+				mlang_message("MONTH_OCT"),
+				mlang_message("MONTH_NOV"),
+				mlang_message("MONTH_DEC") );
 		}
 	}
 

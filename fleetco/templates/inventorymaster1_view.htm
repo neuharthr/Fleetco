@@ -54,6 +54,7 @@
 
 
 
+
 <div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
 
 {BEGIN container_fields}
@@ -95,18 +96,12 @@
   <span class="rnr-control style3">{$Supplier_value}</span>
 </div>
 {END Supplier_fieldblock}
-	{BEGIN SUM_CurrentStock__fieldblock}
-<div data-fieldname="SUM_CurrentStock_" class="rnr-field style1 {$fielddispclass_SUM_CurrentStock_}">
-  <span class="rnr-label">{$label inventorymaster1 SUM_CurrentStock_}:</span>
-  <span class="rnr-control style3">{$SUM_CurrentStock__value}</span>
+	{BEGIN Id_fieldblock}
+<div data-fieldname="Id" class="rnr-field style1 {$fielddispclass_Id}">
+  <span class="rnr-label">{$label inventorymaster1 Id}:</span>
+  <span class="rnr-control style3">{$Id_value}</span>
 </div>
-{END SUM_CurrentStock__fieldblock}
-	{BEGIN UnitPrice_fieldblock}
-<div data-fieldname="UnitPrice" class="rnr-field style1 {$fielddispclass_UnitPrice}">
-  <span class="rnr-label">{$label inventorymaster1 UnitPrice}:</span>
-  <span class="rnr-control style3">{$UnitPrice_value}</span>
-</div>
-{END UnitPrice_fieldblock}
+{END Id_fieldblock}
 </td>
 </tr>
 </table></div>
@@ -165,7 +160,7 @@
 			</div>
 		</div>
 		<div class="rnr-bottom {$blockclass_bottom}">
-			<!--%%bottom%%-->
+			
 		</div>
 	</div>
 		

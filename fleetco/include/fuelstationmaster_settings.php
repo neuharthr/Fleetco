@@ -34,6 +34,150 @@ if(mlang_getcurrentlang()=="English")
 	if (count($fieldToolTipsfuelstationmaster["English"]))
 		$tdatafuelstationmaster[".isUseToolTips"] = true;
 }
+if(mlang_getcurrentlang()=="Afrikaans")
+{
+	$fieldLabelsfuelstationmaster["Afrikaans"] = array();
+	$fieldToolTipsfuelstationmaster["Afrikaans"] = array();
+	$pageTitlesfuelstationmaster["Afrikaans"] = array();
+	$fieldLabelsfuelstationmaster["Afrikaans"]["Id"] = "ID";
+	$fieldToolTipsfuelstationmaster["Afrikaans"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["Afrikaans"]["FuelStation"] = "vulstasie";
+	$fieldToolTipsfuelstationmaster["Afrikaans"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["Afrikaans"]["Address"] = "adres";
+	$fieldToolTipsfuelstationmaster["Afrikaans"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["Afrikaans"]["ContactNumber"] = "Kontak nommer";
+	$fieldToolTipsfuelstationmaster["Afrikaans"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["Afrikaans"]["Deposit"] = "deposito Gehou";
+	$fieldToolTipsfuelstationmaster["Afrikaans"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["Afrikaans"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Arabic")
+{
+	$fieldLabelsfuelstationmaster["Arabic"] = array();
+	$fieldToolTipsfuelstationmaster["Arabic"] = array();
+	$pageTitlesfuelstationmaster["Arabic"] = array();
+	$fieldLabelsfuelstationmaster["Arabic"]["Id"] = "???? ?????";
+	$fieldToolTipsfuelstationmaster["Arabic"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["Arabic"]["FuelStation"] = "???? ????";
+	$fieldToolTipsfuelstationmaster["Arabic"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["Arabic"]["Address"] = "?????";
+	$fieldToolTipsfuelstationmaster["Arabic"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["Arabic"]["ContactNumber"] = "??? ???????";
+	$fieldToolTipsfuelstationmaster["Arabic"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["Arabic"]["Deposit"] = "????? ????";
+	$fieldToolTipsfuelstationmaster["Arabic"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["Arabic"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Chinese")
+{
+	$fieldLabelsfuelstationmaster["Chinese"] = array();
+	$fieldToolTipsfuelstationmaster["Chinese"] = array();
+	$pageTitlesfuelstationmaster["Chinese"] = array();
+	$fieldLabelsfuelstationmaster["Chinese"]["Id"] = "ID";
+	$fieldToolTipsfuelstationmaster["Chinese"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["Chinese"]["FuelStation"] = "???";
+	$fieldToolTipsfuelstationmaster["Chinese"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["Chinese"]["Address"] = "??";
+	$fieldToolTipsfuelstationmaster["Chinese"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["Chinese"]["ContactNumber"] = "????";
+	$fieldToolTipsfuelstationmaster["Chinese"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["Chinese"]["Deposit"] = "????";
+	$fieldToolTipsfuelstationmaster["Chinese"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["Chinese"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="French")
+{
+	$fieldLabelsfuelstationmaster["French"] = array();
+	$fieldToolTipsfuelstationmaster["French"] = array();
+	$pageTitlesfuelstationmaster["French"] = array();
+	$fieldLabelsfuelstationmaster["French"]["Id"] = "ID";
+	$fieldToolTipsfuelstationmaster["French"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["French"]["FuelStation"] = "Station essence";
+	$fieldToolTipsfuelstationmaster["French"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["French"]["Address"] = "Adresse";
+	$fieldToolTipsfuelstationmaster["French"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["French"]["ContactNumber"] = "Numéro de contact";
+	$fieldToolTipsfuelstationmaster["French"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["French"]["Deposit"] = "Dépôt gardé";
+	$fieldToolTipsfuelstationmaster["French"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["French"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="German")
+{
+	$fieldLabelsfuelstationmaster["German"] = array();
+	$fieldToolTipsfuelstationmaster["German"] = array();
+	$pageTitlesfuelstationmaster["German"] = array();
+	$fieldLabelsfuelstationmaster["German"]["Id"] = "ICH WÜRDE";
+	$fieldToolTipsfuelstationmaster["German"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["German"]["FuelStation"] = "Tankstelle";
+	$fieldToolTipsfuelstationmaster["German"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["German"]["Address"] = "Adresse";
+	$fieldToolTipsfuelstationmaster["German"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["German"]["ContactNumber"] = "Kontaktnummer";
+	$fieldToolTipsfuelstationmaster["German"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["German"]["Deposit"] = "Anzahlung eingegeben";
+	$fieldToolTipsfuelstationmaster["German"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["German"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Italian")
+{
+	$fieldLabelsfuelstationmaster["Italian"] = array();
+	$fieldToolTipsfuelstationmaster["Italian"] = array();
+	$pageTitlesfuelstationmaster["Italian"] = array();
+	$fieldLabelsfuelstationmaster["Italian"]["Id"] = "ID";
+	$fieldToolTipsfuelstationmaster["Italian"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["Italian"]["FuelStation"] = "Stazione di servizio";
+	$fieldToolTipsfuelstationmaster["Italian"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["Italian"]["Address"] = "Indirizzo";
+	$fieldToolTipsfuelstationmaster["Italian"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["Italian"]["ContactNumber"] = "Numero di contatto";
+	$fieldToolTipsfuelstationmaster["Italian"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["Italian"]["Deposit"] = "Deposito Kept";
+	$fieldToolTipsfuelstationmaster["Italian"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["Italian"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Russian")
+{
+	$fieldLabelsfuelstationmaster["Russian"] = array();
+	$fieldToolTipsfuelstationmaster["Russian"] = array();
+	$pageTitlesfuelstationmaster["Russian"] = array();
+	$fieldLabelsfuelstationmaster["Russian"]["Id"] = "? ??";
+	$fieldToolTipsfuelstationmaster["Russian"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["Russian"]["FuelStation"] = "????????";
+	$fieldToolTipsfuelstationmaster["Russian"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["Russian"]["Address"] = "?????";
+	$fieldToolTipsfuelstationmaster["Russian"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["Russian"]["ContactNumber"] = "?????????? ?????";
+	$fieldToolTipsfuelstationmaster["Russian"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["Russian"]["Deposit"] = "??????? ????????";
+	$fieldToolTipsfuelstationmaster["Russian"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["Russian"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
+if(mlang_getcurrentlang()=="Spanish")
+{
+	$fieldLabelsfuelstationmaster["Spanish"] = array();
+	$fieldToolTipsfuelstationmaster["Spanish"] = array();
+	$pageTitlesfuelstationmaster["Spanish"] = array();
+	$fieldLabelsfuelstationmaster["Spanish"]["Id"] = "CARNÉ DE IDENTIDAD";
+	$fieldToolTipsfuelstationmaster["Spanish"]["Id"] = "";
+	$fieldLabelsfuelstationmaster["Spanish"]["FuelStation"] = "Gasolinera";
+	$fieldToolTipsfuelstationmaster["Spanish"]["FuelStation"] = "";
+	$fieldLabelsfuelstationmaster["Spanish"]["Address"] = "Dirección";
+	$fieldToolTipsfuelstationmaster["Spanish"]["Address"] = "";
+	$fieldLabelsfuelstationmaster["Spanish"]["ContactNumber"] = "Número de contacto";
+	$fieldToolTipsfuelstationmaster["Spanish"]["ContactNumber"] = "";
+	$fieldLabelsfuelstationmaster["Spanish"]["Deposit"] = "Depósito guardado";
+	$fieldToolTipsfuelstationmaster["Spanish"]["Deposit"] = "";
+	if (count($fieldToolTipsfuelstationmaster["Spanish"]))
+		$tdatafuelstationmaster[".isUseToolTips"] = true;
+}
 if(mlang_getcurrentlang()=="")
 {
 	$fieldLabelsfuelstationmaster[""] = array();
@@ -92,6 +236,9 @@ $tdatafuelstationmaster[".afterAddActionDetTable"] = "";
 
 $tdatafuelstationmaster[".list"] = true;
 
+
+
+
 $tdatafuelstationmaster[".view"] = true;
 
 $tdatafuelstationmaster[".import"] = true;
@@ -103,6 +250,14 @@ $tdatafuelstationmaster[".printFriendly"] = true;
 $tdatafuelstationmaster[".delete"] = true;
 
 $tdatafuelstationmaster[".showSimpleSearchOptions"] = false;
+
+// Allow Show/Hide Fields in GRID
+$tdatafuelstationmaster[".allowShowHideFields"] = true;
+//
+
+// Allow Fields Reordering in GRID
+$tdatafuelstationmaster[".allowFieldsReordering"] = true;
+//
 
 // search Saving settings
 $tdatafuelstationmaster[".searchSaving"] = false;
@@ -124,6 +279,7 @@ $tdatafuelstationmaster[".isUseTimeForSearch"] = false;
 
 
 
+$tdatafuelstationmaster[".badgeColor"] = "AFEEEE";
 
 
 $tdatafuelstationmaster[".allSearchFields"] = array();
@@ -172,6 +328,7 @@ $tdatafuelstationmaster[".geocodingEnabled"] = false;
 $tdatafuelstationmaster[".listGridLayout"] = 3;
 
 
+$tdatafuelstationmaster[".isResizeColumns"] = true;
 
 
 
@@ -279,6 +436,13 @@ $tdatafuelstationmaster[".editFields"][] = "Deposit";
 
 $tdatafuelstationmaster[".inlineEditFields"] = array();
 
+$tdatafuelstationmaster[".updateSelectedFields"] = array();
+$tdatafuelstationmaster[".updateSelectedFields"][] = "FuelStation";
+$tdatafuelstationmaster[".updateSelectedFields"][] = "Address";
+$tdatafuelstationmaster[".updateSelectedFields"][] = "ContactNumber";
+$tdatafuelstationmaster[".updateSelectedFields"][] = "Deposit";
+
+
 $tdatafuelstationmaster[".exportFields"] = array();
 $tdatafuelstationmaster[".exportFields"][] = "Id";
 $tdatafuelstationmaster[".exportFields"][] = "FuelStation";
@@ -321,6 +485,8 @@ $tdatafuelstationmaster[".printFields"][] = "Deposit";
 	
 	
 	
+	
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -446,6 +612,9 @@ $tdatafuelstationmaster[".printFields"][] = "Deposit";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -571,6 +740,9 @@ $tdatafuelstationmaster[".printFields"][] = "Deposit";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -694,6 +866,9 @@ $tdatafuelstationmaster[".printFields"][] = "Deposit";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;
@@ -817,6 +992,9 @@ $tdatafuelstationmaster[".printFields"][] = "Deposit";
 		$fdata["bEditPage"] = true;
 
 	
+		$fdata["bUpdateSelected"] = true;
+
+
 		$fdata["bViewPage"] = true;
 
 		$fdata["bAdvancedSearch"] = true;

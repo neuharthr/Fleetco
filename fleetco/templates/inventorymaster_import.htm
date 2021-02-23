@@ -37,7 +37,7 @@
 
 
 
-<div  class="rnr-brickcontents style3 rnr-b-importheader_text {$brickclass_importheader_text}">Drag and drop a comma-separated (.csv) or Excel (.xlsx) file or choose an option below.</div>
+<div  class="rnr-brickcontents style3 rnr-b-importheader_text {$brickclass_importheader_text}">{mlang_message IMPORT_DRAG_AND_DROP}</div>
 
 
 
@@ -45,7 +45,7 @@
 <table class="fieldGrid">
 	<tr>
 		<td>
-			Select file with data.
+			{mlang_message IMPORT_SELECT}
 		</td>
 		<td>
 			<input type="File" id="importFile{$id}" name="importFile{$id}">
@@ -55,22 +55,22 @@
 </div>
 
 <div class="rnr-import-settings">
-<a href="#" class="rnr-button" id="uploadImportFile{$id}"> Browse... </a>
+<a href="#" class="rnr-button" id="uploadImportFile{$id}"> {mlang_message IMPORT_BROWSEBUTTON} </a>
 </div>
 
 <div id="importDropzone{$id}" class="import-dragndrop-area" style="display: none;">
-	<div class="import-dragtext"> Drag files here </div>
+	<div class="import-dragtext"> {mlang_message UPLOAD_DRAG} </div>
 </div>
 
 <div class="rnr-import-settings">
-<a id="switchToTextInsertion{$id}" href="#" class="rnr-button"> Copy and paste text </a>
+<a id="switchToTextInsertion{$id}" href="#" class="rnr-button"> {mlang_message IMPORT_COPY_PASTE_TEXT} </a>
 </div>
 </div>
 
 
 
 <div  class="rnr-brickcontents style1 rnr-b-import_rawtext_control {$brickclass_import_rawtext_control}"><div id="copyAndPasteText{$id}">
-<div> Copy and Paste your text data here: </div>
+<div> {mlang_message IMPORT_COPY_PASTE_DATA} </div>
 <textarea class="rnr-import-textarea" id="importText{$id}">
 </textarea>
 </div></div>
@@ -80,18 +80,18 @@
 <div  class="rnr-brickcontents style1 rnr-b-import_preview {$brickclass_import_preview}"><div>
 <div id="importSettings{$id}" class="rnr-import-settings">
 	<div class="rnr-is-control">
-		<input class="rnr-checkbox" type="checkbox" checked="checked" id="columnsInFirstLine{$id}" name="columnsInFirstLine"/><label> Column headers in the first line </label>
+		<input class="rnr-checkbox" type="checkbox" checked="checked" id="columnsInFirstLine{$id}" name="columnsInFirstLine"/><label> {mlang_message IMPORT_COLUMN_HEADERS} </label>
 	</div>
 
 	<div id="delimiterSettings{$id}" class="rnr-is-control" style="display:none;">
-		<input name="importDelimiter" class="importDelimiters" type="radio" value=","><label> Comma </label>
-		<input name="importDelimiter" class="importDelimiters" type="radio" value="&#9;"><label> Tab </label>
-		<input name="importDelimiter" class="importDelimiters" type="radio" value="other"><label> Other </label>
+		<input name="importDelimiter" class="importDelimiters" type="radio" value=","><label> {mlang_message IMPORT_COMMA} </label>
+		<input name="importDelimiter" class="importDelimiters" type="radio" value="&#9;"><label> {mlang_message IMPORT_TAB} </label>
+		<input name="importDelimiter" class="importDelimiters" type="radio" value="other"><label> {mlang_message IMPORT_OTHER} </label>
 		<input id="customDelimiter{$id}" value=";" type="text">
 	</div>
 
 	<div id="dateFormatSettings{$id}" class="rnr-is-control" style="display:none;">
-		<label>Date format:</label>
+		<label>{mlang_message IMPORT_DATA_FORMAT}</label>
 		<input id="importDateFormat{$id}" type="text">
 	</div>
 
@@ -121,17 +121,17 @@
 
 
 <div  class="rnr-brickcontents style2 rnr-b-importbuttons {$brickclass_importbuttons}"><div class="rnr-buttons-right">
-	<a href="#" class="rnr-button" id="backToList{$id}">Back to list</a>
-	<a href="#" class="rnr-button" id="newImport{$id}" style="display: none;">New import</a>
+	<a href="#" class="rnr-button" id="backToList{$id}">{mlang_message BACK_TO_LIST}</a>
+	<a href="#" class="rnr-button" id="newImport{$id}" style="display: none;">{mlang_message IMPORT_NEW}</a>
 </div>
 <div class="rnr-buttons-left">
-	<a id="continueTextImport{$id}" href="#" class="rnr-button disabled main" style="display: none;"> Continue </a>	
-	<a id="importButton{$id}" href="#" class="rnr-button" style="display: none;">Import Data</a>	
-	<a href="#" class="rnr-button" id="backTo{$id}" style="display: none;">Back</a>
+	<a id="continueTextImport{$id}" href="#" class="rnr-button disabled main" style="display: none;"> {mlang_message CONTINUE} </a>	
+	<a id="importButton{$id}" href="#" class="rnr-button" style="display: none;">{mlang_message IMPORT_DATA}</a>	
+	<a href="#" class="rnr-button" id="backTo{$id}" style="display: none;">{mlang_message BACK}</a>
 	
-	<a id="saveReport{$id}" href="#" class="rnr-button" style="display: none;">Save Report</a>
-	<a id="saveUnprocessedData{$id}" href="#" class="rnr-button errorReportButtons{$id}" style="display: none;">Download unprocessed data</a>
-	<a id="saveErrorReport{$id}" href="#" class="rnr-button errorReportButtons{$id}" style="display: none;">Download error log</a>
+	<a id="saveReport{$id}" href="#" class="rnr-button" style="display: none;">{mlang_message IMPORT_SAVE_REPORT}</a>
+	<a id="saveUnprocessedData{$id}" href="#" class="rnr-button errorReportButtons{$id}" style="display: none;">{mlang_message IMPORT_DOWNLOAD_UNPROCESSED_DATA}</a>
+	<a id="saveErrorReport{$id}" href="#" class="rnr-button errorReportButtons{$id}" style="display: none;">{mlang_message IMPORT_DOWNLOAD_ERROR_LOG}</a>
 </div>
 </div>
 
