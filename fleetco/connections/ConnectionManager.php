@@ -251,11 +251,15 @@ class ConnectionManager
 		$data["DBPath"] = "db"; //currently unused	
 		$data["useServerMapPath"] = 1; //currently unused
 		
-		$data["connInfo"][0] = "database_host_name";
-		$data["connInfo"][1] = "database_user_name";
-		$data["connInfo"][2] = "database_user_password";
-		$data["connInfo"][3] = "database_port_number";
-		$data["connInfo"][4] = "database_name";
+		$data["connInfo"][0] = "localhost";
+		/**
+		* $data["connInfo"][1] = "fleetco";
+		* $data["connInfo"][2] = "cLznT!Ho1uB[l/iG";
+		*/
+		$data["connInfo"][1] = "root";
+		$data["connInfo"][2] = "";
+		$data["connInfo"][3] = "3306";
+		$data["connInfo"][4] = "fleetco";
 		$data["connInfo"][5] = ""; //currently unused
 		$data["connInfo"][6] = "1"; //currently unused
 		$data["ODBCString"] = "DRIVER={MySQL ODBC 3.51 Driver};Server=localhost;Uid=root;Pwd=;Database=carrier;OPTION=3";
